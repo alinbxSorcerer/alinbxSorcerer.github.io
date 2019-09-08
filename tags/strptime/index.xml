@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>strptime on A Declared Land by David</title>
+    <link>https://alinbxsorcerer.github.io/tags/strptime/</link>
+    <description>Recent content in strptime on A Declared Land by David</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 13 May 2019 09:56:15 +0800</lastBuildDate>
+    
+	<atom:link href="https://alinbxsorcerer.github.io/tags/strptime/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>时间专题:时间变量的顺序与时间表示的格式</title>
+      <link>https://alinbxsorcerer.github.io/post/2019-05-13-%E6%97%B6%E9%97%B4%E5%8F%98%E9%87%8F%E7%9A%84%E9%A1%BA%E5%BA%8F%E4%B8%8E%E6%97%B6%E9%97%B4%E8%A1%A8%E7%A4%BA%E7%9A%84%E6%A0%BC%E5%BC%8F/</link>
+      <pubDate>Mon, 13 May 2019 09:56:15 +0800</pubDate>
+      
+      <guid>https://alinbxsorcerer.github.io/post/2019-05-13-%E6%97%B6%E9%97%B4%E5%8F%98%E9%87%8F%E7%9A%84%E9%A1%BA%E5%BA%8F%E4%B8%8E%E6%97%B6%E9%97%B4%E8%A1%A8%E7%A4%BA%E7%9A%84%E6%A0%BC%E5%BC%8F/</guid>
+      <description>时间的感知 直觉对时间的感知, 是按照怎么的顺序解析的呢? 从早晨起床这个场景中,分析大脑解析时间的顺序. 似乎理所当然的一点,Hour(时)排在最</description>
+    </item>
+    
+    <item>
+      <title>时间专题:datetime.strptime参数顺序的问题</title>
+      <link>https://alinbxsorcerer.github.io/post/2019-05-08-arguments_sequence_in_strptime/</link>
+      <pubDate>Wed, 08 May 2019 22:57:04 +0800</pubDate>
+      
+      <guid>https://alinbxsorcerer.github.io/post/2019-05-08-arguments_sequence_in_strptime/</guid>
+      <description>提出问题 datetime.strptime(string, format)经常会误写, 颠倒两个参数的顺序而写成datetime.strptime(format, string) 与re.find(patte</description>
+    </item>
+    
+  </channel>
+</rss>

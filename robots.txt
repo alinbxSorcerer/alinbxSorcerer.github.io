@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://alinbxsorcerer.github.io/sitemap.xml

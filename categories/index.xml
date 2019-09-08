@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on A Declared Land by David</title>
+    <link>https://alinbxsorcerer.github.io/categories/</link>
+    <description>Recent content in Categories on A Declared Land by David</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 20 May 2019 11:16:42 +0800</lastBuildDate>
+    
+	<atom:link href="https://alinbxsorcerer.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>网络专题</title>
+      <link>https://alinbxsorcerer.github.io/categories/%E7%BD%91%E7%BB%9C%E4%B8%93%E9%A2%98/</link>
+      <pubDate>Mon, 20 May 2019 11:16:42 +0800</pubDate>
+      
+      <guid>https://alinbxsorcerer.github.io/categories/%E7%BD%91%E7%BB%9C%E4%B8%93%E9%A2%98/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>system-service</title>
+      <link>https://alinbxsorcerer.github.io/categories/system-service/</link>
+      <pubDate>Sat, 18 May 2019 10:57:17 +0800</pubDate>
+      
+      <guid>https://alinbxsorcerer.github.io/categories/system-service/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>时间专题</title>
+      <link>https://alinbxsorcerer.github.io/categories/%E6%97%B6%E9%97%B4%E4%B8%93%E9%A2%98/</link>
+      <pubDate>Sat, 18 May 2019 10:57:17 +0800</pubDate>
+      
+      <guid>https://alinbxsorcerer.github.io/categories/%E6%97%B6%E9%97%B4%E4%B8%93%E9%A2%98/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>system.service</title>
+      <link>https://alinbxsorcerer.github.io/categories/system.service/</link>
+      <pubDate>Wed, 08 May 2019 22:57:04 +0800</pubDate>
+      
+      <guid>https://alinbxsorcerer.github.io/categories/system.service/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>text-processing专题</title>
+      <link>https://alinbxsorcerer.github.io/categories/text-processing%E4%B8%93%E9%A2%98/</link>
+      <pubDate>Wed, 08 May 2019 12:11:35 +0800</pubDate>
+      
+      <guid>https://alinbxsorcerer.github.io/categories/text-processing%E4%B8%93%E9%A2%98/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

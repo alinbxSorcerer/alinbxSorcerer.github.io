@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>system-service on A Declared Land by David</title>
+    <link>https://alinbxsorcerer.github.io/categories/system-service/</link>
+    <description>Recent content in system-service on A Declared Land by David</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 18 May 2019 10:57:17 +0800</lastBuildDate>
+    
+	<atom:link href="https://alinbxsorcerer.github.io/categories/system-service/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>时间专题:Emacs中的datetime与clock</title>
+      <link>https://alinbxsorcerer.github.io/post/2019-05-18-%E6%97%B6%E9%97%B4%E4%B8%93%E9%A2%98emacs%E4%B8%AD%E7%9A%84datetime%E4%B8%8Eclock/</link>
+      <pubDate>Sat, 18 May 2019 10:57:17 +0800</pubDate>
+      
+      <guid>https://alinbxsorcerer.github.io/post/2019-05-18-%E6%97%B6%E9%97%B4%E4%B8%93%E9%A2%98emacs%E4%B8%AD%E7%9A%84datetime%E4%B8%8Eclock/</guid>
+      <description>前文概要: 时间管理的三件工具 (clock, datetime, calendar) 时间变量的顺序与时间表示的格式 (%a %b-d %H:%M %Y) Emacs中的时间格式与任务的时间属性 时间管理的三件工具: 钟表, 日历</description>
+    </item>
+    
+    <item>
+      <title>时间专题:时间管理的三件武器</title>
+      <link>https://alinbxsorcerer.github.io/post/2019-05-15-%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86%E7%9A%84%E4%B8%89%E4%BB%B6%E6%AD%A6%E5%99%A8/</link>
+      <pubDate>Wed, 15 May 2019 10:13:39 +0800</pubDate>
+      
+      <guid>https://alinbxsorcerer.github.io/post/2019-05-15-%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86%E7%9A%84%E4%B8%89%E4%BB%B6%E6%AD%A6%E5%99%A8/</guid>
+      <description>前情概要 &amp;ldquo;时间变量的顺序与时间表示的格式&amp;rdquo; 总结了时间的10个变量及其直觉解析的顺序 Weekday Hour:Minute Month-Day WeekNumber Year &amp;ldquo;时间的感知</description>
+    </item>
+    
+    <item>
+      <title>时间专题:时间的感知与分析</title>
+      <link>https://alinbxsorcerer.github.io/post/2019-05-15-%E6%97%B6%E9%97%B4%E7%9A%84%E6%84%9F%E7%9F%A5%E4%B8%8E%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 15 May 2019 10:06:20 +0800</pubDate>
+      
+      <guid>https://alinbxsorcerer.github.io/post/2019-05-15-%E6%97%B6%E9%97%B4%E7%9A%84%E6%84%9F%E7%9F%A5%E4%B8%8E%E5%88%86%E6%9E%90/</guid>
+      <description>在前文时间变量的顺序与时间表示的格式中分析得到感知时间的5个基本变量及其顺序. Weekday Hour:Minute Month-Day 记作 %w %H:%M %d-%m 对时间流逝的测量分为两个维度: 一是仪器在微观层</description>
+    </item>
+    
+    <item>
+      <title>时间专题:时间变量的顺序与时间表示的格式</title>
+      <link>https://alinbxsorcerer.github.io/post/2019-05-13-%E6%97%B6%E9%97%B4%E5%8F%98%E9%87%8F%E7%9A%84%E9%A1%BA%E5%BA%8F%E4%B8%8E%E6%97%B6%E9%97%B4%E8%A1%A8%E7%A4%BA%E7%9A%84%E6%A0%BC%E5%BC%8F/</link>
+      <pubDate>Mon, 13 May 2019 09:56:15 +0800</pubDate>
+      
+      <guid>https://alinbxsorcerer.github.io/post/2019-05-13-%E6%97%B6%E9%97%B4%E5%8F%98%E9%87%8F%E7%9A%84%E9%A1%BA%E5%BA%8F%E4%B8%8E%E6%97%B6%E9%97%B4%E8%A1%A8%E7%A4%BA%E7%9A%84%E6%A0%BC%E5%BC%8F/</guid>
+      <description>时间的感知 直觉对时间的感知, 是按照怎么的顺序解析的呢? 从早晨起床这个场景中,分析大脑解析时间的顺序. 似乎理所当然的一点,Hour(时)排在最</description>
+    </item>
+    
+  </channel>
+</rss>
