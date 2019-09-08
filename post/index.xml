@@ -6,10 +6,19 @@
     <description>Recent content in Posts on A Declared Land by David</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 20 May 2019 11:16:42 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 07 Sep 2019 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://alinbxsorcerer.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>网络专题:快速上手Hugo</title>
+      <link>https://alinbxsorcerer.github.io/post/2019-09-07-%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bhugo/</link>
+      <pubDate>Sat, 07 Sep 2019 00:00:00 +0800</pubDate>
+      
+      <guid>https://alinbxsorcerer.github.io/post/2019-09-07-%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bhugo/</guid>
+      <description>Step 1: Intall Hugo # suao apt instal hugo # sudo snap install hugo # version 0.57.2, or # sudo apt install hugo # version 0.52-1 hugo version Step 2. Create a New Site: cd ~/Documents hugo new iste quickstart $ hugo new site MyLand Congratulations! Your new Hugo site is created in /home/gaowei/Documents/MyLand. Just a few more steps and you&#39;re ready to go: 1. Download a theme into the</description>
+    </item>
     
     <item>
       <title>网络专题:应用Termux变Android为SSH服务器</title>
@@ -67,10 +76,10 @@
     
     <item>
       <title>Text.Processing专题:regex.sub参数顺序的问题</title>
-      <link>https://alinbxsorcerer.github.io/post/2019-09-08-re.sub%E5%8F%82%E6%95%B0%E9%A1%BA%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>https://alinbxsorcerer.github.io/post/2019-05-08-re.sub%E5%8F%82%E6%95%B0%E9%A1%BA%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Wed, 08 May 2019 12:11:35 +0800</pubDate>
       
-      <guid>https://alinbxsorcerer.github.io/post/2019-09-08-re.sub%E5%8F%82%E6%95%B0%E9%A1%BA%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://alinbxsorcerer.github.io/post/2019-05-08-re.sub%E5%8F%82%E6%95%B0%E9%A1%BA%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>提出问题 在写re.sub或者re.subn的时候, 常常会不太确定引用参数的顺序, 需要中断的时间查看提示或者help文档. 比如input_st</description>
     </item>
     

@@ -9,8 +9,50 @@
   </url>
   
   <url>
+    <loc>https://alinbxsorcerer.github.io/post/2019-09-07-%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bhugo/</loc>
+    <lastmod>2019-09-08T17:09:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://alinbxsorcerer.github.io/</loc>
-    <lastmod>2019-06-01T10:57:17+08:00</lastmod>
+    <lastmod>2019-09-08T17:09:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://alinbxsorcerer.github.io/categories/</loc>
+    <lastmod>2019-09-08T17:09:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://alinbxsorcerer.github.io/tags/hugo/</loc>
+    <lastmod>2019-09-08T17:09:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://alinbxsorcerer.github.io/categories/networking/</loc>
+    <lastmod>2019-09-08T17:09:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://alinbxsorcerer.github.io/post/</loc>
+    <lastmod>2019-09-08T17:09:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://alinbxsorcerer.github.io/tags/</loc>
+    <lastmod>2019-09-08T17:09:37+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -23,29 +65,8 @@
   </url>
   
   <url>
-    <loc>https://alinbxsorcerer.github.io/categories/</loc>
-    <lastmod>2019-06-01T10:57:17+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://alinbxsorcerer.github.io/post/</loc>
-    <lastmod>2019-06-01T10:57:17+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://alinbxsorcerer.github.io/tags/ssh/</loc>
     <lastmod>2019-05-20T11:16:42+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://alinbxsorcerer.github.io/tags/</loc>
-    <lastmod>2019-06-01T10:57:17+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -205,7 +226,7 @@
   </url>
   
   <url>
-    <loc>https://alinbxsorcerer.github.io/post/2019-09-08-re.sub%E5%8F%82%E6%95%B0%E9%A1%BA%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
+    <loc>https://alinbxsorcerer.github.io/post/2019-05-08-re.sub%E5%8F%82%E6%95%B0%E9%A1%BA%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2019-05-08T12:11:35+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

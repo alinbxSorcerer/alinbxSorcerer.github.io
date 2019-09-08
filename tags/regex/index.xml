@@ -13,10 +13,10 @@
     
     <item>
       <title>Text.Processing专题:regex.sub参数顺序的问题</title>
-      <link>https://alinbxsorcerer.github.io/post/2019-09-08-re.sub%E5%8F%82%E6%95%B0%E9%A1%BA%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>https://alinbxsorcerer.github.io/post/2019-05-08-re.sub%E5%8F%82%E6%95%B0%E9%A1%BA%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Wed, 08 May 2019 12:11:35 +0800</pubDate>
       
-      <guid>https://alinbxsorcerer.github.io/post/2019-09-08-re.sub%E5%8F%82%E6%95%B0%E9%A1%BA%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://alinbxsorcerer.github.io/post/2019-05-08-re.sub%E5%8F%82%E6%95%B0%E9%A1%BA%E5%BA%8F%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>提出问题 在写re.sub或者re.subn的时候, 常常会不太确定引用参数的顺序, 需要中断的时间查看提示或者help文档. 比如input_st</description>
     </item>
     
