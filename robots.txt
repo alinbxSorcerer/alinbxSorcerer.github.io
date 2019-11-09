@@ -1,0 +1,4 @@
+Sitemap: https://alinbxsorcerer.github.io/sitemapindex.xml
+
+User-Agent: *
+Host: alinbxsorcerer.github.io
