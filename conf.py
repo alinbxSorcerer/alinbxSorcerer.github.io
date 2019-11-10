@@ -17,7 +17,7 @@ import time
 
 # Data about this site
 BLOG_AUTHOR = "David"  # (translatable)
-BLOG_TITLE = "A Magic Land Conjured by David"  # (translatable)
+BLOG_TITLE = "A Magic Land Declared by David"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
 SITE_URL = "https://alinbxsorcerer.github.io/"
@@ -25,7 +25,7 @@ SITE_URL = "https://alinbxsorcerer.github.io/"
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://example.com/"
 BLOG_EMAIL = "davad.fhl.wang@foxmail.com"
-BLOG_DESCRIPTION = "Conjure, Conjure, Conjure..."  # (translatable)
+BLOG_DESCRIPTION = "    Conjuring...    "  # (translatable)
 
 # Nikola is multilingual!
 #
