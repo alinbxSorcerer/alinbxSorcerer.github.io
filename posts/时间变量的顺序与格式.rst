@@ -5,7 +5,7 @@
 .. tags: python, time, bash,  
 .. category: programming
 .. link: 
-.. description: 
+.. description: 时间专题之一
 .. type: text
 .. toc: true
 
