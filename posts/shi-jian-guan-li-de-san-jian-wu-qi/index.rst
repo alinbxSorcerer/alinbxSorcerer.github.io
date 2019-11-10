@@ -6,7 +6,7 @@
    .. tags: 时间管理, time
    .. category: programming
    .. link: 
-   .. description: 
+   .. description: 时间专题之三
    .. type: text
    -->
 
@@ -457,4 +457,4 @@ Emacs中的时间管理
 --------
 
 `GNU Coreutils: Date input
-formats <https://www.gnu.org/software/coreutils/manual/html_node/Date-input-formats.html#Date-input-formats>`__
+formats <https://www.gnu.org/software/coreutils/manual/html_node/Date-input-formats.html#Date-input-formats>`

@@ -7,30 +7,38 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/cat_programming.xml</loc>
-  <lastmod>2019-11-10T07:02:00Z</lastmod>
+  <lastmod>2019-11-10T09:22:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://alinbxsorcerer.github.io/categories/python.xml</loc>
+  <lastmod>2019-11-10T09:22:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://alinbxsorcerer.github.io/categories/regex.xml</loc>
+  <lastmod>2019-11-10T09:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/shi-jian-guan-li.xml</loc>
-  <lastmod>2019-11-10T07:02:00Z</lastmod>
+  <lastmod>2019-11-10T07:18:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/time.xml</loc>
-  <lastmod>2019-11-10T07:02:00Z</lastmod>
+  <lastmod>2019-11-10T07:18:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/galleries/demo/rss.xml</loc>
-  <lastmod>2019-11-10T06:52:00Z</lastmod>
+  <lastmod>2019-11-10T07:15:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/galleries/rss.xml</loc>
-  <lastmod>2019-11-10T06:52:00Z</lastmod>
+  <lastmod>2019-11-10T07:15:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/rss.xml</loc>
-  <lastmod>2019-11-10T07:02:00Z</lastmod>
+  <lastmod>2019-11-10T09:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/sitemap.xml</loc>
-  <lastmod>2019-11-10T07:02:00Z</lastmod>
+  <lastmod>2019-11-10T09:22:00Z</lastmod>
  </sitemap>
 </sitemapindex>
