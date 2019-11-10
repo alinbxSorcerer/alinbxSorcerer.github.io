@@ -1,7 +1,7 @@
 .. title: Re.sub参数顺序的问题
 .. slug: resubcan-shu-shun-xu-de-wen-ti
 .. date: 2019-05-08 17:17:55 UTC+08:00
-.. tags: python, regex
+.. tags: python, regex, bash
 .. category: programming
 .. link: 
 .. description: 
@@ -12,7 +12,7 @@
 ========
 
 在写 ``re.sub`` 或者 ``re.subn`` 的时候, 常常会不太确定引用参数的顺序,
-需要中断的时间查看提示或者help文档. 比如 ``input_string`` 'trade war'
+需要中断的时间查看提示或者help文档. 比如  ``trade war``
 修改为 ``trade negotiation``
 
 .. code:: python
