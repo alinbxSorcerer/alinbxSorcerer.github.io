@@ -3,23 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>时间管理的三件武器 | A Magic Land Conjured by David</title>
+<title>时间管理的三件武器 | A Magic Land Declared by David</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="David">
-<meta property="og:site_name" content="A Magic Land Conjured by David">
+<meta property="og:site_name" content="A Magic Land Declared by David">
 <meta property="og:title" content="时间管理的三件武器">
 <meta property="og:url" content="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/">
-<meta property="og:description" content='前情概要
-"时间变量的顺序与时间表示的格式" 总结了时间的10个变量及其直觉解析的顺序  
-Weekday Hour:Minute Month-Day WeekNumber Year     
-"时间的感知与分析"阐述对时间的认知方法论以奠定高效利用和有效掌控时间的基础。 
+<meta property="og:description" content="前情概要
+
+“时间变量的顺序与时间表示的格式”
+总结了时间的10个变量及其直觉解析的顺序
+Weekday Hour:Minute Month-Day WeekNumber Year
+“时间的感知与分析”阐述对时间的认知方法论以奠定高效利用和有效掌控时间的基础。
 “工欲善其事必先利其器”，接下来的问题便是时间管理的工具。
-时间管理的三件工具
-无论是手机的android系统还是Linux'>
+
+
+
+时间管理的三件武器
+无论是手机的android系统还是Linux系统，都">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2019-05-15T20:53:29+08:00">
+<meta property="article:tag" content="time">
 <meta property="article:tag" content="时间管理">
 </head>
 <body>
@@ -30,8 +36,8 @@ Weekday Hour:Minute Month-Day WeekNumber Year
     <div class="brand">
 
         <div class="brand-text">
-            <a href="https://alinbxsorcerer.github.io/" title="A Magic Land Conjured by David" rel="home">
-                A Magic Land Conjured by David
+            <a href="https://alinbxsorcerer.github.io/" title="A Magic Land Declared by David" rel="home">
+                A Magic Land Declared by David
             </a>
         </div>
 
@@ -71,10 +77,13 @@ Weekday Hour:Minute Month-Day WeekNumber Year
 
 	    
           |  
-        <a href="index.md" id="sourcelink">Source</a>
+        <a href="index.rst" id="sourcelink">Source</a>
 
 	  </div>
 	  <div class="post-tags">
+	    <div class="tag">
+	      <a href="../../categories/time/" rel="tag">time</a>
+	    </div>
 	    <div class="tag">
 	      <a href="../../categories/shi-jian-guan-li/" rel="tag">时间管理</a>
 	    </div>
@@ -87,377 +96,471 @@ Weekday Hour:Minute Month-Day WeekNumber Year
     <div id="post-main" class="main">
         <div class="container">
         <div>
-<h3>前情概要</h3>
-<p>"时间变量的顺序与时间表示的格式" 总结了时间的10个变量及其直觉解析的顺序  <br><code>Weekday Hour:Minute Month-Day WeekNumber Year</code>     <br>
-"时间的感知与分析"阐述对时间的认知方法论以奠定高效利用和有效掌控时间的基础。 <br>
-“工欲善其事必先利其器”，接下来的问题便是时间管理的工具。</p>
-<h3>时间管理的三件工具</h3>
-<p>无论是手机的android系统还是Linux系统，都提供两项基本的时间管理工具日历(calendar) and 时钟(clock).
-Calendar是date地图，提供全景式的鸟瞰图； clock是指南针，指导具体的每一步应该迈向何处。
+<div class="section" id="id1">
+<h2>前情概要</h2>
+<div class="line-block">
+<div class="line">“时间变量的顺序与时间表示的格式”
+总结了时间的10个变量及其直觉解析的顺序</div>
+<div class="line"><code class="docutils literal">Weekday Hour:Minute <span class="pre">Month-Day</span> WeekNumber Year</code></div>
+<div class="line">“时间的感知与分析”阐述对时间的认知方法论以奠定高效利用和有效掌控时间的基础。</div>
+<div class="line">“工欲善其事必先利其器”，接下来的问题便是时间管理的工具。</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>时间管理的三件武器</h2>
+<p>无论是手机的android系统还是Linux系统，都提供两项基本的时间管理工具日历(calendar)
+and 时钟(clock). Calendar是date地图，提供全景式的鸟瞰图；
+clock是指南针，指导具体的每一步应该迈向何处。
 二者的结合形成第三个工具datetime。</p>
 <p>工具虽然简单，但如果不能抽象到认知的层面，则不能为己所用。试问，谁手机里没个日历，每个钟表呢。认知层面的结论是需要且仅需要这三件工具O(∩_∩)O。</p>
 <ul>
-<li>日历提供全景式鸟瞰</li>
-</ul>
-<p><code>shell
-  $ ncal -B 3  #ncal中的n竟然是new这个单词
-      February 2019     March 2019        April 2019        May 2019          
-  Su      3 10 17 24        3 10 17 24 31     7 14 21 28        5 12 19 26   
-  Mo     4 11 18 25        4 11 18 25      1  8 15 22 29        6 13 20 27   
-  Tu      5 12 19 26        5 12 19 26      2  9 16 23 30        7 14 21 28   
-  We     6 13 20 27        6 13 20 27      3 10 17 24        1  8 15 22 29   
-  Th      7 14 21 28        7 14 21 28      4 11 18 25        2  9 16 23 30   
-  Fr       1  8  15   22     1  8 15 22 29       5 12 19 26        3 10 17 24 31   
-  Sa  2  9 16 23        2  9 16 23 30       6 13 20 27       4  11 18 25</code></p>
-<ul>
-<li>时钟实施具体的测量</li>
-</ul>
-<p><code>bash
-  $ time sleep 10real    0m10.011suser    0m0.002ssys     0m0.001s</code></p>
-<ul>
-<li>datetime整合二者，提供更加实用的功能</li>
-</ul>
-<p><code>bash
-  #贸易战倒计时
-  $ TZ="America/New_York" date #美东夏季时间， 第十个变量时区。
-  Thu May  9 20:04:30 EDT 2019  #Eatern Daylight Timer</code></p>
-<h3>Python中的时间管理</h3>
-<p>以calendar, clock(time),datetime与十个时间变量为基础，审视python的<code>calendar</code>, <code>time</code>, and <code>datetime</code></p>
-<h4>1. Calender</h4>
-<p><a href="https://docs.python.org/3/library/calendar.html">calendar — General calendar-related functions</a>
-<a href="https://pymotw.com/3/calendar/index.html">calendar — Work with Dates — PyMOTW 3</a></p>
-<p>Python中的calendar十个无关紧要的工具，没有人会费力不讨好的到这里查看日期和规划日程。</p>
-<pre class="code literal-block"><span></span><span class="k">class</span> <span class="n">TextCalendar</span>(<span class="n">Calendar</span>)
- |  <span class="n">TextCalendar</span>(<span class="n">firstweekday</span>=<span class="mi">0</span>)
-<span class="n">In</span> [<span class="mi">326</span>]: <span class="n">cal</span> = <span class="n">calendar</span>.<span class="n">TextCalendar</span>(<span class="n">calendar</span>.<span class="n">MONDAY</span>)    <span class="c1">#周一作为一周的起始点                                                                </span>
-<span class="n">In</span> [<span class="mi">327</span>]: <span class="n">cal</span>.<span class="n">prmonth</span>(<span class="mi">2019</span>, <span class="mi">5</span>)                                                                                                
-      <span class="n">May</span> <span class="mi">2019</span>
-<span class="n">Mo</span> <span class="n">Tu</span> <span class="n">We</span> <span class="n">Th</span> <span class="n">Fr</span> <span class="n">Sa</span> <span class="n">Su</span>
-       <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">4</span>  <span class="mi">5</span>
- <span class="mi">6</span>  <span class="mi">7</span>  <span class="mi">8</span>  <span class="mi">9</span> <span class="mi">10</span> <span class="mi">11</span> <span class="mi">12</span>
-<span class="mi">13</span> <span class="mi">14</span> <span class="mi">15</span> <span class="mi">16</span> <span class="mi">17</span> <span class="mi">18</span> <span class="mi">19</span>
-<span class="mi">20</span> <span class="mi">21</span> <span class="mi">22</span> <span class="mi">23</span> <span class="mi">24</span> <span class="mi">25</span> <span class="mi">26</span>
-<span class="mi">27</span> <span class="mi">28</span> <span class="mi">29</span> <span class="mi">30</span> <span class="mi">31</span>
-<span class="n">In</span> [<span class="mi">328</span>]: <span class="n">cal</span>.<span class="n">pryear</span>(<span class="mi">2019</span>)                                                                                                    
-                                  <span class="mi">2019</span>
-      <span class="n">January</span>                                   <span class="n">February</span>                                    <span class="n">March</span>
-<span class="n">Mo</span> <span class="n">Tu</span> <span class="n">We</span> <span class="n">Th</span> <span class="n">Fr</span> <span class="n">Sa</span> <span class="n">Su</span>      <span class="n">Mo</span> <span class="n">Tu</span> <span class="n">We</span> <span class="n">Th</span> <span class="n">Fr</span> <span class="n">Sa</span> <span class="n">Su</span>      <span class="n">Mo</span> <span class="n">Tu</span> <span class="n">We</span> <span class="n">Th</span> <span class="n">Fr</span> <span class="n">Sa</span> <span class="n">Su</span>
-    <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">4</span>  <span class="mi">5</span>  <span class="mi">6</span>                   <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>                                           <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>
- <span class="mi">7</span>  <span class="mi">8</span>  <span class="mi">9</span> <span class="mi">10</span> <span class="mi">11</span> <span class="mi">12</span> <span class="mi">13</span>           <span class="mi">4</span>  <span class="mi">5</span>  <span class="mi">6</span>  <span class="mi">7</span>  <span class="mi">8</span>  <span class="mi">9</span> <span class="mi">10</span>                            <span class="mi">4</span>  <span class="mi">5</span>  <span class="mi">6</span>  <span class="mi">7</span>  <span class="mi">8</span>  <span class="mi">9</span> <span class="mi">10</span>
-<span class="mi">14</span> <span class="mi">15</span> <span class="mi">16</span> <span class="mi">17</span> <span class="mi">18</span> <span class="mi">19</span> <span class="mi">20</span>      <span class="mi">11</span> <span class="mi">12</span> <span class="mi">13</span> <span class="mi">14</span> <span class="mi">15</span> <span class="mi">16</span> <span class="mi">17</span>              <span class="mi">11</span> <span class="mi">12</span> <span class="mi">13</span> <span class="mi">14</span> <span class="mi">15</span> <span class="mi">16</span> <span class="mi">17</span>
-<span class="mi">21</span> <span class="mi">22</span> <span class="mi">23</span> <span class="mi">24</span> <span class="mi">25</span> <span class="mi">26</span> <span class="mi">27</span>      <span class="mi">18</span> <span class="mi">19</span> <span class="mi">20</span> <span class="mi">21</span> <span class="mi">22</span> <span class="mi">23</span> <span class="mi">24</span>             <span class="mi">18</span> <span class="mi">19</span> <span class="mi">20</span> <span class="mi">21</span> <span class="mi">22</span> <span class="mi">23</span> <span class="mi">24</span>
-<span class="mi">28</span> <span class="mi">29</span> <span class="mi">30</span> <span class="mi">31</span>                       <span class="mi">25</span> <span class="mi">26</span> <span class="mi">27</span> <span class="mi">28</span>                                  <span class="mi">25</span> <span class="mi">26</span> <span class="mi">27</span> <span class="mi">28</span> <span class="mi">29</span> <span class="mi">30</span> <span class="mi">31</span>
-<span class="c1"># 只了解下TextCalendar, pryear, prmonth</span>
+<li>
+<p>日历提供全景式鸟瞰</p>
+<pre class="code shell"><a name="rest_code_b9cc71548d0f4964a8ab4fe8aebc0da9-1"></a>$ ncal -B <span class="m">3</span>  <span class="c1">#ncal中的n竟然是new这个单词</span>
+<a name="rest_code_b9cc71548d0f4964a8ab4fe8aebc0da9-2"></a>    February <span class="m">2019</span>     March <span class="m">2019</span>        April <span class="m">2019</span>        May <span class="m">2019</span>
+<a name="rest_code_b9cc71548d0f4964a8ab4fe8aebc0da9-3"></a>Su      <span class="m">3</span> <span class="m">10</span> <span class="m">17</span> <span class="m">24</span>        <span class="m">3</span> <span class="m">10</span> <span class="m">17</span> <span class="m">24</span> <span class="m">31</span>     <span class="m">7</span> <span class="m">14</span> <span class="m">21</span> <span class="m">28</span>        <span class="m">5</span> <span class="m">12</span> <span class="m">19</span> <span class="m">26</span>
+<a name="rest_code_b9cc71548d0f4964a8ab4fe8aebc0da9-4"></a>Mo     <span class="m">4</span> <span class="m">11</span> <span class="m">18</span> <span class="m">25</span>        <span class="m">4</span> <span class="m">11</span> <span class="m">18</span> <span class="m">25</span>      <span class="m">1</span>  <span class="m">8</span> <span class="m">15</span> <span class="m">22</span> <span class="m">29</span>        <span class="m">6</span> <span class="m">13</span> <span class="m">20</span> <span class="m">27</span>
+<a name="rest_code_b9cc71548d0f4964a8ab4fe8aebc0da9-5"></a>Tu      <span class="m">5</span> <span class="m">12</span> <span class="m">19</span> <span class="m">26</span>        <span class="m">5</span> <span class="m">12</span> <span class="m">19</span> <span class="m">26</span>      <span class="m">2</span>  <span class="m">9</span> <span class="m">16</span> <span class="m">23</span> <span class="m">30</span>        <span class="m">7</span> <span class="m">14</span> <span class="m">21</span> <span class="m">28</span>
+<a name="rest_code_b9cc71548d0f4964a8ab4fe8aebc0da9-6"></a>We     <span class="m">6</span> <span class="m">13</span> <span class="m">20</span> <span class="m">27</span>        <span class="m">6</span> <span class="m">13</span> <span class="m">20</span> <span class="m">27</span>      <span class="m">3</span> <span class="m">10</span> <span class="m">17</span> <span class="m">24</span>        <span class="m">1</span>  <span class="m">8</span> <span class="m">15</span> <span class="m">22</span> <span class="m">29</span>
+<a name="rest_code_b9cc71548d0f4964a8ab4fe8aebc0da9-7"></a>Th      <span class="m">7</span> <span class="m">14</span> <span class="m">21</span> <span class="m">28</span>        <span class="m">7</span> <span class="m">14</span> <span class="m">21</span> <span class="m">28</span>      <span class="m">4</span> <span class="m">11</span> <span class="m">18</span> <span class="m">25</span>        <span class="m">2</span>  <span class="m">9</span> <span class="m">16</span> <span class="m">23</span> <span class="m">30</span>
+<a name="rest_code_b9cc71548d0f4964a8ab4fe8aebc0da9-8"></a>Fr       <span class="m">1</span>  <span class="m">8</span>  <span class="m">15</span>   <span class="m">22</span>     <span class="m">1</span>  <span class="m">8</span> <span class="m">15</span> <span class="m">22</span> <span class="m">29</span>       <span class="m">5</span> <span class="m">12</span> <span class="m">19</span> <span class="m">26</span>        <span class="m">3</span> <span class="m">10</span> <span class="m">17</span> <span class="m">24</span> <span class="m">31</span>
+<a name="rest_code_b9cc71548d0f4964a8ab4fe8aebc0da9-9"></a>Sa  <span class="m">2</span>  <span class="m">9</span> <span class="m">16</span> <span class="m">23</span>        <span class="m">2</span>  <span class="m">9</span> <span class="m">16</span> <span class="m">23</span> <span class="m">30</span>       <span class="m">6</span> <span class="m">13</span> <span class="m">20</span> <span class="m">27</span>       <span class="m">4</span>  <span class="m">11</span> <span class="m">18</span> <span class="m">25</span>
 </pre>
-
-
-<h4>2. Time</h4>
-<p><a href="https://docs.python.org/3/library/time.html#module-time">time — Time access and conversions </a>
-<a href="https://pymotw.com/3/calendar/index.html">calendar — Work with Dates — PyMOTW 3</a></p>
-<ul>
-<li>与epoch time的相互转换</li>
+</li>
+<li>
+<p>时钟实施具体的测量</p>
+<pre class="code bash"><a name="rest_code_4fbc4b1b26414cdf8e615d11d5d43250-1"></a>$ <span class="nb">time</span> sleep 10real    0m10.011suser    0m0.002ssys     0m0.001s
+</pre>
+</li>
+<li>
+<p>datetime整合二者，提供更加实用的功能</p>
+<pre class="code bash"><a name="rest_code_8d18c97f4e674d53a98956c4dc92f35c-1"></a><span class="c1">#贸易战倒计时</span>
+<a name="rest_code_8d18c97f4e674d53a98956c4dc92f35c-2"></a>$ <span class="nv">TZ</span><span class="o">=</span><span class="s2">"America/New_York"</span> date <span class="c1">#美东夏季时间， 第十个变量时区。</span>
+<a name="rest_code_8d18c97f4e674d53a98956c4dc92f35c-3"></a>Thu May  <span class="m">9</span> <span class="m">20</span>:04:30 EDT <span class="m">2019</span>  <span class="c1">#Eatern Daylight Timer</span>
+</pre>
+</li>
 </ul>
+</div>
+<div class="section" id="python">
+<h2>Python中的时间管理</h2>
+<p>以calendar,
+clock(time),datetime与十个时间变量为基础，审视python的<code class="docutils literal">calendar</code>,
+<code class="docutils literal">time</code>, and <code class="docutils literal">datetime</code></p>
+<div class="section" id="calender">
+<h3>1. Calender</h3>
+<p><a class="reference external" href="https://docs.python.org/3/library/calendar.html">calendar — General calendar-related
+functions</a> <a class="reference external" href="https://pymotw.com/3/calendar/index.html">calendar
+— Work with Dates — PyMOTW
+3</a></p>
+<p>Python中的calendar十个无关紧要的工具，没有人会费力不讨好的到这里查看日期和规划日程。</p>
+<pre class="literal-block">class TextCalendar(Calendar)
+ |  TextCalendar(firstweekday=0)
+In [326]: cal = calendar.TextCalendar(calendar.MONDAY)       #周一作为一周的起始点
+In [327]: cal.prmonth(2019, 5)
+      May 2019
+Mo Tu We Th Fr Sa Su
+       1  2  3  4  5
+ 6  7  8  9 10 11 12
+13 14 15 16 17 18 19
+20 21 22 23 24 25 26
+27 28 29 30 31
+In [328]: cal.pryear(2019)
+                                  2019
+      January                                   February                                    March
+Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su
+    1  2  3  4  5  6                   1  2  3                                           1  2  3
+ 7  8  9 10 11 12 13           4  5  6  7  8  9 10                            4  5  6  7  8  9 10
+14 15 16 17 18 19 20      11 12 13 14 15 16 17              11 12 13 14 15 16 17
+21 22 23 24 25 26 27      18 19 20 21 22 23 24             18 19 20 21 22 23 24
+28 29 30 31                       25 26 27 28                                  25 26 27 28 29 30 31
+# 只了解下TextCalendar, pryear, prmonth</pre>
+</div>
+<div class="section" id="time">
+<h3>2. Time</h3>
+<p><a class="reference external" href="https://docs.python.org/3/library/time.html#module-time">time — Time access and
+conversions</a>
+<a class="reference external" href="https://pymotw.com/3/calendar/index.html">calendar — Work with Dates — PyMOTW
+3</a></p>
+<ul>
+<li>
+<p>与epoch time的相互转换</p>
 <p>Use the following functions to convert between time representations:
-  人以minutes计时， 机器以second计时。</p>
+人以minutes计时， 机器以second计时。</p>
 <table>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
 <thead><tr>
-<th>From</th>
-<th>To</th>
-<th>Use</th>
+<th class="head"><p>From</p></th>
+<th class="head"><p>To</p></th>
+<th class="head"><p>Use</p></th>
 </tr></thead>
 <tbody>
 <tr>
-<td>seconds since the epoch</td>
-<td>
-<a href="https://docs.python.org/3/library/time.html#time.struct_time"><code>struct_time</code></a> in UTC</td>
-<td><a href="https://docs.python.org/3/library/time.html#time.gmtime"><code>gmtime()</code></a></td>
+<td><p>seconds since the
+epoch</p></td>
+<td><p><code class="docutils literal">`struct_time</code> &lt;htt
+ps://docs.python.org/
+3/library/time.html#t
+ime.struct_time&gt;`__
+in UTC</p></td>
+<td><p><code class="docutils literal">`gmtime()</code> &lt;https:
+//docs.python.org/3/l
+ibrary/time.html#time
+.gmtime&gt;`__</p></td>
 </tr>
 <tr>
-<td>seconds since the epoch</td>
-<td>
-<a href="https://docs.python.org/3/library/time.html#time.struct_time"><code>struct_time</code></a> in local time</td>
-<td><a href="https://docs.python.org/3/library/time.html#time.localtime"><code>localtime()</code></a></td>
+<td><p>seconds since the
+epoch</p></td>
+<td><p><code class="docutils literal">`struct_time</code> &lt;htt
+ps://docs.python.org/
+3/library/time.html#t
+ime.struct_time&gt;`__
+in local time</p></td>
+<td><p><code class="docutils literal">`localtime()</code> &lt;htt
+ps://docs.python.org/
+3/library/time.html#t
+ime.localtime&gt;`__</p></td>
 </tr>
 <tr>
+<td><p><code class="docutils literal">`struct_time</code> &lt;htt
+ps://docs.python.org/
+3/library/time.html#t
+ime.struct_time&gt;`__
+in UTC</p></td>
+<td><p>seconds since the
+epoch</p></td>
 <td>
-<a href="https://docs.python.org/3/library/time.html#time.struct_time"><code>struct_time</code></a> in UTC</td>
-<td>seconds since the epoch</td>
-<td><a href="https://docs.python.org/3/library/calendar.html#calendar.timegm"><code>calendar.timegm()</code></a></td>
+<p><a href="#id3"><span class="problematic" id="id4">``</span></a><cite>calendar.timegm()</cite>
+` &lt;<a class="reference external" href="https://docs.pytho">https://docs.pytho</a>
+n.org/3/library/calen
+dar.html#calendar.tim
+egm&gt;`__</p>
+<div class="system-message" id="id3">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 118); <em><a href="#id4">backlink</a></em></p>
+<p>Inline literal start-string without end-string.</p>
+</div>
+</td>
 </tr>
 <tr>
-<td>
-<a href="https://docs.python.org/3/library/time.html#time.struct_time"><code>struct_time</code></a> in local time</td>
-<td>seconds since the epoch</td>
-<td><a href="https://docs.python.org/3/library/time.html#time.mktime"><code>mktime()</code></a></td>
+<td><p><code class="docutils literal">`struct_time</code> &lt;htt
+ps://docs.python.org/
+3/library/time.html#t
+ime.struct_time&gt;`__
+in local time</p></td>
+<td><p>seconds since the
+epoch</p></td>
+<td><p><code class="docutils literal">`mktime()</code> &lt;https:
+//docs.python.org/3/l
+ibrary/time.html#time
+.mktime&gt;`__</p></td>
 </tr>
 </tbody>
 </table>
-<p>```
-  #seconds to  timetuple
-  In [8]: time.localtime() #local time
-  Out[8]: time.struct_time(tm_year=2019, tm_mon=5, tm_mday=15, tm_hour=20, tm_min=4, tm_sec=17, tm_wday=2, tm_yday=135, tm_isdst=0)</p>
-<p>In [9]: time.gmtime() #UTC time
-  Out[9]: time.struct_time(tm_year=2019, tm_mon=5, tm_mday=15, tm_hour=12, tm_min=4, tm_sec=31, tm_wday=2, tm_yday=135, tm_isdst=0)</p>
-<p>In [11]: time.gmtime(100)  #
-  Out[11]: time.struct_time(tm_year=1970, tm_mon=1, tm_mday=1, tm_hour=0, tm_min=1, tm_sec=40, tm_wday=3, tm_yday=1, tm_isdst=0)
-  #timetuple to seconds 
-  In [17]: calendar.timegm(time.gmtime()) #UTC time 
-  Out[17]: 1557922318
-  In [18]: time.mktime(time.localtime()) #Local time 
-  Out[18]: 1557922368.0
-  ```</p>
-<ul>
-<li>第十一个-时间变量 <code>tm_isdst</code> daylight saving time夏季时间</li>
+<pre class="literal-block">#seconds to  timetuple
+In [8]: time.localtime() #local time
+Out[8]: time.struct_time(tm_year=2019, tm_mon=5, tm_mday=15, tm_hour=20, tm_min=4, tm_sec=17, tm_wday=2, tm_yday=135, tm_isdst=0)
+
+In [9]: time.gmtime() #UTC time
+Out[9]: time.struct_time(tm_year=2019, tm_mon=5, tm_mday=15, tm_hour=12, tm_min=4, tm_sec=31, tm_wday=2, tm_yday=135, tm_isdst=0)
+
+In [11]: time.gmtime(100)  #
+Out[11]: time.struct_time(tm_year=1970, tm_mon=1, tm_mday=1, tm_hour=0, tm_min=1, tm_sec=40, tm_wday=3, tm_yday=1, tm_isdst=0)
+#timetuple to seconds
+In [17]: calendar.timegm(time.gmtime()) #UTC time
+Out[17]: 1557922318
+In [18]: time.mktime(time.localtime()) #Local time
+Out[18]: 1557922368.0</pre>
+</li>
+<li>
+<p>第十一个-时间变量 <code class="docutils literal">tm_isdst</code> daylight saving time夏季时间</p>
+<pre class="code bash"><a name="rest_code_d6c7650b96e14cabbd415230a5945f55-1"></a>gmtime<span class="o">(</span>...<span class="o">)</span> -&gt;time.struct_time,  <span class="o">(</span>strptime, localtime<span class="o">)</span>
+<a name="rest_code_d6c7650b96e14cabbd415230a5945f55-2"></a>    gmtime<span class="o">([</span>seconds<span class="o">])</span> -&gt; <span class="o">(</span>tm_year, tm_mon, tm_mday, tm_hour, tm_min,
+<a name="rest_code_d6c7650b96e14cabbd415230a5945f55-3"></a>                           tm_sec, tm_wday, tm_yday, tm_isdst<span class="o">)</span>
+</pre>
+</li>
+<li>
+<p>Processor Time and Timer</p>
+<pre class="code bash"><a name="rest_code_f7382d01c0a54db1a7893d197fcf71f2-1"></a>time.process_time<span class="o">()</span> <span class="c1">#cpu time  of kernel and user-space</span>
+<a name="rest_code_f7382d01c0a54db1a7893d197fcf71f2-2"></a>time.process_time_ns<span class="o">()</span> -&gt;int <span class="c1">#not inclue sleep time</span>
+<a name="rest_code_f7382d01c0a54db1a7893d197fcf71f2-3"></a>time.perf_counter<span class="o">()</span> -&gt;float
+<a name="rest_code_f7382d01c0a54db1a7893d197fcf71f2-4"></a>time.perf_counter_ns<span class="o">()</span> -&gt; int
+<a name="rest_code_f7382d01c0a54db1a7893d197fcf71f2-5"></a>time.thread_time<span class="o">()</span> -&gt;float
+<a name="rest_code_f7382d01c0a54db1a7893d197fcf71f2-6"></a>time.thread_time_ns<span class="o">()</span> -&gt;int
+<a name="rest_code_f7382d01c0a54db1a7893d197fcf71f2-7"></a>time.time<span class="o">()</span>
+<a name="rest_code_f7382d01c0a54db1a7893d197fcf71f2-8"></a>time.time_ns<span class="o">()</span>
+<a name="rest_code_f7382d01c0a54db1a7893d197fcf71f2-9"></a>time.sleep
+<a name="rest_code_f7382d01c0a54db1a7893d197fcf71f2-10"></a>time.monotonic<span class="o">()</span>
+<a name="rest_code_f7382d01c0a54db1a7893d197fcf71f2-11"></a>time.monotonic_ns<span class="o">()</span>
+</pre>
+</li>
+<li>
+<p>Timezone Constants</p>
+<pre class="code bash"><a name="rest_code_7aca2b6a90a5470990eb1cfef4493a6b-1"></a>In <span class="o">[</span><span class="m">9</span><span class="o">]</span>: time.daylight
+<a name="rest_code_7aca2b6a90a5470990eb1cfef4493a6b-2"></a>Out<span class="o">[</span><span class="m">9</span><span class="o">]</span>: <span class="m">0</span>
+<a name="rest_code_7aca2b6a90a5470990eb1cfef4493a6b-3"></a>In <span class="o">[</span><span class="m">10</span><span class="o">]</span>: time.tzname
+<a name="rest_code_7aca2b6a90a5470990eb1cfef4493a6b-4"></a>Out<span class="o">[</span><span class="m">10</span><span class="o">]</span>: <span class="o">(</span><span class="s1">'CST'</span>, <span class="s1">'CST'</span><span class="o">)</span>
+<a name="rest_code_7aca2b6a90a5470990eb1cfef4493a6b-5"></a>In <span class="o">[</span><span class="m">11</span><span class="o">]</span>: time.altzone
+<a name="rest_code_7aca2b6a90a5470990eb1cfef4493a6b-6"></a>Out<span class="o">[</span><span class="m">11</span><span class="o">]</span>: -28800
+</pre>
+</li>
+<li>
+<p>两个重要的methods</p>
+<pre class="code bash"><a name="rest_code_690fa17ca4a64b8194b00fba6b671e8b-1"></a>time.strptime<span class="o">(</span>string, format<span class="o">)</span>
+<a name="rest_code_690fa17ca4a64b8194b00fba6b671e8b-2"></a>time.strftime<span class="o">(</span>format<span class="o">)</span>
+</pre>
+</li>
+<li>
+<p>ctime</p>
+<pre class="code bash"><a name="rest_code_dde7780beeef4505a4037d4786f235a3-1"></a>In <span class="o">[</span><span class="m">20</span><span class="o">]</span>: time.asctime<span class="o">(</span>time.localtime<span class="o">())</span>
+<a name="rest_code_dde7780beeef4505a4037d4786f235a3-2"></a>Out<span class="o">[</span><span class="m">20</span><span class="o">]</span>: <span class="s1">'Wed May 15 21:05:27 2019'</span>
+<a name="rest_code_dde7780beeef4505a4037d4786f235a3-3"></a>In <span class="o">[</span><span class="m">21</span><span class="o">]</span>: time.ctime<span class="o">()</span>
+<a name="rest_code_dde7780beeef4505a4037d4786f235a3-4"></a>Out<span class="o">[</span><span class="m">21</span><span class="o">]</span>: <span class="s1">'Wed May 15 21:05:32 2019'</span>
+</pre>
+</li>
 </ul>
-<p><code>bash
-  gmtime(...) -&gt;time.struct_time,  (strptime, localtime)
-      gmtime([seconds]) -&gt; (tm_year, tm_mon, tm_mday, tm_hour, tm_min,
-                             tm_sec, tm_wday, tm_yday, tm_isdst)</code></p>
-<ul>
-<li>Processor Time  and Timer</li>
-</ul>
-<p><code>bash
-  time.process_time() #cpu time  of kernel and user-space
-  time.process_time_ns() -&gt;int #not inclue sleep time 
-  time.perf_counter() -&gt;float
-  time.perf_counter_ns() -&gt; int
-  time.thread_time() -&gt;float
-  time.thread_time_ns() -&gt;int
-  time.time()
-  time.time_ns()
-  time.sleep
-  time.monotonic()
-  time.monotonic_ns()</code></p>
-<ul>
-<li>Timezone Constants</li>
-</ul>
-<p><code>bash
-  In [9]: time.daylight
-  Out[9]: 0
-  In [10]: time.tzname
-  Out[10]: ('CST', 'CST')
-  In [11]: time.altzone
-  Out[11]: -28800</code></p>
-<ul>
-<li>两个重要的methods</li>
-</ul>
-<p><code>bash
-  time.strptime(string, format)
-  time.strftime(format)</code></p>
-<ul>
-<li>ctime</li>
-</ul>
-<p><code>bash
-  In [20]: time.asctime(time.localtime())
-  Out[20]: 'Wed May 15 21:05:27 2019'
-  In [21]: time.ctime()
-  Out[21]: 'Wed May 15 21:05:32 2019'</code></p>
-<h4>3. Datetime</h4>
+</div>
+<div class="section" id="datetime">
+<h3>3. Datetime</h3>
 <p>复习calendar(date), clock(time)的逻辑，先看两个没用的函数。</p>
-<p><a href="https://pymotw.com/3/datetime/index.html">datetime — Date and Time Value Manipulation — PyMOTW 3</a></p>
-<ol>
-<li>datetime.date()</li>
+<p><a class="reference external" href="https://pymotw.com/3/datetime/index.html">datetime — Date and Time Value Manipulation — PyMOTW
+3</a></p>
+<ol class="arabic">
+<li>
+<p>datetime.date()</p>
+<pre class="code python"><a name="rest_code_9df9dd11634c4fae8f00254431b0633b-1"></a><span class="k">class</span> <span class="nc">date</span><span class="p">(</span><span class="n">builtins</span><span class="o">.</span><span class="n">object</span><span class="p">)</span>  <span class="err">就是符号</span><span class="o">%</span><span class="n">x返回的内容</span>
+<a name="rest_code_9df9dd11634c4fae8f00254431b0633b-2"></a> <span class="o">|</span>  <span class="n">date</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="p">)</span> <span class="o">--&gt;</span> <span class="n">date</span> <span class="nb">object</span>
+<a name="rest_code_9df9dd11634c4fae8f00254431b0633b-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">135</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">year</span>
+<a name="rest_code_9df9dd11634c4fae8f00254431b0633b-4"></a><span class="n">Out</span><span class="p">[</span><span class="mi">135</span><span class="p">]:</span> <span class="mi">2019</span>
+<a name="rest_code_9df9dd11634c4fae8f00254431b0633b-5"></a><span class="n">In</span> <span class="p">[</span><span class="mi">136</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">month</span>
+<a name="rest_code_9df9dd11634c4fae8f00254431b0633b-6"></a><span class="n">Out</span><span class="p">[</span><span class="mi">136</span><span class="p">]:</span> <span class="mi">5</span>
+<a name="rest_code_9df9dd11634c4fae8f00254431b0633b-7"></a><span class="n">In</span> <span class="p">[</span><span class="mi">137</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">day</span>
+<a name="rest_code_9df9dd11634c4fae8f00254431b0633b-8"></a><span class="n">Out</span><span class="p">[</span><span class="mi">137</span><span class="p">]:</span> <span class="mi">9</span>
+</pre>
+</li>
+<li>
+<p>datetime.time()</p>
+<pre class="code python"><a name="rest_code_e608bc10fff1482e82f3faf3e4061f57-1"></a><span class="k">class</span> <span class="nc">time</span><span class="p">(</span><span class="n">builtins</span><span class="o">.</span><span class="n">object</span><span class="p">)</span> <span class="err">符号</span><span class="o">%</span><span class="n">X返回的内容</span>
+<a name="rest_code_e608bc10fff1482e82f3faf3e4061f57-2"></a> <span class="o">|</span>  <span class="n">time</span><span class="p">([</span><span class="n">hour</span><span class="p">[,</span> <span class="n">minute</span><span class="p">[,</span> <span class="n">second</span><span class="p">[,</span> <span class="n">microsecond</span><span class="p">[,</span> <span class="n">tzinfo</span><span class="p">]]]]])</span> <span class="o">--&gt;</span> <span class="n">a</span> <span class="n">time</span> <span class="nb">object</span>
+<a name="rest_code_e608bc10fff1482e82f3faf3e4061f57-3"></a>  <span class="c1">#5个参数,由大到小排列</span>
+<a name="rest_code_e608bc10fff1482e82f3faf3e4061f57-4"></a><span class="n">In</span> <span class="p">[</span><span class="mi">104</span><span class="p">]:</span>  <span class="n">t</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">999999</span><span class="p">,</span> <span class="n">dateutil</span><span class="o">.</span><span class="n">tz</span><span class="o">.</span><span class="n">tzutc</span><span class="p">())</span>
+<a name="rest_code_e608bc10fff1482e82f3faf3e4061f57-5"></a><span class="n">In</span> <span class="p">[</span><span class="mi">105</span><span class="p">]:</span> <span class="n">t</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">"</span><span class="si">%f</span><span class="s2">:%S:%M:%H %Z"</span><span class="p">)</span>
+<a name="rest_code_e608bc10fff1482e82f3faf3e4061f57-6"></a><span class="n">Out</span><span class="p">[</span><span class="mi">105</span><span class="p">]:</span> <span class="s1">'999999:30:15:06 UTC'</span>
+<a name="rest_code_e608bc10fff1482e82f3faf3e4061f57-7"></a><span class="n">In</span> <span class="p">[</span><span class="mi">106</span><span class="p">]:</span> <span class="n">t</span><span class="o">.</span><span class="n">min</span>
+<a name="rest_code_e608bc10fff1482e82f3faf3e4061f57-8"></a><span class="n">Out</span><span class="p">[</span><span class="mi">106</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a name="rest_code_e608bc10fff1482e82f3faf3e4061f57-9"></a><span class="n">In</span> <span class="p">[</span><span class="mi">107</span><span class="p">]:</span> <span class="n">t</span><span class="o">.</span><span class="n">max</span>
+<a name="rest_code_e608bc10fff1482e82f3faf3e4061f57-10"></a><span class="n">Out</span><span class="p">[</span><span class="mi">107</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">999999</span><span class="p">)</span>
+<a name="rest_code_e608bc10fff1482e82f3faf3e4061f57-11"></a><span class="n">In</span> <span class="mi">108</span><span class="p">]:</span> <span class="n">t</span><span class="o">.</span><span class="n">resolution</span>
+<a name="rest_code_e608bc10fff1482e82f3faf3e4061f57-12"></a><span class="n">Out</span><span class="p">[</span><span class="mi">108</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">microseconds</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#精确度</span>
+</pre>
+</li>
+<li>
+<p>datetime.datetime</p>
+<pre class="code python"><a name="rest_code_c74acfe9eb974e27b7d6d7d260a460a7-1"></a><span class="c1">#前面两个datetime.time and datetime.date没啥用.</span>
+<a name="rest_code_c74acfe9eb974e27b7d6d7d260a460a7-2"></a><span class="c1">#这里的关键是第十个时间变量tzinfo</span>
+<a name="rest_code_c74acfe9eb974e27b7d6d7d260a460a7-3"></a><span class="k">class</span> <span class="nc">datetime</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
+<a name="rest_code_c74acfe9eb974e27b7d6d7d260a460a7-4"></a> <span class="o">|</span>  <span class="n">datetime</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="p">[,</span> <span class="n">hour</span><span class="p">[,</span> <span class="n">minute</span><span class="p">[,</span> <span class="n">second</span><span class="p">[,</span> <span class="n">microsecond</span><span class="p">[,</span><span class="n">tzinfo</span><span class="p">]]]]])</span>
+<a name="rest_code_c74acfe9eb974e27b7d6d7d260a460a7-5"></a><span class="n">Help</span> <span class="n">on</span> <span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">function</span> <span class="n">weekday</span><span class="p">:</span>
+<a name="rest_code_c74acfe9eb974e27b7d6d7d260a460a7-6"></a>
+<a name="rest_code_c74acfe9eb974e27b7d6d7d260a460a7-7"></a><span class="n">weekday</span><span class="p">(</span><span class="o">...</span><span class="p">)</span> <span class="n">method</span> <span class="n">of</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span> <span class="n">instance</span>
+<a name="rest_code_c74acfe9eb974e27b7d6d7d260a460a7-8"></a>    <span class="n">Return</span> <span class="n">the</span> <span class="n">day</span> <span class="n">of</span> <span class="n">the</span> <span class="n">week</span> <span class="n">represented</span> <span class="n">by</span> <span class="n">the</span> <span class="n">date</span><span class="o">.</span>
+<a name="rest_code_c74acfe9eb974e27b7d6d7d260a460a7-9"></a>    <span class="n">Monday</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">...</span> <span class="n">Sunday</span> <span class="o">==</span> <span class="mi">6</span>
+<a name="rest_code_c74acfe9eb974e27b7d6d7d260a460a7-10"></a><span class="n">In</span> <span class="p">[</span><span class="mi">200</span><span class="p">]:</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">dateutil</span><span class="o">.</span><span class="n">tz</span><span class="o">.</span><span class="n">gettz</span><span class="p">(</span><span class="s2">"Asia/Shanghai"</span><span class="p">))</span>
+<a name="rest_code_c74acfe9eb974e27b7d6d7d260a460a7-11"></a><span class="n">In</span> <span class="p">[</span><span class="mi">201</span><span class="p">]:</span> <span class="n">dt</span>
+<a name="rest_code_c74acfe9eb974e27b7d6d7d260a460a7-12"></a><span class="n">Out</span><span class="p">[</span><span class="mi">201</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">421561</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="n">tzfile</span><span class="p">(</span><span class="s1">'/usr/share/zoneinfo/Asia/Shanghai'</span><span class="p">))</span>
+<a name="rest_code_c74acfe9eb974e27b7d6d7d260a460a7-13"></a> <span class="n">In</span> <span class="p">[</span><span class="mi">208</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span><span class="o">.</span><span class="n">timetuple</span><span class="p">()</span>
+<a name="rest_code_c74acfe9eb974e27b7d6d7d260a460a7-14"></a><span class="n">Out</span><span class="p">[</span><span class="mi">208</span><span class="p">]:</span> <span class="n">time</span><span class="o">.</span><span class="n">struct_time</span><span class="p">(</span><span class="n">tm_year</span><span class="o">=</span><span class="mi">2019</span><span class="p">,</span> <span class="n">tm_mon</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">tm_mday</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">tm_hour</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">tm_min</span><span class="o">=</span><span class="mi">49</span><span class="p">,</span> <span class="n">tm_sec</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">tm_wday</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">tm_yday</span><span class="o">=</span><span class="mi">129</span><span class="p">,</span> <span class="n">tm_isdst</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</pre>
+</li>
+<li>
+<p>datetime.timedelta and Arithmetic Opertions</p>
+<pre class="code python"><a name="rest_code_4a3f0ffbe91c4be780d22a08e0075a2a-1"></a><span class="k">class</span> <span class="nc">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">seconds</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">microseconds</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">milliseconds</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">minutes</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">hours</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">weeks</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<a name="rest_code_4a3f0ffbe91c4be780d22a08e0075a2a-2"></a><span class="n">In</span> <span class="p">[</span><span class="mi">219</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<a name="rest_code_4a3f0ffbe91c4be780d22a08e0075a2a-3"></a><span class="n">Out</span><span class="p">[</span><span class="mi">219</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">910880</span><span class="p">)</span>
+<a name="rest_code_4a3f0ffbe91c4be780d22a08e0075a2a-4"></a><span class="n">In</span> <span class="p">[</span><span class="mi">220</span><span class="p">]:</span> <span class="err">!</span><span class="n">date</span> <span class="o">-</span><span class="n">d</span> <span class="s2">"1 days ago"</span>
+<a name="rest_code_4a3f0ffbe91c4be780d22a08e0075a2a-5"></a><span class="n">Wed</span> <span class="n">May</span>  <span class="mi">8</span> <span class="mi">17</span><span class="p">:</span><span class="mi">57</span><span class="p">:</span><span class="mi">52</span> <span class="n">CST</span> <span class="mi">2019</span>
+<a name="rest_code_4a3f0ffbe91c4be780d22a08e0075a2a-6"></a> <span class="c1">#转换为seconds的另外一种写法</span>
+<a name="rest_code_4a3f0ffbe91c4be780d22a08e0075a2a-7"></a><span class="n">In</span> <span class="p">[</span><span class="mi">25</span><span class="p">]:</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">100</span><span class="p">))</span>
+<a name="rest_code_4a3f0ffbe91c4be780d22a08e0075a2a-8"></a><span class="n">Out</span><span class="p">[</span><span class="mi">25</span><span class="p">]:</span> <span class="s1">'0:01:40'</span>
+<a name="rest_code_4a3f0ffbe91c4be780d22a08e0075a2a-9"></a><span class="n">In</span> <span class="p">[</span><span class="mi">29</span><span class="p">]:</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">"%H:%M:%S"</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">gmtime</span><span class="p">(</span><span class="mi">3000</span><span class="p">))</span>
+<a name="rest_code_4a3f0ffbe91c4be780d22a08e0075a2a-10"></a><span class="n">Out</span><span class="p">[</span><span class="mi">29</span><span class="p">]:</span> <span class="s1">'00:50:00'</span>
+</pre>
+</li>
 </ol>
-<p><code>python
-   class date(builtins.object)  就是符号%x返回的内容
-    |  date(year, month, day) --&gt; date object
-   In [135]: datetime.date.today().year                                                                                          
-   Out[135]: 2019
-   In [136]: datetime.date.today().month                                                                                         
-   Out[136]: 5
-   In [137]: datetime.date.today().day                                                                                           
-   Out[137]: 9</code></p>
-<ol>
-<li>datetime.time()</li>
-</ol>
-<p><code>python
-   class time(builtins.object) 符号%X返回的内容
-    |  time([hour[, minute[, second[, microsecond[, tzinfo]]]]]) --&gt; a time object
-     #5个参数,由大到小排列
-   In [104]:  t = datetime.time(6, 15, 30, 999999, dateutil.tz.tzutc())                                                          
-   In [105]: t.strftime("%f:%S:%M:%H %Z")                                                                                        
-   Out[105]: '999999:30:15:06 UTC'
-   In [106]: t.min                                                                                                               
-   Out[106]: datetime.time(0, 0)
-   In [107]: t.max                                                                                                               
-   Out[107]: datetime.time(23, 59, 59, 999999)
-   In 108]: t.resolution                                                                                                        
-   Out[108]: datetime.timedelta(microseconds=1) #精确度</code></p>
-<ol>
-<li>datetime.datetime</li>
-</ol>
-<p>```python
-   #前面两个datetime.time and datetime.date没啥用.
-   #这里的关键是第十个时间变量tzinfo
-   class datetime(date)
-    |  datetime(year, month, day[, hour[, minute[, second[, microsecond[,tzinfo]]]]])
-   Help on built-in function weekday:</p>
-<p>weekday(...) method of datetime.datetime instance
-       Return the day of the week represented by the date.
-       Monday == 0 ... Sunday == 6 <br>
-   In [200]: dt = datetime.datetime.now().replace(tzinfo=dateutil.tz.gettz("Asia/Shanghai"))                                   <br>
-   In [201]: dt                                                                                                                <br>
-   Out[201]: datetime.datetime(2019, 5, 9, 17, 47, 10, 421561, tzinfo=tzfile('/usr/share/zoneinfo/Asia/Shanghai'))
-    In [208]: datetime.datetime.utcnow().timetuple()                                                                            <br>
-   Out[208]: time.struct_time(tm_year=2019, tm_mon=5, tm_mday=9, tm_hour=9, tm_min=49, tm_sec=24, tm_wday=3, tm_yday=129, tm_isdst=-1)
-   ```</p>
-<ol>
-<li>datetime.timedelta and Arithmetic Opertions </li>
-</ol>
-<p><code>python
-   class datetime.timedelta(days=0, seconds=0, microseconds=0, milliseconds=0, minutes=0, hours=0, weeks=0)
-   In [219]: datetime.datetime.now() + datetime.timedelta(days=-1)                                                               
-   Out[219]: datetime.datetime(2019, 5, 8, 17, 57, 40, 910880)
-   In [220]: !date -d "1 days ago"                                                                                               
-   Wed May  8 17:57:52 CST 2019
-    #转换为seconds的另外一种写法
-   In [25]: str(datetime.timedelta(seconds=100))
-   Out[25]: '0:01:40'
-   In [29]: time.strftime("%H:%M:%S", time.gmtime(3000))
-   Out[29]: '00:50:00'</code></p>
-<h3>Shell的时间管理工具</h3>
-<h4>1.Calendar</h4>
-<pre class="code literal-block"><span></span>$ ncal -1
-$ ncal -M <span class="c1">#Monday as the first day </span>
-$ ncal -w <span class="c1">#weeknumber</span>
-<span class="nv">$ncal</span> -y -m<span class="p">;</span> 
-<span class="nv">$ncal</span> -d yyyy-mm 
-<span class="nv">$ncal</span> yyyy-mm-dd#highlight the current date 
+</div>
+</div>
+<div class="section" id="shell">
+<h2>Shell的时间管理工具</h2>
+<div class="section" id="calendar">
+<h3>1.Calendar</h3>
+<pre class="literal-block">$ ncal -1
+$ ncal -M #Monday as the first day
+$ ncal -w #weeknumber
+$ncal -y -m;
+$ncal -d yyyy-mm
+$ncal yyyy-mm-dd#highlight the current date
 $ ncal -A3 -B4
-<span class="c1">#就只有这么多操作</span>
+#就只有这么多操作</pre>
+</div>
+<div class="section" id="clock-time">
+<h3>2.Clock(Time)</h3>
+<ul>
+<li>
+<p>hwclock</p>
+<pre class="code bash"><a name="rest_code_7f89bd247d264268af4396b6de8a0fa7-1"></a>In <span class="o">[</span><span class="m">31</span><span class="o">]</span>: !sudo hwclock
+<a name="rest_code_7f89bd247d264268af4396b6de8a0fa7-2"></a><span class="m">2019</span>-05-15 <span class="m">21</span>:25:29.514803+08:00
+<a name="rest_code_7f89bd247d264268af4396b6de8a0fa7-3"></a>---------------------------------------------------
+<a name="rest_code_7f89bd247d264268af4396b6de8a0fa7-4"></a>NAME
+<a name="rest_code_7f89bd247d264268af4396b6de8a0fa7-5"></a>       hwclock - <span class="nb">time</span> clocks utility
+<a name="rest_code_7f89bd247d264268af4396b6de8a0fa7-6"></a>FILES
+<a name="rest_code_7f89bd247d264268af4396b6de8a0fa7-7"></a>       /etc/adjtime
+<a name="rest_code_7f89bd247d264268af4396b6de8a0fa7-8"></a>              The configuration and state file <span class="k">for</span> hwclock.
+<a name="rest_code_7f89bd247d264268af4396b6de8a0fa7-9"></a>       /etc/localtime
+<a name="rest_code_7f89bd247d264268af4396b6de8a0fa7-10"></a>              The system timezone file
+<a name="rest_code_7f89bd247d264268af4396b6de8a0fa7-11"></a>       /usr/share/zoneinfo/
+<a name="rest_code_7f89bd247d264268af4396b6de8a0fa7-12"></a>              The system timezone database directory.
+<a name="rest_code_7f89bd247d264268af4396b6de8a0fa7-13"></a>       Device files hwclock may try <span class="k">for</span> Hardware Clock access:
+<a name="rest_code_7f89bd247d264268af4396b6de8a0fa7-14"></a>       /dev/rtc0
+<a name="rest_code_7f89bd247d264268af4396b6de8a0fa7-15"></a>       /dev/rtc
+<a name="rest_code_7f89bd247d264268af4396b6de8a0fa7-16"></a>       /dev/misc/rtc
+<a name="rest_code_7f89bd247d264268af4396b6de8a0fa7-17"></a>       /dev/efirtc
+<a name="rest_code_7f89bd247d264268af4396b6de8a0fa7-18"></a>       /dev/misc/efirtc
 </pre>
-
-
-<h4>2.Clock(Time)</h4>
-<ul>
-<li>hwclock</li>
-</ul>
-<p>```bash
-  In [31]: !sudo hwclock
-  2019-05-15 21:25:29.514803+08:00</p>
-<hr>
-<p>NAME
-         hwclock - time clocks utility
-  FILES
-         /etc/adjtime
-                The configuration and state file for hwclock.
-         /etc/localtime
-                The system timezone file
-         /usr/share/zoneinfo/
-                The system timezone database directory.
-         Device files hwclock may try for Hardware Clock access:
-         /dev/rtc0
-         /dev/rtc
-         /dev/misc/rtc
-         /dev/efirtc
-         /dev/misc/efirtc
-  ```</p>
-<ul>
-<li>time (processing profile)</li>
-</ul>
-<p>```bash
-      $ time (tree  /usr/share/zoneinfo | grep -i "prc")
-      │   ├── Chongqing -&gt; ../PRC
-      │   ├── Chungking -&gt; ../PRC
-      │   ├── Harbin -&gt; ../PRC
-      │   ├── Shanghai -&gt; ../PRC
-      │   │   ├── Chongqing -&gt; ../../PRC
-      │   │   ├── Chungking -&gt; ../../PRC
-      │   │   ├── Harbin -&gt; ../../PRC
-      │   │   ├── Shanghai -&gt; ../../PRC
-      │   ├── PRC -&gt; ../PRC
-      ├── PRC
-      │   │   ├── Chongqing -&gt; ../PRC
-      │   │   ├── Chungking -&gt; ../PRC
-      │   │   ├── Harbin -&gt; ../PRC
-      │   │   ├── Shanghai -&gt; ../PRC
-      │   ├── PRC</p>
-<pre class="code literal-block"><span></span>  <span class="nb">real</span>    <span class="mi">0</span><span class="n">m0</span><span class="p">.</span><span class="mi">017</span><span class="n">s</span>
-  <span class="k">user</span>    <span class="mi">0</span><span class="n">m0</span><span class="p">.</span><span class="mi">015</span><span class="n">s</span>
-  <span class="n">sys</span>     <span class="mi">0</span><span class="n">m0</span><span class="p">.</span><span class="mi">004</span><span class="n">s</span>
+</li>
+<li>
+<p>time (processing profile)</p>
+<pre class="code bash"><a name="rest_code_3f6bf98eab3047bc8c504768929c60c1-1"></a>    $ <span class="nb">time</span> <span class="o">(</span>tree  /usr/share/zoneinfo <span class="p">|</span> grep -i <span class="s2">"prc"</span><span class="o">)</span>
+<a name="rest_code_3f6bf98eab3047bc8c504768929c60c1-2"></a>    │   ├── Chongqing -&gt; ../PRC
+<a name="rest_code_3f6bf98eab3047bc8c504768929c60c1-3"></a>    │   ├── Chungking -&gt; ../PRC
+<a name="rest_code_3f6bf98eab3047bc8c504768929c60c1-4"></a>    │   ├── Harbin -&gt; ../PRC
+<a name="rest_code_3f6bf98eab3047bc8c504768929c60c1-5"></a>    │   ├── Shanghai -&gt; ../PRC
+<a name="rest_code_3f6bf98eab3047bc8c504768929c60c1-6"></a>    │   │   ├── Chongqing -&gt; ../../PRC
+<a name="rest_code_3f6bf98eab3047bc8c504768929c60c1-7"></a>    │   │   ├── Chungking -&gt; ../../PRC
+<a name="rest_code_3f6bf98eab3047bc8c504768929c60c1-8"></a>    │   │   ├── Harbin -&gt; ../../PRC
+<a name="rest_code_3f6bf98eab3047bc8c504768929c60c1-9"></a>    │   │   ├── Shanghai -&gt; ../../PRC
+<a name="rest_code_3f6bf98eab3047bc8c504768929c60c1-10"></a>    │   ├── PRC -&gt; ../PRC
+<a name="rest_code_3f6bf98eab3047bc8c504768929c60c1-11"></a>    ├── PRC
+<a name="rest_code_3f6bf98eab3047bc8c504768929c60c1-12"></a>    │   │   ├── Chongqing -&gt; ../PRC
+<a name="rest_code_3f6bf98eab3047bc8c504768929c60c1-13"></a>    │   │   ├── Chungking -&gt; ../PRC
+<a name="rest_code_3f6bf98eab3047bc8c504768929c60c1-14"></a>    │   │   ├── Harbin -&gt; ../PRC
+<a name="rest_code_3f6bf98eab3047bc8c504768929c60c1-15"></a>    │   │   ├── Shanghai -&gt; ../PRC
+<a name="rest_code_3f6bf98eab3047bc8c504768929c60c1-16"></a>    │   ├── PRC
+<a name="rest_code_3f6bf98eab3047bc8c504768929c60c1-17"></a>
+<a name="rest_code_3f6bf98eab3047bc8c504768929c60c1-18"></a>    real    0m0.017s
+<a name="rest_code_3f6bf98eab3047bc8c504768929c60c1-19"></a>    user    0m0.015s
+<a name="rest_code_3f6bf98eab3047bc8c504768929c60c1-20"></a>    sys     0m0.004s
+<a name="rest_code_3f6bf98eab3047bc8c504768929c60c1-21"></a>
+<a name="rest_code_3f6bf98eab3047bc8c504768929c60c1-22"></a><span class="m">3</span>.Datetime
 </pre>
-
-
-<p>3.Datetime
-  ```</p>
-<h4>3.Datetime</h4>
-<ul>
-<li>timedatectl</li>
+</li>
 </ul>
-<p>```bash
-  #systemd的service
-  $ timedatectl
-                 Local time: Thu 2019-05-09 21:30:27 CST
-             Universal time: Thu 2019-05-09 13:30:27 UTC
-                   RTC time: Thu 2019-05-09 13:30:27
-                  Time zone: Asia/Shanghai (CST, +0800)
-  System clock synchronized: yes
-                NTP service: active</p>
+</div>
+<div class="section" id="id5">
+<span id="datetime-1"></span><h3>3.Datetime</h3>
 <ul>
-<li>Check the current system clock time:
-     timedatectl</li>
 <li>
-<p>Set the local time of the system clock directly:
-     timedatectl set-time {{"yyyy-MM-dd hh:mm:ss"}}</p>
-</li>
-<li>
-<p>List available timezones:
-     timedatectl list-timezones</p>
-</li>
-<li>
-<p>Set the system timezone:
-     timedatectl set-timezone {{timezone}}</p>
-</li>
-<li>
-<p>Enable Network Time Protocol (NTP) synchronization:
-     timedatectl set-ntp on
-  ```</p>
+<p>timedatectl</p>
+<pre class="code bash"><a name="rest_code_5d8b0fc3351c4d71bcfefa1ec89de20b-1"></a><span class="c1">#systemd的service</span>
+<a name="rest_code_5d8b0fc3351c4d71bcfefa1ec89de20b-2"></a>$ timedatectl
+<a name="rest_code_5d8b0fc3351c4d71bcfefa1ec89de20b-3"></a>               Local time: Thu <span class="m">2019</span>-05-09 <span class="m">21</span>:30:27 CST
+<a name="rest_code_5d8b0fc3351c4d71bcfefa1ec89de20b-4"></a>           Universal time: Thu <span class="m">2019</span>-05-09 <span class="m">13</span>:30:27 UTC
+<a name="rest_code_5d8b0fc3351c4d71bcfefa1ec89de20b-5"></a>                 RTC time: Thu <span class="m">2019</span>-05-09 <span class="m">13</span>:30:27
+<a name="rest_code_5d8b0fc3351c4d71bcfefa1ec89de20b-6"></a>                Time zone: Asia/Shanghai <span class="o">(</span>CST, +0800<span class="o">)</span>
+<a name="rest_code_5d8b0fc3351c4d71bcfefa1ec89de20b-7"></a>System clock synchronized: yes
+<a name="rest_code_5d8b0fc3351c4d71bcfefa1ec89de20b-8"></a>              NTP service: active
+<a name="rest_code_5d8b0fc3351c4d71bcfefa1ec89de20b-9"></a>
+<a name="rest_code_5d8b0fc3351c4d71bcfefa1ec89de20b-10"></a> - Check the current system clock time:
+<a name="rest_code_5d8b0fc3351c4d71bcfefa1ec89de20b-11"></a>   timedatectl
+<a name="rest_code_5d8b0fc3351c4d71bcfefa1ec89de20b-12"></a> - Set the <span class="nb">local</span> <span class="nb">time</span> of the system clock directly:
+<a name="rest_code_5d8b0fc3351c4d71bcfefa1ec89de20b-13"></a>   timedatectl set-time <span class="o">{{</span><span class="s2">"yyyy-MM-dd hh:mm:ss"</span><span class="o">}}</span>
+<a name="rest_code_5d8b0fc3351c4d71bcfefa1ec89de20b-14"></a>
+<a name="rest_code_5d8b0fc3351c4d71bcfefa1ec89de20b-15"></a> - List available timezones:
+<a name="rest_code_5d8b0fc3351c4d71bcfefa1ec89de20b-16"></a>   timedatectl list-timezones
+<a name="rest_code_5d8b0fc3351c4d71bcfefa1ec89de20b-17"></a>
+<a name="rest_code_5d8b0fc3351c4d71bcfefa1ec89de20b-18"></a> - Set the system timezone:
+<a name="rest_code_5d8b0fc3351c4d71bcfefa1ec89de20b-19"></a>   timedatectl set-timezone <span class="o">{{</span>timezone<span class="o">}}</span>
+<a name="rest_code_5d8b0fc3351c4d71bcfefa1ec89de20b-20"></a>
+<a name="rest_code_5d8b0fc3351c4d71bcfefa1ec89de20b-21"></a> - Enable Network Time Protocol <span class="o">(</span>NTP<span class="o">)</span> synchronization:
+<a name="rest_code_5d8b0fc3351c4d71bcfefa1ec89de20b-22"></a>   timedatectl set-ntp on
+</pre>
 </li>
 <li>
 <p>date (最趁手的一个工具)</p>
+<pre class="code bash"><a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-1"></a><span class="c1"># 日常应用date作为思考工具.</span>
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-2"></a>In <span class="o">[</span><span class="m">9</span><span class="o">]</span>: time.time<span class="o">()</span>
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-3"></a>Out<span class="o">[</span><span class="m">9</span><span class="o">]</span>: <span class="m">1557406444</span>.1336956
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-4"></a>In <span class="o">[</span><span class="m">10</span><span class="o">]</span>: !date +%s
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-5"></a><span class="m">1557406449</span>
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-6"></a>$ date -d @<span class="k">$(</span>date +%s<span class="k">)</span>　<span class="c1">#date -d @1557406449</span>
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-7"></a>Thu May  <span class="m">9</span> <span class="m">21</span>:11:15 CST <span class="m">2019</span>
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-8"></a>
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-9"></a><span class="c1">#基本的操作</span>
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-10"></a>$ date -u +<span class="s2">"%Y-%m-%dT%H:%M:%SZ"</span>
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-11"></a><span class="m">2019</span>-05-09T12:55:31Z
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-12"></a>
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-13"></a><span class="c1">#Future date and time</span>
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-14"></a>$ date -d <span class="s2">" two weeks"</span>
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-15"></a>date: invalid date ‘ two weeks’
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-16"></a>$ date -d <span class="s2">"2 weeks"</span>
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-17"></a>Thu May <span class="m">23</span> <span class="m">21</span>:20:17 CST <span class="m">2019</span>
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-18"></a>$ date -d <span class="s2">"next fri"</span> <span class="c1">#只有两个变量能够以文字表述 Month and Weekday</span>
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-19"></a>Fri May <span class="m">10</span> <span class="m">00</span>:00:00 CST <span class="m">2019</span>
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-20"></a>
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-21"></a><span class="c1">#the elpased date and time</span>
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-22"></a>$ date -d <span class="s2">"last thursday"</span>
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-23"></a>Thu May  <span class="m">2</span> <span class="m">00</span>:00:00 CST <span class="m">2019</span>
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-24"></a>$ date -d <span class="s2">"2 days ago"</span>
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-25"></a>Tue May  <span class="m">7</span> <span class="m">21</span>:22:28 CST <span class="m">2019</span>
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-26"></a>$ date -d <span class="s2">"last month"</span>
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-27"></a>Tue Apr  <span class="m">9</span> <span class="m">21</span>:22:39 CST <span class="m">2019</span>
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-28"></a>
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-29"></a><span class="c1">#贸易战倒计时</span>
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-30"></a>$ <span class="nv">TZ</span><span class="o">=</span><span class="s2">"America/New_York"</span> date
+<a name="rest_code_053a062ccdc3460286821cf8c0ba15e3-31"></a>Thu May  <span class="m">9</span> <span class="m">20</span>:04:30 EDT <span class="m">2019</span>
+</pre>
 </li>
 </ul>
-<p>```bash
-  # 日常应用date作为思考工具.
-  In [9]: time.time()                                                                          <br>
-  Out[9]: 1557406444.1336956
-  In [10]: !date +%s                                                                           <br>
-  1557406449
-  $ date -d @$(date +%s)　#date -d @1557406449
-  Thu May  9 21:11:15 CST 2019</p>
-<p>#基本的操作
-  $ date -u +"%Y-%m-%dT%H:%M:%SZ"
-  2019-05-09T12:55:31Z</p>
-<p>#Future date and time 
-  $ date -d " two weeks"
-  date: invalid date ‘ two weeks’
-  $ date -d "2 weeks"
-  Thu May 23 21:20:17 CST 2019
-  $ date -d "next fri" #只有两个变量能够以文字表述 Month and Weekday
-  Fri May 10 00:00:00 CST 2019</p>
-<p>#the elpased date and time 
-  $ date -d "last thursday"
-  Thu May  2 00:00:00 CST 2019
-  $ date -d "2 days ago"
-  Tue May  7 21:22:28 CST 2019
-  $ date -d "last month"
-  Tue Apr  9 21:22:39 CST 2019</p>
-<p>#贸易战倒计时
-  $ TZ="America/New_York" date
-  Thu May  9 20:04:30 EDT 2019
-  ```</p>
-<h3>Emacs中的时间管理</h3>
+</div>
+</div>
+<div class="section" id="emacs">
+<h2>Emacs中的时间管理</h2>
 <p>….</p>
-<h3>总结</h3>
-<p>时间管理的三个工具, time, datetime, calendar(从微观到宏观处理5, 8, 10个时间变量)</p>
+</div>
+<div class="section" id="id6">
+<h2>总结</h2>
+<p>时间管理的三个工具, time, datetime, calendar(从微观到宏观处理5, 8,
+10个时间变量)</p>
 <blockquote>
-<p>Our units of temporal measurement, from seconds on up to months, are  so complicated, asymmetrical and disjunctive so as to make coherent  mental reckoning in time all but impossible. Indeed, had some tyrannical  god contrived to enslave our minds to time, to make it all but  impossible for us to escape subjection to sodden routines and unpleasant  surprises, he could hardly have done better than handing down our  present system. It is like a set of trapezoidal building blocks, with no  vertical or horizontal surfaces, like a language in which the simplest  thought demands constructions, useless particles and lengthy  circumlocutions. Unlike the more successful patterns of language and  science, which enable us to face experience boldly or at least  level-headedly, our system of temporal calculation silently and  persistently encourages our terror of time.</p>
-<p>… It is as though architects had to measure length in feet, width in  meters and height in ells; as though basic instruction manuals demanded a  knowledge of five different languages. It is no wonder then that we  often look into our own immediate past or future, last Tuesday or a week  from Sunday, with feelings of helpless confusion. …</p>
-<p>—Robert Grudin, Time and the Art of Living.</p>
+<p>Our units of temporal measurement, from seconds on up to months, are
+so complicated, asymmetrical and disjunctive so as to make coherent
+mental reckoning in time all but impossible. Indeed, had some
+tyrannical god contrived to enslave our minds to time, to make it all
+but impossible for us to escape subjection to sodden routines and
+unpleasant surprises, he could hardly have done better than handing
+down our present system. It is like a set of trapezoidal building
+blocks, with no vertical or horizontal surfaces, like a language in
+which the simplest thought demands constructions, useless particles
+and lengthy circumlocutions. Unlike the more successful patterns of
+language and science, which enable us to face experience boldly or at
+least level-headedly, our system of temporal calculation silently and
+persistently encourages our terror of time.</p>
+<p>… It is as though architects had to measure length in feet, width in
+meters and height in ells; as though basic instruction manuals
+demanded a knowledge of five different languages. It is no wonder
+then that we often look into our own immediate past or future, last
+Tuesday or a week from Sunday, with feelings of helpless confusion. …</p>
+<p class="attribution">—Robert Grudin, Time and the Art of Living.</p>
 </blockquote>
-<p>哈哈哈～，神吐槽。因此需要将so complicated, asymmetrical and disjunctive 抽象为calender, time, datetime。</p>
-<h3>参考资料</h3>
-<p><a href="https://www.gnu.org/software/coreutils/manual/html_node/Date-input-formats.html#Date-input-formats">GNU Coreutils: Date input formats</a></p>
+<p>哈哈哈～，神吐槽。因此需要将so complicated, asymmetrical and disjunctive
+抽象为calender, time, datetime。</p>
+</div>
+<div class="section" id="id7">
+<h2>参考资料</h2>
+<p><a class="reference external" href="https://www.gnu.org/software/coreutils/manual/html_node/Date-input-formats.html#Date-input-formats">GNU Coreutils: Date input
+formats</a></p>
+</div>
 </div>
             
         

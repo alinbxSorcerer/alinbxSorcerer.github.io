@@ -15,11 +15,11 @@
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/archive.html</loc>
-  <lastmod>2019-11-10T06:30:00Z</lastmod>
+  <lastmod>2019-11-10T07:02:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/categories/</loc>
-  <lastmod>2019-11-10T05:05:00Z</lastmod>
+  <lastmod>2019-11-10T07:02:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/categories/cat_programming/</loc>
@@ -28,6 +28,10 @@
  <url>
   <loc>https://alinbxsorcerer.github.io/categories/shi-jian-guan-li/</loc>
   <lastmod>2019-11-10T05:01:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alinbxsorcerer.github.io/categories/time/</loc>
+  <lastmod>2019-11-10T06:53:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/galleries/</loc>
@@ -47,7 +51,7 @@
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/listings/hello.py.html</loc>
-  <lastmod>2019-11-10T06:30:00Z</lastmod>
+  <lastmod>2019-11-10T06:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/pages/about-nikola/</loc>
@@ -107,10 +111,6 @@
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/</loc>
-  <lastmod>2019-11-10T05:01:00Z</lastmod>
- </url>
- <url>
-  <loc>https://alinbxsorcerer.github.io/posts/test/</loc>
-  <lastmod>2019-11-10T05:01:00Z</lastmod>
+  <lastmod>2019-11-10T07:02:00Z</lastmod>
  </url>
 </urlset>
