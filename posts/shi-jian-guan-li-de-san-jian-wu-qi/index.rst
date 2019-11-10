@@ -1,5 +1,5 @@
 
-      .. title: 时间管理的三件武器
+   .. title: 时间管理的三件武器
    .. slug: shi-jian-guan-li-de-san-jian-wu-qi
    .. date: 2019-05-15 20:53:29 UTC+08:00
    .. tags: 时间管理, time, python, bash, emacs

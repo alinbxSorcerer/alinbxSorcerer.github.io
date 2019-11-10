@@ -100,11 +100,11 @@ sub(pattern, rep">
 <p>在写 <code class="docutils literal">re.sub</code> 或者 <code class="docutils literal">re.subn</code> 的时候, 常常会不太确定引用参数的顺序,
 需要中断的时间查看提示或者help文档. 比如  <code class="docutils literal">trade war</code>
 修改为 <code class="docutils literal">trade negotiation</code></p>
-<pre class="code python"><a name="rest_code_53ee408cd23b4a3890e102672881accb-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">"war"</span><span class="p">,</span> <span class="s2">"negotiation"</span><span class="p">,</span> <span class="s2">"trade war"</span><span class="p">)</span>
-<a name="rest_code_53ee408cd23b4a3890e102672881accb-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="s1">'trade negotiation'</span>
-<a name="rest_code_53ee408cd23b4a3890e102672881accb-3"></a><span class="n">sub</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">repl</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<a name="rest_code_53ee408cd23b4a3890e102672881accb-4"></a><span class="k">def</span> <span class="nf">sub</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">repl</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-<a name="rest_code_53ee408cd23b4a3890e102672881accb-5"></a>    <span class="k">return</span> <span class="n">_compile</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">repl</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span><span class="c1">#首先处理regex-pattern</span>
+<pre class="code python"><a name="rest_code_cedbc269835341c6a7250bded2b3460c-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">"war"</span><span class="p">,</span> <span class="s2">"negotiation"</span><span class="p">,</span> <span class="s2">"trade war"</span><span class="p">)</span>
+<a name="rest_code_cedbc269835341c6a7250bded2b3460c-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="s1">'trade negotiation'</span>
+<a name="rest_code_cedbc269835341c6a7250bded2b3460c-3"></a><span class="n">sub</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">repl</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<a name="rest_code_cedbc269835341c6a7250bded2b3460c-4"></a><span class="k">def</span> <span class="nf">sub</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">repl</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<a name="rest_code_cedbc269835341c6a7250bded2b3460c-5"></a>    <span class="k">return</span> <span class="n">_compile</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">repl</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span><span class="c1">#首先处理regex-pattern</span>
 </pre>
 </div>
 <div class="section" id="id2">
@@ -114,26 +114,26 @@ sub(pattern, rep">
 repl是修改后的内容(destination), 这里顺序与=str.replace=是一致.</p>
 <pre class="literal-block">replace(self, old, new, count=-1, /)</pre>
 <p>old 来自source, new是输出到destination结果中.</p>
-<pre class="code python"><a name="rest_code_f6e274f8ecba414ba8ce17721a2d5d7c-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="s2">"trade war"</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"war"</span><span class="p">,</span> <span class="s2">"negotiation"</span><span class="p">)</span>
-<a name="rest_code_f6e274f8ecba414ba8ce17721a2d5d7c-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="s1">'trade negotiation'</span>
+<pre class="code python"><a name="rest_code_9e45074fd1bd4360bab1eb1fe2da8360-1"></a><span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="s2">"trade war"</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"war"</span><span class="p">,</span> <span class="s2">"negotiation"</span><span class="p">)</span>
+<a name="rest_code_9e45074fd1bd4360bab1eb1fe2da8360-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="s1">'trade negotiation'</span>
 </pre>
 <p><code class="docutils literal">sed</code> 也遵循同样的模式.</p>
-<pre class="code bash"><a name="rest_code_1e62ad2157c143f5a648552e0a155090-1"></a>s/regexp/replacement/
-<a name="rest_code_1e62ad2157c143f5a648552e0a155090-2"></a>       Attempt  to  match  regexp  against  the  pattern  space.   If successful, replace that portion matched with
-<a name="rest_code_1e62ad2157c143f5a648552e0a155090-3"></a>       replacement.  The replacement may contain the special character <span class="p">&amp;</span> to refer to that portion  of  the  pattern
-<a name="rest_code_1e62ad2157c143f5a648552e0a155090-4"></a>       space  which  matched,  and  the  special  escapes <span class="se">\1</span> through <span class="se">\9</span> to refer to the corresponding matching sub-
-<a name="rest_code_1e62ad2157c143f5a648552e0a155090-5"></a>       expressions in the regexp.
+<pre class="code bash"><a name="rest_code_ce0794c4e009425fba362c812a1c9cc0-1"></a>s/regexp/replacement/
+<a name="rest_code_ce0794c4e009425fba362c812a1c9cc0-2"></a>       Attempt  to  match  regexp  against  the  pattern  space.   If successful, replace that portion matched with
+<a name="rest_code_ce0794c4e009425fba362c812a1c9cc0-3"></a>       replacement.  The replacement may contain the special character <span class="p">&amp;</span> to refer to that portion  of  the  pattern
+<a name="rest_code_ce0794c4e009425fba362c812a1c9cc0-4"></a>       space  which  matched,  and  the  special  escapes <span class="se">\1</span> through <span class="se">\9</span> to refer to the corresponding matching sub-
+<a name="rest_code_ce0794c4e009425fba362c812a1c9cc0-5"></a>       expressions in the regexp.
 </pre>
 <p>regex-pattern匹配 source 数据中的内容,
 replacement则是替换后输出到destination结果中.</p>
-<pre class="code shell"><a name="rest_code_18c3c5f5dfe1429fb6018cea3ce43255-1"></a>$ <span class="nb">echo</span> <span class="s1">'trade war'</span> <span class="p">|</span> sed <span class="s2">"s/war/negotiation/g"</span>
-<a name="rest_code_18c3c5f5dfe1429fb6018cea3ce43255-2"></a>trade negotiation
+<pre class="code shell"><a name="rest_code_85ca4a9934a34b7d95ee8c53d00a3546-1"></a>$ <span class="nb">echo</span> <span class="s1">'trade war'</span> <span class="p">|</span> sed <span class="s2">"s/war/negotiation/g"</span>
+<a name="rest_code_85ca4a9934a34b7d95ee8c53d00a3546-2"></a>trade negotiation
 </pre>
 <p>其他的Text Processing</p>
-<pre class="code bash"><a name="rest_code_c7c32d7e0f7d440aaf8b6fc7450ed370-1"></a>$ <span class="nb">echo</span> <span class="s2">"trade-war"</span> <span class="p">|</span> tr <span class="s2">"-"</span> <span class="s2">"\n"</span>
-<a name="rest_code_c7c32d7e0f7d440aaf8b6fc7450ed370-2"></a>trade
-<a name="rest_code_c7c32d7e0f7d440aaf8b6fc7450ed370-3"></a>war
-<a name="rest_code_c7c32d7e0f7d440aaf8b6fc7450ed370-4"></a>   tr <span class="o">[</span>OPTION<span class="o">]</span>... SET1 <span class="o">[</span>SET2<span class="o">]</span>
+<pre class="code bash"><a name="rest_code_c803033c504f45cfa79070ad2fb09549-1"></a>$ <span class="nb">echo</span> <span class="s2">"trade-war"</span> <span class="p">|</span> tr <span class="s2">"-"</span> <span class="s2">"\n"</span>
+<a name="rest_code_c803033c504f45cfa79070ad2fb09549-2"></a>trade
+<a name="rest_code_c803033c504f45cfa79070ad2fb09549-3"></a>war
+<a name="rest_code_c803033c504f45cfa79070ad2fb09549-4"></a>   tr <span class="o">[</span>OPTION<span class="o">]</span>... SET1 <span class="o">[</span>SET2<span class="o">]</span>
 </pre>
 <p>SET1 is from the source, SET2 is the result of the destination after
 been processed.</p>
@@ -141,25 +141,25 @@ been processed.</p>
 <pre class="literal-block">function source destination</pre>
 <p>Text Processing如此,</p>
 <p>File Handling的utilities遵循同样的模式.</p>
-<pre class="code bash"><a name="rest_code_0bdf7b3d7c4845a38dfff07667ba68e3-1"></a>mv <span class="o">[</span>OPTION<span class="o">]</span>... SOURCE... DIRECTORY
-<a name="rest_code_0bdf7b3d7c4845a38dfff07667ba68e3-2"></a>cp <span class="o">[</span>OPTION<span class="o">]</span>... <span class="o">[</span>-T<span class="o">]</span> SOURCE DEST
-<a name="rest_code_0bdf7b3d7c4845a38dfff07667ba68e3-3"></a>ln <span class="o">[</span>OPTION<span class="o">]</span>... Source... DIRECTORY
-<a name="rest_code_0bdf7b3d7c4845a38dfff07667ba68e3-4"></a>rsync <span class="o">[</span>OPTION...<span class="o">]</span> SRC... <span class="o">[</span>DEST<span class="o">]</span>
-<a name="rest_code_0bdf7b3d7c4845a38dfff07667ba68e3-5"></a>scp  SRC... DEST
-<a name="rest_code_0bdf7b3d7c4845a38dfff07667ba68e3-6"></a>dd <span class="k">if</span><span class="o">=</span>/dev/<span class="o">{{</span>source_drive<span class="o">}}</span> <span class="nv">of</span><span class="o">=</span>/dev/<span class="o">{{</span>dest_drive<span class="o">}}</span>
+<pre class="code bash"><a name="rest_code_37b73f0292574ca4b2bd639acab82fd6-1"></a>mv <span class="o">[</span>OPTION<span class="o">]</span>... SOURCE... DIRECTORY
+<a name="rest_code_37b73f0292574ca4b2bd639acab82fd6-2"></a>cp <span class="o">[</span>OPTION<span class="o">]</span>... <span class="o">[</span>-T<span class="o">]</span> SOURCE DEST
+<a name="rest_code_37b73f0292574ca4b2bd639acab82fd6-3"></a>ln <span class="o">[</span>OPTION<span class="o">]</span>... Source... DIRECTORY
+<a name="rest_code_37b73f0292574ca4b2bd639acab82fd6-4"></a>rsync <span class="o">[</span>OPTION...<span class="o">]</span> SRC... <span class="o">[</span>DEST<span class="o">]</span>
+<a name="rest_code_37b73f0292574ca4b2bd639acab82fd6-5"></a>scp  SRC... DEST
+<a name="rest_code_37b73f0292574ca4b2bd639acab82fd6-6"></a>dd <span class="k">if</span><span class="o">=</span>/dev/<span class="o">{{</span>source_drive<span class="o">}}</span> <span class="nv">of</span><span class="o">=</span>/dev/<span class="o">{{</span>dest_drive<span class="o">}}</span>
 </pre>
 <p>例外的情况是tar. =tar=是将目标放在前面.</p>
 <p>再回头看 <code class="docutils literal">re.sub</code></p>
-<pre class="code python"><a name="rest_code_0feca2f4f4fa4278a8418585f8c63b69-1"></a><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">repl</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
-<a name="rest_code_0feca2f4f4fa4278a8418585f8c63b69-2"></a><span class="c1">#扩展后</span>
-<a name="rest_code_0feca2f4f4fa4278a8418585f8c63b69-3"></a><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pattern_from_source</span><span class="p">,</span> <span class="n">replacement_to_result</span><span class="p">,</span> <span class="n">source_data</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_f2c882951ec74b2d9b631031007219c7-1"></a><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">repl</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+<a name="rest_code_f2c882951ec74b2d9b631031007219c7-2"></a><span class="c1">#扩展后</span>
+<a name="rest_code_f2c882951ec74b2d9b631031007219c7-3"></a><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pattern_from_source</span><span class="p">,</span> <span class="n">replacement_to_result</span><span class="p">,</span> <span class="n">source_data</span><span class="p">)</span>
 </pre>
 <p>三个参数中 <code class="docutils literal">pattern_from_source</code>, <code class="docutils literal">replacement_to_result</code> ,
 <code class="docutils literal">source_data</code>
 的最后一个是=source<sub>data</sub><code class="docutils literal">, 将source放置在最后. =grep</code> 与
 =sed=都遵循同样的模式</p>
-<pre class="code bash"><a name="rest_code_a7f34e625cbf40778e7d99eef14281d0-1"></a>sed <span class="s1">'s/{{regex}}/{{replace}}/'</span> <span class="o">{{</span>filename<span class="o">}}</span>
-<a name="rest_code_a7f34e625cbf40778e7d99eef14281d0-2"></a>grep <span class="o">[</span>OPTIONS<span class="o">]</span> -e PATTERN ... <span class="o">[</span>FILE...<span class="o">]</span> <span class="c1">#grep regex source</span>
+<pre class="code bash"><a name="rest_code_5d04d21e934c43cd959b9e3847e8be58-1"></a>sed <span class="s1">'s/{{regex}}/{{replace}}/'</span> <span class="o">{{</span>filename<span class="o">}}</span>
+<a name="rest_code_5d04d21e934c43cd959b9e3847e8be58-2"></a>grep <span class="o">[</span>OPTIONS<span class="o">]</span> -e PATTERN ... <span class="o">[</span>FILE...<span class="o">]</span> <span class="c1">#grep regex source</span>
 </pre>
 <p>例外的情况是=find=</p>
 <pre class="literal-block">find [-H] [-L] [-P] [-D debugopts] [-Olevel] [starting-point...] [expression]
@@ -179,7 +179,7 @@ find [Option] source pattern</pre>
         var disqus_shortname ="?",
             disqus_url="https://alinbxsorcerer.github.io/posts/resubcan-shu-shun-xu-de-wen-ti/",
         disqus_title="Re.sub\u53c2\u6570\u987a\u5e8f\u7684\u95ee\u9898",
-        disqus_identifier="cache/posts/resubcan-shu-shun-xu-de-wen-ti.html",
+        disqus_identifier="cache/posts/Re.sub的参数顺序.html",
         disqus_config = function () {
             this.language = "en";
         };

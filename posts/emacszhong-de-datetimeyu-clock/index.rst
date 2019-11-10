@@ -1,10 +1,10 @@
 .. title: Emacs中的datetime与clock
 .. slug: emacszhong-de-datetimeyu-clock
 .. date: 2019-05-18 20:35:15 UTC+08:00
-.. tags: 
-.. category: 
+.. tags: emacs, time
+.. category: programming
 .. link: 
-.. description: 
+.. description:  时间专题之四
 .. type: text
 
  
