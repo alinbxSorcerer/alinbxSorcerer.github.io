@@ -1,10 +1,10 @@
    .. title: 时间专题小结
    .. slug: shijian-zhuanti-xiaojie
-   .. date: 2019-11-11 14:53:29 UTC+08:00
+   .. date: 2019-11-11 12:53:29 UTC+08:00
    .. tags: time, bash, python
    .. category: 管理
    .. link:
-   .. description:
+   .. description: 时间专题之五
    .. type: text
 
 时间专题小结
