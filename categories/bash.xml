@@ -1,5 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Magic Land Declared by David (Posts about bash)</title><link>https://alinbxsorcerer.github.io/</link><description></description><atom:link href="https://alinbxsorcerer.github.io/categories/bash.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:davad.fhl.wang@foxmail.com"&gt;David&lt;/a&gt; </copyright><lastBuildDate>Sun, 10 Nov 2019 14:52:08 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>时间管理的三件武器</title><link>https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="section" id="id1"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Magic Land Declared by David (Posts about bash)</title><link>https://alinbxsorcerer.github.io/</link><description></description><atom:link href="https://alinbxsorcerer.github.io/categories/bash.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:davad.fhl.wang@foxmail.com"&gt;David&lt;/a&gt; </copyright><lastBuildDate>Mon, 11 Nov 2019 06:54:16 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>时间专题小结</title><link>https://alinbxsorcerer.github.io/posts/shijian-zhuanti-xiaojie/</link><dc:creator>David</dc:creator><description>&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;时间专题小结&lt;/h2&gt;
+&lt;p&gt;历时5个月的实践应用与验证, 小结如下&lt;/p&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h3&gt;时间变量的顺序与格式&lt;/h3&gt;
+&lt;table&gt;
+&lt;colgroup&gt;
+&lt;col style="width: 32%"&gt;
+&lt;col style="width: 68%"&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;&lt;th class="head"&gt;&lt;p&gt;时间变量 10个&lt;/p&gt;&lt;/th&gt;
+&lt;th class="head"&gt;&lt;p&gt;变量的顺序&lt;/p&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;基础8个&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;年月日, 时分秒, 星期 周数&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;时区(特殊处理)&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;timezone&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;秒的单位&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;ms毫秒, µs微秒, nm纳秒) 所有的读秒&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;将周数加进来作为另外一个维度, 应用cron的时候,recursively start from the
+end.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;对时间感知 从end往前的模式,&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;cron中时间变量的顺序 cron专注在一年内, 除了year之外, 也是start from
+the end&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;时间的格式 年月日均小写: &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;%y-%m-%d&lt;/span&gt;&lt;/code&gt;, 时分秒都是大写: &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;%H-%M-%M&lt;/span&gt;&lt;/code&gt;,
+Weekday &lt;code class="docutils literal"&gt;%wu&lt;/code&gt;, Weeknumber &lt;code class="docutils literal"&gt;%W&lt;/code&gt; 两个文字表述的变量: weekday
+&lt;code class="docutils literal"&gt;%aA&lt;/code&gt; and month &lt;code class="docutils literal"&gt;%bB&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;标注的 &lt;code class="docutils literal"&gt;ctime&lt;/code&gt;&lt;/p&gt;
+&lt;pre class="code shell"&gt;&lt;a name="rest_code_097262f841834dbd890e129dd3c8390d-1"&gt;&lt;/a&gt;date +&lt;span class="s2"&gt;"%c"&lt;/span&gt;
+&lt;a name="rest_code_097262f841834dbd890e129dd3c8390d-2"&gt;&lt;/a&gt;python -c &lt;span class="s2"&gt;"import time; print(time.ctime())"&lt;/span&gt;
+&lt;/pre&gt;&lt;pre class="literal-block"&gt;Mon 11 Nov 2019 12:10:57 PM CST
+Mon Nov 11 12:10:57 2019&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h3&gt;时间的感知与分析&lt;/h3&gt;
+&lt;p&gt;回归到“钟表”的意像图&lt;/p&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h4&gt;宏观感知“一日”&lt;/h4&gt;
+&lt;p&gt;八分图&lt;/p&gt;
+&lt;table&gt;
+&lt;colgroup&gt;
+&lt;col style="width: 16%"&gt;
+&lt;col style="width: 44%"&gt;
+&lt;col style="width: 40%"&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;&lt;th class="head"&gt;&lt;p&gt;No&lt;/p&gt;&lt;/th&gt;
+&lt;th class="head"&gt;&lt;p&gt;时间段&lt;/p&gt;&lt;/th&gt;
+&lt;th class="head"&gt;&lt;p&gt;维基命名&lt;/p&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;１&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;0时~3时&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;安&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;２&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;3时~6时&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;晓&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;３&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;6时~9时&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;早&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;４&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;9时~12时&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;亮&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;５&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;12时~15时&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;热&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;６&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;15时~18时&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;７&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;18时~21时&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;归&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;８&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;21时~24时&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;休&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h4&gt;微观层面的时间感知&lt;/h4&gt;
+&lt;p&gt;核心是应用分数表示的方法&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;选择起始点 遵循AM与PM的概念，以太阳的最高点为划分点, 遵从国际标准,
+选择0点为起始点.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;两个重要的时间节点 抛弃原先的方案, 以正午12点为关键节点,
+因此两个时间节点的选择, 既然选择了AM和PM, 就只以12点为关键节点&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;12小时还是24小时 选择12小时, 原因是选择了AM和PM.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id6"&gt;
+&lt;h4&gt;感知时间流逝的算法&lt;/h4&gt;
+&lt;p&gt;采用分数法.fraction&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id7"&gt;
+&lt;h3&gt;时间管理的三件武器&lt;/h3&gt;
+&lt;p&gt;calendar, clock and datetime(combined) date 以shell的ncal,
+date与time为基础.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="emacs"&gt;
+&lt;h3&gt;Emacs中的应用&lt;/h3&gt;
+&lt;p&gt;需要重新再阅读文档. 目前没有解决的问题, 便是如何在calendar中做规划.
+emacs中的日历优点是可以与四时互动.&lt;/p&gt;
+&lt;pre class="code shell"&gt;&lt;a name="rest_code_c9aa8ce70027466f8a17e5c2ec315428-1"&gt;&lt;/a&gt;pandoc draft.org -o ../posts/时间专题小结.rst
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;</description><category>bash</category><category>python</category><category>time</category><guid>https://alinbxsorcerer.github.io/posts/shijian-zhuanti-xiaojie/</guid><pubDate>Mon, 11 Nov 2019 04:53:29 GMT</pubDate></item><item><title>时间管理的三件武器</title><link>https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;前情概要&lt;/h2&gt;
 &lt;div class="line-block"&gt;
 &lt;div class="line"&gt;“时间变量的顺序与时间表示的格式”
