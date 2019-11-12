@@ -15,11 +15,11 @@
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/archive.html</loc>
-  <lastmod>2019-11-11T06:51:00Z</lastmod>
+  <lastmod>2019-11-12T04:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/categories/</loc>
-  <lastmod>2019-11-10T12:55:00Z</lastmod>
+  <lastmod>2019-11-12T04:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/categories/bash/</loc>
@@ -36,6 +36,10 @@
  <url>
   <loc>https://alinbxsorcerer.github.io/categories/emacs/</loc>
   <lastmod>2019-11-10T09:40:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alinbxsorcerer.github.io/categories/ping-zhu-bi-ji/</loc>
+  <lastmod>2019-11-12T04:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/categories/python/</loc>
@@ -128,6 +132,10 @@
  <url>
   <loc>https://alinbxsorcerer.github.io/pages/theming/</loc>
   <lastmod>2019-11-09T06:16:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/</loc>
+  <lastmod>2019-11-12T04:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/posts/emacszhong-de-datetimeyu-clock/</loc>
