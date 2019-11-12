@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Magic Land Declared by David (Posts about time)</title><link>https://alinbxsorcerer.github.io/</link><description></description><atom:link href="https://alinbxsorcerer.github.io/categories/time.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:davad.fhl.wang@foxmail.com"&gt;David&lt;/a&gt; </copyright><lastBuildDate>Tue, 12 Nov 2019 04:16:10 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>时间专题小结</title><link>https://alinbxsorcerer.github.io/posts/shijian-zhuanti-xiaojie/</link><dc:creator>David</dc:creator><description>&lt;div class="section" id="id1"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Magic Land Declared by David (Posts about time)</title><link>https://alinbxsorcerer.github.io/</link><description></description><atom:link href="https://alinbxsorcerer.github.io/categories/time.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:davad.fhl.wang@foxmail.com"&gt;David&lt;/a&gt; </copyright><lastBuildDate>Tue, 12 Nov 2019 04:20:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>时间专题小结</title><link>https://alinbxsorcerer.github.io/posts/shijian-zhuanti-xiaojie/</link><dc:creator>David</dc:creator><description>&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;时间专题小结&lt;/h2&gt;
 &lt;p&gt;历时5个月的实践应用与验证, 小结如下&lt;/p&gt;
 &lt;div class="section" id="id2"&gt;
@@ -197,9 +197,20 @@ s(substract),只用keep便可.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;任务的5个时间属性&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;idle中断计时的处理.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>emacs</category><category>time</category><guid>https://alinbxsorcerer.github.io/posts/emacszhong-de-datetimeyu-clock/</guid><pubDate>Sat, 18 May 2019 12:35:15 GMT</pubDate></item><item><title>评注.Eamcs Manual.31.The Calendar and the Diary</title><link>https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;p&gt;分为三个部分:1)基本的操作 2)与社会的互动, holidays and calendars
+&lt;/div&gt;&lt;/div&gt;</description><category>emacs</category><category>time</category><guid>https://alinbxsorcerer.github.io/posts/emacszhong-de-datetimeyu-clock/</guid><pubDate>Sat, 18 May 2019 12:35:15 GMT</pubDate></item><item><title>评注Eamcs: 31.The Calendar and the Diary</title><link>https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;p&gt;分为三个部分:1)基本的操作 2)与社会的互动, holidays and calendars
 3)与天地四时的互动, sunrise-sunset 因此需要再加上两个时间点, sunrise and sunset
-&lt;img alt="image0" src="https://alinbxsorcerer.github.io/posts/images/emacs-calendars-structure.jpeg" style="width: 600px;"&gt;&lt;/p&gt;
+.. image:: ../images/emacs-calendars-structure.jpeg&lt;/p&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 6)&lt;/p&gt;
+&lt;p&gt;Unexpected indentation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;dl class="field-list simple"&gt;
+&lt;dt&gt;width&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;700&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Emacs provides the functions of a desk calendar, with a diary of planned
 or past events. It also has facilities for managing your appointments,
 and keeping track of how much time you spend working on certain
@@ -224,7 +235,7 @@ a date lets you view its holidays or diary entries, or convert it to
 other calendars; moving by long time periods is also useful simply to
 scroll the calendar.&lt;/p&gt;
 &lt;div class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 37)&lt;/p&gt;
+&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 38)&lt;/p&gt;
 &lt;p&gt;Cannot find pygments lexer for language "commonlisp"&lt;/p&gt;
 &lt;pre class="literal-block"&gt;.. code:: commonlisp
 
@@ -578,7 +589,7 @@ window.&lt;/p&gt;
 aged;" and compare wether). 助记: Veterans day&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 452)&lt;/p&gt;
+&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 453)&lt;/p&gt;
 &lt;p&gt;Cannot find pygments lexer for language "commonlisp"&lt;/p&gt;
 &lt;pre class="literal-block"&gt;.. code:: commonlisp
 
@@ -1111,7 +1122,7 @@ month, day, or year can be '*'; this matches any month, day, or year,
 respectively. Thus, a diary entry ‘3///&lt;a href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id1"&gt;&lt;span class="problematic" id="id2"&gt;*&lt;/span&gt;&lt;/a&gt;' matches any day in March of
 any year; so does ‘march /'.&lt;/p&gt;
 &lt;div class="system-message" id="id1"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 1078); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 1079); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Inline emphasis start-string without end-string.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;If you prefer the European style of writing dates (in which the day
@@ -1706,7 +1717,7 @@ whole to match, all of its elements must match consecutively.&lt;/p&gt;
 using the standard syntax table altered so that ‘&lt;a href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id3"&gt;&lt;span class="problematic" id="id4"&gt;*&lt;/span&gt;&lt;/a&gt;' is a word
 constituent.&lt;/p&gt;
 &lt;div class="system-message" id="id3"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 1846); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id4"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 1847); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id4"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Inline emphasis start-string without end-string.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;The symbols &lt;code class="docutils literal"&gt;month&lt;/code&gt;, &lt;code class="docutils literal"&gt;day&lt;/code&gt;, &lt;code class="docutils literal"&gt;year&lt;/code&gt;, &lt;code class="docutils literal"&gt;monthname&lt;/code&gt;, and &lt;code class="docutils literal"&gt;dayname&lt;/code&gt;
@@ -1718,7 +1729,7 @@ abbreviation (as specified by &lt;code class="docutils literal"&gt;&lt;span clas
 in a diary entry means "any day", "any month", and so on, it should
 match regardless of the date being considered.&lt;/p&gt;
 &lt;div class="system-message" id="id5"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 1850); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id6"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 1851); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id6"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Inline emphasis start-string without end-string.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;The default value of &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;diary-date-forms&lt;/span&gt;&lt;/code&gt; in the American style is
@@ -2104,6 +2115,12 @@ year.)&lt;/p&gt;
 specifies how to mark the date in the calendar display. If one of these
 functions decides that it applies to a certain date, it returns a value
 that contains mark, as described above.&lt;/p&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 2389)&lt;/p&gt;
+&lt;p&gt;Substitution definition "image0" empty or invalid.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;.. |image0|
+   :width: 600px&lt;/pre&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;</description><category>emacs</category><category>time</category><category>评注笔记</category><guid>https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/</guid><pubDate>Thu, 16 May 2019 01:53:29 GMT</pubDate></item><item><title>时间管理的三件武器</title><link>https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;前情概要&lt;/h2&gt;
