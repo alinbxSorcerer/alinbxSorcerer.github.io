@@ -1,4 +1,4 @@
-   .. title: 评注.Eamcs Manual.31.The Calendar and the Diary
+   .. title: 评注Eamcs: 31.The Calendar and the Diary
    .. slug: emacs-manual-calendar-and-the-diary
    .. date: 2019-05-16 09:53:29 UTC+08:00
    .. tags: emacs, time, 评注笔记
@@ -11,7 +11,8 @@
 
 分为三个部分:1)基本的操作 2)与社会的互动, holidays and calendars
 3)与天地四时的互动, sunrise-sunset 因此需要再加上两个时间点, sunrise and sunset
-|image0|
+.. image:: ../images/emacs-calendars-structure.jpeg
+   :width: 700
 
 Emacs provides the functions of a desk calendar, with a diary of planned
 or past events. It also has facilities for managing your appointments,
@@ -2394,5 +2395,5 @@ functions decides that it applies to a certain date, it returns a value
 that contains mark, as described above.
 
 
-.. |image0| image:: ../images/emacs-calendars-structure.jpeg
+.. |image0|
    :width: 600px
