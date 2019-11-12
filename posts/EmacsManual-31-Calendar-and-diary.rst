@@ -9,11 +9,17 @@
 
 
 
-分为三个部分:1)基本的操作 2)与社会的互动, holidays and calendars
-3)与天地四时的互动, sunrise-sunset 因此需要再加上两个时间点, sunrise and sunset
-.. image:: ../images/emacs-calendars-structure.jpeg
-   :width: 700
+总结:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+三个部分:   
 
+1) 基本的操作
+2) 与社会的互动, holidays and calendars
+3) 与天地四时的互动, sunrise-sunset 因此需要再加上两个时间点, sunrise and sunset
+
+.. image:: /images/emacs-calendars-structure.jpeg
+   :width: 700
+   
 Emacs provides the functions of a desk calendar, with a diary of planned
 or past events. It also has facilities for managing your appointments,
 and keeping track of how much time you spend working on certain
@@ -44,7 +50,7 @@ a date lets you view its holidays or diary entries, or convert it to
 other calendars; moving by long time periods is also useful simply to
 scroll the calendar.
 
-.. code:: commonlisp
+.. code:: elisp
 
    ;;修改calendar-week-start-day
    (setq calendar-week-start-day 1)
@@ -79,7 +85,6 @@ months, and years.
    Move point one week backward (``calendar-backward-week``).
 
 -  M-}
-
    Move point one month forward (``calendar-forward-month``).
 
 -  M-{
@@ -459,7 +464,7 @@ display them. You can add your own holidays to the default list.
    Define: Veterans' day 老兵 Etymology: Old Lithuanian vetušas "old,
    aged;" and compare wether). 助记: Veterans day
 
-.. code:: commonlisp
+.. code:: elisp
 
    ;;(sunrise-sunset)
    (lunar-phases)
@@ -1085,7 +1090,7 @@ can be set using the variables ``calendar-abbrev-length``,
 default is to use the first three letters of a name as its abbreviation.
 Case is not significant.
 
-A date may be generic; that is, partially unspecified. Then the entry
+A date may be generic,that is, partially unspecified. Then the entry
 applies to all dates that match the specification. If the date does not
 contain a year, it is generic and applies to any year. Alternatively,
 month, day, or year can be '*'; this matches any month, day, or year,
@@ -2395,5 +2400,3 @@ functions decides that it applies to a certain date, it returns a value
 that contains mark, as described above.
 
 
-.. |image0|
-   :width: 600px
