@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Magic Land Declared by David (Posts about time)</title><link>https://alinbxsorcerer.github.io/</link><description></description><atom:link href="https://alinbxsorcerer.github.io/categories/time.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:davad.fhl.wang@foxmail.com"&gt;David&lt;/a&gt; </copyright><lastBuildDate>Tue, 12 Nov 2019 04:20:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>时间专题小结</title><link>https://alinbxsorcerer.github.io/posts/shijian-zhuanti-xiaojie/</link><dc:creator>David</dc:creator><description>&lt;div class="section" id="id1"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Magic Land Declared by David (Posts about time)</title><link>https://alinbxsorcerer.github.io/</link><description></description><atom:link href="https://alinbxsorcerer.github.io/categories/time.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:davad.fhl.wang@foxmail.com"&gt;David&lt;/a&gt; </copyright><lastBuildDate>Tue, 12 Nov 2019 04:39:12 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>时间专题小结</title><link>https://alinbxsorcerer.github.io/posts/shijian-zhuanti-xiaojie/</link><dc:creator>David</dc:creator><description>&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;时间专题小结&lt;/h2&gt;
 &lt;p&gt;历时5个月的实践应用与验证, 小结如下&lt;/p&gt;
 &lt;div class="section" id="id2"&gt;
@@ -197,20 +197,15 @@ s(substract),只用keep便可.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;任务的5个时间属性&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;idle中断计时的处理.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>emacs</category><category>time</category><guid>https://alinbxsorcerer.github.io/posts/emacszhong-de-datetimeyu-clock/</guid><pubDate>Sat, 18 May 2019 12:35:15 GMT</pubDate></item><item><title>评注Eamcs: 31.The Calendar and the Diary</title><link>https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;p&gt;分为三个部分:1)基本的操作 2)与社会的互动, holidays and calendars
-3)与天地四时的互动, sunrise-sunset 因此需要再加上两个时间点, sunrise and sunset
-.. image:: ../images/emacs-calendars-structure.jpeg&lt;/p&gt;
-&lt;div class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 6)&lt;/p&gt;
-&lt;p&gt;Unexpected indentation.&lt;/p&gt;
-&lt;/div&gt;
-&lt;blockquote&gt;
-&lt;dl class="field-list simple"&gt;
-&lt;dt&gt;width&lt;/dt&gt;
-&lt;dd&gt;&lt;p&gt;700&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/blockquote&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>emacs</category><category>time</category><guid>https://alinbxsorcerer.github.io/posts/emacszhong-de-datetimeyu-clock/</guid><pubDate>Sat, 18 May 2019 12:35:15 GMT</pubDate></item><item><title>评注Eamcs: 31.The Calendar and the Diary</title><link>https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;总结:&lt;/h2&gt;
+&lt;p&gt;三个部分:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;基本的操作&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;与社会的互动, holidays and calendars&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;与天地四时的互动, sunrise-sunset 因此需要再加上两个时间点, sunrise and sunset&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img alt="/images/emacs-calendars-structure.jpeg" src="https://alinbxsorcerer.github.io/images/emacs-calendars-structure.jpeg" style="width: 700px;"&gt;
 &lt;p&gt;Emacs provides the functions of a desk calendar, with a diary of planned
 or past events. It also has facilities for managing your appointments,
 and keeping track of how much time you spend working on certain
@@ -225,7 +220,7 @@ date; mouse-2 brings up a menu of commonly used calendar features that
 are independent of any particular date. To exit the calendar, type q.&lt;/p&gt;
 &lt;p&gt;我想要一个类似在桌面操作系统中, 可以操作任务的日历.&lt;/p&gt;
 &lt;div class="section" id="movement-in-the-calendar"&gt;
-&lt;h2&gt;31.1 Movement in the Calendar&lt;/h2&gt;
+&lt;h3&gt;31.1 Movement in the Calendar&lt;/h3&gt;
 &lt;p&gt;Calendar mode provides commands to move through the calendar
 &lt;code class="docutils literal"&gt;in logical units&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;of time such as days, weeks, months, and years. If you move outside the
@@ -234,23 +229,18 @@ automatically through time to make the selected date visible. Moving to
 a date lets you view its holidays or diary entries, or convert it to
 other calendars; moving by long time periods is also useful simply to
 scroll the calendar.&lt;/p&gt;
-&lt;div class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 38)&lt;/p&gt;
-&lt;p&gt;Cannot find pygments lexer for language "commonlisp"&lt;/p&gt;
-&lt;pre class="literal-block"&gt;.. code:: commonlisp
-
-   ;;修改calendar-week-start-day
-   (setq calendar-week-start-day 1)
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;对movement的总结, span, 按照四个logical unit, day, week, month, year&lt;/p&gt;
+&lt;pre class="code elisp"&gt;&lt;a name="rest_code_792e880098434db1860d870e69555564-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;;;修改calendar-week-start-day&lt;/span&gt;
+&lt;a name="rest_code_792e880098434db1860d870e69555564-2"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;calendar-week-start-day&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;对movement的总结, span, 按照四个logical unit, day, week, month, year&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;&lt;p&gt;backwords and forwards with specified lenghts&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;selector, begin and end&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;specified dates&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;div class="section" id="motion-by-standard-lengths-of-time"&gt;
-&lt;h3&gt;31.1.1 Motion by Standard Lengths of Time&lt;/h3&gt;
+&lt;h2&gt;31.1.1 Motion by Standard Lengths of Time&lt;/h2&gt;
 &lt;p&gt;The commands for movement in the calendar buffer parallel the commands
 for movement in text. You can move forward and backward by days, weeks,
 months, and years.&lt;/p&gt;
@@ -267,9 +257,8 @@ months, and years.&lt;/p&gt;
 &lt;li&gt;&lt;p&gt;C-p&lt;/p&gt;
 &lt;p&gt;Move point one week backward (&lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;calendar-backward-week&lt;/span&gt;&lt;/code&gt;).&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;M-}&lt;/p&gt;
-&lt;p&gt;Move point one month forward (&lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;calendar-forward-month&lt;/span&gt;&lt;/code&gt;).&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;M-}
+Move point one month forward (&lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;calendar-forward-month&lt;/span&gt;&lt;/code&gt;).&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;M-{&lt;/p&gt;
 &lt;p&gt;Move point one month backward (&lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;calendar-backward-month&lt;/span&gt;&lt;/code&gt;).&lt;/p&gt;
 &lt;/li&gt;
@@ -305,7 +294,7 @@ in Calendar mode even without the Meta modifier. For example, 100 C-f
 moves point 100 days forward from its present location.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="beginning-or-end-of-week-month-or-year"&gt;
-&lt;h3&gt;31.1.2 Beginning or End of Week, Month or Year&lt;/h3&gt;
+&lt;h2&gt;31.1.2 Beginning or End of Week, Month or Year&lt;/h2&gt;
 &lt;p&gt;A week (or month, or year) is not just a quantity of days; we think of
 weeks (months, years) as starting on particular dates. So Calendar mode
 provides commands to move to the start or end of a week, month or year:&lt;/p&gt;
@@ -338,7 +327,7 @@ headers are highlighted as weekend days, set the variable
 &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;calendar-weekend-days&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="specified-dates"&gt;
-&lt;h3&gt;31.1.3 Specified Dates&lt;/h3&gt;
+&lt;h2&gt;31.1.3 Specified Dates&lt;/h2&gt;
 &lt;p&gt;Calendar mode provides commands for moving to a particular date
 specified in various ways.&lt;/p&gt;
 &lt;ul&gt;
@@ -369,10 +358,8 @@ centers the three-month calendar around that month.&lt;/p&gt;
 &lt;p&gt;You can return to today's date with . (&lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;calendar-goto-today&lt;/span&gt;&lt;/code&gt;).&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;div class="section" id="scrolling-in-the-calendar"&gt;
-&lt;h2&gt;31.2 Scrolling in the Calendar&lt;/h2&gt;
+&lt;h3&gt;31.2 Scrolling in the Calendar&lt;/h3&gt;
 &lt;p&gt;The calendar display scrolls automatically through time when you move
 out of the visible portion. You can also scroll it manually. Imagine
 that the calendar window contains a long strip of paper with the months
@@ -406,7 +393,7 @@ the calendar backward by a year.&lt;/p&gt;
 they are in other modes.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="counting-days"&gt;
-&lt;h2&gt;31.3 Counting Days&lt;/h2&gt;
+&lt;h3&gt;31.3 Counting Days&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;M-=&lt;/p&gt;
 &lt;p&gt;Display the number of days in the current region
@@ -420,7 +407,7 @@ point.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="miscellaneous-calendar-commands"&gt;
-&lt;h2&gt;31.4 Miscellaneous Calendar Commands&lt;/h2&gt;
+&lt;h3&gt;31.4 Miscellaneous Calendar Commands&lt;/h3&gt;
 &lt;p&gt;Display day-in-year (&lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;calendar-print-day-of-year&lt;/span&gt;&lt;/code&gt;).&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;C-c C-l&lt;/p&gt;
@@ -456,7 +443,7 @@ or iconifies that frame depending on the value of
 &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;calendar-remove-frame-by-deleting&lt;/span&gt;&lt;/code&gt;.)&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="writing-calendar-files"&gt;
-&lt;h2&gt;31.5 Writing Calendar Files&lt;/h2&gt;
+&lt;h3&gt;31.5 Writing Calendar Files&lt;/h3&gt;
 &lt;p&gt;You can write calendars and diary entries to HTML and LaTeX files.&lt;/p&gt;
 &lt;p&gt;The Calendar HTML commands produce files of HTML code that contain
 calendar, holiday, and diary entries. Each file applies to one month,
@@ -559,7 +546,7 @@ features.&lt;/p&gt;
 LaTeX commands in the preamble of the generated document if you need to.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="holidays"&gt;
-&lt;h2&gt;31.6 Holidays&lt;/h2&gt;
+&lt;h3&gt;31.6 Holidays&lt;/h3&gt;
 &lt;p&gt;The Emacs calendar knows about many major and minor holidays, and can
 display them. You can add your own holidays to the default list.&lt;/p&gt;
 &lt;ul&gt;
@@ -588,16 +575,9 @@ window.&lt;/p&gt;
 &lt;p&gt;Define: Veterans' day 老兵 Etymology: Old Lithuanian vetušas "old,
 aged;" and compare wether). 助记: Veterans day&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 453)&lt;/p&gt;
-&lt;p&gt;Cannot find pygments lexer for language "commonlisp"&lt;/p&gt;
-&lt;pre class="literal-block"&gt;.. code:: commonlisp
-
-   ;;(sunrise-sunset)
-   (lunar-phases)
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;ul&gt;
+&lt;pre class="code elisp"&gt;&lt;a name="rest_code_53fa3dc349524880b371625d864c1b57-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;;;(sunrise-sunset)&lt;/span&gt;
+&lt;a name="rest_code_53fa3dc349524880b371625d864c1b57-2"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;lunar-phases&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;M-x list-holidays&lt;/p&gt;
 &lt;p&gt;List holidays in another window for a specified range of years.&lt;/p&gt;
 &lt;p&gt;To see if any holidays fall on a given date, position point on that
@@ -652,7 +632,7 @@ not historical fact. For example Veteran's Day began in 1919, but is
 shown in earlier years.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="times-of-sunrise-and-sunset"&gt;
-&lt;h2&gt;31.7 Times of Sunrise and Sunset&lt;/h2&gt;
+&lt;h3&gt;31.7 Times of Sunrise and Sunset&lt;/h3&gt;
 &lt;p&gt;Special calendar commands can tell you, to within a minute or two, the
 times of sunrise and sunset for any date.&lt;/p&gt;
 &lt;ul&gt;
@@ -714,7 +694,7 @@ users in a default.el file. See &lt;a class="reference external" href="https://w
 File&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="phases-of-the-moon"&gt;
-&lt;h2&gt;31.8 Phases of the Moon&lt;/h2&gt;
+&lt;h3&gt;31.8 Phases of the Moon&lt;/h3&gt;
 &lt;p&gt;These calendar commands display the dates and times of the phases of the
 moon (new moon, first quarter, full moon, last quarter). This feature is
 useful for debugging problems that depend on the phase of the moon.&lt;/p&gt;
@@ -740,7 +720,7 @@ discussion in the previous section. See
 &lt;a class="reference external" href="https://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Sunrise_002fSunset"&gt;Sunrise/Sunset&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="conversion-to-and-from-other-calendars"&gt;
-&lt;h2&gt;31.9 Conversion To and From Other Calendars&lt;/h2&gt;
+&lt;h3&gt;31.9 Conversion To and From Other Calendars&lt;/h3&gt;
 &lt;p&gt;The Emacs calendar displayed is &lt;em&gt;always&lt;/em&gt; the Gregorian calendar,
 sometimes called the New Style calendar, which is used in most of the
 world today. However, this calendar did not exist before the sixteenth
@@ -763,8 +743,10 @@ Converting the selected date to various calendars.&lt;/p&gt;&lt;/li&gt;
 Calendar&lt;/a&gt;:
 Moving to a date specified in another calendar.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;div class="section" id="supported-calendar-systems"&gt;
-&lt;h3&gt;31.9.1 Supported Calendar Systems&lt;/h3&gt;
+&lt;h2&gt;31.9.1 Supported Calendar Systems&lt;/h2&gt;
 &lt;p&gt;The ISO commercial calendar is often used in business.&lt;/p&gt;
 &lt;p&gt;The Julian calendar, named after Julius Caesar, was the one used in
 Europe throughout medieval times, and in many countries up until the
@@ -820,7 +802,7 @@ in a cycle of sixty.&lt;/p&gt;
 18th and 19th months.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="converting-to-other-calendars"&gt;
-&lt;h3&gt;31.9.2 Converting To Other Calendars&lt;/h3&gt;
+&lt;h2&gt;31.9.2 Converting To Other Calendars&lt;/h2&gt;
 &lt;p&gt;The following commands describe the selected date (the date at point) in
 various other calendar systems:&lt;/p&gt;
 &lt;ul&gt;
@@ -887,7 +869,7 @@ alternative from this menu doesn't actually do anything—the menu is used
 only for display.)&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="converting-from-other-calendars"&gt;
-&lt;h3&gt;31.9.3 Converting From Other Calendars&lt;/h3&gt;
+&lt;h2&gt;31.9.3 Converting From Other Calendars&lt;/h2&gt;
 &lt;p&gt;You can use the other supported calendars to specify a date to move to.
 This section describes the commands for doing this using calendars other
 than Mayan; for the Mayan calendar, see the following section.&lt;/p&gt;
@@ -956,10 +938,8 @@ range of years and then displays a list of the yahrzeit dates for those
 years for the date given by point. If you are not in the calendar, this
 command first asks you for the date of death and the range of years, and
 then displays the list of yahrzeit dates.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;div class="section" id="the-diary"&gt;
-&lt;h2&gt;31.10 The Diary&lt;/h2&gt;
+&lt;h3&gt;31.10 The Diary&lt;/h3&gt;
 &lt;p&gt;The Emacs diary keeps track of appointments or other events on a daily
 basis, in &lt;code class="docutils literal"&gt;conjunction&lt;/code&gt; with the calendar. To use the diary feature,
 you must first create a diary file containing a list of events and their
@@ -968,8 +948,10 @@ today, for the immediate future, or for any specified date.&lt;/p&gt;
 &lt;p&gt;Although you probably will start by creating a diary manually, Emacs
 provides a number of commands to let you view, add, and change diary
 entries.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;div class="section" id="the-diary-file"&gt;
-&lt;h3&gt;31.10.1 The Diary File&lt;/h3&gt;
+&lt;h2&gt;31.10.1 The Diary File&lt;/h2&gt;
 &lt;p&gt;Your diary file is a file that records events associated with particular
 dates. The name of the diary file is specified by the variable
 &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;diary-file&lt;/span&gt;&lt;/code&gt;. The default is &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;~/.emacs.d/diary&lt;/span&gt;&lt;/code&gt;, though for
@@ -1012,7 +994,7 @@ display just a single day's entries, but can cause confusion if you ask
 for more than one day's entries.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="displaying-the-diary"&gt;
-&lt;h3&gt;31.10.2 Displaying the Diary&lt;/h3&gt;
+&lt;h2&gt;31.10.2 Displaying the Diary&lt;/h2&gt;
 &lt;p&gt;Once you have created a diary file, you can use the calendar to view it.
 You can also view today's events outside of Calendar mode. In the
 following, key bindings refer to the Calendar buffer.&lt;/p&gt;
@@ -1089,7 +1071,7 @@ with today) to check; otherwise, the variable &lt;code class="docutils literal"&
 how many days.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="date-formats"&gt;
-&lt;h3&gt;31.10.3 Date Formats&lt;/h3&gt;
+&lt;h2&gt;31.10.3 Date Formats&lt;/h2&gt;
 &lt;p&gt;Here are some sample diary entries, illustrating different ways of
 formatting a date. The examples all show dates in American order (month,
 day, year), but Calendar mode supports European order (day, month, year)
@@ -1115,14 +1097,14 @@ can be set using the variables &lt;code class="docutils literal"&gt;&lt;span cla
 &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;calendar-month-abbrev-array&lt;/span&gt;&lt;/code&gt;, and &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;calendar-day-abbrev-array&lt;/span&gt;&lt;/code&gt;. The
 default is to use the first three letters of a name as its abbreviation.
 Case is not significant.&lt;/p&gt;
-&lt;p&gt;A date may be generic; that is, partially unspecified. Then the entry
+&lt;p&gt;A date may be generic,that is, partially unspecified. Then the entry
 applies to all dates that match the specification. If the date does not
 contain a year, it is generic and applies to any year. Alternatively,
 month, day, or year can be '*'; this matches any month, day, or year,
-respectively. Thus, a diary entry ‘3///&lt;a href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id1"&gt;&lt;span class="problematic" id="id2"&gt;*&lt;/span&gt;&lt;/a&gt;' matches any day in March of
+respectively. Thus, a diary entry ‘3///&lt;a href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id2"&gt;&lt;span class="problematic" id="id3"&gt;*&lt;/span&gt;&lt;/a&gt;' matches any day in March of
 any year; so does ‘march /'.&lt;/p&gt;
-&lt;div class="system-message" id="id1"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 1079); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;div class="system-message" id="id2"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 1084); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id3"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Inline emphasis start-string without end-string.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;If you prefer the European style of writing dates (in which the day
@@ -1137,7 +1119,7 @@ the day of the week as described above, or spell it in full; case is not
 significant.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="commands-to-add-to-the-diary"&gt;
-&lt;h3&gt;31.10.4 Commands to Add to the Diary&lt;/h3&gt;
+&lt;h2&gt;31.10.4 Commands to Add to the Diary&lt;/h2&gt;
 &lt;p&gt;While in the calendar, there are several commands to create diary
 entries. The basic commands are listed here; more sophisticated commands
 are in the next section (see &lt;a class="reference external" href="https://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Special-Diary-Entries"&gt;Special Diary
@@ -1182,7 +1164,7 @@ window, if appropriate. You can use the command &lt;code class="docutils literal
 force an update at any time.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="special-diary-entries"&gt;
-&lt;h3&gt;31.10.5 Special Diary Entries&lt;/h3&gt;
+&lt;h2&gt;31.10.5 Special Diary Entries&lt;/h2&gt;
 &lt;p&gt;In addition to entries based on calendar dates, the diary file can
 contain sexp entries for regular events such as anniversaries. These
 entries are based on Lisp expressions (sexps) that Emacs evaluates as it
@@ -1263,7 +1245,7 @@ marking the entry in the calendar. Most generally, sexp diary entries
 can perform arbitrary computations to determine when they apply.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="appointments"&gt;
-&lt;h3&gt;31.10.6 Appointments&lt;/h3&gt;
+&lt;h2&gt;31.10.6 Appointments&lt;/h2&gt;
 &lt;p&gt;If you have a diary entry for an appointment, and that diary entry
 begins with a recognizable time of day, Emacs can warn you in advance
 that an appointment is pending. Emacs alerts you to the appointment by
@@ -1317,7 +1299,7 @@ without affecting your diary file. You delete entries from the
 appointment list with M-x appt-delete.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="importing-and-exporting-diary-entries"&gt;
-&lt;h3&gt;31.10.7 Importing and Exporting Diary Entries&lt;/h3&gt;
+&lt;h2&gt;31.10.7 Importing and Exporting Diary Entries&lt;/h2&gt;
 &lt;p&gt;You can transfer diary entries between Emacs diary files and a variety
 of other formats.&lt;/p&gt;
 &lt;p&gt;You can import diary entries from Outlook-generated appointment
@@ -1346,10 +1328,8 @@ Display&lt;/a&gt;.&lt;/p&gt;
 diary file to iCalendar format. To export only a part of a diary file,
 mark the relevant area, and call &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;icalendar-export-region&lt;/span&gt;&lt;/code&gt;. In both
 cases, Emacs appends the result to the target file.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;div class="section" id="daylight-saving-time"&gt;
-&lt;h2&gt;31.11 Daylight Saving Time&lt;/h2&gt;
+&lt;h3&gt;31.11 Daylight Saving Time&lt;/h3&gt;
 &lt;p&gt;Emacs understands the difference between standard time and daylight
 saving time—the times given for sunrise, sunset, solstices, equinoxes,
 and the phases of the moon take that into account. The rules for
@@ -1394,7 +1374,7 @@ saving time should occur. For Cambridge, Massachusetts both variables'
 values are 120.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="summing-time-intervals"&gt;
-&lt;h2&gt;31.12 Summing Time Intervals&lt;/h2&gt;
+&lt;h3&gt;31.12 Summing Time Intervals&lt;/h3&gt;
 &lt;p&gt;The timeclock package adds up time intervals, so you can (for instance)
 keep track of how much time you spend working on particular projects. (A
 more advanced alternative is to use the Org Mode's facilities for
@@ -1426,12 +1406,14 @@ customizable variables, you should run the command M-x
 timeclock-reread-log to update the data in Emacs from the file.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="more-advanced-features-of-the-calendar-and-diary"&gt;
-&lt;h2&gt;31.13 More advanced features of the Calendar and Diary&lt;/h2&gt;
+&lt;h3&gt;31.13 More advanced features of the Calendar and Diary&lt;/h3&gt;
 &lt;p&gt;This section describes some of the more advanced/specialized features of
 the calendar and diary. It starts with some of the many ways in which
 you can customize the calendar and diary to suit your personal tastes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;div class="section" id="customizing-the-calendar"&gt;
-&lt;h3&gt;31.13.1 Customizing the Calendar&lt;/h3&gt;
+&lt;h2&gt;31.13.1 Customizing the Calendar&lt;/h2&gt;
 &lt;p&gt;The calendar display unfortunately cannot be changed from three months,
 but you can customize the whitespace used by setting the variables:
 &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;calendar-left-margin&lt;/span&gt;&lt;/code&gt;, &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;calendar-day-header-width&lt;/span&gt;&lt;/code&gt;,
@@ -1469,7 +1451,7 @@ current date is &lt;em&gt;not&lt;/em&gt; visible in the window.&lt;/p&gt;
 &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;calendar-move-hook&lt;/span&gt;&lt;/code&gt; after it moves the cursor.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="customizing-the-holidays"&gt;
-&lt;h3&gt;31.13.2 Customizing the Holidays&lt;/h3&gt;
+&lt;h2&gt;31.13.2 Customizing the Holidays&lt;/h2&gt;
 &lt;p&gt;There are several variables listing the default holidays that Emacs
 knows about. These are: &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;holiday-general-holidays&lt;/span&gt;&lt;/code&gt;,
 &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;holiday-local-holidays&lt;/span&gt;&lt;/code&gt;, &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;holiday-solar-holidays&lt;/span&gt;&lt;/code&gt;,
@@ -1585,7 +1567,7 @@ window, with descriptive strings, like this:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;(((6 4 2012) "Lunar Eclipse") ((11 13 2012) "Solar Eclipse") ... )&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="converting-from-the-mayan-calendar"&gt;
-&lt;h3&gt;31.13.3 Converting from the Mayan Calendar&lt;/h3&gt;
+&lt;h2&gt;31.13.3 Converting from the Mayan Calendar&lt;/h2&gt;
 &lt;p&gt;Here are the commands to select dates based on the Mayan calendar:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;g m l&lt;/p&gt;
@@ -1653,7 +1635,7 @@ whenever it asks you to type a Mayan name, so you don't have to worry
 about spelling.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="date-display-format"&gt;
-&lt;h3&gt;31.13.4 Date Display Format&lt;/h3&gt;
+&lt;h2&gt;31.13.4 Date Display Format&lt;/h2&gt;
 &lt;p&gt;You can customize the way dates are displayed in the diary, mode lines,
 and messages by setting &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;calendar-date-display-form&lt;/span&gt;&lt;/code&gt;. This variable
 holds a list of expressions that can involve the variables &lt;code class="docutils literal"&gt;month&lt;/code&gt;,
@@ -1670,7 +1652,7 @@ American style, the default value of this list is as follows:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;(month "/" day "/" (substring year -2))&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="time-display-format"&gt;
-&lt;h3&gt;31.13.5 Time Display Format&lt;/h3&gt;
+&lt;h2&gt;31.13.5 Time Display Format&lt;/h2&gt;
 &lt;p&gt;The calendar and diary by default display times of day in the
 conventional American style with the hours from 1 through 12, minutes,
 and either 'am' or 'pm'. If you prefer the European style, also known in
@@ -1688,7 +1670,7 @@ and &lt;code class="docutils literal"&gt;minutes&lt;/code&gt;, which are all num
 solar functions).&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="customizing-the-diary"&gt;
-&lt;h3&gt;31.13.6 Customizing the Diary&lt;/h3&gt;
+&lt;h2&gt;31.13.6 Customizing the Diary&lt;/h2&gt;
 &lt;p&gt;Ordinarily, the diary window indicates any holidays that fall on the
 date of the diary entries, either in the mode line or the buffer itself.
 The process of checking for holidays can be slow, depending on the
@@ -1714,10 +1696,10 @@ or the symbols &lt;code class="docutils literal"&gt;month&lt;/code&gt;, &lt;code
 kinds of text in the diary file. In order for the date pattern as a
 whole to match, all of its elements must match consecutively.&lt;/p&gt;
 &lt;p&gt;A regular expression in a date pattern matches in its usual fashion,
-using the standard syntax table altered so that ‘&lt;a href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id3"&gt;&lt;span class="problematic" id="id4"&gt;*&lt;/span&gt;&lt;/a&gt;' is a word
+using the standard syntax table altered so that ‘&lt;a href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id4"&gt;&lt;span class="problematic" id="id5"&gt;*&lt;/span&gt;&lt;/a&gt;' is a word
 constituent.&lt;/p&gt;
-&lt;div class="system-message" id="id3"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 1847); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id4"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;div class="system-message" id="id4"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 1852); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id5"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Inline emphasis start-string without end-string.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;The symbols &lt;code class="docutils literal"&gt;month&lt;/code&gt;, &lt;code class="docutils literal"&gt;day&lt;/code&gt;, &lt;code class="docutils literal"&gt;year&lt;/code&gt;, &lt;code class="docutils literal"&gt;monthname&lt;/code&gt;, and &lt;code class="docutils literal"&gt;dayname&lt;/code&gt;
@@ -1725,11 +1707,11 @@ match the month number, day number, year number, month name, and day
 name of the date being considered. The symbols that match numbers allow
 leading zeros; those that match names allow capitalization and
 abbreviation (as specified by &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;calendar-month-abbrev-array&lt;/span&gt;&lt;/code&gt; and
-&lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;calendar-day-abbrev-array&lt;/span&gt;&lt;/code&gt;). All the symbols can match '*'; since ‘&lt;a href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id5"&gt;&lt;span class="problematic" id="id6"&gt;*&lt;/span&gt;&lt;/a&gt;'
+&lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;calendar-day-abbrev-array&lt;/span&gt;&lt;/code&gt;). All the symbols can match '*'; since ‘&lt;a href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id6"&gt;&lt;span class="problematic" id="id7"&gt;*&lt;/span&gt;&lt;/a&gt;'
 in a diary entry means "any day", "any month", and so on, it should
 match regardless of the date being considered.&lt;/p&gt;
-&lt;div class="system-message" id="id5"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 1851); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id6"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;div class="system-message" id="id6"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 1856); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id7"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Inline emphasis start-string without end-string.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;The default value of &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;diary-date-forms&lt;/span&gt;&lt;/code&gt; in the American style is
@@ -1761,7 +1743,7 @@ match part of a word beyond the date itself to distinguish it from the
 fourth pattern.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="diary-entries-using-non-gregorian-calendars"&gt;
-&lt;h3&gt;31.13.7 Diary Entries Using non-Gregorian Calendars&lt;/h3&gt;
+&lt;h2&gt;31.13.7 Diary Entries Using non-Gregorian Calendars&lt;/h2&gt;
 &lt;p&gt;As well as entries based on the standard Gregorian calendar, your diary
 can have entries based on Bahá'í, Chinese, Hebrew, or Islamic dates.
 Recognition of such entries can be time-consuming, however, and since
@@ -1850,7 +1832,7 @@ Up: &lt;a class="reference external" href="https://www.gnu.org/software/emacs/ma
 Usage&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="diary-display"&gt;
-&lt;h3&gt;31.13.8 Diary Display&lt;/h3&gt;
+&lt;h2&gt;31.13.8 Diary Display&lt;/h2&gt;
 &lt;p&gt;Diary display works by preparing the list of diary entries and then
 running the function specified by the variable
 &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;diary-display-function&lt;/span&gt;&lt;/code&gt;. The default value &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;diary-fancy-display&lt;/span&gt;&lt;/code&gt;
@@ -1909,7 +1891,7 @@ buffer, it is best to display the entire file with s
 (&lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;diary-show-all-entries&lt;/span&gt;&lt;/code&gt;).&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="fancy-diary-display"&gt;
-&lt;h3&gt;31.13.9 Fancy Diary Display&lt;/h3&gt;
+&lt;h2&gt;31.13.9 Fancy Diary Display&lt;/h2&gt;
 &lt;p&gt;The following features only work with the fancy diary display.&lt;/p&gt;
 &lt;p&gt;You can use the normal hook &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;diary-list-entries-hook&lt;/span&gt;&lt;/code&gt; to sort each
 day's diary entries by their time of day. Here's how:&lt;/p&gt;
@@ -1944,7 +1926,7 @@ Up: &lt;a class="reference external" href="https://www.gnu.org/software/emacs/ma
 Usage&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="sexp-entries-and-the-fancy-diary-display"&gt;
-&lt;h3&gt;31.13.10 Sexp Entries and the Fancy Diary Display&lt;/h3&gt;
+&lt;h2&gt;31.13.10 Sexp Entries and the Fancy Diary Display&lt;/h2&gt;
 &lt;p&gt;Sexp diary entries allow you to do more than just have complicated
 conditions under which a diary entry applies. Sexp entries should be
 preceded by &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;diary-sexp-entry-symbol&lt;/span&gt;&lt;/code&gt; (default '%%') in the diary
@@ -2115,13 +2097,6 @@ year.)&lt;/p&gt;
 specifies how to mark the date in the calendar display. If one of these
 functions decides that it applies to a certain date, it returns a value
 that contains mark, as described above.&lt;/p&gt;
-&lt;div class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 2389)&lt;/p&gt;
-&lt;p&gt;Substitution definition "image0" empty or invalid.&lt;/p&gt;
-&lt;pre class="literal-block"&gt;.. |image0|
-   :width: 600px&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;</description><category>emacs</category><category>time</category><category>评注笔记</category><guid>https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/</guid><pubDate>Thu, 16 May 2019 01:53:29 GMT</pubDate></item><item><title>时间管理的三件武器</title><link>https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;前情概要&lt;/h2&gt;
 &lt;div class="line-block"&gt;
