@@ -8,6 +8,7 @@
    .. description: 时间专题之三
    .. type: text
 
+.. contents::
 
 前情概要
 --------
