@@ -15,7 +15,7 @@
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/cat_linux.xml</loc>
-  <lastmod>2019-11-14T06:41:00Z</lastmod>
+  <lastmod>2019-11-14T06:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/cat_programming.xml</loc>
@@ -27,7 +27,7 @@
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/linux.xml</loc>
-  <lastmod>2019-11-14T06:41:00Z</lastmod>
+  <lastmod>2019-11-14T06:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/ping-zhu-bi-ji.xml</loc>
@@ -51,7 +51,11 @@
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/ubuntu.xml</loc>
-  <lastmod>2019-11-14T06:41:00Z</lastmod>
+  <lastmod>2019-11-14T06:58:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://alinbxsorcerer.github.io/categories/yi-xiang.xml</loc>
+  <lastmod>2019-11-14T06:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/galleries/demo/rss.xml</loc>
@@ -63,10 +67,10 @@
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/rss.xml</loc>
-  <lastmod>2019-11-14T06:41:00Z</lastmod>
+  <lastmod>2019-11-14T06:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/sitemap.xml</loc>
-  <lastmod>2019-11-14T06:41:00Z</lastmod>
+  <lastmod>2019-11-14T06:58:00Z</lastmod>
  </sitemap>
 </sitemapindex>
