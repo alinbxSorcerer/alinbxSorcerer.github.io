@@ -7,39 +7,51 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/bash.xml</loc>
-  <lastmod>2019-11-11T06:54:00Z</lastmod>
+  <lastmod>2019-11-14T05:05:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/cat_guan-li.xml</loc>
-  <lastmod>2019-11-11T06:54:00Z</lastmod>
+  <lastmod>2019-11-14T05:05:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://alinbxsorcerer.github.io/categories/cat_linux.xml</loc>
+  <lastmod>2019-11-14T06:41:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/cat_programming.xml</loc>
-  <lastmod>2019-11-12T04:16:00Z</lastmod>
+  <lastmod>2019-11-14T05:05:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/emacs.xml</loc>
-  <lastmod>2019-11-12T04:16:00Z</lastmod>
+  <lastmod>2019-11-14T05:05:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://alinbxsorcerer.github.io/categories/linux.xml</loc>
+  <lastmod>2019-11-14T06:41:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/ping-zhu-bi-ji.xml</loc>
-  <lastmod>2019-11-12T04:16:00Z</lastmod>
+  <lastmod>2019-11-14T05:05:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/python.xml</loc>
-  <lastmod>2019-11-11T06:54:00Z</lastmod>
+  <lastmod>2019-11-14T05:05:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/regex.xml</loc>
-  <lastmod>2019-11-10T14:52:00Z</lastmod>
+  <lastmod>2019-11-14T05:05:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/shi-jian-guan-li.xml</loc>
-  <lastmod>2019-11-10T14:52:00Z</lastmod>
+  <lastmod>2019-11-14T05:05:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/time.xml</loc>
-  <lastmod>2019-11-12T04:16:00Z</lastmod>
+  <lastmod>2019-11-14T05:05:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://alinbxsorcerer.github.io/categories/ubuntu.xml</loc>
+  <lastmod>2019-11-14T06:41:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/galleries/demo/rss.xml</loc>
@@ -51,10 +63,10 @@
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/rss.xml</loc>
-  <lastmod>2019-11-12T04:16:00Z</lastmod>
+  <lastmod>2019-11-14T06:41:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/sitemap.xml</loc>
-  <lastmod>2019-11-12T04:16:00Z</lastmod>
+  <lastmod>2019-11-14T06:41:00Z</lastmod>
  </sitemap>
 </sitemapindex>
