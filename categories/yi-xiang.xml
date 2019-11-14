@@ -1,56 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Magic Land Declared by David (Posts about 意像)</title><link>https://alinbxsorcerer.github.io/</link><description></description><atom:link href="https://alinbxsorcerer.github.io/categories/yi-xiang.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:davad.fhl.wang@foxmail.com"&gt;David&lt;/a&gt; </copyright><lastBuildDate>Thu, 14 Nov 2019 07:00:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>趣学linux</title><link>https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="contents topic" id="contents"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Magic Land Declared by David (Posts about 意像)</title><link>https://alinbxsorcerer.github.io/</link><description></description><atom:link href="https://alinbxsorcerer.github.io/categories/yi-xiang.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:davad.fhl.wang@foxmail.com"&gt;David&lt;/a&gt; </copyright><lastBuildDate>Thu, 14 Nov 2019 14:21:36 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>读书评注:趣学linux</title><link>https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="contents topic" id="contents"&gt;
 &lt;p class="topic-title first"&gt;Contents&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id1" id="id14"&gt;概要&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id2" id="id15"&gt;第1章 源起&lt;/a&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id1" id="id15"&gt;概要&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id2" id="id16"&gt;第1章 源起&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#unix" id="id16"&gt;1.1 UNIX的诞生&lt;/a&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#unix" id="id17"&gt;1.1 UNIX的诞生&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id3" id="id17"&gt;1.1.1　操作系统的从无到有&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id4" id="id18"&gt;1.1.2　有牛人的地方就有新技术&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id5" id="id19"&gt;1.1.3　一个游戏引发的变革——UNIX元年来了&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id3" id="id18"&gt;1.1.1　操作系统的从无到有&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id4" id="id19"&gt;1.1.2　有牛人的地方就有新技术&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id5" id="id20"&gt;1.1.3　一个游戏引发的变革——UNIX元年来了&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#stallmangnu" id="id20"&gt;1.2 Stallman和他的GNU计划&lt;/a&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#stallmangnu" id="id21"&gt;1.2 Stallman和他的GNU计划&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id6" id="id21"&gt;1.2.1　快乐的自由&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id7" id="id22"&gt;1.2.2　自由逐渐远去&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id8" id="id23"&gt;1.2.3　不在沉默中爆发，就在沉默中灭亡&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#gnu" id="id24"&gt;1.2.4　实现GNU梦想&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id6" id="id22"&gt;1.2.1　快乐的自由&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id7" id="id23"&gt;1.2.2　自由逐渐远去&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id8" id="id24"&gt;1.2.3　不在沉默中爆发，就在沉默中灭亡&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#gnu" id="id25"&gt;1.2.4　实现GNU梦想&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#ubuntu" id="id25"&gt;1.3 从异想天开到Ubuntu&lt;/a&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#ubuntu" id="id26"&gt;1.3 从异想天开到Ubuntu&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#minix" id="id26"&gt;1.3.1　Minix&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#freax" id="id27"&gt;1.3.2　异想天开的FREAX&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#linux" id="id28"&gt;1.3.3　Linux的由来&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id9" id="id29"&gt;1.3.4　众人拾柴造就Linux&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id10" id="id30"&gt;1.3.5　琳琅满目的Linux&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#minix" id="id27"&gt;1.3.1　Minix&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#freax" id="id28"&gt;1.3.2　异想天开的FREAX&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#linux" id="id29"&gt;1.3.3　Linux的由来&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id9" id="id30"&gt;1.3.4　众人拾柴造就Linux&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id10" id="id31"&gt;1.3.5　琳琅满目的Linux&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id11" id="id31"&gt;1.4 本章小结&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id12" id="id32"&gt;1.5 参考资料&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id11" id="id32"&gt;1.4 本章小结&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id12" id="id33"&gt;1.5 参考资料&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id1"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id14"&gt;概要&lt;/a&gt;&lt;/h2&gt;
-&lt;pre class="code shell"&gt;&lt;a name="rest_code_00b1570ebb7c40cca6cde45d63cdf519-1"&gt;&lt;/a&gt;pandoc 趣学Linux01:源起.org -o &lt;span class="nv"&gt;$HOME&lt;/span&gt;/Public/nikola_post/posts/趣学linux.rst
-&lt;/pre&gt;&lt;p&gt;本书是一本与众不同的Linux入门读物。作者借鉴历史畅销书《明朝那点事儿》的写作风格，将技术图书以风趣幽默的风格娓娓道来，阅读起来十分过瘾。书中以一个拟人化的Ubuntu操作系统为主角，以Ubuntu
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id15"&gt;概要&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;本书中以一个拟人化的Ubuntu操作系统为主角，以Ubuntu
 10.04为基础，讲解了Ubuntu系统从安装、配置，到搭建开发平台、投入使用的过程。
-本书共8章，内容容安排上采取循序渐进的方式，由浅入深地引导读者安装、配置、使用Ubuntu系统。&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;&lt;p&gt;第1章介绍Linux系统的产生和发展概况；&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;第2章介绍Ubuntu系统的各种安装方法；&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;第3章介绍安装系统后的基本设置；&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;第4章介绍Ubuntu下的常用软件；&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;第5章介绍Windows下的部分软件在Linux中运行的解决方案；&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;第6章介绍命令行的使用及脚本的编写；&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;第7章介绍Ubuntu系统下C/C++、Java、PHP开发环境的搭建；&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;第8章深入讲解一个软件的编译、调试、打包、发布的过程。&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
+其中精彩的拟人化比喻, apt(组织部长/人事兼后勤经理), grub(门房大叔), mbr(传达室)
+本书共8章，内容容安排上采取循序渐进的方式，由浅入深地引导读者安装、配置、使用Ubuntu系统。
+#. 第1章介绍Linux系统的产生和发展概况；
+#. 第2章介绍Ubuntu系统的各种安装方法；
+#. 第3章介绍安装系统后的基本设置；
+#. 第4章介绍Ubuntu下的常用软件；
+#. 第5章介绍Windows下的部分软件在Linux中运行的解决方案；
+#. 第6章介绍命令行的使用及脚本的编写；
+#. 第7章介绍Ubuntu系统下C/C++、Java、PHP开发环境的搭建；
+#. 第8章深入讲解一个软件的编译、调试、打包、发布的过程。&lt;/p&gt;
 &lt;p&gt;以上.&lt;/p&gt;
 &lt;p&gt;再次处理的话可以分为三个部分&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
@@ -60,15 +58,16 @@
 &lt;li&gt;&lt;p&gt;命令行, 其他语言的环境配置&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;C语言的编译&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;时间轴: 当天启动"English-Repo"项目.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id2"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id15"&gt;第1章 源起&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id16"&gt;第1章 源起&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;我们将要讲述的故事，发生在一个你可能不熟悉、不了解，却又几乎天天都会接触到的世界。那里可闻鸟语却无花香，那里不见天日却色彩斑斓——那就是软件的世界。而我们的主角，就是一个软件，一个操作系统——Ubuntu。不过主角总是不着急登场的，在他露面之前，我们先来说说这位主角，以及跟他有血缘关系的几个操作系统的诞生过程。&lt;/p&gt;
 &lt;div class="section" id="unix"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id16"&gt;1.1 UNIX的诞生&lt;/a&gt;&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id17"&gt;1.1 UNIX的诞生&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;UNIX是一个强大的操作系统，稳定程度令人发指。要说UNIX，那得从20世纪60年代的美国开始说起。&lt;/p&gt;
 &lt;div class="section" id="id3"&gt;
-&lt;h4&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id17"&gt;1.1.1　操作系统的从无到有&lt;/a&gt;&lt;/h4&gt;
+&lt;h4&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id18"&gt;1.1.1　操作系统的从无到有&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;20世纪60年代，计算机可是个新鲜玩意儿，没有现在这么普及，而且非常笨重，都是用在商业或者科学研究领域，家庭用户想都不用想。而且那时候的计算机远没有易用到70多岁的赵大妈都能拿它来斗地主的地步。那时候使用计算机需要由专业人员通过输入一条条的指令，来进行各种运算。他们输入的指令大约相当于现在的汇编指令，所以效率和操作难度有多高就可想而知了。那时候计算机大都没有什么操作系统，顶多有个批处理系统，可以把要输入的指令记录在某种媒介上（比如纸带，如图1.1所示）一次性输入进去，省去了重复输入指令的麻烦。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="image0" src="https://alinbxsorcerer.github.io/images/%E8%B6%A3%E5%AD%A6linux/image00219.jpeg"&gt;&lt;/p&gt;
 &lt;p&gt;图1.1　打孔纸带&lt;/p&gt;
@@ -78,7 +77,7 @@
 &lt;p&gt;图1.2　IBM的System/360大型电脑&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id4"&gt;
-&lt;h4&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id18"&gt;1.1.2　有牛人的地方就有新技术&lt;/a&gt;&lt;/h4&gt;
+&lt;h4&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id19"&gt;1.1.2　有牛人的地方就有新技术&lt;/a&gt;&lt;/h4&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;【在那牛人聚集的地方】&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -108,7 +107,7 @@ Thompson）只是很普通的一个，就是图1.7中所示的这位。汤普逊
 &lt;p&gt;图1.7　Kenneth Lane Thompson&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id5"&gt;
-&lt;h4&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id19"&gt;1.1.3　一个游戏引发的变革——UNIX元年来了&lt;/a&gt;&lt;/h4&gt;
+&lt;h4&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id20"&gt;1.1.3　一个游戏引发的变革——UNIX元年来了&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;这个星际旅行跟星际争霸肯定是没得比的，不过在那时候已经算很有吸引力了。这个游戏自然是被设计运行在MULTICS系统上的，由于MULTICS系统还不完善，导致游戏运行得不是很流畅，所以，能够顺畅地玩星际旅行，成为汤普逊同学努力工作的源动力。&lt;/p&gt;
 &lt;p&gt;可是后来项目取消了，汤普逊同学似乎再也不可能流畅地玩他的星际旅行了，这是多么遗憾的事情啊。然而汤普逊同学没有就此放弃，强烈的游戏欲望推动他行动起来。毛主席教导我们：自己动手，丰衣足食。我估计汤普逊没有背过毛主席语录，但是他用自己的行动证明了这句话的正确性。他在墙角淘换出一台PDP－7的机器，并且伙同其同事Dernis
 Ritchie，打算将星际旅行移植到这台PDP－7上，于是这台PDP—7也跟着名垂史册，就是图1.8所示的这台。&lt;/p&gt;
@@ -125,7 +124,7 @@ Ritchie觉得用汇编写的系统不好维护，于是……他也发扬自己�
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="stallmangnu"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id20"&gt;1.2 Stallman和他的GNU计划&lt;/a&gt;&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id21"&gt;1.2 Stallman和他的GNU计划&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;这回要说的，是另一个传奇人物——Richard Matthew
 Stallman，就是图1.9里这位不爱刮胡子的大叔。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="image9" src="https://alinbxsorcerer.github.io/images/%E8%B6%A3%E5%AD%A6linux/image00228.jpeg"&gt;&lt;/p&gt;
@@ -133,19 +132,19 @@ Stallman，就是图1.9里这位不爱刮胡子的大叔。&lt;/p&gt;
 &lt;p&gt;Richard Matthew
 Stallman，1953年出生在美国纽约曼哈顿地区。在他生命的前十几年中，他并没有表现出什么过人的地方，但那是因为他没遇到一个叫做电脑的东西。&lt;/p&gt;
 &lt;div class="section" id="id6"&gt;
-&lt;h4&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id21"&gt;1.2.1　快乐的自由&lt;/a&gt;&lt;/h4&gt;
+&lt;h4&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id22"&gt;1.2.1　快乐的自由&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;高中的一个暑假，他去给IBM打工，花了两周的时间用Fortran语言编了一个数据处理的程序。这是他第一次接触计算机，或许就是这次相遇，确定了他未来行走的方向。1971年，他考上了哈佛大学，上学的同时，他还受聘于麻省理工学院的人工智能实验室，成为了一名职业黑客（黑客这个词没有贬义）。在人工智能实验室期间，他可没少干活，开发了很多有用的软件，其中最著名的就是Emacs编辑器。Emacs是一个可与Vi相抗衡的强大的编辑器。两者的操作方式完全不同，但同样强大，各自用自己独有的方式，提高着人们的编辑效率。直到今天，仍然有人争论到底Emacs好还是Vi好，信奉Emacs的人和信奉Vi的人形成了两个帮派，这两个帮派经常在互联网上用鼠标键盘相互灌水拍砖，拼个你死我活。哦，扯远了，咱还回来说Stallman。&lt;/p&gt;
 &lt;p&gt;那时候的Stallman在人工智能实验室里工作得非常愉快，大家有BUG同当，有代码共享。那时候的软件工程师的世界，是一个“人人为我，我为人人”的理想世界。因为最初的计算机软件没有什么开源不开源的概念，那时候的软件天生就是自由的！卖计算机的同时会附带软件，包括软件的源代码和文档。计算机厂商卖的主要是计算机的硬件，软件只是附属品而已。用户可以根据自己的需要去修改软件，与别人分享软件。总之，软件是用户花钱买硬件时附带着买来的，用户想怎么玩就怎么玩。软件开发者的目的，也不是靠软件赚钱，而是靠软件支撑起硬件的功能，然后靠卖硬件赚钱。&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id7"&gt;
-&lt;h4&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id22"&gt;1.2.2　自由逐渐远去&lt;/a&gt;&lt;/h4&gt;
+&lt;h4&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id23"&gt;1.2.2　自由逐渐远去&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;然而随着技术的发展，软件逐渐脱离硬件成为一个独立的产业，很多软件慢慢地只提供二进制代码而不提供源代码了，这就意味着你不能修改它，并且多数软件还规定最终用户没有二次分发的权利。也就是说，这东西你买了，只能你用，你再给别人就不行！这就好像我买了把菜刀，然后卖菜刀的告诉我“你这把菜刀不许借给你的邻居用，也不许私自给菜刀换刀把，否则我就告你！”&lt;/p&gt;
 &lt;p&gt;Stallman当时就遇到了类似这样的菜刀问题。那时候，他们实验室买的第一台打印机附带有驱动程序的源代码。他们那的黑客们可以随意修改这个驱动，根据自己的需要添加些小功能，改改BUG之类的，这为他们的工作带来了很大的方便。后来，实验室又买了一台激光打印机，这次厂商只提供了二进制的打印机驱动程序，它是实验室里仅有的一个没有源代码的软件。Stallman很不喜欢这样的产品，然而他没有选择，只能沉默。&lt;/p&gt;
 &lt;p&gt;后来出于工作的需要，Stallman想修改一下这个驱动程序，但是不行，没源代码啊。Stallman听说卡内基·梅隆大学有这个打印机的驱动程序源代码，他就去了那里，跟他们套近乎：“那啥，大家都是道上混的，谁还没个"马高蹬短"的时候？是兄弟的拉哥们儿一把，我也没啥事儿，就是我们那打印机老丢字，老把一些关键的字打成口口，我估计是驱动的问题，听说你们这有这驱动的源代码，能不能给我拷一份？”对方办事效率还是挺高的，很干脆地拒绝了他。因为他们和厂商签署了一份保密协议，协议要求他们不能向别人拷贝源代码。Stallman顿时感到他们背叛了自由的计算机社团，他非常生气，但是他没有办法改变什么，只好又选择了沉默。&lt;/p&gt;
 &lt;p&gt;这只是一件小事，只是一个时代的缩影。那个时代，正处在软件向私有化转变的过程中，也是软件逐渐商业化的过程。越来越多的软件选择了不开放源代码，不允许二次分发的发布方式。Stallman身边的同事，一个一个地跑到开发私有软件的公司去打工了，他们不再相互分享，不再相互交流。Stallman问：“你们那软件的查找算法做得不错啊，怎么实现的？”“对不起，无可奉告。”“你们的文档工具效率挺高啊。”“对不起，商业机密。”……面对这一切，Stallman又能说什么呢？他还是只有沉默。&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id8"&gt;
-&lt;h4&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id23"&gt;1.2.3　不在沉默中爆发，就在沉默中灭亡&lt;/a&gt;&lt;/h4&gt;
+&lt;h4&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id24"&gt;1.2.3　不在沉默中爆发，就在沉默中灭亡&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;Stallman爆发了！他不能容忍软件世界里清新自由的空气被私有软件污染；他不能容忍被剥夺按照自己的需求修改软件的权利和乐趣；他不能容忍自己买条皮带尺寸不够时，自己竟然连在上面多打个洞的权利都没有！于是，他就爆发了。&lt;/p&gt;
 &lt;p&gt;他要重现当年那“人人为我，我为人人”的合作互助的软件世界；他要把使用、复制、研究、修改、分发软件的权利还给软件世界的每一个人民；他要用自己的行动告诉人们，软件天生就该是自由的！&lt;/p&gt;
 &lt;p&gt;他要开辟一个新的世界，哪怕是一个人在战斗！于是，一个宏伟的计划——GNU计划在他心中产生了。它的目标是创建一套完全自由的操作系统。因为操作系统是电脑中最重要、最基础的软件，要创造自由的软件世界，自然先要有一套自由的操作系统，然后再以此系统为中心，开发各种各样自由的软件。1983年，Stallman在net.unix-wizards新闻组上公布了GNU计划，这个计划的标志是一头角马（也就是非洲牛羚），就是图1.10所示的这个。&lt;/p&gt;
@@ -155,20 +154,20 @@ Stallman，1953年出生在美国纽约曼哈顿地区。在他生命的前十�
 &lt;p&gt;这个计划要创造一套自由的类UNIX操作系统。系统本身及系统上的软件都是自由软件，它们可以被免费获取，随意使用、修改和再分发。并且每个人都可以获得这个系统全部的源代码，每个人都可以为完善这个系统作出自己的贡献。这个系统要使用与UNIX相同的接口标准，这样，就可以由不同的人，分期分批地创作操作系统的不同部分而不必担心相互之间协同工作的问题。&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="gnu"&gt;
-&lt;h4&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id24"&gt;1.2.4　实现GNU梦想&lt;/a&gt;&lt;/h4&gt;
+&lt;h4&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id25"&gt;1.2.4　实现GNU梦想&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;为了实施GNU计划，1985年，Stallman又创建了自由软件基金会。基金会的主要工作就是执行GNU计划，开发更多的自由软件。1989年，Stallman与基金会的一群律师们起草了广为使用的《GNU通用公共协议证书》也就是GPL协议，以此协议来保证GNU计划中所有软件的自由性。到了1990年，GNU计划中的这个系统已经初具规模，有了很多优秀的软件。其中有很多是世界各地的黑客们无偿提供的，也有一部分是利用自由软件基金会的基金雇用程序员来开发的，当然，Stallman自己也身先士卒，开发了Emacs、GCC、GDB等重要软件。当他看着这些丰富的自由软件的时候，感觉到那清新自由的空气，终于又回来了，以后，人们就可以拥有一个可以自由使用、自由修改、自由分发的、自由的操作系统了！不过等一下，好像还差点什么，哦，还……差个内核吧。&lt;/p&gt;
 &lt;p&gt;作为一个系统，没有内核是不行的，这么重要的部件Stallman当然不会忘记，所以才会有Hurd内核。这个内核被设计为一个遵守POSIX标准的微内核。所谓微内核，是相对于宏内核来说的。宏内核就像我们现在的Linux内核，是一个独立的程序，里面包含了进程管理、内存管理、文件管理等功能。而微内核则将一个内核需要的功能尽量地简化并且拆分，运行起来是几个独立的程序，有的专门负责进程管理，有的专门负责内存分配。内核是一个系统的核心，所以至关重要，Stallman对Hurd的开发也是精益求精，非常谨慎，以至于内核的进度有些落后于其他的系统软件，当其他软件都已经有比较优秀的版本的时候，Hurd内核依然不能够走出实验室投入真正的使用。这种情况一直持续到1991年，另一位英雄的出现——不过，这里先卖个关子，暂且不去说他。&lt;/p&gt;
 &lt;p&gt;无论怎样，到今天，Stallman理想中的自由世界，终于拉开了那沉重的幕布，展现出了自由的光彩。而Stallman并不满足，也确实没有满足的理由，这个自由的世界还需要成长，还需要更加丰富多彩，还需要有更多的人走进这个世界中来。于是Stallman奔走于世界各地，告诉人们有这么一个自由的世界，号召人们加入这个世界，鼓励人们为使这个世界更加自由而付出自己的力量。他是一个执着的苦行僧，为了他的梦想，为了他的自由世界，他会一直走下去……&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="ubuntu"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id25"&gt;1.3 从异想天开到Ubuntu&lt;/a&gt;&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id26"&gt;1.3 从异想天开到Ubuntu&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;1988年，芬兰赫尔辛基大学迎来了一位新的大学生——Linus Benedict
 Torvalds，就是图1.11所示的这位。当然，那时候他还比较瘦，而且他的名字在学校的花名册中也并不显眼，但是一年后，他大二的时候，开始有故事了。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="image12" src="https://alinbxsorcerer.github.io/images/%E8%B6%A3%E5%AD%A6linux/image00230.jpeg"&gt;&lt;/p&gt;
 &lt;p&gt;图1.11　Linus Benedict Torvalds&lt;/p&gt;
 &lt;div class="section" id="minix"&gt;
-&lt;h4&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id26"&gt;1.3.1　Minix&lt;/a&gt;&lt;/h4&gt;
+&lt;h4&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id27"&gt;1.3.1　Minix&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;大学二年级的时候，Linus同学开始学习操作系统这门课程。那时候这门课程使用Minix系统进行教学。Minix这个名字或许您听着并不熟悉，这是个专门用于教学的操作系统，它的系统结构和UNIX系统是类似的。有人可能会问：那为什么不直接用UNIX呢？嗯，UNIX确实很先进，很优秀，确实值得学习计算机科学和操作系统的同学们学习。然而要知道有一种东西叫做版权，即便你不怎么在乎这个东西，但人家学校是不能做违法的事的。UNIX并不免费，并且是天价的，广大穷苦的大学生们买不起，学校也没钱为每一名学生配备一套UNIX系统。&lt;/p&gt;
 &lt;p&gt;荷兰阿姆斯特丹Vrije大学的Andrew S.
 Tanenbaum教授（就是图1.12所示的这位）在教学过程中就深刻地体会到，世界上缺少一个教学用的操作系统。他的学生们学习了计算机，学习了操作系统原理，不能光啃书本，总得实践一下吧？&lt;/p&gt;
@@ -183,7 +182,7 @@ UNIX之意，1987年被编写出来，到1991年发展到1.5版，后来发展�
 &lt;p&gt;&lt;img alt="image14" src="https://alinbxsorcerer.github.io/images/%E8%B6%A3%E5%AD%A6linux/image00232.jpeg"&gt; 图1.13　Minix 3的界面&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="freax"&gt;
-&lt;h4&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id27"&gt;1.3.2　异想天开的FREAX&lt;/a&gt;&lt;/h4&gt;
+&lt;h4&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id28"&gt;1.3.2　异想天开的FREAX&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;Linus他们学校的计算机上装的就是这个专门用于教学的Minix系统。虽然适合拿来学习，不过系统本身并不强大。这要是别人也还罢了，可是Linus同学有个最大的爱好，就是虐待计算机。&lt;/p&gt;
 &lt;p&gt;他热衷于测试计算机的能力和限制，整天研究怎么让计算机按照自己的想法去干活，怎么发挥计算机最大的性能，一定要把可怜的机器累得精疲力尽，口眼歪斜，电容爆浆，吐血身亡才算罢休。&lt;/p&gt;
 &lt;p&gt;可想而知，很快这个教学用的操作系统就已经不能满足Linus大侠的欲望了，可是似乎也没有更好的选择。上面说过了，UNIX奇贵无比，DOS又不够优秀，而且无论UNIX还是DOS，它们的代码都是不开放的，只能拿来用，没法拿来折腾。于是像其他牛人一样，Linus自己动手了（当想要的东西不存在时就自己动手创造，这充分说明他有成为大牛的潜质）。&lt;/p&gt;
@@ -191,7 +190,7 @@ UNIX之意，1987年被编写出来，到1991年发展到1.5版，后来发展�
 &lt;p&gt;提示：FREAX源于英文中的freak。freak有怪诞，怪物之意，Linus取其谐音命名其操作系统为FREAX。&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="linux"&gt;
-&lt;h4&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id28"&gt;1.3.3　Linux的由来&lt;/a&gt;&lt;/h4&gt;
+&lt;h4&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id29"&gt;1.3.3　Linux的由来&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;如果Linus就这么干下去，估计到今天只会有两种结果。&lt;/p&gt;
 &lt;p&gt;（1）成家立业后的Linus经常指着他的电脑C盘里面的一个文件夹对来访的朋友说：看，我那时候还写过一个FREAX系统。&lt;/p&gt;
 &lt;p&gt;（2）Linus为完成FREAX系统挑灯夜战，最终累得吐血身亡，永远活在我们心中。&lt;/p&gt;
@@ -200,10 +199,10 @@ UNIX之意，1987年被编写出来，到1991年发展到1.5版，后来发展�
 system.”这是他当年在comp.os.minix上发布的消息，告诉大家，他正在写一个操作系统。并且，他还把他写的“异想天开”操作系统的代码上传到ftp.funet.fi的服务器上供大家下载，以便交流心得，共同学习。这就相当于你跑到网站上发帖子说：我研究出一种萝卜炖牛腩的方法，主料是啥啥啥，配料是啥啥啥，怎么怎么炖，大家都试试吧！（对不起，我又饿了）于是很多有兴趣的人就来尝Linus炖的牛腩，哦不对，是尝试Linus写的系统。不过当时那个服务器的管理员Ari
 Lemke看着这个异想天开的名字就不顺眼。想想，既然是Linus写的操作系统，又是类UNIX的，干脆，叫Linux吧。&lt;/p&gt;
 &lt;p&gt;这里先要说一个概念，Linux是什么？狭义地讲，Linux只是一个操作系统的内核，它只是各位的Ubuntu系统里面/boot/目录下的那个内核文件vmlinuz-x.x.xx-xx-generic。就好比汽车，Linux只是一个引擎而已，只是大家普遍习惯把装了Linux这种引擎的汽车叫做Linux汽车。那么既然Linux只是一个内核，要想工作，就还需要很多周边软件的支持，比如文件系统；比如一个命令行程序；比如一些基本的软件。这些东西加在一起成为一个系统，其实应该叫做GNU/Linux系统。不过为了符合平时习惯，本书后面如无特别声明，所提到的Linux都指GNU/Linux系统。&lt;/p&gt;
-&lt;pre class="code shell"&gt;&lt;a name="rest_code_0c3873d8c9c042f28b4b4e66eba1c9a7-1"&gt;&lt;/a&gt;ls /boot
+&lt;pre class="code shell"&gt;&lt;a name="rest_code_cba0b90b6c0b4aceac363fba83edbb05-1"&gt;&lt;/a&gt;ls /boot
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="id9"&gt;
-&lt;h4&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id29"&gt;1.3.4　众人拾柴造就Linux&lt;/a&gt;&lt;/h4&gt;
+&lt;h4&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id30"&gt;1.3.4　众人拾柴造就Linux&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;Linux被公布在网上之后，引来大家纷纷的路过和围观，很多人觉得这个东西挺有意思，不过第一个对外发布的0.01版Linux还有很多的不完善（这简直是一定的）。于是，全世界的有志之士纷纷伸出援手，共同完善这个刚刚出生的Linux。&lt;/p&gt;
 &lt;p&gt;首先就要感谢Richard &lt;cite&gt;Stallman大牛创建的GNU计划&lt;/cite&gt; ，这使得Linux不必去从头开始开发那些最基本的软件和命令，而是直接利用GNU计划中的那些优秀的开源软件——前面说过了，那时候GNU系统除了内核以外，已经比较完善了。&lt;/p&gt;
 &lt;p&gt;有了基本的软件之后，还需要一个文件系统。由于当初Linus大侠是在Minix系统上开发的，所以最开始Linux用的文件系统是借用Minix的文件系统。可老借别人的总不是个事儿，还是应该有自己的文件系统，要不然你怎么好意思跟别的操作系统打招呼？这时候，来了个牛人叫Theodore
@@ -215,7 +214,8 @@ Ts'o，曹予德，华裔，1990年毕业于美国MIT大学计算机科学专业
 0.10内核中的虚拟磁盘驱动程序和内存分配程序。在感觉到Linux缺少一个自己的文件系统后，他提出并实现了ext2文件系统，此后ext系列的文件系统一直都是Linux世界中事实上的标准，任何一个发行版都会默认支持ext文件系统，现在已经发展到了ext4了。&lt;/p&gt;
 &lt;p&gt;另一位牛人，一个英国人——Alan
 Cox，请见图1.15，不要问我为什么牛人都不爱刮胡子，我也不知道。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image17" src="https://alinbxsorcerer.github.io/images/%E8%B6%A3%E5%AD%A6linux/image00234.jpeg"&gt; 图1.15　Alan Cox&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image17" src="https://alinbxsorcerer.github.io/images/%E8%B6%A3%E5%AD%A6linux/image00234.jpeg"&gt;
+图1.15　Alan Cox&lt;/p&gt;
 &lt;p&gt;他工作于英国威尔士斯旺西大学，特别爱玩电脑游戏（又一个玩游戏的，可见玩游戏也不是坏事），尤其是网游（你看你看，还是网游），不过那时候的网游不像现在这样华丽，那时候是字符界面的，能想象吗？字符界面的网游！那种网游叫做MUD——Multi-User
 Dungeon or Dimension。玩MUD当然就得有计算机，得有网，所以Alan
 Cox开始逐渐地对计算机和网络产生了兴趣。为了提高电脑运行游戏的速度及网络传输的速度，他开始接触各种操作系统，为自己选择一个满意的游戏平台，争取榨干电脑的每一个指令周期。&lt;/p&gt;
@@ -229,7 +229,7 @@ Journel工作，现在就职于著名的商业发行版Red Hat的公司。&lt;/p
 &lt;p&gt;当然除了这些大牛，还有更多的大牛，中牛，小牛，肥牛……（唉，又饿了）他们都为Linux的发展作出了自己的贡献。他们来自不同的国家，从事不同的职业，甚至从未见过面。但是他们为了一个共同的目标，通过网络，一起合作，利用自己的业余时间，义务地帮助Linux成长，才有了今天这个可以合法免费使用的操作系统。这是什么精神？这就是“人人为我，我为人人”的软件精神！&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id10"&gt;
-&lt;h4&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id30"&gt;1.3.5　琳琅满目的Linux&lt;/a&gt;&lt;/h4&gt;
+&lt;h4&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id31"&gt;1.3.5　琳琅满目的Linux&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;这之后，Linux的发展可以用“一发不可收拾”来形容。很多商业公司和民间组织都纷纷看好这个系统，并加入了Linux的阵营，各种各样的发行版满足着众多Linux爱好者的需求。&lt;/p&gt;
 &lt;p&gt;商业化比较成功的发行版，要数来自俄罗斯的RedHat了` ，相信大家对图1.16里这顶红帽子有些印象。Red
 Hat 1.0版于1994年11月3日发布，之后一直稳健发展。到Red Hat
@@ -254,20 +254,20 @@ Hat公司的rpm包具有同等重要的地位。同时，它的apt软件包管�
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id11"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id31"&gt;1.4 本章小结&lt;/a&gt;&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id32"&gt;1.4 本章小结&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;好了，Linux家族的这点历史渊源就介绍到这里，相信您对UNIX、Minix、Linux这些发音差不多的系统，已经有了些简单的了解了。下一章，就该我们这本书的主角——Ubuntu系统登场了。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;总结: 发展历史: 三个组织和两个人 开源计划: stallman, GNU Linux及各个版本&lt;/p&gt;
 &lt;p&gt;所学所得: 怀抱着榨取计算机性能的初心, 意像方法, C语言的发明人Det
 凡事从小处做起, 比如unix系统, linux系统, 起初只有一个小目标.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;其他章节请查看`Github Repo &amp;lt;&lt;a class="reference external" href="https://github.com/alinbxSorcerer/Fun-By-Learning-Linux"&gt;https://github.com/alinbxSorcerer/Fun-By-Learning-Linux&lt;/a&gt;&amp;gt;`_&lt;/p&gt;
 &lt;p&gt;以上仅供个人自学参阅.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id12"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id32"&gt;1.5 参考资料&lt;/a&gt;&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id33"&gt;1.5 参考资料&lt;/a&gt;&lt;/h3&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://item.jd.com/10982034.html"&gt;正版购买&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/alinbxSorcerer/Fun-By-Learning-Linux"&gt;余下章节请参阅&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://item.jd.com/10982034.html"&gt;以上仅供个人自学参阅, 请购买正版&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;</description><category>linux</category><category>ubuntu</category><category>意像</category><guid>https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/</guid><pubDate>Fri, 26 Jan 2018 12:53:29 GMT</pubDate></item></channel></rss>

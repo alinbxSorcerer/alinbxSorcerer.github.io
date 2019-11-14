@@ -10,12 +10,20 @@
   <lastmod>2019-11-14T05:05:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://alinbxsorcerer.github.io/categories/calculus.xml</loc>
+  <lastmod>2019-11-14T14:21:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/cat_guan-li.xml</loc>
   <lastmod>2019-11-14T05:05:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/cat_linux.xml</loc>
-  <lastmod>2019-11-14T07:00:00Z</lastmod>
+  <lastmod>2019-11-14T14:21:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://alinbxsorcerer.github.io/categories/cat_math.xml</loc>
+  <lastmod>2019-11-14T14:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/cat_programming.xml</loc>
@@ -27,7 +35,11 @@
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/linux.xml</loc>
-  <lastmod>2019-11-14T07:00:00Z</lastmod>
+  <lastmod>2019-11-14T14:21:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://alinbxsorcerer.github.io/categories/math.xml</loc>
+  <lastmod>2019-11-14T14:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/ping-zhu-bi-ji.xml</loc>
@@ -51,11 +63,11 @@
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/ubuntu.xml</loc>
-  <lastmod>2019-11-14T07:00:00Z</lastmod>
+  <lastmod>2019-11-14T14:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/yi-xiang.xml</loc>
-  <lastmod>2019-11-14T07:00:00Z</lastmod>
+  <lastmod>2019-11-14T14:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/galleries/demo/rss.xml</loc>
@@ -67,10 +79,10 @@
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/rss.xml</loc>
-  <lastmod>2019-11-14T07:00:00Z</lastmod>
+  <lastmod>2019-11-14T14:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/sitemap.xml</loc>
-  <lastmod>2019-11-14T07:00:00Z</lastmod>
+  <lastmod>2019-11-14T14:21:00Z</lastmod>
  </sitemap>
 </sitemapindex>
