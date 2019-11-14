@@ -1,4 +1,4 @@
-   .. title: 趣学linux
+   .. title: 读书评注:趣学linux
    .. slug: fun-by-learning-linux
    .. date: 2018-01-26 20:53:29 UTC+08:00
    .. tags: linux, ubuntu, 意像
@@ -12,14 +12,10 @@
 概要
 ====
 
-.. code:: shell
-
-   pandoc 趣学Linux01:源起.org -o $HOME/Public/nikola_post/posts/趣学linux.rst
-
-本书是一本与众不同的Linux入门读物。作者借鉴历史畅销书《明朝那点事儿》的写作风格，将技术图书以风趣幽默的风格娓娓道来，阅读起来十分过瘾。书中以一个拟人化的Ubuntu操作系统为主角，以Ubuntu
+本书中以一个拟人化的Ubuntu操作系统为主角，以Ubuntu
 10.04为基础，讲解了Ubuntu系统从安装、配置，到搭建开发平台、投入使用的过程。
+其中精彩的拟人化比喻, apt(组织部长/人事兼后勤经理), grub(门房大叔), mbr(传达室)
 本书共8章，内容容安排上采取循序渐进的方式，由浅入深地引导读者安装、配置、使用Ubuntu系统。
-
 #. 第1章介绍Linux系统的产生和发展概况；
 #. 第2章介绍Ubuntu系统的各种安装方法；
 #. 第3章介绍安装系统后的基本设置；
@@ -38,6 +34,8 @@
 #. 配置好之后便是常用的软件, 要开始工作嘛, windows下部分软件的解决方案.
 #. 命令行, 其他语言的环境配置
 #. C语言的编译
+
+时间轴: 当天启动"English-Repo"项目.
 
 第1章 源起
 ==========
@@ -280,7 +278,8 @@ Ts'o，曹予德，华裔，1990年毕业于美国MIT大学计算机科学专业
 另一位牛人，一个英国人——Alan
 Cox，请见图1.15，不要问我为什么牛人都不爱刮胡子，我也不知道。
 
-|image17| 图1.15　Alan Cox
+|image17|
+图1.15　Alan Cox
 
 他工作于英国威尔士斯旺西大学，特别爱玩电脑游戏（又一个玩游戏的，可见玩游戏也不是坏事），尤其是网游（你看你看，还是网游），不过那时候的网游不像现在这样华丽，那时候是字符界面的，能想象吗？字符界面的网游！那种网游叫做MUD——Multi-User
 Dungeon or Dimension。玩MUD当然就得有计算机，得有网，所以Alan
@@ -345,13 +344,15 @@ Hat公司的rpm包具有同等重要的地位。同时，它的apt软件包管�
    所学所得: 怀抱着榨取计算机性能的初心, 意像方法, C语言的发明人Det
    凡事从小处做起, 比如unix系统, linux系统, 起初只有一个小目标.
 
-其他章节请查看`Github Repo <https://github.com/alinbxSorcerer/Fun-By-Learning-Linux>`_
+
 
 以上仅供个人自学参阅.
 
 1.5 参考资料
 -------------
-- `正版购买 <https://item.jd.com/10982034.html>`_
+- `余下章节请参阅 <https://github.com/alinbxSorcerer/Fun-By-Learning-Linux>`_
+- `以上仅供个人自学参阅, 请购买正版 <https://item.jd.com/10982034.html>`_
+
 
 
 .. |image0| image:: /images/趣学linux/image00219.jpeg
