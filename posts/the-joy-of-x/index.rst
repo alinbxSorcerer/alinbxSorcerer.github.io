@@ -3,7 +3,7 @@
    .. date: 2017-05-17 20:53:29 UTC+08:00
    .. tags: math, calculus
    .. category: math
-   .. link:
+   .. link: https://github.com/alinbxSorcerer/The-Joy-of-X
    .. description:
    .. type: text
 
@@ -14,7 +14,10 @@
 
 LONG BEFORE I knew what calculus was, I sensed there was something special about it. My dad had spoken about it in reverential tones. He hadn't been able to go to college, being a child of the Depression, but somewhere along the line, maybe during his time in the South Pacific repairing B-24 bomber engines, he'd gotten a feel for what calculus could do. Imagine a mechanically controlled bank of antiaircraft guns automatically firing at an incoming fighter plane. Calculus, he supposed, could be used to tell the guns where to aim.
 
-   Define: reverential *ˈrev.ɚ.əns* 尊敬 Etymology: mid 16th cent.: from medieval Latin reverentialis, from the verb revereri from re- (expressing intensive force) + vereri ‘to fear’. 助记: re(加强) vereri(fear) 比较形似
+  Define: reverential *ˈrev.ɚ.əns* 尊敬
+  Etymology: mid 16th cent.: from medieval Latin reverentialis, from the verb
+  revereri from re- (expressing intensive force) + vereri ‘to fear’.
+  助记: re(加强) vereri(fear) 比较形似
 
 Every year about a million American students take calculus. But far fewer really understand what the subject is about or could tell you why they were learning it. It's not their fault. There are so many techniques to master and so many new ideas to absorb that the overall framework is easy to miss.
 
