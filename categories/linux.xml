@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Magic Land Declared by David (Posts about linux)</title><link>https://alinbxsorcerer.github.io/</link><description></description><atom:link href="https://alinbxsorcerer.github.io/categories/linux.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:davad.fhl.wang@foxmail.com"&gt;David&lt;/a&gt; </copyright><lastBuildDate>Thu, 14 Nov 2019 06:58:21 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>趣学linux</title><link>https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="contents topic" id="contents"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Magic Land Declared by David (Posts about linux)</title><link>https://alinbxsorcerer.github.io/</link><description></description><atom:link href="https://alinbxsorcerer.github.io/categories/linux.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:davad.fhl.wang@foxmail.com"&gt;David&lt;/a&gt; </copyright><lastBuildDate>Thu, 14 Nov 2019 07:00:47 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>趣学linux</title><link>https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="contents topic" id="contents"&gt;
 &lt;p class="topic-title first"&gt;Contents&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id1" id="id14"&gt;概要&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
@@ -37,7 +37,7 @@
 &lt;/div&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id14"&gt;概要&lt;/a&gt;&lt;/h2&gt;
-&lt;pre class="code shell"&gt;&lt;a name="rest_code_7b13ce8d6bd54f1196382a76d2fc0ea4-1"&gt;&lt;/a&gt;pandoc 趣学Linux01:源起.org -o &lt;span class="nv"&gt;$HOME&lt;/span&gt;/Public/nikola_post/posts/趣学linux.rst
+&lt;pre class="code shell"&gt;&lt;a name="rest_code_00b1570ebb7c40cca6cde45d63cdf519-1"&gt;&lt;/a&gt;pandoc 趣学Linux01:源起.org -o &lt;span class="nv"&gt;$HOME&lt;/span&gt;/Public/nikola_post/posts/趣学linux.rst
 &lt;/pre&gt;&lt;p&gt;本书是一本与众不同的Linux入门读物。作者借鉴历史畅销书《明朝那点事儿》的写作风格，将技术图书以风趣幽默的风格娓娓道来，阅读起来十分过瘾。书中以一个拟人化的Ubuntu操作系统为主角，以Ubuntu
 10.04为基础，讲解了Ubuntu系统从安装、配置，到搭建开发平台、投入使用的过程。
 本书共8章，内容容安排上采取循序渐进的方式，由浅入深地引导读者安装、配置、使用Ubuntu系统。&lt;/p&gt;
@@ -53,14 +53,9 @@
 &lt;/ol&gt;
 &lt;p&gt;以上.&lt;/p&gt;
 &lt;p&gt;再次处理的话可以分为三个部分&lt;/p&gt;
-&lt;p&gt;#. 介绍linux的发展历史
-#.&lt;/p&gt;
-&lt;blockquote&gt;
 &lt;ol class="arabic simple"&gt;
-&lt;li&gt;&lt;p&gt;安装ubuntu,起手式 2)安装后的基本配置 安装配置&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;介绍linux的发展历史&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;1)安装ubuntu,起手式 2)安装后的基本配置 安装配置&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;配置好之后便是常用的软件, 要开始工作嘛, windows下部分软件的解决方案.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;命令行, 其他语言的环境配置&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;C语言的编译&lt;/p&gt;&lt;/li&gt;
@@ -205,7 +200,7 @@ UNIX之意，1987年被编写出来，到1991年发展到1.5版，后来发展�
 system.”这是他当年在comp.os.minix上发布的消息，告诉大家，他正在写一个操作系统。并且，他还把他写的“异想天开”操作系统的代码上传到ftp.funet.fi的服务器上供大家下载，以便交流心得，共同学习。这就相当于你跑到网站上发帖子说：我研究出一种萝卜炖牛腩的方法，主料是啥啥啥，配料是啥啥啥，怎么怎么炖，大家都试试吧！（对不起，我又饿了）于是很多有兴趣的人就来尝Linus炖的牛腩，哦不对，是尝试Linus写的系统。不过当时那个服务器的管理员Ari
 Lemke看着这个异想天开的名字就不顺眼。想想，既然是Linus写的操作系统，又是类UNIX的，干脆，叫Linux吧。&lt;/p&gt;
 &lt;p&gt;这里先要说一个概念，Linux是什么？狭义地讲，Linux只是一个操作系统的内核，它只是各位的Ubuntu系统里面/boot/目录下的那个内核文件vmlinuz-x.x.xx-xx-generic。就好比汽车，Linux只是一个引擎而已，只是大家普遍习惯把装了Linux这种引擎的汽车叫做Linux汽车。那么既然Linux只是一个内核，要想工作，就还需要很多周边软件的支持，比如文件系统；比如一个命令行程序；比如一些基本的软件。这些东西加在一起成为一个系统，其实应该叫做GNU/Linux系统。不过为了符合平时习惯，本书后面如无特别声明，所提到的Linux都指GNU/Linux系统。&lt;/p&gt;
-&lt;pre class="code shell"&gt;&lt;a name="rest_code_3fa95399d7234305ab41ef5df7ea4f31-1"&gt;&lt;/a&gt;ls /boot
+&lt;pre class="code shell"&gt;&lt;a name="rest_code_0c3873d8c9c042f28b4b4e66eba1c9a7-1"&gt;&lt;/a&gt;ls /boot
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="id9"&gt;
 &lt;h4&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id29"&gt;1.3.4　众人拾柴造就Linux&lt;/a&gt;&lt;/h4&gt;
@@ -262,13 +257,12 @@ Hat公司的rpm包具有同等重要的地位。同时，它的apt软件包管�
 &lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id31"&gt;1.4 本章小结&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;好了，Linux家族的这点历史渊源就介绍到这里，相信您对UNIX、Minix、Linux这些发音差不多的系统，已经有了些简单的了解了。下一章，就该我们这本书的主角——Ubuntu系统登场了。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;总结: 发展历史: 三个组织和两个人 开源计划: stallman, GNU
-Linux及各个版本&lt;/p&gt;
+&lt;p&gt;总结: 发展历史: 三个组织和两个人 开源计划: stallman, GNU Linux及各个版本&lt;/p&gt;
 &lt;p&gt;所学所得: 怀抱着榨取计算机性能的初心, 意像方法, C语言的发明人Det
 凡事从小处做起, 比如unix系统, linux系统, 起初只有一个小目标.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;其他章节请查看`Github Repo &amp;lt;&lt;a class="reference external" href="https://github.com/alinbxSorcerer/Fun-By-Learning-Linux"&gt;https://github.com/alinbxSorcerer/Fun-By-Learning-Linux&lt;/a&gt;&amp;gt;`_
-仅供个人参阅.&lt;/p&gt;
+&lt;p&gt;其他章节请查看`Github Repo &amp;lt;&lt;a class="reference external" href="https://github.com/alinbxSorcerer/Fun-By-Learning-Linux"&gt;https://github.com/alinbxSorcerer/Fun-By-Learning-Linux&lt;/a&gt;&amp;gt;`_&lt;/p&gt;
+&lt;p&gt;以上仅供个人自学参阅.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id12"&gt;
 &lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/#id32"&gt;1.5 参考资料&lt;/a&gt;&lt;/h3&gt;
