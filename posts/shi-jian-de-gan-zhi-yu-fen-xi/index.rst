@@ -7,6 +7,7 @@
 .. description:  时间专题之二
 .. type: text
 
+.. contents::
 
 在前文"时间变量的顺序与格式"中分析得到感知时间的5个基本变量及其顺序.
 ``Weekday  Hour:Minute Month-Day`` 记作 ``%w %H:%M %d-%m``

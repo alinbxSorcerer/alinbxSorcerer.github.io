@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Magic Land Declared by David (Posts about time)</title><link>https://alinbxsorcerer.github.io/</link><description></description><atom:link href="https://alinbxsorcerer.github.io/categories/time.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:davad.fhl.wang@foxmail.com"&gt;David&lt;/a&gt; </copyright><lastBuildDate>Tue, 12 Nov 2019 04:39:12 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>时间专题小结</title><link>https://alinbxsorcerer.github.io/posts/shijian-zhuanti-xiaojie/</link><dc:creator>David</dc:creator><description>&lt;div class="section" id="id1"&gt;
-&lt;h2&gt;时间专题小结&lt;/h2&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Magic Land Declared by David (Posts about time)</title><link>https://alinbxsorcerer.github.io/</link><description></description><atom:link href="https://alinbxsorcerer.github.io/categories/time.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:davad.fhl.wang@foxmail.com"&gt;David&lt;/a&gt; </copyright><lastBuildDate>Thu, 14 Nov 2019 05:05:15 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>时间专题小结</title><link>https://alinbxsorcerer.github.io/posts/shijian-zhuanti-xiaojie/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="contents topic" id="contents"&gt;
+&lt;p class="topic-title first"&gt;Contents&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shijian-zhuanti-xiaojie/#id1" id="id8"&gt;时间专题小结&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shijian-zhuanti-xiaojie/#id2" id="id9"&gt;时间变量的顺序与格式&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shijian-zhuanti-xiaojie/#id3" id="id10"&gt;时间的感知与分析&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shijian-zhuanti-xiaojie/#id4" id="id11"&gt;宏观感知“一日”&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shijian-zhuanti-xiaojie/#id5" id="id12"&gt;微观层面的时间感知&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shijian-zhuanti-xiaojie/#id6" id="id13"&gt;感知时间流逝的算法&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shijian-zhuanti-xiaojie/#id7" id="id14"&gt;时间管理的三件武器&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shijian-zhuanti-xiaojie/#emacs" id="id15"&gt;Emacs中的应用&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shijian-zhuanti-xiaojie/#id8"&gt;时间专题小结&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;历时5个月的实践应用与验证, 小结如下&lt;/p&gt;
 &lt;div class="section" id="id2"&gt;
-&lt;h3&gt;时间变量的顺序与格式&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shijian-zhuanti-xiaojie/#id9"&gt;时间变量的顺序与格式&lt;/a&gt;&lt;/h3&gt;
 &lt;table&gt;
 &lt;colgroup&gt;
 &lt;col style="width: 32%"&gt;
@@ -36,18 +55,18 @@ the end&lt;/p&gt;&lt;/li&gt;
 Weekday &lt;code class="docutils literal"&gt;%wu&lt;/code&gt;, Weeknumber &lt;code class="docutils literal"&gt;%W&lt;/code&gt; 两个文字表述的变量: weekday
 &lt;code class="docutils literal"&gt;%aA&lt;/code&gt; and month &lt;code class="docutils literal"&gt;%bB&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;标注的 &lt;code class="docutils literal"&gt;ctime&lt;/code&gt;&lt;/p&gt;
-&lt;pre class="code shell"&gt;&lt;a name="rest_code_097262f841834dbd890e129dd3c8390d-1"&gt;&lt;/a&gt;date +&lt;span class="s2"&gt;"%c"&lt;/span&gt;
-&lt;a name="rest_code_097262f841834dbd890e129dd3c8390d-2"&gt;&lt;/a&gt;python -c &lt;span class="s2"&gt;"import time; print(time.ctime())"&lt;/span&gt;
+&lt;pre class="code shell"&gt;&lt;a name="rest_code_0156f854bb0b4ecb91578db74550d276-1"&gt;&lt;/a&gt;date +&lt;span class="s2"&gt;"%c"&lt;/span&gt;
+&lt;a name="rest_code_0156f854bb0b4ecb91578db74550d276-2"&gt;&lt;/a&gt;python -c &lt;span class="s2"&gt;"import time; print(time.ctime())"&lt;/span&gt;
 &lt;/pre&gt;&lt;pre class="literal-block"&gt;Mon 11 Nov 2019 12:10:57 PM CST
 Mon Nov 11 12:10:57 2019&lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id3"&gt;
-&lt;h3&gt;时间的感知与分析&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shijian-zhuanti-xiaojie/#id10"&gt;时间的感知与分析&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;回归到“钟表”的意像图&lt;/p&gt;
 &lt;div class="section" id="id4"&gt;
-&lt;h4&gt;宏观感知“一日”&lt;/h4&gt;
+&lt;h4&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shijian-zhuanti-xiaojie/#id11"&gt;宏观感知“一日”&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;八分图&lt;/p&gt;
 &lt;table&gt;
 &lt;colgroup&gt;
@@ -98,7 +117,7 @@ Mon Nov 11 12:10:57 2019&lt;/pre&gt;
 &lt;/table&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id5"&gt;
-&lt;h4&gt;微观层面的时间感知&lt;/h4&gt;
+&lt;h4&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shijian-zhuanti-xiaojie/#id12"&gt;微观层面的时间感知&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;核心是应用分数表示的方法&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;选择起始点 遵循AM与PM的概念，以太阳的最高点为划分点, 遵从国际标准,
@@ -109,28 +128,38 @@ Mon Nov 11 12:10:57 2019&lt;/pre&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id6"&gt;
-&lt;h4&gt;感知时间流逝的算法&lt;/h4&gt;
+&lt;h4&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shijian-zhuanti-xiaojie/#id13"&gt;感知时间流逝的算法&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;采用分数法.fraction&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id7"&gt;
-&lt;h3&gt;时间管理的三件武器&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shijian-zhuanti-xiaojie/#id14"&gt;时间管理的三件武器&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;calendar, clock and datetime(combined) date 以shell的ncal,
 date与time为基础.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="emacs"&gt;
-&lt;h3&gt;Emacs中的应用&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shijian-zhuanti-xiaojie/#id15"&gt;Emacs中的应用&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;需要重新再阅读文档. 目前没有解决的问题, 便是如何在calendar中做规划.
 emacs中的日历优点是可以与四时互动.&lt;/p&gt;
-&lt;pre class="code shell"&gt;&lt;a name="rest_code_c9aa8ce70027466f8a17e5c2ec315428-1"&gt;&lt;/a&gt;pandoc draft.org -o ../posts/时间专题小结.rst
+&lt;pre class="code shell"&gt;&lt;a name="rest_code_dd9c54d4ad294187a1564f434e2d0603-1"&gt;&lt;/a&gt;pandoc draft.org -o ../posts/时间专题小结.rst
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;</description><category>bash</category><category>python</category><category>time</category><guid>https://alinbxsorcerer.github.io/posts/shijian-zhuanti-xiaojie/</guid><pubDate>Mon, 11 Nov 2019 04:53:29 GMT</pubDate></item><item><title>Emacs中的datetime与clock</title><link>https://alinbxsorcerer.github.io/posts/emacszhong-de-datetimeyu-clock/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="section" id="id1"&gt;
-&lt;h2&gt;前文概要:&lt;/h2&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>bash</category><category>python</category><category>time</category><guid>https://alinbxsorcerer.github.io/posts/shijian-zhuanti-xiaojie/</guid><pubDate>Mon, 11 Nov 2019 04:53:29 GMT</pubDate></item><item><title>Emacs中的datetime与clock</title><link>https://alinbxsorcerer.github.io/posts/emacszhong-de-datetimeyu-clock/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="contents topic" id="contents"&gt;
+&lt;p class="topic-title first"&gt;Contents&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacszhong-de-datetimeyu-clock/#id1" id="id3"&gt;前文概要:&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacszhong-de-datetimeyu-clock/#emacs" id="id4"&gt;Emacs中的时间格式与任务的时间属性&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacszhong-de-datetimeyu-clock/#datetime" id="id5"&gt;Datetime时间戳与任务的时间属性&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacszhong-de-datetimeyu-clock/#clock" id="id6"&gt;Clock计时与中断处理&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacszhong-de-datetimeyu-clock/#id2" id="id7"&gt;总结&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacszhong-de-datetimeyu-clock/#id3"&gt;前文概要:&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;时间管理的三件工具 (clock, datetime, calendar)
 时间变量的顺序与时间表示的格式 (%a %b-d %H:%M %Y)&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="emacs"&gt;
-&lt;h2&gt;Emacs中的时间格式与任务的时间属性&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacszhong-de-datetimeyu-clock/#id4"&gt;Emacs中的时间格式与任务的时间属性&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;时间管理的三件工具: 钟表, 日历, 以及二者结合的便利工具datetime.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://orgmode.org/manual/Dates-and-Times.html#Dates-and-Times"&gt;The Org Manual: Dates and
 Times&lt;/a&gt;主要应用datetime和clock两个工具管理时间.&lt;/p&gt;
@@ -145,7 +174,7 @@ Times&lt;/a&gt;主要应用datetime和clock两个工具管理时间.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="datetime"&gt;
-&lt;h2&gt;Datetime时间戳与任务的时间属性&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacszhong-de-datetimeyu-clock/#id5"&gt;Datetime时间戳与任务的时间属性&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;时间(戳)到底什么? 时间戳从概念上辨析为两个类别 1) appointment 2)
 schedule. 可以将主动安排的时间理解为schedule,
@@ -178,7 +207,7 @@ schedule. 可以将主动安排的时间理解为schedule,
 &lt;p&gt;(这些功能并不好用)&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="clock"&gt;
-&lt;h2&gt;Clock计时与中断处理&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacszhong-de-datetimeyu-clock/#id6"&gt;Clock计时与中断处理&lt;/a&gt;&lt;/h2&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;&lt;p&gt;基本计时功能, &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;org-clock-in&lt;/span&gt;&lt;/code&gt;, &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;org-clock-out&lt;/span&gt;&lt;/code&gt; 可以手动修改计时,
 然后调用=org-evaluate-time-range=或者=update-maybe=&lt;/p&gt;&lt;/li&gt;
@@ -191,14 +220,68 @@ s(substract),只用keep便可.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id2"&gt;
-&lt;h2&gt;总结&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacszhong-de-datetimeyu-clock/#id7"&gt;总结&lt;/a&gt;&lt;/h2&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;&lt;p&gt;计时与计算&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;任务的5个时间属性&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;idle中断计时的处理.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>emacs</category><category>time</category><guid>https://alinbxsorcerer.github.io/posts/emacszhong-de-datetimeyu-clock/</guid><pubDate>Sat, 18 May 2019 12:35:15 GMT</pubDate></item><item><title>评注Eamcs: 31.The Calendar and the Diary</title><link>https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="section" id="id1"&gt;
-&lt;h2&gt;总结:&lt;/h2&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>emacs</category><category>time</category><guid>https://alinbxsorcerer.github.io/posts/emacszhong-de-datetimeyu-clock/</guid><pubDate>Sat, 18 May 2019 12:35:15 GMT</pubDate></item><item><title>评注Eamcs: 31.The Calendar and the Diary</title><link>https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="contents topic" id="contents"&gt;
+&lt;p class="topic-title first"&gt;Contents&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id1" id="id8"&gt;总结:&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#movement-in-the-calendar" id="id9"&gt;31.1 Movement in the Calendar&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#motion-by-standard-lengths-of-time" id="id10"&gt;31.1.1 Motion by Standard Lengths of Time&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#beginning-or-end-of-week-month-or-year" id="id11"&gt;31.1.2 Beginning or End of Week, Month or Year&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#specified-dates" id="id12"&gt;31.1.3 Specified Dates&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#scrolling-in-the-calendar" id="id13"&gt;31.2 Scrolling in the Calendar&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#counting-days" id="id14"&gt;31.3 Counting Days&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#miscellaneous-calendar-commands" id="id15"&gt;31.4 Miscellaneous Calendar Commands&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#writing-calendar-files" id="id16"&gt;31.5 Writing Calendar Files&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#holidays" id="id17"&gt;31.6 Holidays&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#times-of-sunrise-and-sunset" id="id18"&gt;31.7 Times of Sunrise and Sunset&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#phases-of-the-moon" id="id19"&gt;31.8 Phases of the Moon&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#conversion-to-and-from-other-calendars" id="id20"&gt;31.9 Conversion To and From Other Calendars&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#supported-calendar-systems" id="id21"&gt;31.9.1 Supported Calendar Systems&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#converting-to-other-calendars" id="id22"&gt;31.9.2 Converting To Other Calendars&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#converting-from-other-calendars" id="id23"&gt;31.9.3 Converting From Other Calendars&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#the-diary" id="id24"&gt;31.10 The Diary&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#the-diary-file" id="id25"&gt;31.10.1 The Diary File&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#displaying-the-diary" id="id26"&gt;31.10.2 Displaying the Diary&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#date-formats" id="id27"&gt;31.10.3 Date Formats&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#commands-to-add-to-the-diary" id="id28"&gt;31.10.4 Commands to Add to the Diary&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#special-diary-entries" id="id29"&gt;31.10.5 Special Diary Entries&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#appointments" id="id30"&gt;31.10.6 Appointments&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#importing-and-exporting-diary-entries" id="id31"&gt;31.10.7 Importing and Exporting Diary Entries&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#daylight-saving-time" id="id32"&gt;31.11 Daylight Saving Time&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#summing-time-intervals" id="id33"&gt;31.12 Summing Time Intervals&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#more-advanced-features-of-the-calendar-and-diary" id="id34"&gt;31.13 More advanced features of the Calendar and Diary&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#customizing-the-calendar" id="id35"&gt;31.13.1 Customizing the Calendar&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#customizing-the-holidays" id="id36"&gt;31.13.2 Customizing the Holidays&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#converting-from-the-mayan-calendar" id="id37"&gt;31.13.3 Converting from the Mayan Calendar&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#date-display-format" id="id38"&gt;31.13.4 Date Display Format&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#time-display-format" id="id39"&gt;31.13.5 Time Display Format&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#customizing-the-diary" id="id40"&gt;31.13.6 Customizing the Diary&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#diary-entries-using-non-gregorian-calendars" id="id41"&gt;31.13.7 Diary Entries Using non-Gregorian Calendars&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#diary-display" id="id42"&gt;31.13.8 Diary Display&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#fancy-diary-display" id="id43"&gt;31.13.9 Fancy Diary Display&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#sexp-entries-and-the-fancy-diary-display" id="id44"&gt;31.13.10 Sexp Entries and the Fancy Diary Display&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id8"&gt;总结:&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;三个部分:&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;&lt;p&gt;基本的操作&lt;/p&gt;&lt;/li&gt;
@@ -220,7 +303,7 @@ date; mouse-2 brings up a menu of commonly used calendar features that
 are independent of any particular date. To exit the calendar, type q.&lt;/p&gt;
 &lt;p&gt;我想要一个类似在桌面操作系统中, 可以操作任务的日历.&lt;/p&gt;
 &lt;div class="section" id="movement-in-the-calendar"&gt;
-&lt;h3&gt;31.1 Movement in the Calendar&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id9"&gt;31.1 Movement in the Calendar&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Calendar mode provides commands to move through the calendar
 &lt;code class="docutils literal"&gt;in logical units&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;of time such as days, weeks, months, and years. If you move outside the
@@ -229,8 +312,8 @@ automatically through time to make the selected date visible. Moving to
 a date lets you view its holidays or diary entries, or convert it to
 other calendars; moving by long time periods is also useful simply to
 scroll the calendar.&lt;/p&gt;
-&lt;pre class="code elisp"&gt;&lt;a name="rest_code_792e880098434db1860d870e69555564-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;;;修改calendar-week-start-day&lt;/span&gt;
-&lt;a name="rest_code_792e880098434db1860d870e69555564-2"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;calendar-week-start-day&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;pre class="code elisp"&gt;&lt;a name="rest_code_07092f5b9649463c99a4145dd8899245-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;;;修改calendar-week-start-day&lt;/span&gt;
+&lt;a name="rest_code_07092f5b9649463c99a4145dd8899245-2"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;calendar-week-start-day&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;对movement的总结, span, 按照四个logical unit, day, week, month, year&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;&lt;p&gt;backwords and forwards with specified lenghts&lt;/p&gt;&lt;/li&gt;
@@ -240,7 +323,7 @@ scroll the calendar.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="motion-by-standard-lengths-of-time"&gt;
-&lt;h2&gt;31.1.1 Motion by Standard Lengths of Time&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id10"&gt;31.1.1 Motion by Standard Lengths of Time&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;The commands for movement in the calendar buffer parallel the commands
 for movement in text. You can move forward and backward by days, weeks,
 months, and years.&lt;/p&gt;
@@ -294,7 +377,7 @@ in Calendar mode even without the Meta modifier. For example, 100 C-f
 moves point 100 days forward from its present location.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="beginning-or-end-of-week-month-or-year"&gt;
-&lt;h2&gt;31.1.2 Beginning or End of Week, Month or Year&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id11"&gt;31.1.2 Beginning or End of Week, Month or Year&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;A week (or month, or year) is not just a quantity of days; we think of
 weeks (months, years) as starting on particular dates. So Calendar mode
 provides commands to move to the start or end of a week, month or year:&lt;/p&gt;
@@ -327,7 +410,7 @@ headers are highlighted as weekend days, set the variable
 &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;calendar-weekend-days&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="specified-dates"&gt;
-&lt;h2&gt;31.1.3 Specified Dates&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id12"&gt;31.1.3 Specified Dates&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Calendar mode provides commands for moving to a particular date
 specified in various ways.&lt;/p&gt;
 &lt;ul&gt;
@@ -359,7 +442,7 @@ centers the three-month calendar around that month.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="section" id="scrolling-in-the-calendar"&gt;
-&lt;h3&gt;31.2 Scrolling in the Calendar&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id13"&gt;31.2 Scrolling in the Calendar&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;The calendar display scrolls automatically through time when you move
 out of the visible portion. You can also scroll it manually. Imagine
 that the calendar window contains a long strip of paper with the months
@@ -393,7 +476,7 @@ the calendar backward by a year.&lt;/p&gt;
 they are in other modes.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="counting-days"&gt;
-&lt;h3&gt;31.3 Counting Days&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id14"&gt;31.3 Counting Days&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;M-=&lt;/p&gt;
 &lt;p&gt;Display the number of days in the current region
@@ -407,7 +490,7 @@ point.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="miscellaneous-calendar-commands"&gt;
-&lt;h3&gt;31.4 Miscellaneous Calendar Commands&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id15"&gt;31.4 Miscellaneous Calendar Commands&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Display day-in-year (&lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;calendar-print-day-of-year&lt;/span&gt;&lt;/code&gt;).&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;C-c C-l&lt;/p&gt;
@@ -443,7 +526,7 @@ or iconifies that frame depending on the value of
 &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;calendar-remove-frame-by-deleting&lt;/span&gt;&lt;/code&gt;.)&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="writing-calendar-files"&gt;
-&lt;h3&gt;31.5 Writing Calendar Files&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id16"&gt;31.5 Writing Calendar Files&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;You can write calendars and diary entries to HTML and LaTeX files.&lt;/p&gt;
 &lt;p&gt;The Calendar HTML commands produce files of HTML code that contain
 calendar, holiday, and diary entries. Each file applies to one month,
@@ -546,7 +629,7 @@ features.&lt;/p&gt;
 LaTeX commands in the preamble of the generated document if you need to.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="holidays"&gt;
-&lt;h3&gt;31.6 Holidays&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id17"&gt;31.6 Holidays&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;The Emacs calendar knows about many major and minor holidays, and can
 display them. You can add your own holidays to the default list.&lt;/p&gt;
 &lt;ul&gt;
@@ -575,8 +658,8 @@ window.&lt;/p&gt;
 &lt;p&gt;Define: Veterans' day 老兵 Etymology: Old Lithuanian vetušas "old,
 aged;" and compare wether). 助记: Veterans day&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;pre class="code elisp"&gt;&lt;a name="rest_code_53fa3dc349524880b371625d864c1b57-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;;;(sunrise-sunset)&lt;/span&gt;
-&lt;a name="rest_code_53fa3dc349524880b371625d864c1b57-2"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;lunar-phases&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;pre class="code elisp"&gt;&lt;a name="rest_code_544c0528e1244185b5e8dc97ec40f05b-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;;;(sunrise-sunset)&lt;/span&gt;
+&lt;a name="rest_code_544c0528e1244185b5e8dc97ec40f05b-2"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;lunar-phases&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;M-x list-holidays&lt;/p&gt;
 &lt;p&gt;List holidays in another window for a specified range of years.&lt;/p&gt;
@@ -632,7 +715,7 @@ not historical fact. For example Veteran's Day began in 1919, but is
 shown in earlier years.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="times-of-sunrise-and-sunset"&gt;
-&lt;h3&gt;31.7 Times of Sunrise and Sunset&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id18"&gt;31.7 Times of Sunrise and Sunset&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Special calendar commands can tell you, to within a minute or two, the
 times of sunrise and sunset for any date.&lt;/p&gt;
 &lt;ul&gt;
@@ -694,7 +777,7 @@ users in a default.el file. See &lt;a class="reference external" href="https://w
 File&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="phases-of-the-moon"&gt;
-&lt;h3&gt;31.8 Phases of the Moon&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id19"&gt;31.8 Phases of the Moon&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;These calendar commands display the dates and times of the phases of the
 moon (new moon, first quarter, full moon, last quarter). This feature is
 useful for debugging problems that depend on the phase of the moon.&lt;/p&gt;
@@ -720,7 +803,7 @@ discussion in the previous section. See
 &lt;a class="reference external" href="https://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Sunrise_002fSunset"&gt;Sunrise/Sunset&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="conversion-to-and-from-other-calendars"&gt;
-&lt;h3&gt;31.9 Conversion To and From Other Calendars&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id20"&gt;31.9 Conversion To and From Other Calendars&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;The Emacs calendar displayed is &lt;em&gt;always&lt;/em&gt; the Gregorian calendar,
 sometimes called the New Style calendar, which is used in most of the
 world today. However, this calendar did not exist before the sixteenth
@@ -746,7 +829,7 @@ Moving to a date specified in another calendar.&lt;/p&gt;&lt;/li&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="supported-calendar-systems"&gt;
-&lt;h2&gt;31.9.1 Supported Calendar Systems&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id21"&gt;31.9.1 Supported Calendar Systems&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;The ISO commercial calendar is often used in business.&lt;/p&gt;
 &lt;p&gt;The Julian calendar, named after Julius Caesar, was the one used in
 Europe throughout medieval times, and in many countries up until the
@@ -802,7 +885,7 @@ in a cycle of sixty.&lt;/p&gt;
 18th and 19th months.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="converting-to-other-calendars"&gt;
-&lt;h2&gt;31.9.2 Converting To Other Calendars&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id22"&gt;31.9.2 Converting To Other Calendars&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;The following commands describe the selected date (the date at point) in
 various other calendar systems:&lt;/p&gt;
 &lt;ul&gt;
@@ -869,7 +952,7 @@ alternative from this menu doesn't actually do anything—the menu is used
 only for display.)&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="converting-from-other-calendars"&gt;
-&lt;h2&gt;31.9.3 Converting From Other Calendars&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id23"&gt;31.9.3 Converting From Other Calendars&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;You can use the other supported calendars to specify a date to move to.
 This section describes the commands for doing this using calendars other
 than Mayan; for the Mayan calendar, see the following section.&lt;/p&gt;
@@ -939,7 +1022,7 @@ years for the date given by point. If you are not in the calendar, this
 command first asks you for the date of death and the range of years, and
 then displays the list of yahrzeit dates.&lt;/p&gt;
 &lt;div class="section" id="the-diary"&gt;
-&lt;h3&gt;31.10 The Diary&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id24"&gt;31.10 The Diary&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;The Emacs diary keeps track of appointments or other events on a daily
 basis, in &lt;code class="docutils literal"&gt;conjunction&lt;/code&gt; with the calendar. To use the diary feature,
 you must first create a diary file containing a list of events and their
@@ -951,7 +1034,7 @@ entries.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="the-diary-file"&gt;
-&lt;h2&gt;31.10.1 The Diary File&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id25"&gt;31.10.1 The Diary File&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Your diary file is a file that records events associated with particular
 dates. The name of the diary file is specified by the variable
 &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;diary-file&lt;/span&gt;&lt;/code&gt;. The default is &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;~/.emacs.d/diary&lt;/span&gt;&lt;/code&gt;, though for
@@ -994,7 +1077,7 @@ display just a single day's entries, but can cause confusion if you ask
 for more than one day's entries.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="displaying-the-diary"&gt;
-&lt;h2&gt;31.10.2 Displaying the Diary&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id26"&gt;31.10.2 Displaying the Diary&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Once you have created a diary file, you can use the calendar to view it.
 You can also view today's events outside of Calendar mode. In the
 following, key bindings refer to the Calendar buffer.&lt;/p&gt;
@@ -1071,7 +1154,7 @@ with today) to check; otherwise, the variable &lt;code class="docutils literal"&
 how many days.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="date-formats"&gt;
-&lt;h2&gt;31.10.3 Date Formats&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id27"&gt;31.10.3 Date Formats&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Here are some sample diary entries, illustrating different ways of
 formatting a date. The examples all show dates in American order (month,
 day, year), but Calendar mode supports European order (day, month, year)
@@ -1104,7 +1187,7 @@ month, day, or year can be '*'; this matches any month, day, or year,
 respectively. Thus, a diary entry ‘3///&lt;a href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id2"&gt;&lt;span class="problematic" id="id3"&gt;*&lt;/span&gt;&lt;/a&gt;' matches any day in March of
 any year; so does ‘march /'.&lt;/p&gt;
 &lt;div class="system-message" id="id2"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 1084); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id3"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 1085); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id3"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Inline emphasis start-string without end-string.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;If you prefer the European style of writing dates (in which the day
@@ -1119,7 +1202,7 @@ the day of the week as described above, or spell it in full; case is not
 significant.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="commands-to-add-to-the-diary"&gt;
-&lt;h2&gt;31.10.4 Commands to Add to the Diary&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id28"&gt;31.10.4 Commands to Add to the Diary&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;While in the calendar, there are several commands to create diary
 entries. The basic commands are listed here; more sophisticated commands
 are in the next section (see &lt;a class="reference external" href="https://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Special-Diary-Entries"&gt;Special Diary
@@ -1164,7 +1247,7 @@ window, if appropriate. You can use the command &lt;code class="docutils literal
 force an update at any time.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="special-diary-entries"&gt;
-&lt;h2&gt;31.10.5 Special Diary Entries&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id29"&gt;31.10.5 Special Diary Entries&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;In addition to entries based on calendar dates, the diary file can
 contain sexp entries for regular events such as anniversaries. These
 entries are based on Lisp expressions (sexps) that Emacs evaluates as it
@@ -1245,7 +1328,7 @@ marking the entry in the calendar. Most generally, sexp diary entries
 can perform arbitrary computations to determine when they apply.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="appointments"&gt;
-&lt;h2&gt;31.10.6 Appointments&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id30"&gt;31.10.6 Appointments&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;If you have a diary entry for an appointment, and that diary entry
 begins with a recognizable time of day, Emacs can warn you in advance
 that an appointment is pending. Emacs alerts you to the appointment by
@@ -1299,7 +1382,7 @@ without affecting your diary file. You delete entries from the
 appointment list with M-x appt-delete.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="importing-and-exporting-diary-entries"&gt;
-&lt;h2&gt;31.10.7 Importing and Exporting Diary Entries&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id31"&gt;31.10.7 Importing and Exporting Diary Entries&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;You can transfer diary entries between Emacs diary files and a variety
 of other formats.&lt;/p&gt;
 &lt;p&gt;You can import diary entries from Outlook-generated appointment
@@ -1329,7 +1412,7 @@ diary file to iCalendar format. To export only a part of a diary file,
 mark the relevant area, and call &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;icalendar-export-region&lt;/span&gt;&lt;/code&gt;. In both
 cases, Emacs appends the result to the target file.&lt;/p&gt;
 &lt;div class="section" id="daylight-saving-time"&gt;
-&lt;h3&gt;31.11 Daylight Saving Time&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id32"&gt;31.11 Daylight Saving Time&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Emacs understands the difference between standard time and daylight
 saving time—the times given for sunrise, sunset, solstices, equinoxes,
 and the phases of the moon take that into account. The rules for
@@ -1374,7 +1457,7 @@ saving time should occur. For Cambridge, Massachusetts both variables'
 values are 120.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="summing-time-intervals"&gt;
-&lt;h3&gt;31.12 Summing Time Intervals&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id33"&gt;31.12 Summing Time Intervals&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;The timeclock package adds up time intervals, so you can (for instance)
 keep track of how much time you spend working on particular projects. (A
 more advanced alternative is to use the Org Mode's facilities for
@@ -1406,14 +1489,14 @@ customizable variables, you should run the command M-x
 timeclock-reread-log to update the data in Emacs from the file.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="more-advanced-features-of-the-calendar-and-diary"&gt;
-&lt;h3&gt;31.13 More advanced features of the Calendar and Diary&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id34"&gt;31.13 More advanced features of the Calendar and Diary&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;This section describes some of the more advanced/specialized features of
 the calendar and diary. It starts with some of the many ways in which
 you can customize the calendar and diary to suit your personal tastes.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="customizing-the-calendar"&gt;
-&lt;h2&gt;31.13.1 Customizing the Calendar&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id35"&gt;31.13.1 Customizing the Calendar&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;The calendar display unfortunately cannot be changed from three months,
 but you can customize the whitespace used by setting the variables:
 &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;calendar-left-margin&lt;/span&gt;&lt;/code&gt;, &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;calendar-day-header-width&lt;/span&gt;&lt;/code&gt;,
@@ -1451,7 +1534,7 @@ current date is &lt;em&gt;not&lt;/em&gt; visible in the window.&lt;/p&gt;
 &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;calendar-move-hook&lt;/span&gt;&lt;/code&gt; after it moves the cursor.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="customizing-the-holidays"&gt;
-&lt;h2&gt;31.13.2 Customizing the Holidays&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id36"&gt;31.13.2 Customizing the Holidays&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;There are several variables listing the default holidays that Emacs
 knows about. These are: &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;holiday-general-holidays&lt;/span&gt;&lt;/code&gt;,
 &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;holiday-local-holidays&lt;/span&gt;&lt;/code&gt;, &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;holiday-solar-holidays&lt;/span&gt;&lt;/code&gt;,
@@ -1567,7 +1650,7 @@ window, with descriptive strings, like this:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;(((6 4 2012) "Lunar Eclipse") ((11 13 2012) "Solar Eclipse") ... )&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="converting-from-the-mayan-calendar"&gt;
-&lt;h2&gt;31.13.3 Converting from the Mayan Calendar&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id37"&gt;31.13.3 Converting from the Mayan Calendar&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Here are the commands to select dates based on the Mayan calendar:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;g m l&lt;/p&gt;
@@ -1635,7 +1718,7 @@ whenever it asks you to type a Mayan name, so you don't have to worry
 about spelling.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="date-display-format"&gt;
-&lt;h2&gt;31.13.4 Date Display Format&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id38"&gt;31.13.4 Date Display Format&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;You can customize the way dates are displayed in the diary, mode lines,
 and messages by setting &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;calendar-date-display-form&lt;/span&gt;&lt;/code&gt;. This variable
 holds a list of expressions that can involve the variables &lt;code class="docutils literal"&gt;month&lt;/code&gt;,
@@ -1652,7 +1735,7 @@ American style, the default value of this list is as follows:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;(month "/" day "/" (substring year -2))&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="time-display-format"&gt;
-&lt;h2&gt;31.13.5 Time Display Format&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id39"&gt;31.13.5 Time Display Format&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;The calendar and diary by default display times of day in the
 conventional American style with the hours from 1 through 12, minutes,
 and either 'am' or 'pm'. If you prefer the European style, also known in
@@ -1670,7 +1753,7 @@ and &lt;code class="docutils literal"&gt;minutes&lt;/code&gt;, which are all num
 solar functions).&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="customizing-the-diary"&gt;
-&lt;h2&gt;31.13.6 Customizing the Diary&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id40"&gt;31.13.6 Customizing the Diary&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Ordinarily, the diary window indicates any holidays that fall on the
 date of the diary entries, either in the mode line or the buffer itself.
 The process of checking for holidays can be slow, depending on the
@@ -1699,7 +1782,7 @@ whole to match, all of its elements must match consecutively.&lt;/p&gt;
 using the standard syntax table altered so that ‘&lt;a href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id4"&gt;&lt;span class="problematic" id="id5"&gt;*&lt;/span&gt;&lt;/a&gt;' is a word
 constituent.&lt;/p&gt;
 &lt;div class="system-message" id="id4"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 1852); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id5"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 1853); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id5"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Inline emphasis start-string without end-string.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;The symbols &lt;code class="docutils literal"&gt;month&lt;/code&gt;, &lt;code class="docutils literal"&gt;day&lt;/code&gt;, &lt;code class="docutils literal"&gt;year&lt;/code&gt;, &lt;code class="docutils literal"&gt;monthname&lt;/code&gt;, and &lt;code class="docutils literal"&gt;dayname&lt;/code&gt;
@@ -1711,7 +1794,7 @@ abbreviation (as specified by &lt;code class="docutils literal"&gt;&lt;span clas
 in a diary entry means "any day", "any month", and so on, it should
 match regardless of the date being considered.&lt;/p&gt;
 &lt;div class="system-message" id="id6"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 1856); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id7"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 1857); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id7"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Inline emphasis start-string without end-string.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;The default value of &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;diary-date-forms&lt;/span&gt;&lt;/code&gt; in the American style is
@@ -1743,7 +1826,7 @@ match part of a word beyond the date itself to distinguish it from the
 fourth pattern.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="diary-entries-using-non-gregorian-calendars"&gt;
-&lt;h2&gt;31.13.7 Diary Entries Using non-Gregorian Calendars&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id41"&gt;31.13.7 Diary Entries Using non-Gregorian Calendars&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;As well as entries based on the standard Gregorian calendar, your diary
 can have entries based on Bahá'í, Chinese, Hebrew, or Islamic dates.
 Recognition of such entries can be time-consuming, however, and since
@@ -1832,7 +1915,7 @@ Up: &lt;a class="reference external" href="https://www.gnu.org/software/emacs/ma
 Usage&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="diary-display"&gt;
-&lt;h2&gt;31.13.8 Diary Display&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id42"&gt;31.13.8 Diary Display&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Diary display works by preparing the list of diary entries and then
 running the function specified by the variable
 &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;diary-display-function&lt;/span&gt;&lt;/code&gt;. The default value &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;diary-fancy-display&lt;/span&gt;&lt;/code&gt;
@@ -1891,7 +1974,7 @@ buffer, it is best to display the entire file with s
 (&lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;diary-show-all-entries&lt;/span&gt;&lt;/code&gt;).&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="fancy-diary-display"&gt;
-&lt;h2&gt;31.13.9 Fancy Diary Display&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id43"&gt;31.13.9 Fancy Diary Display&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;The following features only work with the fancy diary display.&lt;/p&gt;
 &lt;p&gt;You can use the normal hook &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;diary-list-entries-hook&lt;/span&gt;&lt;/code&gt; to sort each
 day's diary entries by their time of day. Here's how:&lt;/p&gt;
@@ -1926,7 +2009,7 @@ Up: &lt;a class="reference external" href="https://www.gnu.org/software/emacs/ma
 Usage&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="sexp-entries-and-the-fancy-diary-display"&gt;
-&lt;h2&gt;31.13.10 Sexp Entries and the Fancy Diary Display&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/#id44"&gt;31.13.10 Sexp Entries and the Fancy Diary Display&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Sexp diary entries allow you to do more than just have complicated
 conditions under which a diary entry applies. Sexp entries should be
 preceded by &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;diary-sexp-entry-symbol&lt;/span&gt;&lt;/code&gt; (default '%%') in the diary
@@ -2097,8 +2180,32 @@ year.)&lt;/p&gt;
 specifies how to mark the date in the calendar display. If one of these
 functions decides that it applies to a certain date, it returns a value
 that contains mark, as described above.&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>emacs</category><category>time</category><category>评注笔记</category><guid>https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/</guid><pubDate>Thu, 16 May 2019 01:53:29 GMT</pubDate></item><item><title>时间管理的三件武器</title><link>https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="section" id="id1"&gt;
-&lt;h2&gt;前情概要&lt;/h2&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>emacs</category><category>time</category><category>评注笔记</category><guid>https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/</guid><pubDate>Thu, 16 May 2019 01:53:29 GMT</pubDate></item><item><title>时间管理的三件武器</title><link>https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="contents topic" id="contents"&gt;
+&lt;p class="topic-title first"&gt;Contents&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#id1" id="id8"&gt;前情概要&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#id2" id="id9"&gt;时间管理的三件武器&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#python" id="id10"&gt;Python中的时间管理&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#calender" id="id11"&gt;1. Calender&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#time" id="id12"&gt;2. Time&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#datetime" id="id13"&gt;3. Datetime&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#shell" id="id14"&gt;Shell的时间管理工具&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#calendar" id="id15"&gt;1.Calendar&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#clock-time" id="id16"&gt;2.Clock(Time)&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#id5" id="id17"&gt;3.Datetime&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#emacs" id="id18"&gt;Emacs中的时间管理&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#id6" id="id19"&gt;总结&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#id7" id="id20"&gt;参考资料&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#id8"&gt;前情概要&lt;/a&gt;&lt;/h2&gt;
 &lt;div class="line-block"&gt;
 &lt;div class="line"&gt;“时间变量的顺序与时间表示的格式”
 总结了时间的10个变量及其直觉解析的顺序&lt;/div&gt;
@@ -2108,7 +2215,7 @@ that contains mark, as described above.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id2"&gt;
-&lt;h2&gt;时间管理的三件武器&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#id9"&gt;时间管理的三件武器&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;无论是手机的android系统还是Linux系统，都提供两项基本的时间管理工具日历(calendar)
 and 时钟(clock). Calendar是date地图，提供全景式的鸟瞰图；
 clock是指南针，指导具体的每一步应该迈向何处。
@@ -2116,33 +2223,33 @@ clock是指南针，指导具体的每一步应该迈向何处。
 &lt;p&gt;工具虽然简单，但如果不能抽象到认知的层面，则不能为己所用。试问，谁手机里没个日历，每个钟表呢。认知层面的结论是需要且仅需要这三件工具O(∩_∩)O。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;日历提供全景式鸟瞰&lt;/p&gt;
-&lt;pre class="code shell"&gt;&lt;a name="rest_code_53584a6f6bef4e08831d734fa5c703ee-1"&gt;&lt;/a&gt;$ ncal -B &lt;span class="m"&gt;3&lt;/span&gt;  &lt;span class="c1"&gt;#ncal中的n竟然是new这个单词&lt;/span&gt;
-&lt;a name="rest_code_53584a6f6bef4e08831d734fa5c703ee-2"&gt;&lt;/a&gt;    February &lt;span class="m"&gt;2019&lt;/span&gt;     March &lt;span class="m"&gt;2019&lt;/span&gt;        April &lt;span class="m"&gt;2019&lt;/span&gt;        May &lt;span class="m"&gt;2019&lt;/span&gt;
-&lt;a name="rest_code_53584a6f6bef4e08831d734fa5c703ee-3"&gt;&lt;/a&gt;Su      &lt;span class="m"&gt;3&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt; &lt;span class="m"&gt;17&lt;/span&gt; &lt;span class="m"&gt;24&lt;/span&gt;        &lt;span class="m"&gt;3&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt; &lt;span class="m"&gt;17&lt;/span&gt; &lt;span class="m"&gt;24&lt;/span&gt; &lt;span class="m"&gt;31&lt;/span&gt;     &lt;span class="m"&gt;7&lt;/span&gt; &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;21&lt;/span&gt; &lt;span class="m"&gt;28&lt;/span&gt;        &lt;span class="m"&gt;5&lt;/span&gt; &lt;span class="m"&gt;12&lt;/span&gt; &lt;span class="m"&gt;19&lt;/span&gt; &lt;span class="m"&gt;26&lt;/span&gt;
-&lt;a name="rest_code_53584a6f6bef4e08831d734fa5c703ee-4"&gt;&lt;/a&gt;Mo     &lt;span class="m"&gt;4&lt;/span&gt; &lt;span class="m"&gt;11&lt;/span&gt; &lt;span class="m"&gt;18&lt;/span&gt; &lt;span class="m"&gt;25&lt;/span&gt;        &lt;span class="m"&gt;4&lt;/span&gt; &lt;span class="m"&gt;11&lt;/span&gt; &lt;span class="m"&gt;18&lt;/span&gt; &lt;span class="m"&gt;25&lt;/span&gt;      &lt;span class="m"&gt;1&lt;/span&gt;  &lt;span class="m"&gt;8&lt;/span&gt; &lt;span class="m"&gt;15&lt;/span&gt; &lt;span class="m"&gt;22&lt;/span&gt; &lt;span class="m"&gt;29&lt;/span&gt;        &lt;span class="m"&gt;6&lt;/span&gt; &lt;span class="m"&gt;13&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt; &lt;span class="m"&gt;27&lt;/span&gt;
-&lt;a name="rest_code_53584a6f6bef4e08831d734fa5c703ee-5"&gt;&lt;/a&gt;Tu      &lt;span class="m"&gt;5&lt;/span&gt; &lt;span class="m"&gt;12&lt;/span&gt; &lt;span class="m"&gt;19&lt;/span&gt; &lt;span class="m"&gt;26&lt;/span&gt;        &lt;span class="m"&gt;5&lt;/span&gt; &lt;span class="m"&gt;12&lt;/span&gt; &lt;span class="m"&gt;19&lt;/span&gt; &lt;span class="m"&gt;26&lt;/span&gt;      &lt;span class="m"&gt;2&lt;/span&gt;  &lt;span class="m"&gt;9&lt;/span&gt; &lt;span class="m"&gt;16&lt;/span&gt; &lt;span class="m"&gt;23&lt;/span&gt; &lt;span class="m"&gt;30&lt;/span&gt;        &lt;span class="m"&gt;7&lt;/span&gt; &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;21&lt;/span&gt; &lt;span class="m"&gt;28&lt;/span&gt;
-&lt;a name="rest_code_53584a6f6bef4e08831d734fa5c703ee-6"&gt;&lt;/a&gt;We     &lt;span class="m"&gt;6&lt;/span&gt; &lt;span class="m"&gt;13&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt; &lt;span class="m"&gt;27&lt;/span&gt;        &lt;span class="m"&gt;6&lt;/span&gt; &lt;span class="m"&gt;13&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt; &lt;span class="m"&gt;27&lt;/span&gt;      &lt;span class="m"&gt;3&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt; &lt;span class="m"&gt;17&lt;/span&gt; &lt;span class="m"&gt;24&lt;/span&gt;        &lt;span class="m"&gt;1&lt;/span&gt;  &lt;span class="m"&gt;8&lt;/span&gt; &lt;span class="m"&gt;15&lt;/span&gt; &lt;span class="m"&gt;22&lt;/span&gt; &lt;span class="m"&gt;29&lt;/span&gt;
-&lt;a name="rest_code_53584a6f6bef4e08831d734fa5c703ee-7"&gt;&lt;/a&gt;Th      &lt;span class="m"&gt;7&lt;/span&gt; &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;21&lt;/span&gt; &lt;span class="m"&gt;28&lt;/span&gt;        &lt;span class="m"&gt;7&lt;/span&gt; &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;21&lt;/span&gt; &lt;span class="m"&gt;28&lt;/span&gt;      &lt;span class="m"&gt;4&lt;/span&gt; &lt;span class="m"&gt;11&lt;/span&gt; &lt;span class="m"&gt;18&lt;/span&gt; &lt;span class="m"&gt;25&lt;/span&gt;        &lt;span class="m"&gt;2&lt;/span&gt;  &lt;span class="m"&gt;9&lt;/span&gt; &lt;span class="m"&gt;16&lt;/span&gt; &lt;span class="m"&gt;23&lt;/span&gt; &lt;span class="m"&gt;30&lt;/span&gt;
-&lt;a name="rest_code_53584a6f6bef4e08831d734fa5c703ee-8"&gt;&lt;/a&gt;Fr       &lt;span class="m"&gt;1&lt;/span&gt;  &lt;span class="m"&gt;8&lt;/span&gt;  &lt;span class="m"&gt;15&lt;/span&gt;   &lt;span class="m"&gt;22&lt;/span&gt;     &lt;span class="m"&gt;1&lt;/span&gt;  &lt;span class="m"&gt;8&lt;/span&gt; &lt;span class="m"&gt;15&lt;/span&gt; &lt;span class="m"&gt;22&lt;/span&gt; &lt;span class="m"&gt;29&lt;/span&gt;       &lt;span class="m"&gt;5&lt;/span&gt; &lt;span class="m"&gt;12&lt;/span&gt; &lt;span class="m"&gt;19&lt;/span&gt; &lt;span class="m"&gt;26&lt;/span&gt;        &lt;span class="m"&gt;3&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt; &lt;span class="m"&gt;17&lt;/span&gt; &lt;span class="m"&gt;24&lt;/span&gt; &lt;span class="m"&gt;31&lt;/span&gt;
-&lt;a name="rest_code_53584a6f6bef4e08831d734fa5c703ee-9"&gt;&lt;/a&gt;Sa  &lt;span class="m"&gt;2&lt;/span&gt;  &lt;span class="m"&gt;9&lt;/span&gt; &lt;span class="m"&gt;16&lt;/span&gt; &lt;span class="m"&gt;23&lt;/span&gt;        &lt;span class="m"&gt;2&lt;/span&gt;  &lt;span class="m"&gt;9&lt;/span&gt; &lt;span class="m"&gt;16&lt;/span&gt; &lt;span class="m"&gt;23&lt;/span&gt; &lt;span class="m"&gt;30&lt;/span&gt;       &lt;span class="m"&gt;6&lt;/span&gt; &lt;span class="m"&gt;13&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt; &lt;span class="m"&gt;27&lt;/span&gt;       &lt;span class="m"&gt;4&lt;/span&gt;  &lt;span class="m"&gt;11&lt;/span&gt; &lt;span class="m"&gt;18&lt;/span&gt; &lt;span class="m"&gt;25&lt;/span&gt;
+&lt;pre class="code shell"&gt;&lt;a name="rest_code_e08499dd26b74a9ca39eee66df7a2833-1"&gt;&lt;/a&gt;$ ncal -B &lt;span class="m"&gt;3&lt;/span&gt;  &lt;span class="c1"&gt;#ncal中的n竟然是new这个单词&lt;/span&gt;
+&lt;a name="rest_code_e08499dd26b74a9ca39eee66df7a2833-2"&gt;&lt;/a&gt;    February &lt;span class="m"&gt;2019&lt;/span&gt;     March &lt;span class="m"&gt;2019&lt;/span&gt;        April &lt;span class="m"&gt;2019&lt;/span&gt;        May &lt;span class="m"&gt;2019&lt;/span&gt;
+&lt;a name="rest_code_e08499dd26b74a9ca39eee66df7a2833-3"&gt;&lt;/a&gt;Su      &lt;span class="m"&gt;3&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt; &lt;span class="m"&gt;17&lt;/span&gt; &lt;span class="m"&gt;24&lt;/span&gt;        &lt;span class="m"&gt;3&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt; &lt;span class="m"&gt;17&lt;/span&gt; &lt;span class="m"&gt;24&lt;/span&gt; &lt;span class="m"&gt;31&lt;/span&gt;     &lt;span class="m"&gt;7&lt;/span&gt; &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;21&lt;/span&gt; &lt;span class="m"&gt;28&lt;/span&gt;        &lt;span class="m"&gt;5&lt;/span&gt; &lt;span class="m"&gt;12&lt;/span&gt; &lt;span class="m"&gt;19&lt;/span&gt; &lt;span class="m"&gt;26&lt;/span&gt;
+&lt;a name="rest_code_e08499dd26b74a9ca39eee66df7a2833-4"&gt;&lt;/a&gt;Mo     &lt;span class="m"&gt;4&lt;/span&gt; &lt;span class="m"&gt;11&lt;/span&gt; &lt;span class="m"&gt;18&lt;/span&gt; &lt;span class="m"&gt;25&lt;/span&gt;        &lt;span class="m"&gt;4&lt;/span&gt; &lt;span class="m"&gt;11&lt;/span&gt; &lt;span class="m"&gt;18&lt;/span&gt; &lt;span class="m"&gt;25&lt;/span&gt;      &lt;span class="m"&gt;1&lt;/span&gt;  &lt;span class="m"&gt;8&lt;/span&gt; &lt;span class="m"&gt;15&lt;/span&gt; &lt;span class="m"&gt;22&lt;/span&gt; &lt;span class="m"&gt;29&lt;/span&gt;        &lt;span class="m"&gt;6&lt;/span&gt; &lt;span class="m"&gt;13&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt; &lt;span class="m"&gt;27&lt;/span&gt;
+&lt;a name="rest_code_e08499dd26b74a9ca39eee66df7a2833-5"&gt;&lt;/a&gt;Tu      &lt;span class="m"&gt;5&lt;/span&gt; &lt;span class="m"&gt;12&lt;/span&gt; &lt;span class="m"&gt;19&lt;/span&gt; &lt;span class="m"&gt;26&lt;/span&gt;        &lt;span class="m"&gt;5&lt;/span&gt; &lt;span class="m"&gt;12&lt;/span&gt; &lt;span class="m"&gt;19&lt;/span&gt; &lt;span class="m"&gt;26&lt;/span&gt;      &lt;span class="m"&gt;2&lt;/span&gt;  &lt;span class="m"&gt;9&lt;/span&gt; &lt;span class="m"&gt;16&lt;/span&gt; &lt;span class="m"&gt;23&lt;/span&gt; &lt;span class="m"&gt;30&lt;/span&gt;        &lt;span class="m"&gt;7&lt;/span&gt; &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;21&lt;/span&gt; &lt;span class="m"&gt;28&lt;/span&gt;
+&lt;a name="rest_code_e08499dd26b74a9ca39eee66df7a2833-6"&gt;&lt;/a&gt;We     &lt;span class="m"&gt;6&lt;/span&gt; &lt;span class="m"&gt;13&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt; &lt;span class="m"&gt;27&lt;/span&gt;        &lt;span class="m"&gt;6&lt;/span&gt; &lt;span class="m"&gt;13&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt; &lt;span class="m"&gt;27&lt;/span&gt;      &lt;span class="m"&gt;3&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt; &lt;span class="m"&gt;17&lt;/span&gt; &lt;span class="m"&gt;24&lt;/span&gt;        &lt;span class="m"&gt;1&lt;/span&gt;  &lt;span class="m"&gt;8&lt;/span&gt; &lt;span class="m"&gt;15&lt;/span&gt; &lt;span class="m"&gt;22&lt;/span&gt; &lt;span class="m"&gt;29&lt;/span&gt;
+&lt;a name="rest_code_e08499dd26b74a9ca39eee66df7a2833-7"&gt;&lt;/a&gt;Th      &lt;span class="m"&gt;7&lt;/span&gt; &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;21&lt;/span&gt; &lt;span class="m"&gt;28&lt;/span&gt;        &lt;span class="m"&gt;7&lt;/span&gt; &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;21&lt;/span&gt; &lt;span class="m"&gt;28&lt;/span&gt;      &lt;span class="m"&gt;4&lt;/span&gt; &lt;span class="m"&gt;11&lt;/span&gt; &lt;span class="m"&gt;18&lt;/span&gt; &lt;span class="m"&gt;25&lt;/span&gt;        &lt;span class="m"&gt;2&lt;/span&gt;  &lt;span class="m"&gt;9&lt;/span&gt; &lt;span class="m"&gt;16&lt;/span&gt; &lt;span class="m"&gt;23&lt;/span&gt; &lt;span class="m"&gt;30&lt;/span&gt;
+&lt;a name="rest_code_e08499dd26b74a9ca39eee66df7a2833-8"&gt;&lt;/a&gt;Fr       &lt;span class="m"&gt;1&lt;/span&gt;  &lt;span class="m"&gt;8&lt;/span&gt;  &lt;span class="m"&gt;15&lt;/span&gt;   &lt;span class="m"&gt;22&lt;/span&gt;     &lt;span class="m"&gt;1&lt;/span&gt;  &lt;span class="m"&gt;8&lt;/span&gt; &lt;span class="m"&gt;15&lt;/span&gt; &lt;span class="m"&gt;22&lt;/span&gt; &lt;span class="m"&gt;29&lt;/span&gt;       &lt;span class="m"&gt;5&lt;/span&gt; &lt;span class="m"&gt;12&lt;/span&gt; &lt;span class="m"&gt;19&lt;/span&gt; &lt;span class="m"&gt;26&lt;/span&gt;        &lt;span class="m"&gt;3&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt; &lt;span class="m"&gt;17&lt;/span&gt; &lt;span class="m"&gt;24&lt;/span&gt; &lt;span class="m"&gt;31&lt;/span&gt;
+&lt;a name="rest_code_e08499dd26b74a9ca39eee66df7a2833-9"&gt;&lt;/a&gt;Sa  &lt;span class="m"&gt;2&lt;/span&gt;  &lt;span class="m"&gt;9&lt;/span&gt; &lt;span class="m"&gt;16&lt;/span&gt; &lt;span class="m"&gt;23&lt;/span&gt;        &lt;span class="m"&gt;2&lt;/span&gt;  &lt;span class="m"&gt;9&lt;/span&gt; &lt;span class="m"&gt;16&lt;/span&gt; &lt;span class="m"&gt;23&lt;/span&gt; &lt;span class="m"&gt;30&lt;/span&gt;       &lt;span class="m"&gt;6&lt;/span&gt; &lt;span class="m"&gt;13&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt; &lt;span class="m"&gt;27&lt;/span&gt;       &lt;span class="m"&gt;4&lt;/span&gt;  &lt;span class="m"&gt;11&lt;/span&gt; &lt;span class="m"&gt;18&lt;/span&gt; &lt;span class="m"&gt;25&lt;/span&gt;
 &lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;时钟实施具体的测量&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_c90b746a16ab487bb17a20a4d810efc0-1"&gt;&lt;/a&gt;$ &lt;span class="nb"&gt;time&lt;/span&gt; sleep 10real    0m10.011suser    0m0.002ssys     0m0.001s
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_9ffe068b2b0847b5a3503e58fc89d81e-1"&gt;&lt;/a&gt;$ &lt;span class="nb"&gt;time&lt;/span&gt; sleep 10real    0m10.011suser    0m0.002ssys     0m0.001s
 &lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;datetime整合二者，提供更加实用的功能&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_c4dce3da3e00466d85b277a0fd66c0de-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;#贸易战倒计时&lt;/span&gt;
-&lt;a name="rest_code_c4dce3da3e00466d85b277a0fd66c0de-2"&gt;&lt;/a&gt;$ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"America/New_York"&lt;/span&gt; date &lt;span class="c1"&gt;#美东夏季时间， 第十个变量时区。&lt;/span&gt;
-&lt;a name="rest_code_c4dce3da3e00466d85b277a0fd66c0de-3"&gt;&lt;/a&gt;Thu May  &lt;span class="m"&gt;9&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt;:04:30 EDT &lt;span class="m"&gt;2019&lt;/span&gt;  &lt;span class="c1"&gt;#Eatern Daylight Timer&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_b22cd1426a8644e486e48c600b5d6901-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;#贸易战倒计时&lt;/span&gt;
+&lt;a name="rest_code_b22cd1426a8644e486e48c600b5d6901-2"&gt;&lt;/a&gt;$ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"America/New_York"&lt;/span&gt; date &lt;span class="c1"&gt;#美东夏季时间， 第十个变量时区。&lt;/span&gt;
+&lt;a name="rest_code_b22cd1426a8644e486e48c600b5d6901-3"&gt;&lt;/a&gt;Thu May  &lt;span class="m"&gt;9&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt;:04:30 EDT &lt;span class="m"&gt;2019&lt;/span&gt;  &lt;span class="c1"&gt;#Eatern Daylight Timer&lt;/span&gt;
 &lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="python"&gt;
-&lt;h2&gt;Python中的时间管理&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#id10"&gt;Python中的时间管理&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;以calendar,
 clock(time),datetime与十个时间变量为基础，审视python的&lt;code class="docutils literal"&gt;calendar&lt;/code&gt;,
 &lt;code class="docutils literal"&gt;time&lt;/code&gt;, and &lt;code class="docutils literal"&gt;datetime&lt;/code&gt;&lt;/p&gt;
 &lt;div class="section" id="calender"&gt;
-&lt;h3&gt;1. Calender&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#id11"&gt;1. Calender&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://docs.python.org/3/library/calendar.html"&gt;calendar — General calendar-related
 functions&lt;/a&gt; &lt;a class="reference external" href="https://pymotw.com/3/calendar/index.html"&gt;calendar
 — Work with Dates — PyMOTW
@@ -2171,7 +2278,7 @@ Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su
 # 只了解下TextCalendar, pryear, prmonth&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="time"&gt;
-&lt;h3&gt;2. Time&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#id12"&gt;2. Time&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://docs.python.org/3/library/time.html#module-time"&gt;time — Time access and
 conversions&lt;/a&gt;
 &lt;a class="reference external" href="https://pymotw.com/3/calendar/index.html"&gt;calendar — Work with Dates — PyMOTW
@@ -2230,7 +2337,7 @@ n.org/3/library/calen
 dar.html#calendar.tim
 egm&amp;gt;`__&lt;/p&gt;
 &lt;div class="system-message" id="id3"&gt;
-&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 119); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#id4"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 120); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#id4"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Inline literal start-string without end-string.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/td&gt;
@@ -2265,108 +2372,108 @@ In [18]: time.mktime(time.localtime()) #Local time
 Out[18]: 1557922368.0&lt;/pre&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;第十一个-时间变量 &lt;code class="docutils literal"&gt;tm_isdst&lt;/code&gt; daylight saving time夏季时间&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_76afcaebd7ff46da85b10c8efd5f074a-1"&gt;&lt;/a&gt;gmtime&lt;span class="o"&gt;(&lt;/span&gt;...&lt;span class="o"&gt;)&lt;/span&gt; -&amp;gt;time.struct_time,  &lt;span class="o"&gt;(&lt;/span&gt;strptime, localtime&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_76afcaebd7ff46da85b10c8efd5f074a-2"&gt;&lt;/a&gt;    gmtime&lt;span class="o"&gt;([&lt;/span&gt;seconds&lt;span class="o"&gt;])&lt;/span&gt; -&amp;gt; &lt;span class="o"&gt;(&lt;/span&gt;tm_year, tm_mon, tm_mday, tm_hour, tm_min,
-&lt;a name="rest_code_76afcaebd7ff46da85b10c8efd5f074a-3"&gt;&lt;/a&gt;                           tm_sec, tm_wday, tm_yday, tm_isdst&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_094a698ef79c436f9b86651afbf22bc2-1"&gt;&lt;/a&gt;gmtime&lt;span class="o"&gt;(&lt;/span&gt;...&lt;span class="o"&gt;)&lt;/span&gt; -&amp;gt;time.struct_time,  &lt;span class="o"&gt;(&lt;/span&gt;strptime, localtime&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_094a698ef79c436f9b86651afbf22bc2-2"&gt;&lt;/a&gt;    gmtime&lt;span class="o"&gt;([&lt;/span&gt;seconds&lt;span class="o"&gt;])&lt;/span&gt; -&amp;gt; &lt;span class="o"&gt;(&lt;/span&gt;tm_year, tm_mon, tm_mday, tm_hour, tm_min,
+&lt;a name="rest_code_094a698ef79c436f9b86651afbf22bc2-3"&gt;&lt;/a&gt;                           tm_sec, tm_wday, tm_yday, tm_isdst&lt;span class="o"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Processor Time and Timer&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_df8f4afcea724845802c4b7cce0907da-1"&gt;&lt;/a&gt;time.process_time&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="c1"&gt;#cpu time  of kernel and user-space&lt;/span&gt;
-&lt;a name="rest_code_df8f4afcea724845802c4b7cce0907da-2"&gt;&lt;/a&gt;time.process_time_ns&lt;span class="o"&gt;()&lt;/span&gt; -&amp;gt;int &lt;span class="c1"&gt;#not inclue sleep time&lt;/span&gt;
-&lt;a name="rest_code_df8f4afcea724845802c4b7cce0907da-3"&gt;&lt;/a&gt;time.perf_counter&lt;span class="o"&gt;()&lt;/span&gt; -&amp;gt;float
-&lt;a name="rest_code_df8f4afcea724845802c4b7cce0907da-4"&gt;&lt;/a&gt;time.perf_counter_ns&lt;span class="o"&gt;()&lt;/span&gt; -&amp;gt; int
-&lt;a name="rest_code_df8f4afcea724845802c4b7cce0907da-5"&gt;&lt;/a&gt;time.thread_time&lt;span class="o"&gt;()&lt;/span&gt; -&amp;gt;float
-&lt;a name="rest_code_df8f4afcea724845802c4b7cce0907da-6"&gt;&lt;/a&gt;time.thread_time_ns&lt;span class="o"&gt;()&lt;/span&gt; -&amp;gt;int
-&lt;a name="rest_code_df8f4afcea724845802c4b7cce0907da-7"&gt;&lt;/a&gt;time.time&lt;span class="o"&gt;()&lt;/span&gt;
-&lt;a name="rest_code_df8f4afcea724845802c4b7cce0907da-8"&gt;&lt;/a&gt;time.time_ns&lt;span class="o"&gt;()&lt;/span&gt;
-&lt;a name="rest_code_df8f4afcea724845802c4b7cce0907da-9"&gt;&lt;/a&gt;time.sleep
-&lt;a name="rest_code_df8f4afcea724845802c4b7cce0907da-10"&gt;&lt;/a&gt;time.monotonic&lt;span class="o"&gt;()&lt;/span&gt;
-&lt;a name="rest_code_df8f4afcea724845802c4b7cce0907da-11"&gt;&lt;/a&gt;time.monotonic_ns&lt;span class="o"&gt;()&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_0180342efd044f7bbab7ccdc734afc57-1"&gt;&lt;/a&gt;time.process_time&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="c1"&gt;#cpu time  of kernel and user-space&lt;/span&gt;
+&lt;a name="rest_code_0180342efd044f7bbab7ccdc734afc57-2"&gt;&lt;/a&gt;time.process_time_ns&lt;span class="o"&gt;()&lt;/span&gt; -&amp;gt;int &lt;span class="c1"&gt;#not inclue sleep time&lt;/span&gt;
+&lt;a name="rest_code_0180342efd044f7bbab7ccdc734afc57-3"&gt;&lt;/a&gt;time.perf_counter&lt;span class="o"&gt;()&lt;/span&gt; -&amp;gt;float
+&lt;a name="rest_code_0180342efd044f7bbab7ccdc734afc57-4"&gt;&lt;/a&gt;time.perf_counter_ns&lt;span class="o"&gt;()&lt;/span&gt; -&amp;gt; int
+&lt;a name="rest_code_0180342efd044f7bbab7ccdc734afc57-5"&gt;&lt;/a&gt;time.thread_time&lt;span class="o"&gt;()&lt;/span&gt; -&amp;gt;float
+&lt;a name="rest_code_0180342efd044f7bbab7ccdc734afc57-6"&gt;&lt;/a&gt;time.thread_time_ns&lt;span class="o"&gt;()&lt;/span&gt; -&amp;gt;int
+&lt;a name="rest_code_0180342efd044f7bbab7ccdc734afc57-7"&gt;&lt;/a&gt;time.time&lt;span class="o"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_0180342efd044f7bbab7ccdc734afc57-8"&gt;&lt;/a&gt;time.time_ns&lt;span class="o"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_0180342efd044f7bbab7ccdc734afc57-9"&gt;&lt;/a&gt;time.sleep
+&lt;a name="rest_code_0180342efd044f7bbab7ccdc734afc57-10"&gt;&lt;/a&gt;time.monotonic&lt;span class="o"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_0180342efd044f7bbab7ccdc734afc57-11"&gt;&lt;/a&gt;time.monotonic_ns&lt;span class="o"&gt;()&lt;/span&gt;
 &lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Timezone Constants&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_17ead7ae41c7403295c22faadaa5294e-1"&gt;&lt;/a&gt;In &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;9&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: time.daylight
-&lt;a name="rest_code_17ead7ae41c7403295c22faadaa5294e-2"&gt;&lt;/a&gt;Out&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;9&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: &lt;span class="m"&gt;0&lt;/span&gt;
-&lt;a name="rest_code_17ead7ae41c7403295c22faadaa5294e-3"&gt;&lt;/a&gt;In &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: time.tzname
-&lt;a name="rest_code_17ead7ae41c7403295c22faadaa5294e-4"&gt;&lt;/a&gt;Out&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'CST'&lt;/span&gt;, &lt;span class="s1"&gt;'CST'&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_17ead7ae41c7403295c22faadaa5294e-5"&gt;&lt;/a&gt;In &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;11&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: time.altzone
-&lt;a name="rest_code_17ead7ae41c7403295c22faadaa5294e-6"&gt;&lt;/a&gt;Out&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;11&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: -28800
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_850e78c1e4574a9db79e2a58830ba72e-1"&gt;&lt;/a&gt;In &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;9&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: time.daylight
+&lt;a name="rest_code_850e78c1e4574a9db79e2a58830ba72e-2"&gt;&lt;/a&gt;Out&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;9&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: &lt;span class="m"&gt;0&lt;/span&gt;
+&lt;a name="rest_code_850e78c1e4574a9db79e2a58830ba72e-3"&gt;&lt;/a&gt;In &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: time.tzname
+&lt;a name="rest_code_850e78c1e4574a9db79e2a58830ba72e-4"&gt;&lt;/a&gt;Out&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'CST'&lt;/span&gt;, &lt;span class="s1"&gt;'CST'&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_850e78c1e4574a9db79e2a58830ba72e-5"&gt;&lt;/a&gt;In &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;11&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: time.altzone
+&lt;a name="rest_code_850e78c1e4574a9db79e2a58830ba72e-6"&gt;&lt;/a&gt;Out&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;11&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: -28800
 &lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;两个重要的methods&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_73eec6e3becf4f12816e8fce3873fa68-1"&gt;&lt;/a&gt;time.strptime&lt;span class="o"&gt;(&lt;/span&gt;string, format&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_73eec6e3becf4f12816e8fce3873fa68-2"&gt;&lt;/a&gt;time.strftime&lt;span class="o"&gt;(&lt;/span&gt;format&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_232b38deadda42eb9e8aa330e957a7f4-1"&gt;&lt;/a&gt;time.strptime&lt;span class="o"&gt;(&lt;/span&gt;string, format&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_232b38deadda42eb9e8aa330e957a7f4-2"&gt;&lt;/a&gt;time.strftime&lt;span class="o"&gt;(&lt;/span&gt;format&lt;span class="o"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;ctime&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_8bb28e77091a4f488188b2f7b3928279-1"&gt;&lt;/a&gt;In &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: time.asctime&lt;span class="o"&gt;(&lt;/span&gt;time.localtime&lt;span class="o"&gt;())&lt;/span&gt;
-&lt;a name="rest_code_8bb28e77091a4f488188b2f7b3928279-2"&gt;&lt;/a&gt;Out&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: &lt;span class="s1"&gt;'Wed May 15 21:05:27 2019'&lt;/span&gt;
-&lt;a name="rest_code_8bb28e77091a4f488188b2f7b3928279-3"&gt;&lt;/a&gt;In &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: time.ctime&lt;span class="o"&gt;()&lt;/span&gt;
-&lt;a name="rest_code_8bb28e77091a4f488188b2f7b3928279-4"&gt;&lt;/a&gt;Out&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: &lt;span class="s1"&gt;'Wed May 15 21:05:32 2019'&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_2f994524d98c4ae0b179bc2c8b65eae8-1"&gt;&lt;/a&gt;In &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: time.asctime&lt;span class="o"&gt;(&lt;/span&gt;time.localtime&lt;span class="o"&gt;())&lt;/span&gt;
+&lt;a name="rest_code_2f994524d98c4ae0b179bc2c8b65eae8-2"&gt;&lt;/a&gt;Out&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: &lt;span class="s1"&gt;'Wed May 15 21:05:27 2019'&lt;/span&gt;
+&lt;a name="rest_code_2f994524d98c4ae0b179bc2c8b65eae8-3"&gt;&lt;/a&gt;In &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: time.ctime&lt;span class="o"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_2f994524d98c4ae0b179bc2c8b65eae8-4"&gt;&lt;/a&gt;Out&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: &lt;span class="s1"&gt;'Wed May 15 21:05:32 2019'&lt;/span&gt;
 &lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="datetime"&gt;
-&lt;h3&gt;3. Datetime&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#id13"&gt;3. Datetime&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;复习calendar(date), clock(time)的逻辑，先看两个没用的函数。&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://pymotw.com/3/datetime/index.html"&gt;datetime — Date and Time Value Manipulation — PyMOTW
 3&lt;/a&gt;&lt;/p&gt;
 &lt;ol class="arabic"&gt;
 &lt;li&gt;&lt;p&gt;datetime.date()&lt;/p&gt;
-&lt;pre class="code python"&gt;&lt;a name="rest_code_2ef5e77bc6a5419e98570a6f93d23a24-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;date&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;builtins&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;object&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="err"&gt;就是符号&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;x返回的内容&lt;/span&gt;
-&lt;a name="rest_code_2ef5e77bc6a5419e98570a6f93d23a24-2"&gt;&lt;/a&gt; &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="n"&gt;date&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;year&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;month&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;day&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;--&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;date&lt;/span&gt; &lt;span class="nb"&gt;object&lt;/span&gt;
-&lt;a name="rest_code_2ef5e77bc6a5419e98570a6f93d23a24-3"&gt;&lt;/a&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;135&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;date&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;today&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;year&lt;/span&gt;
-&lt;a name="rest_code_2ef5e77bc6a5419e98570a6f93d23a24-4"&gt;&lt;/a&gt;&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;135&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="mi"&gt;2019&lt;/span&gt;
-&lt;a name="rest_code_2ef5e77bc6a5419e98570a6f93d23a24-5"&gt;&lt;/a&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;136&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;date&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;today&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;month&lt;/span&gt;
-&lt;a name="rest_code_2ef5e77bc6a5419e98570a6f93d23a24-6"&gt;&lt;/a&gt;&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;136&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;
-&lt;a name="rest_code_2ef5e77bc6a5419e98570a6f93d23a24-7"&gt;&lt;/a&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;137&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;date&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;today&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;day&lt;/span&gt;
-&lt;a name="rest_code_2ef5e77bc6a5419e98570a6f93d23a24-8"&gt;&lt;/a&gt;&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;137&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_112f46689fe64ed9ac43ee3b830a6d04-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;date&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;builtins&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;object&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="err"&gt;就是符号&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;x返回的内容&lt;/span&gt;
+&lt;a name="rest_code_112f46689fe64ed9ac43ee3b830a6d04-2"&gt;&lt;/a&gt; &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="n"&gt;date&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;year&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;month&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;day&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;--&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;date&lt;/span&gt; &lt;span class="nb"&gt;object&lt;/span&gt;
+&lt;a name="rest_code_112f46689fe64ed9ac43ee3b830a6d04-3"&gt;&lt;/a&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;135&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;date&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;today&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;year&lt;/span&gt;
+&lt;a name="rest_code_112f46689fe64ed9ac43ee3b830a6d04-4"&gt;&lt;/a&gt;&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;135&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="mi"&gt;2019&lt;/span&gt;
+&lt;a name="rest_code_112f46689fe64ed9ac43ee3b830a6d04-5"&gt;&lt;/a&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;136&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;date&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;today&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;month&lt;/span&gt;
+&lt;a name="rest_code_112f46689fe64ed9ac43ee3b830a6d04-6"&gt;&lt;/a&gt;&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;136&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;
+&lt;a name="rest_code_112f46689fe64ed9ac43ee3b830a6d04-7"&gt;&lt;/a&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;137&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;date&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;today&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;day&lt;/span&gt;
+&lt;a name="rest_code_112f46689fe64ed9ac43ee3b830a6d04-8"&gt;&lt;/a&gt;&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;137&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;
 &lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;datetime.time()&lt;/p&gt;
-&lt;pre class="code python"&gt;&lt;a name="rest_code_035cb815ae814adaac81e26f9556b4b3-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;time&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;builtins&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;object&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="err"&gt;符号&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;X返回的内容&lt;/span&gt;
-&lt;a name="rest_code_035cb815ae814adaac81e26f9556b4b3-2"&gt;&lt;/a&gt; &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;hour&lt;/span&gt;&lt;span class="p"&gt;[,&lt;/span&gt; &lt;span class="n"&gt;minute&lt;/span&gt;&lt;span class="p"&gt;[,&lt;/span&gt; &lt;span class="n"&gt;second&lt;/span&gt;&lt;span class="p"&gt;[,&lt;/span&gt; &lt;span class="n"&gt;microsecond&lt;/span&gt;&lt;span class="p"&gt;[,&lt;/span&gt; &lt;span class="n"&gt;tzinfo&lt;/span&gt;&lt;span class="p"&gt;]]]]])&lt;/span&gt; &lt;span class="o"&gt;--&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt; &lt;span class="nb"&gt;object&lt;/span&gt;
-&lt;a name="rest_code_035cb815ae814adaac81e26f9556b4b3-3"&gt;&lt;/a&gt;  &lt;span class="c1"&gt;#5个参数,由大到小排列&lt;/span&gt;
-&lt;a name="rest_code_035cb815ae814adaac81e26f9556b4b3-4"&gt;&lt;/a&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;104&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;  &lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;999999&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;dateutil&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tz&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tzutc&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
-&lt;a name="rest_code_035cb815ae814adaac81e26f9556b4b3-5"&gt;&lt;/a&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;105&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strftime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="si"&gt;%f&lt;/span&gt;&lt;span class="s2"&gt;:%S:%M:%H %Z"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_035cb815ae814adaac81e26f9556b4b3-6"&gt;&lt;/a&gt;&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;105&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="s1"&gt;'999999:30:15:06 UTC'&lt;/span&gt;
-&lt;a name="rest_code_035cb815ae814adaac81e26f9556b4b3-7"&gt;&lt;/a&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;106&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;min&lt;/span&gt;
-&lt;a name="rest_code_035cb815ae814adaac81e26f9556b4b3-8"&gt;&lt;/a&gt;&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;106&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_035cb815ae814adaac81e26f9556b4b3-9"&gt;&lt;/a&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;107&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;max&lt;/span&gt;
-&lt;a name="rest_code_035cb815ae814adaac81e26f9556b4b3-10"&gt;&lt;/a&gt;&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;107&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;23&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;59&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;59&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;999999&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_035cb815ae814adaac81e26f9556b4b3-11"&gt;&lt;/a&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="mi"&gt;108&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;resolution&lt;/span&gt;
-&lt;a name="rest_code_035cb815ae814adaac81e26f9556b4b3-12"&gt;&lt;/a&gt;&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;108&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;timedelta&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;microseconds&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;#精确度&lt;/span&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_abd81a72bb934b6f9df7f9402495b267-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;time&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;builtins&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;object&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="err"&gt;符号&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;X返回的内容&lt;/span&gt;
+&lt;a name="rest_code_abd81a72bb934b6f9df7f9402495b267-2"&gt;&lt;/a&gt; &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;hour&lt;/span&gt;&lt;span class="p"&gt;[,&lt;/span&gt; &lt;span class="n"&gt;minute&lt;/span&gt;&lt;span class="p"&gt;[,&lt;/span&gt; &lt;span class="n"&gt;second&lt;/span&gt;&lt;span class="p"&gt;[,&lt;/span&gt; &lt;span class="n"&gt;microsecond&lt;/span&gt;&lt;span class="p"&gt;[,&lt;/span&gt; &lt;span class="n"&gt;tzinfo&lt;/span&gt;&lt;span class="p"&gt;]]]]])&lt;/span&gt; &lt;span class="o"&gt;--&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt; &lt;span class="nb"&gt;object&lt;/span&gt;
+&lt;a name="rest_code_abd81a72bb934b6f9df7f9402495b267-3"&gt;&lt;/a&gt;  &lt;span class="c1"&gt;#5个参数,由大到小排列&lt;/span&gt;
+&lt;a name="rest_code_abd81a72bb934b6f9df7f9402495b267-4"&gt;&lt;/a&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;104&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;  &lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;999999&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;dateutil&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tz&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tzutc&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+&lt;a name="rest_code_abd81a72bb934b6f9df7f9402495b267-5"&gt;&lt;/a&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;105&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strftime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="si"&gt;%f&lt;/span&gt;&lt;span class="s2"&gt;:%S:%M:%H %Z"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_abd81a72bb934b6f9df7f9402495b267-6"&gt;&lt;/a&gt;&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;105&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="s1"&gt;'999999:30:15:06 UTC'&lt;/span&gt;
+&lt;a name="rest_code_abd81a72bb934b6f9df7f9402495b267-7"&gt;&lt;/a&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;106&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;min&lt;/span&gt;
+&lt;a name="rest_code_abd81a72bb934b6f9df7f9402495b267-8"&gt;&lt;/a&gt;&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;106&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_abd81a72bb934b6f9df7f9402495b267-9"&gt;&lt;/a&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;107&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;max&lt;/span&gt;
+&lt;a name="rest_code_abd81a72bb934b6f9df7f9402495b267-10"&gt;&lt;/a&gt;&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;107&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;23&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;59&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;59&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;999999&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_abd81a72bb934b6f9df7f9402495b267-11"&gt;&lt;/a&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="mi"&gt;108&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;resolution&lt;/span&gt;
+&lt;a name="rest_code_abd81a72bb934b6f9df7f9402495b267-12"&gt;&lt;/a&gt;&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;108&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;timedelta&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;microseconds&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;#精确度&lt;/span&gt;
 &lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;datetime.datetime&lt;/p&gt;
-&lt;pre class="code python"&gt;&lt;a name="rest_code_d387d5f6bd29419686887742a93a1e23-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;#前面两个datetime.time and datetime.date没啥用.&lt;/span&gt;
-&lt;a name="rest_code_d387d5f6bd29419686887742a93a1e23-2"&gt;&lt;/a&gt;&lt;span class="c1"&gt;#这里的关键是第十个时间变量tzinfo&lt;/span&gt;
-&lt;a name="rest_code_d387d5f6bd29419686887742a93a1e23-3"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;datetime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;date&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_d387d5f6bd29419686887742a93a1e23-4"&gt;&lt;/a&gt; &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;year&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;month&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;day&lt;/span&gt;&lt;span class="p"&gt;[,&lt;/span&gt; &lt;span class="n"&gt;hour&lt;/span&gt;&lt;span class="p"&gt;[,&lt;/span&gt; &lt;span class="n"&gt;minute&lt;/span&gt;&lt;span class="p"&gt;[,&lt;/span&gt; &lt;span class="n"&gt;second&lt;/span&gt;&lt;span class="p"&gt;[,&lt;/span&gt; &lt;span class="n"&gt;microsecond&lt;/span&gt;&lt;span class="p"&gt;[,&lt;/span&gt;&lt;span class="n"&gt;tzinfo&lt;/span&gt;&lt;span class="p"&gt;]]]]])&lt;/span&gt;
-&lt;a name="rest_code_d387d5f6bd29419686887742a93a1e23-5"&gt;&lt;/a&gt;&lt;span class="n"&gt;Help&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt; &lt;span class="n"&gt;built&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;weekday&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a name="rest_code_d387d5f6bd29419686887742a93a1e23-6"&gt;&lt;/a&gt;
-&lt;a name="rest_code_d387d5f6bd29419686887742a93a1e23-7"&gt;&lt;/a&gt;&lt;span class="n"&gt;weekday&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;method&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt; &lt;span class="n"&gt;instance&lt;/span&gt;
-&lt;a name="rest_code_d387d5f6bd29419686887742a93a1e23-8"&gt;&lt;/a&gt;    &lt;span class="n"&gt;Return&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;day&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;week&lt;/span&gt; &lt;span class="n"&gt;represented&lt;/span&gt; &lt;span class="n"&gt;by&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;date&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
-&lt;a name="rest_code_d387d5f6bd29419686887742a93a1e23-9"&gt;&lt;/a&gt;    &lt;span class="n"&gt;Monday&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="o"&gt;...&lt;/span&gt; &lt;span class="n"&gt;Sunday&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;
-&lt;a name="rest_code_d387d5f6bd29419686887742a93a1e23-10"&gt;&lt;/a&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;dt&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;now&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tzinfo&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;dateutil&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tz&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gettz&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Asia/Shanghai"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;a name="rest_code_d387d5f6bd29419686887742a93a1e23-11"&gt;&lt;/a&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;201&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;dt&lt;/span&gt;
-&lt;a name="rest_code_d387d5f6bd29419686887742a93a1e23-12"&gt;&lt;/a&gt;&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;201&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2019&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;47&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;421561&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tzinfo&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;tzfile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'/usr/share/zoneinfo/Asia/Shanghai'&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;a name="rest_code_d387d5f6bd29419686887742a93a1e23-13"&gt;&lt;/a&gt; &lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;208&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;utcnow&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;timetuple&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;a name="rest_code_d387d5f6bd29419686887742a93a1e23-14"&gt;&lt;/a&gt;&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;208&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;struct_time&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tm_year&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2019&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tm_mon&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tm_mday&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tm_hour&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tm_min&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;49&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tm_sec&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;24&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tm_wday&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tm_yday&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;129&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tm_isdst&lt;/span&gt;&lt;span class="o"&gt;=-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_5bd1aa50d43043b3a3d707fb99ae3500-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;#前面两个datetime.time and datetime.date没啥用.&lt;/span&gt;
+&lt;a name="rest_code_5bd1aa50d43043b3a3d707fb99ae3500-2"&gt;&lt;/a&gt;&lt;span class="c1"&gt;#这里的关键是第十个时间变量tzinfo&lt;/span&gt;
+&lt;a name="rest_code_5bd1aa50d43043b3a3d707fb99ae3500-3"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;datetime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;date&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_5bd1aa50d43043b3a3d707fb99ae3500-4"&gt;&lt;/a&gt; &lt;span class="o"&gt;|&lt;/span&gt;  &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;year&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;month&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;day&lt;/span&gt;&lt;span class="p"&gt;[,&lt;/span&gt; &lt;span class="n"&gt;hour&lt;/span&gt;&lt;span class="p"&gt;[,&lt;/span&gt; &lt;span class="n"&gt;minute&lt;/span&gt;&lt;span class="p"&gt;[,&lt;/span&gt; &lt;span class="n"&gt;second&lt;/span&gt;&lt;span class="p"&gt;[,&lt;/span&gt; &lt;span class="n"&gt;microsecond&lt;/span&gt;&lt;span class="p"&gt;[,&lt;/span&gt;&lt;span class="n"&gt;tzinfo&lt;/span&gt;&lt;span class="p"&gt;]]]]])&lt;/span&gt;
+&lt;a name="rest_code_5bd1aa50d43043b3a3d707fb99ae3500-5"&gt;&lt;/a&gt;&lt;span class="n"&gt;Help&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt; &lt;span class="n"&gt;built&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;weekday&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_5bd1aa50d43043b3a3d707fb99ae3500-6"&gt;&lt;/a&gt;
+&lt;a name="rest_code_5bd1aa50d43043b3a3d707fb99ae3500-7"&gt;&lt;/a&gt;&lt;span class="n"&gt;weekday&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;method&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt; &lt;span class="n"&gt;instance&lt;/span&gt;
+&lt;a name="rest_code_5bd1aa50d43043b3a3d707fb99ae3500-8"&gt;&lt;/a&gt;    &lt;span class="n"&gt;Return&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;day&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;week&lt;/span&gt; &lt;span class="n"&gt;represented&lt;/span&gt; &lt;span class="n"&gt;by&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;date&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+&lt;a name="rest_code_5bd1aa50d43043b3a3d707fb99ae3500-9"&gt;&lt;/a&gt;    &lt;span class="n"&gt;Monday&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="o"&gt;...&lt;/span&gt; &lt;span class="n"&gt;Sunday&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;
+&lt;a name="rest_code_5bd1aa50d43043b3a3d707fb99ae3500-10"&gt;&lt;/a&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;dt&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;now&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tzinfo&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;dateutil&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tz&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gettz&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Asia/Shanghai"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_5bd1aa50d43043b3a3d707fb99ae3500-11"&gt;&lt;/a&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;201&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;dt&lt;/span&gt;
+&lt;a name="rest_code_5bd1aa50d43043b3a3d707fb99ae3500-12"&gt;&lt;/a&gt;&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;201&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2019&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;47&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;421561&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tzinfo&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;tzfile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'/usr/share/zoneinfo/Asia/Shanghai'&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_5bd1aa50d43043b3a3d707fb99ae3500-13"&gt;&lt;/a&gt; &lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;208&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;utcnow&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;timetuple&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_5bd1aa50d43043b3a3d707fb99ae3500-14"&gt;&lt;/a&gt;&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;208&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;struct_time&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tm_year&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2019&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tm_mon&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tm_mday&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tm_hour&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tm_min&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;49&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tm_sec&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;24&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tm_wday&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tm_yday&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;129&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tm_isdst&lt;/span&gt;&lt;span class="o"&gt;=-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;datetime.timedelta and Arithmetic Opertions&lt;/p&gt;
-&lt;pre class="code python"&gt;&lt;a name="rest_code_5f4abba7cd484ac58071b88de5854fde-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;timedelta&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;days&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;seconds&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;microseconds&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;milliseconds&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;minutes&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;hours&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;weeks&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_5f4abba7cd484ac58071b88de5854fde-2"&gt;&lt;/a&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;219&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;now&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;timedelta&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;days&lt;/span&gt;&lt;span class="o"&gt;=-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_5f4abba7cd484ac58071b88de5854fde-3"&gt;&lt;/a&gt;&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;219&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2019&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;57&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;910880&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_5f4abba7cd484ac58071b88de5854fde-4"&gt;&lt;/a&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;220&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="err"&gt;!&lt;/span&gt;&lt;span class="n"&gt;date&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt; &lt;span class="s2"&gt;"1 days ago"&lt;/span&gt;
-&lt;a name="rest_code_5f4abba7cd484ac58071b88de5854fde-5"&gt;&lt;/a&gt;&lt;span class="n"&gt;Wed&lt;/span&gt; &lt;span class="n"&gt;May&lt;/span&gt;  &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;57&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;52&lt;/span&gt; &lt;span class="n"&gt;CST&lt;/span&gt; &lt;span class="mi"&gt;2019&lt;/span&gt;
-&lt;a name="rest_code_5f4abba7cd484ac58071b88de5854fde-6"&gt;&lt;/a&gt; &lt;span class="c1"&gt;#转换为seconds的另外一种写法&lt;/span&gt;
-&lt;a name="rest_code_5f4abba7cd484ac58071b88de5854fde-7"&gt;&lt;/a&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;timedelta&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;seconds&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;a name="rest_code_5f4abba7cd484ac58071b88de5854fde-8"&gt;&lt;/a&gt;&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="s1"&gt;'0:01:40'&lt;/span&gt;
-&lt;a name="rest_code_5f4abba7cd484ac58071b88de5854fde-9"&gt;&lt;/a&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;29&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strftime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"%H:%M:%S"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gmtime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3000&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;a name="rest_code_5f4abba7cd484ac58071b88de5854fde-10"&gt;&lt;/a&gt;&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;29&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="s1"&gt;'00:50:00'&lt;/span&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_ae9c8e5bdd694310921c0278d97c8f8c-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;timedelta&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;days&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;seconds&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;microseconds&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;milliseconds&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;minutes&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;hours&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;weeks&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_ae9c8e5bdd694310921c0278d97c8f8c-2"&gt;&lt;/a&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;219&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;now&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;timedelta&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;days&lt;/span&gt;&lt;span class="o"&gt;=-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_ae9c8e5bdd694310921c0278d97c8f8c-3"&gt;&lt;/a&gt;&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;219&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2019&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;57&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;910880&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_ae9c8e5bdd694310921c0278d97c8f8c-4"&gt;&lt;/a&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;220&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="err"&gt;!&lt;/span&gt;&lt;span class="n"&gt;date&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt; &lt;span class="s2"&gt;"1 days ago"&lt;/span&gt;
+&lt;a name="rest_code_ae9c8e5bdd694310921c0278d97c8f8c-5"&gt;&lt;/a&gt;&lt;span class="n"&gt;Wed&lt;/span&gt; &lt;span class="n"&gt;May&lt;/span&gt;  &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;57&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;52&lt;/span&gt; &lt;span class="n"&gt;CST&lt;/span&gt; &lt;span class="mi"&gt;2019&lt;/span&gt;
+&lt;a name="rest_code_ae9c8e5bdd694310921c0278d97c8f8c-6"&gt;&lt;/a&gt; &lt;span class="c1"&gt;#转换为seconds的另外一种写法&lt;/span&gt;
+&lt;a name="rest_code_ae9c8e5bdd694310921c0278d97c8f8c-7"&gt;&lt;/a&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;timedelta&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;seconds&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_ae9c8e5bdd694310921c0278d97c8f8c-8"&gt;&lt;/a&gt;&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="s1"&gt;'0:01:40'&lt;/span&gt;
+&lt;a name="rest_code_ae9c8e5bdd694310921c0278d97c8f8c-9"&gt;&lt;/a&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;29&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strftime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"%H:%M:%S"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gmtime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3000&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_ae9c8e5bdd694310921c0278d97c8f8c-10"&gt;&lt;/a&gt;&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;29&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="s1"&gt;'00:50:00'&lt;/span&gt;
 &lt;/pre&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="shell"&gt;
-&lt;h2&gt;Shell的时间管理工具&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#id14"&gt;Shell的时间管理工具&lt;/a&gt;&lt;/h2&gt;
 &lt;div class="section" id="calendar"&gt;
-&lt;h3&gt;1.Calendar&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#id15"&gt;1.Calendar&lt;/a&gt;&lt;/h3&gt;
 &lt;pre class="literal-block"&gt;$ ncal -1
 $ ncal -M #Monday as the first day
 $ ncal -w #weeknumber
@@ -2377,123 +2484,123 @@ $ ncal -A3 -B4
 #就只有这么多操作&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="clock-time"&gt;
-&lt;h3&gt;2.Clock(Time)&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#id16"&gt;2.Clock(Time)&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;hwclock&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_240cbe0adec7479fb6904ad856f62dd0-1"&gt;&lt;/a&gt;In &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;31&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: !sudo hwclock
-&lt;a name="rest_code_240cbe0adec7479fb6904ad856f62dd0-2"&gt;&lt;/a&gt;&lt;span class="m"&gt;2019&lt;/span&gt;-05-15 &lt;span class="m"&gt;21&lt;/span&gt;:25:29.514803+08:00
-&lt;a name="rest_code_240cbe0adec7479fb6904ad856f62dd0-3"&gt;&lt;/a&gt;---------------------------------------------------
-&lt;a name="rest_code_240cbe0adec7479fb6904ad856f62dd0-4"&gt;&lt;/a&gt;NAME
-&lt;a name="rest_code_240cbe0adec7479fb6904ad856f62dd0-5"&gt;&lt;/a&gt;       hwclock - &lt;span class="nb"&gt;time&lt;/span&gt; clocks utility
-&lt;a name="rest_code_240cbe0adec7479fb6904ad856f62dd0-6"&gt;&lt;/a&gt;FILES
-&lt;a name="rest_code_240cbe0adec7479fb6904ad856f62dd0-7"&gt;&lt;/a&gt;       /etc/adjtime
-&lt;a name="rest_code_240cbe0adec7479fb6904ad856f62dd0-8"&gt;&lt;/a&gt;              The configuration and state file &lt;span class="k"&gt;for&lt;/span&gt; hwclock.
-&lt;a name="rest_code_240cbe0adec7479fb6904ad856f62dd0-9"&gt;&lt;/a&gt;       /etc/localtime
-&lt;a name="rest_code_240cbe0adec7479fb6904ad856f62dd0-10"&gt;&lt;/a&gt;              The system timezone file
-&lt;a name="rest_code_240cbe0adec7479fb6904ad856f62dd0-11"&gt;&lt;/a&gt;       /usr/share/zoneinfo/
-&lt;a name="rest_code_240cbe0adec7479fb6904ad856f62dd0-12"&gt;&lt;/a&gt;              The system timezone database directory.
-&lt;a name="rest_code_240cbe0adec7479fb6904ad856f62dd0-13"&gt;&lt;/a&gt;       Device files hwclock may try &lt;span class="k"&gt;for&lt;/span&gt; Hardware Clock access:
-&lt;a name="rest_code_240cbe0adec7479fb6904ad856f62dd0-14"&gt;&lt;/a&gt;       /dev/rtc0
-&lt;a name="rest_code_240cbe0adec7479fb6904ad856f62dd0-15"&gt;&lt;/a&gt;       /dev/rtc
-&lt;a name="rest_code_240cbe0adec7479fb6904ad856f62dd0-16"&gt;&lt;/a&gt;       /dev/misc/rtc
-&lt;a name="rest_code_240cbe0adec7479fb6904ad856f62dd0-17"&gt;&lt;/a&gt;       /dev/efirtc
-&lt;a name="rest_code_240cbe0adec7479fb6904ad856f62dd0-18"&gt;&lt;/a&gt;       /dev/misc/efirtc
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_695446ee768f4526a5b78b8765ee176a-1"&gt;&lt;/a&gt;In &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;31&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: !sudo hwclock
+&lt;a name="rest_code_695446ee768f4526a5b78b8765ee176a-2"&gt;&lt;/a&gt;&lt;span class="m"&gt;2019&lt;/span&gt;-05-15 &lt;span class="m"&gt;21&lt;/span&gt;:25:29.514803+08:00
+&lt;a name="rest_code_695446ee768f4526a5b78b8765ee176a-3"&gt;&lt;/a&gt;---------------------------------------------------
+&lt;a name="rest_code_695446ee768f4526a5b78b8765ee176a-4"&gt;&lt;/a&gt;NAME
+&lt;a name="rest_code_695446ee768f4526a5b78b8765ee176a-5"&gt;&lt;/a&gt;       hwclock - &lt;span class="nb"&gt;time&lt;/span&gt; clocks utility
+&lt;a name="rest_code_695446ee768f4526a5b78b8765ee176a-6"&gt;&lt;/a&gt;FILES
+&lt;a name="rest_code_695446ee768f4526a5b78b8765ee176a-7"&gt;&lt;/a&gt;       /etc/adjtime
+&lt;a name="rest_code_695446ee768f4526a5b78b8765ee176a-8"&gt;&lt;/a&gt;              The configuration and state file &lt;span class="k"&gt;for&lt;/span&gt; hwclock.
+&lt;a name="rest_code_695446ee768f4526a5b78b8765ee176a-9"&gt;&lt;/a&gt;       /etc/localtime
+&lt;a name="rest_code_695446ee768f4526a5b78b8765ee176a-10"&gt;&lt;/a&gt;              The system timezone file
+&lt;a name="rest_code_695446ee768f4526a5b78b8765ee176a-11"&gt;&lt;/a&gt;       /usr/share/zoneinfo/
+&lt;a name="rest_code_695446ee768f4526a5b78b8765ee176a-12"&gt;&lt;/a&gt;              The system timezone database directory.
+&lt;a name="rest_code_695446ee768f4526a5b78b8765ee176a-13"&gt;&lt;/a&gt;       Device files hwclock may try &lt;span class="k"&gt;for&lt;/span&gt; Hardware Clock access:
+&lt;a name="rest_code_695446ee768f4526a5b78b8765ee176a-14"&gt;&lt;/a&gt;       /dev/rtc0
+&lt;a name="rest_code_695446ee768f4526a5b78b8765ee176a-15"&gt;&lt;/a&gt;       /dev/rtc
+&lt;a name="rest_code_695446ee768f4526a5b78b8765ee176a-16"&gt;&lt;/a&gt;       /dev/misc/rtc
+&lt;a name="rest_code_695446ee768f4526a5b78b8765ee176a-17"&gt;&lt;/a&gt;       /dev/efirtc
+&lt;a name="rest_code_695446ee768f4526a5b78b8765ee176a-18"&gt;&lt;/a&gt;       /dev/misc/efirtc
 &lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;time (processing profile)&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_f4828411ad2545c7864b024eabdab6de-1"&gt;&lt;/a&gt;    $ &lt;span class="nb"&gt;time&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;tree  /usr/share/zoneinfo &lt;span class="p"&gt;|&lt;/span&gt; grep -i &lt;span class="s2"&gt;"prc"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_f4828411ad2545c7864b024eabdab6de-2"&gt;&lt;/a&gt;    │   ├── Chongqing -&amp;gt; ../PRC
-&lt;a name="rest_code_f4828411ad2545c7864b024eabdab6de-3"&gt;&lt;/a&gt;    │   ├── Chungking -&amp;gt; ../PRC
-&lt;a name="rest_code_f4828411ad2545c7864b024eabdab6de-4"&gt;&lt;/a&gt;    │   ├── Harbin -&amp;gt; ../PRC
-&lt;a name="rest_code_f4828411ad2545c7864b024eabdab6de-5"&gt;&lt;/a&gt;    │   ├── Shanghai -&amp;gt; ../PRC
-&lt;a name="rest_code_f4828411ad2545c7864b024eabdab6de-6"&gt;&lt;/a&gt;    │   │   ├── Chongqing -&amp;gt; ../../PRC
-&lt;a name="rest_code_f4828411ad2545c7864b024eabdab6de-7"&gt;&lt;/a&gt;    │   │   ├── Chungking -&amp;gt; ../../PRC
-&lt;a name="rest_code_f4828411ad2545c7864b024eabdab6de-8"&gt;&lt;/a&gt;    │   │   ├── Harbin -&amp;gt; ../../PRC
-&lt;a name="rest_code_f4828411ad2545c7864b024eabdab6de-9"&gt;&lt;/a&gt;    │   │   ├── Shanghai -&amp;gt; ../../PRC
-&lt;a name="rest_code_f4828411ad2545c7864b024eabdab6de-10"&gt;&lt;/a&gt;    │   ├── PRC -&amp;gt; ../PRC
-&lt;a name="rest_code_f4828411ad2545c7864b024eabdab6de-11"&gt;&lt;/a&gt;    ├── PRC
-&lt;a name="rest_code_f4828411ad2545c7864b024eabdab6de-12"&gt;&lt;/a&gt;    │   │   ├── Chongqing -&amp;gt; ../PRC
-&lt;a name="rest_code_f4828411ad2545c7864b024eabdab6de-13"&gt;&lt;/a&gt;    │   │   ├── Chungking -&amp;gt; ../PRC
-&lt;a name="rest_code_f4828411ad2545c7864b024eabdab6de-14"&gt;&lt;/a&gt;    │   │   ├── Harbin -&amp;gt; ../PRC
-&lt;a name="rest_code_f4828411ad2545c7864b024eabdab6de-15"&gt;&lt;/a&gt;    │   │   ├── Shanghai -&amp;gt; ../PRC
-&lt;a name="rest_code_f4828411ad2545c7864b024eabdab6de-16"&gt;&lt;/a&gt;    │   ├── PRC
-&lt;a name="rest_code_f4828411ad2545c7864b024eabdab6de-17"&gt;&lt;/a&gt;
-&lt;a name="rest_code_f4828411ad2545c7864b024eabdab6de-18"&gt;&lt;/a&gt;    real    0m0.017s
-&lt;a name="rest_code_f4828411ad2545c7864b024eabdab6de-19"&gt;&lt;/a&gt;    user    0m0.015s
-&lt;a name="rest_code_f4828411ad2545c7864b024eabdab6de-20"&gt;&lt;/a&gt;    sys     0m0.004s
-&lt;a name="rest_code_f4828411ad2545c7864b024eabdab6de-21"&gt;&lt;/a&gt;
-&lt;a name="rest_code_f4828411ad2545c7864b024eabdab6de-22"&gt;&lt;/a&gt;&lt;span class="m"&gt;3&lt;/span&gt;.Datetime
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_8d0bbe5e6e9d4bd3845d1ebb6a5151b6-1"&gt;&lt;/a&gt;    $ &lt;span class="nb"&gt;time&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;tree  /usr/share/zoneinfo &lt;span class="p"&gt;|&lt;/span&gt; grep -i &lt;span class="s2"&gt;"prc"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_8d0bbe5e6e9d4bd3845d1ebb6a5151b6-2"&gt;&lt;/a&gt;    │   ├── Chongqing -&amp;gt; ../PRC
+&lt;a name="rest_code_8d0bbe5e6e9d4bd3845d1ebb6a5151b6-3"&gt;&lt;/a&gt;    │   ├── Chungking -&amp;gt; ../PRC
+&lt;a name="rest_code_8d0bbe5e6e9d4bd3845d1ebb6a5151b6-4"&gt;&lt;/a&gt;    │   ├── Harbin -&amp;gt; ../PRC
+&lt;a name="rest_code_8d0bbe5e6e9d4bd3845d1ebb6a5151b6-5"&gt;&lt;/a&gt;    │   ├── Shanghai -&amp;gt; ../PRC
+&lt;a name="rest_code_8d0bbe5e6e9d4bd3845d1ebb6a5151b6-6"&gt;&lt;/a&gt;    │   │   ├── Chongqing -&amp;gt; ../../PRC
+&lt;a name="rest_code_8d0bbe5e6e9d4bd3845d1ebb6a5151b6-7"&gt;&lt;/a&gt;    │   │   ├── Chungking -&amp;gt; ../../PRC
+&lt;a name="rest_code_8d0bbe5e6e9d4bd3845d1ebb6a5151b6-8"&gt;&lt;/a&gt;    │   │   ├── Harbin -&amp;gt; ../../PRC
+&lt;a name="rest_code_8d0bbe5e6e9d4bd3845d1ebb6a5151b6-9"&gt;&lt;/a&gt;    │   │   ├── Shanghai -&amp;gt; ../../PRC
+&lt;a name="rest_code_8d0bbe5e6e9d4bd3845d1ebb6a5151b6-10"&gt;&lt;/a&gt;    │   ├── PRC -&amp;gt; ../PRC
+&lt;a name="rest_code_8d0bbe5e6e9d4bd3845d1ebb6a5151b6-11"&gt;&lt;/a&gt;    ├── PRC
+&lt;a name="rest_code_8d0bbe5e6e9d4bd3845d1ebb6a5151b6-12"&gt;&lt;/a&gt;    │   │   ├── Chongqing -&amp;gt; ../PRC
+&lt;a name="rest_code_8d0bbe5e6e9d4bd3845d1ebb6a5151b6-13"&gt;&lt;/a&gt;    │   │   ├── Chungking -&amp;gt; ../PRC
+&lt;a name="rest_code_8d0bbe5e6e9d4bd3845d1ebb6a5151b6-14"&gt;&lt;/a&gt;    │   │   ├── Harbin -&amp;gt; ../PRC
+&lt;a name="rest_code_8d0bbe5e6e9d4bd3845d1ebb6a5151b6-15"&gt;&lt;/a&gt;    │   │   ├── Shanghai -&amp;gt; ../PRC
+&lt;a name="rest_code_8d0bbe5e6e9d4bd3845d1ebb6a5151b6-16"&gt;&lt;/a&gt;    │   ├── PRC
+&lt;a name="rest_code_8d0bbe5e6e9d4bd3845d1ebb6a5151b6-17"&gt;&lt;/a&gt;
+&lt;a name="rest_code_8d0bbe5e6e9d4bd3845d1ebb6a5151b6-18"&gt;&lt;/a&gt;    real    0m0.017s
+&lt;a name="rest_code_8d0bbe5e6e9d4bd3845d1ebb6a5151b6-19"&gt;&lt;/a&gt;    user    0m0.015s
+&lt;a name="rest_code_8d0bbe5e6e9d4bd3845d1ebb6a5151b6-20"&gt;&lt;/a&gt;    sys     0m0.004s
+&lt;a name="rest_code_8d0bbe5e6e9d4bd3845d1ebb6a5151b6-21"&gt;&lt;/a&gt;
+&lt;a name="rest_code_8d0bbe5e6e9d4bd3845d1ebb6a5151b6-22"&gt;&lt;/a&gt;&lt;span class="m"&gt;3&lt;/span&gt;.Datetime
 &lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id5"&gt;
-&lt;span id="datetime-1"&gt;&lt;/span&gt;&lt;h3&gt;3.Datetime&lt;/h3&gt;
+&lt;span id="datetime-1"&gt;&lt;/span&gt;&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#id17"&gt;3.Datetime&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;timedatectl&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_167a6b8708a947a4afd972d1678d8cec-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;#systemd的service&lt;/span&gt;
-&lt;a name="rest_code_167a6b8708a947a4afd972d1678d8cec-2"&gt;&lt;/a&gt;$ timedatectl
-&lt;a name="rest_code_167a6b8708a947a4afd972d1678d8cec-3"&gt;&lt;/a&gt;               Local time: Thu &lt;span class="m"&gt;2019&lt;/span&gt;-05-09 &lt;span class="m"&gt;21&lt;/span&gt;:30:27 CST
-&lt;a name="rest_code_167a6b8708a947a4afd972d1678d8cec-4"&gt;&lt;/a&gt;           Universal time: Thu &lt;span class="m"&gt;2019&lt;/span&gt;-05-09 &lt;span class="m"&gt;13&lt;/span&gt;:30:27 UTC
-&lt;a name="rest_code_167a6b8708a947a4afd972d1678d8cec-5"&gt;&lt;/a&gt;                 RTC time: Thu &lt;span class="m"&gt;2019&lt;/span&gt;-05-09 &lt;span class="m"&gt;13&lt;/span&gt;:30:27
-&lt;a name="rest_code_167a6b8708a947a4afd972d1678d8cec-6"&gt;&lt;/a&gt;                Time zone: Asia/Shanghai &lt;span class="o"&gt;(&lt;/span&gt;CST, +0800&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_167a6b8708a947a4afd972d1678d8cec-7"&gt;&lt;/a&gt;System clock synchronized: yes
-&lt;a name="rest_code_167a6b8708a947a4afd972d1678d8cec-8"&gt;&lt;/a&gt;              NTP service: active
-&lt;a name="rest_code_167a6b8708a947a4afd972d1678d8cec-9"&gt;&lt;/a&gt;
-&lt;a name="rest_code_167a6b8708a947a4afd972d1678d8cec-10"&gt;&lt;/a&gt; - Check the current system clock time:
-&lt;a name="rest_code_167a6b8708a947a4afd972d1678d8cec-11"&gt;&lt;/a&gt;   timedatectl
-&lt;a name="rest_code_167a6b8708a947a4afd972d1678d8cec-12"&gt;&lt;/a&gt; - Set the &lt;span class="nb"&gt;local&lt;/span&gt; &lt;span class="nb"&gt;time&lt;/span&gt; of the system clock directly:
-&lt;a name="rest_code_167a6b8708a947a4afd972d1678d8cec-13"&gt;&lt;/a&gt;   timedatectl set-time &lt;span class="o"&gt;{{&lt;/span&gt;&lt;span class="s2"&gt;"yyyy-MM-dd hh:mm:ss"&lt;/span&gt;&lt;span class="o"&gt;}}&lt;/span&gt;
-&lt;a name="rest_code_167a6b8708a947a4afd972d1678d8cec-14"&gt;&lt;/a&gt;
-&lt;a name="rest_code_167a6b8708a947a4afd972d1678d8cec-15"&gt;&lt;/a&gt; - List available timezones:
-&lt;a name="rest_code_167a6b8708a947a4afd972d1678d8cec-16"&gt;&lt;/a&gt;   timedatectl list-timezones
-&lt;a name="rest_code_167a6b8708a947a4afd972d1678d8cec-17"&gt;&lt;/a&gt;
-&lt;a name="rest_code_167a6b8708a947a4afd972d1678d8cec-18"&gt;&lt;/a&gt; - Set the system timezone:
-&lt;a name="rest_code_167a6b8708a947a4afd972d1678d8cec-19"&gt;&lt;/a&gt;   timedatectl set-timezone &lt;span class="o"&gt;{{&lt;/span&gt;timezone&lt;span class="o"&gt;}}&lt;/span&gt;
-&lt;a name="rest_code_167a6b8708a947a4afd972d1678d8cec-20"&gt;&lt;/a&gt;
-&lt;a name="rest_code_167a6b8708a947a4afd972d1678d8cec-21"&gt;&lt;/a&gt; - Enable Network Time Protocol &lt;span class="o"&gt;(&lt;/span&gt;NTP&lt;span class="o"&gt;)&lt;/span&gt; synchronization:
-&lt;a name="rest_code_167a6b8708a947a4afd972d1678d8cec-22"&gt;&lt;/a&gt;   timedatectl set-ntp on
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_0f4b6c8cb0484a54b340f69631303213-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;#systemd的service&lt;/span&gt;
+&lt;a name="rest_code_0f4b6c8cb0484a54b340f69631303213-2"&gt;&lt;/a&gt;$ timedatectl
+&lt;a name="rest_code_0f4b6c8cb0484a54b340f69631303213-3"&gt;&lt;/a&gt;               Local time: Thu &lt;span class="m"&gt;2019&lt;/span&gt;-05-09 &lt;span class="m"&gt;21&lt;/span&gt;:30:27 CST
+&lt;a name="rest_code_0f4b6c8cb0484a54b340f69631303213-4"&gt;&lt;/a&gt;           Universal time: Thu &lt;span class="m"&gt;2019&lt;/span&gt;-05-09 &lt;span class="m"&gt;13&lt;/span&gt;:30:27 UTC
+&lt;a name="rest_code_0f4b6c8cb0484a54b340f69631303213-5"&gt;&lt;/a&gt;                 RTC time: Thu &lt;span class="m"&gt;2019&lt;/span&gt;-05-09 &lt;span class="m"&gt;13&lt;/span&gt;:30:27
+&lt;a name="rest_code_0f4b6c8cb0484a54b340f69631303213-6"&gt;&lt;/a&gt;                Time zone: Asia/Shanghai &lt;span class="o"&gt;(&lt;/span&gt;CST, +0800&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_0f4b6c8cb0484a54b340f69631303213-7"&gt;&lt;/a&gt;System clock synchronized: yes
+&lt;a name="rest_code_0f4b6c8cb0484a54b340f69631303213-8"&gt;&lt;/a&gt;              NTP service: active
+&lt;a name="rest_code_0f4b6c8cb0484a54b340f69631303213-9"&gt;&lt;/a&gt;
+&lt;a name="rest_code_0f4b6c8cb0484a54b340f69631303213-10"&gt;&lt;/a&gt; - Check the current system clock time:
+&lt;a name="rest_code_0f4b6c8cb0484a54b340f69631303213-11"&gt;&lt;/a&gt;   timedatectl
+&lt;a name="rest_code_0f4b6c8cb0484a54b340f69631303213-12"&gt;&lt;/a&gt; - Set the &lt;span class="nb"&gt;local&lt;/span&gt; &lt;span class="nb"&gt;time&lt;/span&gt; of the system clock directly:
+&lt;a name="rest_code_0f4b6c8cb0484a54b340f69631303213-13"&gt;&lt;/a&gt;   timedatectl set-time &lt;span class="o"&gt;{{&lt;/span&gt;&lt;span class="s2"&gt;"yyyy-MM-dd hh:mm:ss"&lt;/span&gt;&lt;span class="o"&gt;}}&lt;/span&gt;
+&lt;a name="rest_code_0f4b6c8cb0484a54b340f69631303213-14"&gt;&lt;/a&gt;
+&lt;a name="rest_code_0f4b6c8cb0484a54b340f69631303213-15"&gt;&lt;/a&gt; - List available timezones:
+&lt;a name="rest_code_0f4b6c8cb0484a54b340f69631303213-16"&gt;&lt;/a&gt;   timedatectl list-timezones
+&lt;a name="rest_code_0f4b6c8cb0484a54b340f69631303213-17"&gt;&lt;/a&gt;
+&lt;a name="rest_code_0f4b6c8cb0484a54b340f69631303213-18"&gt;&lt;/a&gt; - Set the system timezone:
+&lt;a name="rest_code_0f4b6c8cb0484a54b340f69631303213-19"&gt;&lt;/a&gt;   timedatectl set-timezone &lt;span class="o"&gt;{{&lt;/span&gt;timezone&lt;span class="o"&gt;}}&lt;/span&gt;
+&lt;a name="rest_code_0f4b6c8cb0484a54b340f69631303213-20"&gt;&lt;/a&gt;
+&lt;a name="rest_code_0f4b6c8cb0484a54b340f69631303213-21"&gt;&lt;/a&gt; - Enable Network Time Protocol &lt;span class="o"&gt;(&lt;/span&gt;NTP&lt;span class="o"&gt;)&lt;/span&gt; synchronization:
+&lt;a name="rest_code_0f4b6c8cb0484a54b340f69631303213-22"&gt;&lt;/a&gt;   timedatectl set-ntp on
 &lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;date (最趁手的一个工具)&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# 日常应用date作为思考工具.&lt;/span&gt;
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-2"&gt;&lt;/a&gt;In &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;9&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: time.time&lt;span class="o"&gt;()&lt;/span&gt;
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-3"&gt;&lt;/a&gt;Out&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;9&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: &lt;span class="m"&gt;1557406444&lt;/span&gt;.1336956
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-4"&gt;&lt;/a&gt;In &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: !date +%s
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-5"&gt;&lt;/a&gt;&lt;span class="m"&gt;1557406449&lt;/span&gt;
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-6"&gt;&lt;/a&gt;$ date -d @&lt;span class="k"&gt;$(&lt;/span&gt;date +%s&lt;span class="k"&gt;)&lt;/span&gt;　&lt;span class="c1"&gt;#date -d @1557406449&lt;/span&gt;
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-7"&gt;&lt;/a&gt;Thu May  &lt;span class="m"&gt;9&lt;/span&gt; &lt;span class="m"&gt;21&lt;/span&gt;:11:15 CST &lt;span class="m"&gt;2019&lt;/span&gt;
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-8"&gt;&lt;/a&gt;
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-9"&gt;&lt;/a&gt;&lt;span class="c1"&gt;#基本的操作&lt;/span&gt;
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-10"&gt;&lt;/a&gt;$ date -u +&lt;span class="s2"&gt;"%Y-%m-%dT%H:%M:%SZ"&lt;/span&gt;
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-11"&gt;&lt;/a&gt;&lt;span class="m"&gt;2019&lt;/span&gt;-05-09T12:55:31Z
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-12"&gt;&lt;/a&gt;
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-13"&gt;&lt;/a&gt;&lt;span class="c1"&gt;#Future date and time&lt;/span&gt;
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-14"&gt;&lt;/a&gt;$ date -d &lt;span class="s2"&gt;" two weeks"&lt;/span&gt;
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-15"&gt;&lt;/a&gt;date: invalid date ‘ two weeks’
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-16"&gt;&lt;/a&gt;$ date -d &lt;span class="s2"&gt;"2 weeks"&lt;/span&gt;
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-17"&gt;&lt;/a&gt;Thu May &lt;span class="m"&gt;23&lt;/span&gt; &lt;span class="m"&gt;21&lt;/span&gt;:20:17 CST &lt;span class="m"&gt;2019&lt;/span&gt;
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-18"&gt;&lt;/a&gt;$ date -d &lt;span class="s2"&gt;"next fri"&lt;/span&gt; &lt;span class="c1"&gt;#只有两个变量能够以文字表述 Month and Weekday&lt;/span&gt;
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-19"&gt;&lt;/a&gt;Fri May &lt;span class="m"&gt;10&lt;/span&gt; &lt;span class="m"&gt;00&lt;/span&gt;:00:00 CST &lt;span class="m"&gt;2019&lt;/span&gt;
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-20"&gt;&lt;/a&gt;
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-21"&gt;&lt;/a&gt;&lt;span class="c1"&gt;#the elpased date and time&lt;/span&gt;
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-22"&gt;&lt;/a&gt;$ date -d &lt;span class="s2"&gt;"last thursday"&lt;/span&gt;
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-23"&gt;&lt;/a&gt;Thu May  &lt;span class="m"&gt;2&lt;/span&gt; &lt;span class="m"&gt;00&lt;/span&gt;:00:00 CST &lt;span class="m"&gt;2019&lt;/span&gt;
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-24"&gt;&lt;/a&gt;$ date -d &lt;span class="s2"&gt;"2 days ago"&lt;/span&gt;
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-25"&gt;&lt;/a&gt;Tue May  &lt;span class="m"&gt;7&lt;/span&gt; &lt;span class="m"&gt;21&lt;/span&gt;:22:28 CST &lt;span class="m"&gt;2019&lt;/span&gt;
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-26"&gt;&lt;/a&gt;$ date -d &lt;span class="s2"&gt;"last month"&lt;/span&gt;
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-27"&gt;&lt;/a&gt;Tue Apr  &lt;span class="m"&gt;9&lt;/span&gt; &lt;span class="m"&gt;21&lt;/span&gt;:22:39 CST &lt;span class="m"&gt;2019&lt;/span&gt;
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-28"&gt;&lt;/a&gt;
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-29"&gt;&lt;/a&gt;&lt;span class="c1"&gt;#贸易战倒计时&lt;/span&gt;
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-30"&gt;&lt;/a&gt;$ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"America/New_York"&lt;/span&gt; date
-&lt;a name="rest_code_fd8cafc516294d11b4670867f1d74a9f-31"&gt;&lt;/a&gt;Thu May  &lt;span class="m"&gt;9&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt;:04:30 EDT &lt;span class="m"&gt;2019&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# 日常应用date作为思考工具.&lt;/span&gt;
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-2"&gt;&lt;/a&gt;In &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;9&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: time.time&lt;span class="o"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-3"&gt;&lt;/a&gt;Out&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;9&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: &lt;span class="m"&gt;1557406444&lt;/span&gt;.1336956
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-4"&gt;&lt;/a&gt;In &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;: !date +%s
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-5"&gt;&lt;/a&gt;&lt;span class="m"&gt;1557406449&lt;/span&gt;
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-6"&gt;&lt;/a&gt;$ date -d @&lt;span class="k"&gt;$(&lt;/span&gt;date +%s&lt;span class="k"&gt;)&lt;/span&gt;　&lt;span class="c1"&gt;#date -d @1557406449&lt;/span&gt;
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-7"&gt;&lt;/a&gt;Thu May  &lt;span class="m"&gt;9&lt;/span&gt; &lt;span class="m"&gt;21&lt;/span&gt;:11:15 CST &lt;span class="m"&gt;2019&lt;/span&gt;
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-8"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-9"&gt;&lt;/a&gt;&lt;span class="c1"&gt;#基本的操作&lt;/span&gt;
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-10"&gt;&lt;/a&gt;$ date -u +&lt;span class="s2"&gt;"%Y-%m-%dT%H:%M:%SZ"&lt;/span&gt;
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-11"&gt;&lt;/a&gt;&lt;span class="m"&gt;2019&lt;/span&gt;-05-09T12:55:31Z
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-12"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-13"&gt;&lt;/a&gt;&lt;span class="c1"&gt;#Future date and time&lt;/span&gt;
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-14"&gt;&lt;/a&gt;$ date -d &lt;span class="s2"&gt;" two weeks"&lt;/span&gt;
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-15"&gt;&lt;/a&gt;date: invalid date ‘ two weeks’
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-16"&gt;&lt;/a&gt;$ date -d &lt;span class="s2"&gt;"2 weeks"&lt;/span&gt;
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-17"&gt;&lt;/a&gt;Thu May &lt;span class="m"&gt;23&lt;/span&gt; &lt;span class="m"&gt;21&lt;/span&gt;:20:17 CST &lt;span class="m"&gt;2019&lt;/span&gt;
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-18"&gt;&lt;/a&gt;$ date -d &lt;span class="s2"&gt;"next fri"&lt;/span&gt; &lt;span class="c1"&gt;#只有两个变量能够以文字表述 Month and Weekday&lt;/span&gt;
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-19"&gt;&lt;/a&gt;Fri May &lt;span class="m"&gt;10&lt;/span&gt; &lt;span class="m"&gt;00&lt;/span&gt;:00:00 CST &lt;span class="m"&gt;2019&lt;/span&gt;
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-20"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-21"&gt;&lt;/a&gt;&lt;span class="c1"&gt;#the elpased date and time&lt;/span&gt;
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-22"&gt;&lt;/a&gt;$ date -d &lt;span class="s2"&gt;"last thursday"&lt;/span&gt;
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-23"&gt;&lt;/a&gt;Thu May  &lt;span class="m"&gt;2&lt;/span&gt; &lt;span class="m"&gt;00&lt;/span&gt;:00:00 CST &lt;span class="m"&gt;2019&lt;/span&gt;
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-24"&gt;&lt;/a&gt;$ date -d &lt;span class="s2"&gt;"2 days ago"&lt;/span&gt;
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-25"&gt;&lt;/a&gt;Tue May  &lt;span class="m"&gt;7&lt;/span&gt; &lt;span class="m"&gt;21&lt;/span&gt;:22:28 CST &lt;span class="m"&gt;2019&lt;/span&gt;
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-26"&gt;&lt;/a&gt;$ date -d &lt;span class="s2"&gt;"last month"&lt;/span&gt;
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-27"&gt;&lt;/a&gt;Tue Apr  &lt;span class="m"&gt;9&lt;/span&gt; &lt;span class="m"&gt;21&lt;/span&gt;:22:39 CST &lt;span class="m"&gt;2019&lt;/span&gt;
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-28"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-29"&gt;&lt;/a&gt;&lt;span class="c1"&gt;#贸易战倒计时&lt;/span&gt;
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-30"&gt;&lt;/a&gt;$ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"America/New_York"&lt;/span&gt; date
+&lt;a name="rest_code_ed75accb4cca465da4151352d7bf52b9-31"&gt;&lt;/a&gt;Thu May  &lt;span class="m"&gt;9&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt;:04:30 EDT &lt;span class="m"&gt;2019&lt;/span&gt;
 &lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="emacs"&gt;
-&lt;h2&gt;Emacs中的时间管理&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#id18"&gt;Emacs中的时间管理&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;….&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id6"&gt;
-&lt;h2&gt;总结&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#id19"&gt;总结&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;时间管理的三个工具, time, datetime, calendar(从微观到宏观处理5, 8,
 10个时间变量)&lt;/p&gt;
 &lt;blockquote&gt;
@@ -2521,17 +2628,37 @@ Tuesday or a week from Sunday, with feelings of helpless confusion. …&lt;/p&gt
 抽象为calender, time, datetime。&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id7"&gt;
-&lt;h2&gt;参考资料&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#id20"&gt;参考资料&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;cite&gt;GNU Coreutils: Date input
 formats &amp;lt;https://www.gnu.org/software/coreutils/manual/html_node/Date-input-formats.html#Date-input-formats&amp;gt;&lt;/cite&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>bash</category><category>emacs</category><category>python</category><category>time</category><category>时间管理</category><guid>https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/</guid><pubDate>Wed, 15 May 2019 12:53:29 GMT</pubDate></item><item><title>时间的感知与分析</title><link>https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;p&gt;在前文"时间变量的顺序与格式"中分析得到感知时间的5个基本变量及其顺序.
+&lt;/div&gt;&lt;/div&gt;</description><category>bash</category><category>emacs</category><category>python</category><category>time</category><category>时间管理</category><guid>https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/</guid><pubDate>Wed, 15 May 2019 12:53:29 GMT</pubDate></item><item><title>时间的感知与分析</title><link>https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="contents topic" id="contents"&gt;
+&lt;p class="topic-title first"&gt;Contents&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id1" id="id10"&gt;宏观层面粗颗粒度的时间感知&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id2" id="id11"&gt;微观层面细颗粒度的时间感知&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id3" id="id12"&gt;选择起始时刻&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id4" id="id13"&gt;两个重要时间节点&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id5" id="id14"&gt;12小时制还是24小时制&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id6" id="id15"&gt;认识具体时间的算法&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id7" id="id16"&gt;估算时间段&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id8" id="id17"&gt;总结&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id9" id="id18"&gt;参考资料&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;p&gt;在前文"时间变量的顺序与格式"中分析得到感知时间的5个基本变量及其顺序.
 &lt;code class="docutils literal"&gt;Weekday  Hour:Minute &lt;span class="pre"&gt;Month-Day&lt;/span&gt;&lt;/code&gt; 记作 &lt;code class="docutils literal"&gt;%w &lt;span class="pre"&gt;%H:%M&lt;/span&gt; &lt;span class="pre"&gt;%d-%m&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;对时间流逝的测量分为两个维度:
 一是仪器在微观层面上的的准确测量,比如钟表或者计算机
 二是直觉在宏观层面上的粗略感知.&lt;/p&gt;
 &lt;p&gt;接下来的问题,如何有效的把握住一天的时间,如何对一天24小时有良好的感知.&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
-&lt;h2&gt;宏观层面粗颗粒度的时间感知&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id10"&gt;宏观层面粗颗粒度的时间感知&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;一天有24小时，大脑的直觉系统（系统一）不能直接处理24这个复杂的数字，需要调动"系统二"理性的助攻．
 "系统一"能处理3以内的数字,10以内的数字,比如列清单最好3项,最多七项,更多则聊胜于无.&lt;/p&gt;
 &lt;p&gt;因此应该分割24小时成10内的模块.&lt;/p&gt;
@@ -2612,7 +2739,7 @@ formats &amp;lt;https://www.gnu.org/software/coreutils/manual/html_node/Date-inp
 时间段的命名,中文的表述更为精确,因此后续采用中文命名.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id2"&gt;
-&lt;h2&gt;微观层面细颗粒度的时间感知&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id11"&gt;微观层面细颗粒度的时间感知&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;对时间的精确测量很简单，低头看一眼手表便可．难点在于如何引导直觉或者大脑的"系统一"感知到精确的时间．&lt;/p&gt;
 &lt;p&gt;具体的例子，如何认识"早上 6:30"这个时刻．&lt;/p&gt;
 &lt;p&gt;首先看Hour(6点),
@@ -2625,7 +2752,7 @@ formats &amp;lt;https://www.gnu.org/software/coreutils/manual/html_node/Date-inp
 以60分钟为底数,可以理解为时间感知的最小单位是10分钟,而选择60又比选择6好一点儿.&lt;/p&gt;
 &lt;p&gt;整体来看=06:30=这个时刻 &lt;code class="docutils literal"&gt;06/24: 30/60&lt;/code&gt;&lt;/p&gt;
 &lt;div class="section" id="id3"&gt;
-&lt;h3&gt;选择起始时刻&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id12"&gt;选择起始时刻&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;如上所述,早上6点,可以表示为6/24,单靠直觉便能感知到具体的时刻在一整天这个进度中的位置。&lt;/p&gt;
 &lt;p&gt;观察6/24,会发现一个问题,如果早晨6点起床,
 那么在睁开眼醒来的一瞬间,这一天的24小中的6个小时就没了，
@@ -2712,14 +2839,14 @@ formats &amp;lt;https://www.gnu.org/software/coreutils/manual/html_node/Date-inp
 &lt;p&gt;将6:00理解成 00:00.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id4"&gt;
-&lt;h3&gt;两个重要时间节点&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id13"&gt;两个重要时间节点&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;以早晨６点作为时间感知的０点，有两个重要的时间节点里程碑：
 一是中午12点，这是AM与 PM的划分点，是白昼的一半
 二是下午６点，这是一整天的一半．&lt;/p&gt;
 &lt;p&gt;可以通过这两个时间节点下的进度和已完工作，粗略估算和预测．而且很重要的一点，假如在下午６点预估到不能按期完成任务，可以选择的方案是早起赶工而非熬夜赶工．(晚上12点非一天的结束，拂晓6点才是昨日之终和今日之始)&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id5"&gt;
-&lt;h3&gt;12小时制还是24小时制&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id14"&gt;12小时制还是24小时制&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;首先来看12小时制，将一天分为白昼和黑夜两个部分，这一点很棒负，符合人的自然直觉。接下来分别针对白昼和黑夜进行计时。
 白昼是从早上６点到晚上６点，黑夜是从晚上６点到早上６点。早上６点可以表示为　(6-6)/12,
 白天的0/12.
@@ -2731,7 +2858,7 @@ PM转换。&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id6"&gt;
-&lt;h2&gt;认识具体时间的算法&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id15"&gt;认识具体时间的算法&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;在宏观层面的八分图与微观层面的分数表示的基础上，如何解析一个具体的时间呢？
 比如一个比较古怪的14:39这个时间如何理解？&lt;/p&gt;
 &lt;p&gt;第一步， 先看Hour(14), 从粗略上感知，
@@ -2760,7 +2887,7 @@ PM转换。&lt;/p&gt;
 第三步和第四步调用理性定量读取时间，
 第五步，有效利用最有价值的资源每一个一个小时。&lt;/p&gt;
 &lt;div class="section" id="id7"&gt;
-&lt;h3&gt;估算时间段&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id16"&gt;估算时间段&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;分数有定性和定量， 串通理性与感性，宏观与微观的神奇作用。
 具体的例子，比如有好看的综艺节目大概一个小时，用分数定性看一眼=1/24=，一天的二十四之一；
 刷个手机半个小时
@@ -2769,7 +2896,7 @@ PM转换。&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id8"&gt;
-&lt;h2&gt;总结&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id17"&gt;总结&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;粗颗粒度下应用八分图辅助直觉粗略的感知一天内的时间，应用饼图粗略感知一个小时内的时间；
 细颗粒度下应用分数15/24, 41/60,定性与定量相结合分析。
 挥霍时间前，先用24这个数字定性审视感受一下。&lt;/p&gt;
@@ -2786,7 +2913,7 @@ PM转换。&lt;/p&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id9"&gt;
-&lt;h2&gt;参考资料&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id18"&gt;参考资料&lt;/a&gt;&lt;/h2&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://zh.wikipedia.org/wiki/%E6%8B%82%E6%99%93"&gt;拂晓-
 维基百科，自由的百科全书&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
@@ -2798,8 +2925,17 @@ PM转换。&lt;/p&gt;
 &lt;li&gt;&lt;p&gt;《思考，快与慢》&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;《金字塔原理》&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>time</category><guid>https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/</guid><pubDate>Wed, 15 May 2019 10:54:19 GMT</pubDate></item><item><title>时间变量的顺序与格式</title><link>https://alinbxsorcerer.github.io/posts/shi-jian-bian-liang-de-shun-xu-yu-ge-shi/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="section" id="id1"&gt;
-&lt;h2&gt;时间的感知&lt;/h2&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>time</category><guid>https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/</guid><pubDate>Wed, 15 May 2019 10:54:19 GMT</pubDate></item><item><title>时间变量的顺序与格式</title><link>https://alinbxsorcerer.github.io/posts/shi-jian-bian-liang-de-shun-xu-yu-ge-shi/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="contents topic" id="contents"&gt;
+&lt;p class="topic-title first"&gt;Contents&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-bian-liang-de-shun-xu-yu-ge-shi/#id1" id="id4"&gt;时间的感知&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-bian-liang-de-shun-xu-yu-ge-shi/#cron" id="id5"&gt;Cron中时间变量的顺序&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-bian-liang-de-shun-xu-yu-ge-shi/#id2" id="id6"&gt;时间的格式&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-bian-liang-de-shun-xu-yu-ge-shi/#id3" id="id7"&gt;总结&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-bian-liang-de-shun-xu-yu-ge-shi/#id4"&gt;时间的感知&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;直觉对时间的感知, 是按照怎么的顺序解析的呢?
 从早晨起床这个场景中,分析大脑解析时间的顺序.&lt;/p&gt;
 &lt;p&gt;似乎理所当然的一点,Hour(时)排在最前面,Hour:Minute的组合是醒来后第一时间想要获得的信息,以判断上班是否迟到,是否有时间吃早餐?但是再想一层,上班是否迟到?
@@ -2823,7 +2959,7 @@ Wed May 15 08:31:45 CST 2019&lt;/pre&gt;
 &lt;p&gt;ctime将weekday安排在最前面,然后遵循这个先处理日期的逻辑,May:15跟在后面提高日期的精确颗粒度.但是对大脑的瞬间思考而言,则是冗余信息.因此以itime作为基石,推导拓展到其他时间顺序.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="cron"&gt;
-&lt;h2&gt;Cron中时间变量的顺序&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-bian-liang-de-shun-xu-yu-ge-shi/#id5"&gt;Cron中时间变量的顺序&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;The sequence matters. 时间变量顺序的第一个应用场景是cron.&lt;/p&gt;
 &lt;p&gt;Cron的顺序是Minute:Hour Day:Month Weekday&lt;/p&gt;
 &lt;pre class="literal-block"&gt;# ┌───────────── minute (0 - 59)
@@ -2864,7 +3000,7 @@ yourself will change.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id2"&gt;
-&lt;h2&gt;时间的格式&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-bian-liang-de-shun-xu-yu-ge-shi/#id6"&gt;时间的格式&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;以Cron的5个时间变量顺序为基础分析时间表示的格式, 前面加上second+(minute,
 hour day, month weekday)后面补充year and weeknumber.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -2906,7 +3042,7 @@ Out[12]: '11:49:06'&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id3"&gt;
-&lt;h2&gt;总结&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-bian-liang-de-shun-xu-yu-ge-shi/#id7"&gt;总结&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;10个时间变量,将时区放置在最后.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;%f:%S:%M:%H %d-%m %w %W %Y %Z 日常的书写,使用符号替代minute, hour等&lt;/p&gt;

@@ -89,11 +89,33 @@
 
     <div id="post-main" class="main">
         <div class="container">
-        <div class="section" id="id1">
-<h2>时间专题小结</h2>
+        <div>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li>
+<p><a class="reference internal" href="#id1" id="id8">时间专题小结</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id2" id="id9">时间变量的顺序与格式</a></p></li>
+<li>
+<p><a class="reference internal" href="#id3" id="id10">时间的感知与分析</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id4" id="id11">宏观感知“一日”</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id12">微观层面的时间感知</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id13">感知时间流逝的算法</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id7" id="id14">时间管理的三件武器</a></p></li>
+<li><p><a class="reference internal" href="#emacs" id="id15">Emacs中的应用</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id8">时间专题小结</a></h2>
 <p>历时5个月的实践应用与验证, 小结如下</p>
 <div class="section" id="id2">
-<h3>时间变量的顺序与格式</h3>
+<h3><a class="toc-backref" href="#id9">时间变量的顺序与格式</a></h3>
 <table>
 <colgroup>
 <col style="width: 32%">
@@ -129,8 +151,8 @@ Weekday <code class="docutils literal">%wu</code>, Weeknumber <code class="docut
 <code class="docutils literal">%aA</code> and month <code class="docutils literal">%bB</code></p></li>
 <li>
 <p>标注的 <code class="docutils literal">ctime</code></p>
-<pre class="code shell"><a name="rest_code_097262f841834dbd890e129dd3c8390d-1"></a>date +<span class="s2">"%c"</span>
-<a name="rest_code_097262f841834dbd890e129dd3c8390d-2"></a>python -c <span class="s2">"import time; print(time.ctime())"</span>
+<pre class="code shell"><a name="rest_code_0156f854bb0b4ecb91578db74550d276-1"></a>date +<span class="s2">"%c"</span>
+<a name="rest_code_0156f854bb0b4ecb91578db74550d276-2"></a>python -c <span class="s2">"import time; print(time.ctime())"</span>
 </pre>
 <pre class="literal-block">Mon 11 Nov 2019 12:10:57 PM CST
 Mon Nov 11 12:10:57 2019</pre>
@@ -138,10 +160,10 @@ Mon Nov 11 12:10:57 2019</pre>
 </ul>
 </div>
 <div class="section" id="id3">
-<h3>时间的感知与分析</h3>
+<h3><a class="toc-backref" href="#id10">时间的感知与分析</a></h3>
 <p>回归到“钟表”的意像图</p>
 <div class="section" id="id4">
-<h4>宏观感知“一日”</h4>
+<h4><a class="toc-backref" href="#id11">宏观感知“一日”</a></h4>
 <p>八分图</p>
 <table>
 <colgroup>
@@ -199,7 +221,7 @@ Mon Nov 11 12:10:57 2019</pre>
 </table>
 </div>
 <div class="section" id="id5">
-<h4>微观层面的时间感知</h4>
+<h4><a class="toc-backref" href="#id12">微观层面的时间感知</a></h4>
 <p>核心是应用分数表示的方法</p>
 <ul class="simple">
 <li><p>选择起始点 遵循AM与PM的概念，以太阳的最高点为划分点, 遵从国际标准,
@@ -210,21 +232,22 @@ Mon Nov 11 12:10:57 2019</pre>
 </ul>
 </div>
 <div class="section" id="id6">
-<h4>感知时间流逝的算法</h4>
+<h4><a class="toc-backref" href="#id13">感知时间流逝的算法</a></h4>
 <p>采用分数法.fraction</p>
 </div>
 </div>
 <div class="section" id="id7">
-<h3>时间管理的三件武器</h3>
+<h3><a class="toc-backref" href="#id14">时间管理的三件武器</a></h3>
 <p>calendar, clock and datetime(combined) date 以shell的ncal,
 date与time为基础.</p>
 </div>
 <div class="section" id="emacs">
-<h3>Emacs中的应用</h3>
+<h3><a class="toc-backref" href="#id15">Emacs中的应用</a></h3>
 <p>需要重新再阅读文档. 目前没有解决的问题, 便是如何在calendar中做规划.
 emacs中的日历优点是可以与四时互动.</p>
-<pre class="code shell"><a name="rest_code_c9aa8ce70027466f8a17e5c2ec315428-1"></a>pandoc draft.org -o ../posts/时间专题小结.rst
+<pre class="code shell"><a name="rest_code_dd9c54d4ad294187a1564f434e2d0603-1"></a>pandoc draft.org -o ../posts/时间专题小结.rst
 </pre>
+</div>
 </div>
 </div>
             

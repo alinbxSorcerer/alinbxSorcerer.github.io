@@ -82,6 +82,28 @@
     <div id="post-main" class="main">
         <div class="container">
         <div>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#id1" id="id10">宏观层面粗颗粒度的时间感知</a></p></li>
+<li>
+<p><a class="reference internal" href="#id2" id="id11">微观层面细颗粒度的时间感知</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id3" id="id12">选择起始时刻</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id13">两个重要时间节点</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id14">12小时制还是24小时制</a></p></li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#id6" id="id15">认识具体时间的算法</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id7" id="id16">估算时间段</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id8" id="id17">总结</a></p></li>
+<li><p><a class="reference internal" href="#id9" id="id18">参考资料</a></p></li>
+</ul>
+</div>
 <p>在前文"时间变量的顺序与格式"中分析得到感知时间的5个基本变量及其顺序.
 <code class="docutils literal">Weekday  Hour:Minute <span class="pre">Month-Day</span></code> 记作 <code class="docutils literal">%w <span class="pre">%H:%M</span> <span class="pre">%d-%m</span></code></p>
 <p>对时间流逝的测量分为两个维度:
@@ -89,7 +111,7 @@
 二是直觉在宏观层面上的粗略感知.</p>
 <p>接下来的问题,如何有效的把握住一天的时间,如何对一天24小时有良好的感知.</p>
 <div class="section" id="id1">
-<h2>宏观层面粗颗粒度的时间感知</h2>
+<h2><a class="toc-backref" href="#id10">宏观层面粗颗粒度的时间感知</a></h2>
 <p>一天有24小时，大脑的直觉系统（系统一）不能直接处理24这个复杂的数字，需要调动"系统二"理性的助攻．
 "系统一"能处理3以内的数字,10以内的数字,比如列清单最好3项,最多七项,更多则聊胜于无.</p>
 <p>因此应该分割24小时成10内的模块.</p>
@@ -177,7 +199,7 @@
 时间段的命名,中文的表述更为精确,因此后续采用中文命名.</p>
 </div>
 <div class="section" id="id2">
-<h2>微观层面细颗粒度的时间感知</h2>
+<h2><a class="toc-backref" href="#id11">微观层面细颗粒度的时间感知</a></h2>
 <p>对时间的精确测量很简单，低头看一眼手表便可．难点在于如何引导直觉或者大脑的"系统一"感知到精确的时间．</p>
 <p>具体的例子，如何认识"早上 6:30"这个时刻．</p>
 <p>首先看Hour(6点),
@@ -190,7 +212,7 @@
 以60分钟为底数,可以理解为时间感知的最小单位是10分钟,而选择60又比选择6好一点儿.</p>
 <p>整体来看=06:30=这个时刻 <code class="docutils literal">06/24: 30/60</code></p>
 <div class="section" id="id3">
-<h3>选择起始时刻</h3>
+<h3><a class="toc-backref" href="#id12">选择起始时刻</a></h3>
 <p>如上所述,早上6点,可以表示为6/24,单靠直觉便能感知到具体的时刻在一整天这个进度中的位置。</p>
 <p>观察6/24,会发现一个问题,如果早晨6点起床,
 那么在睁开眼醒来的一瞬间,这一天的24小中的6个小时就没了，
@@ -284,14 +306,14 @@
 <p>将6:00理解成 00:00.</p>
 </div>
 <div class="section" id="id4">
-<h3>两个重要时间节点</h3>
+<h3><a class="toc-backref" href="#id13">两个重要时间节点</a></h3>
 <p>以早晨６点作为时间感知的０点，有两个重要的时间节点里程碑：
 一是中午12点，这是AM与 PM的划分点，是白昼的一半
 二是下午６点，这是一整天的一半．</p>
 <p>可以通过这两个时间节点下的进度和已完工作，粗略估算和预测．而且很重要的一点，假如在下午６点预估到不能按期完成任务，可以选择的方案是早起赶工而非熬夜赶工．(晚上12点非一天的结束，拂晓6点才是昨日之终和今日之始)</p>
 </div>
 <div class="section" id="id5">
-<h3>12小时制还是24小时制</h3>
+<h3><a class="toc-backref" href="#id14">12小时制还是24小时制</a></h3>
 <p>首先来看12小时制，将一天分为白昼和黑夜两个部分，这一点很棒负，符合人的自然直觉。接下来分别针对白昼和黑夜进行计时。
 白昼是从早上６点到晚上６点，黑夜是从晚上６点到早上６点。早上６点可以表示为　(6-6)/12,
 白天的0/12.
@@ -303,7 +325,7 @@ PM转换。</p>
 </div>
 </div>
 <div class="section" id="id6">
-<h2>认识具体时间的算法</h2>
+<h2><a class="toc-backref" href="#id15">认识具体时间的算法</a></h2>
 <p>在宏观层面的八分图与微观层面的分数表示的基础上，如何解析一个具体的时间呢？
 比如一个比较古怪的14:39这个时间如何理解？</p>
 <p>第一步， 先看Hour(14), 从粗略上感知，
@@ -332,7 +354,7 @@ PM转换。</p>
 第三步和第四步调用理性定量读取时间，
 第五步，有效利用最有价值的资源每一个一个小时。</p>
 <div class="section" id="id7">
-<h3>估算时间段</h3>
+<h3><a class="toc-backref" href="#id16">估算时间段</a></h3>
 <p>分数有定性和定量， 串通理性与感性，宏观与微观的神奇作用。
 具体的例子，比如有好看的综艺节目大概一个小时，用分数定性看一眼=1/24=，一天的二十四之一；
 刷个手机半个小时
@@ -341,7 +363,7 @@ PM转换。</p>
 </div>
 </div>
 <div class="section" id="id8">
-<h2>总结</h2>
+<h2><a class="toc-backref" href="#id17">总结</a></h2>
 <p>粗颗粒度下应用八分图辅助直觉粗略的感知一天内的时间，应用饼图粗略感知一个小时内的时间；
 细颗粒度下应用分数15/24, 41/60,定性与定量相结合分析。
 挥霍时间前，先用24这个数字定性审视感受一下。</p>
@@ -358,7 +380,7 @@ PM转换。</p>
 </ol>
 </div>
 <div class="section" id="id9">
-<h2>参考资料</h2>
+<h2><a class="toc-backref" href="#id18">参考资料</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://zh.wikipedia.org/wiki/%E6%8B%82%E6%99%93">拂晓-
 维基百科，自由的百科全书</a></p></li>

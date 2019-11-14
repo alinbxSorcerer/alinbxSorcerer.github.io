@@ -11,16 +11,19 @@
 <meta property="og:site_name" content="A Magic Land Declared by David">
 <meta property="og:title" content="评注Eamcs: 31.The Calendar and the Diary">
 <meta property="og:url" content="https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/">
-<meta property="og:description" content="总结:
-三个部分:
+<meta property="og:description" content="Contents
 
-基本的操作
-与社会的互动, holidays and calendars
-与天地四时的互动, sunrise-sunset 因此需要再加上两个时间点, sunrise and sunset
+总结:
+
+31.1 Movement in the Calendar
 
 
-Emacs provides the functions of a desk calendar, with a diary of planned
-or past events. It ">
+31.1.1 Motion by Standard Lengths of Time
+31.1.2 Beginning or End of Week, Month or Year
+31.1.3 Specified Dates
+
+31.2 Scrolling in the Calendar
+31.3 Coun">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2019-05-16T09:53:29+08:00">
 <meta property="article:tag" content="emacs">
@@ -98,8 +101,66 @@ or past events. It ">
     <div id="post-main" class="main">
         <div class="container">
         <div>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li>
+<p><a class="reference internal" href="#id1" id="id8">总结:</a></p>
+<ul>
+<li><p><a class="reference internal" href="#movement-in-the-calendar" id="id9">31.1 Movement in the Calendar</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#motion-by-standard-lengths-of-time" id="id10">31.1.1 Motion by Standard Lengths of Time</a></p></li>
+<li><p><a class="reference internal" href="#beginning-or-end-of-week-month-or-year" id="id11">31.1.2 Beginning or End of Week, Month or Year</a></p></li>
+<li>
+<p><a class="reference internal" href="#specified-dates" id="id12">31.1.3 Specified Dates</a></p>
+<ul>
+<li><p><a class="reference internal" href="#scrolling-in-the-calendar" id="id13">31.2 Scrolling in the Calendar</a></p></li>
+<li><p><a class="reference internal" href="#counting-days" id="id14">31.3 Counting Days</a></p></li>
+<li><p><a class="reference internal" href="#miscellaneous-calendar-commands" id="id15">31.4 Miscellaneous Calendar Commands</a></p></li>
+<li><p><a class="reference internal" href="#writing-calendar-files" id="id16">31.5 Writing Calendar Files</a></p></li>
+<li><p><a class="reference internal" href="#holidays" id="id17">31.6 Holidays</a></p></li>
+<li><p><a class="reference internal" href="#times-of-sunrise-and-sunset" id="id18">31.7 Times of Sunrise and Sunset</a></p></li>
+<li><p><a class="reference internal" href="#phases-of-the-moon" id="id19">31.8 Phases of the Moon</a></p></li>
+<li><p><a class="reference internal" href="#conversion-to-and-from-other-calendars" id="id20">31.9 Conversion To and From Other Calendars</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#supported-calendar-systems" id="id21">31.9.1 Supported Calendar Systems</a></p></li>
+<li><p><a class="reference internal" href="#converting-to-other-calendars" id="id22">31.9.2 Converting To Other Calendars</a></p></li>
+<li>
+<p><a class="reference internal" href="#converting-from-other-calendars" id="id23">31.9.3 Converting From Other Calendars</a></p>
+<ul>
+<li><p><a class="reference internal" href="#the-diary" id="id24">31.10 The Diary</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#the-diary-file" id="id25">31.10.1 The Diary File</a></p></li>
+<li><p><a class="reference internal" href="#displaying-the-diary" id="id26">31.10.2 Displaying the Diary</a></p></li>
+<li><p><a class="reference internal" href="#date-formats" id="id27">31.10.3 Date Formats</a></p></li>
+<li><p><a class="reference internal" href="#commands-to-add-to-the-diary" id="id28">31.10.4 Commands to Add to the Diary</a></p></li>
+<li><p><a class="reference internal" href="#special-diary-entries" id="id29">31.10.5 Special Diary Entries</a></p></li>
+<li><p><a class="reference internal" href="#appointments" id="id30">31.10.6 Appointments</a></p></li>
+<li>
+<p><a class="reference internal" href="#importing-and-exporting-diary-entries" id="id31">31.10.7 Importing and Exporting Diary Entries</a></p>
+<ul>
+<li><p><a class="reference internal" href="#daylight-saving-time" id="id32">31.11 Daylight Saving Time</a></p></li>
+<li><p><a class="reference internal" href="#summing-time-intervals" id="id33">31.12 Summing Time Intervals</a></p></li>
+<li><p><a class="reference internal" href="#more-advanced-features-of-the-calendar-and-diary" id="id34">31.13 More advanced features of the Calendar and Diary</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#customizing-the-calendar" id="id35">31.13.1 Customizing the Calendar</a></p></li>
+<li><p><a class="reference internal" href="#customizing-the-holidays" id="id36">31.13.2 Customizing the Holidays</a></p></li>
+<li><p><a class="reference internal" href="#converting-from-the-mayan-calendar" id="id37">31.13.3 Converting from the Mayan Calendar</a></p></li>
+<li><p><a class="reference internal" href="#date-display-format" id="id38">31.13.4 Date Display Format</a></p></li>
+<li><p><a class="reference internal" href="#time-display-format" id="id39">31.13.5 Time Display Format</a></p></li>
+<li><p><a class="reference internal" href="#customizing-the-diary" id="id40">31.13.6 Customizing the Diary</a></p></li>
+<li><p><a class="reference internal" href="#diary-entries-using-non-gregorian-calendars" id="id41">31.13.7 Diary Entries Using non-Gregorian Calendars</a></p></li>
+<li><p><a class="reference internal" href="#diary-display" id="id42">31.13.8 Diary Display</a></p></li>
+<li><p><a class="reference internal" href="#fancy-diary-display" id="id43">31.13.9 Fancy Diary Display</a></p></li>
+<li><p><a class="reference internal" href="#sexp-entries-and-the-fancy-diary-display" id="id44">31.13.10 Sexp Entries and the Fancy Diary Display</a></p></li>
+</ul>
+</div>
 <div class="section" id="id1">
-<h2>总结:</h2>
+<h2><a class="toc-backref" href="#id8">总结:</a></h2>
 <p>三个部分:</p>
 <ol class="arabic simple">
 <li><p>基本的操作</p></li>
@@ -120,7 +181,7 @@ date; mouse-2 brings up a menu of commonly used calendar features that
 are independent of any particular date. To exit the calendar, type q.</p>
 <p>我想要一个类似在桌面操作系统中, 可以操作任务的日历.</p>
 <div class="section" id="movement-in-the-calendar">
-<h3>31.1 Movement in the Calendar</h3>
+<h3><a class="toc-backref" href="#id9">31.1 Movement in the Calendar</a></h3>
 <p>Calendar mode provides commands to move through the calendar
 <code class="docutils literal">in logical units</code></p>
 <p>of time such as days, weeks, months, and years. If you move outside the
@@ -129,8 +190,8 @@ automatically through time to make the selected date visible. Moving to
 a date lets you view its holidays or diary entries, or convert it to
 other calendars; moving by long time periods is also useful simply to
 scroll the calendar.</p>
-<pre class="code elisp"><a name="rest_code_792e880098434db1860d870e69555564-1"></a><span class="c1">;;修改calendar-week-start-day</span>
-<a name="rest_code_792e880098434db1860d870e69555564-2"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">calendar-week-start-day</span> <span class="mi">1</span><span class="p">)</span>
+<pre class="code elisp"><a name="rest_code_07092f5b9649463c99a4145dd8899245-1"></a><span class="c1">;;修改calendar-week-start-day</span>
+<a name="rest_code_07092f5b9649463c99a4145dd8899245-2"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">calendar-week-start-day</span> <span class="mi">1</span><span class="p">)</span>
 </pre>
 <p>对movement的总结, span, 按照四个logical unit, day, week, month, year</p>
 <ol class="arabic simple">
@@ -141,7 +202,7 @@ scroll the calendar.</p>
 </div>
 </div>
 <div class="section" id="motion-by-standard-lengths-of-time">
-<h2>31.1.1 Motion by Standard Lengths of Time</h2>
+<h2><a class="toc-backref" href="#id10">31.1.1 Motion by Standard Lengths of Time</a></h2>
 <p>The commands for movement in the calendar buffer parallel the commands
 for movement in text. You can move forward and backward by days, weeks,
 months, and years.</p>
@@ -201,7 +262,7 @@ in Calendar mode even without the Meta modifier. For example, 100 C-f
 moves point 100 days forward from its present location.</p>
 </div>
 <div class="section" id="beginning-or-end-of-week-month-or-year">
-<h2>31.1.2 Beginning or End of Week, Month or Year</h2>
+<h2><a class="toc-backref" href="#id11">31.1.2 Beginning or End of Week, Month or Year</a></h2>
 <p>A week (or month, or year) is not just a quantity of days; we think of
 weeks (months, years) as starting on particular dates. So Calendar mode
 provides commands to move to the start or end of a week, month or year:</p>
@@ -240,7 +301,7 @@ headers are highlighted as weekend days, set the variable
 <code class="docutils literal"><span class="pre">calendar-weekend-days</span></code>.</p>
 </div>
 <div class="section" id="specified-dates">
-<h2>31.1.3 Specified Dates</h2>
+<h2><a class="toc-backref" href="#id12">31.1.3 Specified Dates</a></h2>
 <p>Calendar mode provides commands for moving to a particular date
 specified in various ways.</p>
 <ul>
@@ -277,7 +338,7 @@ centers the three-month calendar around that month.</p>
 </li>
 </ul>
 <div class="section" id="scrolling-in-the-calendar">
-<h3>31.2 Scrolling in the Calendar</h3>
+<h3><a class="toc-backref" href="#id13">31.2 Scrolling in the Calendar</a></h3>
 <p>The calendar display scrolls automatically through time when you move
 out of the visible portion. You can also scroll it manually. Imagine
 that the calendar window contains a long strip of paper with the months
@@ -313,7 +374,7 @@ the calendar backward by a year.</p>
 they are in other modes.</p>
 </div>
 <div class="section" id="counting-days">
-<h3>31.3 Counting Days</h3>
+<h3><a class="toc-backref" href="#id14">31.3 Counting Days</a></h3>
 <ul>
 <li>
 <p>M-=</p>
@@ -328,7 +389,7 @@ point.</p>
 </ul>
 </div>
 <div class="section" id="miscellaneous-calendar-commands">
-<h3>31.4 Miscellaneous Calendar Commands</h3>
+<h3><a class="toc-backref" href="#id15">31.4 Miscellaneous Calendar Commands</a></h3>
 <p>Display day-in-year (<code class="docutils literal"><span class="pre">calendar-print-day-of-year</span></code>).</p>
 <ul>
 <li>
@@ -368,7 +429,7 @@ or iconifies that frame depending on the value of
 <code class="docutils literal"><span class="pre">calendar-remove-frame-by-deleting</span></code>.)</p>
 </div>
 <div class="section" id="writing-calendar-files">
-<h3>31.5 Writing Calendar Files</h3>
+<h3><a class="toc-backref" href="#id16">31.5 Writing Calendar Files</a></h3>
 <p>You can write calendars and diary entries to HTML and LaTeX files.</p>
 <p>The Calendar HTML commands produce files of HTML code that contain
 calendar, holiday, and diary entries. Each file applies to one month,
@@ -486,7 +547,7 @@ features.</p>
 LaTeX commands in the preamble of the generated document if you need to.</p>
 </div>
 <div class="section" id="holidays">
-<h3>31.6 Holidays</h3>
+<h3><a class="toc-backref" href="#id17">31.6 Holidays</a></h3>
 <p>The Emacs calendar knows about many major and minor holidays, and can
 display them. You can add your own holidays to the default list.</p>
 <ul>
@@ -519,8 +580,8 @@ window.</p>
 <p>Define: Veterans' day 老兵 Etymology: Old Lithuanian vetušas "old,
 aged;" and compare wether). 助记: Veterans day</p>
 </blockquote>
-<pre class="code elisp"><a name="rest_code_53fa3dc349524880b371625d864c1b57-1"></a><span class="c1">;;(sunrise-sunset)</span>
-<a name="rest_code_53fa3dc349524880b371625d864c1b57-2"></a><span class="p">(</span><span class="nv">lunar-phases</span><span class="p">)</span>
+<pre class="code elisp"><a name="rest_code_544c0528e1244185b5e8dc97ec40f05b-1"></a><span class="c1">;;(sunrise-sunset)</span>
+<a name="rest_code_544c0528e1244185b5e8dc97ec40f05b-2"></a><span class="p">(</span><span class="nv">lunar-phases</span><span class="p">)</span>
 </pre>
 <ul>
 <li>
@@ -578,7 +639,7 @@ not historical fact. For example Veteran's Day began in 1919, but is
 shown in earlier years.</p>
 </div>
 <div class="section" id="times-of-sunrise-and-sunset">
-<h3>31.7 Times of Sunrise and Sunset</h3>
+<h3><a class="toc-backref" href="#id18">31.7 Times of Sunrise and Sunset</a></h3>
 <p>Special calendar commands can tell you, to within a minute or two, the
 times of sunrise and sunset for any date.</p>
 <ul>
@@ -644,7 +705,7 @@ users in a default.el file. See <a class="reference external" href="https://www.
 File</a>.</p>
 </div>
 <div class="section" id="phases-of-the-moon">
-<h3>31.8 Phases of the Moon</h3>
+<h3><a class="toc-backref" href="#id19">31.8 Phases of the Moon</a></h3>
 <p>These calendar commands display the dates and times of the phases of the
 moon (new moon, first quarter, full moon, last quarter). This feature is
 useful for debugging problems that depend on the phase of the moon.</p>
@@ -671,7 +732,7 @@ discussion in the previous section. See
 <a class="reference external" href="https://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Sunrise_002fSunset">Sunrise/Sunset</a>.</p>
 </div>
 <div class="section" id="conversion-to-and-from-other-calendars">
-<h3>31.9 Conversion To and From Other Calendars</h3>
+<h3><a class="toc-backref" href="#id20">31.9 Conversion To and From Other Calendars</a></h3>
 <p>The Emacs calendar displayed is <em>always</em> the Gregorian calendar,
 sometimes called the New Style calendar, which is used in most of the
 world today. However, this calendar did not exist before the sixteenth
@@ -697,7 +758,7 @@ Moving to a date specified in another calendar.</p></li>
 </div>
 </div>
 <div class="section" id="supported-calendar-systems">
-<h2>31.9.1 Supported Calendar Systems</h2>
+<h2><a class="toc-backref" href="#id21">31.9.1 Supported Calendar Systems</a></h2>
 <p>The ISO commercial calendar is often used in business.</p>
 <p>The Julian calendar, named after Julius Caesar, was the one used in
 Europe throughout medieval times, and in many countries up until the
@@ -753,7 +814,7 @@ in a cycle of sixty.</p>
 18th and 19th months.</p>
 </div>
 <div class="section" id="converting-to-other-calendars">
-<h2>31.9.2 Converting To Other Calendars</h2>
+<h2><a class="toc-backref" href="#id22">31.9.2 Converting To Other Calendars</a></h2>
 <p>The following commands describe the selected date (the date at point) in
 various other calendar systems:</p>
 <ul>
@@ -833,7 +894,7 @@ alternative from this menu doesn't actually do anything—the menu is used
 only for display.)</p>
 </div>
 <div class="section" id="converting-from-other-calendars">
-<h2>31.9.3 Converting From Other Calendars</h2>
+<h2><a class="toc-backref" href="#id23">31.9.3 Converting From Other Calendars</a></h2>
 <p>You can use the other supported calendars to specify a date to move to.
 This section describes the commands for doing this using calendars other
 than Mayan; for the Mayan calendar, see the following section.</p>
@@ -915,7 +976,7 @@ years for the date given by point. If you are not in the calendar, this
 command first asks you for the date of death and the range of years, and
 then displays the list of yahrzeit dates.</p>
 <div class="section" id="the-diary">
-<h3>31.10 The Diary</h3>
+<h3><a class="toc-backref" href="#id24">31.10 The Diary</a></h3>
 <p>The Emacs diary keeps track of appointments or other events on a daily
 basis, in <code class="docutils literal">conjunction</code> with the calendar. To use the diary feature,
 you must first create a diary file containing a list of events and their
@@ -927,7 +988,7 @@ entries.</p>
 </div>
 </div>
 <div class="section" id="the-diary-file">
-<h2>31.10.1 The Diary File</h2>
+<h2><a class="toc-backref" href="#id25">31.10.1 The Diary File</a></h2>
 <p>Your diary file is a file that records events associated with particular
 dates. The name of the diary file is specified by the variable
 <code class="docutils literal"><span class="pre">diary-file</span></code>. The default is <code class="docutils literal"><span class="pre">~/.emacs.d/diary</span></code>, though for
@@ -970,7 +1031,7 @@ display just a single day's entries, but can cause confusion if you ask
 for more than one day's entries.</p>
 </div>
 <div class="section" id="displaying-the-diary">
-<h2>31.10.2 Displaying the Diary</h2>
+<h2><a class="toc-backref" href="#id26">31.10.2 Displaying the Diary</a></h2>
 <p>Once you have created a diary file, you can use the calendar to view it.
 You can also view today's events outside of Calendar mode. In the
 following, key bindings refer to the Calendar buffer.</p>
@@ -1054,7 +1115,7 @@ with today) to check; otherwise, the variable <code class="docutils literal"><sp
 how many days.</p>
 </div>
 <div class="section" id="date-formats">
-<h2>31.10.3 Date Formats</h2>
+<h2><a class="toc-backref" href="#id27">31.10.3 Date Formats</a></h2>
 <p>Here are some sample diary entries, illustrating different ways of
 formatting a date. The examples all show dates in American order (month,
 day, year), but Calendar mode supports European order (day, month, year)
@@ -1087,7 +1148,7 @@ month, day, or year can be '*'; this matches any month, day, or year,
 respectively. Thus, a diary entry ‘3///<a href="#id2"><span class="problematic" id="id3">*</span></a>' matches any day in March of
 any year; so does ‘march /'.</p>
 <div class="system-message" id="id2">
-<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 1084); <em><a href="#id3">backlink</a></em></p>
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 1085); <em><a href="#id3">backlink</a></em></p>
 <p>Inline emphasis start-string without end-string.</p>
 </div>
 <p>If you prefer the European style of writing dates (in which the day
@@ -1102,7 +1163,7 @@ the day of the week as described above, or spell it in full; case is not
 significant.</p>
 </div>
 <div class="section" id="commands-to-add-to-the-diary">
-<h2>31.10.4 Commands to Add to the Diary</h2>
+<h2><a class="toc-backref" href="#id28">31.10.4 Commands to Add to the Diary</a></h2>
 <p>While in the calendar, there are several commands to create diary
 entries. The basic commands are listed here; more sophisticated commands
 are in the next section (see <a class="reference external" href="https://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Special-Diary-Entries">Special Diary
@@ -1151,7 +1212,7 @@ window, if appropriate. You can use the command <code class="docutils literal"><
 force an update at any time.</p>
 </div>
 <div class="section" id="special-diary-entries">
-<h2>31.10.5 Special Diary Entries</h2>
+<h2><a class="toc-backref" href="#id29">31.10.5 Special Diary Entries</a></h2>
 <p>In addition to entries based on calendar dates, the diary file can
 contain sexp entries for regular events such as anniversaries. These
 entries are based on Lisp expressions (sexps) that Emacs evaluates as it
@@ -1235,7 +1296,7 @@ marking the entry in the calendar. Most generally, sexp diary entries
 can perform arbitrary computations to determine when they apply.</p>
 </div>
 <div class="section" id="appointments">
-<h2>31.10.6 Appointments</h2>
+<h2><a class="toc-backref" href="#id30">31.10.6 Appointments</a></h2>
 <p>If you have a diary entry for an appointment, and that diary entry
 begins with a recognizable time of day, Emacs can warn you in advance
 that an appointment is pending. Emacs alerts you to the appointment by
@@ -1289,7 +1350,7 @@ without affecting your diary file. You delete entries from the
 appointment list with M-x appt-delete.</p>
 </div>
 <div class="section" id="importing-and-exporting-diary-entries">
-<h2>31.10.7 Importing and Exporting Diary Entries</h2>
+<h2><a class="toc-backref" href="#id31">31.10.7 Importing and Exporting Diary Entries</a></h2>
 <p>You can transfer diary entries between Emacs diary files and a variety
 of other formats.</p>
 <p>You can import diary entries from Outlook-generated appointment
@@ -1319,7 +1380,7 @@ diary file to iCalendar format. To export only a part of a diary file,
 mark the relevant area, and call <code class="docutils literal"><span class="pre">icalendar-export-region</span></code>. In both
 cases, Emacs appends the result to the target file.</p>
 <div class="section" id="daylight-saving-time">
-<h3>31.11 Daylight Saving Time</h3>
+<h3><a class="toc-backref" href="#id32">31.11 Daylight Saving Time</a></h3>
 <p>Emacs understands the difference between standard time and daylight
 saving time—the times given for sunrise, sunset, solstices, equinoxes,
 and the phases of the moon take that into account. The rules for
@@ -1364,7 +1425,7 @@ saving time should occur. For Cambridge, Massachusetts both variables'
 values are 120.</p>
 </div>
 <div class="section" id="summing-time-intervals">
-<h3>31.12 Summing Time Intervals</h3>
+<h3><a class="toc-backref" href="#id33">31.12 Summing Time Intervals</a></h3>
 <p>The timeclock package adds up time intervals, so you can (for instance)
 keep track of how much time you spend working on particular projects. (A
 more advanced alternative is to use the Org Mode's facilities for
@@ -1396,14 +1457,14 @@ customizable variables, you should run the command M-x
 timeclock-reread-log to update the data in Emacs from the file.</p>
 </div>
 <div class="section" id="more-advanced-features-of-the-calendar-and-diary">
-<h3>31.13 More advanced features of the Calendar and Diary</h3>
+<h3><a class="toc-backref" href="#id34">31.13 More advanced features of the Calendar and Diary</a></h3>
 <p>This section describes some of the more advanced/specialized features of
 the calendar and diary. It starts with some of the many ways in which
 you can customize the calendar and diary to suit your personal tastes.</p>
 </div>
 </div>
 <div class="section" id="customizing-the-calendar">
-<h2>31.13.1 Customizing the Calendar</h2>
+<h2><a class="toc-backref" href="#id35">31.13.1 Customizing the Calendar</a></h2>
 <p>The calendar display unfortunately cannot be changed from three months,
 but you can customize the whitespace used by setting the variables:
 <code class="docutils literal"><span class="pre">calendar-left-margin</span></code>, <code class="docutils literal"><span class="pre">calendar-day-header-width</span></code>,
@@ -1441,7 +1502,7 @@ current date is <em>not</em> visible in the window.</p>
 <code class="docutils literal"><span class="pre">calendar-move-hook</span></code> after it moves the cursor.</p>
 </div>
 <div class="section" id="customizing-the-holidays">
-<h2>31.13.2 Customizing the Holidays</h2>
+<h2><a class="toc-backref" href="#id36">31.13.2 Customizing the Holidays</a></h2>
 <p>There are several variables listing the default holidays that Emacs
 knows about. These are: <code class="docutils literal"><span class="pre">holiday-general-holidays</span></code>,
 <code class="docutils literal"><span class="pre">holiday-local-holidays</span></code>, <code class="docutils literal"><span class="pre">holiday-solar-holidays</span></code>,
@@ -1566,7 +1627,7 @@ window, with descriptive strings, like this:</p>
 <pre class="literal-block">(((6 4 2012) "Lunar Eclipse") ((11 13 2012) "Solar Eclipse") ... )</pre>
 </div>
 <div class="section" id="converting-from-the-mayan-calendar">
-<h2>31.13.3 Converting from the Mayan Calendar</h2>
+<h2><a class="toc-backref" href="#id37">31.13.3 Converting from the Mayan Calendar</a></h2>
 <p>Here are the commands to select dates based on the Mayan calendar:</p>
 <ul>
 <li>
@@ -1641,7 +1702,7 @@ whenever it asks you to type a Mayan name, so you don't have to worry
 about spelling.</p>
 </div>
 <div class="section" id="date-display-format">
-<h2>31.13.4 Date Display Format</h2>
+<h2><a class="toc-backref" href="#id38">31.13.4 Date Display Format</a></h2>
 <p>You can customize the way dates are displayed in the diary, mode lines,
 and messages by setting <code class="docutils literal"><span class="pre">calendar-date-display-form</span></code>. This variable
 holds a list of expressions that can involve the variables <code class="docutils literal">month</code>,
@@ -1658,7 +1719,7 @@ American style, the default value of this list is as follows:</p>
 <pre class="literal-block">(month "/" day "/" (substring year -2))</pre>
 </div>
 <div class="section" id="time-display-format">
-<h2>31.13.5 Time Display Format</h2>
+<h2><a class="toc-backref" href="#id39">31.13.5 Time Display Format</a></h2>
 <p>The calendar and diary by default display times of day in the
 conventional American style with the hours from 1 through 12, minutes,
 and either 'am' or 'pm'. If you prefer the European style, also known in
@@ -1676,7 +1737,7 @@ and <code class="docutils literal">minutes</code>, which are all numbers in stri
 solar functions).</p>
 </div>
 <div class="section" id="customizing-the-diary">
-<h2>31.13.6 Customizing the Diary</h2>
+<h2><a class="toc-backref" href="#id40">31.13.6 Customizing the Diary</a></h2>
 <p>Ordinarily, the diary window indicates any holidays that fall on the
 date of the diary entries, either in the mode line or the buffer itself.
 The process of checking for holidays can be slow, depending on the
@@ -1705,7 +1766,7 @@ whole to match, all of its elements must match consecutively.</p>
 using the standard syntax table altered so that ‘<a href="#id4"><span class="problematic" id="id5">*</span></a>' is a word
 constituent.</p>
 <div class="system-message" id="id4">
-<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 1852); <em><a href="#id5">backlink</a></em></p>
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 1853); <em><a href="#id5">backlink</a></em></p>
 <p>Inline emphasis start-string without end-string.</p>
 </div>
 <p>The symbols <code class="docutils literal">month</code>, <code class="docutils literal">day</code>, <code class="docutils literal">year</code>, <code class="docutils literal">monthname</code>, and <code class="docutils literal">dayname</code>
@@ -1717,7 +1778,7 @@ abbreviation (as specified by <code class="docutils literal"><span class="pre">c
 in a diary entry means "any day", "any month", and so on, it should
 match regardless of the date being considered.</p>
 <div class="system-message" id="id6">
-<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 1856); <em><a href="#id7">backlink</a></em></p>
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 1857); <em><a href="#id7">backlink</a></em></p>
 <p>Inline emphasis start-string without end-string.</p>
 </div>
 <p>The default value of <code class="docutils literal"><span class="pre">diary-date-forms</span></code> in the American style is
@@ -1749,7 +1810,7 @@ match part of a word beyond the date itself to distinguish it from the
 fourth pattern.</p>
 </div>
 <div class="section" id="diary-entries-using-non-gregorian-calendars">
-<h2>31.13.7 Diary Entries Using non-Gregorian Calendars</h2>
+<h2><a class="toc-backref" href="#id41">31.13.7 Diary Entries Using non-Gregorian Calendars</a></h2>
 <p>As well as entries based on the standard Gregorian calendar, your diary
 can have entries based on Bahá'í, Chinese, Hebrew, or Islamic dates.
 Recognition of such entries can be time-consuming, however, and since
@@ -1851,7 +1912,7 @@ Up: <a class="reference external" href="https://www.gnu.org/software/emacs/manua
 Usage</a></p>
 </div>
 <div class="section" id="diary-display">
-<h2>31.13.8 Diary Display</h2>
+<h2><a class="toc-backref" href="#id42">31.13.8 Diary Display</a></h2>
 <p>Diary display works by preparing the list of diary entries and then
 running the function specified by the variable
 <code class="docutils literal"><span class="pre">diary-display-function</span></code>. The default value <code class="docutils literal"><span class="pre">diary-fancy-display</span></code>
@@ -1910,7 +1971,7 @@ buffer, it is best to display the entire file with s
 (<code class="docutils literal"><span class="pre">diary-show-all-entries</span></code>).</p>
 </div>
 <div class="section" id="fancy-diary-display">
-<h2>31.13.9 Fancy Diary Display</h2>
+<h2><a class="toc-backref" href="#id43">31.13.9 Fancy Diary Display</a></h2>
 <p>The following features only work with the fancy diary display.</p>
 <p>You can use the normal hook <code class="docutils literal"><span class="pre">diary-list-entries-hook</span></code> to sort each
 day's diary entries by their time of day. Here's how:</p>
@@ -1945,7 +2006,7 @@ Up: <a class="reference external" href="https://www.gnu.org/software/emacs/manua
 Usage</a></p>
 </div>
 <div class="section" id="sexp-entries-and-the-fancy-diary-display">
-<h2>31.13.10 Sexp Entries and the Fancy Diary Display</h2>
+<h2><a class="toc-backref" href="#id44">31.13.10 Sexp Entries and the Fancy Diary Display</a></h2>
 <p>Sexp diary entries allow you to do more than just have complicated
 conditions under which a diary entry applies. Sexp entries should be
 preceded by <code class="docutils literal"><span class="pre">diary-sexp-entry-symbol</span></code> (default '%%') in the diary
