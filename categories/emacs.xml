@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Magic Land Declared by David (Posts about emacs)</title><link>https://alinbxsorcerer.github.io/</link><description></description><atom:link href="https://alinbxsorcerer.github.io/categories/emacs.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:davad.fhl.wang@foxmail.com"&gt;David&lt;/a&gt; </copyright><lastBuildDate>Thu, 14 Nov 2019 05:05:14 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Emacs中的datetime与clock</title><link>https://alinbxsorcerer.github.io/posts/emacszhong-de-datetimeyu-clock/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="contents topic" id="contents"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Magic Land Declared by David (Posts about emacs)</title><link>https://alinbxsorcerer.github.io/</link><description></description><atom:link href="https://alinbxsorcerer.github.io/categories/emacs.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:davad.fhl.wang@foxmail.com"&gt;David&lt;/a&gt; </copyright><lastBuildDate>Mon, 18 Nov 2019 02:29:11 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Emacs中的datetime与clock</title><link>https://alinbxsorcerer.github.io/posts/emacszhong-de-datetimeyu-clock/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="contents topic" id="contents"&gt;
 &lt;p class="topic-title first"&gt;Contents&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/emacszhong-de-datetimeyu-clock/#id1" id="id3"&gt;前文概要:&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
@@ -2487,4 +2487,509 @@ Tuesday or a week from Sunday, with feelings of helpless confusion. …&lt;/p&gt
 &lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#id20"&gt;参考资料&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;cite&gt;GNU Coreutils: Date input
 formats &amp;lt;https://www.gnu.org/software/coreutils/manual/html_node/Date-input-formats.html#Date-input-formats&amp;gt;&lt;/cite&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>bash</category><category>emacs</category><category>python</category><category>time</category><category>时间管理</category><guid>https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/</guid><pubDate>Wed, 15 May 2019 12:53:29 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>bash</category><category>emacs</category><category>python</category><category>time</category><category>时间管理</category><guid>https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/</guid><pubDate>Wed, 15 May 2019 12:53:29 GMT</pubDate></item><item><title>Regex Summary</title><link>https://alinbxsorcerer.github.io/posts/regex-summary/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="section" id="wildcards"&gt;
+&lt;h2&gt;Wildcards&lt;/h2&gt;
+&lt;p&gt;总结基本符号
+&lt;code class="docutils literal"&gt;shopt &lt;span class="pre"&gt;-s&lt;/span&gt; gotglob.&lt;/code&gt;
+&lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;*?[^]{}&lt;/span&gt;&lt;/code&gt; 记住这5种基本符号便可.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="http://tldp.org/LDP/GNU-Linux-Tools-Summary/html/x11655.htm"&gt;http://tldp.org/LDP/GNU-Linux-Tools-Summary/html/x11655.htm&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Standard Wildcards (globbing patterns)&lt;/p&gt;
+&lt;p&gt;? (question mark)&lt;/p&gt;
+&lt;p&gt;this can represent any single character. If you specified something at the command line like "hd?" GNU/Linux would look for hda, hdb, hdc and every other letter/number between a-z, 0-9.&lt;/p&gt;
+&lt;p&gt;[ ] (square brackets)&lt;/p&gt;
+&lt;p&gt;specifies a range. If you did m[a,o,u]m it can become: mam, mum, mom if you did: m[a-d]m it can become anything that starts and ends with m and has any character a to d inbetween. For example, these would work: mam, mbm, mcm, mdm. This kind of wildcard specifies an “or” relationship (you only need one to match).&lt;/p&gt;
+&lt;p&gt;{ } (curly brackets)&lt;/p&gt;
+&lt;p&gt;terms are separated by commas and each term must be the name of something or a wildcard. This wildcard will copy anything that matches either wildcard(s), or exact name(s) (an “or” relationship, one or the other).&lt;/p&gt;
+&lt;p&gt;For example, this would be valid:&lt;/p&gt;
+&lt;p&gt;cp {&lt;strong&gt;.doc,&lt;/strong&gt;.pdf} ~&lt;/p&gt;
+&lt;p&gt;This will copy anything ending with .doc or .pdf to the users home directory. Note that spaces are not allowed after the commas (or anywhere else).
+[^] or [!]&lt;/p&gt;
+&lt;p&gt;This construct is similar to the [ ] construct, except rather than matching any characters inside the brackets, it'll match any character, as long as it is not listed between the [ and ]. This is a logical NOT. For example rm myfile[!9] will remove all myfiles* (ie. myfiles1, myfiles2 etc) but won't remove a file with the number 9 anywhere within it's name.&lt;/p&gt;
+&lt;p&gt;\ (backslash)&lt;/p&gt;
+&lt;p&gt;is used as an "escape" character, i.e. to protect a subsequent special character. Thus, "\” searches for a backslash. Note you may need to use quotation marks and backslash(es).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="regex-new-map"&gt;
+&lt;h2&gt;Regex New Map&lt;/h2&gt;
+&lt;p&gt;#+caption Metacharacters&lt;/p&gt;
+&lt;table&gt;
+&lt;colgroup&gt;
+&lt;col style="width: 20%"&gt;
+&lt;col style="width: 20%"&gt;
+&lt;col style="width: 20%"&gt;
+&lt;col style="width: 20%"&gt;
+&lt;col style="width: 20%"&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;&lt;th class="head"&gt;&lt;p&gt;Categories&lt;/p&gt;&lt;/th&gt;
+&lt;th class="head"&gt;&lt;/th&gt;
+&lt;th class="head"&gt;&lt;/th&gt;
+&lt;th class="head"&gt;&lt;/th&gt;
+&lt;th class="head"&gt;&lt;p&gt;Counter&lt;/p&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;dot and
+classes&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;^.[^]$ or&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;5&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;capture and
+repetation&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;()&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;* {}, +, ?&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;or + ? only
+in ERE&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;7&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;back-refere
+nce&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;dl class="field-list simple"&gt;
+&lt;dt&gt;raw-latex&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;&lt;/p&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 53)&lt;/p&gt;
+&lt;p&gt;Field list ends without a blank line; unexpected unindent.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;cite&gt;n&lt;/cite&gt;&lt;/p&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;1&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;Sum:&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;13&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;这个Meta-class最成功的一点是将 back-reference放在里面.
+class, [:space:] [ &lt;a href="https://alinbxsorcerer.github.io/posts/regex-summary/#id1"&gt;&lt;span class="problematic" id="id2"&gt;:raw-latex:`\t`&lt;/span&gt;&lt;/a&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/regex-summary/#id3"&gt;&lt;span class="problematic" id="id4"&gt;:raw-latex:`\r`&lt;/span&gt;&lt;/a&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/regex-summary/#id5"&gt;&lt;span class="problematic" id="id6"&gt;:raw-latex:`\n`&lt;/span&gt;&lt;/a&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/regex-summary/#id7"&gt;&lt;span class="problematic" id="id8"&gt;:raw-latex:`\f`&lt;/span&gt;&lt;/a&gt;]
+[:blank:] [ &lt;a href="https://alinbxsorcerer.github.io/posts/regex-summary/#id9"&gt;&lt;span class="problematic" id="id10"&gt;:raw-latex:`\t`&lt;/span&gt;&lt;/a&gt;]&lt;/p&gt;
+&lt;div class="system-message" id="id1"&gt;
+&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 57); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/regex-summary/#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Unknown interpreted text role "raw-latex".&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="system-message" id="id3"&gt;
+&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 57); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/regex-summary/#id4"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Unknown interpreted text role "raw-latex".&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="system-message" id="id5"&gt;
+&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 57); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/regex-summary/#id6"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Unknown interpreted text role "raw-latex".&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="system-message" id="id7"&gt;
+&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 57); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/regex-summary/#id8"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Unknown interpreted text role "raw-latex".&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="system-message" id="id9"&gt;
+&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 57); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/regex-summary/#id10"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Unknown interpreted text role "raw-latex".&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;#+Intermediate topics&lt;/p&gt;
+&lt;table&gt;
+&lt;colgroup&gt;
+&lt;col style="width: 33%"&gt;
+&lt;col style="width: 33%"&gt;
+&lt;col style="width: 33%"&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;&lt;th class="head"&gt;&lt;p&gt;capturing&lt;/p&gt;&lt;/th&gt;
+&lt;th class="head"&gt;&lt;p&gt;a(bc), a(?:bc),
+a(?&amp;lt;foo&amp;gt;bc)
+(?P&amp;lt;name&amp;gt;) (?P=name)&lt;/p&gt;&lt;/th&gt;
+&lt;th class="head"&gt;&lt;p&gt;python的格式&lt;/p&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;bracket&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;[a-z]&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;greedy and lazy&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;&amp;lt;.+?&amp;gt;, &amp;lt;[^&amp;lt;&amp;gt;]+&amp;gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;#+Advanced topics&lt;/p&gt;
+&lt;table&gt;
+&lt;colgroup&gt;
+&lt;col style="width: 50%"&gt;
+&lt;col style="width: 50%"&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;&lt;th class="head"&gt;&lt;p&gt;boundaries&lt;/p&gt;&lt;/th&gt;
+&lt;th class="head"&gt;&lt;p&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/regex-summary/#id11"&gt;&lt;span class="problematic" id="id12"&gt;:raw-latex:`\babc`&lt;/span&gt;&lt;/a&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/regex-summary/#id13"&gt;&lt;span class="problematic" id="id14"&gt;:raw-latex:`\b`&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class="system-message" id="id11"&gt;
+&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 77); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/regex-summary/#id12"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Unknown interpreted text role "raw-latex".&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="system-message" id="id13"&gt;
+&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 77); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/regex-summary/#id14"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Unknown interpreted text role "raw-latex".&lt;/p&gt;
+&lt;/div&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;back-reference&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;\1, \?&amp;lt;foo&amp;gt;&amp;lt;foo&amp;gt; k for keyword&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;look-ahead&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;d(?=r) look r's ahead,
+从r前面找d, followed&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;look-behind&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;(?&amp;lt;=r)d 从r的后面找d,
+d小于r的意思, 在其后, proceeded,
+按照习惯大于等于写在前面&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;Negotive operator&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;d(?!r) (?&amp;lt;!r)d (大括号代表方向.)&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;(?=r)注意这里的指向与format的指向是相反的.&lt;/p&gt;
+&lt;p&gt;注意这里的三个flags&lt;/p&gt;
+&lt;p&gt;#+name old map&lt;/p&gt;
+&lt;table&gt;
+&lt;colgroup&gt;
+&lt;col style="width: 17%"&gt;
+&lt;col style="width: 17%"&gt;
+&lt;col style="width: 17%"&gt;
+&lt;col style="width: 17%"&gt;
+&lt;col style="width: 17%"&gt;
+&lt;col style="width: 17%"&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;&lt;th class="head"&gt;&lt;p&gt;Scope&lt;/p&gt;&lt;/th&gt;
+&lt;th class="head"&gt;&lt;p&gt;Individua
+l&lt;/p&gt;&lt;/th&gt;
+&lt;th class="head"&gt;&lt;p&gt;Group&lt;/p&gt;&lt;/th&gt;
+&lt;th class="head"&gt;&lt;p&gt;Repetitio
+n&lt;/p&gt;&lt;/th&gt;
+&lt;th class="head"&gt;&lt;p&gt;Flags&lt;/p&gt;&lt;/th&gt;
+&lt;th class="head"&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;Basic
+Regex&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;wide-card
+dot: .&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;^$&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;* + ?&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;re.A
+ASCII
+only&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;character
+-class:[]&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;:raw-late
+x:&lt;cite&gt;b&lt;/cite&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;re.M
+Multiple-
+line&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;Negating:
+^&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;re.S dot
+matches
+all&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;Range:
+rang&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;re.X
+verbose&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;Extensive&lt;/p&gt;&lt;/td&gt;
+&lt;td colspan="2"&gt;&lt;p&gt;`, ()   |
+不需要escape |&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;? +&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;(?P&amp;lt;name&amp;gt;…)&lt;/p&gt;
+&lt;table&gt;
+&lt;colgroup&gt;
+&lt;col style="width: 33%"&gt;
+&lt;col style="width: 33%"&gt;
+&lt;col style="width: 33%"&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;Context of reference
+to group “quote”&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;Ways to reference it&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;——————————————————-&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;—————————————–&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;in the same pattern
+itself&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;`(?P=quote)` as
+shown&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;`1`&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;when processing match
+object &lt;strong&gt;m&lt;/strong&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;`m.group('quote')`&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;`m.end('quote') `
+(etc.)&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;p&gt;in a string passed to
+the &lt;strong&gt;repl&lt;/strong&gt; argument
+of `re.sub()`&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;`g&amp;lt;quote&amp;gt;`&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;`g&amp;lt;1&amp;gt;`&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;p&gt;\1&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_52afce1dc26e41aea327dbf774e5e5b2-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# 需要注意的一点是, findall只返回匹配的group&lt;/span&gt;
+&lt;a name="rest_code_52afce1dc26e41aea327dbf774e5e5b2-2"&gt;&lt;/a&gt;&lt;span class="p"&gt;{&lt;/span&gt;   &lt;span class="s1"&gt;'methods'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{[&lt;/span&gt;&lt;span class="s1"&gt;'search'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'match'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'findall'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'finditer'&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+&lt;a name="rest_code_52afce1dc26e41aea327dbf774e5e5b2-3"&gt;&lt;/a&gt;                  &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'split'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'sub'&lt;/span&gt;&lt;span class="p"&gt;]},&lt;/span&gt; &lt;span class="c1"&gt;#modify and replcae&lt;/span&gt;
+&lt;a name="rest_code_52afce1dc26e41aea327dbf774e5e5b2-4"&gt;&lt;/a&gt;    &lt;span class="s1"&gt;'match_object'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'group'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'groups'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'groupdict'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'start'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'end'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'span'&lt;/span&gt;&lt;span class="p"&gt;,]&lt;/span&gt;
+&lt;a name="rest_code_52afce1dc26e41aea327dbf774e5e5b2-5"&gt;&lt;/a&gt;    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;a name="rest_code_52afce1dc26e41aea327dbf774e5e5b2-6"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# Performing matches&lt;/span&gt;
+&lt;a name="rest_code_52afce1dc26e41aea327dbf774e5e5b2-7"&gt;&lt;/a&gt;&lt;span class="n"&gt;match&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;search&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;findall&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;findinter&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_52afce1dc26e41aea327dbf774e5e5b2-8"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# module level functions&lt;/span&gt;
+&lt;a name="rest_code_52afce1dc26e41aea327dbf774e5e5b2-9"&gt;&lt;/a&gt;&lt;span class="n"&gt;match&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;search&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;findall&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sub&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_52afce1dc26e41aea327dbf774e5e5b2-10"&gt;&lt;/a&gt;&lt;span class="c1"&gt;#complilation Flags&lt;/span&gt;
+&lt;a name="rest_code_52afce1dc26e41aea327dbf774e5e5b2-11"&gt;&lt;/a&gt;&lt;span class="n"&gt;DOTALL&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;S&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;single&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;IGNORECASE&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;I&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;MULTIPLELINE&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;M&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;VERBOSE&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_52afce1dc26e41aea327dbf774e5e5b2-12"&gt;&lt;/a&gt;&lt;span class="c1"&gt;#Modify strings&lt;/span&gt;
+&lt;a name="rest_code_52afce1dc26e41aea327dbf774e5e5b2-13"&gt;&lt;/a&gt;&lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="regex-in-python"&gt;
+&lt;h2&gt;Regex in Python&lt;/h2&gt;
+&lt;p&gt;CLOSED: [2019-06-01 Sat 14:10]&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;:LOGBOOK:&lt;/div&gt;
+&lt;div class="line"&gt;&lt;a class="reference external" href="https://stackoverflow.com/a/48207102/7301792"&gt;python's regex summary in stackoverflow&lt;/a&gt;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;a class="reference external" href="https://stackoverflow.com/a/10060065/7301792"&gt;what does P mean in (?&amp;lt;name&amp;gt;)&lt;/a&gt;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;a class="reference external" href="https://stackoverflow.com/questions/22937618/reference-what-does-this-regex-mean/22944075#22944075"&gt;regex collections&lt;/a&gt;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;a class="reference external" href="https://docs.python.org/3/howto/regex.html#regex-howto"&gt;python regex how to&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-1"&gt;&lt;/a&gt;&lt;span class="n"&gt;Besides&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;performance&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-3"&gt;&lt;/a&gt;&lt;span class="n"&gt;Using&lt;/span&gt; &lt;span class="sb"&gt;`compile`&lt;/span&gt; &lt;span class="n"&gt;helps&lt;/span&gt; &lt;span class="n"&gt;me&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;distinguish&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;concepts&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-4"&gt;&lt;/a&gt;&lt;span class="mf"&gt;1.&lt;/span&gt; &lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-5"&gt;&lt;/a&gt;&lt;span class="mf"&gt;2.&lt;/span&gt; &lt;span class="n"&gt;regex&lt;/span&gt; &lt;span class="nb"&gt;object&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-6"&gt;&lt;/a&gt;&lt;span class="mf"&gt;3.&lt;/span&gt; &lt;span class="n"&gt;match&lt;/span&gt; &lt;span class="nb"&gt;object&lt;/span&gt;   &lt;span class="c1"&gt;#重要的是我总结的三个概念. 三个层级.&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-7"&gt;&lt;/a&gt;&lt;span class="n"&gt;python的特殊之处是在named&lt;/span&gt; &lt;span class="n"&gt;group上的纠结&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-8"&gt;&lt;/a&gt;&lt;span class="n"&gt;When&lt;/span&gt; &lt;span class="n"&gt;I&lt;/span&gt; &lt;span class="n"&gt;started&lt;/span&gt; &lt;span class="n"&gt;learning&lt;/span&gt; &lt;span class="n"&gt;regex&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-9"&gt;&lt;/a&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-10"&gt;&lt;/a&gt;    &lt;span class="c1"&gt;#regex object&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-11"&gt;&lt;/a&gt;    &lt;span class="n"&gt;regex_object&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;compile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;r&lt;/span&gt;&lt;span class="s1"&gt;'[a-zA-Z]+'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-12"&gt;&lt;/a&gt;    &lt;span class="c1"&gt;#match object&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-13"&gt;&lt;/a&gt;    &lt;span class="n"&gt;match_object&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;regex_object&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;search&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'1.Hello'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-14"&gt;&lt;/a&gt;    &lt;span class="c1"&gt;#matching content&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-15"&gt;&lt;/a&gt;    &lt;span class="n"&gt;match_object&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-16"&gt;&lt;/a&gt;    &lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-17"&gt;&lt;/a&gt;    &lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;60&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="s1"&gt;'Hello'&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-18"&gt;&lt;/a&gt;    &lt;span class="n"&gt;V&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;S&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-19"&gt;&lt;/a&gt;    &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;search&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;r&lt;/span&gt;&lt;span class="s1"&gt;'[a-zA-Z]+'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'1.Hello'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-20"&gt;&lt;/a&gt;    &lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;61&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="s1"&gt;'Hello'&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-21"&gt;&lt;/a&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-22"&gt;&lt;/a&gt;&lt;span class="n"&gt;As&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;complement&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;I&lt;/span&gt; &lt;span class="n"&gt;made&lt;/span&gt; &lt;span class="n"&gt;an&lt;/span&gt; &lt;span class="n"&gt;exhaustive&lt;/span&gt; &lt;span class="n"&gt;cheatsheet&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;module&lt;/span&gt; &lt;span class="sb"&gt;`re`&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-23"&gt;&lt;/a&gt;    &lt;span class="n"&gt;regex&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-24"&gt;&lt;/a&gt;    &lt;span class="s1"&gt;'brackets'&lt;/span&gt;&lt;span class="p"&gt;:{&lt;/span&gt;&lt;span class="s1"&gt;'single_character'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'[]'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'.'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'negate'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s1"&gt;'^'&lt;/span&gt;&lt;span class="p"&gt;}],&lt;/span&gt; &lt;span class="err"&gt;试图从少到多去解析&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-25"&gt;&lt;/a&gt;                &lt;span class="s1"&gt;'capturing_group'&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'()'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'(?:)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'(?!)'&lt;/span&gt; &lt;span class="s1"&gt;'|'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'backreferences and named group'&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-26"&gt;&lt;/a&gt;                &lt;span class="s1"&gt;'repetition'&lt;/span&gt;      &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'{}'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'*?'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'+?'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'??'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'greedy v.s. lazy ?'&lt;/span&gt;&lt;span class="p"&gt;]},&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-27"&gt;&lt;/a&gt;    &lt;span class="s1"&gt;'lookaround'&lt;/span&gt; &lt;span class="p"&gt;:{&lt;/span&gt;&lt;span class="s1"&gt;'lookahead'&lt;/span&gt;  &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'(?=...)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'(?!...)'&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-28"&gt;&lt;/a&gt;               &lt;span class="s1"&gt;'lookbehind'&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'(?&amp;lt;=...)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'(?&amp;lt;!...)'&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-29"&gt;&lt;/a&gt;               &lt;span class="s1"&gt;'caputuring'&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'(?P&amp;lt;name&amp;gt;...)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'(?P=name)'&lt;/span&gt;&lt;span class="err"&gt;这是应用&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'(?:)'&lt;/span&gt;&lt;span class="p"&gt;],},&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-30"&gt;&lt;/a&gt;    &lt;span class="s1"&gt;'escapes'&lt;/span&gt;&lt;span class="p"&gt;:{&lt;/span&gt;&lt;span class="s1"&gt;'anchor'&lt;/span&gt;         &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'^'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'$'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'b'&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-31"&gt;&lt;/a&gt;              &lt;span class="s1"&gt;'non_printable'&lt;/span&gt;   &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="se"&gt;\r&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="se"&gt;\f&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="se"&gt;\v&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-32"&gt;&lt;/a&gt;              &lt;span class="s1"&gt;'shorthand'&lt;/span&gt;       &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'\d'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'\w'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'\s'&lt;/span&gt;&lt;span class="p"&gt;]},&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-33"&gt;&lt;/a&gt;    &lt;span class="s1"&gt;'methods'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{[&lt;/span&gt;&lt;span class="s1"&gt;'search'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'match'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'findall'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'finditer'&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-34"&gt;&lt;/a&gt;                  &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'split'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'sub'&lt;/span&gt;&lt;span class="p"&gt;]},&lt;/span&gt; &lt;span class="c1"&gt;#modify and replcae&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-35"&gt;&lt;/a&gt;    &lt;span class="s1"&gt;'match_object'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'group'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'groups'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'groupdict'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'start'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'end'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'span'&lt;/span&gt;&lt;span class="p"&gt;,]&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-36"&gt;&lt;/a&gt;    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-37"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# Performing matches&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-38"&gt;&lt;/a&gt;&lt;span class="n"&gt;match&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;search&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;findall&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;findinter&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-39"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# module level functions&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-40"&gt;&lt;/a&gt;&lt;span class="n"&gt;match&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;search&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;findall&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sub&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-41"&gt;&lt;/a&gt;&lt;span class="c1"&gt;#complilation Flags&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-42"&gt;&lt;/a&gt;&lt;span class="n"&gt;DOTALL&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;S&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;single&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;IGNORECASE&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;I&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;MULTIPLELINE&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;M&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;VERBOSE&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-43"&gt;&lt;/a&gt;&lt;span class="c1"&gt;#Modify strings&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-44"&gt;&lt;/a&gt;&lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-45"&gt;&lt;/a&gt;&lt;span class="c1"&gt;#Search and Replace&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-46"&gt;&lt;/a&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;compile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'section{ (?P&amp;lt;name&amp;gt; [^}]* ) }'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;VERBOSE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-47"&gt;&lt;/a&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sub&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;r&lt;/span&gt;&lt;span class="s1"&gt;'subsection{\1}'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'section{First}'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-48"&gt;&lt;/a&gt;&lt;span class="s1"&gt;'subsection{First}'&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-49"&gt;&lt;/a&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sub&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;r&lt;/span&gt;&lt;span class="s1"&gt;'subsection{\g&amp;lt;1&amp;gt;}'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'section{First}'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-50"&gt;&lt;/a&gt;&lt;span class="s1"&gt;'subsection{First}'&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-51"&gt;&lt;/a&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sub&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;r&lt;/span&gt;&lt;span class="s1"&gt;'subsection{\g&amp;lt;name&amp;gt;}'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'section{First}'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_100fb429466a45d1a4f864c482488710-52"&gt;&lt;/a&gt;&lt;span class="s1"&gt;'subsection{First}'&lt;/span&gt; &lt;span class="c1"&gt;#三种不同的形式.&lt;/span&gt;
+&lt;/pre&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_b9b4e0c7fbbf4d82b3a6e69bddfb01df-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;re&lt;/span&gt;
+&lt;a name="rest_code_b9b4e0c7fbbf4d82b3a6e69bddfb01df-2"&gt;&lt;/a&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;compile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'section{ (?P&amp;lt;name&amp;gt; [^}]* ) }'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;VERBOSE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_b9b4e0c7fbbf4d82b3a6e69bddfb01df-3"&gt;&lt;/a&gt;&lt;span class="n"&gt;res&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;search&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'section{First}'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_b9b4e0c7fbbf4d82b3a6e69bddfb01df-4"&gt;&lt;/a&gt;&lt;span class="n"&gt;res2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;findall&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'section{First}'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_b9b4e0c7fbbf4d82b3a6e69bddfb01df-5"&gt;&lt;/a&gt;&lt;span class="n"&gt;res3&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;finditer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'section{First}'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_b9b4e0c7fbbf4d82b3a6e69bddfb01df-6"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_b9b4e0c7fbbf4d82b3a6e69bddfb01df-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;res2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_b9b4e0c7fbbf4d82b3a6e69bddfb01df-8"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;res3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_b9b4e0c7fbbf4d82b3a6e69bddfb01df-9"&gt;&lt;/a&gt;&lt;span class="n"&gt;text&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"He was carefully disguised but captured quickly by police."&lt;/span&gt;
+&lt;a name="rest_code_b9b4e0c7fbbf4d82b3a6e69bddfb01df-10"&gt;&lt;/a&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;finditer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;r&lt;/span&gt;&lt;span class="s2"&gt;"\w+ly"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_b9b4e0c7fbbf4d82b3a6e69bddfb01df-11"&gt;&lt;/a&gt;    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="si"&gt;%02d&lt;/span&gt;&lt;span class="s1"&gt;-&lt;/span&gt;&lt;span class="si"&gt;%02d&lt;/span&gt;&lt;span class="s1"&gt;: &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;a name="rest_code_b9b4e0c7fbbf4d82b3a6e69bddfb01df-12"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# 这里关键的一点, 在sub中用的是Search&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="grep-examples"&gt;
+&lt;h2&gt;Grep examples&lt;/h2&gt;
+&lt;div class="section" id="remove-the-blank-lines"&gt;
+&lt;h3&gt;Remove the blank lines&lt;/h3&gt;
+&lt;pre class="code zsh"&gt;&lt;a name="rest_code_0a89fc70a1d04b9cb6505102f9825f5f-1"&gt;&lt;/a&gt;Remove the blank lines.
+&lt;a name="rest_code_0a89fc70a1d04b9cb6505102f9825f5f-2"&gt;&lt;/a&gt;$ grep . 2daygeek.txt
+&lt;a name="rest_code_0a89fc70a1d04b9cb6505102f9825f5f-3"&gt;&lt;/a&gt;or
+&lt;a name="rest_code_0a89fc70a1d04b9cb6505102f9825f5f-4"&gt;&lt;/a&gt;$ grep -Ev &lt;span class="s2"&gt;"^&lt;/span&gt;$&lt;span class="s2"&gt;"&lt;/span&gt; 2daygeek.txt
+&lt;a name="rest_code_0a89fc70a1d04b9cb6505102f9825f5f-5"&gt;&lt;/a&gt;or
+&lt;a name="rest_code_0a89fc70a1d04b9cb6505102f9825f5f-6"&gt;&lt;/a&gt;$ grep -v -e &lt;span class="s1"&gt;'^$'&lt;/span&gt; 2daygeek.txt
+&lt;a name="rest_code_0a89fc70a1d04b9cb6505102f9825f5f-7"&gt;&lt;/a&gt;2daygeek.com is a best Linux blog to learn Linux.
+&lt;a name="rest_code_0a89fc70a1d04b9cb6505102f9825f5f-8"&gt;&lt;/a&gt;It&lt;span class="s1"&gt;'s FIVE years old blog.&lt;/span&gt;
+&lt;a name="rest_code_0a89fc70a1d04b9cb6505102f9825f5f-9"&gt;&lt;/a&gt;&lt;span class="s1"&gt;This website is maintained by Magesh M, it'&lt;/span&gt;s licensed under CC BY-NC &lt;span class="m"&gt;4&lt;/span&gt;.0.
+&lt;a name="rest_code_0a89fc70a1d04b9cb6505102f9825f5f-10"&gt;&lt;/a&gt;He got two GIRL babes.
+&lt;a name="rest_code_0a89fc70a1d04b9cb6505102f9825f5f-11"&gt;&lt;/a&gt;Her names are Tanisha &lt;span class="p"&gt;&amp;amp;&lt;/span&gt; Renusha.
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="remove-lines-containing-logging"&gt;
+&lt;h3&gt;Remove lines containing logging&lt;/h3&gt;
+&lt;p&gt;[bash - Remove lines which contain 'logging' - Ask Ubuntu](&lt;a class="reference external" href="https://askubuntu.com/questions/1127589/remove-lines-which-contain-logging?noredirect=1#comment1866586_1127589"&gt;https://askubuntu.com/questions/1127589/remove-lines-which-contain-logging?noredirect=1#comment1866586_1127589&lt;/a&gt;)&lt;/p&gt;
+&lt;pre class="literal-block"&gt;grep -v logging twoSum.py &amp;gt; logging-new
+sed "/^\t$name/d" in-file
+sed -i '/adf\.ly/d' inputfile&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="sed"&gt;
+&lt;h2&gt;Sed&lt;/h2&gt;
+&lt;div class="section" id="id15"&gt;
+&lt;span id="remove-the-blank-lines-1"&gt;&lt;/span&gt;&lt;h3&gt;Remove the blank lines&lt;/h3&gt;
+&lt;p&gt;$ sed '/^$/d' 2daygeek.txt&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="emacs-regular-expression-syntax"&gt;
+&lt;h2&gt;Emacs Regular Expression Syntax&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Here is the syntax used by Emacs for regular expressions. Any character matches itself, except for the list below.&lt;/div&gt;
+&lt;div class="line"&gt;The following characters are special : . * + ? ^ $ \ [&lt;/div&gt;
+&lt;div class="line"&gt;Between brackets [], the following are special : ] - ^&lt;/div&gt;
+&lt;div class="line"&gt;Many characters are special when they follow a backslash – see below.&lt;/div&gt;
+&lt;/div&gt;
+&lt;pre class="code elisp"&gt;&lt;a name="rest_code_7bcf915be5414bffb14957db27e133fe-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;.&lt;/span&gt;        &lt;span class="nv"&gt;any&lt;/span&gt; &lt;span class="nv"&gt;character&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;but&lt;/span&gt; &lt;span class="nv"&gt;newline&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_7bcf915be5414bffb14957db27e133fe-2"&gt;&lt;/a&gt;&lt;span class="nf"&gt;*&lt;/span&gt;        &lt;span class="nv"&gt;previous&lt;/span&gt; &lt;span class="nv"&gt;character&lt;/span&gt; &lt;span class="k"&gt;or&lt;/span&gt; &lt;span class="nv"&gt;group,&lt;/span&gt; &lt;span class="nv"&gt;repeated&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="k"&gt;or&lt;/span&gt; &lt;span class="nv"&gt;more&lt;/span&gt; &lt;span class="nv"&gt;time&lt;/span&gt;
+&lt;a name="rest_code_7bcf915be5414bffb14957db27e133fe-3"&gt;&lt;/a&gt;&lt;span class="nf"&gt;+&lt;/span&gt;        &lt;span class="nv"&gt;previous&lt;/span&gt; &lt;span class="nv"&gt;character&lt;/span&gt; &lt;span class="k"&gt;or&lt;/span&gt; &lt;span class="nv"&gt;group,&lt;/span&gt; &lt;span class="nv"&gt;repeated&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="k"&gt;or&lt;/span&gt; &lt;span class="nv"&gt;more&lt;/span&gt; &lt;span class="nv"&gt;time&lt;/span&gt;
+&lt;a name="rest_code_7bcf915be5414bffb14957db27e133fe-4"&gt;&lt;/a&gt;&lt;span class="sc"&gt;? &lt;/span&gt;       &lt;span class="nv"&gt;previous&lt;/span&gt; &lt;span class="nv"&gt;character&lt;/span&gt; &lt;span class="k"&gt;or&lt;/span&gt; &lt;span class="nv"&gt;group,&lt;/span&gt; &lt;span class="nv"&gt;repeated&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="k"&gt;or&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;time&lt;/span&gt;
+&lt;a name="rest_code_7bcf915be5414bffb14957db27e133fe-5"&gt;&lt;/a&gt;&lt;span class="nv"&gt;^&lt;/span&gt;        &lt;span class="nv"&gt;start&lt;/span&gt; &lt;span class="nv"&gt;of&lt;/span&gt; &lt;span class="nv"&gt;line&lt;/span&gt;
+&lt;a name="rest_code_7bcf915be5414bffb14957db27e133fe-6"&gt;&lt;/a&gt;&lt;span class="nv"&gt;$&lt;/span&gt;        &lt;span class="nv"&gt;end&lt;/span&gt; &lt;span class="nv"&gt;of&lt;/span&gt; &lt;span class="nv"&gt;line&lt;/span&gt;
+&lt;a name="rest_code_7bcf915be5414bffb14957db27e133fe-7"&gt;&lt;/a&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;    &lt;span class="nv"&gt;any&lt;/span&gt; &lt;span class="nv"&gt;character&lt;/span&gt; &lt;span class="nv"&gt;between&lt;/span&gt; &lt;span class="nv"&gt;brackets&lt;/span&gt;
+&lt;a name="rest_code_7bcf915be5414bffb14957db27e133fe-8"&gt;&lt;/a&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;^..&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;    &lt;span class="nv"&gt;any&lt;/span&gt; &lt;span class="nv"&gt;character&lt;/span&gt; &lt;span class="nv"&gt;not&lt;/span&gt; &lt;span class="nv"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;the&lt;/span&gt; &lt;span class="nv"&gt;brackets&lt;/span&gt;
+&lt;a name="rest_code_7bcf915be5414bffb14957db27e133fe-9"&gt;&lt;/a&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;a-z&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;    &lt;span class="nv"&gt;any&lt;/span&gt; &lt;span class="nv"&gt;character&lt;/span&gt; &lt;span class="nv"&gt;between&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="k"&gt;and&lt;/span&gt; &lt;span class="nv"&gt;z&lt;/span&gt;
+&lt;a name="rest_code_7bcf915be5414bffb14957db27e133fe-10"&gt;&lt;/a&gt;&lt;span class="nv"&gt;\ &lt;/span&gt;       &lt;span class="nv"&gt;prevents&lt;/span&gt; &lt;span class="nv"&gt;interpretation&lt;/span&gt; &lt;span class="nv"&gt;of&lt;/span&gt; &lt;span class="nv"&gt;following&lt;/span&gt; &lt;span class="nv"&gt;special&lt;/span&gt; &lt;span class="nv"&gt;char&lt;/span&gt;
+&lt;a name="rest_code_7bcf915be5414bffb14957db27e133fe-11"&gt;&lt;/a&gt;&lt;span class="nv"&gt;\|&lt;/span&gt;       &lt;span class="k"&gt;or&lt;/span&gt;
+&lt;a name="rest_code_7bcf915be5414bffb14957db27e133fe-12"&gt;&lt;/a&gt;&lt;span class="nv"&gt;\w&lt;/span&gt;       &lt;span class="nv"&gt;word&lt;/span&gt; &lt;span class="nv"&gt;constituent&lt;/span&gt;
+&lt;a name="rest_code_7bcf915be5414bffb14957db27e133fe-13"&gt;&lt;/a&gt;&lt;span class="nv"&gt;\b&lt;/span&gt;       &lt;span class="nv"&gt;word&lt;/span&gt; &lt;span class="nv"&gt;boundary&lt;/span&gt;
+&lt;a name="rest_code_7bcf915be5414bffb14957db27e133fe-14"&gt;&lt;/a&gt;&lt;span class="nv"&gt;\sc&lt;/span&gt;      &lt;span class="nv"&gt;character&lt;/span&gt; &lt;span class="nv"&gt;with&lt;/span&gt; &lt;span class="nv"&gt;c&lt;/span&gt; &lt;span class="nv"&gt;syntax&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;e.g.&lt;/span&gt; &lt;span class="nv"&gt;\s-&lt;/span&gt; &lt;span class="nv"&gt;for&lt;/span&gt; &lt;span class="nv"&gt;whitespace&lt;/span&gt; &lt;span class="nv"&gt;char&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_7bcf915be5414bffb14957db27e133fe-15"&gt;&lt;/a&gt;&lt;span class="nv"&gt;\(&lt;/span&gt; &lt;span class="nv"&gt;\)&lt;/span&gt;    &lt;span class="nv"&gt;start/end&lt;/span&gt; &lt;span class="nv"&gt;of&lt;/span&gt; &lt;span class="nv"&gt;group&lt;/span&gt;
+&lt;a name="rest_code_7bcf915be5414bffb14957db27e133fe-16"&gt;&lt;/a&gt;&lt;span class="nv"&gt;\&amp;amp;lt&lt;/span&gt;&lt;span class="c1"&gt;; \&amp;amp;gt;    start/end of word (faulty rendering: backslash + less-than and backslash + greater-than)&lt;/span&gt;
+&lt;a name="rest_code_7bcf915be5414bffb14957db27e133fe-17"&gt;&lt;/a&gt;&lt;span class="nv"&gt;\_&amp;lt;&lt;/span&gt; &lt;span class="nv"&gt;\_&amp;gt;&lt;/span&gt;  &lt;span class="nv"&gt;start/end&lt;/span&gt; &lt;span class="nv"&gt;of&lt;/span&gt; &lt;span class="nv"&gt;symbol&lt;/span&gt;
+&lt;a name="rest_code_7bcf915be5414bffb14957db27e133fe-18"&gt;&lt;/a&gt;&lt;span class="nv"&gt;\`&lt;/span&gt; &lt;span class="nv"&gt;\'&lt;/span&gt;    &lt;span class="nv"&gt;start/end&lt;/span&gt; &lt;span class="nv"&gt;of&lt;/span&gt; &lt;span class="nv"&gt;buffer/string&lt;/span&gt;
+&lt;a name="rest_code_7bcf915be5414bffb14957db27e133fe-19"&gt;&lt;/a&gt;&lt;span class="nv"&gt;\1&lt;/span&gt;       &lt;span class="nf"&gt;string&lt;/span&gt; &lt;span class="nv"&gt;matched&lt;/span&gt; &lt;span class="nv"&gt;by&lt;/span&gt; &lt;span class="nv"&gt;the&lt;/span&gt; &lt;span class="nv"&gt;first&lt;/span&gt; &lt;span class="nv"&gt;group&lt;/span&gt;
+&lt;a name="rest_code_7bcf915be5414bffb14957db27e133fe-20"&gt;&lt;/a&gt;&lt;span class="nv"&gt;\n&lt;/span&gt;       &lt;span class="nf"&gt;string&lt;/span&gt; &lt;span class="nv"&gt;matched&lt;/span&gt; &lt;span class="nv"&gt;by&lt;/span&gt; &lt;span class="nv"&gt;the&lt;/span&gt; &lt;span class="nf"&gt;nth&lt;/span&gt; &lt;span class="nv"&gt;group&lt;/span&gt;
+&lt;a name="rest_code_7bcf915be5414bffb14957db27e133fe-21"&gt;&lt;/a&gt;&lt;span class="nv"&gt;\{3\}&lt;/span&gt;    &lt;span class="nv"&gt;previous&lt;/span&gt; &lt;span class="nv"&gt;character&lt;/span&gt; &lt;span class="k"&gt;or&lt;/span&gt; &lt;span class="nv"&gt;group,&lt;/span&gt; &lt;span class="nv"&gt;repeated&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="nv"&gt;times&lt;/span&gt;
+&lt;a name="rest_code_7bcf915be5414bffb14957db27e133fe-22"&gt;&lt;/a&gt;&lt;span class="nv"&gt;\{3,\}&lt;/span&gt;   &lt;span class="nv"&gt;previous&lt;/span&gt; &lt;span class="nv"&gt;character&lt;/span&gt; &lt;span class="k"&gt;or&lt;/span&gt; &lt;span class="nv"&gt;group,&lt;/span&gt; &lt;span class="nv"&gt;repeated&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="k"&gt;or&lt;/span&gt; &lt;span class="nv"&gt;more&lt;/span&gt; &lt;span class="nv"&gt;times&lt;/span&gt;
+&lt;a name="rest_code_7bcf915be5414bffb14957db27e133fe-23"&gt;&lt;/a&gt;&lt;span class="nv"&gt;\{3,6\}&lt;/span&gt;  &lt;span class="nv"&gt;previous&lt;/span&gt; &lt;span class="nv"&gt;character&lt;/span&gt; &lt;span class="k"&gt;or&lt;/span&gt; &lt;span class="nv"&gt;group,&lt;/span&gt; &lt;span class="nv"&gt;repeated&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="nv"&gt;to&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt; &lt;span class="nv"&gt;times&lt;/span&gt;
+&lt;a name="rest_code_7bcf915be5414bffb14957db27e133fe-24"&gt;&lt;/a&gt;&lt;span class="nv"&gt;\=&lt;/span&gt;       &lt;span class="nv"&gt;match&lt;/span&gt; &lt;span class="nv"&gt;succeeds&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nv"&gt;it&lt;/span&gt; &lt;span class="nv"&gt;is&lt;/span&gt; &lt;span class="nv"&gt;located&lt;/span&gt; &lt;span class="nv"&gt;at&lt;/span&gt; &lt;span class="nf"&gt;point&lt;/span&gt;
+&lt;/pre&gt;&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;*?, +?, and ?? are non-greedy versions of *, +, and ? – see NonGreedyRegexp. Also, W, &lt;a href="https://alinbxsorcerer.github.io/posts/regex-summary/#id16"&gt;&lt;span class="problematic" id="id17"&gt;:raw-latex:`\B`&lt;/span&gt;&lt;/a&gt;, and ⪼ match any character that does not match &lt;a href="https://alinbxsorcerer.github.io/posts/regex-summary/#id18"&gt;&lt;span class="problematic" id="id19"&gt;:raw-latex:`\w`&lt;/span&gt;&lt;/a&gt;, &lt;a href="https://alinbxsorcerer.github.io/posts/regex-summary/#id20"&gt;&lt;span class="problematic" id="id21"&gt;:raw-latex:`\b`&lt;/span&gt;&lt;/a&gt;, and ≻.&lt;/div&gt;
+&lt;div class="line"&gt;Characters are organized by category. Use C-u C-x = to display the category of the character under the cursor.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="system-message" id="id16"&gt;
+&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 320); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/regex-summary/#id17"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Unknown interpreted text role "raw-latex".&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="system-message" id="id18"&gt;
+&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 320); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/regex-summary/#id19"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Unknown interpreted text role "raw-latex".&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="system-message" id="id20"&gt;
+&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 320); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/regex-summary/#id21"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Unknown interpreted text role "raw-latex".&lt;/p&gt;
+&lt;/div&gt;
+&lt;pre class="code elisp"&gt;&lt;a name="rest_code_9326e5c7c7c04025b2a71e5e8d1ffdad-1"&gt;&lt;/a&gt;&lt;span class="nv"&gt;\ca&lt;/span&gt;      &lt;span class="nv"&gt;ascii&lt;/span&gt; &lt;span class="nv"&gt;character&lt;/span&gt;
+&lt;a name="rest_code_9326e5c7c7c04025b2a71e5e8d1ffdad-2"&gt;&lt;/a&gt;&lt;span class="nv"&gt;\Ca&lt;/span&gt;      &lt;span class="nv"&gt;non-ascii&lt;/span&gt; &lt;span class="nv"&gt;character&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;newline&lt;/span&gt; &lt;span class="nv"&gt;included&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_9326e5c7c7c04025b2a71e5e8d1ffdad-3"&gt;&lt;/a&gt;&lt;span class="nv"&gt;\cl&lt;/span&gt;      &lt;span class="nv"&gt;latin&lt;/span&gt; &lt;span class="nv"&gt;character&lt;/span&gt;
+&lt;a name="rest_code_9326e5c7c7c04025b2a71e5e8d1ffdad-4"&gt;&lt;/a&gt;&lt;span class="nv"&gt;\cg&lt;/span&gt;      &lt;span class="nv"&gt;greek&lt;/span&gt; &lt;span class="nv"&gt;character&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;Here are some syntax classes, also known as character classes, that can be used between brackets, e.g. [[:upper:]|[:digit:].].&lt;/p&gt;
+&lt;pre class="code elisp"&gt;&lt;a name="rest_code_260ed8cd5c514dec871ef40a23ce5723-1"&gt;&lt;/a&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;:digit:&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;  &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;digit,&lt;/span&gt; &lt;span class="nv"&gt;same&lt;/span&gt; &lt;span class="nv"&gt;as&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;0-9&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;a name="rest_code_260ed8cd5c514dec871ef40a23ce5723-2"&gt;&lt;/a&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;:alpha:&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;  &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;letter&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;an&lt;/span&gt; &lt;span class="nv"&gt;alphabetic&lt;/span&gt; &lt;span class="nv"&gt;character&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_260ed8cd5c514dec871ef40a23ce5723-3"&gt;&lt;/a&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;:alnum:&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;  &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;letter&lt;/span&gt; &lt;span class="k"&gt;or&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;digit&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;an&lt;/span&gt; &lt;span class="nv"&gt;alphanumeric&lt;/span&gt; &lt;span class="nv"&gt;character&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_260ed8cd5c514dec871ef40a23ce5723-4"&gt;&lt;/a&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;:upper:&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;  &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;letter&lt;/span&gt; &lt;span class="nv"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;uppercase&lt;/span&gt;
+&lt;a name="rest_code_260ed8cd5c514dec871ef40a23ce5723-5"&gt;&lt;/a&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;:lower:&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;  &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;letter&lt;/span&gt; &lt;span class="nv"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;lowercase&lt;/span&gt;
+&lt;a name="rest_code_260ed8cd5c514dec871ef40a23ce5723-6"&gt;&lt;/a&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;:graph:&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;  &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;visible&lt;/span&gt; &lt;span class="nv"&gt;character&lt;/span&gt;
+&lt;a name="rest_code_260ed8cd5c514dec871ef40a23ce5723-7"&gt;&lt;/a&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;:print:&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;  &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;visible&lt;/span&gt; &lt;span class="nv"&gt;character&lt;/span&gt; &lt;span class="nv"&gt;plus&lt;/span&gt; &lt;span class="nv"&gt;the&lt;/span&gt; &lt;span class="nv"&gt;space&lt;/span&gt; &lt;span class="nv"&gt;character&lt;/span&gt;
+&lt;a name="rest_code_260ed8cd5c514dec871ef40a23ce5723-8"&gt;&lt;/a&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;:space:&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;  &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;whitespace&lt;/span&gt; &lt;span class="nv"&gt;character,&lt;/span&gt; &lt;span class="nv"&gt;as&lt;/span&gt; &lt;span class="nv"&gt;defined&lt;/span&gt; &lt;span class="nv"&gt;by&lt;/span&gt; &lt;span class="nv"&gt;the&lt;/span&gt; &lt;span class="nv"&gt;syntax&lt;/span&gt; &lt;span class="nv"&gt;table,&lt;/span&gt; &lt;span class="nv"&gt;but&lt;/span&gt; &lt;span class="nv"&gt;typically&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="nv"&gt;\t\r\n\v\f&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;which&lt;/span&gt; &lt;span class="nv"&gt;includes&lt;/span&gt; &lt;span class="nv"&gt;the&lt;/span&gt; &lt;span class="nv"&gt;newline&lt;/span&gt; &lt;span class="nv"&gt;character&lt;/span&gt;
+&lt;a name="rest_code_260ed8cd5c514dec871ef40a23ce5723-9"&gt;&lt;/a&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;:blank:&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;  &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;space&lt;/span&gt; &lt;span class="k"&gt;or&lt;/span&gt; &lt;span class="nv"&gt;tab&lt;/span&gt; &lt;span class="nv"&gt;character&lt;/span&gt;
+&lt;a name="rest_code_260ed8cd5c514dec871ef40a23ce5723-10"&gt;&lt;/a&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;:xdigit:&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="nv"&gt;an&lt;/span&gt; &lt;span class="nv"&gt;hexadecimal&lt;/span&gt; &lt;span class="nv"&gt;digit&lt;/span&gt;
+&lt;a name="rest_code_260ed8cd5c514dec871ef40a23ce5723-11"&gt;&lt;/a&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;:cntrl:&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;  &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;control&lt;/span&gt; &lt;span class="nv"&gt;character&lt;/span&gt;
+&lt;a name="rest_code_260ed8cd5c514dec871ef40a23ce5723-12"&gt;&lt;/a&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;:ascii:&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;  &lt;span class="nv"&gt;an&lt;/span&gt; &lt;span class="nv"&gt;ascii&lt;/span&gt; &lt;span class="nv"&gt;character&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;Syntax classes:&lt;/p&gt;
+&lt;pre class="code elisp"&gt;&lt;a name="rest_code_201f724f9c6f4be6954db20a35ce36b0-1"&gt;&lt;/a&gt;&lt;span class="nv"&gt;\s-&lt;/span&gt;   &lt;span class="nv"&gt;whitespace&lt;/span&gt; &lt;span class="nv"&gt;character&lt;/span&gt;        &lt;span class="nv"&gt;\s/&lt;/span&gt;   &lt;span class="nv"&gt;character&lt;/span&gt; &lt;span class="k"&gt;quote&lt;/span&gt; &lt;span class="nv"&gt;character&lt;/span&gt;
+&lt;a name="rest_code_201f724f9c6f4be6954db20a35ce36b0-2"&gt;&lt;/a&gt;&lt;span class="nv"&gt;\sw&lt;/span&gt;   &lt;span class="nv"&gt;word&lt;/span&gt; &lt;span class="nv"&gt;constituent&lt;/span&gt;            &lt;span class="nv"&gt;\s$&lt;/span&gt;   &lt;span class="nv"&gt;paired&lt;/span&gt; &lt;span class="nv"&gt;delimiter&lt;/span&gt;
+&lt;a name="rest_code_201f724f9c6f4be6954db20a35ce36b0-3"&gt;&lt;/a&gt;&lt;span class="nv"&gt;\s_&lt;/span&gt;   &lt;span class="nv"&gt;symbol&lt;/span&gt; &lt;span class="nv"&gt;constituent&lt;/span&gt;          &lt;span class="nv"&gt;\s&lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;   &lt;span class="nv"&gt;expression&lt;/span&gt; &lt;span class="nv"&gt;prefix&lt;/span&gt;
+&lt;a name="rest_code_201f724f9c6f4be6954db20a35ce36b0-4"&gt;&lt;/a&gt;&lt;span class="nv"&gt;\s.&lt;/span&gt;   &lt;span class="nv"&gt;punctuation&lt;/span&gt; &lt;span class="nv"&gt;character&lt;/span&gt;       &lt;span class="nv"&gt;\s&amp;lt;&lt;/span&gt;   &lt;span class="nv"&gt;comment&lt;/span&gt; &lt;span class="nv"&gt;starter&lt;/span&gt;
+&lt;a name="rest_code_201f724f9c6f4be6954db20a35ce36b0-5"&gt;&lt;/a&gt;&lt;span class="nv"&gt;\s&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;   &lt;span class="nv"&gt;open&lt;/span&gt; &lt;span class="nv"&gt;delimiter&lt;/span&gt; &lt;span class="nv"&gt;character&lt;/span&gt;    &lt;span class="nv"&gt;\s&amp;gt;&lt;/span&gt;   &lt;span class="nv"&gt;comment&lt;/span&gt; &lt;span class="nv"&gt;ender&lt;/span&gt;
+&lt;a name="rest_code_201f724f9c6f4be6954db20a35ce36b0-6"&gt;&lt;/a&gt;&lt;span class="nv"&gt;\s&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;   &lt;span class="nv"&gt;close&lt;/span&gt; &lt;span class="nv"&gt;delimiter&lt;/span&gt; &lt;span class="nv"&gt;character&lt;/span&gt;   &lt;span class="nv"&gt;\s!&lt;/span&gt;   &lt;span class="nv"&gt;generic&lt;/span&gt; &lt;span class="nv"&gt;comment&lt;/span&gt; &lt;span class="nv"&gt;delimiter&lt;/span&gt;
+&lt;a name="rest_code_201f724f9c6f4be6954db20a35ce36b0-7"&gt;&lt;/a&gt;&lt;span class="nv"&gt;\s&lt;/span&gt;&lt;span class="s"&gt;"   string quote character      \s|   generic string delimiter&lt;/span&gt;
+&lt;a name="rest_code_201f724f9c6f4be6954db20a35ce36b0-8"&gt;&lt;/a&gt;&lt;span class="s"&gt;\s\   escape character&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="publish"&gt;
+&lt;h2&gt;Publish&lt;/h2&gt;
+&lt;pre class="code ipython"&gt;&lt;a name="rest_code_8a3c444848f949eb9c7be5d855d96a2b-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;!&lt;/span&gt; ls ~/Public/nikola_post/posts
+&lt;a name="rest_code_8a3c444848f949eb9c7be5d855d96a2b-2"&gt;&lt;/a&gt;&lt;span class="o"&gt;!&lt;/span&gt; pwd
+&lt;a name="rest_code_8a3c444848f949eb9c7be5d855d96a2b-3"&gt;&lt;/a&gt;&lt;span class="o"&gt;!&lt;/span&gt; pandoc --wrap&lt;span class="o"&gt;=&lt;/span&gt;preserve regex-offprint.org  -o ~/Public/nikola_post/posts/Regex-Summary.rst
+&lt;/pre&gt;&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 369)&lt;/p&gt;
+&lt;p&gt;Cannot find pygments lexer for language "commonlisp"&lt;/p&gt;
+&lt;pre class="literal-block"&gt;.. code:: commonlisp
+
+   (print (replace-regexp "war" "negotiation" "trade war")))
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;pre class="literal-block"&gt;nil&lt;/pre&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>bash</category><category>emacs</category><category>python</category><category>regex</category><guid>https://alinbxsorcerer.github.io/posts/regex-summary/</guid><pubDate>Tue, 28 Nov 2017 12:53:29 GMT</pubDate></item></channel></rss>
