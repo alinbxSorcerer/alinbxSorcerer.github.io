@@ -27,7 +27,11 @@
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/cat_programming.xml</loc>
-  <lastmod>2019-11-18T03:46:00Z</lastmod>
+  <lastmod>2019-11-18T06:03:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://alinbxsorcerer.github.io/categories/complement.xml</loc>
+  <lastmod>2019-11-18T06:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/emacs.xml</loc>
@@ -83,10 +87,10 @@
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/rss.xml</loc>
-  <lastmod>2019-11-18T03:46:00Z</lastmod>
+  <lastmod>2019-11-18T06:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/sitemap.xml</loc>
-  <lastmod>2019-11-18T03:46:00Z</lastmod>
+  <lastmod>2019-11-18T06:03:00Z</lastmod>
  </sitemap>
 </sitemapindex>

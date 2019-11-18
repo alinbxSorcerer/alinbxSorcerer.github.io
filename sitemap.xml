@@ -27,11 +27,11 @@
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/archive.html</loc>
-  <lastmod>2019-11-18T03:46:00Z</lastmod>
+  <lastmod>2019-11-18T06:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/categories/</loc>
-  <lastmod>2019-11-18T03:46:00Z</lastmod>
+  <lastmod>2019-11-18T06:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/categories/bash/</loc>
@@ -56,6 +56,10 @@
  <url>
   <loc>https://alinbxsorcerer.github.io/categories/cat_programming/</loc>
   <lastmod>2019-11-10T05:01:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alinbxsorcerer.github.io/categories/complement/</loc>
+  <lastmod>2019-11-18T06:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/categories/emacs/</loc>
@@ -111,7 +115,7 @@
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/index-1.html</loc>
-  <lastmod>2019-11-18T03:46:00Z</lastmod>
+  <lastmod>2019-11-18T06:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/listings/</loc>
@@ -192,6 +196,10 @@
  <url>
   <loc>https://alinbxsorcerer.github.io/posts/fun-by-learning-linux/</loc>
   <lastmod>2019-11-14T06:58:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alinbxsorcerer.github.io/posts/grokking-complement/</loc>
+  <lastmod>2019-11-18T06:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/posts/ipython-summary/</loc>
