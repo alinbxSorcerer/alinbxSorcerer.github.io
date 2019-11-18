@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html prefix="" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Mark the start point to learn python and programming.">
+<meta name="viewport" content="width=device-width">
+<title>IPython Summary | A Magic Land Declared by David</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://alinbxsorcerer.github.io/posts/ipython-summary/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="David">
+<meta property="og:site_name" content="A Magic Land Declared by David">
+<meta property="og:title" content="IPython Summary">
+<meta property="og:url" content="https://alinbxsorcerer.github.io/posts/ipython-summary/">
+<meta property="og:description" content="Mark the start point to learn python and programming.">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-09-20T20:53:29+08:00">
+<meta property="article:tag" content="ipython">
+</head>
+<body>
+    
+
+    <header id="header" class="navbar"><div class="container">
+            
+    <div class="brand">
+
+        <div class="brand-text">
+            <a href="https://alinbxsorcerer.github.io/" title="A Magic Land Declared by David" rel="home">
+                A Magic Land Declared by David
+            </a>
+        </div>
+
+        <a id="btn-toggle-nav" class="navbar-toggle">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+    </div>
+
+            
+    <nav class="navbar-collapse collapse"><ul class="nav">
+<li><a href="../../archive.html">Archive</a></li>
+                <li><a href="../../categories/">Tags</a></li>
+                <li><a href="../../rss.xml">RSS feed</a></li>
+    
+    
+    </ul></nav>
+</div>
+    </header><div class="header-padding"> </div>
+
+    
+    <div class="post-header">
+        <div class="container">
+            <div class="title">
+                IPython Summary
+            </div>
+        </div>
+    </div>
+
+    <div class="post-meta">
+      <div class="container">
+	<div class="meta clearfix">
+	  <div class="authordate">
+	    <time class="timeago" datetime="2016-09-20T20:53:29+08:00">2016/09/20</time>
+	    
+
+	    
+          |  
+        <a href="index.rst" id="sourcelink">Source</a>
+
+	  </div>
+	  <div class="post-tags">
+	    <div class="tag">
+	      <a href="../../categories/ipython/" rel="tag">ipython</a>
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </div>
+
+
+    <div id="post-main" class="main">
+        <div class="container">
+        <div>
+<div class="section" id="ipython-basics">
+<h2>IPython Basics</h2>
+<p>In this section, we'll get you up and running with the IPython shell and Jupyter notebook, and introduce you to some of the essential concepts.</p>
+<pre class="code ipython"><a name="rest_code_60f9513195544319902bb28cf8bf6597-1"></a><span class="kn">import</span> <span class="nn">os</span>
+<a name="rest_code_60f9513195544319902bb28cf8bf6597-2"></a><span class="o">!</span>ls ~/Public/nikola_post/posts/
+</pre>
+<ul class="simple">
+<li><p>确定学习ipython的时间.</p></li>
+</ul>
+<div class="section" id="running-the-ipython-shell">
+<h3>Running the IPython Shell</h3>
+<p>You can launch the IPython shell on the command line just like launching the regular Python interpreter except with the <code class="docutils literal">ipython</code> command:</p>
+<pre class="literal-block">$ ipython
+Python 3.6.0 | packaged by conda-forge | (default, Jan 13 2017, 23:17:12)
+Type "copyright", "credits" or "license" for more information.
+
+IPython 5.1.0 -- An enhanced Interactive Python.
+?         -&gt; Introduction and overview of IPython's features.
+%quickref -&gt; Quick reference.
+help      -&gt; Python's own help system.
+object?   -&gt; Details about 'object', use 'object??' for extra details.
+
+In [1]: a = 5
+
+In [2]: a
+Out[2]: 5</pre>
+<p>You can execute arbitrary Python statements by typing them in and pressing Return (or Enter). When you type just a variable into IPython, it renders a string representation of the object:</p>
+<pre class="literal-block">In [5]: import numpy as np
+
+In [6]: data = {i : np.random.randn() for i in range(7)}
+
+In [7]: data
+Out[7]:
+{0: -0.20470765948471295,
+ 1: 0.47894333805754824,
+ 2: -0.5194387150567381,
+ 3: -0.55573030434749,
+ 4: 1.9657805725027142,
+ 5: 1.3934058329729904,
+ 6: 0.09290787674371767}</pre>
+<p>The first two lines are Python code statements; the second statement creates a variable named <code class="docutils literal">data</code> that refers to a newly created Python dictionary. The last line prints the value of <code class="docutils literal">data</code> in the console.</p>
+<p>Many kinds of Python objects are formatted to be more readable, or <em>pretty-printed</em>, which is distinct from normal printing with <code class="docutils literal">print</code>. If you printed the above <code class="docutils literal">data</code> variable in the standard Python interpreter, it would be much less readable:</p>
+<pre class="literal-block">&gt;&gt;&gt; from numpy.random import randn
+&gt;&gt;&gt; data = {i : randn() for i in range(7)}
+&gt;&gt;&gt; print(data)
+{0: -1.5948255432744511, 1: 0.10569006472787983, 2: 1.972367135977295,
+3: 0.15455217573074576, 4: -0.24058577449429575, 5: -1.2904897053651216,
+6: 0.3308507317325902}</pre>
+<p>IPython also provides facilities to execute arbitrary blocks of code (via a somewhat glorified copy-and-paste approach) and whole Python scripts. You can also use the Jupyter notebook to work with larger blocks of code, as we'll soon see.</p>
+</div>
+<div class="section" id="running-the-jupyter-notebook">
+<h3>Running the Jupyter Notebook</h3>
+<p>One of the major components of the Jupyter project is the <em>notebook</em>, a type of interactive document for code, text (with or without markup), data visualizations, and other output. The Jupyter notebook interacts with <em>kernels</em>, which are implementations of the Jupyter interactive computing protocol in any number of programming languages. Python's Jupyter kernel uses the IPython system for its underlying behavior.</p>
+<p>To start up Jupyter, run the command <code class="docutils literal">jupyter notebook</code> in a terminal:</p>
+<pre class="literal-block">$ jupyter notebook
+[I 15:20:52.739 NotebookApp] Serving notebooks from local directory:
+/home/wesm/code/pydata-book
+[I 15:20:52.739 NotebookApp] 0 active kernels
+[I 15:20:52.739 NotebookApp] The Jupyter Notebook is running at:
+http://localhost:8888/
+[I 15:20:52.740 NotebookApp] Use Control-C to stop this server and shut down
+all kernels (twice to skip confirmation).
+Created new window in existing browser session.</pre>
+<p>On many platforms, Jupyter will automatically open up in your default web browser (unless you start it with <code class="docutils literal"><span class="pre">--no-browser</span></code>). Otherwise, you can navigate to the HTTP address printed when you started the notebook, here <code class="docutils literal"><span class="pre">http://localhost:8888/</span></code>. See <a class="reference external" href="part0004_split_004.html#figure_jupyter_landing">Figure 2-1</a> for what this looks like in Google Chrome.</p>
+<hr class="docutils">
+<div class="section" id="note">
+<h4>Note</h4>
+<p>Many people use Jupyter as a local computing environment, but it can also be deployed on servers and accessed remotely. I won't cover those details here, but encourage you to explore this topic on the internet if it's relevant to your needs.</p>
+<p><img alt="image0" src="../../images/python-data-analysis-images/00001.jpeg"></p>
+<pre class="code ipython"><a name="rest_code_28ac5b9aa3ea4240b1e0930c7f0eeccd-1"></a><span class="o">!</span> ls <span class="p">|</span> grep image
+</pre>
+<p>[default]” option. You should see something like <a class="reference external" href="part0004_split_004.html#figure_jupyter_new_nb">Figure 2-2</a>. If this is your first time, try clicking on the empty code “cell” and entering a line of Python code. Then press Shift-Enter to execute it.</p>
+<p><img alt="image1" src="../../images/python-data-analysis-images/00002.jpeg"></p>
+<p>When you save the notebook (see “Save and Checkpoint” under the notebook File menu), it creates a file with the extension <em>.ipynb</em>. This is a self-contained file format that contains all of the content (including any evaluated code output) currently in the notebook. These can be loaded and edited by other Jupyter users. To load an existing notebook, put the file in the same directory where you started the notebook process (or in a subfolder within it), then double-click the name from the landing page. You can try it out with the notebooks from my <em>wesm/pydata-book</em> repository on GitHub. See <a class="reference external" href="part0004_split_004.html#figure_jupyter_existing_nb">Figure 2-3</a>.</p>
+<p>While the Jupyter notebook can feel like a distinct experience from the IPython shell, nearly all of the commands and tools in this chapter can be used in either environment.</p>
+<p><img alt="image2" src="../../images/python-data-analysis-images/00003.jpeg"></p>
+</div>
+</div>
+<div class="section" id="tab-completion">
+<h3>Tab Completion</h3>
+<p>On the surface, the IPython shell looks like a cosmetically different version of the standard terminal Python interpreter (invoked with <code class="docutils literal">python</code>). One of the major improvements over the standard Python shell is <em>tab completion</em>, found in many IDEs or other interactive computing analysis environments. While entering expressions in the shell, pressing the Tab key will search the namespace for any variables (objects, functions, etc.) matching the characters you have typed so far:</p>
+<pre class="literal-block">In [1]: an_apple = 27
+
+In [2]: an_example = 42
+
+In [3]: an&lt;Tab&gt;
+an_apple    and         an_example  any</pre>
+<p>In this example, note that IPython displayed both the two variables I defined as well as the Python keyword <code class="docutils literal">and</code> and built-in function <code class="docutils literal">any</code>. Naturally, you can also complete methods and attributes on any object after typing a period:</p>
+<pre class="literal-block">In [3]: b = [1, 2, 3]
+
+In [4]: b.&lt;Tab&gt;
+b.append  b.count   b.insert  b.reverse
+b.clear   b.extend  b.pop     b.sort
+b.copy    b.index   b.remove</pre>
+<p>The same goes for modules:</p>
+<pre class="literal-block">In [1]: import datetime
+
+In [2]: datetime.&lt;Tab&gt;
+datetime.date          datetime.MAXYEAR       datetime.timedelta
+datetime.datetime      datetime.MINYEAR       datetime.timezone
+datetime.datetime_CAPI datetime.time          datetime.tzinfo</pre>
+<p>In the Jupyter notebook and newer versions of IPython (5.0 and higher), the autocompletions show up in a drop-down box rather than as text output.</p>
+<hr class="docutils">
+<div class="section" id="id1">
+<span id="note-1"></span><h4>Note</h4>
+<p>Note that IPython by default hides methods and attributes starting with underscores, such as magic methods and internal “private” methods and attributes, in order to avoid cluttering the display (and confusing novice users!). These, too, can be tab-completed, but you must first type an underscore to see them. If you prefer to always see such methods in tab completion, you can change this setting in the IPython configuration. See the IPython documentation to find out how to do this.</p>
+<hr class="docutils">
+<p>Tab completion works in many contexts outside of searching the interactive namespace and completing object or module attributes. When typing anything that looks like a file path (even in a Python string), pressing the Tab key will complete anything on your computer's filesystem matching what you've typed:</p>
+<pre class="literal-block">In [7]: datasets/movielens/&lt;Tab&gt;
+datasets/movielens/movies.dat    datasets/movielens/README
+datasets/movielens/ratings.dat   datasets/movielens/users.dat
+
+In [7]: path = 'datasets/movielens/&lt;Tab&gt;
+datasets/movielens/movies.dat    datasets/movielens/README
+datasets/movielens/ratings.dat   datasets/movielens/users.dat</pre>
+<p>Combined with the <code class="docutils literal">%run</code> command (see <a class="reference external" href="part0004_split_007.html#ipython_basics_magic_run">“The %run Command”</a>), this functionality can save you many keystrokes.</p>
+<p>Another area where tab completion saves time is in the completion of function keyword arguments (and including the <code class="docutils literal">=</code> sign!). See <a class="reference external" href="part0004_split_005.html#figure_jupyter_autocomplete_keywords">Figure 2-4</a>.</p>
+<p><img alt="image3" src="../../images/python-data-analysis-images/00004.jpeg"></p>
+<p>We'll have a closer look at functions in a little bit.</p>
+</div>
+</div>
+<div class="section" id="introspection">
+<h3>Introspection</h3>
+<p>Using a question mark (<code class="docutils literal">?</code>) before or after a variable will display some general information about the object:</p>
+<pre class="literal-block">In [8]: b = [1, 2, 3]
+
+In [9]: b?
+Type:       list
+String Form:[1, 2, 3]
+Length:     3
+Docstring:
+list() -&gt; new empty list
+list(iterable) -&gt; new list initialized from iterable's items
+
+In [10]: print?
+Docstring:
+print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
+
+Prints the values to a stream, or to sys.stdout by default.
+Optional keyword arguments:
+file:  a file-like object (stream); defaults to the current sys.stdout.
+sep:   string inserted between values, default a space.
+end:   string appended after the last value, default a newline.
+flush: whether to forcibly flush the stream.
+Type:      builtin_function_or_method</pre>
+<p>This is referred to as <em>object introspection</em>. If the object is a function or instance method, the docstring, if defined, will also be shown. Suppose we'd written the following function (which you can reproduce in IPython or Jupyter):</p>
+<pre class="literal-block">def add_numbers(a, b):
+    """
+    Add two numbers together
+
+    Returns
+    -------
+    the_sum : type of arguments
+    """
+    return a + b</pre>
+<p>Then using <code class="docutils literal">?</code> shows us the docstring:</p>
+<pre class="literal-block">In [11]: add_numbers?
+Signature: add_numbers(a, b)
+Docstring:
+Add two numbers together
+
+Returns
+-------
+the_sum : type of arguments
+File:      &lt;ipython-input-9-6a548a216e27&gt;
+Type:      function</pre>
+<p>Using <code class="docutils literal"><span class="pre">??</span></code> will also show the function's source code if possible:</p>
+<pre class="literal-block">In [12]: add_numbers??
+Signature: add_numbers(a, b)
+Source:
+def add_numbers(a, b):
+    """
+    Add two numbers together
+
+    Returns
+    -------
+    the_sum : type of arguments
+    """
+    return a + b
+File:      &lt;ipython-input-9-6a548a216e27&gt;
+Type:      function</pre>
+<p><code class="docutils literal">?</code> has a final usage, which is for searching the IPython namespace in a manner similar to the standard Unix or Windows command line. A number of characters combined with the wildcard (<code class="docutils literal">*</code>) will show all names matching the wildcard expression. For example, we could get a list of all functions in the top-level NumPy namespace containing <code class="docutils literal">load</code>:</p>
+<pre class="literal-block">In [13]: np.*load*?
+np.__loader__
+np.load
+np.loads
+np.loadtxt
+np.pkgload</pre>
+</div>
+<div class="section" id="the-run-command">
+<h3>The %run Command</h3>
+<p>You can run any file as a Python program inside the environment of your IPython session using the <code class="docutils literal">%run</code> command. Suppose you had the following simple script stored in <em>ipython\script\test.py</em>:</p>
+<pre class="literal-block">def f(x, y, z):
+    return (x + y) / z
+
+a = 5
+b = 6
+c = 7.5
+
+result = f(a, b, c)</pre>
+<p>You can execute this by passing the filename to <code class="docutils literal">%run</code>:</p>
+<pre class="literal-block">In [14]: %run ipython_script_test.py</pre>
+<p>The script is run in an <em>empty namespace</em> (with no imports or other variables defined) so that the behavior should be identical to running the program on the command line using <code class="docutils literal">python script.py</code>. All of the variables (imports, functions, and globals) defined in the file (up until an exception, if any, is raised) will then be accessible in the IPython shell:</p>
+<pre class="literal-block">In [15]: c
+Out [15]: 7.5
+
+In [16]: result
+Out[16]: 1.4666666666666666</pre>
+<p>If a Python script expects command-line arguments (to be found in <code class="docutils literal">sys.argv</code>), these can be passed after the file path as though run on the command line.</p>
+<div class="section" id="id2">
+<span id="note-2"></span><h4>Note</h4>
+<p>Should you wish to give a script access to variables already defined in the interactive IPython namespace, use <code class="docutils literal">%run <span class="pre">-i</span></code> instead of plain <code class="docutils literal">%run</code>.</p>
+<hr class="docutils">
+<p>In the Jupyter notebook, you may also use the related <code class="docutils literal">%load</code> magic function, which imports a script into a code cell:</p>
+<pre class="literal-block">&gt;&gt;&gt; %load ipython_script_test.py
+
+    def f(x, y, z):
+        return (x + y) / z
+
+    a = 5
+    b = 6
+    c = 7.5
+
+    result = f(a, b, c)</pre>
+</div>
+<div class="section" id="interrupting-running-code">
+<h4>Interrupting running code</h4>
+<p>Pressing Ctrl-C while any code is running, whether a script through <code class="docutils literal">%run</code> or a long-running command, will cause a <code class="docutils literal">KeyboardInterrupt</code> to be raised. This will cause nearly all Python programs to stop immediately except in certain unusual cases.</p>
+</div>
+<hr class="docutils">
+<div class="section" id="warning">
+<h4>Warning</h4>
+<p>When a piece of Python code has called into some compiled extension modules, pressing Ctrl-C will not always cause the program execution to stop immediately. In such cases, you will have to either wait until control is returned to the Python interpreter, or in more dire circumstances, forcibly terminate the Python process.</p>
+</div>
+</div>
+<hr class="docutils">
+<div class="section" id="executing-code-from-the-clipboard">
+<h3>Executing Code from the Clipboard</h3>
+<p>If you are using the Jupyter notebook, you can copy and paste code into any code cell and execute it. It is also possible to run code from the clipboard in the IPython shell. Suppose you had the following code in some other application:</p>
+<pre class="literal-block">x = 5
+y = 7
+if x &gt; 5:
+    x += 1
+
+    y = 8</pre>
+<p>The most foolproof methods are the <code class="docutils literal">%paste</code> and <code class="docutils literal">%cpaste</code> magic functions. <code class="docutils literal">%paste</code> takes whatever text is in the clipboard and executes it as a single block in the shell:</p>
+<pre class="literal-block">In [17]: %paste
+x = 5
+y = 7
+if x &gt; 5:
+    x += 1
+
+    y = 8
+## -- End pasted text --</pre>
+<p><code class="docutils literal">%cpaste</code> is similar, except that it gives you a special prompt for pasting code into:</p>
+<pre class="literal-block">In [18]: %cpaste
+Pasting code; enter '--' alone on the line to stop or use Ctrl-D.
+:x = 5
+:y = 7
+:if x &gt; 5:
+:    x += 1
+:
+:    y = 8
+:--</pre>
+<p>With the <code class="docutils literal">%cpaste</code> block, you have the freedom to paste as much code as you like before executing it. You might decide to use <code class="docutils literal">%cpaste</code> in order to look at the pasted code before executing it. If you accidentally paste the wrong code, you can break out of the <code class="docutils literal">%cpaste</code> prompt by pressing Ctrl-C.</p>
+</div>
+<div class="section" id="terminal-keyboard-shortcuts">
+<h3>Terminal Keyboard Shortcuts</h3>
+<p>IPython has many keyboard shortcuts for navigating the prompt (which will be familiar to users of the Emacs text editor or the Unix bash shell) and interacting with the shell's command history. <a class="reference external" href="part0004_split_009.html#table_kbd_shortcuts">Table 2-1</a> summarizes some of the most commonly used shortcuts. See <a class="reference external" href="part0004_split_009.html#figure_ipython_keyboard">Figure 2-5</a> for an illustration of a few of these, such as cursor movement.</p>
+<p><img alt="image4" src="../../images/python-data-analysis-images/00005.gif"></p>
+<table>
+<caption>Table 2-1. Standard IPython keyboard shortcuts</caption>
+<colgroup>
+<col style="width: 34%">
+<col style="width: 66%">
+</colgroup>
+<thead><tr>
+<th class="head"><p>Keyboard shortcut</p></th>
+<th class="head"><p>Description</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>Ctrl-P or up-arrow</p></td>
+<td><p>Search backward in command history</p></td>
+</tr>
+<tr>
+<td><p>Ctrl-N or down-arrow</p></td>
+<td><p>Search forward in command history f</p></td>
+</tr>
+<tr>
+<td><p>Ctrl-R</p></td>
+<td><p>Readline-style reverse history search</p></td>
+</tr>
+<tr>
+<td><p>Ctrl-Shift-V</p></td>
+<td><p>Paste text from clipboard</p></td>
+</tr>
+<tr>
+<td><p>Ctrl-C</p></td>
+<td><p>Interrupt currently executing code</p></td>
+</tr>
+<tr>
+<td><p>Ctrl-A</p></td>
+<td><p>Move cursor to beginning of line</p></td>
+</tr>
+<tr>
+<td><p>Ctrl-E</p></td>
+<td><p>Move cursor to end of line</p></td>
+</tr>
+<tr>
+<td><p>Ctrl-K</p></td>
+<td><p>Delete text from cursor until end of line</p></td>
+</tr>
+<tr>
+<td><p>Ctrl-U</p></td>
+<td><p>Discard all text on current line</p></td>
+</tr>
+<tr>
+<td><p>Ctrl-F</p></td>
+<td><p>Move cursor forward one character</p></td>
+</tr>
+<tr>
+<td><p>Ctrl-B</p></td>
+<td><p>Move cursor back one character</p></td>
+</tr>
+<tr>
+<td><p>Ctrl-L</p></td>
+<td><p>Clear screen</p></td>
+</tr>
+</tbody>
+</table>
+<p>Note that Jupyter notebooks have a largely separate set of keyboard shortcuts for navigation and editing. Since these shortcuts have evolved more rapidly than IPython's, I encourage you to explore the integrated help system in the Jupyter notebook's menus.</p>
+</div>
+<div class="section" id="about-magic-commands">
+<h3>About Magic Commands</h3>
+<p>IPython's special commands (which are not built into Python itself) are known as “magic” commands. These are designed to facilitate common tasks and enable you to easily control the behavior of the IPython system. A magic command is any command prefixed by the percent symbol <code class="docutils literal">%</code>. For example, you can check the execution time of any Python statement, such as a matrix multiplication, using the <code class="docutils literal">%timeit</code> magic function (which will be discussed in more detail later):</p>
+<pre class="literal-block">In [20]: a = np.random.randn(100, 100)
+
+In [20]: %timeit np.dot(a, a)
+10000 loops, best of 3: 20.9 µs per loop</pre>
+<p>Magic commands can be viewed as command-line programs to be run within the IPython system. Many of them have additional “command-line” options, which can all be viewed (as you might expect) using <code class="docutils literal">?</code>:</p>
+<pre class="literal-block">In [21]: %debug?
+Docstring:
+::
+
+  %debug [--breakpoint FILE:LINE] [statement [statement ...]]
+
+Activate the interactive debugger.
+
+This magic command support two ways of activating debugger.
+One is to activate debugger before executing code.  This way, you
+can set a break point, to step through the code from the point.
+You can use this mode by giving statements to execute and optionally
+a breakpoint.
+
+The other one is to activate debugger in post-mortem mode.  You can
+activate this mode simply running %debug without any argument.
+If an exception has just occurred, this lets you inspect its stack
+frames interactively.  Note that this will always work only on the last
+traceback that occurred, so you must call this quickly after an
+exception that you wish to inspect has fired, because if another one
+occurs, it clobbers the previous one.
+
+If you want IPython to automatically do this on every exception, see
+the %pdb magic for more details.
+
+positional arguments:
+  statement             Code to run in debugger. You can omit this in cell
+                        magic mode.
+
+optional arguments:
+  --breakpoint &lt;FILE:LINE&gt;, -b &lt;FILE:LINE&gt;
+                        Set break point at LINE in FILE.</pre>
+<p>Magic functions can be used by default without the percent sign, as long as no variable is defined with the same name as the magic function in question. This feature is called <em>automagic</em> and can be enabled or disabled with <code class="docutils literal">%automagic</code>.</p>
+<p>Some magic functions behave like Python functions and their output can be assigned to a variable:</p>
+<pre class="literal-block">In [22]: %pwd
+Out[22]: '/home/wesm/code/pydata-book
+
+In [23]: foo = %pwd
+
+In [24]: foo
+Out[24]: '/home/wesm/code/pydata-book'</pre>
+<p>Since IPython's documentation is accessible from within the system, I encourage you to explore all of the special commands available by typing <code class="docutils literal">%quickref</code> or <code class="docutils literal">%magic</code>. <a class="reference external" href="part0004_split_010.html#ipython_magic_table">Table 2-2</a> highlights some of the most critical ones for being productive in interactive computing and Python development in IPython.</p>
+<table>
+<colgroup>
+<col style="width: 18%">
+<col style="width: 82%">
+</colgroup>
+<thead><tr>
+<th class="head"><p>Command</p></th>
+<th class="head"><p>Description</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p><code class="docutils literal">%quickref</code></p></td>
+<td><p>Display the IPython Quick Reference Card</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">%magic</code></p></td>
+<td><p>Display detailed documentation for all of the available magic commands</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">%debug</code></p></td>
+<td><p>Enter the interactive debugger at the bottom of the last exception traceback</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">%hist</code></p></td>
+<td><p>Print command input (and optionally output) history</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">%pdb</code></p></td>
+<td><p>Automatically enter debugger after any exception</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">%paste</code></p></td>
+<td><p>Execute preformatted Python code from clipboard</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">%cpaste</code></p></td>
+<td><p>Open a special prompt for manually pasting Python code to be executed</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">%reset</code></p></td>
+<td><p>Delete all variables/names defined in interactive namespace</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">%page</code> <em>``OBJECT``</em></p></td>
+<td><p>Pretty-print the object and display it through a pager</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">%run</code> <em>``script.py``</em></p></td>
+<td><p>Run a Python script inside IPython</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">%prun</code> <em>``statement``</em></p></td>
+<td><p>Execute <em>``statement``</em> with <code class="docutils literal">cProfile</code> and report the profiler output</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">%time</code> <em>``statement``</em></p></td>
+<td><p>Report the execution time of a single statement</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">%timeit</code> <em>``statement``</em></p></td>
+<td><p>Run a statement multiple times to compute an ensemble average execution time; useful for timing code with very short execution time</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">%who, %who_ls, %whos</code></p></td>
+<td><p>Display variables defined in interactive namespace, with varying levels of information/verbosity</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">%xdel</code> <em>``variable``</em></p></td>
+<td><p>Delete a variable and attempt to clear any references to the object in the IPython internals</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="matplotlib-integration">
+<h3>Matplotlib Integration</h3>
+<p>One reason for IPython's popularity in analytical computing is that it integrates well with data visualization and other user interface libraries like matplotlib. Don't worry if you have never used matplotlib before; it will be discussed in more detail later in this book. The <code class="docutils literal">%matplotlib</code> magic function configures its integration with the IPython shell or Jupyter notebook. This is important, as otherwise plots you create will either not appear (notebook) or take control of the session until closed (shell).</p>
+<p>In the IPython shell, running <code class="docutils literal">%matplotlib</code> sets up the integration so you can create multiple plot windows without interfering with the console session:</p>
+<pre class="literal-block">In [26]: %matplotlib
+Using matplotlib backend: Qt4Agg</pre>
+<p>In Jupyter, the command is a little different (<a class="reference external" href="part0004_split_011.html#figure_jupyter_matplotlib_inline">Figure 2-6</a>):</p>
+<pre class="literal-block">In [26]: %matplotlib inline</pre>
+<p><img alt="image5" src="../../images/python-data-analysis-images/00006.jpeg"></p>
+</div>
+</div>
+<div class="section" id="advanced-ipython-system">
+<h2>Advanced IPython System</h2>
+<p>In <a class="reference external" href="part0004_split_000.html#3Q283-74490f30505748fab61c1c3ee3dc2f27">Chapter 2</a> we looked at the basics of using the IPython shell and Jupyter notebook. In this chapter, we explore some deeper functionality in the IPython system that can either be used from the console or within Jupyter.</p>
+<ol class="arabic simple">
+<li><p>%bookmark</p></li>
+<li><p>%prun cProfile,</p></li>
+</ol>
+</div>
+<div class="section" id="using-the-command-history">
+<h2>1 Using the Command History</h2>
+<p>IPython maintains a small on-disk database containing the text of each command that you execute. This serves various purposes:</p>
+<ol class="arabic simple">
+<li><p>Searching, completing, and executing previously executed commands with minimal typing</p></li>
+<li><p>Persisting the command history between sessions</p></li>
+<li><p>Logging the input/output history to a file</p></li>
+</ol>
+<p>These features are more useful in the shell than in the notebook, since the notebook by design keeps a log of the input and output in each code cell.</p>
+<div class="section" id="searching-and-reusing-the-command-history">
+<h3>Searching and Reusing the Command History</h3>
+<p>The IPython shell lets you search and execute previous code or other commands. This is useful, as you may often find yourself repeating the same commands, such as a <code class="docutils literal">%run</code> command or some other code snippet. Suppose you had run:</p>
+<pre class="literal-block">%run first/second/third/data_script.py</pre>
+<p>and then explored the results of the script (assuming it ran successfully) only to find that you made an incorrect calculation. After figuring out the problem and modifying <em>datascript.py</em>, you can start typing a few letters of the <code class="docutils literal">%run</code> command and then press either the Ctrl-P key combination or the up arrow key. This will search the command history for the first prior command matching the letters you typed. Pressing either Ctrl-P or the up arrow key multiple times will continue to search through the history. If you pass over the command you wish to execute, fear not. You can move <em>forward</em> through the command history by pressing either Ctrl-N or the down arrow key. After doing this a few times, you may start pressing these keys without thinking! x# 棒呀, 完全是emacs</p>
+<p>Using Ctrl-R gives you the same partial incremental searching capability provided by the <code class="docutils literal">readline</code> used in Unix-style shells, such as the bash shell. On Windows, <code class="docutils literal">readline</code> functionality is emulated by IPython. To use this, press Ctrl-R and then type a few characters contained in the input line you want to search for:</p>
+<pre class="literal-block">In [1]: a_command = foo(x, y, z)
+
+(reverse-i-search)`com': a_command = foo(x, y, z)</pre>
+<p>Pressing Ctrl-R will cycle through the history for each line matching the characters you've typed.</p>
+</div>
+<div class="section" id="input-and-output-variables">
+<h3>Input and Output Variables</h3>
+<p>Forgetting to assign the result of a function call to a variable can be very annoying. An IPython session stores references to <em>both</em> the input commands and output Python objects in special variables. The previous two outputs are stored in the <code class="docutils literal">_</code> (one underscore) and <code class="docutils literal">__</code> (two underscores) variables, respectively:</p>
+<pre class="literal-block">In [24]: 2 ** 27
+Out[24]: 134217728
+
+In [25]: _
+Out[25]: 134217728</pre>
+<p>Input variables are stored in variables named like <code class="docutils literal">_iX</code>, where <code class="docutils literal">X</code> is the input line number. For each input variable there is a corresponding output variable <code class="docutils literal">_X</code>. So after input line 27, say, there will be two new variables <code class="docutils literal">_27</code> (for the output) and <code class="docutils literal">_i27</code> for the input:</p>
+<pre class="literal-block">In [26]: foo = 'bar'
+
+In [27]: foo
+Out[27]: 'bar'
+
+In [28]: _i27
+Out[28]: u'foo'
+
+In [29]: _27
+Out[29]: 'bar'</pre>
+<p>Since the input variables are strings they can be executed again with the Python <code class="docutils literal">exec</code> keyword:</p>
+<pre class="literal-block">In [30]: exec(_i27)</pre>
+<p>Here <code class="docutils literal">_i27</code> refers to the code input in <code class="docutils literal">In [27]</code>.</p>
+<p>Several magic functions allow you to work with the input and output history. <code class="docutils literal">%hist</code> is capable of printing all or part of the input history, with or without line numbers. <code class="docutils literal">%reset</code> is for clearing the interactive namespace and optionally the input and output caches. The <code class="docutils literal">%xdel</code> magic function is intended for removing all references to a <em>particular</em> object from the IPython machinery. See the documentation for both of these magics for more details.</p>
+<p>Warning</p>
+<p>When working with very large datasets, keep in mind that IPython's input and output history causes any object referenced there to not be garbage-collected (freeing up the memory), even if you delete the variables from the interactive namespace using the <code class="docutils literal">del</code> keyword. In such cases, careful usage of <code class="docutils literal">%xdel</code> and <code class="docutils literal">%reset</code> can help you avoid running into memory problems.</p>
+</div>
+</div>
+<div class="section" id="interacting-with-the-operating-system">
+<h2>2 Interacting with the Operating System</h2>
+<p>Another feature of IPython is that it allows you to seamlessly access the filesystem and operating system shell. This means, among other things, that you can perform most standard command-line actions as you would in the Windows or Unix (Linux, macOS) shell without having to exit IPython. This includes shell commands, changing directories, and storing the results of a command in a Python object (list or string). There are also simple command aliasing and directory bookmarking features.</p>
+<p>See <a class="reference external" href="part0018_split_004.html#table_system_commands">Table B-1</a> for a summary of magic functions and syntax for calling shell commands. I'll briefly visit these features in the next few sections.</p>
+<table>
+<caption>Table B-1. IPython system-related commands</caption>
+<colgroup>
+<col style="width: 30%">
+<col style="width: 70%">
+</colgroup>
+<thead><tr>
+<th class="head"><p>Command</p></th>
+<th class="head"><p>Description</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p><code class="docutils literal">!cmd</code></p></td>
+<td><p>Execute <code class="docutils literal">cmd</code> in the system shell</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">output = !cmd args</code></p></td>
+<td><p>Run <code class="docutils literal">cmd</code> and store the stdout in <code class="docutils literal">output</code></p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">%alias alias_name cmd</code></p></td>
+<td><p>Define an alias for a system (shell) command</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">%bookmark</code></p></td>
+<td><p>Utilize IPython's directory bookmarking system</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">%cd</code> <em>``directory``</em></p></td>
+<td><p>Change system working directory to passed directory</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">%pwd</code></p></td>
+<td><p>Return the current system working directory</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">%pushd</code> <em>``directory``</em></p></td>
+<td><p>Place current directory on stack and change to target directory</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">%popd</code></p></td>
+<td><p>Change to directory popped off the top of the stack</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">%dirs</code></p></td>
+<td><p>Return a list containing the current directory stack</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">%dhist</code></p></td>
+<td><p>Print the history of visited directories</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">%env</code></p></td>
+<td><p>Return the system environment variables as a dict</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">%matplotlib</code></p></td>
+<td><p>Configure matplotlib integration options</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="shell-commands-and-aliases">
+<h3>Shell Commands and Aliases</h3>
+<p>Starting a line in IPython with an exclamation point <code class="docutils literal">!</code>, or bang, tells IPython to execute everything after the bang in the system shell. This means that you can delete files (using <code class="docutils literal">rm</code> or <code class="docutils literal">del</code>, depending on your OS), change directories, or execute any other process.</p>
+<p>You can store the console output of a shell command in a variable by assigning the expression escaped with <code class="docutils literal">!</code> to a variable. For example, on my Linux-based machine connected to the internet via ethernet, I can get my IP address as a Python variable:</p>
+<pre class="code ipython"><a name="rest_code_c2a6c71462f5458ea70d0267bc3b3807-1"></a><span class="n">ip_info</span> <span class="o">=</span> <span class="o">!</span>ifconfig  <span class="p">|</span>grep <span class="s2">"inet"</span>
+<a name="rest_code_c2a6c71462f5458ea70d0267bc3b3807-2"></a><span class="k">print</span><span class="p">(</span><span class="n">ip_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</pre>
+<p>The returned Python object <code class="docutils literal">ip_info</code> is actually a custom list type containing various versions of the console output.</p>
+<p>IPython can also substitute in Python values defined in the current environment when using <code class="docutils literal">!</code>. To do this, preface the variable name by the dollar sign <code class="docutils literal">$</code>:</p>
+<pre class="code ipython"><a name="rest_code_47f24e50a77e471d87ca1edd9ee80eec-1"></a><span class="n">foo</span> <span class="o">=</span> <span class="s1">'*python*'</span>
+<a name="rest_code_47f24e50a77e471d87ca1edd9ee80eec-2"></a><span class="o">!</span>ls <span class="nv">$foo</span>
+</pre>
+<p>The <code class="docutils literal">%alias</code> magic function can define custom shortcuts for shell commands. As a simple example:</p>
+<pre class="literal-block">In [1]: %alias ll ls -l
+In [2]: ll /usr
+total 332
+drwxr-xr-x   2 root root  69632 2012-01-29 20:36 bin/
+drwxr-xr-x   2 root root   4096 2010-08-23 12:05 games/
+drwxr-xr-x 123 root root  20480 2011-12-26 18:08 include/
+drwxr-xr-x 265 root root 126976 2012-01-29 20:36 lib/
+drwxr-xr-x  44 root root  69632 2011-12-26 18:08 lib32/
+lrwxrwxrwx   1 root root      3 2010-08-23 16:02 lib64 -&gt; lib/
+drwxr-xr-x  15 root root   4096 2011-10-13 19:03 local/
+drwxr-xr-x   2 root root  12288 2012-01-12 09:32 sbin/
+drwxr-xr-x 387 root root  12288 2011-11-04 22:53 share/
+drwxrwsr-x  24 root src    4096 2011-07-17 18:38 src/</pre>
+<p>You can execute multiple commands just as on the command line by separating them with semicolons:</p>
+<pre class="literal-block">In [558]: %alias test_alias (cd examples; ls; cd ..)
+In [559]: test_alias
+macrodata.csv  spx.csv    tips.csv</pre>
+<p>You'll notice that IPython “forgets” any aliases you define interactively as soon as the session is closed. To create permanent aliases, you will need to use the configuration system.</p>
+</div>
+<div class="section" id="directory-bookmark-system">
+<h3>Directory Bookmark System</h3>
+<p>IPython has a simple directory bookmarking system to enable you to save aliases for common directories so that you can jump around very easily. For example, suppose you wanted to create a bookmark that points to the supplementary materials for this book:</p>
+<pre class="literal-block">%bookmark py4da /home/wesm/code/pydata-book</pre>
+<p>Once you've done this, when we use the <code class="docutils literal">%cd</code> magic, we can use any bookmarks we've defined:</p>
+<pre class="literal-block">In [7]: cd py4da
+(bookmark:py4da) -&gt; /home/wesm/code/pydata-book
+/home/wesm/code/pydata-book</pre>
+<p>If a bookmark name conflicts with a directory name in your current working directory, you can use the <code class="docutils literal"><span class="pre">-b</span></code> flag to override and use the bookmark location. Using the <code class="docutils literal"><span class="pre">-l</span></code> option with <code class="docutils literal">%bookmark</code> lists all of your bookmarks:</p>
+<pre class="literal-block">In [8]: %bookmark -l
+Current bookmarks:
+py4da -&gt; /home/wesm/code/pydata-book-source</pre>
+<p>Bookmarks, unlike aliases, are automatically persisted between IPython sessions.</p>
+</div>
+</div>
+<div class="section" id="software-development-tools">
+<h2>3 Software Development Tools</h2>
+<p>In addition to being a comfortable environment for interactive computing and data exploration, IPython can also be a useful companion for general Python software development. In data analysis applications, it's important first to have <em>correct</em> code. Fortunately, IPython has closely integrated and enhanced the built-in Python <code class="docutils literal">pdb</code> debugger. Secondly you want your code to be <em>fast</em>. For this IPython has easy-to-use code timing and profiling tools. I will give an overview of these tools in detail here.</p>
+<div class="section" id="interactive-debugger">
+<h3>Interactive Debugger</h3>
+<p>IPython's debugger enhances <code class="docutils literal">pdb</code> with tab completion, syntax highlighting, and context for each line in exception tracebacks. One of the best times to debug code is right after an error has occurred. The <code class="docutils literal">%debug</code> command, when entered immediately after an exception, invokes the “post-mortem” debugger and drops you into the stack frame where the exception was raised:</p>
+<pre class="literal-block">In [2]: run examples/ipython_bug.py
+---------------------------------------------------------------------------
+AssertionError                            Traceback (most recent call last)
+/home/wesm/code/pydata-book/examples/ipython_bug.py in &lt;module&gt;()
+     13     throws_an_exception()
+     14
+---&gt; 15 calling_things()
+
+/home/wesm/code/pydata-book/examples/ipython_bug.py in calling_things()
+     11 def calling_things():
+     12     works_fine()
+---&gt; 13     throws_an_exception()
+     14
+     15 calling_things()
+
+/home/wesm/code/pydata-book/examples/ipython_bug.py in throws_an_exception()
+      7     a = 5
+      8     b = 6
+----&gt; 9     assert(a + b == 10)
+     10
+     11 def calling_things():
+
+AssertionError:
+
+In [3]: %debug
+&gt; /home/wesm/code/pydata-book/examples/ipython_bug.py(9)throws_an_exception()
+      8     b = 6
+----&gt; 9     assert(a + b == 10)
+     10
+
+ipdb&gt;</pre>
+<p>Once inside the debugger, you can execute arbitrary Python code and explore all of the objects and data (which have been “kept alive” by the interpreter) inside each stack frame. By default you start in the lowest level, where the error occurred. By pressing <code class="docutils literal">u</code> (up) and <code class="docutils literal">d</code> (down), you can switch between the levels of the stack trace:</p>
+<pre class="literal-block">ipdb&gt; u
+&gt; /home/wesm/code/pydata-book/examples/ipython_bug.py(13)calling_things()
+     12     works_fine()
+---&gt; 13     throws_an_exception()
+     14</pre>
+<p>Executing the <code class="docutils literal">%pdb</code> command makes it so that IPython automatically invokes the debugger after any exception, a mode that many users will find especially useful.</p>
+<p>It's also easy to use the debugger to help develop code, especially when you wish to set breakpoints or step through the execution of a function or script to examine the state at each stage. There are several ways to accomplish this. The first is by using <code class="docutils literal">%run</code> with the <code class="docutils literal"><span class="pre">-d</span></code> flag, which invokes the debugger before executing any code in the passed script. You must immediately press <code class="docutils literal">s</code> (step) to enter the script:</p>
+<pre class="literal-block">In [5]: run -d examples/ipython_bug.py
+Breakpoint 1 at /home/wesm/code/pydata-book/examples/ipython_bug.py:1
+NOTE: Enter 'c' at the ipdb&gt;  prompt to start your script.
+&gt; &lt;string&gt;(1)&lt;module&gt;()
+
+ipdb&gt; s
+--Call--
+&gt; /home/wesm/code/pydata-book/examples/ipython_bug.py(1)&lt;module&gt;()
+1---&gt; 1 def works_fine():
+      2     a = 5
+      3     b = 6</pre>
+<p>After this point, it's up to you how you want to work your way through the file. For example, in the preceding exception, we could set a breakpoint right before calling the <code class="docutils literal">works_fine</code> method and run the script until we reach the breakpoint by pressing <code class="docutils literal">c</code> (continue):</p>
+<pre class="literal-block">ipdb&gt; b 12
+ipdb&gt; c
+&gt; /home/wesm/code/pydata-book/examples/ipython_bug.py(12)calling_things()
+     11 def calling_things():
+2--&gt; 12     works_fine()
+     13     throws_an_exception()</pre>
+<p>At this point, you can <code class="docutils literal">step</code> into <code class="docutils literal">works_fine()</code> or execute <code class="docutils literal">works_fine()</code> by pressing <code class="docutils literal">n</code> (next) to advance to the next line:</p>
+<pre class="literal-block">ipdb&gt; n
+&gt; /home/wesm/code/pydata-book/examples/ipython_bug.py(13)calling_things()
+2    12     works_fine()
+---&gt; 13     throws_an_exception()
+     14</pre>
+<p>Then, we could step into <code class="docutils literal">throws_an_exception</code> and advance to the line where the error occurs and look at the variables in the scope. Note that debugger commands take precedence over variable names; in such cases, preface the variables with <code class="docutils literal">!</code> to examine their contents:</p>
+<pre class="literal-block">ipdb&gt; s
+--Call--
+&gt; /home/wesm/code/pydata-book/examples/ipython_bug.py(6)throws_an_exception()
+      5
+----&gt; 6 def throws_an_exception():
+      7     a = 5
+
+ipdb&gt; n
+&gt; /home/wesm/code/pydata-book/examples/ipython_bug.py(7)throws_an_exception()
+      6 def throws_an_exception():
+----&gt; 7     a = 5
+      8     b = 6
+
+ipdb&gt; n
+&gt; /home/wesm/code/pydata-book/examples/ipython_bug.py(8)throws_an_exception()
+      7     a = 5
+----&gt; 8     b = 6
+      9     assert(a + b == 10)
+
+ipdb&gt; n
+&gt; /home/wesm/code/pydata-book/examples/ipython_bug.py(9)throws_an_exception()
+      8     b = 6
+----&gt; 9     assert(a + b == 10)
+     10
+
+ipdb&gt; !a
+5
+ipdb&gt; !b
+6</pre>
+<p>Developing proficiency with the interactive debugger is largely a matter of practice and experience. See <a class="reference external" href="part0018_split_008.html#pdb_command_table">Table B-2</a> for a full catalog of the debugger commands. If you are accustomed to using an IDE, you might find the terminal-driven debugger to be a bit unforgiving at first, but that will improve in time. Some of the Python IDEs have excellent GUI debuggers, so most users can find something that works for them.</p>
+<table>
+<colgroup>
+<col style="width: 36%">
+<col style="width: 64%">
+</colgroup>
+<thead><tr>
+<th class="head"><p>Command</p></th>
+<th class="head"><p>Action</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p><code class="docutils literal">h(elp)</code></p></td>
+<td><p>Display command list</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">help</code> <em>``command``</em></p></td>
+<td><p>Show documentation for <em>``command``</em></p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">c(ontinue)</code></p></td>
+<td><p>Resume program execution</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">q(uit)</code></p></td>
+<td><p>Exit debugger without executing any more code</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">b(reak)</code> <em>``number``</em></p></td>
+<td><p>Set breakpoint at <em>``number``</em> in current file</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">b</code> <em>``path/to/file.py:number``</em></p></td>
+<td><p>Set breakpoint at line <em>``number``</em> in specified file</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">s(tep)</code></p></td>
+<td><p>Step <em>into</em> function call</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">n(ext)</code></p></td>
+<td><p>Execute current line and advance to next line at current level</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal"><span class="pre">u(p)=/=d(own)</span></code></p></td>
+<td><p>Move up/down in function call stack</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">a(rgs)</code></p></td>
+<td><p>Show arguments for current function</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">debug</code> <em>``statement``</em></p></td>
+<td><p>Invoke statement <em>``statement``</em> in new (recursive) debugger</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">l(ist)</code> <em>``statement``</em></p></td>
+<td><p>Show current position and context at current level of stack</p></td>
+</tr>
+<tr>
+<td><p><code class="docutils literal">w(here)</code></p></td>
+<td><p>Print full stack trace with context at current position</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="other-ways-to-make-use-of-the-debugger">
+<h4>Other ways to make use of the debugger</h4>
+<p>There are a couple of other useful ways to invoke the debugger. The first is by using a special <code class="docutils literal">set_trace</code> function (named after <code class="docutils literal">pdb.set_trace</code>), which is basically a “poor man's breakpoint.” Here are two small recipes you might want to put somewhere for your general use (potentially adding them to your IPython profile as I do):</p>
+<pre class="literal-block">from IPython.core.debugger import Pdb
+
+def set_trace():
+    Pdb(color_scheme='Linux').set_trace(sys._getframe().f_back)
+
+def debug(f, *args, **kwargs):
+    pdb = Pdb(color_scheme='Linux')
+    return pdb.runcall(f, *args, **kwargs)</pre>
+<p>The first function, <code class="docutils literal">set_trace</code>, is very simple. You can use a <code class="docutils literal">set_trace</code> in any part of your code that you want to temporarily stop in order to more closely examine it (e.g., right before an exception occurs):</p>
+<pre class="literal-block">In [7]: run examples/ipython_bug.py
+&gt; /home/wesm/code/pydata-book/examples/ipython_bug.py(16)calling_things()
+     15     set_trace()
+---&gt; 16     throws_an_exception()
+     17</pre>
+<p>Pressing <code class="docutils literal">c</code> (continue) will cause the code to resume normally with no harm done.</p>
+<p>The <code class="docutils literal">debug</code> function we just looked at enables you to invoke the interactive debugger easily on an arbitrary function call. Suppose we had written a function like the following and we wished to step through its logic:</p>
+<pre class="literal-block">def f(x, y, z=1):
+    tmp = x + y
+    return tmp / z</pre>
+<p>Ordinarily using <code class="docutils literal">f</code> would look like <code class="docutils literal">f(1, 2, z=3)</code>. To instead step into <code class="docutils literal">f</code>, pass <code class="docutils literal">f</code> as the first argument to <code class="docutils literal">debug</code> followed by the positional and keyword arguments to be passed to <code class="docutils literal">f</code>:</p>
+<pre class="literal-block">In [6]: debug(f, 1, 2, z=3)
+&gt; &lt;ipython-input&gt;(2)f()
+      1 def f(x, y, z):
+----&gt; 2     tmp = x + y
+      3     return tmp / z
+
+ipdb&gt;</pre>
+<p>I find that these two simple recipes save me a lot of time on a day-to-day basis.</p>
+<p>Lastly, the debugger can be used in conjunction with <code class="docutils literal">%run</code>. By running a script with <code class="docutils literal">%run <span class="pre">-d</span></code>, you will be dropped directly into the debugger, ready to set any breakpoints and start the script:</p>
+<pre class="literal-block">In [1]: %run -d examples/ipython_bug.py
+Breakpoint 1 at /home/wesm/code/pydata-book/examples/ipython_bug.py:1
+NOTE: Enter 'c' at the ipdb&gt;  prompt to start your script.
+&gt; &lt;string&gt;(1)&lt;module&gt;()
+
+ipdb&gt;</pre>
+<p>Adding <code class="docutils literal"><span class="pre">-b</span></code> with a line number starts the debugger with a breakpoint set already:</p>
+<pre class="literal-block">In [2]: %run -d -b2 examples/ipython_bug.py
+Breakpoint 1 at /home/wesm/code/pydata-book/examples/ipython_bug.py:2
+NOTE: Enter 'c' at the ipdb&gt;  prompt to start your script.
+&gt; &lt;string&gt;(1)&lt;module&gt;()
+
+ipdb&gt; c
+&gt; /home/wesm/code/pydata-book/examples/ipython_bug.py(2)works_fine()
+      1 def works_fine():
+1---&gt; 2     a = 5
+      3     b = 6
+
+ipdb&gt;</pre>
+</div>
+</div>
+<div class="section" id="timing-code-time-and-timeit">
+<h3>Timing Code: %time and %timeit</h3>
+<p>For larger-scale or longer-running data analysis applications, you may wish to measure the execution time of various components or of individual statements or function calls. You may want a report of which functions are taking up the most time in a complex process. Fortunately, IPython enables you to get this information very easily while you are developing and testing your code.</p>
+<p>Timing code by hand using the built-in <code class="docutils literal">time</code> module and its functions <code class="docutils literal">time.clock</code> and <code class="docutils literal">time.time</code> is often tedious and repetitive, as you must write the same uninteresting boilerplate code:</p>
+<pre class="literal-block">import time
+start = time.time()
+for i in range(iterations):
+    # some code to run here
+elapsed_per = (time.time() - start) / iterations</pre>
+<p>Since this is such a common operation, IPython has two magic functions, <code class="docutils literal">%time</code> and <code class="docutils literal">%timeit</code>, to automate this process for you.</p>
+<p><code class="docutils literal">%time</code> runs a statement once, reporting the total execution time. Suppose we had a large list of strings and we wanted to compare different methods of selecting all strings starting with a particular prefix. Here is a simple list of 600,000 strings and two identical methods of selecting only the ones that start with <code class="docutils literal">'foo'</code>:</p>
+<pre class="literal-block"># a very large list of strings
+strings = ['foo', 'foobar', 'baz', 'qux',
+           'python', 'Guido Van Rossum'] * 100000
+
+method1 = [x for x in strings if x.startswith('foo')]
+
+method2 = [x for x in strings if x[:3] == 'foo']</pre>
+<p>It looks like they should be about the same performance-wise, right? We can check for sure using <code class="docutils literal">%time</code>:</p>
+<pre class="literal-block">In [561]: %time method1 = [x for x in strings if x.startswith('foo')]
+CPU times: user 0.19 s, sys: 0.00 s, total: 0.19 s
+Wall time: 0.19 s
+
+In [562]: %time method2 = [x for x in strings if x[:3] == 'foo']
+CPU times: user 0.09 s, sys: 0.00 s, total: 0.09 s
+Wall time: 0.09 s</pre>
+<p>The <code class="docutils literal">Wall time</code> (short for “wall-clock time”) is the main number of interest. So, it looks like the first method takes more than twice as long, but it's not a very precise measurement. If you try <code class="docutils literal">%time</code>-ing those statements multiple times yourself, you'll find that the results are somewhat variable. To get a more precise measurement, use the <code class="docutils literal">%timeit</code> magic function. Given an arbitrary statement, it has a heuristic to run a statement multiple times to produce a more accurate average runtime:</p>
+<pre class="literal-block">In [563]: %timeit [x for x in strings if x.startswith('foo')]
+10 loops, best of 3: 159 ms per loop
+
+In [564]: %timeit [x for x in strings if x[:3] == 'foo']
+10 loops, best of 3: 59.3 ms per loop</pre>
+<p>This seemingly innocuous example illustrates that it is worth understanding the performance characteristics of the Python standard library, NumPy, pandas, and other libraries used in this book. In larger-scale data analysis applications, those milliseconds will start to add up!</p>
+<p><code class="docutils literal">%timeit</code> is especially useful for analyzing statements and functions with very short execution times, even at the level of microseconds (millionths of a second) or nanoseconds (billionths of a second). These may seem like insignificant amounts of time, but of course a 20 microsecond function invoked 1 million times takes 15 seconds longer than a 5 microsecond function. In the preceding example, we could very directly compare the two string operations to understand their performance characteristics:</p>
+<pre class="literal-block">In [565]: x = 'foobar'
+
+In [566]: y = 'foo'
+
+In [567]: %timeit x.startswith(y)
+1000000 loops, best of 3: 267 ns per loop
+
+In [568]: %timeit x[:3] == y
+10000000 loops, best of 3: 147 ns per loop</pre>
+</div>
+<div class="section" id="basic-profiling-prun-and-run-p">
+<h3>Basic Profiling: %prun and %run -p</h3>
+<p>Profiling code is closely related to timing code, except it is concerned with determining <em>where</em> time is spent. The main Python profiling tool is the <code class="docutils literal">cProfile</code> module, which is not specific to IPython at all. <code class="docutils literal">cProfile</code> executes a program or any arbitrary block of code while keeping track of how much time is spent in each function.</p>
+<p>A common way to use <code class="docutils literal">cProfile</code> is on the command line, running an entire program and outputting the aggregated time per function. Suppose we had a simple script that does some linear algebra in a loop (computing the maximum absolute eigenvalues of a series of 100 × 100 matrices):</p>
+<pre class="code ipython"><a name="rest_code_e62bc2a9d6c54814abf76b4e8f1a367d-1"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<a name="rest_code_e62bc2a9d6c54814abf76b4e8f1a367d-2"></a><span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">eigvals</span>
+<a name="rest_code_e62bc2a9d6c54814abf76b4e8f1a367d-3"></a>
+<a name="rest_code_e62bc2a9d6c54814abf76b4e8f1a367d-4"></a><span class="k">def</span> <span class="nf">run_experiment</span><span class="p">(</span><span class="n">niter</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+<a name="rest_code_e62bc2a9d6c54814abf76b4e8f1a367d-5"></a>    <span class="n">K</span> <span class="o">=</span> <span class="mi">100</span>
+<a name="rest_code_e62bc2a9d6c54814abf76b4e8f1a367d-6"></a>    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+<a name="rest_code_e62bc2a9d6c54814abf76b4e8f1a367d-7"></a>    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">niter</span><span class="p">):</span>
+<a name="rest_code_e62bc2a9d6c54814abf76b4e8f1a367d-8"></a>        <span class="n">mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<a name="rest_code_e62bc2a9d6c54814abf76b4e8f1a367d-9"></a>        <span class="n">max_eigenvalue</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">eigvals</span><span class="p">(</span><span class="n">mat</span><span class="p">))</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<a name="rest_code_e62bc2a9d6c54814abf76b4e8f1a367d-10"></a>        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">max_eigenvalue</span><span class="p">)</span>
+<a name="rest_code_e62bc2a9d6c54814abf76b4e8f1a367d-11"></a>    <span class="k">return</span> <span class="n">results</span>
+<a name="rest_code_e62bc2a9d6c54814abf76b4e8f1a367d-12"></a><span class="n">some_results</span> <span class="o">=</span> <span class="n">run_experiment</span><span class="p">()</span>
+<a name="rest_code_e62bc2a9d6c54814abf76b4e8f1a367d-13"></a><span class="k">print</span><span class="p">(</span><span class="s1">'Largest one we saw: </span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">some_results</span><span class="p">))</span>
+</pre>
+<pre class="literal-block">Largest one we saw: 12.066641847130507</pre>
+<pre class="code shell"><a name="rest_code_a1433e91adbd4589a3bc32bca3a2d368-1"></a><span class="c1"># python -m cProfile $fp</span>
+<a name="rest_code_a1433e91adbd4589a3bc32bca3a2d368-2"></a><span class="nb">echo</span> <span class="nv">$fp</span>
+</pre>
+<p>You can run this script through <code class="docutils literal">cProfile</code> using the following in the command line:</p>
+<pre class="literal-block">python -m cProfile cprof_example.py</pre>
+<p>If you try that, you'll find that the output is sorted by function name. This makes it a bit hard to get an idea of where the most time is spent, so it's very common to specify a <em>sort order</em> using the <code class="docutils literal"><span class="pre">-s</span></code> flag:</p>
+<pre class="literal-block">$ python -m cProfile -s cumulative cprof_example.py
+Largest one we saw: 11.923204422
+    15116 function calls (14927 primitive calls) in 0.720 seconds
+
+Ordered by: cumulative time
+
+ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     1    0.001    0.001    0.721    0.721 cprof_example.py:1(&lt;module&gt;)
+   100    0.003    0.000    0.586    0.006 linalg.py:702(eigvals)
+   200    0.572    0.003    0.572    0.003 {numpy.linalg.lapack_lite.dgeev}
+     1    0.002    0.002    0.075    0.075 __init__.py:106(&lt;module&gt;)
+   100    0.059    0.001    0.059    0.001 {method 'randn')
+     1    0.000    0.000    0.044    0.044 add_newdocs.py:9(&lt;module&gt;)
+     2    0.001    0.001    0.037    0.019 __init__.py:1(&lt;module&gt;)
+     2    0.003    0.002    0.030    0.015 __init__.py:2(&lt;module&gt;)
+     1    0.000    0.000    0.030    0.030 type_check.py:3(&lt;module&gt;)
+     1    0.001    0.001    0.021    0.021 __init__.py:15(&lt;module&gt;)
+     1    0.013    0.013    0.013    0.013 numeric.py:1(&lt;module&gt;)
+     1    0.000    0.000    0.009    0.009 __init__.py:6(&lt;module&gt;)
+     1    0.001    0.001    0.008    0.008 __init__.py:45(&lt;module&gt;)
+   262    0.005    0.000    0.007    0.000 function_base.py:3178(add_newdoc)
+   100    0.003    0.000    0.005    0.000 linalg.py:162(_assertFinite)
+   ...</pre>
+<p>Only the first 15 rows of the output are shown. It's easiest to read by scanning down the <code class="docutils literal">cumtime</code> column to see how much total time was spent <em>inside</em> each function. Note that if a function calls some other function, <em>the clock does not stop running</em>. <code class="docutils literal">cProfile</code> records the start and end time of each function call and uses that to produce the timing.</p>
+<p>In addition to the command-line usage, <code class="docutils literal">cProfile</code> can also be used programmatically to profile arbitrary blocks of code without having to run a new process. IPython has a convenient interface to this capability using the <code class="docutils literal">%prun</code> command and the <code class="docutils literal"><span class="pre">-p</span></code> option to <code class="docutils literal">%run</code>. <code class="docutils literal">%prun</code> takes the same “command-line options” as <code class="docutils literal">cProfile</code> but will profile an arbitrary Python statement instead of a whole <em>.py</em> file:</p>
+<pre class="code ipython"><a name="rest_code_4049e02a1e324fcf83beae9900f29339-1"></a><span class="o">%</span><span class="k">time</span> run_experiment()
+</pre>
+<pre class="code ipython"><a name="rest_code_7debb0baa9cf425ab66d3ffd3bce209e-1"></a><span class="o">%</span><span class="k">prun</span> -l 7 -s cumulative run_experiment()
+</pre>
+<pre class="literal-block">In [4]:
+         4203 function calls in 0.643 seconds
+
+Ordered by: cumulative time
+List reduced from 32 to 7 due to restriction &lt;7&gt;
+
+ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     1    0.000    0.000    0.643    0.643 &lt;string&gt;:1(&lt;module&gt;)
+     1    0.001    0.001    0.643    0.643 cprof_example.py:4(run_experiment)
+   100    0.003    0.000    0.583    0.006 linalg.py:702(eigvals)
+   200    0.569    0.003    0.569    0.003 {numpy.linalg.lapack_lite.dgeev}
+   100    0.058    0.001    0.058    0.001 {method 'randn'}
+   100    0.003    0.000    0.005    0.000 linalg.py:162(_assertFinite)
+   200    0.002    0.000    0.002    0.000 {method 'all' of 'numpy.ndarray'}</pre>
+<p>Similarly, calling <code class="docutils literal">%run <span class="pre">-p</span> <span class="pre">-s</span> cumulative cprof_example.py</code> has the same effect as the command-line approach, except you never have to leave IPython.</p>
+<p>In the Jupyter notebook, you can use the <code class="docutils literal">%%prun</code> magic (two <code class="docutils literal">%</code> signs) to profile an entire code block. This pops up a separate window with the profile output. This can be useful in getting possibly quick answers to questions like, “Why did that code block take so long to run?”</p>
+<p>There are other tools available that help make profiles easier to understand when you are using IPython or Jupyter. One of these is <a class="reference external" href="https://github.com/jiffyclub/snakeviz/">SnakeViz</a>, which produces an interactive visualization of the profile results using d3.js.</p>
+</div>
+<div class="section" id="profiling-a-function-line-by-line">
+<h3>Profiling a Function Line by Line</h3>
+<p>In some cases the information you obtain from <code class="docutils literal">%prun</code> (or another <code class="docutils literal">cProfile</code>-based profile method) may not tell the whole story about a function's execution time, or it may be so complex that the results, aggregated by function name, are hard to interpret. For this case, there is a small library called <code class="docutils literal">line_profiler</code> (obtainable via PyPI or one of the package management tools). It contains an IPython extension enabling a new magic function <code class="docutils literal">%lprun</code> that computes a line-by-line-profiling of one or more functions. You can enable this extension by modifying your IPython configuration (see the IPython documentation or the section on configuration later in this chapter) to include the following line:</p>
+<pre class="literal-block"># A list of dotted module names of IPython extensions to load.
+c.TerminalIPythonApp.extensions = ['line_profiler']</pre>
+<p>You can also run the command:</p>
+<pre class="literal-block">%load_ext line_profiler</pre>
+<p><code class="docutils literal">line_profiler</code> can be used programmatically (see the full documentation), but it is perhaps most powerful when used interactively in IPython. Suppose you had a module <code class="docutils literal">prof_mod</code> with the following code doing some NumPy array operations:</p>
+<pre class="code ipython"><a name="rest_code_9f21aadf423b47aabebd0fcfe27fa181-1"></a><span class="o">%</span><span class="k">load_ext</span> line_profiler
+<a name="rest_code_9f21aadf423b47aabebd0fcfe27fa181-2"></a><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">randn</span>
+<a name="rest_code_9f21aadf423b47aabebd0fcfe27fa181-3"></a>
+<a name="rest_code_9f21aadf423b47aabebd0fcfe27fa181-4"></a><span class="k">def</span> <span class="nf">add_and_sum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<a name="rest_code_9f21aadf423b47aabebd0fcfe27fa181-5"></a>    <span class="n">added</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<a name="rest_code_9f21aadf423b47aabebd0fcfe27fa181-6"></a>    <span class="n">summed</span> <span class="o">=</span> <span class="n">added</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<a name="rest_code_9f21aadf423b47aabebd0fcfe27fa181-7"></a>    <span class="k">return</span> <span class="n">summed</span>
+<a name="rest_code_9f21aadf423b47aabebd0fcfe27fa181-8"></a>
+<a name="rest_code_9f21aadf423b47aabebd0fcfe27fa181-9"></a><span class="k">def</span> <span class="nf">call_function</span><span class="p">():</span>
+<a name="rest_code_9f21aadf423b47aabebd0fcfe27fa181-10"></a>    <span class="n">x</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<a name="rest_code_9f21aadf423b47aabebd0fcfe27fa181-11"></a>    <span class="n">y</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<a name="rest_code_9f21aadf423b47aabebd0fcfe27fa181-12"></a>    <span class="k">return</span> <span class="n">add_and_sum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre>
+<p>If we wanted to understand the performance of the <code class="docutils literal">add_and_sum</code> function, <code class="docutils literal">%prun</code> gives us the following:</p>
+<pre class="literal-block">In [569]: %run prof_mod
+
+In [570]: x = randn(3000, 3000)
+
+In [571]: y = randn(3000, 3000)
+
+In [572]: %prun add_and_sum(x, y)
+         4 function calls in 0.049 seconds
+   Ordered by: internal time
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.036    0.036    0.046    0.046 prof_mod.py:3(add_and_sum)
+        1    0.009    0.009    0.009    0.009 {method 'sum' of 'numpy.ndarray'}
+        1    0.003    0.003    0.049    0.049 &lt;string&gt;:1(&lt;module&gt;)</pre>
+<p>This is not especially enlightening. With the <code class="docutils literal">line_profiler</code> IPython extension activated, a new command <code class="docutils literal">%lprun</code> is available. The only difference in usage is that we must instruct <code class="docutils literal">%lprun</code> which function or functions we wish to profile. The general syntax is:</p>
+<pre class="literal-block">%lprun -f func1 -f func2 statement_to_profile</pre>
+<p>In this case, we want to profile <code class="docutils literal">add_and_sum</code>, so we run:</p>
+<pre class="literal-block">In [573]: %lprun -f add_and_sum add_and_sum(x, y)
+Timer unit: 1e-06 s
+File: prof_mod.py
+Function: add_and_sum at line 3
+Total time: 0.045936 s
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+     3                                           def add_and_sum(x, y):
+     4         1        36510  36510.0     79.5      added = x + y
+     5         1         9425   9425.0     20.5      summed = added.sum(axis=1)
+     6         1            1      1.0      0.0      return summed</pre>
+<p>This can be much easier to interpret. In this case we profiled the same function we used in the statement. Looking at the preceding module code, we could call <code class="docutils literal">call_function</code> and profile that as well as <code class="docutils literal">add_and_sum</code>, thus getting a full picture of the performance of the code:</p>
+<pre class="literal-block">In [574]: %lprun -f add_and_sum -f call_function call_function()
+Timer unit: 1e-06 s
+File: prof_mod.py
+Function: add_and_sum at line 3
+Total time: 0.005526 s
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+     3                                           def add_and_sum(x, y):
+     4         1         4375   4375.0     79.2      added = x + y
+     5         1         1149   1149.0     20.8      summed = added.sum(axis=1)
+     6         1            2      2.0      0.0      return summed
+File: prof_mod.py
+Function: call_function at line 8
+Total time: 0.121016 s
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+     8                                           def call_function():
+     9         1        57169  57169.0     47.2      x = randn(1000, 1000)
+    10         1        58304  58304.0     48.2      y = randn(1000, 1000)
+    11         1         5543   5543.0      4.6      return add_and_sum(x, y)</pre>
+<p>As a general rule of thumb, I tend to prefer <code class="docutils literal">%prun</code> (<code class="docutils literal">cProfile</code>) for “macro” profiling and <code class="docutils literal">%lprun</code> (<code class="docutils literal">line_profiler</code>) for “micro” profiling. It's worthwhile to have a good understanding of both tools.</p>
+<hr class="docutils">
+<p>Note</p>
+<p>The reason that you must explicitly specify the names of the functions you want to profile with <code class="docutils literal">%lprun</code> is that the overhead of “tracing” the execution time of each line is substantial. Tracing functions that are not of interest has the potential to significantly alter the profile results.</p>
+</div>
+</div>
+<div class="section" id="tips-for-productive-code-development-using-ipython">
+<h2>4 Tips for Productive Code Development Using IPython</h2>
+<p>Writing code in a way that makes it easy to develop, debug, and ultimately <em>use</em> interactively may be a paradigm shift for many users. There are procedural details like code reloading that may require some adjustment as well as coding style concerns.</p>
+<p>Therefore, implementing most of the strategies described in this section is more of an art than a science and will require some experimentation on your part to determine a way to write your Python code that is effective for you. Ultimately you want to structure your code in a way that makes it easy to use iteratively and to be able to explore the results of running a program or function as effortlessly as possible. I have found software designed with IPython in mind to be easier to work with than code intended only to be run as as standalone command-line application. This becomes especially important when something goes wrong and you have to diagnose an error in code that you or someone else might have written months or years beforehand.</p>
+<div class="section" id="reloading-module-dependencies">
+<h3>Reloading Module Dependencies</h3>
+<p>In Python, when you type <code class="docutils literal">import some_lib</code>, the code in <code class="docutils literal">some_lib</code> is executed and all the variables, functions, and imports defined within are stored in the newly created <code class="docutils literal">some_lib</code> module namespace. The next time you type <code class="docutils literal">import some_lib</code>, you will get a reference to the existing module namespace. The potential difficulty in interactive IPython code development comes when you, say, <code class="docutils literal">%run</code> a script that depends on some other module where you may have made changes. Suppose I had the following code in <em>testscript.py</em>:</p>
+<pre class="literal-block">import some_lib
+
+x = 5
+y = [1, 2, 3, 4]
+result = some_lib.get_answer(x, y)</pre>
+<p>If you were to execute <code class="docutils literal">%run test_script.py</code> then modify <em>somelib.py</em>, the next time you execute <code class="docutils literal">%run test_script.py</code> you will still get the <em>old version</em> of <em>somelib.py</em> because of Python's “load-once” module system. This behavior differs from some other data analysis environments, like MATLAB, which automatically propagate code changes.To cope with this, you have a couple of options. The first way is to use the <code class="docutils literal">reload</code> function in the <code class="docutils literal">importlib</code> module in the standard library:</p>
+<pre class="literal-block">import some_lib
+import importlib
+
+importlib.reload(some_lib)</pre>
+<p>This guarantees that you will get a fresh copy of <em>somelib.py</em> every time you run <em>testscript.py</em>. Obviously, if the dependencies go deeper, it might be a bit tricky to be inserting usages of <code class="docutils literal">reload</code> all over the place. For this problem, IPython has a special <code class="docutils literal">dreload</code> function (<em>not</em> a magic function) for “deep” (recursive) reloading of modules. If I were to run <em>somelib.py</em> then type <code class="docutils literal">dreload(some_lib)</code>, it will attempt to reload <code class="docutils literal">some_lib</code> as well as all of its dependencies. This will not work in all cases, unfortunately, but when it does it beats having to restart IPython.</p>
+</div>
+<div class="section" id="code-design-tips">
+<h3>Code Design Tips</h3>
+<p>There's no simple recipe for this, but here are some high-level principles I have found effective in my own work.</p>
+<div class="section" id="keep-relevant-objects-and-data-alive">
+<h4>Keep relevant objects and data alive</h4>
+<p>It's not unusual to see a program written for the command line with a structure somewhat like the following trivial example:</p>
+<pre class="code ipython"><a name="rest_code_f0634b4ad9eb4d1095ea4a604fc89222-1"></a><span class="c1">#    from my_functions import g</span>
+<a name="rest_code_f0634b4ad9eb4d1095ea4a604fc89222-2"></a>
+<a name="rest_code_f0634b4ad9eb4d1095ea4a604fc89222-3"></a><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<a name="rest_code_f0634b4ad9eb4d1095ea4a604fc89222-4"></a>    <span class="k">return</span> <span class="n">g</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
+<a name="rest_code_f0634b4ad9eb4d1095ea4a604fc89222-5"></a>
+<a name="rest_code_f0634b4ad9eb4d1095ea4a604fc89222-6"></a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<a name="rest_code_f0634b4ad9eb4d1095ea4a604fc89222-7"></a>    <span class="n">x</span> <span class="o">=</span> <span class="mi">6</span>
+<a name="rest_code_f0634b4ad9eb4d1095ea4a604fc89222-8"></a>    <span class="n">y</span> <span class="o">=</span> <span class="mf">7.5</span>
+<a name="rest_code_f0634b4ad9eb4d1095ea4a604fc89222-9"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<a name="rest_code_f0634b4ad9eb4d1095ea4a604fc89222-10"></a>
+<a name="rest_code_f0634b4ad9eb4d1095ea4a604fc89222-11"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<a name="rest_code_f0634b4ad9eb4d1095ea4a604fc89222-12"></a>    <span class="n">main</span><span class="p">()</span>
+</pre>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 1306)</p>
+<p>Literal block expected; none found.</p>
+</div>
+<p>Do you see what might go wrong if we were to run this program in IPython? After it's done, none of the results or objects defined in the <code class="docutils literal">main</code> function will be accessible in the IPython shell. A better way is to have whatever code is in <code class="docutils literal">main</code> execute directly in the module's global namespace (or in the <code class="docutils literal">if  __name__ =</code> 'main':= block, if you want the module to also be importable). That way, when you <code class="docutils literal">%run</code> the code, you'll be able to look at all of the variables defined in <code class="docutils literal">main</code>. This is equivalent to defining top-level variables in cells in the Jupyter notebook.</p>
+</div>
+<div class="section" id="flat-is-better-than-nested">
+<h4>Flat is better than nested</h4>
+<p>Deeply nested code makes me think about the many layers of an onion. When testing or debugging a function, how many layers of the onion must you peel back in order to reach the code of interest? The idea that “flat is better than nested” is a part of the Zen of Python, and it applies generally to developing code for interactive use as well. Making functions and classes as decoupled and modular as possible makes them easier to test (if you are writing unit tests), debug, and use interactively.</p>
+</div>
+<div class="section" id="overcome-a-fear-of-longer-files">
+<h4>Overcome a fear of longer files</h4>
+<p>If you come from a Java (or another such language) background, you may have been told to keep files short. In many languages, this is sound advice; long length is usually a bad “code smell,” indicating refactoring or reorganization may be necessary. However, while developing code using IPython, working with 10 small but interconnected files (under, say, 100 lines each) is likely to cause you more headaches in general than two or three longer files. Fewer files means fewer modules to reload and less jumping between files while editing, too. I have found maintaining larger modules, each with high <em>internal</em> cohesion, to be much more useful and Pythonic. After iterating toward a solution, it sometimes will make sense to refactor larger files into smaller ones.</p>
+<p>Obviously, I don't support taking this argument to the extreme, which would to be to put all of your code in a single monstrous file. Finding a sensible and intuitive module and package structure for a large codebase often takes a bit of work, but it is especially important to get right in teams. Each module should be internally cohesive, and it should be as obvious as possible where to find functions and classes responsible for each area of functionality.</p>
+</div>
+</div>
+</div>
+<div class="section" id="advanced-ipython-features">
+<h2>5 Advanced IPython Features</h2>
+<p>Making full use of the IPython system may lead you to write your code in a slightly different way, or to dig into the configuration.</p>
+<div class="section" id="making-your-own-classes-ipython-friendly">
+<h3>Making Your Own Classes IPython-Friendly</h3>
+<p>IPython makes every effort to display a console-friendly string representation of any object that you inspect. For many objects, like dicts, lists, and tuples, the built-in <code class="docutils literal">pprint</code> module is used to do the nice formatting. In user-defined classes, however, you have to generate the desired string output yourself. Suppose we had the following simple class:</p>
+<pre class="literal-block">class Message:
+    def __init__(self, msg):
+        self.msg = msg</pre>
+<p>If you wrote this, you would be disappointed to discover that the default output for your class isn't very nice:</p>
+<pre class="literal-block">In [576]: x = Message('I have a secret')
+
+In [577]: x
+Out[577]: &lt;__main__.Message instance at 0x60ebbd8&gt;</pre>
+<p>IPython takes the string returned by the <code class="docutils literal">__repr__</code> magic method (by doing <code class="docutils literal">output = repr(obj)</code>) and prints that to the console. Thus, we can add a simple <code class="docutils literal">__repr__</code> method to the preceding class to get a more helpful output:</p>
+<pre class="literal-block">class Message:
+    def __init__(self, msg):
+        self.msg = msg
+
+    def __repr__(self):
+        return 'Message: %s' % self.msg</pre>
+<pre class="literal-block">In [579]: x = Message('I have a secret')
+In [580]: x
+Out[580]: Message: I have a secret</pre>
+</div>
+<div class="section" id="profiles-and-configuration">
+<h3>Profiles and Configuration</h3>
+<p>Most aspects of the appearance (colors, prompt, spacing between lines, etc.) and behavior of the IPython and Jupyter environments are configurable through an extensive configuration system. Here are some things you can do via configuration:</p>
+<ul class="simple">
+<li><p>Change the color scheme</p></li>
+<li><p>Change how the input and output prompts look, or remove the blank line after <code class="docutils literal">Out</code> and before the next <code class="docutils literal">In</code> prompt</p></li>
+<li><p>Execute an arbitrary list of Python statements (e.g., imports that you use all the time or anything else you want to happen each time you launch IPython)</p></li>
+<li><p>Enable always-on IPython extensions, like the <code class="docutils literal">%lprun</code> magic in <code class="docutils literal">line_profiler</code></p></li>
+<li><p>Enabling Jupyter extensions</p></li>
+<li><p>Define your own magics or system aliases</p></li>
+</ul>
+<p>Configurations for the IPython shell are specified in special <em>ipythonconfig.py</em> files, which are usually found in the <em>.ipython/</em> directory in your user home directory. Configuration is performed based on a particular <em>profile</em>. When you start IPython normally, you load up, by default, the <em>default profile</em>, stored in the <em>profiledefault</em> directory. Thus, on my Linux OS the full path to my default IPython configuration file is:</p>
+<pre class="literal-block">/home/wesm/.ipython/profile_default/ipython_config.py</pre>
+<p>To initialize this file on your system, run in the terminal:</p>
+<pre class="literal-block">ipython profile create</pre>
+<p>I'll spare you the gory details of what's in this file. Fortunately it has comments describing what each configuration option is for, so I will leave it to the reader to tinker and customize. One additional useful feature is that it's possible to have <em>multiple profiles</em>. Suppose you wanted to have an alternative IPython configuration tailored for a particular application or project. Creating a new profile is as simple as typing something like the following:</p>
+<pre class="literal-block">ipython profile create secret_project</pre>
+<p>Once you've done this, edit the config files in the newly created <em>profilesecretproject</em> directory and then launch IPython like so:</p>
+<pre class="literal-block">$ ipython --profile=secret_project
+Python 3.5.1 | packaged by conda-forge | (default, May 20 2016, 05:22:56)
+Type "copyright", "credits" or "license" for more information.
+
+IPython 5.1.0 -- An enhanced Interactive Python.
+?         -&gt; Introduction and overview of IPython's features.
+%quickref -&gt; Quick reference.
+help      -&gt; Python's own help system.
+object?   -&gt; Details about 'object', use 'object??' for extra details.
+
+IPython profile: secret_project</pre>
+<p>As always, the online IPython documentation is an excellent resource for more on profiles and configuration.</p>
+<p>Configuration for Jupyter works a little differently because you can use its notebooks with languages other than Python. To create an analogous Jupyter config file, run:</p>
+<pre class="literal-block">jupyter notebook --generate-config</pre>
+<p>This writes a default config file to the <em>.jupyter/jupyternotebookconfig.py</em> directory in your home directory. After editing this to suit your needs, you may rename it to a different file, like:</p>
+<pre class="literal-block">$ mv ~/.jupyter/jupyter_notebook_config.py ~/.jupyter/my_custom_config.py</pre>
+<p>When launching Jupyter, you can then add the <code class="docutils literal"><span class="pre">--config</span></code> argument:</p>
+<pre class="literal-block">jupyter notebook --config=~/.jupyter/my_custom_config.py</pre>
+</div>
+</div>
+<div class="section" id="conclusion">
+<h2>6 Conclusion</h2>
+<p>As you work through the code examples in this book and grow your skills as a Python programmer, I encourage you to keep learning about the IPython and Jupyter ecosystems. Since these projects have been designed to assist user productivity, you may discover tools that enable you to do your work more easily than using the Python language and its computational libraries by themselves.</p>
+<p>You can also find a wealth of interesting Jupyter notebooks on the <a class="reference external" href="https://nbviewer.jupyter.org/">nbviewer website</a>.</p>
+<p>Since a module or package may be imported in many different places in a particular program, Python caches a module's code the first time it is imported rather than executing the code in the module every time. Otherwise, modularity and good code organization could potentially cause inefficiency in an application.</p>
+<pre class="code shell"><a name="rest_code_47f567629e8d4ee4b3fea0495a725f19-1"></a>ls *.html <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> line<span class="p">;</span> <span class="k">do</span>
+<a name="rest_code_47f567629e8d4ee4b3fea0495a725f19-2"></a>pandoc --wrap<span class="o">=</span>none <span class="s2">"</span><span class="nv">$line</span><span class="s2">"</span> -o <span class="si">${</span><span class="nv">line</span><span class="p">%html</span><span class="si">}</span>org
+<a name="rest_code_47f567629e8d4ee4b3fea0495a725f19-3"></a><span class="k">done</span>
+</pre>
+<pre class="code shell"><a name="rest_code_36ba8dc00e824574bcb1d9de656f6e21-1"></a><span class="nb">echo</span> <span class="si">${</span><span class="p"> ls [1-9]*.org | sort -n </span><span class="si">}</span>
+</pre>
+</div>
+<div class="section" id="publish">
+<h2>Publish</h2>
+<pre class="code ipython"><a name="rest_code_df4c79177b47460fa7890ae4de249028-1"></a><span class="kn">import</span> <span class="nn">subprocess</span>
+<a name="rest_code_df4c79177b47460fa7890ae4de249028-2"></a><span class="kn">import</span> <span class="nn">os</span>
+<a name="rest_code_df4c79177b47460fa7890ae4de249028-3"></a><span class="kn">import</span> <span class="nn">sys</span>
+<a name="rest_code_df4c79177b47460fa7890ae4de249028-4"></a><span class="c1"># nprint(os.getcwd())</span>
+<a name="rest_code_df4c79177b47460fa7890ae4de249028-5"></a><span class="c1">#print(__file__)</span>
+<a name="rest_code_df4c79177b47460fa7890ae4de249028-6"></a><span class="c1"># print(sys.argv)</span>
+<a name="rest_code_df4c79177b47460fa7890ae4de249028-7"></a>
+<a name="rest_code_df4c79177b47460fa7890ae4de249028-8"></a><span class="n">cmd</span> <span class="o">=</span> <span class="n">f</span><span class="s2">"pandoc --wrap=none py-Ipython-offprint.org -o ~/Public/nikola_post/posts/Ipython-Summary.rst"</span>
+<a name="rest_code_df4c79177b47460fa7890ae4de249028-9"></a><span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre>
+</div>
+</div>
+            
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="?",
+            disqus_url="https://alinbxsorcerer.github.io/posts/ipython-summary/",
+        disqus_title="IPython Summary",
+        disqus_identifier="cache/posts/Ipython-Summary.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        
+
+        </div>
+    </div>
+
+    
+    <footer><div class="container">
+            <div class="social">
+
+
+
+                <div class="social-entry">
+                    <a href="../../rss.xml" target="_blank">
+                        <i class="fa fa-rss"></i> 
+                    </a>
+                </div>
+            </div>
+                <div class="copyright">
+                    Contents © 2019         <a href="mailto:davad.fhl.wang@foxmail.com">David</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+                    
+                </div>
+           
+        </div>
+    </footer><script src="../../assets/js/all-nocdn.js" type="text/javascript"></script>
+</body>
+</html>
