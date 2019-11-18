@@ -1,10 +1,10 @@
-   .. title: X的奇幻之旅-4.Calculus
+   .. title: 读书评注:X的奇幻之旅-4.Calculus
    .. slug: the-joy-of-x
    .. date: 2017-05-17 20:53:29 UTC+08:00
    .. tags: math, calculus
    .. category: math
    .. link: https://github.com/alinbxSorcerer/The-Joy-of-X
-   .. description:
+   .. description: 
    .. type: text
 
 .. contents::
