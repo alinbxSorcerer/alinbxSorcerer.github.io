@@ -180,29 +180,7 @@ nce</p></td>
 </tr>
 </tbody>
 </table>
-<p>这个Meta-class最成功的一点是将 back-reference放在里面.
-class, [:space:] [ <a href="#id1"><span class="problematic" id="id2">:raw-latex:`\t`</span></a><a href="#id3"><span class="problematic" id="id4">:raw-latex:`\r`</span></a><a href="#id5"><span class="problematic" id="id6">:raw-latex:`\n`</span></a><a href="#id7"><span class="problematic" id="id8">:raw-latex:`\f`</span></a>]
-[:blank:] [ <a href="#id9"><span class="problematic" id="id10">:raw-latex:`\t`</span></a>]</p>
-<div class="system-message" id="id1">
-<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 57); <em><a href="#id2">backlink</a></em></p>
-<p>Unknown interpreted text role "raw-latex".</p>
-</div>
-<div class="system-message" id="id3">
-<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 57); <em><a href="#id4">backlink</a></em></p>
-<p>Unknown interpreted text role "raw-latex".</p>
-</div>
-<div class="system-message" id="id5">
-<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 57); <em><a href="#id6">backlink</a></em></p>
-<p>Unknown interpreted text role "raw-latex".</p>
-</div>
-<div class="system-message" id="id7">
-<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 57); <em><a href="#id8">backlink</a></em></p>
-<p>Unknown interpreted text role "raw-latex".</p>
-</div>
-<div class="system-message" id="id9">
-<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 57); <em><a href="#id10">backlink</a></em></p>
-<p>Unknown interpreted text role "raw-latex".</p>
-</div>
+<p>这个Meta-class最成功的一点是将 back-reference放在里面.</p>
 <p>#+Intermediate topics</p>
 <table>
 <colgroup>
@@ -231,30 +209,19 @@ a(?&lt;foo&gt;bc)
 </tbody>
 </table>
 <p>#+Advanced topics</p>
+<div class="line-block">
+<div class="line">back-reference                    | \1, \?&lt;foo&gt;&lt;foo&gt; k for keyword  |</div>
+</div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 74)</p>
+<p>Line block ends without a blank line.</p>
+</div>
 <table>
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
 </colgroup>
-<thead><tr>
-<th class="head"><p>boundaries</p></th>
-<th class="head">
-<p><a href="#id11"><span class="problematic" id="id12">:raw-latex:`\babc`</span></a><a href="#id13"><span class="problematic" id="id14">:raw-latex:`\b`</span></a></p>
-<div class="system-message" id="id11">
-<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 77); <em><a href="#id12">backlink</a></em></p>
-<p>Unknown interpreted text role "raw-latex".</p>
-</div>
-<div class="system-message" id="id13">
-<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 77); <em><a href="#id14">backlink</a></em></p>
-<p>Unknown interpreted text role "raw-latex".</p>
-</div>
-</th>
-</tr></thead>
 <tbody>
-<tr>
-<td><p>back-reference</p></td>
-<td><p>\1, \?&lt;foo&gt;&lt;foo&gt; k for keyword</p></td>
-</tr>
 <tr>
 <td><p>look-ahead</p></td>
 <td><p>d(?=r) look r's ahead,
@@ -412,19 +379,19 @@ of `re.sub()`</p></td>
 </tr>
 </tbody>
 </table>
-<pre class="code python"><a name="rest_code_52afce1dc26e41aea327dbf774e5e5b2-1"></a><span class="c1"># 需要注意的一点是, findall只返回匹配的group</span>
-<a name="rest_code_52afce1dc26e41aea327dbf774e5e5b2-2"></a><span class="p">{</span>   <span class="s1">'methods'</span><span class="p">:</span> <span class="p">{[</span><span class="s1">'search'</span><span class="p">,</span> <span class="s1">'match'</span><span class="p">,</span> <span class="s1">'findall'</span><span class="p">,</span> <span class="s1">'finditer'</span><span class="p">],</span>
-<a name="rest_code_52afce1dc26e41aea327dbf774e5e5b2-3"></a>                  <span class="p">[</span><span class="s1">'split'</span><span class="p">,</span> <span class="s1">'sub'</span><span class="p">]},</span> <span class="c1">#modify and replcae</span>
-<a name="rest_code_52afce1dc26e41aea327dbf774e5e5b2-4"></a>    <span class="s1">'match_object'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'group'</span><span class="p">,</span><span class="s1">'groups'</span><span class="p">,</span> <span class="s1">'groupdict'</span><span class="p">,</span><span class="s1">'start'</span><span class="p">,</span> <span class="s1">'end'</span><span class="p">,</span> <span class="s1">'span'</span><span class="p">,]</span>
-<a name="rest_code_52afce1dc26e41aea327dbf774e5e5b2-5"></a>    <span class="p">}</span>
-<a name="rest_code_52afce1dc26e41aea327dbf774e5e5b2-6"></a><span class="c1"># Performing matches</span>
-<a name="rest_code_52afce1dc26e41aea327dbf774e5e5b2-7"></a><span class="n">match</span><span class="p">(),</span> <span class="n">search</span><span class="p">(),</span> <span class="n">findall</span><span class="p">,</span> <span class="n">findinter</span><span class="p">()</span>
-<a name="rest_code_52afce1dc26e41aea327dbf774e5e5b2-8"></a><span class="c1"># module level functions</span>
-<a name="rest_code_52afce1dc26e41aea327dbf774e5e5b2-9"></a><span class="n">match</span><span class="p">,</span> <span class="n">search</span><span class="p">,</span> <span class="n">findall</span><span class="p">,</span> <span class="n">sub</span><span class="p">,</span>
-<a name="rest_code_52afce1dc26e41aea327dbf774e5e5b2-10"></a><span class="c1">#complilation Flags</span>
-<a name="rest_code_52afce1dc26e41aea327dbf774e5e5b2-11"></a><span class="n">DOTALL</span><span class="p">(</span><span class="n">S</span><span class="o">-</span><span class="n">single</span><span class="p">),</span> <span class="n">IGNORECASE</span><span class="p">(</span><span class="n">I</span><span class="p">),</span> <span class="n">MULTIPLELINE</span><span class="p">(</span><span class="n">M</span><span class="p">),</span> <span class="n">VERBOSE</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<a name="rest_code_52afce1dc26e41aea327dbf774e5e5b2-12"></a><span class="c1">#Modify strings</span>
-<a name="rest_code_52afce1dc26e41aea327dbf774e5e5b2-13"></a><span class="n">re</span><span class="o">.</span><span class="n">split</span>
+<pre class="code python"><a name="rest_code_ab932327291f44429882db6305ffdfe0-1"></a><span class="c1"># 需要注意的一点是, findall只返回匹配的group</span>
+<a name="rest_code_ab932327291f44429882db6305ffdfe0-2"></a><span class="p">{</span>   <span class="s1">'methods'</span><span class="p">:</span> <span class="p">{[</span><span class="s1">'search'</span><span class="p">,</span> <span class="s1">'match'</span><span class="p">,</span> <span class="s1">'findall'</span><span class="p">,</span> <span class="s1">'finditer'</span><span class="p">],</span>
+<a name="rest_code_ab932327291f44429882db6305ffdfe0-3"></a>                  <span class="p">[</span><span class="s1">'split'</span><span class="p">,</span> <span class="s1">'sub'</span><span class="p">]},</span> <span class="c1">#modify and replcae</span>
+<a name="rest_code_ab932327291f44429882db6305ffdfe0-4"></a>    <span class="s1">'match_object'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'group'</span><span class="p">,</span><span class="s1">'groups'</span><span class="p">,</span> <span class="s1">'groupdict'</span><span class="p">,</span><span class="s1">'start'</span><span class="p">,</span> <span class="s1">'end'</span><span class="p">,</span> <span class="s1">'span'</span><span class="p">,]</span>
+<a name="rest_code_ab932327291f44429882db6305ffdfe0-5"></a>    <span class="p">}</span>
+<a name="rest_code_ab932327291f44429882db6305ffdfe0-6"></a><span class="c1"># Performing matches</span>
+<a name="rest_code_ab932327291f44429882db6305ffdfe0-7"></a><span class="n">match</span><span class="p">(),</span> <span class="n">search</span><span class="p">(),</span> <span class="n">findall</span><span class="p">,</span> <span class="n">findinter</span><span class="p">()</span>
+<a name="rest_code_ab932327291f44429882db6305ffdfe0-8"></a><span class="c1"># module level functions</span>
+<a name="rest_code_ab932327291f44429882db6305ffdfe0-9"></a><span class="n">match</span><span class="p">,</span> <span class="n">search</span><span class="p">,</span> <span class="n">findall</span><span class="p">,</span> <span class="n">sub</span><span class="p">,</span>
+<a name="rest_code_ab932327291f44429882db6305ffdfe0-10"></a><span class="c1">#complilation Flags</span>
+<a name="rest_code_ab932327291f44429882db6305ffdfe0-11"></a><span class="n">DOTALL</span><span class="p">(</span><span class="n">S</span><span class="o">-</span><span class="n">single</span><span class="p">),</span> <span class="n">IGNORECASE</span><span class="p">(</span><span class="n">I</span><span class="p">),</span> <span class="n">MULTIPLELINE</span><span class="p">(</span><span class="n">M</span><span class="p">),</span> <span class="n">VERBOSE</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<a name="rest_code_ab932327291f44429882db6305ffdfe0-12"></a><span class="c1">#Modify strings</span>
+<a name="rest_code_ab932327291f44429882db6305ffdfe0-13"></a><span class="n">re</span><span class="o">.</span><span class="n">split</span>
 </pre>
 </div>
 <div class="section" id="regex-in-python">
@@ -437,88 +404,88 @@ of `re.sub()`</p></td>
 <div class="line"><a class="reference external" href="https://stackoverflow.com/questions/22937618/reference-what-does-this-regex-mean/22944075#22944075">regex collections</a></div>
 <div class="line"><a class="reference external" href="https://docs.python.org/3/howto/regex.html#regex-howto">python regex how to</a></div>
 </div>
-<pre class="code python"><a name="rest_code_100fb429466a45d1a4f864c482488710-1"></a><span class="n">Besides</span> <span class="n">the</span> <span class="n">performance</span><span class="o">.</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-2"></a>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-3"></a><span class="n">Using</span> <span class="sb">`compile`</span> <span class="n">helps</span> <span class="n">me</span> <span class="n">to</span> <span class="n">distinguish</span> <span class="n">the</span> <span class="n">concepts</span> <span class="n">of</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-4"></a><span class="mf">1.</span> <span class="n">module</span><span class="p">(</span><span class="n">re</span><span class="p">)</span><span class="o">*</span><span class="p">,</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-5"></a><span class="mf">2.</span> <span class="n">regex</span> <span class="nb">object</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-6"></a><span class="mf">3.</span> <span class="n">match</span> <span class="nb">object</span>   <span class="c1">#重要的是我总结的三个概念. 三个层级.</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-7"></a><span class="n">python的特殊之处是在named</span> <span class="n">group上的纠结</span><span class="p">,</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-8"></a><span class="n">When</span> <span class="n">I</span> <span class="n">started</span> <span class="n">learning</span> <span class="n">regex</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-9"></a>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-10"></a>    <span class="c1">#regex object</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-11"></a>    <span class="n">regex_object</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">'[a-zA-Z]+'</span><span class="p">)</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-12"></a>    <span class="c1">#match object</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-13"></a>    <span class="n">match_object</span> <span class="o">=</span> <span class="n">regex_object</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">'1.Hello'</span><span class="p">)</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-14"></a>    <span class="c1">#matching content</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-15"></a>    <span class="n">match_object</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-16"></a>    <span class="n">output</span><span class="p">:</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-17"></a>    <span class="n">Out</span><span class="p">[</span><span class="mi">60</span><span class="p">]:</span> <span class="s1">'Hello'</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-18"></a>    <span class="n">V</span><span class="o">.</span><span class="n">S</span><span class="o">.</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-19"></a>    <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">'[a-zA-Z]+'</span><span class="p">,</span><span class="s1">'1.Hello'</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-20"></a>    <span class="n">Out</span><span class="p">[</span><span class="mi">61</span><span class="p">]:</span> <span class="s1">'Hello'</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-21"></a>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-22"></a><span class="n">As</span> <span class="n">a</span> <span class="n">complement</span><span class="p">,</span> <span class="n">I</span> <span class="n">made</span> <span class="n">an</span> <span class="n">exhaustive</span> <span class="n">cheatsheet</span> <span class="n">of</span> <span class="n">module</span> <span class="sb">`re`</span> <span class="k">for</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-23"></a>    <span class="n">regex</span> <span class="o">=</span> <span class="p">{</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-24"></a>    <span class="s1">'brackets'</span><span class="p">:{</span><span class="s1">'single_character'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'[]'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="p">{</span><span class="s1">'negate'</span><span class="p">:</span><span class="s1">'^'</span><span class="p">}],</span> <span class="err">试图从少到多去解析</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-25"></a>                <span class="s1">'capturing_group'</span> <span class="p">:</span> <span class="p">[</span><span class="s1">'()'</span><span class="p">,</span><span class="s1">'(?:)'</span><span class="p">,</span> <span class="s1">'(?!)'</span> <span class="s1">'|'</span><span class="p">,</span> <span class="s1">'</span><span class="se">\\</span><span class="s1">'</span><span class="p">,</span> <span class="s1">'backreferences and named group'</span><span class="p">],</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-26"></a>                <span class="s1">'repetition'</span>      <span class="p">:</span> <span class="p">[</span><span class="s1">'{}'</span><span class="p">,</span> <span class="s1">'*?'</span><span class="p">,</span> <span class="s1">'+?'</span><span class="p">,</span> <span class="s1">'??'</span><span class="p">,</span> <span class="s1">'greedy v.s. lazy ?'</span><span class="p">]},</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-27"></a>    <span class="s1">'lookaround'</span> <span class="p">:{</span><span class="s1">'lookahead'</span>  <span class="p">:</span> <span class="p">[</span><span class="s1">'(?=...)'</span><span class="p">,</span> <span class="s1">'(?!...)'</span><span class="p">],</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-28"></a>               <span class="s1">'lookbehind'</span> <span class="p">:</span> <span class="p">[</span><span class="s1">'(?&lt;=...)'</span><span class="p">,</span><span class="s1">'(?&lt;!...)'</span><span class="p">],</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-29"></a>               <span class="s1">'caputuring'</span> <span class="p">:</span> <span class="p">[</span><span class="s1">'(?P&lt;name&gt;...)'</span><span class="p">,</span> <span class="s1">'(?P=name)'</span><span class="err">这是应用</span><span class="p">,</span> <span class="s1">'(?:)'</span><span class="p">],},</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-30"></a>    <span class="s1">'escapes'</span><span class="p">:{</span><span class="s1">'anchor'</span>         <span class="p">:</span> <span class="p">[</span><span class="s1">'^'</span><span class="p">,</span> <span class="s1">'$'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">],</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-31"></a>              <span class="s1">'non_printable'</span>   <span class="p">:</span> <span class="p">[</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">,</span> <span class="s1">'</span><span class="se">\r</span><span class="s1">'</span><span class="p">,</span> <span class="s1">'</span><span class="se">\f</span><span class="s1">'</span><span class="p">,</span> <span class="s1">'</span><span class="se">\v</span><span class="s1">'</span><span class="p">],</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-32"></a>              <span class="s1">'shorthand'</span>       <span class="p">:</span> <span class="p">[</span><span class="s1">'\d'</span><span class="p">,</span> <span class="s1">'\w'</span><span class="p">,</span> <span class="s1">'\s'</span><span class="p">]},</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-33"></a>    <span class="s1">'methods'</span><span class="p">:</span> <span class="p">{[</span><span class="s1">'search'</span><span class="p">,</span> <span class="s1">'match'</span><span class="p">,</span> <span class="s1">'findall'</span><span class="p">,</span> <span class="s1">'finditer'</span><span class="p">],</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-34"></a>                  <span class="p">[</span><span class="s1">'split'</span><span class="p">,</span> <span class="s1">'sub'</span><span class="p">]},</span> <span class="c1">#modify and replcae</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-35"></a>    <span class="s1">'match_object'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'group'</span><span class="p">,</span><span class="s1">'groups'</span><span class="p">,</span> <span class="s1">'groupdict'</span><span class="p">,</span><span class="s1">'start'</span><span class="p">,</span> <span class="s1">'end'</span><span class="p">,</span> <span class="s1">'span'</span><span class="p">,]</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-36"></a>    <span class="p">}</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-37"></a><span class="c1"># Performing matches</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-38"></a><span class="n">match</span><span class="p">(),</span> <span class="n">search</span><span class="p">(),</span> <span class="n">findall</span><span class="p">,</span> <span class="n">findinter</span><span class="p">()</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-39"></a><span class="c1"># module level functions</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-40"></a><span class="n">match</span><span class="p">,</span> <span class="n">search</span><span class="p">,</span> <span class="n">findall</span><span class="p">,</span> <span class="n">sub</span><span class="p">,</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-41"></a><span class="c1">#complilation Flags</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-42"></a><span class="n">DOTALL</span><span class="p">(</span><span class="n">S</span><span class="o">-</span><span class="n">single</span><span class="p">),</span> <span class="n">IGNORECASE</span><span class="p">(</span><span class="n">I</span><span class="p">),</span> <span class="n">MULTIPLELINE</span><span class="p">(</span><span class="n">M</span><span class="p">),</span> <span class="n">VERBOSE</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-43"></a><span class="c1">#Modify strings</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-44"></a><span class="n">re</span><span class="o">.</span><span class="n">split</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-45"></a><span class="c1">#Search and Replace</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-46"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">'section{ (?P&lt;name&gt; [^}]* ) }'</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">VERBOSE</span><span class="p">)</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-47"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">'subsection{\1}'</span><span class="p">,</span><span class="s1">'section{First}'</span><span class="p">)</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-48"></a><span class="s1">'subsection{First}'</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-49"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">'subsection{\g&lt;1&gt;}'</span><span class="p">,</span><span class="s1">'section{First}'</span><span class="p">)</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-50"></a><span class="s1">'subsection{First}'</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-51"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">'subsection{\g&lt;name&gt;}'</span><span class="p">,</span><span class="s1">'section{First}'</span><span class="p">)</span>
-<a name="rest_code_100fb429466a45d1a4f864c482488710-52"></a><span class="s1">'subsection{First}'</span> <span class="c1">#三种不同的形式.</span>
+<pre class="code python"><a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-1"></a><span class="n">Besides</span> <span class="n">the</span> <span class="n">performance</span><span class="o">.</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-2"></a>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-3"></a><span class="n">Using</span> <span class="sb">`compile`</span> <span class="n">helps</span> <span class="n">me</span> <span class="n">to</span> <span class="n">distinguish</span> <span class="n">the</span> <span class="n">concepts</span> <span class="n">of</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-4"></a><span class="mf">1.</span> <span class="n">module</span><span class="p">(</span><span class="n">re</span><span class="p">)</span><span class="o">*</span><span class="p">,</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-5"></a><span class="mf">2.</span> <span class="n">regex</span> <span class="nb">object</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-6"></a><span class="mf">3.</span> <span class="n">match</span> <span class="nb">object</span>   <span class="c1">#重要的是我总结的三个概念. 三个层级.</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-7"></a><span class="n">python的特殊之处是在named</span> <span class="n">group上的纠结</span><span class="p">,</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-8"></a><span class="n">When</span> <span class="n">I</span> <span class="n">started</span> <span class="n">learning</span> <span class="n">regex</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-9"></a>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-10"></a>    <span class="c1">#regex object</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-11"></a>    <span class="n">regex_object</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">'[a-zA-Z]+'</span><span class="p">)</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-12"></a>    <span class="c1">#match object</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-13"></a>    <span class="n">match_object</span> <span class="o">=</span> <span class="n">regex_object</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">'1.Hello'</span><span class="p">)</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-14"></a>    <span class="c1">#matching content</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-15"></a>    <span class="n">match_object</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-16"></a>    <span class="n">output</span><span class="p">:</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-17"></a>    <span class="n">Out</span><span class="p">[</span><span class="mi">60</span><span class="p">]:</span> <span class="s1">'Hello'</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-18"></a>    <span class="n">V</span><span class="o">.</span><span class="n">S</span><span class="o">.</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-19"></a>    <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">'[a-zA-Z]+'</span><span class="p">,</span><span class="s1">'1.Hello'</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-20"></a>    <span class="n">Out</span><span class="p">[</span><span class="mi">61</span><span class="p">]:</span> <span class="s1">'Hello'</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-21"></a>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-22"></a><span class="n">As</span> <span class="n">a</span> <span class="n">complement</span><span class="p">,</span> <span class="n">I</span> <span class="n">made</span> <span class="n">an</span> <span class="n">exhaustive</span> <span class="n">cheatsheet</span> <span class="n">of</span> <span class="n">module</span> <span class="sb">`re`</span> <span class="k">for</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-23"></a>    <span class="n">regex</span> <span class="o">=</span> <span class="p">{</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-24"></a>    <span class="s1">'brackets'</span><span class="p">:{</span><span class="s1">'single_character'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'[]'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="p">{</span><span class="s1">'negate'</span><span class="p">:</span><span class="s1">'^'</span><span class="p">}],</span> <span class="err">试图从少到多去解析</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-25"></a>                <span class="s1">'capturing_group'</span> <span class="p">:</span> <span class="p">[</span><span class="s1">'()'</span><span class="p">,</span><span class="s1">'(?:)'</span><span class="p">,</span> <span class="s1">'(?!)'</span> <span class="s1">'|'</span><span class="p">,</span> <span class="s1">'</span><span class="se">\\</span><span class="s1">'</span><span class="p">,</span> <span class="s1">'backreferences and named group'</span><span class="p">],</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-26"></a>                <span class="s1">'repetition'</span>      <span class="p">:</span> <span class="p">[</span><span class="s1">'{}'</span><span class="p">,</span> <span class="s1">'*?'</span><span class="p">,</span> <span class="s1">'+?'</span><span class="p">,</span> <span class="s1">'??'</span><span class="p">,</span> <span class="s1">'greedy v.s. lazy ?'</span><span class="p">]},</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-27"></a>    <span class="s1">'lookaround'</span> <span class="p">:{</span><span class="s1">'lookahead'</span>  <span class="p">:</span> <span class="p">[</span><span class="s1">'(?=...)'</span><span class="p">,</span> <span class="s1">'(?!...)'</span><span class="p">],</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-28"></a>               <span class="s1">'lookbehind'</span> <span class="p">:</span> <span class="p">[</span><span class="s1">'(?&lt;=...)'</span><span class="p">,</span><span class="s1">'(?&lt;!...)'</span><span class="p">],</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-29"></a>               <span class="s1">'caputuring'</span> <span class="p">:</span> <span class="p">[</span><span class="s1">'(?P&lt;name&gt;...)'</span><span class="p">,</span> <span class="s1">'(?P=name)'</span><span class="err">这是应用</span><span class="p">,</span> <span class="s1">'(?:)'</span><span class="p">],},</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-30"></a>    <span class="s1">'escapes'</span><span class="p">:{</span><span class="s1">'anchor'</span>         <span class="p">:</span> <span class="p">[</span><span class="s1">'^'</span><span class="p">,</span> <span class="s1">'$'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">],</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-31"></a>              <span class="s1">'non_printable'</span>   <span class="p">:</span> <span class="p">[</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">,</span> <span class="s1">'</span><span class="se">\r</span><span class="s1">'</span><span class="p">,</span> <span class="s1">'</span><span class="se">\f</span><span class="s1">'</span><span class="p">,</span> <span class="s1">'</span><span class="se">\v</span><span class="s1">'</span><span class="p">],</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-32"></a>              <span class="s1">'shorthand'</span>       <span class="p">:</span> <span class="p">[</span><span class="s1">'\d'</span><span class="p">,</span> <span class="s1">'\w'</span><span class="p">,</span> <span class="s1">'\s'</span><span class="p">]},</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-33"></a>    <span class="s1">'methods'</span><span class="p">:</span> <span class="p">{[</span><span class="s1">'search'</span><span class="p">,</span> <span class="s1">'match'</span><span class="p">,</span> <span class="s1">'findall'</span><span class="p">,</span> <span class="s1">'finditer'</span><span class="p">],</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-34"></a>                  <span class="p">[</span><span class="s1">'split'</span><span class="p">,</span> <span class="s1">'sub'</span><span class="p">]},</span> <span class="c1">#modify and replcae</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-35"></a>    <span class="s1">'match_object'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'group'</span><span class="p">,</span><span class="s1">'groups'</span><span class="p">,</span> <span class="s1">'groupdict'</span><span class="p">,</span><span class="s1">'start'</span><span class="p">,</span> <span class="s1">'end'</span><span class="p">,</span> <span class="s1">'span'</span><span class="p">,]</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-36"></a>    <span class="p">}</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-37"></a><span class="c1"># Performing matches</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-38"></a><span class="n">match</span><span class="p">(),</span> <span class="n">search</span><span class="p">(),</span> <span class="n">findall</span><span class="p">,</span> <span class="n">findinter</span><span class="p">()</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-39"></a><span class="c1"># module level functions</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-40"></a><span class="n">match</span><span class="p">,</span> <span class="n">search</span><span class="p">,</span> <span class="n">findall</span><span class="p">,</span> <span class="n">sub</span><span class="p">,</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-41"></a><span class="c1">#complilation Flags</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-42"></a><span class="n">DOTALL</span><span class="p">(</span><span class="n">S</span><span class="o">-</span><span class="n">single</span><span class="p">),</span> <span class="n">IGNORECASE</span><span class="p">(</span><span class="n">I</span><span class="p">),</span> <span class="n">MULTIPLELINE</span><span class="p">(</span><span class="n">M</span><span class="p">),</span> <span class="n">VERBOSE</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-43"></a><span class="c1">#Modify strings</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-44"></a><span class="n">re</span><span class="o">.</span><span class="n">split</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-45"></a><span class="c1">#Search and Replace</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-46"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">'section{ (?P&lt;name&gt; [^}]* ) }'</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">VERBOSE</span><span class="p">)</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-47"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">'subsection{\1}'</span><span class="p">,</span><span class="s1">'section{First}'</span><span class="p">)</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-48"></a><span class="s1">'subsection{First}'</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-49"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">'subsection{\g&lt;1&gt;}'</span><span class="p">,</span><span class="s1">'section{First}'</span><span class="p">)</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-50"></a><span class="s1">'subsection{First}'</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-51"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">'subsection{\g&lt;name&gt;}'</span><span class="p">,</span><span class="s1">'section{First}'</span><span class="p">)</span>
+<a name="rest_code_c8f7e5392ca346c98bf3f494e750e2c4-52"></a><span class="s1">'subsection{First}'</span> <span class="c1">#三种不同的形式.</span>
 </pre>
-<pre class="code python"><a name="rest_code_b9b4e0c7fbbf4d82b3a6e69bddfb01df-1"></a><span class="kn">import</span> <span class="nn">re</span>
-<a name="rest_code_b9b4e0c7fbbf4d82b3a6e69bddfb01df-2"></a><span class="n">p</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">'section{ (?P&lt;name&gt; [^}]* ) }'</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">VERBOSE</span><span class="p">)</span>
-<a name="rest_code_b9b4e0c7fbbf4d82b3a6e69bddfb01df-3"></a><span class="n">res</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">'section{First}'</span><span class="p">)</span>
-<a name="rest_code_b9b4e0c7fbbf4d82b3a6e69bddfb01df-4"></a><span class="n">res2</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">'section{First}'</span><span class="p">)</span>
-<a name="rest_code_b9b4e0c7fbbf4d82b3a6e69bddfb01df-5"></a><span class="n">res3</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="s1">'section{First}'</span><span class="p">)</span>
-<a name="rest_code_b9b4e0c7fbbf4d82b3a6e69bddfb01df-6"></a><span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
-<a name="rest_code_b9b4e0c7fbbf4d82b3a6e69bddfb01df-7"></a><span class="k">print</span><span class="p">(</span><span class="n">res2</span><span class="p">)</span>
-<a name="rest_code_b9b4e0c7fbbf4d82b3a6e69bddfb01df-8"></a><span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">res3</span><span class="p">))</span>
-<a name="rest_code_b9b4e0c7fbbf4d82b3a6e69bddfb01df-9"></a><span class="n">text</span> <span class="o">=</span> <span class="s2">"He was carefully disguised but captured quickly by police."</span>
-<a name="rest_code_b9b4e0c7fbbf4d82b3a6e69bddfb01df-10"></a><span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="sa">r</span><span class="s2">"\w+ly"</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
-<a name="rest_code_b9b4e0c7fbbf4d82b3a6e69bddfb01df-11"></a>    <span class="k">print</span><span class="p">(</span><span class="s1">'</span><span class="si">%02d</span><span class="s1">-</span><span class="si">%02d</span><span class="s1">: </span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">start</span><span class="p">(),</span> <span class="n">m</span><span class="o">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)))</span>
-<a name="rest_code_b9b4e0c7fbbf4d82b3a6e69bddfb01df-12"></a><span class="c1"># 这里关键的一点, 在sub中用的是Search</span>
+<pre class="code python"><a name="rest_code_87f81b667fa342ee8358fd1b4ab513f2-1"></a><span class="kn">import</span> <span class="nn">re</span>
+<a name="rest_code_87f81b667fa342ee8358fd1b4ab513f2-2"></a><span class="n">p</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">'section{ (?P&lt;name&gt; [^}]* ) }'</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">VERBOSE</span><span class="p">)</span>
+<a name="rest_code_87f81b667fa342ee8358fd1b4ab513f2-3"></a><span class="n">res</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">'section{First}'</span><span class="p">)</span>
+<a name="rest_code_87f81b667fa342ee8358fd1b4ab513f2-4"></a><span class="n">res2</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">'section{First}'</span><span class="p">)</span>
+<a name="rest_code_87f81b667fa342ee8358fd1b4ab513f2-5"></a><span class="n">res3</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="s1">'section{First}'</span><span class="p">)</span>
+<a name="rest_code_87f81b667fa342ee8358fd1b4ab513f2-6"></a><span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<a name="rest_code_87f81b667fa342ee8358fd1b4ab513f2-7"></a><span class="k">print</span><span class="p">(</span><span class="n">res2</span><span class="p">)</span>
+<a name="rest_code_87f81b667fa342ee8358fd1b4ab513f2-8"></a><span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">res3</span><span class="p">))</span>
+<a name="rest_code_87f81b667fa342ee8358fd1b4ab513f2-9"></a><span class="n">text</span> <span class="o">=</span> <span class="s2">"He was carefully disguised but captured quickly by police."</span>
+<a name="rest_code_87f81b667fa342ee8358fd1b4ab513f2-10"></a><span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="sa">r</span><span class="s2">"\w+ly"</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+<a name="rest_code_87f81b667fa342ee8358fd1b4ab513f2-11"></a>    <span class="k">print</span><span class="p">(</span><span class="s1">'</span><span class="si">%02d</span><span class="s1">-</span><span class="si">%02d</span><span class="s1">: </span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">start</span><span class="p">(),</span> <span class="n">m</span><span class="o">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)))</span>
+<a name="rest_code_87f81b667fa342ee8358fd1b4ab513f2-12"></a><span class="c1"># 这里关键的一点, 在sub中用的是Search</span>
 </pre>
 </div>
 <div class="section" id="grep-examples">
 <h2>Grep examples</h2>
 <div class="section" id="remove-the-blank-lines">
 <h3>Remove the blank lines</h3>
-<pre class="code zsh"><a name="rest_code_0a89fc70a1d04b9cb6505102f9825f5f-1"></a>Remove the blank lines.
-<a name="rest_code_0a89fc70a1d04b9cb6505102f9825f5f-2"></a>$ grep . 2daygeek.txt
-<a name="rest_code_0a89fc70a1d04b9cb6505102f9825f5f-3"></a>or
-<a name="rest_code_0a89fc70a1d04b9cb6505102f9825f5f-4"></a>$ grep -Ev <span class="s2">"^</span>$<span class="s2">"</span> 2daygeek.txt
-<a name="rest_code_0a89fc70a1d04b9cb6505102f9825f5f-5"></a>or
-<a name="rest_code_0a89fc70a1d04b9cb6505102f9825f5f-6"></a>$ grep -v -e <span class="s1">'^$'</span> 2daygeek.txt
-<a name="rest_code_0a89fc70a1d04b9cb6505102f9825f5f-7"></a>2daygeek.com is a best Linux blog to learn Linux.
-<a name="rest_code_0a89fc70a1d04b9cb6505102f9825f5f-8"></a>It<span class="s1">'s FIVE years old blog.</span>
-<a name="rest_code_0a89fc70a1d04b9cb6505102f9825f5f-9"></a><span class="s1">This website is maintained by Magesh M, it'</span>s licensed under CC BY-NC <span class="m">4</span>.0.
-<a name="rest_code_0a89fc70a1d04b9cb6505102f9825f5f-10"></a>He got two GIRL babes.
-<a name="rest_code_0a89fc70a1d04b9cb6505102f9825f5f-11"></a>Her names are Tanisha <span class="p">&amp;</span> Renusha.
+<pre class="code zsh"><a name="rest_code_b06676fa3c5b4250bc2a4ac3c41cf4d4-1"></a>Remove the blank lines.
+<a name="rest_code_b06676fa3c5b4250bc2a4ac3c41cf4d4-2"></a>$ grep . 2daygeek.txt
+<a name="rest_code_b06676fa3c5b4250bc2a4ac3c41cf4d4-3"></a>or
+<a name="rest_code_b06676fa3c5b4250bc2a4ac3c41cf4d4-4"></a>$ grep -Ev <span class="s2">"^</span>$<span class="s2">"</span> 2daygeek.txt
+<a name="rest_code_b06676fa3c5b4250bc2a4ac3c41cf4d4-5"></a>or
+<a name="rest_code_b06676fa3c5b4250bc2a4ac3c41cf4d4-6"></a>$ grep -v -e <span class="s1">'^$'</span> 2daygeek.txt
+<a name="rest_code_b06676fa3c5b4250bc2a4ac3c41cf4d4-7"></a>2daygeek.com is a best Linux blog to learn Linux.
+<a name="rest_code_b06676fa3c5b4250bc2a4ac3c41cf4d4-8"></a>It<span class="s1">'s FIVE years old blog.</span>
+<a name="rest_code_b06676fa3c5b4250bc2a4ac3c41cf4d4-9"></a><span class="s1">This website is maintained by Magesh M, it'</span>s licensed under CC BY-NC <span class="m">4</span>.0.
+<a name="rest_code_b06676fa3c5b4250bc2a4ac3c41cf4d4-10"></a>He got two GIRL babes.
+<a name="rest_code_b06676fa3c5b4250bc2a4ac3c41cf4d4-11"></a>Her names are Tanisha <span class="p">&amp;</span> Renusha.
 </pre>
 </div>
 <div class="section" id="remove-lines-containing-logging">
@@ -531,7 +498,7 @@ sed -i '/adf\.ly/d' inputfile</pre>
 </div>
 <div class="section" id="sed">
 <h2>Sed</h2>
-<div class="section" id="id15">
+<div class="section" id="id1">
 <span id="remove-the-blank-lines-1"></span><h3>Remove the blank lines</h3>
 <p>$ sed '/^$/d' 2daygeek.txt</p>
 </div>
@@ -544,85 +511,85 @@ sed -i '/adf\.ly/d' inputfile</pre>
 <div class="line">Between brackets [], the following are special : ] - ^</div>
 <div class="line">Many characters are special when they follow a backslash – see below.</div>
 </div>
-<pre class="code elisp"><a name="rest_code_7bcf915be5414bffb14957db27e133fe-1"></a><span class="o">.</span>        <span class="nv">any</span> <span class="nv">character</span> <span class="p">(</span><span class="nv">but</span> <span class="nv">newline</span><span class="p">)</span>
-<a name="rest_code_7bcf915be5414bffb14957db27e133fe-2"></a><span class="nf">*</span>        <span class="nv">previous</span> <span class="nv">character</span> <span class="k">or</span> <span class="nv">group,</span> <span class="nv">repeated</span> <span class="mi">0</span> <span class="k">or</span> <span class="nv">more</span> <span class="nv">time</span>
-<a name="rest_code_7bcf915be5414bffb14957db27e133fe-3"></a><span class="nf">+</span>        <span class="nv">previous</span> <span class="nv">character</span> <span class="k">or</span> <span class="nv">group,</span> <span class="nv">repeated</span> <span class="mi">1</span> <span class="k">or</span> <span class="nv">more</span> <span class="nv">time</span>
-<a name="rest_code_7bcf915be5414bffb14957db27e133fe-4"></a><span class="sc">? </span>       <span class="nv">previous</span> <span class="nv">character</span> <span class="k">or</span> <span class="nv">group,</span> <span class="nv">repeated</span> <span class="mi">0</span> <span class="k">or</span> <span class="mi">1</span> <span class="nv">time</span>
-<a name="rest_code_7bcf915be5414bffb14957db27e133fe-5"></a><span class="nv">^</span>        <span class="nv">start</span> <span class="nv">of</span> <span class="nv">line</span>
-<a name="rest_code_7bcf915be5414bffb14957db27e133fe-6"></a><span class="nv">$</span>        <span class="nv">end</span> <span class="nv">of</span> <span class="nv">line</span>
-<a name="rest_code_7bcf915be5414bffb14957db27e133fe-7"></a><span class="p">[</span><span class="o">...</span><span class="p">]</span>    <span class="nv">any</span> <span class="nv">character</span> <span class="nv">between</span> <span class="nv">brackets</span>
-<a name="rest_code_7bcf915be5414bffb14957db27e133fe-8"></a><span class="p">[</span><span class="nv">^..</span><span class="p">]</span>    <span class="nv">any</span> <span class="nv">character</span> <span class="nv">not</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">brackets</span>
-<a name="rest_code_7bcf915be5414bffb14957db27e133fe-9"></a><span class="p">[</span><span class="nv">a-z</span><span class="p">]</span>    <span class="nv">any</span> <span class="nv">character</span> <span class="nv">between</span> <span class="nv">a</span> <span class="k">and</span> <span class="nv">z</span>
-<a name="rest_code_7bcf915be5414bffb14957db27e133fe-10"></a><span class="nv">\ </span>       <span class="nv">prevents</span> <span class="nv">interpretation</span> <span class="nv">of</span> <span class="nv">following</span> <span class="nv">special</span> <span class="nv">char</span>
-<a name="rest_code_7bcf915be5414bffb14957db27e133fe-11"></a><span class="nv">\|</span>       <span class="k">or</span>
-<a name="rest_code_7bcf915be5414bffb14957db27e133fe-12"></a><span class="nv">\w</span>       <span class="nv">word</span> <span class="nv">constituent</span>
-<a name="rest_code_7bcf915be5414bffb14957db27e133fe-13"></a><span class="nv">\b</span>       <span class="nv">word</span> <span class="nv">boundary</span>
-<a name="rest_code_7bcf915be5414bffb14957db27e133fe-14"></a><span class="nv">\sc</span>      <span class="nv">character</span> <span class="nv">with</span> <span class="nv">c</span> <span class="nv">syntax</span> <span class="p">(</span><span class="nv">e.g.</span> <span class="nv">\s-</span> <span class="nv">for</span> <span class="nv">whitespace</span> <span class="nv">char</span><span class="p">)</span>
-<a name="rest_code_7bcf915be5414bffb14957db27e133fe-15"></a><span class="nv">\(</span> <span class="nv">\)</span>    <span class="nv">start/end</span> <span class="nv">of</span> <span class="nv">group</span>
-<a name="rest_code_7bcf915be5414bffb14957db27e133fe-16"></a><span class="nv">\&amp;lt</span><span class="c1">; \&amp;gt;    start/end of word (faulty rendering: backslash + less-than and backslash + greater-than)</span>
-<a name="rest_code_7bcf915be5414bffb14957db27e133fe-17"></a><span class="nv">\_&lt;</span> <span class="nv">\_&gt;</span>  <span class="nv">start/end</span> <span class="nv">of</span> <span class="nv">symbol</span>
-<a name="rest_code_7bcf915be5414bffb14957db27e133fe-18"></a><span class="nv">\`</span> <span class="nv">\'</span>    <span class="nv">start/end</span> <span class="nv">of</span> <span class="nv">buffer/string</span>
-<a name="rest_code_7bcf915be5414bffb14957db27e133fe-19"></a><span class="nv">\1</span>       <span class="nf">string</span> <span class="nv">matched</span> <span class="nv">by</span> <span class="nv">the</span> <span class="nv">first</span> <span class="nv">group</span>
-<a name="rest_code_7bcf915be5414bffb14957db27e133fe-20"></a><span class="nv">\n</span>       <span class="nf">string</span> <span class="nv">matched</span> <span class="nv">by</span> <span class="nv">the</span> <span class="nf">nth</span> <span class="nv">group</span>
-<a name="rest_code_7bcf915be5414bffb14957db27e133fe-21"></a><span class="nv">\{3\}</span>    <span class="nv">previous</span> <span class="nv">character</span> <span class="k">or</span> <span class="nv">group,</span> <span class="nv">repeated</span> <span class="mi">3</span> <span class="nv">times</span>
-<a name="rest_code_7bcf915be5414bffb14957db27e133fe-22"></a><span class="nv">\{3,\}</span>   <span class="nv">previous</span> <span class="nv">character</span> <span class="k">or</span> <span class="nv">group,</span> <span class="nv">repeated</span> <span class="mi">3</span> <span class="k">or</span> <span class="nv">more</span> <span class="nv">times</span>
-<a name="rest_code_7bcf915be5414bffb14957db27e133fe-23"></a><span class="nv">\{3,6\}</span>  <span class="nv">previous</span> <span class="nv">character</span> <span class="k">or</span> <span class="nv">group,</span> <span class="nv">repeated</span> <span class="mi">3</span> <span class="nv">to</span> <span class="mi">6</span> <span class="nv">times</span>
-<a name="rest_code_7bcf915be5414bffb14957db27e133fe-24"></a><span class="nv">\=</span>       <span class="nv">match</span> <span class="nv">succeeds</span> <span class="k">if</span> <span class="nv">it</span> <span class="nv">is</span> <span class="nv">located</span> <span class="nv">at</span> <span class="nf">point</span>
+<pre class="code elisp"><a name="rest_code_62e967528eca45168c1a687de9982d99-1"></a><span class="o">.</span>        <span class="nv">any</span> <span class="nv">character</span> <span class="p">(</span><span class="nv">but</span> <span class="nv">newline</span><span class="p">)</span>
+<a name="rest_code_62e967528eca45168c1a687de9982d99-2"></a><span class="nf">*</span>        <span class="nv">previous</span> <span class="nv">character</span> <span class="k">or</span> <span class="nv">group,</span> <span class="nv">repeated</span> <span class="mi">0</span> <span class="k">or</span> <span class="nv">more</span> <span class="nv">time</span>
+<a name="rest_code_62e967528eca45168c1a687de9982d99-3"></a><span class="nf">+</span>        <span class="nv">previous</span> <span class="nv">character</span> <span class="k">or</span> <span class="nv">group,</span> <span class="nv">repeated</span> <span class="mi">1</span> <span class="k">or</span> <span class="nv">more</span> <span class="nv">time</span>
+<a name="rest_code_62e967528eca45168c1a687de9982d99-4"></a><span class="sc">? </span>       <span class="nv">previous</span> <span class="nv">character</span> <span class="k">or</span> <span class="nv">group,</span> <span class="nv">repeated</span> <span class="mi">0</span> <span class="k">or</span> <span class="mi">1</span> <span class="nv">time</span>
+<a name="rest_code_62e967528eca45168c1a687de9982d99-5"></a><span class="nv">^</span>        <span class="nv">start</span> <span class="nv">of</span> <span class="nv">line</span>
+<a name="rest_code_62e967528eca45168c1a687de9982d99-6"></a><span class="nv">$</span>        <span class="nv">end</span> <span class="nv">of</span> <span class="nv">line</span>
+<a name="rest_code_62e967528eca45168c1a687de9982d99-7"></a><span class="p">[</span><span class="o">...</span><span class="p">]</span>    <span class="nv">any</span> <span class="nv">character</span> <span class="nv">between</span> <span class="nv">brackets</span>
+<a name="rest_code_62e967528eca45168c1a687de9982d99-8"></a><span class="p">[</span><span class="nv">^..</span><span class="p">]</span>    <span class="nv">any</span> <span class="nv">character</span> <span class="nv">not</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">brackets</span>
+<a name="rest_code_62e967528eca45168c1a687de9982d99-9"></a><span class="p">[</span><span class="nv">a-z</span><span class="p">]</span>    <span class="nv">any</span> <span class="nv">character</span> <span class="nv">between</span> <span class="nv">a</span> <span class="k">and</span> <span class="nv">z</span>
+<a name="rest_code_62e967528eca45168c1a687de9982d99-10"></a><span class="nv">\ </span>       <span class="nv">prevents</span> <span class="nv">interpretation</span> <span class="nv">of</span> <span class="nv">following</span> <span class="nv">special</span> <span class="nv">char</span>
+<a name="rest_code_62e967528eca45168c1a687de9982d99-11"></a><span class="nv">\|</span>       <span class="k">or</span>
+<a name="rest_code_62e967528eca45168c1a687de9982d99-12"></a><span class="nv">\w</span>       <span class="nv">word</span> <span class="nv">constituent</span>
+<a name="rest_code_62e967528eca45168c1a687de9982d99-13"></a><span class="nv">\b</span>       <span class="nv">word</span> <span class="nv">boundary</span>
+<a name="rest_code_62e967528eca45168c1a687de9982d99-14"></a><span class="nv">\sc</span>      <span class="nv">character</span> <span class="nv">with</span> <span class="nv">c</span> <span class="nv">syntax</span> <span class="p">(</span><span class="nv">e.g.</span> <span class="nv">\s-</span> <span class="nv">for</span> <span class="nv">whitespace</span> <span class="nv">char</span><span class="p">)</span>
+<a name="rest_code_62e967528eca45168c1a687de9982d99-15"></a><span class="nv">\(</span> <span class="nv">\)</span>    <span class="nv">start/end</span> <span class="nv">of</span> <span class="nv">group</span>
+<a name="rest_code_62e967528eca45168c1a687de9982d99-16"></a><span class="nv">\&amp;lt</span><span class="c1">; \&amp;gt;    start/end of word (faulty rendering: backslash + less-than and backslash + greater-than)</span>
+<a name="rest_code_62e967528eca45168c1a687de9982d99-17"></a><span class="nv">\_&lt;</span> <span class="nv">\_&gt;</span>  <span class="nv">start/end</span> <span class="nv">of</span> <span class="nv">symbol</span>
+<a name="rest_code_62e967528eca45168c1a687de9982d99-18"></a><span class="nv">\`</span> <span class="nv">\'</span>    <span class="nv">start/end</span> <span class="nv">of</span> <span class="nv">buffer/string</span>
+<a name="rest_code_62e967528eca45168c1a687de9982d99-19"></a><span class="nv">\1</span>       <span class="nf">string</span> <span class="nv">matched</span> <span class="nv">by</span> <span class="nv">the</span> <span class="nv">first</span> <span class="nv">group</span>
+<a name="rest_code_62e967528eca45168c1a687de9982d99-20"></a><span class="nv">\n</span>       <span class="nf">string</span> <span class="nv">matched</span> <span class="nv">by</span> <span class="nv">the</span> <span class="nf">nth</span> <span class="nv">group</span>
+<a name="rest_code_62e967528eca45168c1a687de9982d99-21"></a><span class="nv">\{3\}</span>    <span class="nv">previous</span> <span class="nv">character</span> <span class="k">or</span> <span class="nv">group,</span> <span class="nv">repeated</span> <span class="mi">3</span> <span class="nv">times</span>
+<a name="rest_code_62e967528eca45168c1a687de9982d99-22"></a><span class="nv">\{3,\}</span>   <span class="nv">previous</span> <span class="nv">character</span> <span class="k">or</span> <span class="nv">group,</span> <span class="nv">repeated</span> <span class="mi">3</span> <span class="k">or</span> <span class="nv">more</span> <span class="nv">times</span>
+<a name="rest_code_62e967528eca45168c1a687de9982d99-23"></a><span class="nv">\{3,6\}</span>  <span class="nv">previous</span> <span class="nv">character</span> <span class="k">or</span> <span class="nv">group,</span> <span class="nv">repeated</span> <span class="mi">3</span> <span class="nv">to</span> <span class="mi">6</span> <span class="nv">times</span>
+<a name="rest_code_62e967528eca45168c1a687de9982d99-24"></a><span class="nv">\=</span>       <span class="nv">match</span> <span class="nv">succeeds</span> <span class="k">if</span> <span class="nv">it</span> <span class="nv">is</span> <span class="nv">located</span> <span class="nv">at</span> <span class="nf">point</span>
 </pre>
 <div class="line-block">
-<div class="line">*?, +?, and ?? are non-greedy versions of *, +, and ? – see NonGreedyRegexp. Also, W, <a href="#id16"><span class="problematic" id="id17">:raw-latex:`\B`</span></a>, and ⪼ match any character that does not match <a href="#id18"><span class="problematic" id="id19">:raw-latex:`\w`</span></a>, <a href="#id20"><span class="problematic" id="id21">:raw-latex:`\b`</span></a>, and ≻.</div>
+<div class="line">*?, +?, and ?? are non-greedy versions of *, +, and ? – see NonGreedyRegexp. Also, W, <a href="#id2"><span class="problematic" id="id3">:raw-latex:`\B`</span></a>, and ⪼ match any character that does not match <a href="#id4"><span class="problematic" id="id5">:raw-latex:`\w`</span></a>, <a href="#id6"><span class="problematic" id="id7">:raw-latex:`\b`</span></a>, and ≻.</div>
 <div class="line">Characters are organized by category. Use C-u C-x = to display the category of the character under the cursor.</div>
 </div>
-<div class="system-message" id="id16">
-<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 320); <em><a href="#id17">backlink</a></em></p>
+<div class="system-message" id="id2">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 315); <em><a href="#id3">backlink</a></em></p>
 <p>Unknown interpreted text role "raw-latex".</p>
 </div>
-<div class="system-message" id="id18">
-<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 320); <em><a href="#id19">backlink</a></em></p>
+<div class="system-message" id="id4">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 315); <em><a href="#id5">backlink</a></em></p>
 <p>Unknown interpreted text role "raw-latex".</p>
 </div>
-<div class="system-message" id="id20">
-<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 320); <em><a href="#id21">backlink</a></em></p>
+<div class="system-message" id="id6">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 315); <em><a href="#id7">backlink</a></em></p>
 <p>Unknown interpreted text role "raw-latex".</p>
 </div>
-<pre class="code elisp"><a name="rest_code_9326e5c7c7c04025b2a71e5e8d1ffdad-1"></a><span class="nv">\ca</span>      <span class="nv">ascii</span> <span class="nv">character</span>
-<a name="rest_code_9326e5c7c7c04025b2a71e5e8d1ffdad-2"></a><span class="nv">\Ca</span>      <span class="nv">non-ascii</span> <span class="nv">character</span> <span class="p">(</span><span class="nv">newline</span> <span class="nv">included</span><span class="p">)</span>
-<a name="rest_code_9326e5c7c7c04025b2a71e5e8d1ffdad-3"></a><span class="nv">\cl</span>      <span class="nv">latin</span> <span class="nv">character</span>
-<a name="rest_code_9326e5c7c7c04025b2a71e5e8d1ffdad-4"></a><span class="nv">\cg</span>      <span class="nv">greek</span> <span class="nv">character</span>
+<pre class="code elisp"><a name="rest_code_a836327345eb4b4aaecf1054a927d29f-1"></a><span class="nv">\ca</span>      <span class="nv">ascii</span> <span class="nv">character</span>
+<a name="rest_code_a836327345eb4b4aaecf1054a927d29f-2"></a><span class="nv">\Ca</span>      <span class="nv">non-ascii</span> <span class="nv">character</span> <span class="p">(</span><span class="nv">newline</span> <span class="nv">included</span><span class="p">)</span>
+<a name="rest_code_a836327345eb4b4aaecf1054a927d29f-3"></a><span class="nv">\cl</span>      <span class="nv">latin</span> <span class="nv">character</span>
+<a name="rest_code_a836327345eb4b4aaecf1054a927d29f-4"></a><span class="nv">\cg</span>      <span class="nv">greek</span> <span class="nv">character</span>
 </pre>
 <p>Here are some syntax classes, also known as character classes, that can be used between brackets, e.g. [[:upper:]|[:digit:].].</p>
-<pre class="code elisp"><a name="rest_code_260ed8cd5c514dec871ef40a23ce5723-1"></a><span class="p">[</span><span class="nb">:digit:</span><span class="p">]</span>  <span class="nv">a</span> <span class="nv">digit,</span> <span class="nv">same</span> <span class="nv">as</span> <span class="p">[</span><span class="nv">0-9</span><span class="p">]</span>
-<a name="rest_code_260ed8cd5c514dec871ef40a23ce5723-2"></a><span class="p">[</span><span class="nb">:alpha:</span><span class="p">]</span>  <span class="nv">a</span> <span class="nv">letter</span> <span class="p">(</span><span class="nv">an</span> <span class="nv">alphabetic</span> <span class="nv">character</span><span class="p">)</span>
-<a name="rest_code_260ed8cd5c514dec871ef40a23ce5723-3"></a><span class="p">[</span><span class="nb">:alnum:</span><span class="p">]</span>  <span class="nv">a</span> <span class="nv">letter</span> <span class="k">or</span> <span class="nv">a</span> <span class="nv">digit</span> <span class="p">(</span><span class="nv">an</span> <span class="nv">alphanumeric</span> <span class="nv">character</span><span class="p">)</span>
-<a name="rest_code_260ed8cd5c514dec871ef40a23ce5723-4"></a><span class="p">[</span><span class="nb">:upper:</span><span class="p">]</span>  <span class="nv">a</span> <span class="nv">letter</span> <span class="nv">in</span> <span class="nv">uppercase</span>
-<a name="rest_code_260ed8cd5c514dec871ef40a23ce5723-5"></a><span class="p">[</span><span class="nb">:lower:</span><span class="p">]</span>  <span class="nv">a</span> <span class="nv">letter</span> <span class="nv">in</span> <span class="nv">lowercase</span>
-<a name="rest_code_260ed8cd5c514dec871ef40a23ce5723-6"></a><span class="p">[</span><span class="nb">:graph:</span><span class="p">]</span>  <span class="nv">a</span> <span class="nv">visible</span> <span class="nv">character</span>
-<a name="rest_code_260ed8cd5c514dec871ef40a23ce5723-7"></a><span class="p">[</span><span class="nb">:print:</span><span class="p">]</span>  <span class="nv">a</span> <span class="nv">visible</span> <span class="nv">character</span> <span class="nv">plus</span> <span class="nv">the</span> <span class="nv">space</span> <span class="nv">character</span>
-<a name="rest_code_260ed8cd5c514dec871ef40a23ce5723-8"></a><span class="p">[</span><span class="nb">:space:</span><span class="p">]</span>  <span class="nv">a</span> <span class="nv">whitespace</span> <span class="nv">character,</span> <span class="nv">as</span> <span class="nv">defined</span> <span class="nv">by</span> <span class="nv">the</span> <span class="nv">syntax</span> <span class="nv">table,</span> <span class="nv">but</span> <span class="nv">typically</span> <span class="p">[</span> <span class="nv">\t\r\n\v\f</span><span class="p">]</span><span class="o">,</span> <span class="nv">which</span> <span class="nv">includes</span> <span class="nv">the</span> <span class="nv">newline</span> <span class="nv">character</span>
-<a name="rest_code_260ed8cd5c514dec871ef40a23ce5723-9"></a><span class="p">[</span><span class="nb">:blank:</span><span class="p">]</span>  <span class="nv">a</span> <span class="nv">space</span> <span class="k">or</span> <span class="nv">tab</span> <span class="nv">character</span>
-<a name="rest_code_260ed8cd5c514dec871ef40a23ce5723-10"></a><span class="p">[</span><span class="nb">:xdigit:</span><span class="p">]</span> <span class="nv">an</span> <span class="nv">hexadecimal</span> <span class="nv">digit</span>
-<a name="rest_code_260ed8cd5c514dec871ef40a23ce5723-11"></a><span class="p">[</span><span class="nb">:cntrl:</span><span class="p">]</span>  <span class="nv">a</span> <span class="nv">control</span> <span class="nv">character</span>
-<a name="rest_code_260ed8cd5c514dec871ef40a23ce5723-12"></a><span class="p">[</span><span class="nb">:ascii:</span><span class="p">]</span>  <span class="nv">an</span> <span class="nv">ascii</span> <span class="nv">character</span>
+<pre class="code elisp"><a name="rest_code_5cc658d7cde64b6a9243b315a3cbe67f-1"></a><span class="p">[</span><span class="nb">:digit:</span><span class="p">]</span>  <span class="nv">a</span> <span class="nv">digit,</span> <span class="nv">same</span> <span class="nv">as</span> <span class="p">[</span><span class="nv">0-9</span><span class="p">]</span>
+<a name="rest_code_5cc658d7cde64b6a9243b315a3cbe67f-2"></a><span class="p">[</span><span class="nb">:alpha:</span><span class="p">]</span>  <span class="nv">a</span> <span class="nv">letter</span> <span class="p">(</span><span class="nv">an</span> <span class="nv">alphabetic</span> <span class="nv">character</span><span class="p">)</span>
+<a name="rest_code_5cc658d7cde64b6a9243b315a3cbe67f-3"></a><span class="p">[</span><span class="nb">:alnum:</span><span class="p">]</span>  <span class="nv">a</span> <span class="nv">letter</span> <span class="k">or</span> <span class="nv">a</span> <span class="nv">digit</span> <span class="p">(</span><span class="nv">an</span> <span class="nv">alphanumeric</span> <span class="nv">character</span><span class="p">)</span>
+<a name="rest_code_5cc658d7cde64b6a9243b315a3cbe67f-4"></a><span class="p">[</span><span class="nb">:upper:</span><span class="p">]</span>  <span class="nv">a</span> <span class="nv">letter</span> <span class="nv">in</span> <span class="nv">uppercase</span>
+<a name="rest_code_5cc658d7cde64b6a9243b315a3cbe67f-5"></a><span class="p">[</span><span class="nb">:lower:</span><span class="p">]</span>  <span class="nv">a</span> <span class="nv">letter</span> <span class="nv">in</span> <span class="nv">lowercase</span>
+<a name="rest_code_5cc658d7cde64b6a9243b315a3cbe67f-6"></a><span class="p">[</span><span class="nb">:graph:</span><span class="p">]</span>  <span class="nv">a</span> <span class="nv">visible</span> <span class="nv">character</span>
+<a name="rest_code_5cc658d7cde64b6a9243b315a3cbe67f-7"></a><span class="p">[</span><span class="nb">:print:</span><span class="p">]</span>  <span class="nv">a</span> <span class="nv">visible</span> <span class="nv">character</span> <span class="nv">plus</span> <span class="nv">the</span> <span class="nv">space</span> <span class="nv">character</span>
+<a name="rest_code_5cc658d7cde64b6a9243b315a3cbe67f-8"></a><span class="p">[</span><span class="nb">:space:</span><span class="p">]</span>  <span class="nv">a</span> <span class="nv">whitespace</span> <span class="nv">character,</span> <span class="nv">as</span> <span class="nv">defined</span> <span class="nv">by</span> <span class="nv">the</span> <span class="nv">syntax</span> <span class="nv">table,</span> <span class="nv">but</span> <span class="nv">typically</span> <span class="p">[</span> <span class="nv">\t\r\n\v\f</span><span class="p">]</span><span class="o">,</span> <span class="nv">which</span> <span class="nv">includes</span> <span class="nv">the</span> <span class="nv">newline</span> <span class="nv">character</span>
+<a name="rest_code_5cc658d7cde64b6a9243b315a3cbe67f-9"></a><span class="p">[</span><span class="nb">:blank:</span><span class="p">]</span>  <span class="nv">a</span> <span class="nv">space</span> <span class="k">or</span> <span class="nv">tab</span> <span class="nv">character</span>
+<a name="rest_code_5cc658d7cde64b6a9243b315a3cbe67f-10"></a><span class="p">[</span><span class="nb">:xdigit:</span><span class="p">]</span> <span class="nv">an</span> <span class="nv">hexadecimal</span> <span class="nv">digit</span>
+<a name="rest_code_5cc658d7cde64b6a9243b315a3cbe67f-11"></a><span class="p">[</span><span class="nb">:cntrl:</span><span class="p">]</span>  <span class="nv">a</span> <span class="nv">control</span> <span class="nv">character</span>
+<a name="rest_code_5cc658d7cde64b6a9243b315a3cbe67f-12"></a><span class="p">[</span><span class="nb">:ascii:</span><span class="p">]</span>  <span class="nv">an</span> <span class="nv">ascii</span> <span class="nv">character</span>
 </pre>
 <p>Syntax classes:</p>
-<pre class="code elisp"><a name="rest_code_201f724f9c6f4be6954db20a35ce36b0-1"></a><span class="nv">\s-</span>   <span class="nv">whitespace</span> <span class="nv">character</span>        <span class="nv">\s/</span>   <span class="nv">character</span> <span class="k">quote</span> <span class="nv">character</span>
-<a name="rest_code_201f724f9c6f4be6954db20a35ce36b0-2"></a><span class="nv">\sw</span>   <span class="nv">word</span> <span class="nv">constituent</span>            <span class="nv">\s$</span>   <span class="nv">paired</span> <span class="nv">delimiter</span>
-<a name="rest_code_201f724f9c6f4be6954db20a35ce36b0-3"></a><span class="nv">\s_</span>   <span class="nv">symbol</span> <span class="nv">constituent</span>          <span class="nv">\s</span><span class="o">'</span>   <span class="nv">expression</span> <span class="nv">prefix</span>
-<a name="rest_code_201f724f9c6f4be6954db20a35ce36b0-4"></a><span class="nv">\s.</span>   <span class="nv">punctuation</span> <span class="nv">character</span>       <span class="nv">\s&lt;</span>   <span class="nv">comment</span> <span class="nv">starter</span>
-<a name="rest_code_201f724f9c6f4be6954db20a35ce36b0-5"></a><span class="nv">\s</span><span class="p">(</span>   <span class="nv">open</span> <span class="nv">delimiter</span> <span class="nv">character</span>    <span class="nv">\s&gt;</span>   <span class="nv">comment</span> <span class="nv">ender</span>
-<a name="rest_code_201f724f9c6f4be6954db20a35ce36b0-6"></a><span class="nv">\s</span><span class="p">)</span>   <span class="nv">close</span> <span class="nv">delimiter</span> <span class="nv">character</span>   <span class="nv">\s!</span>   <span class="nv">generic</span> <span class="nv">comment</span> <span class="nv">delimiter</span>
-<a name="rest_code_201f724f9c6f4be6954db20a35ce36b0-7"></a><span class="nv">\s</span><span class="s">"   string quote character      \s|   generic string delimiter</span>
-<a name="rest_code_201f724f9c6f4be6954db20a35ce36b0-8"></a><span class="s">\s\   escape character</span>
+<pre class="code elisp"><a name="rest_code_2ecc9e1549dd4335b180fc25ded4c9df-1"></a><span class="nv">\s-</span>   <span class="nv">whitespace</span> <span class="nv">character</span>        <span class="nv">\s/</span>   <span class="nv">character</span> <span class="k">quote</span> <span class="nv">character</span>
+<a name="rest_code_2ecc9e1549dd4335b180fc25ded4c9df-2"></a><span class="nv">\sw</span>   <span class="nv">word</span> <span class="nv">constituent</span>            <span class="nv">\s$</span>   <span class="nv">paired</span> <span class="nv">delimiter</span>
+<a name="rest_code_2ecc9e1549dd4335b180fc25ded4c9df-3"></a><span class="nv">\s_</span>   <span class="nv">symbol</span> <span class="nv">constituent</span>          <span class="nv">\s</span><span class="o">'</span>   <span class="nv">expression</span> <span class="nv">prefix</span>
+<a name="rest_code_2ecc9e1549dd4335b180fc25ded4c9df-4"></a><span class="nv">\s.</span>   <span class="nv">punctuation</span> <span class="nv">character</span>       <span class="nv">\s&lt;</span>   <span class="nv">comment</span> <span class="nv">starter</span>
+<a name="rest_code_2ecc9e1549dd4335b180fc25ded4c9df-5"></a><span class="nv">\s</span><span class="p">(</span>   <span class="nv">open</span> <span class="nv">delimiter</span> <span class="nv">character</span>    <span class="nv">\s&gt;</span>   <span class="nv">comment</span> <span class="nv">ender</span>
+<a name="rest_code_2ecc9e1549dd4335b180fc25ded4c9df-6"></a><span class="nv">\s</span><span class="p">)</span>   <span class="nv">close</span> <span class="nv">delimiter</span> <span class="nv">character</span>   <span class="nv">\s!</span>   <span class="nv">generic</span> <span class="nv">comment</span> <span class="nv">delimiter</span>
+<a name="rest_code_2ecc9e1549dd4335b180fc25ded4c9df-7"></a><span class="nv">\s</span><span class="s">"   string quote character      \s|   generic string delimiter</span>
+<a name="rest_code_2ecc9e1549dd4335b180fc25ded4c9df-8"></a><span class="s">\s\   escape character</span>
 </pre>
 </div>
 <div class="section" id="publish">
 <h2>Publish</h2>
-<pre class="code ipython"><a name="rest_code_8a3c444848f949eb9c7be5d855d96a2b-1"></a><span class="o">!</span> ls ~/Public/nikola_post/posts
-<a name="rest_code_8a3c444848f949eb9c7be5d855d96a2b-2"></a><span class="o">!</span> pwd
-<a name="rest_code_8a3c444848f949eb9c7be5d855d96a2b-3"></a><span class="o">!</span> pandoc --wrap<span class="o">=</span>preserve regex-offprint.org  -o ~/Public/nikola_post/posts/Regex-Summary.rst
+<pre class="code ipython"><a name="rest_code_7ea969aae62d43d996ddb89b78e7dbc2-1"></a><span class="o">!</span> ls ~/Public/nikola_post/posts
+<a name="rest_code_7ea969aae62d43d996ddb89b78e7dbc2-2"></a><span class="o">!</span> pwd
+<a name="rest_code_7ea969aae62d43d996ddb89b78e7dbc2-3"></a><span class="o">!</span> pandoc --wrap<span class="o">=</span>preserve regex-offprint.org  -o ~/Public/nikola_post/posts/Regex-Summary.rst
 </pre>
 <div class="system-message">
-<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 369)</p>
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 364)</p>
 <p>Cannot find pygments lexer for language "commonlisp"</p>
 <pre class="literal-block">.. code:: commonlisp
 
