@@ -64,8 +64,6 @@ Regex New Map
 +-------------+-------------+-------------+-------------+-------------+
 
 这个Meta-class最成功的一点是将 back-reference放在里面.
-class, [:space:] [ :raw-latex:`\t`:raw-latex:`\r`:raw-latex:`\n`:raw-latex:`\f`]
-[:blank:] [ :raw-latex:`\t`]
 
 #+Intermediate topics
 
@@ -81,9 +79,6 @@ class, [:space:] [ :raw-latex:`\t`:raw-latex:`\r`:raw-latex:`\n`:raw-latex:`\f`]
 
 #+Advanced topics
 
-+-----------------------------------+-----------------------------------+
-| boundaries                        | :raw-latex:`\babc`:raw-latex:`\b` |
-+===================================+===================================+
 | back-reference                    | \\1, \\?<foo><foo> k for keyword  |
 +-----------------------------------+-----------------------------------+
 | look-ahead                        | d(?=r) look r's ahead,            |
