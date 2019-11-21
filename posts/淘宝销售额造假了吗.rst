@@ -37,7 +37,7 @@
    plt.xticks(index, index)
    plt.show()
 
-.. image:: images/PogAvJ.png
+.. image:: /images/PogAvJ.png
 
           
 2.构建历年销售额的柱状图
@@ -76,7 +76,7 @@
    plt.plot(index, sales, color='r')
    plt.bar(index, sales)
 
-.. image:: images/QtppzN.png
+.. image:: /images/QtppzN.png
 
 3.Qualitive Analysis: Take a view by setting them side by side
 --------------------------------------------------------------
@@ -105,7 +105,7 @@
    ax2.plot(index, sales, color='r')
    plt.show()
 
-.. image:: images/p1Nqxa.png
+.. image:: /images/p1Nqxa.png
 
 4.Quantitative Analysis
 -----------------------
