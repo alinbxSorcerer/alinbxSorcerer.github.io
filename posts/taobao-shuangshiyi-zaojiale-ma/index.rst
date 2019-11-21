@@ -122,7 +122,10 @@
 
    stats.chisquare(counts, benford_seq*sum(counts))
 
-匹配度为6.9%.
+
+Power_divergenceResult(statistic=14.508778904402215, pvalue=0.06943079701067742)
+
+匹配度为6.94%.
 
 5.Publish
 ---------
@@ -133,6 +136,7 @@
    cmd = "pandoc --wrap=none benford_law.org -o ~/Public/nikola_post/posts/淘宝销售额造假了吗.rst"
    subprocess.run(cmd, shell=True)
 
-.. code:: shell
+.. code:: bash
+   
    cd  ~/Documents/OrgMode/ORG/images
    ls -t  | head -n 4 | while read line; do cp $line     ~/Public/nikola_post/images/; done
