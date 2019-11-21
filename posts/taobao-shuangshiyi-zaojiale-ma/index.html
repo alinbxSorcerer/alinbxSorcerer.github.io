@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html prefix="" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>淘宝双十一的销售额造假了吗? 用本福特定律检验 | A Magic Land Declared by David</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://alinbxsorcerer.github.io/posts/taobao-shuangshiyi-zaojiale-ma/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="David">
+<meta property="og:site_name" content="A Magic Land Declared by David">
+<meta property="og:title" content="淘宝双十一的销售额造假了吗? 用本福特定律检验">
+<meta property="og:url" content="https://alinbxsorcerer.github.io/posts/taobao-shuangshiyi-zaojiale-ma/">
+<meta property="og:description" content="Contents
+
+0.引言
+1.构建本福特柱状图
+2.构建历年销售额的柱状图
+3.Qualitive Analysis: Take a view by setting them side by side
+4.Quantitative Analysis
+5.Publish
+
+
+
+0.引言
+看过李永乐老师的视频 淘宝“双11”2684亿销售额造假了吗？用本福特定律检验一下, 用本福特定律检验下:
+
+">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2019-11-20T20:53:29+08:00">
+<meta property="article:tag" content="benford">
+<meta property="article:tag" content="matplotlib">
+<meta property="article:tag" content="numpy">
+<meta property="article:tag" content="python">
+</head>
+<body>
+    
+
+    <header id="header" class="navbar"><div class="container">
+            
+    <div class="brand">
+
+        <div class="brand-text">
+            <a href="https://alinbxsorcerer.github.io/" title="A Magic Land Declared by David" rel="home">
+                A Magic Land Declared by David
+            </a>
+        </div>
+
+        <a id="btn-toggle-nav" class="navbar-toggle">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+    </div>
+
+            
+    <nav class="navbar-collapse collapse"><ul class="nav">
+<li><a href="../../archive.html">Archive</a></li>
+                <li><a href="../../categories/">Tags</a></li>
+                <li><a href="../../rss.xml">RSS feed</a></li>
+    
+    
+    </ul></nav>
+</div>
+    </header><div class="header-padding"> </div>
+
+    
+    <div class="post-header">
+        <div class="container">
+            <div class="title">
+                淘宝双十一的销售额造假了吗? 用本福特定律检验
+            </div>
+        </div>
+    </div>
+
+    <div class="post-meta">
+      <div class="container">
+	<div class="meta clearfix">
+	  <div class="authordate">
+	    <time class="timeago" datetime="2019-11-20T20:53:29+08:00">2019/11/20</time>
+	    
+
+	    
+          |  
+        <a href="index.rst" id="sourcelink">Source</a>
+
+	  </div>
+	  <div class="post-tags">
+	    <div class="tag">
+	      <a href="../../categories/benford/" rel="tag">benford</a>
+	    </div>
+	    <div class="tag">
+	      <a href="../../categories/matplotlib/" rel="tag">matplotlib</a>
+	    </div>
+	    <div class="tag">
+	      <a href="../../categories/numpy/" rel="tag">numpy</a>
+	    </div>
+	    <div class="tag">
+	      <a href="../../categories/python/" rel="tag">python</a>
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </div>
+
+
+    <div id="post-main" class="main">
+        <div class="container">
+        <div>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#id1" id="id4">0.引言</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id5">1.构建本福特柱状图</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id6">2.构建历年销售额的柱状图</a></p></li>
+<li><p><a class="reference internal" href="#qualitive-analysis-take-a-view-by-setting-them-side-by-side" id="id7">3.Qualitive Analysis: Take a view by setting them side by side</a></p></li>
+<li><p><a class="reference internal" href="#quantitative-analysis" id="id8">4.Quantitative Analysis</a></p></li>
+<li><p><a class="reference internal" href="#publish" id="id9">5.Publish</a></p></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id4">0.引言</a></h2>
+<p>看过李永乐老师的视频 <a class="reference external" href="https://www.youtube.com/watch?v=CCo4k9Ax7cM&amp;t=7s">淘宝“双11”2684亿销售额造假了吗？用本福特定律检验一下</a>, 用本福特定律检验下:</p>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id5">1.构建本福特柱状图</a></h2>
+<pre class="code ipython"><a name="rest_code_5d195b9e1e9042cbb1b0fc7bc3da9ce8-1"></a><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">log10</span>
+<a name="rest_code_5d195b9e1e9042cbb1b0fc7bc3da9ce8-2"></a><span class="kn">import</span> <span class="nn">matplotlib</span>
+<a name="rest_code_5d195b9e1e9042cbb1b0fc7bc3da9ce8-3"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<a name="rest_code_5d195b9e1e9042cbb1b0fc7bc3da9ce8-4"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<a name="rest_code_5d195b9e1e9042cbb1b0fc7bc3da9ce8-5"></a>
+<a name="rest_code_5d195b9e1e9042cbb1b0fc7bc3da9ce8-6"></a>
+<a name="rest_code_5d195b9e1e9042cbb1b0fc7bc3da9ce8-7"></a><span class="k">def</span> <span class="nf">benford</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a name="rest_code_5d195b9e1e9042cbb1b0fc7bc3da9ce8-8"></a>    <span class="k">return</span> <span class="n">log10</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">log10</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<a name="rest_code_5d195b9e1e9042cbb1b0fc7bc3da9ce8-9"></a>
+<a name="rest_code_5d195b9e1e9042cbb1b0fc7bc3da9ce8-10"></a><span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="n">benford</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)]</span>
+<a name="rest_code_5d195b9e1e9042cbb1b0fc7bc3da9ce8-11"></a><span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<a name="rest_code_5d195b9e1e9042cbb1b0fc7bc3da9ce8-12"></a>
+<a name="rest_code_5d195b9e1e9042cbb1b0fc7bc3da9ce8-13"></a><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">6.18</span><span class="p">))</span>
+<a name="rest_code_5d195b9e1e9042cbb1b0fc7bc3da9ce8-14"></a><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="n">results</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'g'</span><span class="p">)</span>
+<a name="rest_code_5d195b9e1e9042cbb1b0fc7bc3da9ce8-15"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">results</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span>
+<a name="rest_code_5d195b9e1e9042cbb1b0fc7bc3da9ce8-16"></a><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+<a name="rest_code_5d195b9e1e9042cbb1b0fc7bc3da9ce8-17"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre>
+<img alt="images/PogAvJ.png" src="images/PogAvJ.png">
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id6">2.构建历年销售额的柱状图</a></h2>
+<pre class="code ipython"><a name="rest_code_1989764498cf4191b72df7ed9a59af54-1"></a><span class="c1"># data, unit: ten million RMB</span>
+<a name="rest_code_1989764498cf4191b72df7ed9a59af54-2"></a><span class="n">sales_by_year</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"2009"</span><span class="p">:</span><span class="s2">"5.0"</span><span class="p">,</span>
+<a name="rest_code_1989764498cf4191b72df7ed9a59af54-3"></a>         <span class="s2">"2010"</span><span class="p">:</span><span class="s2">"93.6"</span><span class="p">,</span>
+<a name="rest_code_1989764498cf4191b72df7ed9a59af54-4"></a>         <span class="s2">"2011"</span><span class="p">:</span><span class="s2">"520"</span><span class="p">,</span>
+<a name="rest_code_1989764498cf4191b72df7ed9a59af54-5"></a>         <span class="s2">"2012"</span><span class="p">:</span><span class="s2">"1910"</span><span class="p">,</span>
+<a name="rest_code_1989764498cf4191b72df7ed9a59af54-6"></a>         <span class="s2">"2013"</span><span class="p">:</span><span class="s2">"3500"</span><span class="p">,</span>
+<a name="rest_code_1989764498cf4191b72df7ed9a59af54-7"></a>         <span class="s2">"2014"</span><span class="p">:</span><span class="s2">"5710"</span><span class="p">,</span>
+<a name="rest_code_1989764498cf4191b72df7ed9a59af54-8"></a>         <span class="s2">"2015"</span><span class="p">:</span><span class="s2">"9120"</span><span class="p">,</span>
+<a name="rest_code_1989764498cf4191b72df7ed9a59af54-9"></a>         <span class="s2">"2016"</span><span class="p">:</span><span class="s2">"12070"</span><span class="p">,</span>
+<a name="rest_code_1989764498cf4191b72df7ed9a59af54-10"></a>         <span class="s2">"2018"</span><span class="p">:</span><span class="s2">"21350"</span><span class="p">,</span>
+<a name="rest_code_1989764498cf4191b72df7ed9a59af54-11"></a>         <span class="s2">"2019"</span><span class="p">:</span><span class="s2">"26840"</span><span class="p">}</span>
+<a name="rest_code_1989764498cf4191b72df7ed9a59af54-12"></a><span class="n">count</span> <span class="o">=</span> <span class="p">{}</span>
+<a name="rest_code_1989764498cf4191b72df7ed9a59af54-13"></a>
+<a name="rest_code_1989764498cf4191b72df7ed9a59af54-14"></a><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">sales_by_year</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<a name="rest_code_1989764498cf4191b72df7ed9a59af54-15"></a>    <span class="n">idx</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<a name="rest_code_1989764498cf4191b72df7ed9a59af54-16"></a>    <span class="k">if</span> <span class="n">idx</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">count</span><span class="p">:</span>
+<a name="rest_code_1989764498cf4191b72df7ed9a59af54-17"></a>        <span class="n">count</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<a name="rest_code_1989764498cf4191b72df7ed9a59af54-18"></a>    <span class="k">else</span><span class="p">:</span>
+<a name="rest_code_1989764498cf4191b72df7ed9a59af54-19"></a>        <span class="n">count</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+<a name="rest_code_1989764498cf4191b72df7ed9a59af54-20"></a>
+<a name="rest_code_1989764498cf4191b72df7ed9a59af54-21"></a><span class="n">count</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span><span class="n">v</span><span class="o">/</span><span class="mi">10</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">count</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<a name="rest_code_1989764498cf4191b72df7ed9a59af54-22"></a>
+<a name="rest_code_1989764498cf4191b72df7ed9a59af54-23"></a><span class="n">sales</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)]</span>
+<a name="rest_code_1989764498cf4191b72df7ed9a59af54-24"></a>
+<a name="rest_code_1989764498cf4191b72df7ed9a59af54-25"></a><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">count</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<a name="rest_code_1989764498cf4191b72df7ed9a59af54-26"></a>    <span class="n">sales</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+<a name="rest_code_1989764498cf4191b72df7ed9a59af54-27"></a>
+<a name="rest_code_1989764498cf4191b72df7ed9a59af54-28"></a><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">6.18</span><span class="p">))</span>
+<a name="rest_code_1989764498cf4191b72df7ed9a59af54-29"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">sales</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'r'</span><span class="p">)</span>
+<a name="rest_code_1989764498cf4191b72df7ed9a59af54-30"></a><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">sales</span><span class="p">)</span>
+</pre>
+<img alt="images/QtppzN.png" src="images/QtppzN.png">
+</div>
+<div class="section" id="qualitive-analysis-take-a-view-by-setting-them-side-by-side">
+<h2><a class="toc-backref" href="#id7">3.Qualitive Analysis: Take a view by setting them side by side</a></h2>
+<pre class="code ipython"><a name="rest_code_53cadcfcb10044849e8db310344e2035-1"></a><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mf">6.18</span><span class="p">))</span>
+<a name="rest_code_53cadcfcb10044849e8db310344e2035-2"></a>
+<a name="rest_code_53cadcfcb10044849e8db310344e2035-3"></a><span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<a name="rest_code_53cadcfcb10044849e8db310344e2035-4"></a><span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<a name="rest_code_53cadcfcb10044849e8db310344e2035-5"></a>
+<a name="rest_code_53cadcfcb10044849e8db310344e2035-6"></a>
+<a name="rest_code_53cadcfcb10044849e8db310344e2035-7"></a><span class="k">def</span> <span class="nf">benford</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a name="rest_code_53cadcfcb10044849e8db310344e2035-8"></a>    <span class="k">return</span> <span class="n">log10</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">log10</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<a name="rest_code_53cadcfcb10044849e8db310344e2035-9"></a>
+<a name="rest_code_53cadcfcb10044849e8db310344e2035-10"></a><span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="n">benford</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)]</span>
+<a name="rest_code_53cadcfcb10044849e8db310344e2035-11"></a><span class="n">ax1</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)),</span> <span class="n">results</span><span class="p">)</span>
+<a name="rest_code_53cadcfcb10044849e8db310344e2035-12"></a>
+<a name="rest_code_53cadcfcb10044849e8db310344e2035-13"></a><span class="c1"># create benford bar graph</span>
+<a name="rest_code_53cadcfcb10044849e8db310344e2035-14"></a><span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<a name="rest_code_53cadcfcb10044849e8db310344e2035-15"></a><span class="n">ax1</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">results</span><span class="p">)</span>
+<a name="rest_code_53cadcfcb10044849e8db310344e2035-16"></a><span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">results</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'r'</span><span class="p">)</span>
+<a name="rest_code_53cadcfcb10044849e8db310344e2035-17"></a>
+<a name="rest_code_53cadcfcb10044849e8db310344e2035-18"></a><span class="n">ax2</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">sales</span><span class="p">)</span>
+<a name="rest_code_53cadcfcb10044849e8db310344e2035-19"></a><span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">sales</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'r'</span><span class="p">)</span>
+<a name="rest_code_53cadcfcb10044849e8db310344e2035-20"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre>
+<img alt="images/p1Nqxa.png" src="images/p1Nqxa.png">
+</div>
+<div class="section" id="quantitative-analysis">
+<h2><a class="toc-backref" href="#id8">4.Quantitative Analysis</a></h2>
+<p>从图表上直观看, 匹配度不高, 那么匹配的具体数值是多少呢?</p>
+<pre class="code ipython"><a name="rest_code_92220fc8b71e4d94b75d0a65a69931da-1"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<a name="rest_code_92220fc8b71e4d94b75d0a65a69931da-2"></a><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<a name="rest_code_92220fc8b71e4d94b75d0a65a69931da-3"></a>
+<a name="rest_code_92220fc8b71e4d94b75d0a65a69931da-4"></a><span class="n">benford_seq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<a name="rest_code_92220fc8b71e4d94b75d0a65a69931da-5"></a><span class="n">counts</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<a name="rest_code_92220fc8b71e4d94b75d0a65a69931da-6"></a>
+<a name="rest_code_92220fc8b71e4d94b75d0a65a69931da-7"></a><span class="n">stats</span><span class="o">.</span><span class="n">chisquare</span><span class="p">(</span><span class="n">counts</span><span class="p">,</span> <span class="n">benford_seq</span><span class="o">*</span><span class="nb">sum</span><span class="p">(</span><span class="n">counts</span><span class="p">))</span>
+</pre>
+<p>匹配度为6.9%.</p>
+</div>
+<div class="section" id="publish">
+<h2><a class="toc-backref" href="#id9">5.Publish</a></h2>
+<pre class="code ipython"><a name="rest_code_554a5acf96924e74a4bf3adaae198a76-1"></a><span class="kn">import</span> <span class="nn">subprocess</span>
+<a name="rest_code_554a5acf96924e74a4bf3adaae198a76-2"></a><span class="n">cmd</span> <span class="o">=</span> <span class="s2">"pandoc --wrap=none benford_law.org -o ~/Public/nikola_post/posts/淘宝销售额造假了吗.rst"</span>
+<a name="rest_code_554a5acf96924e74a4bf3adaae198a76-3"></a><span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 127)</p>
+<p>Error in "code" directive:
+maximum 1 argument(s) allowed, 18 supplied.</p>
+<pre class="literal-block">.. code:: shell
+   cd  ~/Documents/OrgMode/ORG/images
+   ls -t  | head -n 4 | while read line; do cp $line     ~/Public/nikola_post/images/; done</pre>
+</div>
+</div>
+</div>
+            
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="?",
+            disqus_url="https://alinbxsorcerer.github.io/posts/taobao-shuangshiyi-zaojiale-ma/",
+        disqus_title="\u6dd8\u5b9d\u53cc\u5341\u4e00\u7684\u9500\u552e\u989d\u9020\u5047\u4e86\u5417? \u7528\u672c\u798f\u7279\u5b9a\u5f8b\u68c0\u9a8c",
+        disqus_identifier="cache/posts/淘宝销售额造假了吗.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        
+
+        </div>
+    </div>
+
+    
+    <footer><div class="container">
+            <div class="social">
+
+
+
+                <div class="social-entry">
+                    <a href="../../rss.xml" target="_blank">
+                        <i class="fa fa-rss"></i> 
+                    </a>
+                </div>
+            </div>
+                <div class="copyright">
+                    Contents © 2019         <a href="mailto:davad.fhl.wang@foxmail.com">David</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+                    
+                </div>
+           
+        </div>
+    </footer><script src="../../assets/js/all-nocdn.js" type="text/javascript"></script>
+</body>
+</html>
