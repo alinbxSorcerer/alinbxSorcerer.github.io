@@ -27,11 +27,11 @@
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/archive.html</loc>
-  <lastmod>2019-11-30T07:20:00Z</lastmod>
+  <lastmod>2019-11-30T07:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/categories/</loc>
-  <lastmod>2019-11-30T07:20:00Z</lastmod>
+  <lastmod>2019-11-30T07:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/categories/algorithms/</loc>
@@ -44,6 +44,10 @@
  <url>
   <loc>https://alinbxsorcerer.github.io/categories/benford/</loc>
   <lastmod>2019-11-21T01:58:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alinbxsorcerer.github.io/categories/c/</loc>
+  <lastmod>2019-11-30T07:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/categories/calculus/</loc>
@@ -135,7 +139,7 @@
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/index-1.html</loc>
-  <lastmod>2019-11-30T07:20:00Z</lastmod>
+  <lastmod>2019-11-30T07:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/listings/</loc>
@@ -204,6 +208,10 @@
  <url>
   <loc>https://alinbxsorcerer.github.io/pages/theming/</loc>
   <lastmod>2019-11-09T06:16:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alinbxsorcerer.github.io/posts/dushu-phngzhu-apue/</loc>
+  <lastmod>2019-11-30T07:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/</loc>
