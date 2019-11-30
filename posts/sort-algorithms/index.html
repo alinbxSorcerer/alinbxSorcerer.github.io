@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html prefix="" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>五种排序算法 | A Magic Land Declared by David</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://alinbxsorcerer.github.io/posts/sort-algorithms/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="David">
+<meta property="og:site_name" content="A Magic Land Declared by David">
+<meta property="og:title" content="五种排序算法">
+<meta property="og:url" content="https://alinbxsorcerer.github.io/posts/sort-algorithms/">
+<meta property="og:description" content="冒泡排序
+这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。
+Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list, compares adjacent pairs and swaps) the">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2018-05-15T20:53:29+08:00">
+<meta property="article:tag" content="algorithms">
+<meta property="article:tag" content="sort">
+</head>
+<body>
+    
+
+    <header id="header" class="navbar"><div class="container">
+            
+    <div class="brand">
+
+        <div class="brand-text">
+            <a href="https://alinbxsorcerer.github.io/" title="A Magic Land Declared by David" rel="home">
+                A Magic Land Declared by David
+            </a>
+        </div>
+
+        <a id="btn-toggle-nav" class="navbar-toggle">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+    </div>
+
+            
+    <nav class="navbar-collapse collapse"><ul class="nav">
+<li><a href="../../archive.html">Archive</a></li>
+                <li><a href="../../categories/">Tags</a></li>
+                <li><a href="../../rss.xml">RSS feed</a></li>
+    
+    
+    </ul></nav>
+</div>
+    </header><div class="header-padding"> </div>
+
+    
+    <div class="post-header">
+        <div class="container">
+            <div class="title">
+                五种排序算法
+            </div>
+        </div>
+    </div>
+
+    <div class="post-meta">
+      <div class="container">
+	<div class="meta clearfix">
+	  <div class="authordate">
+	    <time class="timeago" datetime="2018-05-15T20:53:29+08:00">2018/05/15</time>
+	    
+
+	    
+          |  
+        <a href="index.rst" id="sourcelink">Source</a>
+
+	  </div>
+	  <div class="post-tags">
+	    <div class="tag">
+	      <a href="../../categories/algorithms/" rel="tag">algorithms</a>
+	    </div>
+	    <div class="tag">
+	      <a href="../../categories/sort/" rel="tag">sort</a>
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </div>
+
+
+    <div id="post-main" class="main">
+        <div class="container">
+        <div>
+<div class="section" id="id1">
+<h2>冒泡排序</h2>
+<p>这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。</p>
+<p>Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list, compares adjacent pairs and swaps) them if they are in the wrong order.</p>
+<p>物理模拟的理论源头.</p>
+<pre class="code ipython"><a name="rest_code_48412b66cef44ee4a40f9d30b710c088-1"></a><span class="c1"># compare to get the small and swap</span>
+<a name="rest_code_48412b66cef44ee4a40f9d30b710c088-2"></a><span class="c1"># repeat</span>
+<a name="rest_code_48412b66cef44ee4a40f9d30b710c088-3"></a><span class="k">def</span> <span class="nf">bubble_sort1</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<a name="rest_code_48412b66cef44ee4a40f9d30b710c088-4"></a>    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span> <span class="c1">#cumbersome loop</span>
+<a name="rest_code_48412b66cef44ee4a40f9d30b710c088-5"></a>        <span class="c1"># core logic</span>
+<a name="rest_code_48412b66cef44ee4a40f9d30b710c088-6"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+<a name="rest_code_48412b66cef44ee4a40f9d30b710c088-7"></a>            <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+<a name="rest_code_48412b66cef44ee4a40f9d30b710c088-8"></a>                <span class="n">temp</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#目标位置.</span>
+<a name="rest_code_48412b66cef44ee4a40f9d30b710c088-9"></a>                <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<a name="rest_code_48412b66cef44ee4a40f9d30b710c088-10"></a>                <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span> <span class="c1">#swap的逻辑可以先写后面的两行。</span>
+<a name="rest_code_48412b66cef44ee4a40f9d30b710c088-11"></a>
+<a name="rest_code_48412b66cef44ee4a40f9d30b710c088-12"></a><span class="k">def</span> <span class="nf">bubble_sort2</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<a name="rest_code_48412b66cef44ee4a40f9d30b710c088-13"></a>    <span class="c1">#上浮和下沉, 轻质物体向上浮动</span>
+<a name="rest_code_48412b66cef44ee4a40f9d30b710c088-14"></a>    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+<a name="rest_code_48412b66cef44ee4a40f9d30b710c088-15"></a>        <span class="n">swap_counter</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="rest_code_48412b66cef44ee4a40f9d30b710c088-16"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+<a name="rest_code_48412b66cef44ee4a40f9d30b710c088-17"></a>            <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span> <span class="c1">#move smaller up</span>
+<a name="rest_code_48412b66cef44ee4a40f9d30b710c088-18"></a>                <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<a name="rest_code_48412b66cef44ee4a40f9d30b710c088-19"></a>                <span class="n">swap_counter</span> <span class="o">+=</span> <span class="mi">1</span>
+<a name="rest_code_48412b66cef44ee4a40f9d30b710c088-20"></a>        <span class="k">if</span> <span class="n">swap_counter</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a name="rest_code_48412b66cef44ee4a40f9d30b710c088-21"></a>            <span class="k">return</span>
+<a name="rest_code_48412b66cef44ee4a40f9d30b710c088-22"></a><span class="kn">import</span> <span class="nn">random</span>
+<a name="rest_code_48412b66cef44ee4a40f9d30b710c088-23"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<a name="rest_code_48412b66cef44ee4a40f9d30b710c088-24"></a><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="mi">31</span><span class="p">)]</span>
+<a name="rest_code_48412b66cef44ee4a40f9d30b710c088-25"></a><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
+<a name="rest_code_48412b66cef44ee4a40f9d30b710c088-26"></a><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<a name="rest_code_48412b66cef44ee4a40f9d30b710c088-27"></a><span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<a name="rest_code_48412b66cef44ee4a40f9d30b710c088-28"></a><span class="n">bubble_sort2</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<a name="rest_code_48412b66cef44ee4a40f9d30b710c088-29"></a><span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</pre>
+</div>
+<div class="section" id="id2">
+<h2>插入排序</h2>
+<pre class="code ipython"><a name="rest_code_ad46d8ef5fda4e82acbde4f72569bc55-1"></a><span class="c1">#psudocodes</span>
+<a name="rest_code_ad46d8ef5fda4e82acbde4f72569bc55-2"></a><span class="n">Move</span> <span class="n">the</span> <span class="n">pivot</span> <span class="n">entry</span> <span class="n">to</span> <span class="n">a</span> <span class="n">temporary</span> <span class="n">location</span> <span class="n">leaving</span> <span class="n">a</span> <span class="n">hole</span> <span class="ow">in</span> <span class="n">List</span>
+<a name="rest_code_ad46d8ef5fda4e82acbde4f72569bc55-3"></a><span class="k">while</span> <span class="p">(</span><span class="n">there</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">name</span> <span class="n">above</span> <span class="n">the</span> <span class="n">hole</span> <span class="ow">and</span> <span class="n">that</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">greater</span> <span class="n">than</span> <span class="n">the</span> <span class="n">pivot</span><span class="p">):</span>
+<a name="rest_code_ad46d8ef5fda4e82acbde4f72569bc55-4"></a><span class="n">move</span> <span class="n">the</span> <span class="n">name</span> <span class="n">above</span> <span class="n">the</span> <span class="n">hole</span> <span class="n">down</span> <span class="n">into</span> <span class="n">the</span> <span class="n">hole</span>
+<a name="rest_code_ad46d8ef5fda4e82acbde4f72569bc55-5"></a><span class="n">leaving</span> <span class="n">a</span> <span class="n">hole</span> <span class="n">above</span> <span class="n">the</span> <span class="n">name</span>
+<a name="rest_code_ad46d8ef5fda4e82acbde4f72569bc55-6"></a><span class="n">Move</span> <span class="n">the</span> <span class="n">pivot</span> <span class="n">entry</span> <span class="n">into</span> <span class="n">the</span> <span class="n">hole</span> <span class="ow">in</span> <span class="n">List</span><span class="o">.</span>
+<a name="rest_code_ad46d8ef5fda4e82acbde4f72569bc55-7"></a><span class="c1"># 向已经排序好的数组中插入</span>
+<a name="rest_code_ad46d8ef5fda4e82acbde4f72569bc55-8"></a><span class="c1">#解决方案只保留一项, 越少越好.</span>
+<a name="rest_code_ad46d8ef5fda4e82acbde4f72569bc55-9"></a><span class="c1">#假设有序数组</span>
+<a name="rest_code_ad46d8ef5fda4e82acbde4f72569bc55-10"></a><span class="c1">#in-place的实现</span>
+<a name="rest_code_ad46d8ef5fda4e82acbde4f72569bc55-11"></a><span class="k">def</span> <span class="nf">insertion_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span><span class="c1">#这个思路是最清晰的.</span>
+<a name="rest_code_ad46d8ef5fda4e82acbde4f72569bc55-12"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+<a name="rest_code_ad46d8ef5fda4e82acbde4f72569bc55-13"></a>        <span class="c1">#将当前的pivot拿出</span>
+<a name="rest_code_ad46d8ef5fda4e82acbde4f72569bc55-14"></a>        <span class="n">pivot</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="c1">#Move the pivot to a temporay location,</span>
+<a name="rest_code_ad46d8ef5fda4e82acbde4f72569bc55-15"></a>        <span class="n">hole</span> <span class="o">=</span> <span class="n">i</span> <span class="c1"># and leave a hole</span>
+<a name="rest_code_ad46d8ef5fda4e82acbde4f72569bc55-16"></a>        <span class="c1">#找到比当前值大的,然后下沉. hole&gt;0是因为第一项已经排好了.</span>
+<a name="rest_code_ad46d8ef5fda4e82acbde4f72569bc55-17"></a>        <span class="k">while</span> <span class="n">hole</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">arr</span><span class="p">[</span><span class="n">hole</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">pivot</span><span class="p">:</span>
+<a name="rest_code_ad46d8ef5fda4e82acbde4f72569bc55-18"></a>            <span class="c1">#当上面有更大的,下沉, 因为是排序好的，所以想象lock整体下沉。</span>
+<a name="rest_code_ad46d8ef5fda4e82acbde4f72569bc55-19"></a>            <span class="n">arr</span><span class="p">[</span><span class="n">hole</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">hole</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#下沉填充hole</span>
+<a name="rest_code_ad46d8ef5fda4e82acbde4f72569bc55-20"></a>            <span class="n">hole</span>  <span class="o">=</span> <span class="n">hole</span><span class="o">-</span> <span class="mi">1</span> <span class="c1">#leave the hole,两步操作.</span>
+<a name="rest_code_ad46d8ef5fda4e82acbde4f72569bc55-21"></a>        <span class="n">arr</span><span class="p">[</span><span class="n">hole</span><span class="p">]</span> <span class="o">=</span> <span class="n">pivot</span> <span class="c1">#insert sort就是这么来的, 也是交换位置.</span>
+<a name="rest_code_ad46d8ef5fda4e82acbde4f72569bc55-22"></a>        <span class="c1"># 最后将hole腾挪出来.</span>
+<a name="rest_code_ad46d8ef5fda4e82acbde4f72569bc55-23"></a>    <span class="k">return</span> <span class="n">arr</span>
+</pre>
+</div>
+<div class="section" id="id3">
+<h2>选择排序</h2>
+<p>选择排序是原理最简单的排序 Psuedocodes: 从剩下的序列中选择最小值， 逐个浮上来。</p>
+<pre class="code ipython"><a name="rest_code_ccca07d3d4e741f58394de6ccf4849a7-1"></a><span class="c1">#要输出的是new_arr</span>
+<a name="rest_code_ccca07d3d4e741f58394de6ccf4849a7-2"></a><span class="k">def</span> <span class="nf">selection_sort3</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>　<span class="c1"># 基本思路．</span>
+<a name="rest_code_ccca07d3d4e741f58394de6ccf4849a7-3"></a>    <span class="n">arr</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<a name="rest_code_ccca07d3d4e741f58394de6ccf4849a7-4"></a>    <span class="n">new_arr</span> <span class="o">=</span> <span class="p">[]</span>
+<a name="rest_code_ccca07d3d4e741f58394de6ccf4849a7-5"></a>    <span class="k">while</span> <span class="n">arr</span><span class="p">:</span>
+<a name="rest_code_ccca07d3d4e741f58394de6ccf4849a7-6"></a>        <span class="n">minimum</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<a name="rest_code_ccca07d3d4e741f58394de6ccf4849a7-7"></a>        <span class="n">new_arr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">minimum</span><span class="p">))</span>
+<a name="rest_code_ccca07d3d4e741f58394de6ccf4849a7-8"></a>    <span class="k">return</span> <span class="n">new_arr</span>
+<a name="rest_code_ccca07d3d4e741f58394de6ccf4849a7-9"></a>
+<a name="rest_code_ccca07d3d4e741f58394de6ccf4849a7-10"></a><span class="k">def</span> <span class="nf">selection_sortA</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span> <span class="c1">#selection排序的核心是从subarray中找打最小值.</span>
+<a name="rest_code_ccca07d3d4e741f58394de6ccf4849a7-11"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span> <span class="c1">#从subarray的第一项开始</span>
+<a name="rest_code_ccca07d3d4e741f58394de6ccf4849a7-12"></a>        <span class="n">min_idx</span> <span class="o">=</span> <span class="n">i</span> <span class="c1">#设置min_idx的初始值．</span>
+<a name="rest_code_ccca07d3d4e741f58394de6ccf4849a7-13"></a>        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span><span class="c1">#从subarray中选出最小值</span>
+<a name="rest_code_ccca07d3d4e741f58394de6ccf4849a7-14"></a>            <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">[</span><span class="n">min_idx</span><span class="p">]:</span> <span class="c1">#不断更新</span>
+<a name="rest_code_ccca07d3d4e741f58394de6ccf4849a7-15"></a>                <span class="n">min_idx</span> <span class="o">=</span> <span class="n">j</span> <span class="c1">#找到最小值的index,只进行index操作.</span>
+<a name="rest_code_ccca07d3d4e741f58394de6ccf4849a7-16"></a>        <span class="c1">#循环终止后, i是当前值,</span>
+<a name="rest_code_ccca07d3d4e741f58394de6ccf4849a7-17"></a>        <span class="c1">#swap the current value and the minial value</span>
+<a name="rest_code_ccca07d3d4e741f58394de6ccf4849a7-18"></a>        <span class="n">temp</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<a name="rest_code_ccca07d3d4e741f58394de6ccf4849a7-19"></a>        <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">min_idx</span><span class="p">]</span>
+<a name="rest_code_ccca07d3d4e741f58394de6ccf4849a7-20"></a>        <span class="n">nums</span><span class="p">[</span><span class="n">min_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span>
+</pre>
+</div>
+<div class="section" id="id4">
+<h2>归并排序</h2>
+<pre class="code ipython"><a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-1"></a><span class="c1">#psuedocodes方案</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-2"></a><span class="kn">from</span> <span class="nn">heapq</span> <span class="kn">import</span> <span class="n">merge</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-3"></a><span class="k">def</span> <span class="nf">merge_sort1</span><span class="p">(</span><span class="n">m</span><span class="p">):</span> <span class="c1">#Postoder</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-4"></a>    <span class="c1">#LRN遍历,</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-5"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-6"></a>        <span class="k">return</span> <span class="n">m</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-7"></a>    <span class="n">mid</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-8"></a>    <span class="n">left</span> <span class="o">=</span> <span class="n">merge_sort1</span><span class="p">(</span><span class="n">m</span><span class="p">[:</span><span class="n">mid</span><span class="p">])</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-9"></a>    <span class="n">right</span> <span class="o">=</span> <span class="n">merge_sort1</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="n">mid</span><span class="p">:])</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-10"></a>    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">))</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-11"></a>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-12"></a><span class="c1">#step by step soluthon</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-13"></a><span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-14"></a>    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-15"></a>    <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-16"></a>    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">left</span><span class="p">)</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">right</span><span class="p">):</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-17"></a>        <span class="k">if</span> <span class="n">left</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-18"></a>            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">left</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-19"></a>            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-20"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-21"></a>            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">right</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-22"></a>            <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-23"></a>    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">left</span><span class="p">):</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-24"></a>        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">left</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-25"></a>        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-26"></a>    <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">right</span><span class="p">):</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-27"></a>        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">right</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-28"></a>        <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-29"></a>    <span class="k">return</span> <span class="n">result</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-30"></a>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-31"></a><span class="k">def</span> <span class="nf">mergeSort</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-32"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-33"></a>        <span class="k">return</span> <span class="n">L</span><span class="p">[:]</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-34"></a>    <span class="k">else</span><span class="p">:</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-35"></a>        <span class="n">left</span> <span class="o">=</span> <span class="n">mergeSort</span><span class="p">(</span><span class="n">L</span><span class="p">[:</span><span class="n">mid</span><span class="p">])</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-36"></a>        <span class="n">right</span> <span class="o">=</span> <span class="n">mergeSort</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="n">mid</span><span class="p">:])</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-37"></a>        <span class="k">return</span> <span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-38"></a>    <span class="c1">#我的时间管理可能应该是tree的结构.</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-39"></a>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-40"></a> <span class="c1">#in-place merge sort</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-41"></a><span class="k">def</span> <span class="nf">merge_inplace</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">"None"</span><span class="p">:</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-42"></a>    <span class="n">left</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">mid</span><span class="p">]</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-43"></a>    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-44"></a>    <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-45"></a>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-46"></a>    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span> <span class="c1">#c for cur</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-47"></a>        <span class="k">if</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">right</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">left</span><span class="p">)</span> <span class="ow">and</span> <span class="n">left</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">[</span><span class="n">j</span><span class="p">]):</span> <span class="c1">#注意shortcuit的问题.</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-48"></a>            <span class="n">A</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">left</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-49"></a>            <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-50"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-51"></a>            <span class="n">A</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">right</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-52"></a>            <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-53"></a>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-54"></a><span class="k">def</span> <span class="nf">mergeSort_inplace</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">"None"</span><span class="p">:</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-55"></a>    <span class="k">if</span> <span class="n">lo</span> <span class="o">&lt;</span> <span class="n">hi</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-56"></a>        <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">lo</span> <span class="o">+</span> <span class="n">hi</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-57"></a>        <span class="n">mergeSort_inplace</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">lo</span><span class="p">,</span><span class="n">mid</span><span class="p">)</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-58"></a>        <span class="n">mergeSort_inplace</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">mid</span><span class="p">,</span><span class="n">hi</span><span class="p">)</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-59"></a>        <span class="n">merge_inplace</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span><span class="n">e</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-60"></a>    <span class="c1">#我的时间管理可能应该是tree的结构.</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-61"></a>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-62"></a> <span class="c1">#in-place merge sort</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-63"></a><span class="k">def</span> <span class="nf">merge_inplace</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">"None"</span><span class="p">:</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-64"></a>    <span class="n">left</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">mid</span><span class="p">]</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-65"></a>    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-66"></a>    <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-67"></a>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-68"></a>    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span> <span class="c1">#c for cur</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-69"></a>        <span class="k">if</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">right</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">left</span><span class="p">)</span> <span class="ow">and</span> <span class="n">left</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">[</span><span class="n">j</span><span class="p">]):</span> <span class="c1">#注意shortcuit的问题.</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-70"></a>            <span class="n">A</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">left</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-71"></a>            <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-72"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-73"></a>            <span class="n">A</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">right</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-74"></a>            <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-75"></a>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-76"></a><span class="k">def</span> <span class="nf">mergeSort_inplace</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">"None"</span><span class="p">:</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-77"></a>    <span class="k">if</span> <span class="n">lo</span> <span class="o">&lt;</span> <span class="n">hi</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-78"></a>        <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">lo</span> <span class="o">+</span> <span class="n">hi</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-79"></a>        <span class="n">mergeSort_inplace</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">lo</span><span class="p">,</span><span class="n">mid</span><span class="p">)</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-80"></a>        <span class="n">mergeSort_inplace</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">mid</span><span class="p">,</span><span class="n">hi</span><span class="p">)</span>
+<a name="rest_code_f87a9050edc6463ea700e290ec5f4e85-81"></a>        <span class="n">merge_inplace</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span>
+</pre>
+<p>归并排序是一种稳定的排序方法。和选择排序一样，归并排序的性能不受输入数据的影响，但表现比选择排序好的多，因为始终都是O(nlogn）的时间复杂度。代价是需要额外的内存空间。 归并算法的代价就是需要额外的存储空间.</p>
+</div>
+<div class="section" id="id5">
+<h2>快速排序</h2>
+<pre class="code ipython"><a name="rest_code_b17946cb2e704f72841b2ff460b357de-1"></a><span class="k">def</span> <span class="nf">quicksort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<a name="rest_code_b17946cb2e704f72841b2ff460b357de-2"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+<a name="rest_code_b17946cb2e704f72841b2ff460b357de-3"></a>        <span class="k">return</span> <span class="n">arr</span> <span class="c1">#base case</span>
+<a name="rest_code_b17946cb2e704f72841b2ff460b357de-4"></a>    <span class="k">else</span><span class="p">:</span>
+<a name="rest_code_b17946cb2e704f72841b2ff460b357de-5"></a>        <span class="n">pivot</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<a name="rest_code_b17946cb2e704f72841b2ff460b357de-6"></a>        <span class="n">less</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">pivot</span><span class="p">]</span> <span class="c1"># filter</span>
+<a name="rest_code_b17946cb2e704f72841b2ff460b357de-7"></a>        <span class="n">more</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">pivot</span><span class="p">]</span> <span class="c1"># filter</span>
+<a name="rest_code_b17946cb2e704f72841b2ff460b357de-8"></a>        <span class="k">return</span> <span class="n">quicksort</span><span class="p">(</span><span class="n">less</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="n">pivot</span><span class="p">]</span> <span class="o">+</span> <span class="n">quicksort</span><span class="p">(</span><span class="n">more</span><span class="p">)</span>
+</pre>
+</div>
+<div class="section" id="publish">
+<h2>Publish</h2>
+<pre class="code ipython"><a name="rest_code_942c8c4a30014df48f5d2a6c79b18e6b-1"></a><span class="kn">import</span> <span class="nn">subprocess</span>
+<a name="rest_code_942c8c4a30014df48f5d2a6c79b18e6b-2"></a><span class="n">cmd</span> <span class="o">=</span><span class="s2">"pandoc --wrap=none 排序算法.org  -o ~/Public/nikola_post/posts/排序算法.rst"</span>
+<a name="rest_code_942c8c4a30014df48f5d2a6c79b18e6b-3"></a><span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre>
+</div>
+</div>
+            
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="?",
+            disqus_url="https://alinbxsorcerer.github.io/posts/sort-algorithms/",
+        disqus_title="\u4e94\u79cd\u6392\u5e8f\u7b97\u6cd5",
+        disqus_identifier="cache/posts/排序算法.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        
+
+        </div>
+    </div>
+
+    
+    <footer><div class="container">
+            <div class="social">
+
+
+
+                <div class="social-entry">
+                    <a href="../../rss.xml" target="_blank">
+                        <i class="fa fa-rss"></i> 
+                    </a>
+                </div>
+            </div>
+                <div class="copyright">
+                    Contents © 2019         <a href="mailto:davad.fhl.wang@foxmail.com">David</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+                    
+                </div>
+           
+        </div>
+    </footer><script src="../../assets/js/all-nocdn.js" type="text/javascript"></script>
+</body>
+</html>
