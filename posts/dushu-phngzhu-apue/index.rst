@@ -1,7 +1,7 @@
    .. title: 读书评注: APUE
    .. slug: dushu-phngzhu-apue
-   .. date: 2018-11-15 20:53:29 UTC+08:00
-   .. tags: C,
+   .. date: 2018-09-21 20:53:29 UTC+08:00
+   .. tags: C, 
    .. category: programming
    .. link:
    .. description:
