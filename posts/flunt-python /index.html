@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html prefix="" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Fluent Python | A Magic Land Declared by David</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://alinbxsorcerer.github.io/posts/flunt-python%20/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="David">
+<meta property="og:site_name" content="A Magic Land Declared by David">
+<meta property="og:title" content="Fluent Python ">
+<meta property="og:url" content="https://alinbxsorcerer.github.io/posts/flunt-python%20/">
+<meta property="og:description" content='System Message: ERROR/3 (&lt;string&gt;, line 1)
+The "contents" directive may not be used within topics or body elements.
+.. contents::
+
+
+
+System Message: WARNING/2 (&lt;string&gt;, line 2)
+Block quote ends witho'>
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2018-08-01T20:53:29+08:00">
+<meta property="article:tag" content="python">
+</head>
+<body>
+    
+
+    <header id="header" class="navbar"><div class="container">
+            
+    <div class="brand">
+
+        <div class="brand-text">
+            <a href="https://alinbxsorcerer.github.io/" title="A Magic Land Declared by David" rel="home">
+                A Magic Land Declared by David
+            </a>
+        </div>
+
+        <a id="btn-toggle-nav" class="navbar-toggle">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+    </div>
+
+            
+    <nav class="navbar-collapse collapse"><ul class="nav">
+<li><a href="../../archive.html">Archive</a></li>
+                <li><a href="../../categories/">Tags</a></li>
+                <li><a href="../../rss.xml">RSS feed</a></li>
+    
+    
+    </ul></nav>
+</div>
+    </header><div class="header-padding"> </div>
+
+    
+    <div class="post-header">
+        <div class="container">
+            <div class="title">
+                Fluent Python 
+            </div>
+        </div>
+    </div>
+
+    <div class="post-meta">
+      <div class="container">
+	<div class="meta clearfix">
+	  <div class="authordate">
+	    <time class="timeago" datetime="2018-08-01T20:53:29+08:00">2018/08/01</time>
+	    
+
+	    
+          |  
+        <a href="../flunt-python%20/index.rst" id="sourcelink">Source</a>
+
+	  </div>
+	  <div class="post-tags">
+	    <div class="tag">
+	      <a href="../../categories/python/" rel="tag">python</a>
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </div>
+
+
+    <div id="post-main" class="main">
+        <div class="container">
+        <div>
+<blockquote>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 1)</p>
+<p>The "contents" directive may not be used within topics or body elements.</p>
+<pre class="literal-block">.. contents::</pre>
+</div>
+</blockquote>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 2)</p>
+<p>Block quote ends without a blank line; unexpected unindent.</p>
+</div>
+<div class="section" id="preface">
+<h2>Preface</h2>
+<blockquote>
+<p>Here's the plan: when someone uses a feature you don't understand, simply shoot them. This is easier than learning something new, and before too long the only living coders will be writing in an easily understood, tiny subset of Python 0.9.6 — Tim Peters <em>Legendary core developer and author of The Zen of Python</em></p>
+</blockquote>
+<p>“Python is an easy to learn, powerful programming language.” Those are the first words of the <a class="reference external" href="https://docs.python.org/3/tutorial/">official Python Tutorial</a>. That is true, but there is a catch: because the language is easy to learn and put to use, many practicing Python programmers leverage only a fraction of its powerful features.</p>
+<p>An experienced programmer may start writing useful Python code in a matter of hours. As the first productive hours become weeks and months, a lot of developers go on writing Python code with a very strong accent carried from languages learned before. Even if Python is your first language, often in academia and in introductory books it is presented while carefully avoiding language-specific features.</p>
+<p>As a teacher introducing Python to programmers experienced in other languages, I see another problem that this book tries to address: we only miss stuff we know about. Coming from another language, anyone may guess that Python supports regular expressions, and look that up in the docs. But if you've never seen tuple unpacking or descriptors before, you will probably not search for them, and may end up not using those features just because they are specific to Python.</p>
+<p>This book is not an A-to-Z exhaustive reference of Python. Its emphasis is on the language features that are either unique to Python or not found in many other popular languages. This is also mostly a book about the core language and some of its libraries. I will rarely talk about packages that are not in the standard library, even though the Python package index now lists more than 60,000 libraries and many of them are incredibly useful.</p>
+<div class="section" id="who-this-book-is-for">
+<h3>Who This Book Is For</h3>
+<p>This book was written for practicing Python programmers who want to become proficient in Python 3. If you know Python 2 but are willing to migrate to Python 3.4 or later, you should be fine. At the time of this writing, the majority of professional Python programmers are using Python 2, so I took special care to highlight Python 3 features that may be new to that audience.</p>
+<p>However, <em>Fluent Python</em> is about making the most of Python 3.4, and I do not spell out the fixes needed to make the code work in earlier versions. Most examples should run in Python 2.7 with little or no changes, but in some cases, backporting would require significant rewriting.</p>
+<p>Having said that, I believe this book may be useful even if you must stick with Python 2.7, because the core concepts are still the same. Python 3 is not a new language, and most differences can be learned in an afternoon. <a class="reference external" href="https://docs.python.org/3.0/whatsnew/3.0.html">What's New in Python 3.0</a> is a good starting point. Of course, there have been changes since Python 3.0 was released in 2009, but none as important as those in 3.0.</p>
+<p>If you are not sure whether you know enough Python to follow along, review the topics of the official <a class="reference external" href="https://docs.python.org/3/tutorial/">Python Tutorial</a>. Topics covered in the tutorial will not be explained here, except for some features that are new in Python 3.</p>
+</div>
+<div class="section" id="who-this-book-is-not-for">
+<h3>Who This Book Is Not For</h3>
+<p>If you are just learning Python, this book is going to be hard to follow. Not only that, if you read it too early in your Python journey, it may give you the impression that every Python script should leverage special methods and metaprogramming tricks. Premature abstraction is as bad as premature optimization.</p>
+</div>
+<div class="section" id="how-this-book-is-organized">
+<h3>How This Book Is Organized</h3>
+<p>The core audience for this book should not have trouble jumping directly to any chapter in this book. However, each of the six parts forms a book within the book. I conceived the chapters within each part to be read in sequence.</p>
+<p>I tried to emphasize using what is available before discussing how to build your own. For example, in <a class="reference external" href="../flunt-python%20/pt02.html">Part II</a>, <a class="reference external" href="../flunt-python%20/ch02.html">Chapter 2</a> covers sequence types that are ready to use, including some that don't get a lot of attention, like <code class="docutils literal">collections.deque</code>. Building user-defined sequences is only addressed in <a class="reference external" href="../flunt-python%20/pt04.html">Part IV</a>, where we also see how to leverage the abstract base classes (ABCs) from <code class="docutils literal">collections.abc</code>. Creating your own ABCs is discussed even later in <a class="reference external" href="../flunt-python%20/pt04.html">Part IV</a>, because I believe it's important to be comfortable using an ABC before writing your own.</p>
+<p>This approach has a few advantages. First, knowing what is ready to use can save you from reinventing the wheel. We use existing collection classes more often than we implement our own, and we can give more attention to the advanced usage of available tools by deferring the discussion on how to create new ones. We are also more likely to inherit from existing ABCs than to create a new ABC from scratch. And finally, I believe it is easier to understand the abstractions after you've seen them in action.</p>
+<p>The downside of this strategy are the forward references scattered throughout the chapters. I hope these will be easier to tolerate now that you know why I chose this path.</p>
+<p>Here are the main topics in each part of the book:</p>
+<dl class="simple">
+<dt><a class="reference external" href="../flunt-python%20/pt01.html">Part I</a></dt>
+<dd>
+<p>A single chapter about the Python data model explaining how the special methods (e.g., <code class="docutils literal">__repr__</code>) are the key to the consistent behavior of objects of all types—in a language that is admired for its consistency. Understanding various facets of the data model is the subject of most of the rest of the book, but <a class="reference external" href="../flunt-python%20/ch01.html">Chapter 1</a> provides a high-level overview.</p>
+</dd>
+<dt><a class="reference external" href="../flunt-python%20/pt02.html">Part II</a></dt>
+<dd>
+<p>The chapters in this part cover the use of collection types: sequences, mappings, and sets, as well as the <code class="docutils literal">str</code> versus <code class="docutils literal">bytes</code> split—the cause of much celebration among Python 3 users and much pain for Python 2 users who have not yet migrated their code bases. The main goals are to recall what is already available and to explain some behavior that is sometimes surprising, like the reordering of <code class="docutils literal">dict</code> keys when we are not looking, or the caveats of locale-dependent Unicode string sorting. To achieve these goals, the coverage is sometimes high level and wide (e.g., when many variations of sequences and mappings are presented) and sometimes deep (e.g., when we dive into the hash tables underneath the <code class="docutils literal">dict</code> and <code class="docutils literal">set</code> types).</p>
+</dd>
+<dt><a class="reference external" href="../flunt-python%20/pt03.html">Part III</a></dt>
+<dd>
+<p>Here we talk about functions as first-class objects in the language: what that means, how it affects some popular design patterns, and how to implement function decorators by leveraging closures. Also covered here is the general concept of callables in Python, function attributes, introspection, parameter annotations, and the new <code class="docutils literal">nonlocal</code> declaration in Python 3.</p>
+</dd>
+<dt><a class="reference external" href="../flunt-python%20/pt04.html">Part IV</a></dt>
+<dd>
+<p>Now the focus is on building classes. In <a class="reference external" href="../flunt-python%20/pt02.html">Part II</a>, the <code class="docutils literal">class</code> declaration appears in few examples; <a class="reference external" href="../flunt-python%20/pt04.html">Part IV</a> presents many classes. Like any object-oriented (OO) language, Python has its particular set of features that may or may not be present in the language in which you and I learned class-based programming. The chapters explain how references work, what mutability really means, the lifecycle of instances, how to build your own collections and ABCs, how to cope with multiple inheritance, and how to implement operator overloading—when that makes sense.</p>
+</dd>
+<dt><a class="reference external" href="../flunt-python%20/pt05.html">Part V</a></dt>
+<dd>
+<p>Covered in this part are the language constructs and libraries that go beyond sequential control flow with conditionals, loops, and subroutines. We start with generators, then visit context managers and coroutines, including the challenging but powerful new <code class="docutils literal">yield from</code> syntax. <a class="reference external" href="../flunt-python%20/pt05.html">Part V</a> closes with a high-level introduction to modern concurrency in Python with <code class="docutils literal">collections.futures</code> (using threads and processes under the covers with the help of futures) and doing event-oriented I/O with <code class="docutils literal">asyncio</code> (leveraging futures on top of coroutines and <code class="docutils literal">yield from</code>).</p>
+</dd>
+<dt><a class="reference external" href="../flunt-python%20/pt06.html">Part VI</a></dt>
+<dd>
+<p>This part starts with a review of techniques for building classes with attributes created dynamically to handle semi-structured data such as JSON datasets. Next, we cover the familiar properties mechanism, before diving into how object attribute access works at a lower level in Python using descriptors. The relationship between functions, methods, and descriptors is explained. Throughout <a class="reference external" href="../flunt-python%20/pt06.html">Part VI</a>, the step-by-step implementation of a field validation library uncovers subtle issues that lead to the use of the advanced tools of the final chapter: class decorators and metaclasses.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="hands-on-approach">
+<h3>Hands-On Approach</h3>
+<p>Often we'll use the interactive Python console to explore the language and libraries. I feel it is important to emphasize the power of this learning tool, particularly for those readers who've had more experience with static, compiled languages that don't provide a read-eval-print#loop (REPL).</p>
+<p>One of the standard Python testing packages, <code class="docutils literal">`doctest</code> &lt;<a class="reference external" href="https://docs.python.org/3/library/doctest.html">https://docs.python.org/3/library/doctest.html</a>&gt;`__, works by simulating console sessions and verifying that the expressions evaluate to the responses shown. I used <code class="docutils literal">doctest</code> to check most of the code in this book, including the console listings. You don't need to use or even know about <code class="docutils literal">doctest</code> to follow along: the key feature of doctests is that they look like transcripts of interactive Python console sessions, so you can easily try out the demonstrations yourself.</p>
+<p>Sometimes I will explain what we want to accomplish by showing a doctest before the code that makes it pass. Firmly establishing what is to be done before thinking about how to do it helps focus our coding effort. Writing tests first is the basis of test driven development (TDD) and I've also found it helpful when teaching. If you are unfamiliar with <code class="docutils literal">doctest</code>, take a look at its <a class="reference external" href="https://docs.python.org/3/library/doctest.html">documentation</a> and this book's <a class="reference external" href="https://github.com/fluentpython/example-code">source code repository</a>. You'll find that you can verify the correctness of most of the code in the book by typing <code class="docutils literal">python3 <span class="pre">-m</span> doctest example_script.py</code> in the command shell of your OS.</p>
+</div>
+<div class="section" id="hardware-used-for-timings">
+<h3>Hardware Used for Timings</h3>
+<p>The book has some simple benchmarks and timings. Those tests were performed on one or the other laptop I used to write the book: a 2011 MacBook Pro 13” with a 2.7 GHz Intel Core i7 CPU, 8GB of RAM, and a spinning hard disk, and a 2014 MacBook Air 13” with a 1.4 GHz Intel Core i5 CPU, 4GB of RAM, and a solid-state disk. The MacBook Air has a slower CPU and less RAM, but its RAM is faster (1600 versus 1333 MHz) and the SSD is much faster than the HD. In daily usage, I can't tell which machine is faster.</p>
+</div>
+<div class="section" id="soapbox-my-personal-perspective">
+<h3>Soapbox: My Personal Perspective</h3>
+<p>I have been using, teaching, and debating Python since 1998, and I enjoy studying and comparing programming languages, their design, and the theory behind them. At the end of some chapters, I have added “Soapbox” sidebars with my own perspective about Python and other languages. Feel free to skip these if you are not into such discussions. Their content is completely optional.</p>
+</div>
+<div class="section" id="python-version-covered">
+<h3>Python Version Covered</h3>
+<p>I tested all the code in the book using Python 3.4—that is, CPython 3.4, the most popular Python implementation written in C. There is only one exception: <a class="reference external" href="../flunt-python%20/ch13.html#matmul_operator_sec">The New @ Infix Operator in Python 3.5</a> shows the <code class="docutils literal">@</code> operator, which is only supported by Python 3.5.</p>
+<p>Almost all code in the book should work with any Python 3.x–compatible interpreter, including PyPy3 2.4.0, which is compatible with Python 3.2.5. The notable exceptions are the examples using <code class="docutils literal">yield from</code> and <code class="docutils literal">asyncio</code>, which are only available in Python 3.3 or later.</p>
+<p>Most code should also work with Python 2.7 with minor changes, except the Unicode-related examples in <a class="reference external" href="../flunt-python%20/ch04.html">Chapter 4</a>, and the exceptions already noted for Python 3 versions earlier than 3.3.</p>
+</div>
+<div class="section" id="python-jargon">
+<h3>Python Jargon</h3>
+<p>I wanted this to be a book not only about Python but also about the culture around it. Over more than 20 years of communications, the Python community developed its own particular lingo and acronyms. At the end of this book, <a class="reference external" href="../flunt-python%20/go01.html">Python Jargon</a> contains a list of terms that have special meaning among Pythonistas.</p>
+<p>Many terms here are not exclusive to Python, of course, but particularly in the definitions you may find meanings that are specific to the Python community.</p>
+<p>Also see the official <a class="reference external" href="https://docs.python.org/3/glossary.html">Python glossary</a>.</p>
+<dl>
+<dt>ABC (programming language)</dt>
+<dd>
+<p>A programming language created by Leo Geurts, Lambert Meertens, and Steven Pemberton. Guido van Rossum, who developed Python, worked as a programmer implementing the ABC environment in the 1980s. Block structuring by indentation, built-in tuples and dictionaries, tuple unpacking, the semantics of the <code class="docutils literal">for</code> loop, and uniform handling of all sequence types are some of the distinctive characteristics of Python that came from ABC.</p>
+</dd>
+<dt>Abstract base class (ABC)</dt>
+<dd>
+<p>A class that cannot be instantiated, only subclassed. ABCs are how interfaces are formalized in Python. Instead of inheriting from an ABC, a class may also declare that it fulfills the interface by registering with the ABC to become a <em>virtual subclass</em>.</p>
+</dd>
+<dt>accessor</dt>
+<dd>
+<p>A method implemented to provide access to a single data attribute. Some authors use <em>acessor</em> as a generic term encompassing getter and setter methods, others use it to refer only to getters, referring to setters as mutators.</p>
+</dd>
+<dt>aliasing</dt>
+<dd>
+<p>Assigning two or more names to the same object. For example, in <code class="docutils literal">a = []; b = a</code> the variables <code class="docutils literal">a</code> and <code class="docutils literal">b</code> are aliases for the same list object. Aliasing happens naturally all the time in any language where variables store references to objects. To avoid confusion, just forget the idea that variables are boxes that hold objects (an object can't be in two boxes at the same time). It's better to think of them as labels attached to objects (an object can have more than one label).</p>
+</dd>
+<dt>argument</dt>
+<dd>
+<p>An expression passed to a function when it is called. In Pythonic parlance, <em>argument</em> and <em>parameter</em> are almost always synonyms. See <em>parameter</em> for more about the distinction and usage of these terms.</p>
+</dd>
+<dt>attribute</dt>
+<dd>
+<p>Methods and data attributes (i.e., “fields” in Java terms) are all known as attributes in Python. A method is just an attribute that happens to be a callable object (usually a function, but not necessarily).</p>
+</dd>
+<dt>BDFL</dt>
+<dd>
+<p>Benevolent Dictator For Life, alias for Guido van Rossum, creator of the Python language.</p>
+</dd>
+<dt>binary sequence</dt>
+<dd>
+<p>Generic term for sequence types with byte elements. The built-in binary sequence types are <code class="docutils literal">byte</code>, <code class="docutils literal">bytearray</code>, and <code class="docutils literal">memoryview</code>.</p>
+</dd>
+<dt>BOM</dt>
+<dd>
+<p>Byte Order Mark, a sequence of bytes that may be present at the start of a UTF-16 encoded file. A BOM is the character U+FEFF (<code class="docutils literal">ZERO WIDTH <span class="pre">NO-BREAK</span> SPACE</code>) encoded to produce either <code class="docutils literal"><span class="pre">b'\xfe\xff'</span></code> on a big-endian CPU, or <code class="docutils literal"><span class="pre">b'\xff\xfe'</span></code> on a little-endian one. Because there is no U+FFFE characer in Unicode, the presence of these bytes unambiguously reveals the byte ordering used in the encoding. Although redundant, a BOM encoded as <code class="docutils literal"><span class="pre">b'\xef\xbb\xbf'</span></code> may be found in UTF-8 files.</p>
+</dd>
+<dt>bound method</dt>
+<dd>
+<p>A method that is accessed through an instance becomes bound to that instance. Any method is actually a descriptor and when accessed, it returns itself wrapped in an object that binds the method to the instance. That object is the bound method. It can be invoked without passing the value of <code class="docutils literal">self</code>. For example, given the assignment <code class="docutils literal">my_method = my_obj.method</code>, the bound method can later be called as <code class="docutils literal">my_method()</code>. Contrast with <em>unbound method</em>.</p>
+</dd>
+<dt>built-in function (BIF)</dt>
+<dd>
+<p>A function bundled with the Python interpreter, coded in the underlying implementation language (i.e., C for CPython; Java for Jython, and so on). The term often refers only to the functions that don't need to be imported, documented in <a class="reference external" href="http://docs.python.org/library/functions.html">Chapter 2, “Built-in Functions,”</a> of The Python Standard Library Reference. But built-in modules like <code class="docutils literal">sys</code>, <code class="docutils literal">math</code>, <code class="docutils literal">re</code>, etc. also contain built-in functions.</p>
+</dd>
+<dt>byte string</dt>
+<dd>
+<p>An unfortunate name still used to refer to <code class="docutils literal">bytes</code> or <code class="docutils literal">bytearray</code> in Python 3. In Python 2, the <code class="docutils literal">str</code> type was really a byte string, and the term made sense to distinguish <code class="docutils literal">str</code> from <code class="docutils literal">unicode</code> strings. In Python 3, it makes no sense to insist on this term, and I tried to use <em>byte sequence</em> whenever I needed to talk in general about…byte sequences.</p>
+</dd>
+<dt>bytes-like object</dt>
+<dd>
+<p>A generic sequence of bytes. The most common bytes-like types are <code class="docutils literal">bytes</code>, <code class="docutils literal">bytearray</code>, and <code class="docutils literal">memoryview</code> but other objects supporting the low-level CPython buffer protocol also qualify, if their elements are single bytes.</p>
+</dd>
+<dt>callable object</dt>
+<dd>
+<p>An object that can be invoked with the call operator <code class="docutils literal">()</code>, to return a result or to perform some action. There are seven flavors of callable objects in Python: user-defined functions, built-in functions, built-in methods, instance methods, generator functions, classes, and instances of classes that implement the <code class="docutils literal">__call__</code> special method.</p>
+</dd>
+<dt>CamelCase</dt>
+<dd>
+<p>The convention of writing identifiers by joining words with uppercased initials (e.g., <code class="docutils literal">ConnectionRefusedError</code>). PEP-8 recommends class names should be written in CamelCase, but the advice is not followed by the Python standard library. See <em>snake\case</em>.</p>
+</dd>
+<dt>Cheese Shop</dt>
+<dd>
+<p>Original name of the <a class="reference external" href="https://pypi.python.org/pypi">Python Package Index</a> (PyPI), after the Monty Python skit about a cheese shop where nothing is available. As of this writing, the alias <a class="reference external" href="https://cheeseshop.python.org">https://cheeseshop.python.org</a> still works. See <em>PyPI</em>.</p>
+</dd>
+<dt>class</dt>
+<dd>
+<p>A program construct defining a new type, with data attributes and methods specifying possible operations on them. See <code class="docutils literal">type</code>.</p>
+</dd>
+<dt>code point</dt>
+<dd>
+<p>An integer in the range 0 to 0x10FFFF used to identify an entry in the Unicode character database. As of Unicode 7.0, less than 3% of all code points are assigned to characters. In the Python documentation, the term may be spelled as one or two words. For example, in <a class="reference external" href="http://docs.python.org/library/functions.html">Chapter 2, “Built-in Functions,”</a> of the <em>Python Library Reference</em>, the <code class="docutils literal">chr</code> function is said to take an integer “codepoint,” while its inverse, <code class="docutils literal">ord</code>, is described as returning a “Unicode code point.”</p>
+</dd>
+<dt>code smell</dt>
+<dd>
+<p>A coding pattern that suggests there may be something wrong with the design of a program. For example, excessive use of <code class="docutils literal">isinstance</code> checks against concrete classes is a code smell, as it makes the program harder to extend to deal with new types in the future.</p>
+</dd>
+<dt>codec</dt>
+<dd>
+<p>(encoder/decoder) A module with functions to encode and decode, usually from <code class="docutils literal">str</code> to <code class="docutils literal">bytes</code> and back, although Python has a few codecs that perform <code class="docutils literal">bytes</code> to <code class="docutils literal">bytes</code> and <code class="docutils literal">str</code> to <code class="docutils literal">str</code> transformations.</p>
+</dd>
+<dt>collection</dt>
+<dd>
+<p>Generic term for data structures made of items that can be accessed individually. Some collections can contain objects of arbitrary types (see <em>container</em>) and others only objects of a single atomic type (see <em>flat sequence</em>). <code class="docutils literal">list</code> and <code class="docutils literal">bytes</code> are both collections, but <code class="docutils literal">list</code> is a container, and <code class="docutils literal">bytes</code> is a flat sequence.</p>
+</dd>
+<dt>considered harmful</dt>
+<dd>
+<p>Edsger Dijkstra's letter titled “Go To Statement Considered Harmful” established a formula for titles of essays criticizing some computer science technique. Wikipedia's <a class="reference external" href="http://en.wikipedia.org/wiki/Considered_harmful">“Considered harmful” article</a> lists several examples, including <a class="reference external" href="http://meyerweb.com/eric/comment/chech.html">"Considered Harmful Essays Considered Harmful”</a> by Eric A. Meyer.</p>
+</dd>
+<dt>constructor</dt>
+<dd>
+<p>Informally, the <code class="docutils literal">__init__</code> instance method of a class is called its constructor, because its semantics is similar to that of a Java constructor. However, a fitting name for <code class="docutils literal">__init__</code> is <em>initializer</em>, as it does not actually build the instance, but receives it as its <code class="docutils literal">self</code> argument. The <em>constructor</em> term better describes the <code class="docutils literal">__new__</code> class method, which Python calls before <code class="docutils literal">__init__</code>, and is responsible for actually creating an instance and returning it. See <em>initializer</em>.</p>
+</dd>
+<dt>container</dt>
+<dd>
+<p>An object that holds references to other objects. Most collection types in Python are containers, but some are not. Contrast with <em>flat sequence</em>, which are collections but not containers.</p>
+</dd>
+<dt>context manager</dt>
+<dd>
+<p>An object implementing both the <code class="docutils literal">__enter__</code> and <code class="docutils literal">__exit__</code> special methods, for use in a <code class="docutils literal">with</code> block.</p>
+</dd>
+<dt>coroutine</dt>
+<dd>
+<p>A generator used for concurrent programming by receiving values from a scheduler or an event loop via <code class="docutils literal">coro.send(value)</code>. The term may be used to describe the generator function or the generator object obtained by calling the generator function. See <em>generator</em>.</p>
+</dd>
+<dt>CPython</dt>
+<dd>
+<p>The standard Python interpreter, implemented in C. This term is only used when discussing implementation-specific behavior, or when talking about the multiple Python interpreters available, such as <em>PyPy</em>.</p>
+</dd>
+<dt>CRUD</dt>
+<dd>
+<p>Acronym for Create, Read, Update, and Delete, the four basic functions in any application that stores records.</p>
+</dd>
+<dt>decorator</dt>
+<dd>
+<p>A callable object <code class="docutils literal">A</code> that returns another callable object <code class="docutils literal">B</code> and is invoked in code using the syntax <code class="docutils literal">@A</code> right before the definition of a callable <code class="docutils literal">C</code>. When reading such code, the Python interpreter invokes <code class="docutils literal">A(C)</code> and binds the resulting <code class="docutils literal">B</code> to the variable previously assigned to <code class="docutils literal">C</code>, effectively replacing the definition of <code class="docutils literal">C</code> with <code class="docutils literal">B</code>. If the target callable <code class="docutils literal">C</code> is a function, then <code class="docutils literal">A</code> is a function decorator; if <code class="docutils literal">C</code> is a class, then <code class="docutils literal">A</code> is a class decorator.</p>
+</dd>
+<dt>deep copy</dt>
+<dd>
+<p>A copy of an object in which all the objects that are attributes of the object are themselves also copied. Contrast with <em>shallow copy</em>.</p>
+</dd>
+<dt>descriptor</dt>
+<dd>
+<p>A class implementing one or more of the <code class="docutils literal">__get__</code>, <code class="docutils literal">__set__</code>, or <code class="docutils literal">__delete__</code> special methods becomes a descriptor when one of its instances is used as a class attribute of another class, the <em>managed class</em>. Descriptors manage the access and deletion of <em>managed attributes</em> in the <em>managed class</em>, often storing data in the <em>managed instances</em>.</p>
+</dd>
+<dt>docstring</dt>
+<dd>
+<p>Short for documentation string. When the first statement in a module, class, or function is a string literal, it is taken to be the <em>docstring</em> for the enclosing object, and the interpreter saves it as the <code class="docutils literal">__doc__</code> attribute of that object. See also <em>doctest</em>.</p>
+</dd>
+<dt>doctest</dt>
+<dd>
+<p>A module with functions to parse and run examples embedded in the docstrings of Python modules or in plain-text files. May also be used from the command line as:</p>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 193)</p>
+<p>Cannot find pygments lexer for language "screen"</p>
+<pre class="literal-block">.. code:: screen
+
+   python -m doctest
+   module_with_tests.py
+</pre>
+</div>
+</dd>
+<dt>DRY</dt>
+<dd>
+<p>Don't Repeat Yourself—a software engineering principle stating that “Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.” It first appeared in the book <em>The Pragmatic Programmer</em> by Andy Hunt and Dave Thomas (Addison-Wesley, 1999).</p>
+</dd>
+<dt>duck typing</dt>
+<dd>
+<p>A form of polymorphism where functions operate on any object that implements the appropriate methods, regardless of their classes or explicit interface declarations.</p>
+</dd>
+<dt>dunder</dt>
+<dd>
+<p>Shortcut to pronounce the names of <em>special methods</em> and attributes that are written with leading and trailing double-underscores (i.e., <code class="docutils literal">__len__</code> is read as “dunder len”).</p>
+</dd>
+<dt>dunder method</dt>
+<dd>
+<p>See <em>dunder</em> and <em>special methods</em>.</p>
+</dd>
+<dt>EAFP</dt>
+<dd>
+<p>Acronym standing for the quote “It's easier to ask forgiveness than permission,” attributed to computer pioneer Grace Hopper, and quoted by Pythonistas referring to dynamic programming practices like accessing attributes without testing first if they exist, and then catching the exception when that is the case. The docstring for the <code class="docutils literal">hasattr</code> function actually says that it works “by calling getattr(object, name) and catching AttributeError.”</p>
+</dd>
+<dt>eager</dt>
+<dd>
+<p>An iterable object that builds all its items at once. In Python, a <em>list comprehension</em> is eager. Contrast with <em>lazy</em>.</p>
+</dd>
+<dt>fail-fast</dt>
+<dd>
+<p>A systems design approach recommending that errors should be reported as early as possible. Python adheres to this principle more closely than most dynamic languages. For example, there is no “undefined” value: variables referenced before initialization generate an error, and <code class="docutils literal">my_dict[k]</code> raises an exception if <code class="docutils literal">k</code> is missing (in contrast with JavaScript). As another example, parallel assignment via tuple unpacking in Python only works if every item is explicitly handled, while Ruby silently deals with item count mismatches by ignoring unused items on the right side of the <code class="docutils literal">=</code>, or by assigning <code class="docutils literal">nil</code> to extra variables on the left side.</p>
+</dd>
+<dt>falsy</dt>
+<dd>
+<p>Any value <code class="docutils literal">x</code> for which <code class="docutils literal">bool(x)</code> returns <code class="docutils literal">False</code>; Python implicitly uses <code class="docutils literal">bool</code> to evaluate objects in Boolean contexts, such as the expression controlling an <code class="docutils literal">if</code> or <code class="docutils literal">while</code> loop. The opposite of <em>truthy</em>.</p>
+</dd>
+<dt>file-like object</dt>
+<dd>
+<p>Used informally in the official documentation to refer to objects implementing the file protocol, with methods such as <code class="docutils literal">read</code>, <code class="docutils literal">write</code>, <code class="docutils literal">close</code>, etc. Common variants are text files containing encoded strings with line-oriented reading and writing, <code class="docutils literal">StringIO</code> instances which are in-memory text files, and binary files, containing unencoded bytes. The latter may be buffered or unbuffered. ABCs for the standard file types are defined in the <code class="docutils literal">io</code> module since Python 2.6.</p>
+</dd>
+<dt>first-class function</dt>
+<dd>
+<p>Any function that is a first-class object in the language (i.e., can be created at runtime, assigned to variables, passed as an argument, and returned as the result of another function). Python functions are first-class functions.</p>
+</dd>
+<dt>flat sequence</dt>
+<dd>
+<p>A sequence type that physically stores the values of its items, and not references to other objects. The built-in types <code class="docutils literal">str</code>, <code class="docutils literal">bytes</code>, <code class="docutils literal">bytearray</code>, <code class="docutils literal">memoryview</code>, and <code class="docutils literal">array.array</code> are flat sequences. Contrast with <code class="docutils literal">list</code>, <code class="docutils literal">tuple</code>, and <code class="docutils literal">collections.deque</code>, which are container sequences. See <em>container</em>.</p>
+</dd>
+<dt>function</dt>
+<dd>
+<p>Strictly, an object resulting from evaluation of a <code class="docutils literal">def</code> block or a <code class="docutils literal">lambda</code> expression. Informally, the word <em>function</em> is used to describe any callable object, such as methods and even classes sometimes. The official <a class="reference external" href="http://docs.python.org/library/functions.html">Built-in Functions</a> list includes several built-in classes like <code class="docutils literal">dict</code>, <code class="docutils literal">range</code>, and <code class="docutils literal">str</code>. Also see <em>callable object</em>.</p>
+</dd>
+<dt>genexp</dt>
+<dd>
+<p>Short for <em>generator expression</em>.</p>
+</dd>
+<dt>generator</dt>
+<dd>
+<p>An iterator built with a generator function or a generator expression that may produce values without necessarily iterating over a collection; the canonical example is a generator to produce the Fibonacci series which, because it is infinite, would never fit in a collection. The term is sometimes used to describe a <em>generator function</em>, besides the object that results from calling it.</p>
+</dd>
+<dt>generator function</dt>
+<dd>
+<p>A function that has the <code class="docutils literal">yield</code> keyword in its body. When invoked, a generator function returns a <em>generator</em>.</p>
+</dd>
+<dt>generator expression</dt>
+<dd>
+<p>An expression enclosed in parentheses using the same syntax of a <em>list comprehension</em>, but returning a generator instead of a list. A <em>generator expression</em> can be understood as a <em>lazy</em> version of a <em>list comprehension</em>. See <em>lazy</em>.</p>
+</dd>
+<dt>generic function</dt>
+<dd>
+<p>A group of functions designed to implement the same operation in customized ways for different object types. As of Python 3.4, the <code class="docutils literal">functools.singledispatch</code> decorator is the standard way to create generic functions. This is known as multimethods in other languages.</p>
+</dd>
+<dt>GoF book</dt>
+<dd>
+<p>Alias for <em>Design Patterns: Elements of Reusable Object-Oriented Software</em> (Addison-Wesley, 1995), authored by the so-called Gang of Four (GoF): Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides.</p>
+</dd>
+<dt>hashable</dt>
+<dd>
+<p>An object is hashable if it has both <code class="docutils literal">__hash__</code> and <code class="docutils literal">__eq__</code> methods, with the constraints that the hash value must never change and if <code class="docutils literal">a =</code> b= then <code class="docutils literal">hash(a) =</code> hash(b)= must also be <code class="docutils literal">True</code>. Most immutable built-in types are hashable, but a tuple is only hashable if every one of its items is also hashable.</p>
+</dd>
+<dt>higher-order function</dt>
+<dd>
+<p>A function that takes another function as argument, like <code class="docutils literal">sorted</code>, <code class="docutils literal">map</code>, and <code class="docutils literal">filter</code>, or a function that returns a function as result, as Python decorators do.</p>
+</dd>
+<dt>idiom</dt>
+<dd>
+<p>“A manner of speaking that is natural to native speakers of a language,” according to the Princeton WordNet.</p>
+</dd>
+<dt>import time</dt>
+<dd>
+<p>The moment of initial execution of a module when its code is loaded by the Python interpreter, evaluated from top to bottom, and compiled into bytecode. This is when classes and functions are defined and become live objects. This is also when decorators are executed.</p>
+</dd>
+<dt>initializer</dt>
+<dd>
+<p>A better name for the <code class="docutils literal">__init__</code> method (instead of <em>constructor</em>). Initializing the instance received as <code class="docutils literal">self</code> is the task of <code class="docutils literal">__init__</code>. Actual instance construction is done by the <code class="docutils literal">__new__</code> method. See <em>constructor</em>.</p>
+</dd>
+<dt>iterable</dt>
+<dd>
+<p>Any object from which the <code class="docutils literal">iter</code> built-in function can obtain an iterator. An iterable object works as the source of items in <code class="docutils literal">for</code> loops, comprehensions, and tuple unpacking. Objects implementing an <code class="docutils literal">__iter__</code> method returning an <em>iterator</em> are iterable. Sequences are always iterable; other objects implementing a <code class="docutils literal">__getitem__</code> method may also be iterable.</p>
+</dd>
+<dt>iterable unpacking</dt>
+<dd>
+<p>A modern, more precise synonym for <em>tuple unpacking</em>. See also <em>parallel assignment</em>.</p>
+</dd>
+<dt>iterator</dt>
+<dd>
+<p>Any object that implements the <code class="docutils literal">__next__</code> no-argument method, which returns the next item in a series, or raises <code class="docutils literal">StopIteration</code> when there are no more items. Python iterators also implement the <code class="docutils literal">__iter__</code> method so they are also <em>iterable</em>. Classic iterators, according to the original design pattern, return items from a collection. A <em>generator</em> is also an <em>iterator</em>, but it's more flexible. See <em>generator</em>.</p>
+</dd>
+<dt>KISS principle</dt>
+<dd>
+<p>The acronym stands for “Keep It Simple, Stupid.” This calls for seeking the simplest possible solution, with the fewest moving parts. The phrase was coined by Kelly Johnson, a highly accomplished aerospace engineer who worked in the real Area 51 designing some of the most advanced aircraft of the 20th century.</p>
+</dd>
+<dt>lazy</dt>
+<dd>
+<p>An iterable object that produces items on demand. In Python, generators are lazy. Contrast <em>eager</em>.</p>
+</dd>
+<dt>listcomp</dt>
+<dd>
+<p>Short for <em>list comprehension</em>.</p>
+</dd>
+<dt>list comprehension</dt>
+<dd>
+<p>An expression enclosed in brackets that uses the <code class="docutils literal">for</code> and <code class="docutils literal">in</code> keywords to build a list by processing and filtering the elements from one or more iterables. A list comprehension works eagerly. See <em>eager</em>.</p>
+</dd>
+<dt>liveness</dt>
+<dd>
+<p>An asynchronous, threaded, or distributed system exhibits the liveness property when “something good eventually happens” (i.e., even if some expected computation is not happening right now, it will be completed eventually). If a system deadlocks, it has lost its liveness.</p>
+</dd>
+<dt>magic method</dt>
+<dd>
+<p>Same as <em>special method</em>.</p>
+</dd>
+<dt>managed attribute</dt>
+<dd>
+<p>A public attribute managed by a descriptor object. Although the <em>managed attribute</em> is defined in the <em>managed class</em>, it operates like an instance attribute (i.e., it usually has a value per instance, held in a <em>storage attribute</em>). See <em>descriptor</em>.</p>
+</dd>
+<dt>managed class</dt>
+<dd>
+<p>A class that uses a descriptor object to manage one of its attributes. See <em>descriptor</em>.</p>
+</dd>
+<dt>managed instance</dt>
+<dd>
+<p>An instance of a <em>managed class</em>. See <em>managed attribute</em> and <em>descriptor</em>.</p>
+</dd>
+<dt>metaclass</dt>
+<dd>
+<p>A class whose instances are classes. By default, Python classes are instances of <code class="docutils literal">type</code>, for example, <code class="docutils literal">type(int)</code> is the class <code class="docutils literal">type</code>, therefore <code class="docutils literal">type</code> is a metaclass. User-defined metaclasses can be created by subclassing <code class="docutils literal">type</code>.</p>
+</dd>
+<dt>metaprogramming</dt>
+<dd>
+<p>The practice of writing programs that use runtime information about themselves to change their behavior. For example, an <em>ORM</em> may introspect model class declarations to determine how to validate database record fields and convert database types to Python types.</p>
+</dd>
+<dt>monkey patching</dt>
+<dd>
+<p>Dynamically changing a module, class, or function at runtime, usually to add features or fix bugs. Because it is done in memory and not by changing the source code, a monkey patch only affects the currently running instance of the program. Monkey patches break encapsulation and tend to be tightly coupled to the implementation details of the patched code units, so they are seen as temporary workarounds and not a recommended technique for code integration.</p>
+</dd>
+<dt>mixin class</dt>
+<dd>
+<p>A class designed to be subclassed together with one or more additional classes in a multiple-inheritance class tree. A mixin class should never be instantiated, and a concrete subclass of a mixin class should also subclass another nonmixin class.</p>
+</dd>
+<dt>mixin method</dt>
+<dd>
+<p>A concrete method implementation provided in an ABC or in a <em>mixin class</em>.</p>
+</dd>
+<dt>mutator</dt>
+<dd>
+<p>See <em>accessor</em>.</p>
+</dd>
+<dt>name mangling</dt>
+<dd>
+<p>The automatic renaming of private attributes from <code class="docutils literal">__x</code> to <code class="docutils literal">_MyClass__x</code>, performed by the Python interpreter at runtime.</p>
+</dd>
+<dt>nonoverriding descriptor</dt>
+<dd>
+<p>A <em>descriptor</em> that does not implement <code class="docutils literal">__set__</code> and therefore does not interfere with setting of the <em>managed attribute</em> in the <em>managed instance</em>. Consequently, if a namesake attribute is set in the <em>managed instance</em>, it will shadow the descriptor in that instance. Also called nondata descriptor or shadowable descriptor. Contrast with <em>overriding descriptor</em>.</p>
+</dd>
+<dt>ORM</dt>
+<dd>
+<p>Object-Relational Mapper—an API that provides access to database tables and records as Python classes and objects, providing method calls to perform database operations. SQLAlchemy is a popular standalone Python ORM; the Django and Web2py frameworks have their own bundled ORMs.</p>
+</dd>
+<dt>overriding descriptor</dt>
+<dd>
+<p>A <em>descriptor</em> that implements <code class="docutils literal">__set__</code> and therefore intercepts and overrides attempts at setting the <em>managed attribute</em> in the <em>managed instance</em>. Also called data descriptor or enforced descriptor. Contrast with <em>non-overriding descriptor</em>.</p>
+</dd>
+<dt>parallel assignment</dt>
+<dd>
+<p>Assigning to several variables from items in an iterable, using syntax like <code class="docutils literal">a, b = [c, d]</code>—also known as destructuring assignment. This is a common application of <em>tuple unpacking</em>.</p>
+</dd>
+<dt>parameter</dt>
+<dd>
+<p>Functions are declared with 0 or more “formal parameters,” which are unbound local variables. When the function is called, the <em>arguments</em> or “actual parameters” passed are bound to those variables. In this book, I tried to use <em>argument</em> to refer to an actual parameter passed to a function, and <em>parameter</em> for a formal parameter in the function declaration. However, that is not always feasible because the terms <em>parameter</em> and <em>argument</em> are used interchangeably all over the Python docs and API. See <em>argument</em>.</p>
+</dd>
+<dt>prime (verb)</dt>
+<dd>
+<p>Calling <code class="docutils literal">next(coro)</code> on a coroutine to advance it to its first <code class="docutils literal">yield</code> expression so that it becomes ready to receive values in succeeding <code class="docutils literal">coro.send(value)</code> calls.</p>
+</dd>
+<dt>PyPI</dt>
+<dd>
+<p>The <a class="reference external" href="https://pypi.python.org">Python Package Index</a>, where more than 60,000 packages are available, also known as the <em>Cheese shop</em> (see <em>Cheese shop</em>). PyPI is pronounced as “pie-P-eye” to avoid confusion with <em>PyPy</em>.</p>
+</dd>
+<dt>PyPy</dt>
+<dd>
+<p>An alternative implementation of the Python programming language using a toolchain that compiles a subset of Python to machine code, so the interpreter source code is actually written in Python. PyPy also includes a JIT to generate machine code for user programs on the fly—like the Java VM does. As of November 2014, PyPy is 6.8 times faster than CPython on average, according to <a class="reference external" href="http://speed.pypy.org">published benchmarks</a>. PyPy is pronounced as “pie-pie” to avoid confusion with <em>PyPI</em>.</p>
+</dd>
+<dt>Pythonic</dt>
+<dd>
+<p>Used to praise idiomatic Python code, that makes good use of language features to be concise, readable, and often faster as well. Also said of APIs that enable coding in a way that seems natural to proficient Python programmers. See <em>idiom</em>.</p>
+</dd>
+<dt>refcount</dt>
+<dd>
+<p>The reference counter that each CPython object keeps internally in order to determine when it can be destroyed by the garbage collector.</p>
+</dd>
+<dt>referent</dt>
+<dd>
+<p>The object that is the target of a reference. This term is most often used to discuss <em>weak references</em>.</p>
+</dd>
+<dt>REPL</dt>
+<dd>
+<p>Read-eval-print loop, an interactive console, like the standard <code class="docutils literal">python</code> or alternatives like <code class="docutils literal">ipython</code>, <code class="docutils literal">bpython</code>, and Python Anywhere.</p>
+</dd>
+<dt>sequence</dt>
+<dd>
+<p>Generic name for any iterable data structure with a known size (e.g., <code class="docutils literal">len(s)</code>) and allowing item access via 0-based integer indexes (e.g., <code class="docutils literal">s[0]</code>). The word <em>sequence</em> has been part of the Python jargon from the start, but only with Python 2.6 was it formalized as an abstract class in <code class="docutils literal">collections.abc.Sequence</code>.</p>
+</dd>
+<dt>serialization</dt>
+<dd>
+<p>Converting an object from its in-memory structure to a binary or text-oriented format for storage or transmission, in a way that allows the future reconstruction of a clone of the object on the same system or on a different one. The <code class="docutils literal">pickle</code> module supports serialization of arbitrary Python objects to a binary format.</p>
+</dd>
+<dt>shallow copy</dt>
+<dd>
+<p>A copy of an object which shares references to all the objects that are attributes of the original object. Contrast with <em>deep copy</em>. Also see <em>aliasing</em>.</p>
+</dd>
+<dt>singleton</dt>
+<dd>
+<p>An object that is the only existing instance of a class—usually not by accident but because the class is designed to prevent creation of more than one instance. There is also a design pattern named Singleton, which is a recipe for coding such classes. The <code class="docutils literal">None</code> object is a singleton in Python.</p>
+</dd>
+<dt>slicing</dt>
+<dd>
+<p>Producing a subset of a sequence by using the slice notation, e.g., <code class="docutils literal">my_sequence[2:6]</code>. Slicing usually copies data to produce a new object; in particular, <code class="docutils literal"><span class="pre">my_sequence[:]</span></code> creates a shallow copy of the entire sequence. But a <code class="docutils literal">memoryview</code> object can be sliced to produce a new <code class="docutils literal">memoryview</code> that shares data with the original object.</p>
+</dd>
+<dt>snake\<sub>case</sub>
+</dt>
+<dd>
+<p>The convention of writing identifiers by joining words with the underscore character (<code class="docutils literal">_</code>)—for example, <code class="docutils literal">run_until_complete</code>. PEP-8 calls this style “lowercase with words separated by underscores” and recommends it for naming functions, methods, arguments, and variables. For packages, PEP-8 recommends concatenating words with no separators. The Python standard library has many examples of <code class="docutils literal">snake_case</code> identifiers, but also many examples of identifiers with no separation between words (e.g., <code class="docutils literal">getattr</code>, <code class="docutils literal">classmethod</code>, <code class="docutils literal">isinstance</code>, <code class="docutils literal">str.endswith</code>, etc.). See <em>CamelCase</em>.</p>
+</dd>
+<dt>special method</dt>
+<dd>
+<p>A method with a special name such as <code class="docutils literal">__getitem__</code>, spelled with leading and trailing double underscores. Almost all special methods recognized by Python are described in the <a class="reference external" href="http://bit.ly/1GsZwss">“Data model” chapter</a> of <em>The Python Language Reference</em>, but a few that are used only in specific contexts are documented in other parts of the documentation. For example, the <code class="docutils literal">__missing__</code> method of mappings is mentioned in <cite>“4.10. Mapping Types — ``dict`</cite>" &lt;<a class="reference external" href="http://bit.ly/1QS9Ong">http://bit.ly/1QS9Ong</a>&gt;`__ in <em>The Python Standard Library</em>.</p>
+</dd>
+<dt>storage attribute</dt>
+<dd>
+<p>An attribute in a <em>managed instance</em> used to store the value of an attribute managed by a <em>descriptor</em>. See also <em>managed attribute</em>.</p>
+</dd>
+<dt>strong reference</dt>
+<dd>
+<p>A reference that keeps an object alive in Python. Contrast with <em>weak reference</em>.</p>
+</dd>
+<dt>tuple unpacking</dt>
+<dd>
+<p>Assigning items from an iterable object to a tuple of variables (e.g., <code class="docutils literal">first, second, third =</code> my<sub>list</sub>=). This is the usual term used by Pythonistas, but <em>iterable unpacking</em> is gaining traction.</p>
+</dd>
+<dt>truthy</dt>
+<dd>
+<p>Any value <code class="docutils literal">x</code> for which <code class="docutils literal">bool(x)</code> returns <code class="docutils literal">True</code>; Python implicitly uses <code class="docutils literal">bool</code> to evaluate objects in Boolean contexts, such as the expression controlling an <code class="docutils literal">if</code> or <code class="docutils literal">while</code> loop. The opposite of <em>falsy</em>.</p>
+</dd>
+<dt>type</dt>
+<dd>
+<p>Each specific category of program data, defined by a set of possible values and operations on them. Some Python types are close to machine data types (e.g., <code class="docutils literal">float</code> and <code class="docutils literal">bytes</code>) while others are extensions (e.g., <code class="docutils literal">int</code> is not limited to CPU word size, <code class="docutils literal">str</code> holds multibyte Unicode data points) and very high-level abstractions (e.g., <code class="docutils literal">dict</code>, <code class="docutils literal">deque</code>, etc.). Types may be user defined or built into the interpreter (a “built-in” type). Before the watershed type/class unification in Python 2.2, types and classes were different entities, and user-defined classes could not extend built-in types. Since then, built-in types and new-style classes became compatible, and a class is an instance of <code class="docutils literal">type</code>. In Python 3 all classes are new-style classes. See <em>class</em> and <em>metaclass</em>.</p>
+</dd>
+<dt>unbound method</dt>
+<dd>
+<p>An instance method accessed directly on a class is not bound to an instance; therefore it's said to be an “unbound method.” To succeed, a call to an unbound method must explicitly pass an instance of the class as the first argument. That instance will be assigned to the <code class="docutils literal">self</code> argument in the method. See <em>bound method</em>.</p>
+</dd>
+<dt>uniform access principle</dt>
+<dd>
+<p>Bertrand Meyer, creator of the Eiffel Language, wrote: “All services offered by a module should be available through a uniform notation, which does not betray whether they are implemented through storage or through computation.” Properties and descriptors allow the implementation of the uniform access principle in Python. The lack of a <code class="docutils literal">new</code> operator, making function calls and object instantiation look the same, is another form of this principle: the caller does not need to know whether the invoked object is a class, a function, or any other callable.</p>
+</dd>
+<dt>user-defined</dt>
+<dd>
+<p>Almost always in the Python docs the word <em>user</em> refers to you and I—programmers who use the Python language—as opposed to the developers who implement a Python interpreter. So the term “user-defined class” means a class written in Python, as opposed to built-in classes written in C, like <code class="docutils literal">str</code>.</p>
+</dd>
+<dt>view</dt>
+<dd>
+<p>Python 3 views are special data structures returned by the <code class="docutils literal">dict</code> methods <code class="docutils literal">.keys()</code>, <code class="docutils literal">.values()</code>, and <code class="docutils literal">.items()</code>, providing a dynamic view into the <code class="docutils literal">dict</code> keys and values without data duplication, which occurs in Python 2 where those methods return lists. All <code class="docutils literal">dict</code> views are iterable and support the <code class="docutils literal">in</code> operator. In addition, if the items referenced by the view are all hashable, then the view also implements the <code class="docutils literal">collections.abc.Set</code> interface. This is the case for all views returned by the <code class="docutils literal">.keys()</code> method, and for views returned by <code class="docutils literal">.items()</code> when the values are also hashable.</p>
+</dd>
+<dt>virtual subclass</dt>
+<dd>
+<p>A class that does not inherit from a superclass but is registered using <code class="docutils literal">TheSuperClass.register(TheSubClass)</code>. See documentation for <code class="docutils literal">`abc.ABCMeta.register</code> &lt;<a class="reference external" href="http://bit.ly/1DeDbKf">http://bit.ly/1DeDbKf</a>&gt;`__.</p>
+</dd>
+<dt>wart</dt>
+<dd>
+<p>A misfeature of the language. Andrew Kuchling's famous post “Python warts” has been acknowledged by the <em>BDFL</em> as influential in the decision to break backward-compatibility in the design of Python 3, as most of the failings could not be fixed otherwise. Many of Kuchling's issues were fixed in Python 3.</p>
+</dd>
+<dt>weak reference</dt>
+<dd>
+<p>A special kind of object reference that does not increase the <em>referent</em> object reference count. Weak references are created with one of the functions and data structures in the <code class="docutils literal">weakref</code> module.</p>
+</dd>
+<dt>YAGNI</dt>
+<dd>
+<p>“You Ain't Gonna Need It,” a slogan to avoid implementing functionality that is not immediately necessary based on assumptions about future needs.</p>
+</dd>
+<dt>Zen of Python</dt>
+<dd>
+<p>Type <code class="docutils literal">import this</code> into any Python console since version 2.2.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="publish">
+<h3>Publish</h3>
+<pre class="code ipython"><a name="rest_code_7d4834ef82474a87ba5c409851a030e8-1"></a><span class="o">!</span>pandoc --wrap<span class="o">=</span>none <span class="m">00</span>.preface.org -o ~/Public/nikola_post/posts/fluent-python.rst
+</pre>
+</div>
+</div>
+</div>
+            
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="?",
+            disqus_url="https://alinbxsorcerer.github.io/posts/flunt-python%20/",
+        disqus_title="Fluent Python ",
+        disqus_identifier="cache/posts/fluent-python.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        
+
+        </div>
+    </div>
+
+    
+    <footer><div class="container">
+            <div class="social">
+
+
+
+                <div class="social-entry">
+                    <a href="../../rss.xml" target="_blank">
+                        <i class="fa fa-rss"></i> 
+                    </a>
+                </div>
+            </div>
+                <div class="copyright">
+                    Contents © 2019         <a href="mailto:davad.fhl.wang@foxmail.com">David</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+                    
+                </div>
+           
+        </div>
+    </footer><script src="../../assets/js/all-nocdn.js" type="text/javascript"></script>
+</body>
+</html>

@@ -7,6 +7,8 @@
    .. description:
    .. type: text
 
+.. contents::
+
 1. Getting Ready
 ================
 

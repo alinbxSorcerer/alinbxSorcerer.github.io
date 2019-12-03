@@ -11,15 +11,24 @@
 <meta property="og:site_name" content="A Magic Land Declared by David">
 <meta property="og:title" content="C Primer Plus">
 <meta property="og:url" content="https://alinbxsorcerer.github.io/posts/c-primer-plus/">
-<meta property="og:description" content="1. Getting Ready
-You will learn about the following in this chapter:
+<meta property="og:description" content="Contents
 
-C's history and features
-The steps needed to write programs
-A bit about compilers and linkers
-C standards
+1. Getting Ready
 
-Welcome to the world of">
+Whence C?
+Why C?
+
+Design Features
+Efficiency
+Portability
+Power and Flexibility
+Programmer Oriented
+Shortcomings
+
+
+Whither C?
+What Computers Do
+High-level Computer Languages">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2018-10-15T12:12:29+08:00">
 <meta property="article:tag" content="C">
@@ -88,8 +97,86 @@ Welcome to the world of">
 
     <div id="post-main" class="main">
         <div class="container">
-        <div class="section" id="getting-ready">
-<h2>1. Getting Ready</h2>
+        <div>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li>
+<p><a class="reference internal" href="#getting-ready" id="id2">1. Getting Ready</a></p>
+<ul>
+<li><p><a class="reference internal" href="#whence-c" id="id3">Whence C?</a></p></li>
+<li>
+<p><a class="reference internal" href="#why-c" id="id4">Why C?</a></p>
+<ul>
+<li><p><a class="reference internal" href="#design-features" id="id5">Design Features</a></p></li>
+<li><p><a class="reference internal" href="#efficiency" id="id6">Efficiency</a></p></li>
+<li><p><a class="reference internal" href="#portability" id="id7">Portability</a></p></li>
+<li><p><a class="reference internal" href="#power-and-flexibility" id="id8">Power and Flexibility</a></p></li>
+<li><p><a class="reference internal" href="#programmer-oriented" id="id9">Programmer Oriented</a></p></li>
+<li><p><a class="reference internal" href="#shortcomings" id="id10">Shortcomings</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#whither-c" id="id11">Whither C?</a></p></li>
+<li><p><a class="reference internal" href="#what-computers-do" id="id12">What Computers Do</a></p></li>
+<li><p><a class="reference internal" href="#high-level-computer-languages-and-compilers" id="id13">High-level Computer Languages and Compilers</a></p></li>
+<li>
+<p><a class="reference internal" href="#language-standards" id="id14">Language Standards</a></p>
+<ul>
+<li><p><a class="reference internal" href="#the-first-ansi-iso-c-standard" id="id15">The First ANSI/ISO C Standard</a></p></li>
+<li><p><a class="reference internal" href="#the-c99-standard" id="id16">The C99 Standard</a></p></li>
+<li><p><a class="reference internal" href="#the-c11-standard" id="id17">The C11 Standard</a></p></li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#using-c-seven-steps" id="id18">Using C: Seven Steps</a></p>
+<ul>
+<li><p><a class="reference internal" href="#step-1-define-the-program-objectives" id="id19">Step 1: Define the Program Objectives</a></p></li>
+<li><p><a class="reference internal" href="#step-2-design-the-program" id="id20">Step 2: Design the Program</a></p></li>
+<li><p><a class="reference internal" href="#step-3-write-the-code" id="id21">Step 3: Write the Code</a></p></li>
+<li><p><a class="reference internal" href="#step-4-compile" id="id22">Step 4: Compile</a></p></li>
+<li><p><a class="reference internal" href="#step-5-run-the-program" id="id23">Step 5: Run the Program</a></p></li>
+<li><p><a class="reference internal" href="#step-6-test-and-debug-the-program" id="id24">Step 6: Test and Debug the Program</a></p></li>
+<li><p><a class="reference internal" href="#step-7-maintain-and-modify-the-program" id="id25">Step 7: Maintain and Modify the Program</a></p></li>
+<li><p><a class="reference internal" href="#commentary" id="id26">Commentary</a></p></li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#programming-mechanics" id="id27">Programming Mechanics</a></p>
+<ul>
+<li><p><a class="reference internal" href="#object-code-files-executable-files-and-libraries" id="id28">Object Code Files, Executable Files, and Libraries</a></p></li>
+<li><p><a class="reference internal" href="#unix-system" id="id29">Unix System</a></p></li>
+<li><p><a class="reference internal" href="#the-gnu-compiler-collection-and-the-llvm-project" id="id30">The GNU Compiler Collection and the LLVM Project</a></p></li>
+<li><p><a class="reference internal" href="#linux-systems" id="id31">Linux Systems</a></p></li>
+<li><p><a class="reference internal" href="#command-line-compilers-for-the-pc" id="id32">Command-Line Compilers for the PC</a></p></li>
+<li><p><a class="reference internal" href="#integrated-development-environments-windows" id="id33">Integrated Development Environments (Windows)</a></p></li>
+<li><p><a class="reference internal" href="#the-windows-linux-option" id="id34">The Windows/Linux Option</a></p></li>
+<li><p><a class="reference internal" href="#c-on-the-macintosh" id="id35">C on the Macintosh</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#how-this-book-is-organized" id="id36">How This Book Is Organized</a></p></li>
+<li>
+<p><a class="reference internal" href="#conventions-used-in-this-book" id="id37">Conventions Used in This Book</a></p>
+<ul>
+<li><p><a class="reference internal" href="#typeface" id="id38">Typeface</a></p></li>
+<li><p><a class="reference internal" href="#program-output" id="id39">Program Output</a></p></li>
+<li><p><a class="reference internal" href="#special-elements" id="id40">Special Elements</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#summary" id="id41">Summary</a></p></li>
+<li><p><a class="reference internal" href="#review-questions" id="id42">Review Questions</a></p></li>
+<li>
+<p><a class="reference internal" href="#programming-exercise" id="id43">Programming Exercise</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id1" id="id44">Special Elements</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#publish" id="id45">Publish</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="getting-ready">
+<h2><a class="toc-backref" href="#id2">1. Getting Ready</a></h2>
 <p>You will learn about the following in this chapter:</p>
 <ul class="simple">
 <li><p>C's history and features</p></li>
@@ -100,45 +187,45 @@ Welcome to the world of">
 <p>Welcome to the world of C—a vigorous, professional programming language popular with amateur and commercial programmers alike. This chapter prepares you for learning and using this powerful and popular language, and it introduces you to the kinds of environments in which you will most likely develop your C-legs.</p>
 <p>First, we look at C's origin and examine some of its features, both strengths and drawbacks. Then we look at the origins of programming and examine some general principles for programming. Finally, we discuss how to run C programs on some common systems.</p>
 <div class="section" id="whence-c">
-<h3>Whence C?</h3>
+<h3><a class="toc-backref" href="#id3">Whence C?</a></h3>
 <p>Dennis Ritchie of Bell Labs created C in 1972 as he and Ken Thompson worked on designing the Unix operating system. C didn't spring full-grown from Ritchie's head, however. It came from Thompson's B language, which came from… but that's another story. The important point is that C was created as a tool for working programmers, so its chief goal is to be a useful language.</p>
 <p>Most languages aim to be useful, but they often have other concerns. The main goal for Pascal, for instance, was to provide a sound basis for teaching good programming principles. BASIC, on the other hand, was developed to resemble English so that it could be learned easily by students unfamiliar with computers. These are important goals, but they are not always compatible with pragmatic, workaday usefulness. C's development as a language designed for programmers, however, has made it one of the modern-day languages of choice.</p>
 </div>
 <div class="section" id="why-c">
-<h3>Why C?</h3>
+<h3><a class="toc-backref" href="#id4">Why C?</a></h3>
 <p>During the past four decades, C has become one of the most important and popular programming languages. It has grown because people try it and like it. In the past decade or two, many have moved from C to languages such as C++, Objective C, and Java, but C is still an important language in its own right, as well a migration path to these others. As you learn C, you will recognize its many virtues (see <a class="reference external" href="ch01.html#ch01fig01">Figure 1.1</a>). Let's preview a few of them now.</p>
 <p><img alt="image0" src="../../images/cprimer-graphics/01fig01.jpg"> Figure 1.1 The virtues of C.</p>
 <div class="section" id="design-features">
-<h4>Design Features</h4>
+<h4><a class="toc-backref" href="#id5">Design Features</a></h4>
 <p>C is a modern language incorporating the control features found desirable by the theory and practice of computer science. Its design makes it natural for top-down planning, structured programming, and modular design. The result is a more reliable, understandable program.</p>
 </div>
 <div class="section" id="efficiency">
-<h4>Efficiency</h4>
+<h4><a class="toc-backref" href="#id6">Efficiency</a></h4>
 <p>C is an efficient language. Its design takes advantage of the capabilities of current computers. C programs tend to be compact and to run quickly. In fact, C exhibits some of the fine control usually associated with an assembly language. (An <em>assembly language</em> is a mnemonic representation of the set of internal instructions used by a particular central processing unit design; different CPU families have different assembly languages.) If you choose, you can fine-tune your programs for maximum speed or most efficient use of memory.</p>
 </div>
 <div class="section" id="portability">
-<h4>Portability</h4>
+<h4><a class="toc-backref" href="#id7">Portability</a></h4>
 <p>C is a portable language, which means that C programs written on one system can be run on other systems with little or no modification. If modifications are necessary, they can often be made by simply changing a few entries in a header file accompanying the main program. Most languages are meant to be portable, but anyone who has converted an IBM PC BASIC program to Apple BASIC (and they were close cousins) or has tried to run an IBM mainframe FORTRAN program on a Unix system knows that porting is troublesome at best. C is a leader in portability. C compilers (programs that convert your C code into the instructions a computer uses internally) are available for many computer architectures, running from 8-bit microprocessors to Cray supercomputers. Note, however, that the portions of a program written specifically to access particular hardware devices, such as a display monitor, or special features of an operating system, such as Windows 8 or OS X, typically are not portable.</p>
 <p>Because of C's close ties with Unix, Unix systems typically come with a C compiler as part of the package. Linux installations also usually include a C compiler. Several C compilers are available for personal computers, including PCs running various versions of Windows and Macintoshes. So whether you are using a home computer, a professional workstation, or a mainframe, the chances are good that you can get a C compiler for your particular system.</p>
 </div>
 <div class="section" id="power-and-flexibility">
-<h4>Power and Flexibility</h4>
+<h4><a class="toc-backref" href="#id8">Power and Flexibility</a></h4>
 <p>C is powerful and flexible (two favorite words in computer literature). For example, most of the powerful, flexible Unix operating system was written in C. Many compilers and interpreters for other languages—such as FORTRAN, Perl, Python, Pascal, LISP, Logo, and BASIC—have been written in C. As a result, when you use FORTRAN on a Unix machine, ultimately a C program has done the work of producing the final executable program. C programs have been used for solving physics and engineering problems and even for animating special effects for movies.</p>
 </div>
 <div class="section" id="programmer-oriented">
-<h4>Programmer Oriented</h4>
+<h4><a class="toc-backref" href="#id9">Programmer Oriented</a></h4>
 <p>C is oriented to fulfill the needs of programmers. It gives you access to hardware, and it enables you to manipulate individual bits in memory. Its rich selection of operators allows you to express yourself succinctly. C is less strict than, say, Pascal or even C++ in limiting what you can do. This flexibility is both an advantage and a danger. The advantage is that many tasks, such as converting forms of data, are much simpler in C. The danger is that with C, you can make mistakes that are impossible in some languages. C gives you more freedom, but it also puts more responsibility on you.</p>
 <p>Also, most C implementations have a large library of useful C functions. These functions deal with many needs that a programmer commonly faces.</p>
 </div>
 <div class="section" id="shortcomings">
-<h4>Shortcomings</h4>
+<h4><a class="toc-backref" href="#id10">Shortcomings</a></h4>
 <p>C does have some faults. Often, as with people, faults and virtues are opposite sides of the same feature. For example, we've mentioned that C's freedom of expression also requires added responsibility. C's use of pointers (something you can look forward to learning about in this book), in particular, means that you can make programming errors that are difficult to trace. As one computer preliterate once commented, the price of liberty is eternal vigilance.</p>
 <p>C's conciseness, combined with its wealth of operators, make it possible to prepare code that is extremely difficult to follow. You aren't compelled to write obscure code, but the opportunity is there. After all, what other language has a yearly Obfuscated Code contest?</p>
 <p>There are more virtues and, undoubtedly, a few more faults. Rather than delve further into the matter, let's move on to a new topic.</p>
 </div>
 </div>
 <div class="section" id="whither-c">
-<h3>Whither C?</h3>
+<h3><a class="toc-backref" href="#id11">Whither C?</a></h3>
 <p>By the early 1980s, C was already a dominant language in the minicomputer world of Unix systems. Since then, it has spread to personal computers (microcomputers) and to mainframes (the big guys). See <a class="reference external" href="ch01.html#ch01fig02">Figure 1.2</a>. Many software houses use C as the preferred language for producing word processing programs, spreadsheets, compilers, and other products. These companies know that C produces compact and efficient programs. More important, they know that these programs will be easy to modify and easy to adapt to new models of computers.</p>
 <p><img alt="image1" src="../../images/cprimer-graphics/01fig02.jpg"> Figure 1.2 Where C is used.</p>
 <p>What's good for companies and C veterans is good for other users, too. More and more computer users have turned to C to secure its advantages for themselves. You don't have to be a computer professional to use C.</p>
@@ -147,7 +234,7 @@ Welcome to the world of">
 <p>In short, C is one of the most important programming languages and will continue to be so. If you want a job writing software, one of the first questions you should be able to answer yes to is “Oh say, can you C?”</p>
 </div>
 <div class="section" id="what-computers-do">
-<h3>What Computers Do</h3>
+<h3><a class="toc-backref" href="#id12">What Computers Do</a></h3>
 <p>Now that you are about to learn how to program in C, you probably should know a little about how computers work. This knowledge will help you understand the connection between writing a program in C and what eventually takes place when you run that program.</p>
 <p>Modern computers have several components. The <em>central processing unit</em>, or <em>CPU</em>, does most of the computing work. The <em>random access memory</em>, or <em>RAM</em>, serves as a workspace to hold programs and files. The permanent memory storage device, typically a hard disk in the past, but now more and more often a solid-state device, remembers those programs and files, even while the computer is turned off. And various peripherals—such as the keyboard, mouse, touchscreen, and monitor—provide for communication between the computer and you. The CPU processes your programs; so let's concentrate on its role.</p>
 <p>The life of a CPU, at least in this simplistic account, is quite simple. It fetches an instruction from memory and executes it. It fetches the next instruction from memory and executes it, and so on. (A gigahertz CPU can do this about a billion times a second, so the CPU can lead its boring life at a tremendous pace.) The CPU has its own small workspace, consisting of several <em>registers</em>, each of which can hold a number. One register holds the memory address of the next instruction, and the CPU uses this information to fetch the next instruction. After it fetches an instruction, the CPU stores the instruction in another register and updates the first register to the address of the next instruction. The CPU has a limited repertoire of instructions (known as the <em>instruction set</em>) that it understands. Also, these instructions are rather specific; many of them ask the computer to move a number from one location to another—for example, from a memory location to a register.</p>
@@ -161,7 +248,7 @@ Welcome to the world of">
 <p>If writing a program in this manner sounds like something you'd like to do, you'll be sad to learn that the golden age of machine-language programming is long past. But if you prefer something a little more enjoyable, open your heart to high-level programming languages.</p>
 </div>
 <div class="section" id="high-level-computer-languages-and-compilers">
-<h3>High-level Computer Languages and Compilers</h3>
+<h3><a class="toc-backref" href="#id13">High-level Computer Languages and Compilers</a></h3>
 <p>High-level programming languages, such as C, simplify your programming life in several ways. First, you don't have to express your instructions in a numeric code. Second, the instructions you use are much closer to how you might think about a problem than they are to the detailed approach a computer uses. Rather than worry about the precise steps a particular CPU would have to take to accomplish a particular task, you can express your desires on a more abstract level. To add two numbers, for example, you might write the following:</p>
 <p>total = mine + yours;</p>
 <p>Seeing code like this, you have a good idea what it does; looking at the machine-language equivalent of several instructions expressed in numeric code is much less enlightening.</p>
@@ -175,11 +262,11 @@ Welcome to the world of">
 </div>
 <hr class="docutils">
 <div class="section" id="language-standards">
-<h3>Language Standards</h3>
+<h3><a class="toc-backref" href="#id14">Language Standards</a></h3>
 <p>Currently, many C implementations are available. Ideally, when you write a C program, it should work the same on any implementation, providing it doesn't use machine-specific programming. For this to be true in practice, different implementations need to conform to a recognized standard.</p>
 <p>At first, there was no official standard for C. Instead, the first edition of <em>The C Programming Language</em> by Brian Kernighan and Dennis Ritchie (1978) became the accepted standard, usually referred to as <em>K&amp;R C</em> or <em>Classic C</em>. In particular, the “C Reference Manual” in that book's appendix acted as the guide to C implementations. Compilers, for example, would claim to offer a full K&amp;R implementation. However, although this appendix defined the C language, it did not define the C library. More than most languages, C depends on its library, so there is need for a library standard, too. In the absence of any official standard, the library supplied with the Unix implementation became a de facto standard.</p>
 <div class="section" id="the-first-ansi-iso-c-standard">
-<h4>The First ANSI/ISO C Standard</h4>
+<h4><a class="toc-backref" href="#id15">The First ANSI/ISO C Standard</a></h4>
 <p>As C evolved and became more widely used on a greater variety of systems, the C community realized it needed a more comprehensive, up-to-date, and rigorous standard. To meet this need, the American National Standards Institute (ANSI) established a committee (X3J11) in 1983 to develop a new standard, which was adopted formally in 1989. This standard (ANSI C) defined both the language and a standard C library. The International Organization for Standardization adopted a C standard (ISO C) in 1990. ISO C and ANSI C are essentially the same standard. The final version of the ANSI/ISO standard is often referred to as <em>C89</em> (because that's when ANSI approval came) or <em>C90</em> (because that's when ISO approval came). Also, because the ANSI version came out first, people often used the term <em>ANSI C</em>.</p>
 <p>The committee had several guiding principles. Perhaps the most interesting was this: Keep the spirit of C. The committee listed the following ideas as expressing part of that spirit:</p>
 <p><img alt="image2" src="../../images/cprimer-graphics/squf.jpg"> Trust the programmer.</p>
@@ -190,13 +277,13 @@ Welcome to the world of">
 <p>By the last point, the committee meant that an implementation should define a particular operation in terms of what works best for the target computer instead of trying to impose an abstract, uniform definition. You'll encounter examples of this philosophy as you learn the language.</p>
 </div>
 <div class="section" id="the-c99-standard">
-<h4>The C99 Standard</h4>
+<h4><a class="toc-backref" href="#id16">The C99 Standard</a></h4>
 <p>In 1994, a joint ANSI/ISO committee, known then as the <em>C9X</em> committee, began revising the standard, an effort that resulted in the C99 standard. The committee endorsed the original principles of the C90 standard, including keeping the language small and simple. The committee's intent was not to add new features to the language except as needed to meet the new goals. One of these main goals was to support international programming by, for example, providing ways to deal with international character sets. A second goal was to “codify existing practice to address evident deficiencies.” Thus, when meeting the need of moving C to 64-bit processors, the committee based the additions to the standard on the experiences of those who dealt with this problem in real life. A third goal was to improve the suitability of C for doing critical numeric calculations for scientific and engineering projects, making C a more appealing alternative to FORTRAN.</p>
 <p>These three points—internationalization, correction of deficiencies, and improvement of computational usefulness—were the main change-oriented goals. The remaining plans for change were more conservative in nature—for example, minimizing incompatibilities with C90 and with C++ and keeping the language conceptually simple. In the committee's words, “…the committee is content to let C++ be the <em>big</em> and ambitious language.”</p>
 <p>The upshot is that C99 changes preserve the essential nature of C, and C remains a lean, clean, efficient language. This book points out many of the C99 changes. However, although the standard has been out for a while, not all compilers at this time fully implement all the C99 changes. You may find that some of them are not available on your system. Or you may find that some C99 features are available only if you alter the compiler settings.</p>
 </div>
 <div class="section" id="the-c11-standard">
-<h4>The C11 Standard</h4>
+<h4><a class="toc-backref" href="#id17">The C11 Standard</a></h4>
 <p>Maintaining a standard is a perpetual process, and in 2007 the Standards Committee committed to the next revision, C1X, which became realized as C11. The committee raised some new guiding principles. One was that the “trust the programmer” goal should be tempered somewhat in the face of contemporary concerns of programming security and safety. The committee also made some important observations. One was that C99 hasn't been as well received and supported by vendors as C90 was. As a consequence, some features of C99 became optional for C11. One reason is that the committee felt that vendors serving the small machine market shouldn't be required to support features not used in their targeted environments. Another observation was that the standard was being revised not because it was broken but because there was a need to track new technologies. One example of this is the addition of optional support for concurrent programming in response to the trend of using multiple processors in computers. We look briefly at this topic, but exploring it is beyond the scope of this book.</p>
 <hr class="docutils">
 <p>Note</p>
@@ -205,21 +292,21 @@ Welcome to the world of">
 </div>
 <hr class="docutils">
 <div class="section" id="using-c-seven-steps">
-<h3>Using C: Seven Steps</h3>
+<h3><a class="toc-backref" href="#id18">Using C: Seven Steps</a></h3>
 <p>C, as you've seen, is a compiled language. If you are accustomed to using a compiled language, such as Pascal or FORTRAN, you will be familiar with the basic steps in putting together a C program. However, if your background is in an interpreted language, such as BASIC, or in a graphical interface–oriented language, such as Visual Basic, or if you have no background at all, you need to learn how to compile. We'll look at that process soon, and you'll see that it is straightforward and sensible. First, to give you an overview of programming, let's break down the act of writing a C program into seven steps (see <a class="reference external" href="ch01.html#ch01fig03">Figure 1.3</a>). Note that this is an idealization. In practice, particularly for larger projects, you would go back and forth, using what you learned at a later step to refine an earlier step.</p>
 <p><img alt="image7" src="../../images/cprimer-graphics/01fig03.jpg"> Figure 1.3 The seven steps of programming.</p>
 <div class="section" id="step-1-define-the-program-objectives">
-<h4>Step 1: Define the Program Objectives</h4>
+<h4><a class="toc-backref" href="#id19">Step 1: Define the Program Objectives</a></h4>
 <p>Naturally enough, you should start with a clear idea of what you want the program to do. Think in terms of the information your program needs, the feats of calculation and manipulation the program needs to do, and the information the program should report back to you. At this level of planning, you should be thinking in general terms, not in terms of some specific computer language.</p>
 </div>
 <div class="section" id="step-2-design-the-program">
-<h4>Step 2: Design the Program</h4>
+<h4><a class="toc-backref" href="#id20">Step 2: Design the Program</a></h4>
 <p>After you have a conceptual picture of what your program ought to do, you should decide how the program will go about it. What should the user interface be like? How should the program be organized? Who will the target user be? How much time do you have to complete the program?</p>
 <p>You also need to decide how to represent the data in the program and, possibly, in auxiliary files, as well as which methods to use to process the data. When you first learn programming in C, the choices will be simple, but as you deal with more complex situations, you'll find that these decisions require more thought. Choosing a good way to represent the information can often make designing the program and processing the data much easier.</p>
 <p>Again, you should be thinking in general terms, not about specific code, but some of your decisions may be based on general characteristics of the language. For example, a C programmer has more options in data representation than, say, a Pascal programmer.</p>
 </div>
 <div class="section" id="step-3-write-the-code">
-<h4>Step 3: Write the Code</h4>
+<h4><a class="toc-backref" href="#id21">Step 3: Write the Code</a></h4>
 <p>Now that you have a clear design for your program, you can begin to implement it by writing the code. That is, you translate your program design into the C language. Here is where you really have to put your knowledge of C to work. You can sketch your ideas on paper, but eventually you have to get your code into the computer. The mechanics of this process depend on your programming environment. We'll present the details for some common environments soon. In general, you use a text editor to create what is called a <em>source code</em> file. This file contains the C rendition of your program design. <a class="reference external" href="ch01.html#ch01lis01">Listing 1.1</a> shows an example of C source code.</p>
 <p>Listing 1.1 Example of C Source Code</p>
 <hr class="docutils">
@@ -230,34 +317,34 @@ Welcome to the world of">
 <p>As part of this step, you should document your work. The simplest way is to use C's comment facility to incorporate explanations into your source code. <a class="reference external" href="ch02.html#ch02">Chapter 2</a>, “<a class="reference external" href="ch02.html#ch02">Introducing C</a>,” will explain more about using comments in your code.</p>
 </div>
 <div class="section" id="step-4-compile">
-<h4>Step 4: Compile</h4>
+<h4><a class="toc-backref" href="#id22">Step 4: Compile</a></h4>
 <p>The next step is to compile the source code. Again, the details depend on your programming environment, and we'll look at some common environments shortly. For now, let's start with a more conceptual view of what happens.</p>
 <p>Recall that the compiler is a program whose job is to convert source code into executable code. <em>Executable code</em> is code in the native language, or <em>machine language</em>, of your computer. This language consists of detailed instructions expressed in a numeric code. As you read earlier, different computers have different machine languages, and a C compiler translates C into a particular machine language. C compilers also incorporate code from C libraries into the final program; the libraries contain a fund of standard routines, such as <code class="docutils literal">printf()</code> and <code class="docutils literal">scanf()</code>, for your use. (More accurately, a program called a <em>linker</em> brings in the library routines, but the compiler runs the linker for you on most systems.) The end result is an executable file containing code that the computer understands and that you can run.</p>
 <p>The compiler also checks that your program is valid C. If the compiler finds errors, it reports them to you and doesn't produce an executable file. Understanding a particular compiler's complaints is another skill you will pick up.</p>
 </div>
 <div class="section" id="step-5-run-the-program">
-<h4>Step 5: Run the Program</h4>
+<h4><a class="toc-backref" href="#id23">Step 5: Run the Program</a></h4>
 <p>Traditionally, the executable file is a program you can run. To run the program in many common environments, including Windows Command-Prompt mode, Unix terminal mode, and Linux terminal mode, just type the name of the executable file. Other environments, such as VMS on a VAX, might require a run command or some other mechanism. <em>Integrated development environments (IDEs)</em>, such as those provided for Windows and Macintosh environments, allow you to edit and execute your C program from within the IDE by selecting choices from a menu or by pressing special keys. The resulting program also can be run directly from the operating system by clicking or double-clicking the filename or icon.</p>
 </div>
 <div class="section" id="step-6-test-and-debug-the-program">
-<h4>Step 6: Test and Debug the Program</h4>
+<h4><a class="toc-backref" href="#id24">Step 6: Test and Debug the Program</a></h4>
 <p>The fact that your program runs is a good sign, but it's possible that it could run incorrectly. Consequently, you should check to see that your program does what it is supposed to do. You'll find that some of your programs have mistakes—<em>bugs</em>, in computer jargon. <em>Debugging</em> is the process of finding and fixing program errors. Making mistakes is a natural part of learning. It seems inherent to programming, so when you combine learning and programming, you had best prepare yourself to be reminded often of your fallibility. As you become a more powerful and subtle programmer, your errors, too, will become more powerful and subtle.</p>
 <p>You have many opportunities to err. You can make a basic design error. You can implement good ideas incorrectly. You can overlook unexpected input that messes up your program. You can use C incorrectly. You can make typing errors. You can put parentheses in the wrong place, and so on. You'll find your own items to add to this list.</p>
 <p>Fortunately, the situation isn't hopeless, although there might be times when you think it is. The compiler catches many kinds of errors, and there are things you can do to help yourself track down the ones that the compiler doesn't catch. This book will give you debugging advice as you go along.</p>
 </div>
 <div class="section" id="step-7-maintain-and-modify-the-program">
-<h4>Step 7: Maintain and Modify the Program</h4>
+<h4><a class="toc-backref" href="#id25">Step 7: Maintain and Modify the Program</a></h4>
 <p>When you create a program for yourself or for someone else, that program could see extensive use. If it does, you'll probably find reasons to make changes in it. Perhaps there is a minor bug that shows up only when someone enters a name beginning with <em>Zz</em>, or you might think of a better way to do something in the program. You could add a clever new feature. You might adapt the program so that it runs on a different computer system. All these tasks are greatly simplified if you document the program clearly and if you follow sound design practices.</p>
 </div>
 <div class="section" id="commentary">
-<h4>Commentary</h4>
+<h4><a class="toc-backref" href="#id26">Commentary</a></h4>
 <p>Programming is not usually as linear as the process just described. Sometimes you have to go back and forth between steps. For instance, when you are writing code, you might find that your plan was impractical. You may see a better way of doing things or, after you see how a program runs, you might feel motivated to change the design. Documenting your work helps you move back and forth between levels.</p>
 <p>Most learners tend to neglect steps 1 and 2 (defining program objectives and designing the program) and go directly to step 3 (writing the program). The first programs you write are simple enough that you can visualize the whole process in your head. If you make a mistake, it's easy to find. As your programs grow longer and more complex, mental visualizations begin to fail, and errors get harder to find. Eventually, those who neglect the planning steps are condemned to hours of lost time, confusion, and frustration as they produce ugly, dysfunctional, and abstruse programs. The larger and more complex the job is, the more planning it requires.</p>
 <p>The moral here is that you should develop the habit of planning before coding. Use the ancient but honorable pen-and-pencil technology to jot down the objectives of your program and to outline the design. If you do so, you eventually will reap substantial dividends in time saved and satisfaction gained.</p>
 </div>
 </div>
 <div class="section" id="programming-mechanics">
-<h3>Programming Mechanics</h3>
+<h3><a class="toc-backref" href="#id27">Programming Mechanics</a></h3>
 <p>The exact steps you must follow to produce a program depend on your computer environment. Because C is portable, it's available in many environments, including Unix, Linux, MS-DOS (yes, some people still use it), Windows, and Macintosh OS. There's not enough space in this book to cover all environments, particularly because particular products evolve, die, and are replaced.</p>
 <p>First, however, let's look at some aspects shared by many C environments, including the five we just mentioned. You don't really need to know what follows to run a C program, but it is good background. It can also help you understand why you have to go through some particular steps to get a C program.</p>
 <p>When you write a program in the C language, you store what you write in a text file called a <em>source code file</em>. Most C systems, including the ones we mentioned, require that the name of the file end in <code class="docutils literal">.c</code> (for example, <code class="docutils literal">wordcount.c</code> and <code class="docutils literal">budget.c</code>). The part of the name before the period is called the <em>basename</em>, and the part after the period is called the <em>extension</em>. Therefore, <code class="docutils literal">budget</code> is a basename and <code class="docutils literal">c</code> is the extension. The combination <code class="docutils literal">budget.c</code> is the filename. The name should also satisfy the requirements of the particular computer operating system. For example, MS-DOS is an older operating system for IBM PCs and clones. It requires that the basename be no more than eight characters long, so the <code class="docutils literal">wordcount.c</code> filename mentioned earlier would not be a valid DOS filename. Some Unix systems place a 14-character limit on the whole name, including the extension; other Unix systems allow longer names, up to 255 characters. Linux, Windows, and Macintosh OS also allow long names.</p>
@@ -269,7 +356,7 @@ Welcome to the world of">
 <hr class="docutils">
 <p>Don't worry about the details of the source code file shown in <a class="reference external" href="ch01.html#ch01lis02">Listing 1.2</a>; you'll learn about them in <a class="reference external" href="ch02.html#ch02">Chapter 2</a>.</p>
 <div class="section" id="object-code-files-executable-files-and-libraries">
-<h4>Object Code Files, Executable Files, and Libraries</h4>
+<h4><a class="toc-backref" href="#id28">Object Code Files, Executable Files, and Libraries</a></h4>
 <p>The basic strategy in C programming is to use programs that convert your source code file to an executable file, which is a file containing ready-to-run machine language code. C implementations typically do this in two steps: compiling and linking. The compiler converts your source code to an intermediate code, and the linker combines this with other code to produce the executable file. C uses this two-part approach to facilitate the modularization of programs. You can compile individual modules separately and then use the linker to combine the compiled modules later. That way, if you need to change one module, you don't have to recompile the other ones. Also, the linker combines your program with precompiled library code.</p>
 <p>There are several choices for the form of the intermediate files. The most prevalent choice, and the one taken by the implementations described here, is to convert the source code to machine language code, placing the result in an <em>object code file</em>, or <em>object file</em> for short. (This assumes that your source code consists of a single file.) Although the object file contains machine language code, it is not ready to run. The object file contains the translation of your source code, but it is not yet a complete program.</p>
 <p>The first element missing from the object code file is something called <em>startup code</em>, which is code that acts as an interface between your program and the operating system. For example, you can run an IBM PC compatible under MS Windows or under Linux. The hardware is the same in either case, so the same object code would work with both, but you would need different startup code for Windows than you would for Linux because these systems handle programs differently from one another.</p>
@@ -281,7 +368,7 @@ Welcome to the world of">
 <p>Now let's look at some specific systems.</p>
 </div>
 <div class="section" id="unix-system">
-<h4>Unix System</h4>
+<h4><a class="toc-backref" href="#id29">Unix System</a></h4>
 <p>Because C's popularity and existence began on Unix systems, we will start there. (Note: By “Unix,” we include systems such as FreeBSD, which descends from Unix but can't use the name for legal reasons.)</p>
 <ol class="arabic">
 <li>
@@ -310,7 +397,7 @@ Welcome to the world of">
 </ol>
 </div>
 <div class="section" id="the-gnu-compiler-collection-and-the-llvm-project">
-<h4>The GNU Compiler Collection and the LLVM Project</h4>
+<h4><a class="toc-backref" href="#id30">The GNU Compiler Collection and the LLVM Project</a></h4>
 <p>The GNU Project, dating from 1987, is a mass collaboration that has developed a large body of free Unix-like software. (GNU stands for “GNU's Not Unix.”) One of its products is the GNU Compiler Collection, or GCC, which includes the GCC C compiler. GCC is under constant development, guided by a steering committee, and its C compiler closely tracks changing C standards. Versions of GCC are available for a wide variety of hardware platforms and operating systems, including Unix, Linux, and Windows. The GCC C compiler can be invoked with the <code class="docutils literal">gcc</code> command. And many systems using <code class="docutils literal">gcc</code> will make <code class="docutils literal">cc</code> an alias for <code class="docutils literal">gcc</code>.</p>
 <p>The LLVM Project provides a second replacement for <code class="docutils literal">cc</code>. The project is an open-source collection of compiler-related software dating from a 2000 research project at the University of Illinois. Its Clang compiler processes C code and can be invoked as <code class="docutils literal">clang</code>. Available on several platforms, including Linux, Clang became the default C compiler for FreeBSD in late 2012. Like GCC, Clang tracks the C standard pretty well.</p>
 <p>Both accept a <code class="docutils literal"><span class="pre">-v</span></code> option for version information, so on systems using the <code class="docutils literal">cc</code> alias for either the <code class="docutils literal">gcc</code> or <code class="docutils literal">clang</code> command, the combination</p>
@@ -321,14 +408,14 @@ Welcome to the world of">
 <p>The first example invokes the C99 standard, the second invokes the draft C11 standard for GCC versions prior to the acceptance of the standard, and the third invokes the C11 standard for GCC versions that followed the acceptance. The Clang compiler uses the same flags.</p>
 </div>
 <div class="section" id="linux-systems">
-<h4>Linux Systems</h4>
+<h4><a class="toc-backref" href="#id31">Linux Systems</a></h4>
 <p>Linux is a popular open-source, Unix-like operating system that runs on a variety of platforms, including PCs and Macs. Preparing C programs on Linux is much the same as for Unix systems, except that you would use the GCC public domain C compiler that's provided by GNU. The compile command looks like this:</p>
 <p>gcc inform.c</p>
 <p>Note that installing GCC may be optional when installing Linux, so you (or someone) might have to install GCC if it wasn't installed earlier. Typically, the installation makes <code class="docutils literal">cc</code> an alias for <code class="docutils literal">gcc</code>, so you can use <code class="docutils literal">cc</code> in the command line instead of <code class="docutils literal">gcc</code> if you like.</p>
 <p>You can obtain further information about GCC, including information about new releases at <a class="reference external" href="http://www.gnu.org/software/gcc/index.html">http://www.gnu.org/software/gcc/index.html</a>.</p>
 </div>
 <div class="section" id="command-line-compilers-for-the-pc">
-<h4>Command-Line Compilers for the PC</h4>
+<h4><a class="toc-backref" href="#id32">Command-Line Compilers for the PC</a></h4>
 <p>C compilers are not part of the standard Windows package, so you may need to obtain and install a C compiler. Cygwin and MinGW are free downloads that make the GCC compiler available for command-line use on a PC. Cygwin runs in its own window, which has a Command-Prompt look but which imitates a Linux command-line environment. MinGW, on the other hand runs in the Windows Command-Prompt mode. These come with the newest (or near-newest) version of GCC, which supports C99 and at least some of C11. The Borland C++ Compiler 5.5 is another free download; it supports C90.</p>
 <p>Source code files should be text files, not word processor files. (Word processor files contain a lot of additional information about fonts and formatting.) You should use a text editor, such as Windows Notepad. You can use a word processor if you use the Save As feature to save the file in text mode. The file should have a <code class="docutils literal">.c</code> extension. Some word processors automatically add a <code class="docutils literal">.txt</code> extension to text files. If this happens to you, you need to change the filename, replacing <code class="docutils literal">txt</code> with <code class="docutils literal">c</code>.</p>
 <p>C compilers for the PC typically, but not always, produce intermediate object code files having an <code class="docutils literal">.obj</code> extension. Unlike Unix compilers, these compilers typically don't remove these files when done. Some compilers produce assembly language files with <code class="docutils literal">.asm</code> extensions or use some special format of their own.</p>
@@ -336,7 +423,7 @@ Welcome to the world of">
 <p>C&gt;concrete</p>
 </div>
 <div class="section" id="integrated-development-environments-windows">
-<h4>Integrated Development Environments (Windows)</h4>
+<h4><a class="toc-backref" href="#id33">Integrated Development Environments (Windows)</a></h4>
 <p>Quite a few vendors, including Microsoft, Embarcadero, and Digital Mars, offer Windows-based integrated development environments, or <em>IDEs</em>. (These days, most are combined C and C++ compilers.) Free downloads include Microsoft Visual Studio Express and Pelles C. All have fast, integrated environments for putting together C programs. The key point is that each of these programs has a built-in editor you can use to write a C program. Each provides menus that enable you to name and save your source code file, as well as menus that allow you to compile and run your program without leaving the IDE. Each dumps you back into the editor if the compiler finds any errors, and each identifies the offending lines and matches them to the appropriate error messages.</p>
 <p>The Windows IDEs can be a little intimidating at first because they offer a variety of <em>targets</em>—that is, a variety of environments in which the program will be used. For example, they might give you a choice of 32-bit Windows programs, 64-bit Windows programs, dynamic link library files (DLLs), and so on. Many of the targets involve bringing in support for the Windows graphical interface. To manage these (and other) choices, you typically create a <em>project</em> to which you then add the names of the source code files you'll be using. The precise steps depend on the product you use. Typically, you first use the File menu or Project menu to create a project. What's important is choosing the correct form of project. The examples in this book are generic examples designed to run in a simple command-line environment. The various Windows IDEs provide one or more choices to match this undemanding assumption. Microsoft Visual Studio, for example, offers the Win32 Console Application option. For other systems, look for an option using terms such as DOS EXE, Console, or Character Mode executable. These modes will run your executable program in a console-like window. After you have the correct project type, use the IDE menu to open a new source code file. For most products, you can do this by using the File menu. You may have to take additional steps to add the source file to the project.</p>
 <p>Because the Windows IDEs typically handle both C and C++, you need to indicate that you want a C program. With some products you use the project type to indicate that you want to use C. With other products, such as Microsoft Visual C++, you use the <code class="docutils literal">.c</code> file extension to indicate that you want to use C rather than C++. However, most C programs also work as C++ programs. <a class="reference external" href="app02.html#app02lev1sec9">Reference Section IX</a>, “<a class="reference external" href="app02.html#app02lev1sec9">Differences Between C and C++</a>,” compares C and C++.</p>
@@ -352,26 +439,26 @@ Welcome to the world of">
 </div>
 <hr class="docutils">
 <div class="section" id="the-windows-linux-option">
-<h4>The Windows/Linux Option</h4>
+<h4><a class="toc-backref" href="#id34">The Windows/Linux Option</a></h4>
 <p>Many Linux distributions can be installed from Windows to set up a dual-boot system. Some of your storage will be set aside for a Linux system, and you then can boot to either Windows or Linux. You can't run a Linux program from Windows or vice versa, and you can't access Linux files from Windows, but you can access Windows documents from Linux.</p>
 </div>
 <div class="section" id="c-on-the-macintosh">
-<h4>C on the Macintosh</h4>
+<h4><a class="toc-backref" href="#id35">C on the Macintosh</a></h4>
 <p>Currently, Apple offers its Xcode development system as a free download. (In the past, sometimes it has been free, sometimes available for a modest charge.) It lets you choose from several programming languages, including C.</p>
 <p>Xcode, with its capability to handle several programming languages, to target multiple platforms, and to develop large-scale projects, can seem intimidating. But you need learn just enough to produce simple C programs. With Xcode 4.6, use the File menu to select New, Project, OS X Application Command Line Tool, and then enter a product name and select C for the Type. Xcode uses either the Clang or the GCC C compiler for C code. It used to use GCC by default, and now uses Clang by default. You can use Xcode settings to choose which compiler it uses and also which C standard to support. (Due to licensing matters, the version of Clang available with Xcode is more recent than the GCC version.)</p>
 <p>Mac OS X is built on Unix, and the Terminal utility opens a window that lets you run programs in a Unix command-line environment. Apple doesn't provide a command-line compiler as part of its standard package, but if you download Xcode, you can also download optional command-line tools that enable you to use the <code class="docutils literal">clang</code> and the <code class="docutils literal">gcc</code> commands to compile in command-line mode.</p>
 </div>
 </div>
 <div class="section" id="how-this-book-is-organized">
-<h3>How This Book Is Organized</h3>
+<h3><a class="toc-backref" href="#id36">How This Book Is Organized</a></h3>
 <p>There are many ways to organize information. One of the most direct approaches is to present everything about topic A, everything about topic B, and so on. This is particularly useful for a reference so you can find all the information about a given topic in one place. But usually it's not the best sequence for learning a subject. For instance, if you began learning English by first learning all the nouns, your ability to express ideas would be severely limited. Sure, you could point to objects and shout their names, but you'd be much better equipped to express yourself if you learned just a few nouns, verbs, adjectives, and so on, along with a few rules about how those parts relate to one another.</p>
 <p>To provide you with a more balanced intake of information, this book uses a spiral approach of introducing several topics in earlier chapters and returning later to discuss them more fully. For example, understanding functions is essential to understanding C. Consequently, several of the early chapters include some discussion of functions so that when you reach the full discussion in <a class="reference external" href="ch09.html#ch09">Chapter 9</a>, “<a class="reference external" href="ch09.html#ch09">Functions</a>,” you'll already have achieved some ease about using functions. Similarly, early chapters preview strings and loops so that you can begin using these useful tools in your programs before learning about them in detail.</p>
 </div>
 <div class="section" id="conventions-used-in-this-book">
-<h3>Conventions Used in This Book</h3>
+<h3><a class="toc-backref" href="#id37">Conventions Used in This Book</a></h3>
 <p>We are almost ready to begin studying the C language itself. This section covers some of the conventions we use in presenting material.</p>
 <div class="section" id="typeface">
-<h4>Typeface</h4>
+<h4><a class="toc-backref" href="#id38">Typeface</a></h4>
 <p>For text representing programs and computer input and output, we use a type font that resembles what you might see on a screen or on printed output. We have already used it a few times. In case it slipped your notice, the font looks like the following:</p>
 <p>#include &lt;stdio.h&gt; int main(void) {     printf("Concrete contains gravel and cement.n");</p>
 <p>    return 0; }</p>
@@ -380,7 +467,7 @@ Welcome to the world of">
 <p>Here, for instance, you might replace type<sub>name</sub> with <code class="docutils literal">int</code> and variable<sub>name</sub> with =zebra<sub>coun</sub>=t.</p>
 </div>
 <div class="section" id="program-output">
-<h4>Program Output</h4>
+<h4><a class="toc-backref" href="#id39">Program Output</a></h4>
 <p>Output from the computer is printed in the same format, with the exception that user input is shown in boldface type. For instance, the following is program output from an example in <a class="reference external" href="ch14.html#ch14">Chapter 14</a>, “<a class="reference external" href="ch14.html#ch14">Structures and Other Data Forms</a>”:</p>
 <p>Please enter the book title. Press [enter] at the start of a line to stop.</p>
 <p>My Life as a Budgie Now enter the author.</p>
@@ -406,14 +493,14 @@ Welcome to the world of">
 </ol>
 </div>
 <div class="section" id="special-elements">
-<h4>Special Elements</h4>
+<h4><a class="toc-backref" href="#id40">Special Elements</a></h4>
 <p>The book includes several special elements that highlight particular points: Sidebars, Tips, Cautions, and Notes. The following illustrates their appearances and uses:</p>
 <hr class="docutils">
 <p>Sidebar</p>
 <p>A sidebar provides a deeper discussion or additional background to help illuminate a topic.</p>
 <hr class="docutils">
 <div class="system-message">
-<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 503)</p>
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 505)</p>
 <p>At least one body element must separate transitions; adjacent transitions are not allowed.</p>
 </div>
 <hr class="docutils">
@@ -421,7 +508,7 @@ Welcome to the world of">
 <p>Tips present short, helpful guides to particular programming situations.</p>
 <hr class="docutils">
 <div class="system-message">
-<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 511)</p>
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 513)</p>
 <p>At least one body element must separate transitions; adjacent transitions are not allowed.</p>
 </div>
 <hr class="docutils">
@@ -429,7 +516,7 @@ Welcome to the world of">
 <p>A caution alerts you to potential pitfalls.</p>
 <hr class="docutils">
 <div class="system-message">
-<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 519)</p>
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 521)</p>
 <p>At least one body element must separate transitions; adjacent transitions are not allowed.</p>
 </div>
 <hr class="docutils">
@@ -439,13 +526,13 @@ Welcome to the world of">
 </div>
 <hr class="docutils">
 <div class="section" id="summary">
-<h3>Summary</h3>
+<h3><a class="toc-backref" href="#id41">Summary</a></h3>
 <p>C is a powerful, concise programming language. It is popular because it offers useful programming tools, good control over hardware, and because C programs are easier than most to transport from one system to another.</p>
 <p>C is a compiled language. C compilers and linkers are programs that convert C language source code into executable code.</p>
 <p>Programming in C can be taxing, difficult, and frustrating, but it can also be intriguing, exciting, and satisfying. We hope you find it as enjoyable and fascinating as we do.</p>
 </div>
 <div class="section" id="review-questions">
-<h3>Review Questions</h3>
+<h3><a class="toc-backref" href="#id42">Review Questions</a></h3>
 <p>You'll find answers to the review questions in <a class="reference external" href="app01.html#app01">Appendix A</a>, “<a class="reference external" href="app01.html#app01">Answers to the Review Questions</a>.”</p>
 <p><a class="reference external" href="app01.html#ch01ans01">1</a><strong>.</strong> What does <em>portability</em> mean in the context of programming?</p>
 <p><a class="reference external" href="app01.html#ch01ans02">2</a><strong>.</strong> Explain the difference between a source code file, object code file, and executable file.</p>
@@ -454,7 +541,7 @@ Welcome to the world of">
 <p><a class="reference external" href="app01.html#ch01ans05">5</a><strong>.</strong> What does a linker do?</p>
 </div>
 <div class="section" id="programming-exercise">
-<h3>Programming Exercise</h3>
+<h3><a class="toc-backref" href="#id43">Programming Exercise</a></h3>
 <p>We don't expect you to write C code yet, so this exercise concentrates on the earlier stages of the programming process.</p>
 <p><strong>1.</strong> You have just been employed by MacroMuscle, Inc. (Software for Hard Bodies). The company is entering the European market and wants a program that converts inches to centimeters (1 inch = 2.54 cm). The company wants the program set up so that it prompts the user to enter an inch value. Your assignment is to define the program objectives and to design the program (steps 1 and 2 of the programming process). on an Ubuntu 13.04 Linux system.</p>
 <p>You can download the code for this book's examples if you register the book at <a class="reference external" href="http://www.informit.com/register">www.informit.com/register</a>.</p>
@@ -462,14 +549,14 @@ Welcome to the world of">
 <p>You need to have a C compiler or access to one. C runs on an enormous variety of computer systems, so you have many choices. Do make sure that you use a C compiler designed for your particular system. Some of the examples in this book require support for the C99 or C11 standards, but most of the examples will work with a C90 compiler. If the compiler you use is pre-ANSI/ISO, you will have to make adjustments, probably often enough to encourage you to seek something newer.</p>
 <p>Most compiler vendors offer special pricing to students and educators, so if you fall into that category, check the vendor websites.</p>
 <div class="section" id="id1">
-<span id="ch01lev2sec28"></span><h4>Special Elements</h4>
+<span id="ch01lev2sec28"></span><h4><a class="toc-backref" href="#id44">Special Elements</a></h4>
 <p>The book includes several special elements that highlight particular points: Sidebars, Tips, Cautions, and Notes. The following illustrates their appearances and uses:</p>
 <hr class="docutils">
 <p>Sidebar</p>
 <p>A sidebar provides a deeper discussion or additional background to help illuminate a topic.</p>
 <hr class="docutils">
 <div class="system-message">
-<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 581)</p>
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 583)</p>
 <p>At least one body element must separate transitions; adjacent transitions are not allowed.</p>
 </div>
 <hr class="docutils">
@@ -477,7 +564,7 @@ Welcome to the world of">
 <p>Tips present short, helpful guides to particular programming situations.</p>
 <hr class="docutils">
 <div class="system-message">
-<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 589)</p>
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 591)</p>
 <p>At least one body element must separate transitions; adjacent transitions are not allowed.</p>
 </div>
 <hr class="docutils">
@@ -485,7 +572,7 @@ Welcome to the world of">
 <p>A caution alerts you to potential pitfalls.</p>
 <hr class="docutils">
 <div class="system-message">
-<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 597)</p>
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 599)</p>
 <p>At least one body element must separate transitions; adjacent transitions are not allowed.</p>
 </div>
 <hr class="docutils">
@@ -495,9 +582,10 @@ Welcome to the world of">
 </div>
 <hr class="docutils">
 <div class="section" id="publish">
-<h3>Publish</h3>
-<pre class="code ipython"><a name="rest_code_d485685c5c1345bdb5a420e3f0a91e46-1"></a><span class="o">!</span>pandoc --wrap<span class="o">=</span>none <span class="m">01</span>.Getting-Ready.org -o ~/Public/nikola_post/posts/C-Primer-Plus.rst
+<h3><a class="toc-backref" href="#id45">Publish</a></h3>
+<pre class="code ipython"><a name="rest_code_3470f5487af34e15b99c89e4f4667145-1"></a><span class="o">!</span>pandoc --wrap<span class="o">=</span>none <span class="m">01</span>.Getting-Ready.org -o ~/Public/nikola_post/posts/C-Primer-Plus.rst
 </pre>
+</div>
 </div>
 </div>
             
