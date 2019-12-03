@@ -7,7 +7,9 @@
    .. description:
    .. type: text
 
-   .. contents::
+
+.. contents::
+
 Preface
 =======
 

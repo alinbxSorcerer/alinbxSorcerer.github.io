@@ -11,14 +11,18 @@
 <meta property="og:site_name" content="A Magic Land Declared by David">
 <meta property="og:title" content="Fluent Python ">
 <meta property="og:url" content="https://alinbxsorcerer.github.io/posts/flunt-python%20/">
-<meta property="og:description" content='System Message: ERROR/3 (&lt;string&gt;, line 1)
-The "contents" directive may not be used within topics or body elements.
-.. contents::
+<meta property="og:description" content="Contents
 
+Preface
 
-
-System Message: WARNING/2 (&lt;string&gt;, line 2)
-Block quote ends witho'>
+Who This Book Is For
+Who This Book Is Not For
+How This Book Is Organized
+Hands-On Approach
+Hardware Used for Timings
+Soapbox: My Personal Perspective
+Python Version Covered
+Python J">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2018-08-01T20:53:29+08:00">
 <meta property="article:tag" content="python">
@@ -88,19 +92,27 @@ Block quote ends witho'>
     <div id="post-main" class="main">
         <div class="container">
         <div>
-<blockquote>
-<div class="system-message">
-<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 1)</p>
-<p>The "contents" directive may not be used within topics or body elements.</p>
-<pre class="literal-block">.. contents::</pre>
-</div>
-</blockquote>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 2)</p>
-<p>Block quote ends without a blank line; unexpected unindent.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li>
+<p><a class="reference internal" href="../flunt-python%20/#preface" id="id1">Preface</a></p>
+<ul>
+<li><p><a class="reference internal" href="../flunt-python%20/#who-this-book-is-for" id="id2">Who This Book Is For</a></p></li>
+<li><p><a class="reference internal" href="../flunt-python%20/#who-this-book-is-not-for" id="id3">Who This Book Is Not For</a></p></li>
+<li><p><a class="reference internal" href="../flunt-python%20/#how-this-book-is-organized" id="id4">How This Book Is Organized</a></p></li>
+<li><p><a class="reference internal" href="../flunt-python%20/#hands-on-approach" id="id5">Hands-On Approach</a></p></li>
+<li><p><a class="reference internal" href="../flunt-python%20/#hardware-used-for-timings" id="id6">Hardware Used for Timings</a></p></li>
+<li><p><a class="reference internal" href="../flunt-python%20/#soapbox-my-personal-perspective" id="id7">Soapbox: My Personal Perspective</a></p></li>
+<li><p><a class="reference internal" href="../flunt-python%20/#python-version-covered" id="id8">Python Version Covered</a></p></li>
+<li><p><a class="reference internal" href="../flunt-python%20/#python-jargon" id="id9">Python Jargon</a></p></li>
+<li><p><a class="reference internal" href="../flunt-python%20/#publish" id="id10">Publish</a></p></li>
+</ul>
+</li>
+</ul>
 </div>
 <div class="section" id="preface">
-<h2>Preface</h2>
+<h2><a class="toc-backref" href="../flunt-python%20/#id1">Preface</a></h2>
 <blockquote>
 <p>Here's the plan: when someone uses a feature you don't understand, simply shoot them. This is easier than learning something new, and before too long the only living coders will be writing in an easily understood, tiny subset of Python 0.9.6 — Tim Peters <em>Legendary core developer and author of The Zen of Python</em></p>
 </blockquote>
@@ -109,18 +121,18 @@ Block quote ends witho'>
 <p>As a teacher introducing Python to programmers experienced in other languages, I see another problem that this book tries to address: we only miss stuff we know about. Coming from another language, anyone may guess that Python supports regular expressions, and look that up in the docs. But if you've never seen tuple unpacking or descriptors before, you will probably not search for them, and may end up not using those features just because they are specific to Python.</p>
 <p>This book is not an A-to-Z exhaustive reference of Python. Its emphasis is on the language features that are either unique to Python or not found in many other popular languages. This is also mostly a book about the core language and some of its libraries. I will rarely talk about packages that are not in the standard library, even though the Python package index now lists more than 60,000 libraries and many of them are incredibly useful.</p>
 <div class="section" id="who-this-book-is-for">
-<h3>Who This Book Is For</h3>
+<h3><a class="toc-backref" href="../flunt-python%20/#id2">Who This Book Is For</a></h3>
 <p>This book was written for practicing Python programmers who want to become proficient in Python 3. If you know Python 2 but are willing to migrate to Python 3.4 or later, you should be fine. At the time of this writing, the majority of professional Python programmers are using Python 2, so I took special care to highlight Python 3 features that may be new to that audience.</p>
 <p>However, <em>Fluent Python</em> is about making the most of Python 3.4, and I do not spell out the fixes needed to make the code work in earlier versions. Most examples should run in Python 2.7 with little or no changes, but in some cases, backporting would require significant rewriting.</p>
 <p>Having said that, I believe this book may be useful even if you must stick with Python 2.7, because the core concepts are still the same. Python 3 is not a new language, and most differences can be learned in an afternoon. <a class="reference external" href="https://docs.python.org/3.0/whatsnew/3.0.html">What's New in Python 3.0</a> is a good starting point. Of course, there have been changes since Python 3.0 was released in 2009, but none as important as those in 3.0.</p>
 <p>If you are not sure whether you know enough Python to follow along, review the topics of the official <a class="reference external" href="https://docs.python.org/3/tutorial/">Python Tutorial</a>. Topics covered in the tutorial will not be explained here, except for some features that are new in Python 3.</p>
 </div>
 <div class="section" id="who-this-book-is-not-for">
-<h3>Who This Book Is Not For</h3>
+<h3><a class="toc-backref" href="../flunt-python%20/#id3">Who This Book Is Not For</a></h3>
 <p>If you are just learning Python, this book is going to be hard to follow. Not only that, if you read it too early in your Python journey, it may give you the impression that every Python script should leverage special methods and metaprogramming tricks. Premature abstraction is as bad as premature optimization.</p>
 </div>
 <div class="section" id="how-this-book-is-organized">
-<h3>How This Book Is Organized</h3>
+<h3><a class="toc-backref" href="../flunt-python%20/#id4">How This Book Is Organized</a></h3>
 <p>The core audience for this book should not have trouble jumping directly to any chapter in this book. However, each of the six parts forms a book within the book. I conceived the chapters within each part to be read in sequence.</p>
 <p>I tried to emphasize using what is available before discussing how to build your own. For example, in <a class="reference external" href="../flunt-python%20/pt02.html">Part II</a>, <a class="reference external" href="../flunt-python%20/ch02.html">Chapter 2</a> covers sequence types that are ready to use, including some that don't get a lot of attention, like <code class="docutils literal">collections.deque</code>. Building user-defined sequences is only addressed in <a class="reference external" href="../flunt-python%20/pt04.html">Part IV</a>, where we also see how to leverage the abstract base classes (ABCs) from <code class="docutils literal">collections.abc</code>. Creating your own ABCs is discussed even later in <a class="reference external" href="../flunt-python%20/pt04.html">Part IV</a>, because I believe it's important to be comfortable using an ABC before writing your own.</p>
 <p>This approach has a few advantages. First, knowing what is ready to use can save you from reinventing the wheel. We use existing collection classes more often than we implement our own, and we can give more attention to the advanced usage of available tools by deferring the discussion on how to create new ones. We are also more likely to inherit from existing ABCs than to create a new ABC from scratch. And finally, I believe it is easier to understand the abstractions after you've seen them in action.</p>
@@ -154,27 +166,27 @@ Block quote ends witho'>
 </dl>
 </div>
 <div class="section" id="hands-on-approach">
-<h3>Hands-On Approach</h3>
+<h3><a class="toc-backref" href="../flunt-python%20/#id5">Hands-On Approach</a></h3>
 <p>Often we'll use the interactive Python console to explore the language and libraries. I feel it is important to emphasize the power of this learning tool, particularly for those readers who've had more experience with static, compiled languages that don't provide a read-eval-print#loop (REPL).</p>
 <p>One of the standard Python testing packages, <code class="docutils literal">`doctest</code> &lt;<a class="reference external" href="https://docs.python.org/3/library/doctest.html">https://docs.python.org/3/library/doctest.html</a>&gt;`__, works by simulating console sessions and verifying that the expressions evaluate to the responses shown. I used <code class="docutils literal">doctest</code> to check most of the code in this book, including the console listings. You don't need to use or even know about <code class="docutils literal">doctest</code> to follow along: the key feature of doctests is that they look like transcripts of interactive Python console sessions, so you can easily try out the demonstrations yourself.</p>
 <p>Sometimes I will explain what we want to accomplish by showing a doctest before the code that makes it pass. Firmly establishing what is to be done before thinking about how to do it helps focus our coding effort. Writing tests first is the basis of test driven development (TDD) and I've also found it helpful when teaching. If you are unfamiliar with <code class="docutils literal">doctest</code>, take a look at its <a class="reference external" href="https://docs.python.org/3/library/doctest.html">documentation</a> and this book's <a class="reference external" href="https://github.com/fluentpython/example-code">source code repository</a>. You'll find that you can verify the correctness of most of the code in the book by typing <code class="docutils literal">python3 <span class="pre">-m</span> doctest example_script.py</code> in the command shell of your OS.</p>
 </div>
 <div class="section" id="hardware-used-for-timings">
-<h3>Hardware Used for Timings</h3>
+<h3><a class="toc-backref" href="../flunt-python%20/#id6">Hardware Used for Timings</a></h3>
 <p>The book has some simple benchmarks and timings. Those tests were performed on one or the other laptop I used to write the book: a 2011 MacBook Pro 13” with a 2.7 GHz Intel Core i7 CPU, 8GB of RAM, and a spinning hard disk, and a 2014 MacBook Air 13” with a 1.4 GHz Intel Core i5 CPU, 4GB of RAM, and a solid-state disk. The MacBook Air has a slower CPU and less RAM, but its RAM is faster (1600 versus 1333 MHz) and the SSD is much faster than the HD. In daily usage, I can't tell which machine is faster.</p>
 </div>
 <div class="section" id="soapbox-my-personal-perspective">
-<h3>Soapbox: My Personal Perspective</h3>
+<h3><a class="toc-backref" href="../flunt-python%20/#id7">Soapbox: My Personal Perspective</a></h3>
 <p>I have been using, teaching, and debating Python since 1998, and I enjoy studying and comparing programming languages, their design, and the theory behind them. At the end of some chapters, I have added “Soapbox” sidebars with my own perspective about Python and other languages. Feel free to skip these if you are not into such discussions. Their content is completely optional.</p>
 </div>
 <div class="section" id="python-version-covered">
-<h3>Python Version Covered</h3>
+<h3><a class="toc-backref" href="../flunt-python%20/#id8">Python Version Covered</a></h3>
 <p>I tested all the code in the book using Python 3.4—that is, CPython 3.4, the most popular Python implementation written in C. There is only one exception: <a class="reference external" href="../flunt-python%20/ch13.html#matmul_operator_sec">The New @ Infix Operator in Python 3.5</a> shows the <code class="docutils literal">@</code> operator, which is only supported by Python 3.5.</p>
 <p>Almost all code in the book should work with any Python 3.x–compatible interpreter, including PyPy3 2.4.0, which is compatible with Python 3.2.5. The notable exceptions are the examples using <code class="docutils literal">yield from</code> and <code class="docutils literal">asyncio</code>, which are only available in Python 3.3 or later.</p>
 <p>Most code should also work with Python 2.7 with minor changes, except the Unicode-related examples in <a class="reference external" href="../flunt-python%20/ch04.html">Chapter 4</a>, and the exceptions already noted for Python 3 versions earlier than 3.3.</p>
 </div>
 <div class="section" id="python-jargon">
-<h3>Python Jargon</h3>
+<h3><a class="toc-backref" href="../flunt-python%20/#id9">Python Jargon</a></h3>
 <p>I wanted this to be a book not only about Python but also about the culture around it. Over more than 20 years of communications, the Python community developed its own particular lingo and acronyms. At the end of this book, <a class="reference external" href="../flunt-python%20/go01.html">Python Jargon</a> contains a list of terms that have special meaning among Pythonistas.</p>
 <p>Many terms here are not exclusive to Python, of course, but particularly in the definitions you may find meanings that are specific to the Python community.</p>
 <p>Also see the official <a class="reference external" href="https://docs.python.org/3/glossary.html">Python glossary</a>.</p>
@@ -311,7 +323,7 @@ Block quote ends witho'>
 <dd>
 <p>A module with functions to parse and run examples embedded in the docstrings of Python modules or in plain-text files. May also be used from the command line as:</p>
 <div class="system-message">
-<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 193)</p>
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 195)</p>
 <p>Cannot find pygments lexer for language "screen"</p>
 <pre class="literal-block">.. code:: screen
 
@@ -624,8 +636,8 @@ Block quote ends witho'>
 </dl>
 </div>
 <div class="section" id="publish">
-<h3>Publish</h3>
-<pre class="code ipython"><a name="rest_code_7d4834ef82474a87ba5c409851a030e8-1"></a><span class="o">!</span>pandoc --wrap<span class="o">=</span>none <span class="m">00</span>.preface.org -o ~/Public/nikola_post/posts/fluent-python.rst
+<h3><a class="toc-backref" href="../flunt-python%20/#id10">Publish</a></h3>
+<pre class="code ipython"><a name="rest_code_0138b57960df40c39957869ee026f296-1"></a><span class="o">!</span>pandoc --wrap<span class="o">=</span>none <span class="m">00</span>.preface.org -o ~/Public/nikola_post/posts/fluent-python.rst
 </pre>
 </div>
 </div>
