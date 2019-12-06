@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html prefix="" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>SQL in 10 Minutes 总结 | A Magic Land Declared by David</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://alinbxsorcerer.github.io/posts/sql-in-10-minutes/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="David">
+<meta property="og:site_name" content="A Magic Land Declared by David">
+<meta property="og:title" content="SQL in 10 Minutes 总结">
+<meta property="og:url" content="https://alinbxsorcerer.github.io/posts/sql-in-10-minutes/">
+<meta property="og:description" content="Contents
+
+Introduction
+
+DBMSs Covered in This Book
+
+
+1 Understanding SQL
+
+Databases
+Tables
+Columns and Datatypes Field
+Rows record
+Primary Keys
+
+
+2 Retrieving Data
+
+Retrieving Individual Column
+Retrie">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-11-09T20:53:29+08:00">
+<meta property="article:tag" content="sql">
+</head>
+<body>
+    
+
+    <header id="header" class="navbar"><div class="container">
+            
+    <div class="brand">
+
+        <div class="brand-text">
+            <a href="https://alinbxsorcerer.github.io/" title="A Magic Land Declared by David" rel="home">
+                A Magic Land Declared by David
+            </a>
+        </div>
+
+        <a id="btn-toggle-nav" class="navbar-toggle">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+    </div>
+
+            
+    <nav class="navbar-collapse collapse"><ul class="nav">
+<li><a href="../../archive.html">Archive</a></li>
+                <li><a href="../../categories/">Tags</a></li>
+                <li><a href="../../rss.xml">RSS feed</a></li>
+    
+    
+    </ul></nav>
+</div>
+    </header><div class="header-padding"> </div>
+
+    
+    <div class="post-header">
+        <div class="container">
+            <div class="title">
+                SQL in 10 Minutes 总结
+            </div>
+        </div>
+    </div>
+
+    <div class="post-meta">
+      <div class="container">
+	<div class="meta clearfix">
+	  <div class="authordate">
+	    <time class="timeago" datetime="2017-11-09T20:53:29+08:00">2017/11/09</time>
+	    
+
+	    
+          |  
+        <a href="index.rst" id="sourcelink">Source</a>
+
+	  </div>
+	  <div class="post-tags">
+	    <div class="tag">
+	      <a href="../../categories/sql/" rel="tag">sql</a>
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </div>
+
+
+    <div id="post-main" class="main">
+        <div class="container">
+        <div>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li>
+<p><a class="reference internal" href="#introduction" id="id5">Introduction</a></p>
+<ul>
+<li><p><a class="reference internal" href="#dbmss-covered-in-this-book" id="id6">DBMSs Covered in This Book</a></p></li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#understanding-sql" id="id7">1 Understanding SQL</a></p>
+<ul>
+<li><p><a class="reference internal" href="#databases" id="id8">Databases</a></p></li>
+<li><p><a class="reference internal" href="#tables" id="id9">Tables</a></p></li>
+<li><p><a class="reference internal" href="#columns-and-datatypes-field" id="id10">Columns and Datatypes Field</a></p></li>
+<li><p><a class="reference internal" href="#rows-record" id="id11">Rows record</a></p></li>
+<li><p><a class="reference internal" href="#primary-keys" id="id12">Primary Keys</a></p></li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#retrieving-data" id="id13">2 Retrieving Data</a></p>
+<ul>
+<li><p><a class="reference internal" href="#retrieving-individual-column" id="id14">Retrieving Individual Column</a></p></li>
+<li><p><a class="reference internal" href="#retrieving-multiple-columns" id="id15">Retrieving Multiple Columns</a></p></li>
+<li><p><a class="reference internal" href="#retrieving-all-columns" id="id16">Retrieving All Columns</a></p></li>
+<li><p><a class="reference internal" href="#retrieving-distinct-column" id="id17">Retrieving Distinct Column</a></p></li>
+<li><p><a class="reference internal" href="#limiting-results" id="id18">Limiting Results</a></p></li>
+<li><p><a class="reference internal" href="#using-comments" id="id19">Using Comments</a></p></li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#sorting-retrieved-data" id="id20">3.Sorting Retrieved Data</a></p>
+<ul>
+<li><p><a class="reference internal" href="#sorting-data" id="id21">Sorting Data</a></p></li>
+<li><p><a class="reference internal" href="#sorting-by-multiple-columns" id="id22">Sorting by Multiple Columns</a></p></li>
+<li><p><a class="reference internal" href="#sorting-by-column-position" id="id23">Sorting by Column Position</a></p></li>
+<li><p><a class="reference internal" href="#specifying-sort-direction" id="id24">Specifying Sort Direction</a></p></li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#filtering-data" id="id25">4.Filtering Data</a></p>
+<ul>
+<li><p><a class="reference internal" href="#using-the-where-clause" id="id26">Using the WHERE Clause</a></p></li>
+<li>
+<p><a class="reference internal" href="#the-where-clause-operators" id="id27">The WHERE Clause Operators</a></p>
+<ul>
+<li><p><a class="reference internal" href="#checking-against-a-single-value" id="id28">Checking Against a Single Value</a></p></li>
+<li><p><a class="reference internal" href="#checking-for-nonmatches" id="id29">Checking for Nonmatches</a></p></li>
+<li><p><a class="reference internal" href="#checking-for-a-range-of-values" id="id30">Checking for a Range of Values</a></p></li>
+<li><p><a class="reference internal" href="#checking-for-no-value" id="id31">Checking for No Value</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#advanced-data-filtering" id="id32">5.Advanced Data Filtering</a></p>
+<ul>
+<li>
+<p><a class="reference internal" href="#combining-where-clauses" id="id33">Combining WHERE Clauses</a></p>
+<ul>
+<li><p><a class="reference internal" href="#using-the-and-operator" id="id34">Using the AND Operator</a></p></li>
+<li><p><a class="reference internal" href="#using-the-or-operator" id="id35">Using the OR Operator</a></p></li>
+<li><p><a class="reference internal" href="#understanding-order-of-evaluation" id="id36">Understanding Order of Evaluation</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#using-the-in-operator" id="id37">Using the IN Operator</a></p></li>
+<li><p><a class="reference internal" href="#using-the-not-operator" id="id38">Using the NOT Operator</a></p></li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#using-wildcard-filtering" id="id39">6.Using Wildcard Filtering</a></p>
+<ul>
+<li>
+<p><a class="reference internal" href="#id1" id="id40">Using Wildcard Filtering</a></p>
+<ul>
+<li><p><a class="reference internal" href="#the-percent-sign-wildcard" id="id41">The Percent Sign (%) Wildcard</a></p></li>
+<li><p><a class="reference internal" href="#the-underscore-wildcard" id="id42">The Underscore (_) Wildcard</a></p></li>
+<li><p><a class="reference internal" href="#the-brackets-wildcard" id="id43">The Brackets ([]) Wildcard</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#creating-calculated-fields" id="id44">7.Creating Calculated Fields</a></p>
+<ul>
+<li>
+<p><a class="reference internal" href="#concatenating-fields" id="id45">Concatenating Fields</a></p>
+<ul>
+<li><p><a class="reference internal" href="#using-aliases" id="id46">Using Aliases</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#performing-mathematical-calcualtions" id="id47">Performing Mathematical Calcualtions</a></p></li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#using-data-manipulation-functions" id="id48">8.Using Data Manipulation Functions</a></p>
+<ul>
+<li>
+<p><a class="reference internal" href="#understanding-functions" id="id49">Understanding Functions</a></p>
+<ul>
+<li><p><a class="reference internal" href="#the-problem-with-functions" id="id50">The Problem with Functions</a></p></li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#using-functions" id="id51">Using Functions</a></p>
+<ul>
+<li><p><a class="reference internal" href="#text-manipulation-functions" id="id52">Text Manipulation Functions</a></p></li>
+<li><p><a class="reference internal" href="#date-and-time-manipulation-functions" id="id53">Date and Time Manipulation Functions</a></p></li>
+<li><p><a class="reference internal" href="#numeric-manipulation-functions" id="id54">Numeric Manipulation Functions</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#summarizing-data" id="id55">9.Summarizing Data</a></p>
+<ul>
+<li>
+<p><a class="reference internal" href="#using-aggregate-functions" id="id56">Using Aggregate Functions</a></p>
+<ul>
+<li><p><a class="reference internal" href="#the-avg-function" id="id57">The AVG() Function</a></p></li>
+<li><p><a class="reference internal" href="#the-count-function" id="id58">The COUNT() Function</a></p></li>
+<li><p><a class="reference internal" href="#the-max-function" id="id59">The MAX() Function</a></p></li>
+<li><p><a class="reference internal" href="#the-min-function" id="id60">The MIN() Function</a></p></li>
+<li><p><a class="reference internal" href="#the-sum" id="id61">The SUM()</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#aggregates-on-distinct-values" id="id62">Aggregates on Distinct Values</a></p></li>
+<li><p><a class="reference internal" href="#combining-aggregate-functions" id="id63">Combining Aggregate Functions</a></p></li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#grouping-data" id="id64">10.Grouping Data</a></p>
+<ul>
+<li><p><a class="reference internal" href="#creating-groups" id="id65">Creating Groups</a></p></li>
+<li><p><a class="reference internal" href="#filtering-groups" id="id66">Filtering Groups</a></p></li>
+<li><p><a class="reference internal" href="#grouping-and-sorting" id="id67">Grouping and Sorting</a></p></li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#working-with-subqueries" id="id68">11.Working with Subqueries</a></p>
+<ul>
+<li><p><a class="reference internal" href="#filtering-by-subquery" id="id69">Filtering by Subquery</a></p></li>
+<li><p><a class="reference internal" href="#using-subqueries-as-calculated-fields" id="id70">Using Subqueries as Calculated Fields</a></p></li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#joining-tables" id="id71">12.Joining Tables</a></p>
+<ul>
+<li>
+<p><a class="reference internal" href="#creating-a-join" id="id72">Creating a Join</a></p>
+<ul>
+<li><p><a class="reference internal" href="#the-importance-of-the-where-clause" id="id73">The Importance of the WHERE Clause</a></p></li>
+<li><p><a class="reference internal" href="#inner-joins" id="id74">Inner Joins</a></p></li>
+<li><p><a class="reference internal" href="#joining-multiple-tables" id="id75">Joining Multiple Tables</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#creating-advanced-joins" id="id76">13.Creating Advanced Joins</a></p>
+<ul>
+<li><p><a class="reference internal" href="#using-table-aliases" id="id77">Using Table Aliases</a></p></li>
+<li>
+<p><a class="reference internal" href="#using-different-join-types" id="id78">Using Different Join Types</a></p>
+<ul>
+<li><p><a class="reference internal" href="#self-joins" id="id79">Self Joins</a></p></li>
+<li><p><a class="reference internal" href="#natural-joins" id="id80">Natural Joins</a></p></li>
+<li><p><a class="reference internal" href="#outer-joins" id="id81">Outer Joins</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#using-joins-with-aggregate-functions" id="id82">Using Joins with Aggregate Functions</a></p></li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#combining-queries" id="id83">14.Combining Queries</a></p>
+<ul>
+<li>
+<p><a class="reference internal" href="#creating-combined-queries" id="id84">Creating Combined Queries</a></p>
+<ul>
+<li><p><a class="reference internal" href="#using-union" id="id85">Using UNION</a></p></li>
+<li><p><a class="reference internal" href="#union-rules" id="id86">UNION Rules</a></p></li>
+<li><p><a class="reference internal" href="#including-or-eliminating-duplicate-rows" id="id87">Including or Eliminating Duplicate Rows</a></p></li>
+<li><p><a class="reference internal" href="#sorting-combined-query-results" id="id88">Sorting Combined Query Results</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#using-views" id="id89">18.Using Views</a></p>
+<ul>
+<li><p><a class="reference internal" href="#understanding-views" id="id90">Understanding Views</a></p></li>
+<li>
+<p><a class="reference internal" href="#creating-views" id="id91">Creating Views</a></p>
+<ul>
+<li><p><a class="reference internal" href="#using-views-to-simplify-complex-joins" id="id92">Using Views to Simplify Complex Joins</a></p></li>
+<li><p><a class="reference internal" href="#using-views-to-reformat-retrieved-data" id="id93">Using Views to Reformat Retrieved Data</a></p></li>
+<li><p><a class="reference internal" href="#using-views-to-filter-unwanted-data" id="id94">Using Views to Filter Unwanted Data</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#inserting-data" id="id95">15.Inserting Data</a></p>
+<ul>
+<li>
+<p><a class="reference internal" href="#understanding-data-insertion" id="id96">Understanding Data Insertion</a></p>
+<ul>
+<li><p><a class="reference internal" href="#inserting-complete-rows" id="id97">Inserting Complete Rows</a></p></li>
+<li><p><a class="reference internal" href="#inserting-partial-rows" id="id98">Inserting Partial Rows</a></p></li>
+<li><p><a class="reference internal" href="#inserting-retrieved-data" id="id99">Inserting Retrieved Data</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#copying-from-one-table-to-another" id="id100">Copying from One Table to Another</a></p></li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#updating-and-deleting-data" id="id101">16.Updating and Deleting Data</a></p>
+<ul>
+<li><p><a class="reference internal" href="#updating-data" id="id102">Updating Data</a></p></li>
+<li><p><a class="reference internal" href="#deleting-data" id="id103">Deleting Data</a></p></li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#creating-and-manipulating-tables" id="id104">17.Creating and Manipulating Tables</a></p>
+<ul>
+<li>
+<p><a class="reference internal" href="#creating-tables" id="id105">Creating Tables</a></p>
+<ul>
+<li><p><a class="reference internal" href="#basic-table-creation" id="id106">Basic Table Creation</a></p></li>
+<li><p><a class="reference internal" href="#working-with-null-values" id="id107">Working With Null Values</a></p></li>
+<li><p><a class="reference internal" href="#specifying-default-values" id="id108">Specifying Default Values</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#updating-tables" id="id109">Updating Tables</a></p></li>
+<li><p><a class="reference internal" href="#deleting-tables" id="id110">Deleting Tables</a></p></li>
+<li><p><a class="reference internal" href="#renaming-tables" id="id111">Renaming Tables</a></p></li>
+<li><p><a class="reference internal" href="#summary" id="id112">Summary</a></p></li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#working-with-stored-procedures" id="id113">19.Working with Stored Procedures</a></p>
+<ul>
+<li><p><a class="reference internal" href="#executing-stored-procedures" id="id114">Executing Stored Procedures</a></p></li>
+<li><p><a class="reference internal" href="#creating-stored-procedures" id="id115">Creating Stored Procedures</a></p></li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#managing-transaction-processing" id="id116">20.Managing Transaction Processing</a></p>
+<ul>
+<li>
+<p><a class="reference internal" href="#controlling-transactions" id="id117">Controlling Transactions</a></p>
+<ul>
+<li><p><a class="reference internal" href="#using-rollback" id="id118">Using Rollback</a></p></li>
+<li><p><a class="reference internal" href="#using-commit" id="id119">Using Commit</a></p></li>
+<li><p><a class="reference internal" href="#using-savepoints" id="id120">Using Savepoints</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#using-cursors" id="id121">21.Using Cursors</a></p>
+<ul>
+<li>
+<p><a class="reference internal" href="#working-with-cursors" id="id122">Working With Cursors</a></p>
+<ul>
+<li><p><a class="reference internal" href="#creating-cursors" id="id123">Creating Cursors</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id124">Using Cursors</a></p></li>
+<li><p><a class="reference internal" href="#closing-cursors" id="id125">Closing Cursors</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#understanding-advanced-sql-features" id="id126">22.Understanding Advanced SQL Features</a></p>
+<ul>
+<li>
+<p><a class="reference internal" href="#understanding-constraints" id="id127">Understanding Constraints</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id3" id="id128">Primary Keys</a></p></li>
+<li><p><a class="reference internal" href="#foreign-keys" id="id129">Foreign Keys</a></p></li>
+<li><p><a class="reference internal" href="#unique-constraints" id="id130">Unique Constraints</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#understanding-indexes" id="id131">Understanding Indexes</a></p></li>
+<li><p><a class="reference internal" href="#understanding-triggers" id="id132">Understanding Triggers</a></p></li>
+<li><p><a class="reference internal" href="#database-security" id="id133">Database Security</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id134">Summary</a></p></li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#appendix-c-sql-statement-syntax" id="id135">Appendix C. SQL Statement Syntax</a></p>
+<ul>
+<li><p><a class="reference internal" href="#alter-table" id="id136">ALTER TABLE</a></p></li>
+<li><p><a class="reference internal" href="#commit" id="id137">COMMIT</a></p></li>
+<li><p><a class="reference internal" href="#create-index" id="id138">CREATE INDEX</a></p></li>
+<li><p><a class="reference internal" href="#create-procedure" id="id139">CREATE PROCEDURE</a></p></li>
+<li><p><a class="reference internal" href="#create-table" id="id140">CREATE TABLE</a></p></li>
+<li><p><a class="reference internal" href="#create-view" id="id141">CREATE VIEW</a></p></li>
+<li><p><a class="reference internal" href="#delete" id="id142">DELETE</a></p></li>
+<li><p><a class="reference internal" href="#drop" id="id143">DROP</a></p></li>
+<li><p><a class="reference internal" href="#insert" id="id144">INSERT</a></p></li>
+<li><p><a class="reference internal" href="#insert-select" id="id145">INSERT SELECT</a></p></li>
+<li><p><a class="reference internal" href="#rollback" id="id146">ROLLBACK</a></p></li>
+<li><p><a class="reference internal" href="#select" id="id147">SELECT</a></p></li>
+<li><p><a class="reference internal" href="#update" id="id148">UPDATE</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#publish" id="id149">Publish</a></p></li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h2><a class="toc-backref" href="#id5">Introduction</a></h2>
+<p>This book was born out of necessity.</p>
+<p>I had been teaching Web application development for several years, and students were constantly asking for SQL book recommendations. There are lots of SQL books out there. Some are actually very good. But they all have one thing in common: for most users they teach just too much information. Instead of teaching SQL itself, most books teach everything from database design and normalization to relational database theory and administrative concerns. And while those are all important topics, they are not of interest to most of us who just need to learn SQL. And so, not finding a single book that I felt comfortable recommending, I turned that classroom experience into the book you are holding. Sams Teach Yourself SQL in 10 Minutes will teach you SQL you need to know, starting with simple data retrieval and working on to more complex topics including the use of joins, subqueries, stored procedures, cursors, ??triggers, and table constraints. You’ll learn methodically, systematically, and simply—in lessons that will each take 10 minutes or less to complete. Now in its fourth edition, this book has taught SQL to over a quarter million English speaking users, and has been translated into over a dozen other languages too so as to help users the globe over. And now it is your turn. So turn to Lesson 1, and get to work. You’ll be writing world class SQL in no time at all.</p>
+<div class="section" id="dbmss-covered-in-this-book">
+<h3><a class="toc-backref" href="#id6">DBMSs Covered in This Book</a></h3>
+<p>For the most part, the SQL taught in this book will apply to any Database Management System (DBMS). However, as all SQL implementations are not created equal,</p>
+<p>the following DBMSs are explicitly covered (and specific instructions or notes are included where needed): • Apache Open Office Base • IBM DB2 • Microsoft Access • Microsoft SQL Server (including Microsoft SQL Server Express) • MariaDB • MySQL • Oracle (including Oracle Express) • PostgreSQL • SQLite Example databases (or SQL scripts to create the example databases) are available for all of these DBMSs on the book webpage at <a class="reference external" href="http://forta.com/books/0672336073/">http://forta.com/books/0672336073/</a> Errors: <a class="reference external" href="https://forta.com/books/0672336073/errata/">https://forta.com/books/0672336073/errata/</a></p>
+</div>
+</div>
+<div class="section" id="understanding-sql">
+<h2><a class="toc-backref" href="#id7">1 Understanding SQL</a></h2>
+<p>总结 database, table, column, row, primary key</p>
+<div class="section" id="databases">
+<h3><a class="toc-backref" href="#id8">Databases</a></h3>
+<p>The term database is used in many different ways, but for our purposes (and indeed, from SQL’s perspective) a database is a collection of data stored in some organized fashion. The simplest way to think of it is to imagine a database as a filing cabinet. The filing cabinet is simply a physical location to store data, regardless of what that data is or how it is organized.</p>
+<blockquote>
+<p>Database</p>
+<p>A container (usually a file or set of files) to store organized data.</p>
+<p>Caution: Misuse Causes Confusion</p>
+<p>People often use the term database to refer to the database software they are running. This is incorrect, and it is a source of much confusion. Database software is actually called the Database Management System (or DBMS). The database is the container created and manipulated via the DBMS, and exactly what the database is and what form it takes varies from one database to the next.</p>
+</blockquote>
+</div>
+<div class="section" id="tables">
+<h3><a class="toc-backref" href="#id9">Tables</a></h3>
+<p>When you store information in your filing cabinet, you don’t just {phase:toss it in a drawer}. Rather, you create files within the filing cabinet, and then you file related data in specific files.</p>
+<p>In the database world, that file is called a table. A table is a structured file that can store data of a specific type. A table might contain a list of customers, a product catalog, or any other list of information.</p>
+<blockquote>
+<p>Table is a file A structured list of data of a specific type.</p>
+</blockquote>
+<p>The key here is that the data stored in the table is one type of data or one list. You would never store a list of customers and a list of orders in the same database table. Doing so would make subsequent retrieval and access difficult. Rather, you’d create two tables, one for each list.</p>
+<p>Every table in a database has a name that identifies it. That name is always unique— meaning no other table in that database can have the same name.</p>
+<blockquote>
+<p>Note: Table Names</p>
+<p>What makes a table name unique is actually a combination of several things including the database name and table name. Some databases also use the name of the database owner as part of the unique name. This means that while you cannot use the same table name twice in the same database, you definitely can reuse table names in different databases.</p>
+</blockquote>
+<p>Tables have characteristics and properties that define how data is stored in them. These include information about what data may be stored, how it is broken up, how individual pieces of information are named, and much more. This set of information that describes a table is known as a schema, and schemas are used to describe specific tables within a database, as well as entire databases (and the relationship between tables in them, if any).</p>
+<blockquote>
+<p>Schema</p>
+<p>Information about database and table layout and properties.</p>
+</blockquote>
+</div>
+<div class="section" id="columns-and-datatypes-field">
+<h3><a class="toc-backref" href="#id10">Columns and Datatypes Field</a></h3>
+<p>Tables are made up of columns. A column contains a particular piece of information within a table.</p>
+<p>Column A single field in a table. All tables are made up of one or more columns.</p>
+<p>The best way to understand this is to envision database tables as grids, somewhat like spreadsheets. Each column in the grid contains a particular piece of information. In a customer table, for example, one column contains the customer number, another contains the customer name, and the address, city, state, and ZIP code are all stored in their own columns.</p>
+<p>Tip: Breaking Up Data It is extremely important to break data into multiple columns correctly. For example, city, state, and ZIP code should always be separate columns. By breaking these out, it becomes possible to sort or filter data by specific columns (for example, to find all customers in a particular state or in a particular city). If city and state are combined into one column, it would be extremely difficult to sort or filter by state.</p>
+<p>When you break up data, the level of granularity is up to you and your specific requirements. For example, addresses are typically stored with the house number and street name together. This is fine, unless you might one day need to sort data by street name, in which case splitting house number and street name would be preferable.</p>
+<p>Each column in a database has an associated datatype. A datatype defines what type of data the column can contain. For example, if the column were to contain a number(perhaps the number of items in an order), the datatype would be a numeric datatype. If the column were to contain dates, text, notes, currency amounts, and so on, the appropriate datatype would be used to specify this.</p>
+<p>Datatype</p>
+<p>A type of allowed data. Every table column has an associated datatype that restricts (or allows) specific data in that column.</p>
+<p>Datatypes restrict the type of data that can be stored in a column (for example, preventing the entry of alphabetical characters into a numeric field). Datatypes also help sort data correctly and play an important role in optimizing disk usage. As such, special attention must be given to picking the right datatype when tables are created.</p>
+<p>Caution: Datatype Compatibility</p>
+<p>Datatypes and their names are one of the primary sources of SQL incompatibility. While most basic datatypes are supported consistently, many more advanced datatypes are not. And worse, occasionally you’ll find that the same datatype is referred to by different names in different DBMSs. There is not much you can do about this, but it is important to keep in mind when you create table schemas.</p>
+</div>
+<div class="section" id="rows-record">
+<h3><a class="toc-backref" href="#id11">Rows record</a></h3>
+<p>Data in a table is stored in rows; each record saved is stored in its own row. Again, envisioning a table as a spreadsheet style grid, the vertical columns in the grid are the table columns, and the horizontal rows are the table rows.</p>
+<p>For example, a customers table might store one customer per row. The number of rows in the table is the number of records in it.</p>
+<p>Rows A record in a table. Note: Records or Rows?</p>
+<p>You may hear users refer to database records when referring to rows. For the most part the two terms are used interchangeably, but row is technically the correct term.</p>
+</div>
+<div class="section" id="primary-keys">
+<h3><a class="toc-backref" href="#id12">Primary Keys</a></h3>
+<p>Every row in a table should have some column (or set of columns) that uniquely identifies it. A table containing customers might use a customer number column for this purpose, whereas a table containing orders might use the order ID. An employee list table might use an employee ID or the employee Social Security number column.</p>
+<p>Primary key</p>
+<p>A column (or set of columns) whose values uniquely identify every row in a table.</p>
+<p>This column (or set of columns) that uniquely identifies each row in a table is called a primary key. The primary key is used to refer to a specific row. Without a primary key, updating or deleting specific rows in a table becomes extremely difficult as there is no guaranteed safe way to refer to just the rows to be affected.</p>
+<p>Tip: Always Define Primary Keys</p>
+<p>Although primary keys are not actually required, most database designers ensure that every table they create has a primary key so that future data manipulation is possible and manageable.</p>
+<p>Any column in a table can be established as the primary key, as long as it meets the following conditions:</p>
+<ol class="arabic simple">
+<li><p>No two rows can have the same primary key value.</p></li>
+<li><p>Every row must have a primary key value. (Primary key columns may not allow NULL values.)</p></li>
+<li><p>Values in primary key columns should never be modified or updated.</p></li>
+<li><p>Primary key values should never be reused. (If a row is deleted from the table, its primary key may not be assigned to any new rows in the future.)</p></li>
+</ol>
+<p>Primary keys are usually defined on a single column within a table. But this is not required, and multiple columns may be used together as a primary key. When multiple columns are used, the rules listed above must apply to all columns, and the values of all columns together must be unique (individual columns need not have unique values).</p>
+<p>There is another very important type of key called a foreign key, but I’ll get to that later on in Lesson 12, “Joining Tables.”</p>
+</div>
+</div>
+<div class="section" id="retrieving-data">
+<h2><a class="toc-backref" href="#id13">2 Retrieving Data</a></h2>
+<p>总结: select, retrieve individual, multiple, all 概念: distinct limit, offset</p>
+<div class="section" id="retrieving-individual-column">
+<h3><a class="toc-backref" href="#id14">Retrieving Individual Column</a></h3>
+<pre class="code sql"><a name="rest_code_4049af15ace7481192b79ae49867cabe-1"></a><span class="k">select</span> <span class="n">prod_name</span> <span class="k">from</span> <span class="n">Products</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="retrieving-multiple-columns">
+<h3><a class="toc-backref" href="#id15">Retrieving Multiple Columns</a></h3>
+<pre class="code sql"><a name="rest_code_41fe6357c8524dd4b653e4f89bab27bc-1"></a><span class="k">select</span> <span class="n">prod_id</span><span class="p">,</span> <span class="n">prod_name</span><span class="p">,</span> <span class="n">prod_price</span> <span class="k">from</span> <span class="n">Products</span><span class="p">;</span>
+<a name="rest_code_41fe6357c8524dd4b653e4f89bab27bc-2"></a><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">Products</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="retrieving-all-columns">
+<h3><a class="toc-backref" href="#id16">Retrieving All Columns</a></h3>
+<pre class="code sql"><a name="rest_code_aec2cd0f512c487a9676e7ce6e7794c8-1"></a><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">Products</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="retrieving-distinct-column">
+<h3><a class="toc-backref" href="#id17">Retrieving Distinct Column</a></h3>
+<pre class="code sql"><a name="rest_code_d7dff51b1eff4e0d802a59d3947d85cc-1"></a><span class="k">select</span> <span class="n">vend_id</span> <span class="k">from</span> <span class="n">Products</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_803c056671e145a3ab0febc54b8eeae3-1"></a><span class="k">select</span> <span class="k">distinct</span> <span class="n">vend_id</span> <span class="k">from</span> <span class="n">Products</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="limiting-results">
+<h3><a class="toc-backref" href="#id18">Limiting Results</a></h3>
+<pre class="code sql"><a name="rest_code_c9a8a1e32bf64ae8812ed7a52c6005a1-1"></a><span class="k">select</span> <span class="n">prod_name</span> <span class="k">from</span> <span class="n">Products</span>  <span class="k">limit</span> <span class="mi">5</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_df87b81531b44595bac13f84cd47c868-1"></a><span class="k">select</span> <span class="n">prod_name</span> <span class="k">from</span> <span class="n">Products</span> <span class="k">limit</span> <span class="mi">5</span> <span class="k">offset</span> <span class="mi">5</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="using-comments">
+<h3><a class="toc-backref" href="#id19">Using Comments</a></h3>
+<pre class="code sql"><a name="rest_code_d90c1b50d7224d6e91e7df40682b9da6-1"></a><span class="k">SELECT</span> <span class="n">prod_name</span> <span class="c1">-- this is a comment FROM Products;</span>
+</pre>
+</div>
+</div>
+<div class="section" id="sorting-retrieved-data">
+<h2><a class="toc-backref" href="#id20">3.Sorting Retrieved Data</a></h2>
+<p>In this lesson, you will learn how to use the SELECT statement's ORDER BY clause to sort retrieved data as needed.</p>
+<p>关键词 <code class="docutils literal">order by</code>, 需要放置到最后 individual columm, multiple columns, column postion, sort direction 接在retrieve之后.</p>
+<div class="section" id="sorting-data">
+<h3><a class="toc-backref" href="#id21">Sorting Data</a></h3>
+<pre class="code sql"><a name="rest_code_0db2453c96e24004b3921059b5280d6f-1"></a><span class="k">select</span> <span class="n">prod_name</span> <span class="k">from</span> <span class="n">Products</span> <span class="k">order</span> <span class="k">by</span> <span class="n">prod_name</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="sorting-by-multiple-columns">
+<h3><a class="toc-backref" href="#id22">Sorting by Multiple Columns</a></h3>
+<pre class="code sql"><a name="rest_code_39ef07a4e07d4da683227dc06a0c5d85-1"></a><span class="k">select</span> <span class="n">prod_id</span><span class="p">,</span> <span class="n">prod_price</span><span class="p">,</span> <span class="n">prod_name</span>
+<a name="rest_code_39ef07a4e07d4da683227dc06a0c5d85-2"></a><span class="k">from</span> <span class="n">Products</span>
+<a name="rest_code_39ef07a4e07d4da683227dc06a0c5d85-3"></a><span class="k">order</span> <span class="k">by</span> <span class="n">prod_price</span><span class="p">,</span> <span class="n">prod_name</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="sorting-by-column-position">
+<h3><a class="toc-backref" href="#id23">Sorting by Column Position</a></h3>
+<pre class="code sql"><a name="rest_code_6ab2ca81199a48d4b631b8ad8724c8ae-1"></a><span class="k">select</span> <span class="n">prod_id</span><span class="p">,</span> <span class="n">prod_price</span><span class="p">,</span> <span class="n">prod_name</span> <span class="k">from</span> <span class="n">Products</span> <span class="k">order</span> <span class="k">by</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="specifying-sort-direction">
+<h3><a class="toc-backref" href="#id24">Specifying Sort Direction</a></h3>
+<pre class="code sql"><a name="rest_code_7811a5b1f8494aa3867925f6c0aef8ae-1"></a><span class="k">select</span> <span class="n">prod_id</span><span class="p">,</span> <span class="n">prod_price</span><span class="p">,</span> <span class="n">prod_name</span>
+<a name="rest_code_7811a5b1f8494aa3867925f6c0aef8ae-2"></a><span class="k">from</span> <span class="n">Products</span>
+<a name="rest_code_7811a5b1f8494aa3867925f6c0aef8ae-3"></a><span class="k">order</span> <span class="k">by</span> <span class="n">prod_price</span> <span class="k">desc</span><span class="p">,</span> <span class="n">prod_name</span> <span class="k">desc</span><span class="p">;</span>
+</pre>
+</div>
+</div>
+<div class="section" id="filtering-data">
+<h2><a class="toc-backref" href="#id25">4.Filtering Data</a></h2>
+<p>总结, 开始filter filter, where clause, single value; nonmatches, a range(between), null</p>
+<div class="section" id="using-the-where-clause">
+<h3><a class="toc-backref" href="#id26">Using the WHERE Clause</a></h3>
+<p>select prod<sub>name</sub>, prod<sub>price</sub> from Products where prod<sub>price</sub> &gt; 3.49</p>
+<p>#+end<sub>src</sub></p>
+</div>
+<div class="section" id="the-where-clause-operators">
+<h3><a class="toc-backref" href="#id27">The WHERE Clause Operators</a></h3>
+<div class="figure">
+<img alt="Screen Shot 2018-08-11 at 10.03.13 PM" src="http://heropublic.oss-cn-beijing.aliyuncs.com/140327.png"><p class="caption">Screen Shot 2018-08-11 at 10.03.13 PM</p>
+</div>
+<div class="section" id="checking-against-a-single-value">
+<h4><a class="toc-backref" href="#id28">Checking Against a Single Value</a></h4>
+<pre class="code sql"><a name="rest_code_9afe77ba9b7a435ea9ebb522e92e5b7a-1"></a><span class="k">select</span> <span class="n">prod_name</span><span class="p">,</span> <span class="n">prod_price</span>
+<a name="rest_code_9afe77ba9b7a435ea9ebb522e92e5b7a-2"></a><span class="k">from</span> <span class="n">Products</span>
+<a name="rest_code_9afe77ba9b7a435ea9ebb522e92e5b7a-3"></a><span class="k">where</span> <span class="n">prod_price</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="checking-for-nonmatches">
+<h4><a class="toc-backref" href="#id29">Checking for Nonmatches</a></h4>
+<pre class="code sql"><a name="rest_code_5388a62ecffb4456969fc62b61a967d1-1"></a><span class="k">select</span> <span class="n">vend_id</span><span class="p">,</span> <span class="n">prod_name</span> <span class="k">from</span> <span class="n">Products</span> <span class="k">where</span> <span class="n">vend_id</span> <span class="o">!=</span> <span class="ss">"DLL01"</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="checking-for-a-range-of-values">
+<h4><a class="toc-backref" href="#id30">Checking for a Range of Values</a></h4>
+<pre class="code sql"><a name="rest_code_cdef96a2eb164f3782079d8c40b09573-1"></a><span class="k">select</span> <span class="n">prod_name</span><span class="p">,</span> <span class="n">prod_price</span> <span class="k">from</span> <span class="n">Products</span> <span class="k">where</span> <span class="n">prod_price</span> <span class="k">between</span> <span class="mi">3</span><span class="p">.</span><span class="mi">49</span> <span class="k">and</span> <span class="mi">11</span><span class="p">.</span><span class="mi">99</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="checking-for-no-value">
+<h4><a class="toc-backref" href="#id31">Checking for No Value</a></h4>
+<pre class="code sql"><a name="rest_code_9a94eef847f74d92919801fdaaa92c9b-1"></a><span class="k">select</span> <span class="n">prod_name</span>
+<a name="rest_code_9a94eef847f74d92919801fdaaa92c9b-2"></a><span class="k">from</span> <span class="n">Products</span>
+<a name="rest_code_9a94eef847f74d92919801fdaaa92c9b-3"></a><span class="k">where</span> <span class="n">prod_price</span> <span class="k">is</span> <span class="k">null</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_db3e56785a8042479fc8cf853ca0c33b-1"></a><span class="k">select</span> <span class="n">cust_name</span>
+<a name="rest_code_db3e56785a8042479fc8cf853ca0c33b-2"></a><span class="k">from</span> <span class="n">Customers</span>
+<a name="rest_code_db3e56785a8042479fc8cf853ca0c33b-3"></a><span class="k">where</span> <span class="n">cust_email</span> <span class="k">is</span> <span class="k">null</span><span class="p">;</span>
+</pre>
+</div>
+</div>
+</div>
+<div class="section" id="advanced-data-filtering">
+<h2><a class="toc-backref" href="#id32">5.Advanced Data Filtering</a></h2>
+<p>总结: 从关键词combine出发. and, or, () which indicate order of evaluation. use in(memberp), not</p>
+<div class="section" id="combining-where-clauses">
+<h3><a class="toc-backref" href="#id33">Combining WHERE Clauses</a></h3>
+<div class="section" id="using-the-and-operator">
+<h4><a class="toc-backref" href="#id34">Using the AND Operator</a></h4>
+<pre class="code sql"><a name="rest_code_c4aeefcfd14543dfa90424982724bcb7-1"></a><span class="k">select</span> <span class="n">prod_id</span><span class="p">,</span> <span class="n">prod_price</span><span class="p">,</span> <span class="n">prod_name</span>
+<a name="rest_code_c4aeefcfd14543dfa90424982724bcb7-2"></a><span class="k">from</span> <span class="n">Products</span>
+<a name="rest_code_c4aeefcfd14543dfa90424982724bcb7-3"></a><span class="k">where</span> <span class="n">vend_id</span> <span class="o">=</span> <span class="ss">"DLL01"</span> <span class="k">and</span> <span class="n">prod_price</span> <span class="o">&lt;=</span> <span class="mi">4</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="using-the-or-operator">
+<h4><a class="toc-backref" href="#id35">Using the OR Operator</a></h4>
+<pre class="code sql"><a name="rest_code_1d6ad232d4a74e8292e1901fb54c6795-1"></a><span class="k">select</span> <span class="n">vend_id</span><span class="p">,</span> <span class="n">prod_name</span><span class="p">,</span> <span class="n">prod_price</span>
+<a name="rest_code_1d6ad232d4a74e8292e1901fb54c6795-2"></a><span class="k">from</span> <span class="n">Products</span>
+<a name="rest_code_1d6ad232d4a74e8292e1901fb54c6795-3"></a><span class="k">where</span> <span class="n">vend_id</span><span class="o">=</span><span class="ss">"DLL01"</span> <span class="k">or</span> <span class="n">vend_id</span> <span class="o">=</span> <span class="ss">"BRS01"</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="understanding-order-of-evaluation">
+<h4><a class="toc-backref" href="#id36">Understanding Order of Evaluation</a></h4>
+<pre class="code sql"><a name="rest_code_2c5b6313ebf14ebcb4b48a0b4da9ce41-1"></a><span class="k">select</span> <span class="n">vend_id</span><span class="p">,</span> <span class="n">prod_name</span><span class="p">,</span> <span class="n">prod_price</span>
+<a name="rest_code_2c5b6313ebf14ebcb4b48a0b4da9ce41-2"></a><span class="k">from</span> <span class="n">Products</span>
+<a name="rest_code_2c5b6313ebf14ebcb4b48a0b4da9ce41-3"></a><span class="k">where</span> <span class="n">vend_id</span> <span class="o">=</span> <span class="ss">"DLL01"</span> <span class="k">or</span> <span class="n">vend_Id</span> <span class="o">=</span> <span class="ss">"BRS01"</span> <span class="k">and</span> <span class="n">prod_price</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_c5fbf179a11f4eb7b0363788bcafed78-1"></a><span class="k">select</span> <span class="n">vend_id</span><span class="p">,</span> <span class="n">prod_name</span><span class="p">,</span> <span class="n">prod_price</span>
+<a name="rest_code_c5fbf179a11f4eb7b0363788bcafed78-2"></a><span class="k">from</span> <span class="n">Products</span>
+<a name="rest_code_c5fbf179a11f4eb7b0363788bcafed78-3"></a><span class="k">where</span> <span class="p">(</span><span class="n">vend_id</span> <span class="o">=</span> <span class="ss">"DLL01"</span> <span class="k">or</span> <span class="n">vend_id</span> <span class="o">=</span> <span class="ss">"BRS01"</span><span class="p">)</span> <span class="k">and</span> <span class="n">prod_price</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">;</span>
+</pre>
+</div>
+</div>
+<div class="section" id="using-the-in-operator">
+<h3><a class="toc-backref" href="#id37">Using the IN Operator</a></h3>
+<pre class="code sql"><a name="rest_code_aef1370dcb1a41f293d41e8676e3b162-1"></a><span class="k">select</span> <span class="n">prod_name</span><span class="p">,</span> <span class="n">prod_price</span> <span class="k">from</span> <span class="n">Products</span> <span class="k">where</span> <span class="n">vend_id</span> <span class="k">in</span> <span class="p">(</span><span class="ss">"dll01"</span><span class="p">,</span><span class="ss">"brs01"</span><span class="p">)</span>  <span class="k">order</span> <span class="k">by</span> <span class="n">prod_name</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_9f89124adebb490597516524d2011c73-1"></a><span class="k">select</span> <span class="n">prod_name</span><span class="p">,</span> <span class="n">prod_price</span> <span class="k">from</span> <span class="n">Products</span> <span class="k">where</span> <span class="n">vend_id</span> <span class="o">=</span> <span class="ss">"DLL01"</span> <span class="k">or</span>
+<a name="rest_code_9f89124adebb490597516524d2011c73-2"></a><span class="n">vend_id</span> <span class="o">=</span> <span class="ss">"BRS01"</span> <span class="k">order</span> <span class="k">by</span> <span class="n">prod_name</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="using-the-not-operator">
+<h3><a class="toc-backref" href="#id38">Using the NOT Operator</a></h3>
+<pre class="code sql"><a name="rest_code_c26fd3b148ad4a099f475375d6470de1-1"></a><span class="k">select</span> <span class="n">prod_name</span><span class="p">,</span> <span class="n">vend_id</span>
+<a name="rest_code_c26fd3b148ad4a099f475375d6470de1-2"></a><span class="k">from</span> <span class="n">Products</span>
+<a name="rest_code_c26fd3b148ad4a099f475375d6470de1-3"></a><span class="k">where</span> <span class="k">not</span> <span class="n">vend_id</span> <span class="o">=</span> <span class="ss">"DLL01"</span>
+<a name="rest_code_c26fd3b148ad4a099f475375d6470de1-4"></a><span class="k">order</span> <span class="k">by</span> <span class="mi">1</span><span class="p">;</span>
+</pre>
+</div>
+</div>
+<div class="section" id="using-wildcard-filtering">
+<h2><a class="toc-backref" href="#id39">6.Using Wildcard Filtering</a></h2>
+<p>总结 从wildcard出发,推导出来regex的必要性. %, _, brackets 当然最重要的一点是regex, 日后便只用rlike</p>
+<div class="section" id="id1">
+<span id="using-wildcard-filtering-1"></span><h3><a class="toc-backref" href="#id40">Using Wildcard Filtering</a></h3>
+<div class="section" id="the-percent-sign-wildcard">
+<h4><a class="toc-backref" href="#id41">The Percent Sign (%) Wildcard</a></h4>
+<pre class="code sql"><a name="rest_code_d55479bf30b944d09138de2b37eefde9-1"></a><span class="k">select</span> <span class="n">prod_id</span><span class="p">,</span> <span class="n">prod_name</span> <span class="k">from</span> <span class="n">Products</span> <span class="k">where</span> <span class="n">prod_name</span> <span class="k">like</span>  <span class="ss">"fish%"</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_3a9a1694b4814d67a7d51043071321e9-1"></a><span class="k">select</span> <span class="n">prod_id</span><span class="p">,</span> <span class="n">prod_name</span>
+<a name="rest_code_3a9a1694b4814d67a7d51043071321e9-2"></a><span class="k">from</span> <span class="n">Products</span>
+<a name="rest_code_3a9a1694b4814d67a7d51043071321e9-3"></a><span class="k">where</span> <span class="n">prod_name</span> <span class="k">like</span> <span class="ss">"%bean bag%"</span>
+</pre>
+<pre class="code sql"><a name="rest_code_a7cb737399cb45b1b6cb9590dbd82234-1"></a><span class="k">select</span> <span class="n">prod_name</span> <span class="k">from</span> <span class="n">Products</span> <span class="k">where</span> <span class="n">prod_name</span> <span class="k">like</span> <span class="ss">"f%y"</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="the-underscore-wildcard">
+<h4><a class="toc-backref" href="#id42">The Underscore (_) Wildcard</a></h4>
+<pre class="code sql"><a name="rest_code_9a3f3323fc774b2e9606736d1f851aa5-1"></a><span class="k">select</span> <span class="n">prod_name</span><span class="p">,</span> <span class="n">prod_price</span>
+<a name="rest_code_9a3f3323fc774b2e9606736d1f851aa5-2"></a><span class="k">from</span> <span class="n">Products</span>
+<a name="rest_code_9a3f3323fc774b2e9606736d1f851aa5-3"></a><span class="k">where</span> <span class="n">prod_name</span> <span class="k">like</span> <span class="ss">"__ inch teddy bear"</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_89ee0b60200f45c2887d2f37d0be7e51-1"></a><span class="k">select</span> <span class="n">prod_id</span><span class="p">,</span> <span class="n">prod_name</span> <span class="k">from</span> <span class="n">Products</span>
+<a name="rest_code_89ee0b60200f45c2887d2f37d0be7e51-2"></a><span class="k">where</span> <span class="n">prod_name</span> <span class="k">like</span>  <span class="ss">"%inch teddy bear"</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="the-brackets-wildcard">
+<h4><a class="toc-backref" href="#id43">The Brackets ([]) Wildcard</a></h4>
+<pre class="code sql"><a name="rest_code_aa14a40ae4914c13a507161571d461de-1"></a><span class="k">select</span> <span class="n">cust_contact</span> <span class="k">from</span> <span class="n">Customers</span> <span class="k">where</span> <span class="n">cust_contact</span> <span class="n">rlike</span>
+<a name="rest_code_aa14a40ae4914c13a507161571d461de-2"></a><span class="s1">'[JM].*'</span> <span class="k">order</span> <span class="k">by</span> <span class="n">cust_contact</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_cec9bdc0d9764368b510125d7d7e140d-1"></a><span class="k">select</span> <span class="n">cust_contact</span> <span class="k">from</span> <span class="n">Customers</span> <span class="k">where</span> <span class="n">cust_contact</span> <span class="n">rlike</span>
+<a name="rest_code_cec9bdc0d9764368b510125d7d7e140d-2"></a><span class="ss">"[^JM].*"</span> <span class="k">order</span> <span class="k">by</span> <span class="n">cust_contact</span><span class="p">;</span>
+</pre>
+</div>
+</div>
+</div>
+<div class="section" id="creating-calculated-fields">
+<h2><a class="toc-backref" href="#id44">7.Creating Calculated Fields</a></h2>
+<p>最有意思的一点便是用select测试functions and calcuations calculated field, concat, alias, true calcualtion(expanded price) contat便是对字符串预处理. 从calculated fields引出来</p>
+<div class="section" id="concatenating-fields">
+<h3><a class="toc-backref" href="#id45">Concatenating Fields</a></h3>
+<pre class="code sql"><a name="rest_code_65b793aeecb14031b541723c56b0e8c2-1"></a><span class="k">select</span> <span class="n">concat</span><span class="p">(</span><span class="n">vend_name</span><span class="p">,</span> <span class="ss">"("</span><span class="p">,</span> <span class="n">vend_country</span><span class="p">,</span> <span class="ss">")"</span><span class="p">)</span>
+<a name="rest_code_65b793aeecb14031b541723c56b0e8c2-2"></a><span class="k">from</span> <span class="n">Vendors</span>
+<a name="rest_code_65b793aeecb14031b541723c56b0e8c2-3"></a><span class="k">order</span> <span class="k">by</span> <span class="n">vend_name</span><span class="p">;</span>
+</pre>
+<div class="section" id="using-aliases">
+<h4><a class="toc-backref" href="#id46">Using Aliases</a></h4>
+<pre class="code sql"><a name="rest_code_0b9f75d9edeb46b197368d922b60cbc3-1"></a><span class="k">select</span> <span class="n">concat</span><span class="p">(</span><span class="n">vend_name</span><span class="p">,</span> <span class="ss">" ("</span><span class="p">,</span> <span class="n">vend_country</span><span class="p">,</span> <span class="ss">")"</span><span class="p">)</span> <span class="k">as</span> <span class="n">vend_title</span>
+<a name="rest_code_0b9f75d9edeb46b197368d922b60cbc3-2"></a><span class="k">from</span> <span class="n">Vendors</span>
+<a name="rest_code_0b9f75d9edeb46b197368d922b60cbc3-3"></a><span class="k">order</span> <span class="k">by</span> <span class="n">vend_name</span><span class="p">;</span>
+</pre>
+</div>
+</div>
+<div class="section" id="performing-mathematical-calcualtions">
+<h3><a class="toc-backref" href="#id47">Performing Mathematical Calcualtions</a></h3>
+<pre class="code sql"><a name="rest_code_effd75c7e28e4f88b80e98027914d87e-1"></a><span class="k">select</span> <span class="n">prod_id</span><span class="p">,</span><span class="n">quantity</span><span class="p">,</span> <span class="n">item_price</span><span class="p">,</span>
+<a name="rest_code_effd75c7e28e4f88b80e98027914d87e-2"></a><span class="n">quantity</span><span class="o">*</span><span class="n">item_price</span> <span class="k">as</span> <span class="n">expanded_price</span>
+<a name="rest_code_effd75c7e28e4f88b80e98027914d87e-3"></a><span class="k">from</span> <span class="n">OrderItems</span>
+<a name="rest_code_effd75c7e28e4f88b80e98027914d87e-4"></a><span class="k">where</span> <span class="n">order_num</span> <span class="o">=</span> <span class="mi">20008</span><span class="p">;</span>
+</pre>
+<p><strong>Table 7.1. SQL Mathematical Operators</strong></p>
+<p><a class="reference external" href="http://heropublic.oss-cn-beijing.aliyuncs.com/024821">http://heropublic.oss-cn-beijing.aliyuncs.com/024821</a></p>
+</div>
+</div>
+<div class="section" id="using-data-manipulation-functions">
+<h2><a class="toc-backref" href="#id48">8.Using Data Manipulation Functions</a></h2>
+<p>总结 functions中的4点:</p>
+<ol class="arabic simple">
+<li><p>text (soundex) ;;最有意思的一点.</p></li>
+<li><p>numeric</p></li>
+<li><p>date and time</p></li>
+<li><p>system infos</p></li>
+</ol>
+<div class="section" id="understanding-functions">
+<h3><a class="toc-backref" href="#id49">Understanding Functions</a></h3>
+<div class="section" id="the-problem-with-functions">
+<h4><a class="toc-backref" href="#id50">The Problem with Functions</a></h4>
+<div class="figure">
+<img alt="Screen Shot 2018-08-12 at 10.59.11 AM" src="http://heropublic.oss-cn-beijing.aliyuncs.com/025926.png"><p class="caption">Screen Shot 2018-08-12 at 10.59.11 AM</p>
+</div>
+</div>
+</div>
+<div class="section" id="using-functions">
+<h3><a class="toc-backref" href="#id51">Using Functions</a></h3>
+<div class="section" id="text-manipulation-functions">
+<h4><a class="toc-backref" href="#id52">Text Manipulation Functions</a></h4>
+<pre class="code sql"><a name="rest_code_8b44e2c38a434421b10750d42820d51f-1"></a><span class="k">select</span> <span class="n">vend_name</span><span class="p">,</span> <span class="k">upper</span><span class="p">(</span><span class="n">vend_name</span><span class="p">)</span> <span class="k">as</span> <span class="n">vend_name_upcase</span>
+<a name="rest_code_8b44e2c38a434421b10750d42820d51f-2"></a><span class="k">from</span> <span class="n">Vendors</span>
+<a name="rest_code_8b44e2c38a434421b10750d42820d51f-3"></a><span class="k">order</span> <span class="k">by</span> <span class="n">vend_name</span><span class="p">;</span>
+</pre>
+<p><strong>Table 8.2. Commonly Used Text-Manipulation Functions</strong></p>
+<div class="figure">
+<img alt="Screen Shot 2018-08-12 at 11.45.20 AM" src="http://heropublic.oss-cn-beijing.aliyuncs.com/034543.png"><p class="caption">Screen Shot 2018-08-12 at 11.45.20 AM</p>
+</div>
+<pre class="code sql"><a name="rest_code_7efd3ef8bdba4d519b4b000c54ad0fe5-1"></a><span class="k">select</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_contact</span> <span class="k">from</span> <span class="n">Customers</span> <span class="k">where</span> <span class="n">cust_contact</span> <span class="o">=</span> <span class="ss">"Michael Green"</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="date-and-time-manipulation-functions">
+<h4><a class="toc-backref" href="#id53">Date and Time Manipulation Functions</a></h4>
+<pre class="code sql"><a name="rest_code_a6538b8b07c4433ea7b316b59c0ca7a2-1"></a><span class="k">select</span> <span class="o">*</span>
+<a name="rest_code_a6538b8b07c4433ea7b316b59c0ca7a2-2"></a><span class="k">from</span> <span class="n">Orders</span>
+<a name="rest_code_a6538b8b07c4433ea7b316b59c0ca7a2-3"></a><span class="k">where</span> <span class="k">year</span><span class="p">(</span><span class="n">order_date</span><span class="p">)</span> <span class="o">=</span> <span class="mi">2012</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="numeric-manipulation-functions">
+<h4><a class="toc-backref" href="#id54">Numeric Manipulation Functions</a></h4>
+<div class="figure">
+<img alt="Screen Shot 2018-08-12 at 11.33.29 AM" src="http://heropublic.oss-cn-beijing.aliyuncs.com/033344.png"><p class="caption">Screen Shot 2018-08-12 at 11.33.29 AM</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="summarizing-data">
+<h2><a class="toc-backref" href="#id55">9.Summarizing Data</a></h2>
+<p>总结:</p>
+<p>avg, min, max, sum, count, # 首先讲avg放在前面</p>
+<p>与distinct相结合.</p>
+<div class="section" id="using-aggregate-functions">
+<h3><a class="toc-backref" href="#id56">Using Aggregate Functions</a></h3>
+<p><strong>Table 9.1. SQL Aggregate Functions</strong></p>
+<div class="figure">
+<img alt="Screen Shot 2018-08-12 at 12.00.30 PM" src="http://heropublic.oss-cn-beijing.aliyuncs.com/040046.png"><p class="caption">Screen Shot 2018-08-12 at 12.00.30 PM</p>
+</div>
+<div class="section" id="the-avg-function">
+<h4><a class="toc-backref" href="#id57">The AVG() Function</a></h4>
+<pre class="code sql"><a name="rest_code_56b4882e021548fc93d77e4741460775-1"></a><span class="k">select</span> <span class="k">avg</span><span class="p">(</span><span class="n">prod_price</span><span class="p">)</span> <span class="k">as</span> <span class="n">avg_price</span> <span class="k">from</span> <span class="n">Products</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_9382af9918e548268665fb8e860c7074-1"></a><span class="k">sql</span> <span class="p">:</span><span class="n">engine</span> <span class="n">mysql</span> <span class="p">:</span><span class="n">dbuser</span> <span class="n">org</span> <span class="p">:</span><span class="k">database</span> <span class="n">grocer</span>
+<a name="rest_code_9382af9918e548268665fb8e860c7074-2"></a><span class="k">select</span> <span class="n">vend_id</span><span class="p">,</span> <span class="k">avg</span><span class="p">(</span><span class="n">prod_price</span><span class="p">)</span> <span class="k">as</span> <span class="n">avg_price</span>
+<a name="rest_code_9382af9918e548268665fb8e860c7074-3"></a><span class="k">from</span> <span class="n">Products</span>
+<a name="rest_code_9382af9918e548268665fb8e860c7074-4"></a><span class="k">where</span> <span class="n">vend_id</span> <span class="o">=</span> <span class="ss">"DLL01"</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="the-count-function">
+<h4><a class="toc-backref" href="#id58">The COUNT() Function</a></h4>
+<pre class="code sql"><a name="rest_code_7b8da9f15610490d879c173a669e982f-1"></a><span class="k">select</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">num_cust</span>
+<a name="rest_code_7b8da9f15610490d879c173a669e982f-2"></a><span class="k">from</span> <span class="n">Customers</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_8e0d7997287941dc90bc3b80d4ae8a66-1"></a><span class="k">select</span> <span class="k">count</span><span class="p">(</span><span class="n">cust_email</span><span class="p">)</span> <span class="k">as</span> <span class="n">num_cust</span>
+<a name="rest_code_8e0d7997287941dc90bc3b80d4ae8a66-2"></a><span class="k">from</span> <span class="n">Customers</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="the-max-function">
+<h4><a class="toc-backref" href="#id59">The MAX() Function</a></h4>
+<pre class="code sql"><a name="rest_code_7608f6d46cd6455ebd4e12018fc055ec-1"></a><span class="k">select</span> <span class="k">max</span><span class="p">(</span><span class="n">prod_price</span><span class="p">)</span> <span class="k">as</span> <span class="n">max_price</span>
+<a name="rest_code_7608f6d46cd6455ebd4e12018fc055ec-2"></a><span class="k">from</span> <span class="n">Products</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="the-min-function">
+<h4><a class="toc-backref" href="#id60">The MIN() Function</a></h4>
+<pre class="code sql"><a name="rest_code_f464343e1088413ab52c4ef3cf1ffec1-1"></a><span class="k">select</span> <span class="k">min</span><span class="p">(</span><span class="n">prod_price</span><span class="p">)</span> <span class="k">as</span> <span class="n">min_price</span>
+<a name="rest_code_f464343e1088413ab52c4ef3cf1ffec1-2"></a><span class="k">from</span> <span class="n">Products</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="the-sum">
+<h4><a class="toc-backref" href="#id61">The SUM()</a></h4>
+<pre class="code sql"><a name="rest_code_b7271843885644ada324e7a4d7e57bf0-1"></a><span class="k">select</span> <span class="k">sum</span><span class="p">(</span><span class="n">quantity</span><span class="p">)</span> <span class="k">as</span> <span class="n">items_ordered</span>
+<a name="rest_code_b7271843885644ada324e7a4d7e57bf0-2"></a><span class="k">from</span> <span class="n">OrderItems</span>
+<a name="rest_code_b7271843885644ada324e7a4d7e57bf0-3"></a><span class="k">where</span> <span class="n">order_num</span> <span class="o">=</span> <span class="mi">20005</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_470d3a2706c1456fab8af3cb87afb7d9-1"></a><span class="k">select</span> <span class="k">sum</span><span class="p">(</span><span class="n">item_price</span><span class="o">*</span><span class="n">quantity</span><span class="p">)</span> <span class="k">as</span> <span class="n">total_price</span>
+<a name="rest_code_470d3a2706c1456fab8af3cb87afb7d9-2"></a><span class="k">from</span> <span class="n">OrderItems</span>
+<a name="rest_code_470d3a2706c1456fab8af3cb87afb7d9-3"></a><span class="k">where</span> <span class="n">order_num</span> <span class="o">=</span> <span class="mi">20005</span><span class="p">;</span>
+</pre>
+</div>
+</div>
+<div class="section" id="aggregates-on-distinct-values">
+<h3><a class="toc-backref" href="#id62">Aggregates on Distinct Values</a></h3>
+<pre class="code sql"><a name="rest_code_63af8b2e77cb4eaeacad4d6f0efdf90b-1"></a><span class="k">select</span> <span class="k">avg</span><span class="p">(</span><span class="k">distinct</span> <span class="n">prod_price</span><span class="p">)</span> <span class="k">as</span> <span class="n">avg_price</span>
+<a name="rest_code_63af8b2e77cb4eaeacad4d6f0efdf90b-2"></a><span class="k">from</span> <span class="n">Products</span>
+<a name="rest_code_63af8b2e77cb4eaeacad4d6f0efdf90b-3"></a><span class="k">where</span> <span class="n">vend_id</span> <span class="o">=</span> <span class="ss">"DLL01"</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="combining-aggregate-functions">
+<h3><a class="toc-backref" href="#id63">Combining Aggregate Functions</a></h3>
+<pre class="code sql"><a name="rest_code_615d7e1d7e52476fbe9ab229e7ca4796-1"></a><span class="k">select</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">num_items</span><span class="p">,</span>
+<a name="rest_code_615d7e1d7e52476fbe9ab229e7ca4796-2"></a><span class="k">min</span><span class="p">(</span><span class="n">prod_price</span><span class="p">)</span> <span class="k">as</span> <span class="n">min_price</span><span class="p">,</span>
+<a name="rest_code_615d7e1d7e52476fbe9ab229e7ca4796-3"></a><span class="k">max</span><span class="p">(</span><span class="n">prod_price</span><span class="p">)</span> <span class="k">as</span> <span class="n">max_price</span><span class="p">,</span>
+<a name="rest_code_615d7e1d7e52476fbe9ab229e7ca4796-4"></a><span class="k">avg</span><span class="p">(</span><span class="n">prod_price</span><span class="p">)</span> <span class="k">as</span> <span class="n">avg_price</span>
+<a name="rest_code_615d7e1d7e52476fbe9ab229e7ca4796-5"></a><span class="k">from</span> <span class="n">Products</span><span class="p">;</span>
+</pre>
+</div>
+</div>
+<div class="section" id="grouping-data">
+<h2><a class="toc-backref" href="#id64">10.Grouping Data</a></h2>
+<p>总结, group by之后, 可以应用aggregate calculation 针对单一的column, filter, group and sort 棒, 总结当下所学. select, from, where, group by, having, order by</p>
+<div class="section" id="creating-groups">
+<h3><a class="toc-backref" href="#id65">Creating Groups</a></h3>
+<pre class="code sql"><a name="rest_code_05f4791cbe4446bda0d6c0f0c3c32344-1"></a><span class="k">select</span> <span class="n">vend_id</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">num_prods</span>
+<a name="rest_code_05f4791cbe4446bda0d6c0f0c3c32344-2"></a><span class="k">from</span> <span class="n">Products</span>
+<a name="rest_code_05f4791cbe4446bda0d6c0f0c3c32344-3"></a><span class="k">group</span> <span class="k">by</span> <span class="n">vend_id</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="filtering-groups">
+<h3><a class="toc-backref" href="#id66">Filtering Groups</a></h3>
+<pre class="code sql"><a name="rest_code_da2bc2a3a77d4588a3abc6688dee713f-1"></a><span class="k">select</span> <span class="n">cust_id</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">orders</span>
+<a name="rest_code_da2bc2a3a77d4588a3abc6688dee713f-2"></a><span class="k">from</span> <span class="n">Orders</span>
+<a name="rest_code_da2bc2a3a77d4588a3abc6688dee713f-3"></a><span class="k">group</span> <span class="k">by</span> <span class="n">cust_id</span>
+<a name="rest_code_da2bc2a3a77d4588a3abc6688dee713f-4"></a><span class="k">having</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="o">&gt;=</span><span class="mi">2</span> <span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_11dc5cc276024dd59667e749d9d66d4a-1"></a><span class="k">select</span> <span class="n">vend_id</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="n">vend_id</span><span class="p">)</span> <span class="k">as</span> <span class="n">num_prods</span>
+<a name="rest_code_11dc5cc276024dd59667e749d9d66d4a-2"></a><span class="k">from</span> <span class="n">Products</span>
+<a name="rest_code_11dc5cc276024dd59667e749d9d66d4a-3"></a><span class="k">where</span> <span class="n">prod_price</span> <span class="o">&gt;=</span> <span class="mi">4</span>
+<a name="rest_code_11dc5cc276024dd59667e749d9d66d4a-4"></a><span class="k">group</span> <span class="k">by</span> <span class="n">vend_id</span>
+<a name="rest_code_11dc5cc276024dd59667e749d9d66d4a-5"></a><span class="k">having</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_8986f4cae0c54288a47da2e7866a4ab1-1"></a><span class="k">select</span> <span class="n">vend_id</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">num_prods</span> <span class="k">from</span> <span class="n">Products</span> <span class="k">group</span> <span class="k">by</span> <span class="n">vend_id</span> <span class="k">having</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="o">&gt;=</span><span class="mi">2</span> <span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="grouping-and-sorting">
+<h3><a class="toc-backref" href="#id67">Grouping and Sorting</a></h3>
+<div class="figure">
+<img alt="Screen Shot 2018-08-12 at 3.07.00 PM" src="http://heropublic.oss-cn-beijing.aliyuncs.com/070716.png"><p class="caption">Screen Shot 2018-08-12 at 3.07.00 PM</p>
+</div>
+<pre class="code sql"><a name="rest_code_19050a073b244a1b829f63e0d5a1f988-1"></a><span class="k">select</span> <span class="n">order_num</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">items</span>
+<a name="rest_code_19050a073b244a1b829f63e0d5a1f988-2"></a><span class="k">from</span> <span class="n">OrderItems</span>
+<a name="rest_code_19050a073b244a1b829f63e0d5a1f988-3"></a><span class="k">group</span> <span class="k">by</span> <span class="n">order_num</span>
+<a name="rest_code_19050a073b244a1b829f63e0d5a1f988-4"></a><span class="k">having</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">3</span>
+<a name="rest_code_19050a073b244a1b829f63e0d5a1f988-5"></a><span class="k">order</span> <span class="k">by</span> <span class="n">order_num</span> <span class="k">desc</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_d7a2be06c9a24ba9b9513ec141bbdb4b-1"></a><span class="k">select</span> <span class="n">order_num</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">items</span> <span class="k">from</span> <span class="n">OrderItems</span> <span class="k">group</span> <span class="k">by</span> <span class="n">order_num</span> <span class="k">having</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">3</span> <span class="k">order</span> <span class="k">by</span> <span class="n">items</span><span class="p">,</span> <span class="n">order_num</span><span class="p">;</span>
+</pre>
+</div>
+</div>
+<div class="section" id="working-with-subqueries">
+<h2><a class="toc-backref" href="#id68">11.Working with Subqueries</a></h2>
+<p>总结归纳 subqueries, filter by subqueries(用in), calculated fields</p>
+<div class="section" id="filtering-by-subquery">
+<h3><a class="toc-backref" href="#id69">Filtering by Subquery</a></h3>
+<pre class="code sql"><a name="rest_code_8f66fce95eca41cfb2fd1d1a4330ba35-1"></a><span class="k">select</span> <span class="n">cust_id</span> <span class="k">from</span> <span class="n">Orders</span>
+<a name="rest_code_8f66fce95eca41cfb2fd1d1a4330ba35-2"></a><span class="k">where</span> <span class="n">order_num</span> <span class="k">in</span> <span class="p">(</span><span class="k">select</span> <span class="n">order_num</span> <span class="k">from</span> <span class="n">OrderItems</span> <span class="k">where</span> <span class="n">prod_id</span> <span class="o">=</span> <span class="ss">"rgan01"</span><span class="p">);</span>
+</pre>
+<pre class="code sql"><a name="rest_code_9579e601017943ff830e0fceb5d49565-1"></a><span class="k">SELECT</span> <span class="n">cust_id</span> <span class="k">from</span> <span class="n">Orders</span> <span class="k">WHERE</span> <span class="n">order_num</span> <span class="k">IN</span> <span class="p">(</span><span class="mi">20007</span><span class="p">,</span><span class="mi">20008</span><span class="p">)</span>
+</pre>
+<pre class="code sql"><a name="rest_code_117290329bc14db4bc02c75bca34f147-1"></a><span class="k">select</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_contact</span>
+<a name="rest_code_117290329bc14db4bc02c75bca34f147-2"></a><span class="k">from</span> <span class="n">Customers</span>
+<a name="rest_code_117290329bc14db4bc02c75bca34f147-3"></a><span class="k">where</span> <span class="n">cust_id</span> <span class="k">in</span> <span class="p">(</span><span class="ss">"1000000004"</span><span class="p">,</span> <span class="ss">"1000000005"</span><span class="p">);</span>
+</pre>
+<pre class="code sql"><a name="rest_code_b8c090fe75ef445da03cb47c17e7a235-1"></a><span class="k">select</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_contact</span> <span class="k">from</span> <span class="n">Customers</span>
+<a name="rest_code_b8c090fe75ef445da03cb47c17e7a235-2"></a><span class="k">where</span> <span class="n">cust_id</span> <span class="k">in</span> <span class="p">(</span><span class="k">select</span> <span class="n">cust_id</span> <span class="k">from</span> <span class="n">Orders</span> <span class="k">where</span> <span class="n">order_num</span> <span class="k">in</span>
+<a name="rest_code_b8c090fe75ef445da03cb47c17e7a235-3"></a><span class="p">(</span><span class="k">select</span> <span class="n">order_num</span> <span class="k">from</span> <span class="n">OrderItems</span> <span class="k">where</span> <span class="n">prod_id</span> <span class="o">=</span> <span class="ss">"rgan01"</span><span class="p">));</span>
+</pre>
+</div>
+<div class="section" id="using-subqueries-as-calculated-fields">
+<h3><a class="toc-backref" href="#id70">Using Subqueries as Calculated Fields</a></h3>
+<pre class="code sql"><a name="rest_code_2a7f06e5977d47e2857829bf16207eeb-1"></a><span class="k">select</span> <span class="n">cust_id</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">orders</span> <span class="k">from</span> <span class="n">Orders</span> <span class="k">group</span> <span class="k">by</span> <span class="n">cust_id</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_25cdac12ff2143e4ade89a7fb1698a44-1"></a><span class="k">select</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_state</span><span class="p">,</span>
+<a name="rest_code_25cdac12ff2143e4ade89a7fb1698a44-2"></a><span class="p">(</span><span class="k">select</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">from</span> <span class="n">Orders</span> <span class="k">where</span> <span class="n">Orders</span><span class="p">.</span><span class="n">cust_id</span> <span class="o">=</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span><span class="p">)</span> <span class="k">as</span> <span class="n">orders</span>
+<a name="rest_code_25cdac12ff2143e4ade89a7fb1698a44-3"></a><span class="k">from</span> <span class="n">Customers</span>
+<a name="rest_code_25cdac12ff2143e4ade89a7fb1698a44-4"></a><span class="k">order</span> <span class="k">by</span> <span class="n">cust_name</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_1c2a451a0bb34c1bb5057e237839ff1c-1"></a><span class="k">select</span> <span class="n">cust_id</span><span class="p">,</span> <span class="n">cust_state</span><span class="p">,</span>
+<a name="rest_code_1c2a451a0bb34c1bb5057e237839ff1c-2"></a><span class="p">(</span><span class="k">select</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">from</span> <span class="n">Orders</span> <span class="k">where</span> <span class="n">Orders</span><span class="p">.</span><span class="n">cust_id</span> <span class="o">=</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span><span class="p">)</span> <span class="k">as</span> <span class="n">orders</span>
+<a name="rest_code_1c2a451a0bb34c1bb5057e237839ff1c-3"></a><span class="k">from</span> <span class="n">Customers</span>
+<a name="rest_code_1c2a451a0bb34c1bb5057e237839ff1c-4"></a><span class="k">order</span> <span class="k">by</span> <span class="n">cust_name</span><span class="p">;</span>
+</pre>
+</div>
+</div>
+<div class="section" id="joining-tables">
+<h2><a class="toc-backref" href="#id71">12.Joining Tables</a></h2>
+<p>解决subquery的问题而引入join 先join再查询, break down然后再join回去. inner join, where, multiple tables</p>
+<div class="section" id="creating-a-join">
+<h3><a class="toc-backref" href="#id72">Creating a Join</a></h3>
+<pre class="code sql"><a name="rest_code_e8b0e1cf17ad44958372453c0c3b42f0-1"></a><span class="k">select</span> <span class="n">vend_name</span><span class="p">,</span> <span class="n">prod_name</span><span class="p">,</span> <span class="n">prod_price</span>
+<a name="rest_code_e8b0e1cf17ad44958372453c0c3b42f0-2"></a><span class="k">from</span> <span class="n">Vendors</span><span class="p">,</span> <span class="n">Products</span>
+<a name="rest_code_e8b0e1cf17ad44958372453c0c3b42f0-3"></a><span class="k">where</span> <span class="n">Vendors</span><span class="p">.</span><span class="n">vend_id</span> <span class="o">=</span> <span class="n">Products</span><span class="p">.</span><span class="n">vend_id</span><span class="p">;</span>
+</pre>
+<div class="section" id="the-importance-of-the-where-clause">
+<h4><a class="toc-backref" href="#id73">The Importance of the WHERE Clause</a></h4>
+<pre class="code sql"><a name="rest_code_a0bb39cf845d40348babd3e7981ee5a8-1"></a><span class="k">select</span> <span class="n">vend_name</span><span class="p">,</span> <span class="n">prod_name</span><span class="p">,</span> <span class="n">prod_price</span>
+<a name="rest_code_a0bb39cf845d40348babd3e7981ee5a8-2"></a><span class="k">from</span> <span class="n">Vendors</span><span class="p">,</span> <span class="n">Products</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="inner-joins">
+<h4><a class="toc-backref" href="#id74">Inner Joins</a></h4>
+<pre class="code sql"><a name="rest_code_7e662e32ffaf4ab9ac8f64996ae6a8da-1"></a><span class="k">select</span> <span class="n">vend_name</span><span class="p">,</span> <span class="n">prod_name</span><span class="p">,</span> <span class="n">prod_price</span>
+<a name="rest_code_7e662e32ffaf4ab9ac8f64996ae6a8da-2"></a><span class="k">from</span> <span class="n">Vendors</span> <span class="k">inner</span> <span class="k">join</span> <span class="n">Products</span>
+<a name="rest_code_7e662e32ffaf4ab9ac8f64996ae6a8da-3"></a><span class="k">on</span> <span class="n">Vendors</span><span class="p">.</span><span class="n">vend_id</span> <span class="o">=</span> <span class="n">Products</span><span class="p">.</span><span class="n">vend_id</span><span class="p">;</span>
+<a name="rest_code_7e662e32ffaf4ab9ac8f64996ae6a8da-4"></a><span class="o">#</span> <span class="n">comfortable</span> <span class="k">with</span> <span class="n">this</span> <span class="n">solution</span>
+</pre>
+</div>
+<div class="section" id="joining-multiple-tables">
+<h4><a class="toc-backref" href="#id75">Joining Multiple Tables</a></h4>
+<pre class="code sql"><a name="rest_code_08e0975cedb04c568c0ddc1dcdf7ea5f-1"></a><span class="k">select</span> <span class="n">prod_name</span><span class="p">,</span> <span class="n">vend_name</span><span class="p">,</span> <span class="n">prod_price</span><span class="p">,</span> <span class="n">quantity</span>
+<a name="rest_code_08e0975cedb04c568c0ddc1dcdf7ea5f-2"></a><span class="k">from</span> <span class="n">OrderItems</span><span class="p">,</span> <span class="n">Products</span><span class="p">,</span> <span class="n">Vendors</span>
+<a name="rest_code_08e0975cedb04c568c0ddc1dcdf7ea5f-3"></a><span class="k">where</span> <span class="n">Products</span><span class="p">.</span><span class="n">vend_id</span> <span class="o">=</span> <span class="n">Vendors</span><span class="p">.</span><span class="n">vend_id</span>
+<a name="rest_code_08e0975cedb04c568c0ddc1dcdf7ea5f-4"></a><span class="k">and</span> <span class="n">OrderItems</span><span class="p">.</span><span class="n">prod_id</span> <span class="o">=</span> <span class="n">Products</span><span class="p">.</span><span class="n">prod_id</span>
+<a name="rest_code_08e0975cedb04c568c0ddc1dcdf7ea5f-5"></a><span class="k">and</span> <span class="n">order_num</span> <span class="o">=</span> <span class="mi">20007</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_5f5cb3b82dcf4c218d05903338b4b3b9-1"></a><span class="k">SELECT</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_contact</span>
+<a name="rest_code_5f5cb3b82dcf4c218d05903338b4b3b9-2"></a><span class="k">FROM</span> <span class="n">Customers</span>
+<a name="rest_code_5f5cb3b82dcf4c218d05903338b4b3b9-3"></a><span class="k">WHERE</span> <span class="n">cust_id</span> <span class="k">IN</span> <span class="p">(</span><span class="k">SELECT</span> <span class="n">cust_id</span>
+<a name="rest_code_5f5cb3b82dcf4c218d05903338b4b3b9-4"></a>                  <span class="k">FROM</span> <span class="n">Orders</span>
+<a name="rest_code_5f5cb3b82dcf4c218d05903338b4b3b9-5"></a>                  <span class="k">WHERE</span> <span class="n">order_num</span> <span class="k">IN</span> <span class="p">(</span><span class="k">SELECT</span> <span class="n">order_num</span>
+<a name="rest_code_5f5cb3b82dcf4c218d05903338b4b3b9-6"></a>                                      <span class="k">FROM</span> <span class="n">OrderItems</span>
+<a name="rest_code_5f5cb3b82dcf4c218d05903338b4b3b9-7"></a>                                      <span class="k">WHERE</span> <span class="n">prod_id</span> <span class="o">=</span> <span class="s1">'RGAN01'</span><span class="p">));</span>
+<a name="rest_code_5f5cb3b82dcf4c218d05903338b4b3b9-8"></a><span class="o">#</span><span class="err">这用于思考的过程</span>
+</pre>
+<pre class="code sql"><a name="rest_code_e7aa9d0f692348b9976c5fab4b217cda-1"></a><span class="k">select</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_contact</span>
+<a name="rest_code_e7aa9d0f692348b9976c5fab4b217cda-2"></a><span class="k">from</span> <span class="n">Customers</span><span class="p">,</span> <span class="n">Orders</span><span class="p">,</span> <span class="n">OrderItems</span>
+<a name="rest_code_e7aa9d0f692348b9976c5fab4b217cda-3"></a><span class="k">where</span> <span class="n">customers</span><span class="p">.</span><span class="n">cust_id</span> <span class="o">=</span> <span class="n">orders</span><span class="p">.</span><span class="n">cust_id</span>
+<a name="rest_code_e7aa9d0f692348b9976c5fab4b217cda-4"></a><span class="k">and</span> <span class="n">orders</span><span class="p">.</span><span class="n">order_num</span> <span class="o">=</span> <span class="n">orderitems</span><span class="p">.</span><span class="n">order_num</span>
+<a name="rest_code_e7aa9d0f692348b9976c5fab4b217cda-5"></a><span class="k">and</span> <span class="n">prod_id</span> <span class="o">=</span> <span class="s1">'rgan01'</span><span class="p">;</span>
+</pre>
+</div>
+</div>
+</div>
+<div class="section" id="creating-advanced-joins">
+<h2><a class="toc-backref" href="#id76">13.Creating Advanced Joins</a></h2>
+<p>总结 table alias outer join, join便是对接的部分. (inner join忽略null) 在join中使用aggregate</p>
+<div class="section" id="using-table-aliases">
+<h3><a class="toc-backref" href="#id77">Using Table Aliases</a></h3>
+<pre class="code sql"><a name="rest_code_b224829b502e4db48918d0d1ce4e9201-1"></a><span class="k">select</span> <span class="n">concat</span><span class="p">(</span><span class="n">vend_name</span><span class="p">,</span> <span class="ss">" ("</span><span class="p">,</span> <span class="n">vend_country</span><span class="p">,</span> <span class="ss">") "</span><span class="p">)</span>
+<a name="rest_code_b224829b502e4db48918d0d1ce4e9201-2"></a><span class="k">as</span> <span class="n">vend_title</span>
+<a name="rest_code_b224829b502e4db48918d0d1ce4e9201-3"></a><span class="k">from</span> <span class="n">Vendors</span>
+<a name="rest_code_b224829b502e4db48918d0d1ce4e9201-4"></a><span class="k">order</span> <span class="k">by</span> <span class="n">vend_name</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_10f5858045044e9cb23c6e0488f2b9d2-1"></a><span class="k">select</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_contact</span>
+<a name="rest_code_10f5858045044e9cb23c6e0488f2b9d2-2"></a><span class="k">from</span> <span class="n">Customers</span> <span class="k">as</span> <span class="k">c</span><span class="p">,</span> <span class="n">Orders</span> <span class="k">as</span> <span class="n">o</span><span class="p">,</span> <span class="n">OrderItems</span> <span class="k">as</span> <span class="n">oi</span>
+<a name="rest_code_10f5858045044e9cb23c6e0488f2b9d2-3"></a><span class="k">where</span> <span class="k">c</span><span class="p">.</span><span class="n">cust_id</span><span class="o">=</span><span class="n">o</span><span class="p">.</span><span class="n">cust_id</span>
+<a name="rest_code_10f5858045044e9cb23c6e0488f2b9d2-4"></a><span class="k">and</span> <span class="n">oi</span><span class="p">.</span><span class="n">order_num</span> <span class="o">=</span> <span class="n">o</span><span class="p">.</span><span class="n">order_num</span>
+<a name="rest_code_10f5858045044e9cb23c6e0488f2b9d2-5"></a><span class="k">and</span> <span class="n">prod_id</span> <span class="o">=</span> <span class="ss">"rgan01"</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="using-different-join-types">
+<h3><a class="toc-backref" href="#id78">Using Different Join Types</a></h3>
+<div class="section" id="self-joins">
+<h4><a class="toc-backref" href="#id79">Self Joins</a></h4>
+<pre class="code sql"><a name="rest_code_3f16943fb18e4fb7959f3e652f20174a-1"></a><span class="k">select</span> <span class="n">cust_id</span><span class="p">,</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_contact</span>
+<a name="rest_code_3f16943fb18e4fb7959f3e652f20174a-2"></a><span class="k">from</span> <span class="n">Customers</span>
+<a name="rest_code_3f16943fb18e4fb7959f3e652f20174a-3"></a><span class="k">where</span> <span class="n">cust_name</span> <span class="o">=</span> <span class="p">(</span><span class="k">select</span> <span class="n">cust_name</span> <span class="k">from</span> <span class="n">Customers</span> <span class="k">where</span> <span class="n">cust_contact</span><span class="o">=</span><span class="ss">"Jim Jones"</span><span class="p">);</span>
+<a name="rest_code_3f16943fb18e4fb7959f3e652f20174a-4"></a><span class="o">#</span> <span class="err">不喜欢</span><span class="k">self</span> <span class="k">join</span>
+</pre>
+<pre class="code sql"><a name="rest_code_b525499c88ce4584bf6a958a765f6c61-1"></a><span class="k">select</span> <span class="n">c1</span><span class="p">.</span><span class="n">cust_id</span><span class="p">,</span> <span class="n">c1</span><span class="p">.</span><span class="n">cust_name</span><span class="p">,</span> <span class="n">c1</span><span class="p">.</span><span class="n">cust_contact</span>
+<a name="rest_code_b525499c88ce4584bf6a958a765f6c61-2"></a><span class="k">from</span> <span class="n">Customers</span> <span class="k">as</span> <span class="n">c1</span><span class="p">,</span> <span class="n">Customers</span> <span class="k">as</span> <span class="n">c2</span>
+<a name="rest_code_b525499c88ce4584bf6a958a765f6c61-3"></a><span class="k">where</span> <span class="n">c1</span><span class="p">.</span><span class="n">cust_name</span> <span class="o">=</span> <span class="n">c2</span><span class="p">.</span><span class="n">cust_name</span>
+<a name="rest_code_b525499c88ce4584bf6a958a765f6c61-4"></a><span class="k">and</span> <span class="n">c2</span><span class="p">.</span><span class="n">cust_contact</span> <span class="o">=</span> <span class="ss">"Jim Jones"</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="natural-joins">
+<h4><a class="toc-backref" href="#id80">Natural Joins</a></h4>
+<p><img alt="image0" src="http://heropublic.oss-cn-beijing.aliyuncs.com/143411.png"></p>
+</div>
+<div class="section" id="outer-joins">
+<h4><a class="toc-backref" href="#id81">Outer Joins</a></h4>
+<pre class="code sql"><a name="rest_code_7d59ae7bfb564c2794fbaa25f6b10136-1"></a><span class="k">select</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span><span class="p">,</span> <span class="n">Orders</span><span class="p">.</span><span class="n">order_num</span>
+<a name="rest_code_7d59ae7bfb564c2794fbaa25f6b10136-2"></a><span class="k">from</span> <span class="n">Customers</span> <span class="k">inner</span> <span class="k">join</span> <span class="n">Orders</span>
+<a name="rest_code_7d59ae7bfb564c2794fbaa25f6b10136-3"></a><span class="k">on</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span> <span class="o">=</span> <span class="n">Orders</span><span class="p">.</span><span class="n">cust_id</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_8df60f60dd2147fbb4fe47e5976b45ff-1"></a><span class="k">select</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span><span class="p">,</span> <span class="n">Orders</span><span class="p">.</span><span class="n">order_num</span>
+<a name="rest_code_8df60f60dd2147fbb4fe47e5976b45ff-2"></a><span class="k">from</span> <span class="n">Customers</span> <span class="k">left</span> <span class="k">outer</span> <span class="k">join</span> <span class="n">Orders</span>
+<a name="rest_code_8df60f60dd2147fbb4fe47e5976b45ff-3"></a><span class="k">on</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span> <span class="o">=</span> <span class="n">Orders</span><span class="p">.</span><span class="n">cust_id</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_3aca934cf80b447ea9c92238687e00cf-1"></a><span class="k">select</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span><span class="p">,</span> <span class="n">Orders</span><span class="p">.</span><span class="n">order_num</span>
+<a name="rest_code_3aca934cf80b447ea9c92238687e00cf-2"></a><span class="k">from</span> <span class="n">Customers</span> <span class="k">right</span> <span class="k">outer</span> <span class="k">join</span> <span class="n">Orders</span>
+<a name="rest_code_3aca934cf80b447ea9c92238687e00cf-3"></a><span class="k">on</span> <span class="n">Orders</span><span class="p">.</span><span class="n">cust_id</span> <span class="o">=</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span><span class="p">;</span>
+</pre>
+</div>
+</div>
+<div class="section" id="using-joins-with-aggregate-functions">
+<h3><a class="toc-backref" href="#id82">Using Joins with Aggregate Functions</a></h3>
+<pre class="code sql"><a name="rest_code_a936c77bf2cf45d0a2669605cc943ab9-1"></a><span class="k">select</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="n">Orders</span><span class="p">.</span><span class="n">order_num</span><span class="p">)</span> <span class="k">as</span> <span class="n">num_order</span>
+<a name="rest_code_a936c77bf2cf45d0a2669605cc943ab9-2"></a><span class="k">from</span> <span class="n">Customers</span><span class="p">,</span> <span class="n">Orders</span>
+<a name="rest_code_a936c77bf2cf45d0a2669605cc943ab9-3"></a><span class="k">where</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span> <span class="o">=</span> <span class="n">Orders</span><span class="p">.</span><span class="n">cust_id</span>
+<a name="rest_code_a936c77bf2cf45d0a2669605cc943ab9-4"></a><span class="k">group</span> <span class="k">by</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_406296125e1442e38f4772c701b322d7-1"></a><span class="k">select</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="n">Orders</span><span class="p">.</span><span class="n">order_num</span><span class="p">)</span> <span class="k">as</span> <span class="n">num_order</span> <span class="k">from</span> <span class="n">Customers</span><span class="p">,</span> <span class="n">Orders</span> <span class="k">where</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span> <span class="o">=</span> <span class="n">Orders</span><span class="p">.</span><span class="n">cust_id</span> <span class="k">group</span> <span class="k">by</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span><span class="p">;</span>
+</pre>
+</div>
+</div>
+<div class="section" id="combining-queries">
+<h2><a class="toc-backref" href="#id83">14.Combining Queries</a></h2>
+<p>总结, 这一章没有实质的内容, union便是or, intersection便是and</p>
+<div class="section" id="creating-combined-queries">
+<h3><a class="toc-backref" href="#id84">Creating Combined Queries</a></h3>
+<div class="section" id="using-union">
+<h4><a class="toc-backref" href="#id85">Using UNION</a></h4>
+<pre class="code sql"><a name="rest_code_a8cfbfc9d7844239bde1a14229672e9b-1"></a><span class="k">select</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_contact</span><span class="p">,</span> <span class="n">cust_state</span><span class="p">,</span> <span class="n">cust_email</span>
+<a name="rest_code_a8cfbfc9d7844239bde1a14229672e9b-2"></a><span class="k">from</span> <span class="n">Customers</span>
+<a name="rest_code_a8cfbfc9d7844239bde1a14229672e9b-3"></a><span class="k">where</span> <span class="n">cust_state</span> <span class="k">in</span> <span class="p">(</span><span class="ss">"il"</span><span class="p">,</span> <span class="ss">"in"</span><span class="p">,</span> <span class="ss">"mi"</span><span class="p">)</span>
+<a name="rest_code_a8cfbfc9d7844239bde1a14229672e9b-4"></a><span class="k">union</span>
+<a name="rest_code_a8cfbfc9d7844239bde1a14229672e9b-5"></a><span class="k">select</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_contact</span><span class="p">,</span> <span class="n">ucust_state</span><span class="p">,</span>  <span class="n">cust_email</span>
+<a name="rest_code_a8cfbfc9d7844239bde1a14229672e9b-6"></a><span class="k">from</span> <span class="n">Customers</span>
+<a name="rest_code_a8cfbfc9d7844239bde1a14229672e9b-7"></a><span class="k">where</span> <span class="n">cust_name</span> <span class="o">=</span> <span class="ss">"Fun4All"</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_ef135e9dffc74530a29df6df48e99bac-1"></a><span class="k">select</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_contact</span><span class="p">,</span> <span class="n">cust_email</span>
+<a name="rest_code_ef135e9dffc74530a29df6df48e99bac-2"></a><span class="k">from</span> <span class="n">customers</span>
+<a name="rest_code_ef135e9dffc74530a29df6df48e99bac-3"></a><span class="k">where</span> <span class="n">cust_state</span> <span class="k">in</span> <span class="p">(</span><span class="ss">"il"</span><span class="p">,</span> <span class="ss">"in"</span><span class="p">,</span> <span class="ss">"mi"</span><span class="p">)</span>
+<a name="rest_code_ef135e9dffc74530a29df6df48e99bac-4"></a><span class="k">or</span> <span class="n">cust_name</span> <span class="o">=</span> <span class="ss">"fun4all"</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="union-rules">
+<h4><a class="toc-backref" href="#id86">UNION Rules</a></h4>
+<p>As you can see, unions are very easy to use. But there are a few rules governing exactly which can be combined:</p>
+<ol class="arabic simple">
+<li><p>A UNION must be composed of two or more SELECT statements, each separated by the keyword UNION (so, if combining four SELECT statements there would be three UNION keywords used).</p></li>
+<li><p>Each query in a UNION must contain the same columns, expressions, or aggregate functions (and some DBMSs even require that columns be listed in the same order).</p></li>
+<li><p>Column datatypes must be compatible: They need not be the exact same type, but they must be of a type that the DBMS can implicitly convert (for example, different numeric types or different date types).</p></li>
+</ol>
+<p>Aside from these basic rules and restrictions, unions can be used for any data retrieval tasks.</p>
+</div>
+<div class="section" id="including-or-eliminating-duplicate-rows">
+<h4><a class="toc-backref" href="#id87">Including or Eliminating Duplicate Rows</a></h4>
+<pre class="code sql"><a name="rest_code_72b74f34184e4389a11661f9fdad65d7-1"></a><span class="k">select</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_contact</span><span class="p">,</span> <span class="n">cust_email</span> <span class="k">from</span> <span class="n">Customers</span>
+<a name="rest_code_72b74f34184e4389a11661f9fdad65d7-2"></a><span class="k">where</span> <span class="n">cust_state</span>  <span class="k">in</span> <span class="p">(</span><span class="ss">"il"</span><span class="p">,</span> <span class="ss">"in"</span><span class="p">,</span> <span class="ss">"mi"</span><span class="p">)</span>
+<a name="rest_code_72b74f34184e4389a11661f9fdad65d7-3"></a><span class="k">union</span> <span class="k">all</span>
+<a name="rest_code_72b74f34184e4389a11661f9fdad65d7-4"></a><span class="k">select</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_contact</span><span class="p">,</span> <span class="n">cust_email</span>
+<a name="rest_code_72b74f34184e4389a11661f9fdad65d7-5"></a><span class="k">from</span> <span class="n">Customers</span>
+<a name="rest_code_72b74f34184e4389a11661f9fdad65d7-6"></a><span class="k">where</span> <span class="n">cust_name</span> <span class="o">=</span> <span class="ss">"fun4all"</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="sorting-combined-query-results">
+<h4><a class="toc-backref" href="#id88">Sorting Combined Query Results</a></h4>
+<pre class="code sql"><a name="rest_code_931659e1c5cc46c4a314b97065a2a503-1"></a><span class="k">select</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_contact</span><span class="p">,</span> <span class="n">cust_email</span>
+<a name="rest_code_931659e1c5cc46c4a314b97065a2a503-2"></a><span class="k">from</span> <span class="n">Customers</span>
+<a name="rest_code_931659e1c5cc46c4a314b97065a2a503-3"></a><span class="k">where</span> <span class="n">cust_state</span>  <span class="k">in</span> <span class="p">(</span><span class="ss">"il"</span><span class="p">,</span> <span class="ss">"in"</span><span class="p">,</span> <span class="ss">"mi"</span><span class="p">)</span>
+<a name="rest_code_931659e1c5cc46c4a314b97065a2a503-4"></a><span class="k">union</span> <span class="k">all</span>
+<a name="rest_code_931659e1c5cc46c4a314b97065a2a503-5"></a><span class="k">select</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_contact</span><span class="p">,</span> <span class="n">cust_email</span>
+<a name="rest_code_931659e1c5cc46c4a314b97065a2a503-6"></a><span class="k">from</span> <span class="n">Customers</span>
+<a name="rest_code_931659e1c5cc46c4a314b97065a2a503-7"></a><span class="k">where</span> <span class="n">cust_name</span> <span class="o">=</span> <span class="ss">"fun4all"</span> <span class="k">order</span> <span class="k">by</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_contact</span><span class="p">;</span>
+</pre>
+</div>
+</div>
+</div>
+<div class="section" id="using-views">
+<h2><a class="toc-backref" href="#id89">18.Using Views</a></h2>
+<p>介绍view的三个基本应用</p>
+<ol class="arabic simple">
+<li><p>simplify complex joins</p></li>
+<li><p>Reformat data</p></li>
+<li><p>Filter unwanted data</p></li>
+</ol>
+<div class="section" id="understanding-views">
+<h3><a class="toc-backref" href="#id90">Understanding Views</a></h3>
+<pre class="code sql"><a name="rest_code_aa264b01715b443eb499b077af87237d-1"></a><span class="k">SELECT</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_contact</span>
+<a name="rest_code_aa264b01715b443eb499b077af87237d-2"></a><span class="k">FROM</span> <span class="n">Customers</span><span class="p">,</span> <span class="n">Orders</span><span class="p">,</span> <span class="n">OrderItems</span>
+<a name="rest_code_aa264b01715b443eb499b077af87237d-3"></a><span class="k">WHERE</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span> <span class="o">=</span> <span class="n">Orders</span><span class="p">.</span><span class="n">cust_id</span>
+<a name="rest_code_aa264b01715b443eb499b077af87237d-4"></a><span class="k">AND</span> <span class="n">OrderItems</span><span class="p">.</span><span class="n">order_num</span> <span class="o">=</span> <span class="n">Orders</span><span class="p">.</span><span class="n">order_num</span>
+<a name="rest_code_aa264b01715b443eb499b077af87237d-5"></a><span class="k">AND</span> <span class="n">prod_id</span> <span class="o">=</span> <span class="s1">'RGAN01'</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_82b6320c632842f3a56eba10977902f7-1"></a><span class="k">SELECT</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_contact</span>
+<a name="rest_code_82b6320c632842f3a56eba10977902f7-2"></a><span class="k">FROM</span> <span class="n">ProductCustomers</span>
+<a name="rest_code_82b6320c632842f3a56eba10977902f7-3"></a><span class="k">WHERE</span> <span class="n">prod_id</span> <span class="o">=</span> <span class="s1">'RGAN01'</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="creating-views">
+<h3><a class="toc-backref" href="#id91">Creating Views</a></h3>
+<div class="section" id="using-views-to-simplify-complex-joins">
+<h4><a class="toc-backref" href="#id92">Using Views to Simplify Complex Joins</a></h4>
+<pre class="code sql"><a name="rest_code_c1f625d1e83d49ca98338f1916efc849-1"></a><span class="k">create</span> <span class="k">view</span>  <span class="n">ProductCustomers</span> <span class="k">as</span>
+<a name="rest_code_c1f625d1e83d49ca98338f1916efc849-2"></a><span class="k">select</span> <span class="n">cust_name</span><span class="p">,</span><span class="n">cust_contact</span><span class="p">,</span> <span class="n">prod_id</span>
+<a name="rest_code_c1f625d1e83d49ca98338f1916efc849-3"></a><span class="k">from</span> <span class="n">Customers</span><span class="p">,</span> <span class="n">Orders</span><span class="p">,</span> <span class="n">OrderItems</span>
+<a name="rest_code_c1f625d1e83d49ca98338f1916efc849-4"></a><span class="k">where</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span> <span class="o">=</span> <span class="n">Orders</span><span class="p">.</span><span class="n">cust_id</span>
+<a name="rest_code_c1f625d1e83d49ca98338f1916efc849-5"></a><span class="k">and</span> <span class="n">Orders</span><span class="p">.</span><span class="n">order_num</span> <span class="o">=</span> <span class="n">OrderItems</span><span class="p">.</span><span class="n">order_num</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_f5575ca8e0634fc6813fa6437721c524-1"></a><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">ProductCustomers</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_a1c1513b3cc148b18142c2aeea8674b0-1"></a><span class="k">select</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_contact</span>
+<a name="rest_code_a1c1513b3cc148b18142c2aeea8674b0-2"></a><span class="k">from</span> <span class="n">ProductCustomers</span>
+<a name="rest_code_a1c1513b3cc148b18142c2aeea8674b0-3"></a><span class="k">where</span> <span class="n">prod_id</span> <span class="o">=</span> <span class="ss">"rgan01"</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="using-views-to-reformat-retrieved-data">
+<h4><a class="toc-backref" href="#id93">Using Views to Reformat Retrieved Data</a></h4>
+<pre class="code sql"><a name="rest_code_7a31e50bc9ee461aa6e287fc6b9fe53c-1"></a><span class="k">select</span> <span class="n">concat</span><span class="p">(</span><span class="k">trim</span><span class="p">(</span><span class="n">vend_name</span><span class="p">),</span> <span class="ss">" ("</span><span class="p">,</span> <span class="k">trim</span><span class="p">(</span><span class="n">vend_country</span><span class="p">),</span> <span class="ss">") "</span><span class="p">)</span> <span class="k">as</span> <span class="n">vend_title</span>
+<a name="rest_code_7a31e50bc9ee461aa6e287fc6b9fe53c-2"></a><span class="k">from</span> <span class="n">Vendors</span> <span class="k">order</span> <span class="k">by</span> <span class="n">vend_name</span><span class="p">;</span>
+</pre>
+<table>
+<colgroup><col style="width: 100%"></colgroup>
+<thead><tr>
+<th class="head"><p>vend<sub>title</sub></p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>Bear Emporium (USA)</p></td>
+</tr>
+<tr>
+<td><p>Bears R Us (USA)</p></td>
+</tr>
+<tr>
+<td><p>Doll House Inc. (USA)</p></td>
+</tr>
+<tr>
+<td><p>Fun and Games (England)</p></td>
+</tr>
+<tr>
+<td><p>Furball Inc. (USA)</p></td>
+</tr>
+<tr>
+<td><p>Jouets et ours (France)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="using-views-to-filter-unwanted-data">
+<h4><a class="toc-backref" href="#id94">Using Views to Filter Unwanted Data</a></h4>
+<pre class="code sql"><a name="rest_code_5adf4be5b1a24168bc5f2421b04de4e5-1"></a><span class="k">CREATE</span> <span class="k">VIEW</span> <span class="n">CustomerEMailList</span> <span class="k">AS</span>
+<a name="rest_code_5adf4be5b1a24168bc5f2421b04de4e5-2"></a><span class="k">SELECT</span> <span class="n">cust_id</span><span class="p">,</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_email</span>
+<a name="rest_code_5adf4be5b1a24168bc5f2421b04de4e5-3"></a><span class="k">FROM</span> <span class="n">Customers</span>
+<a name="rest_code_5adf4be5b1a24168bc5f2421b04de4e5-4"></a><span class="k">WHERE</span> <span class="n">cust_email</span> <span class="k">IS</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_b0aac8e8ab0946769fafa59cca4877a3-1"></a><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">CustomerEMailList</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_12d7e67d63d441288afbfe76dde21b70-1"></a><span class="k">create</span> <span class="k">view</span> <span class="n">OrderItemsExpanded</span> <span class="k">as</span>
+<a name="rest_code_12d7e67d63d441288afbfe76dde21b70-2"></a><span class="k">select</span> <span class="n">order_num</span><span class="p">,</span> <span class="n">prod_id</span><span class="p">,</span> <span class="n">quantity</span><span class="p">,</span> <span class="n">item_price</span><span class="p">,</span> <span class="n">quantity</span><span class="o">*</span><span class="n">item_price</span> <span class="k">as</span> <span class="n">expanded_price</span> <span class="k">from</span> <span class="n">OrderItems</span> <span class="k">where</span> <span class="n">order_num</span> <span class="o">=</span> <span class="mi">20008</span><span class="p">;</span>
+</pre>
+</div>
+</div>
+</div>
+<div class="section" id="inserting-data">
+<h2><a class="toc-backref" href="#id95">15.Inserting Data</a></h2>
+<p>总结 讲到了最关键的一点, 如何增加数据. insert completed rows, partial rows, insert retrieved data, copy</p>
+<div class="section" id="understanding-data-insertion">
+<h3><a class="toc-backref" href="#id96">Understanding Data Insertion</a></h3>
+<div class="section" id="inserting-complete-rows">
+<h4><a class="toc-backref" href="#id97">Inserting Complete Rows</a></h4>
+<pre class="code sql"><a name="rest_code_a341dc57526747539da6b60bc481d965-1"></a><span class="k">insert</span> <span class="k">into</span> <span class="n">Customers</span>
+<a name="rest_code_a341dc57526747539da6b60bc481d965-2"></a><span class="k">values</span> <span class="p">(</span><span class="ss">"1000000006"</span><span class="p">,</span><span class="ss">"toy land"</span><span class="p">,</span> <span class="ss">"123 any street"</span><span class="p">,</span> <span class="ss">"New York"</span><span class="p">,</span> <span class="ss">"NY"</span><span class="p">,</span> <span class="ss">"11111"</span><span class="p">,</span> <span class="ss">"USA"</span><span class="p">,</span> <span class="k">NULL</span><span class="p">,</span> <span class="k">NULL</span><span class="p">);</span>
+</pre>
+<pre class="code sql"><a name="rest_code_f1da8fcf283e4d59ab99e83d5a711c2a-1"></a><span class="k">insert</span> <span class="k">into</span> <span class="n">Customers</span> <span class="p">(</span><span class="n">cust_id</span><span class="p">,</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_address</span><span class="p">,</span> <span class="n">cust_city</span><span class="p">,</span> <span class="n">cust_state</span><span class="p">,</span> <span class="n">cust_zip</span><span class="p">,</span> <span class="n">cust_country</span><span class="p">,</span> <span class="n">cust_contact</span><span class="p">,</span>  <span class="n">cust_email</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="ss">"1000000012"</span><span class="p">,</span> <span class="ss">"boy land"</span><span class="p">,</span> <span class="ss">"456 any street"</span><span class="p">,</span> <span class="ss">"New York"</span><span class="p">,</span> <span class="ss">"NY"</span><span class="p">,</span> <span class="ss">"11111"</span><span class="p">,</span> <span class="ss">"USA"</span><span class="p">,</span> <span class="k">NULL</span><span class="p">,</span> <span class="k">NULL</span><span class="p">);</span>
+</pre>
+<pre class="code sql"><a name="rest_code_212de4bc9dec43c0bc849eb843f00f99-1"></a><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">Customers</span><span class="p">(</span><span class="n">cust_id</span><span class="p">,</span>
+<a name="rest_code_212de4bc9dec43c0bc849eb843f00f99-2"></a>                      <span class="n">cust_contact</span><span class="p">,</span>
+<a name="rest_code_212de4bc9dec43c0bc849eb843f00f99-3"></a>                      <span class="n">cust_email</span><span class="p">,</span>
+<a name="rest_code_212de4bc9dec43c0bc849eb843f00f99-4"></a>                      <span class="n">cust_name</span><span class="p">,</span>
+<a name="rest_code_212de4bc9dec43c0bc849eb843f00f99-5"></a>                      <span class="n">cust_address</span><span class="p">,</span>
+<a name="rest_code_212de4bc9dec43c0bc849eb843f00f99-6"></a>                      <span class="n">cust_city</span><span class="p">,</span>
+<a name="rest_code_212de4bc9dec43c0bc849eb843f00f99-7"></a>                      <span class="n">cust_state</span><span class="p">,</span>
+<a name="rest_code_212de4bc9dec43c0bc849eb843f00f99-8"></a>                      <span class="n">cust_zip</span><span class="p">)</span>
+<a name="rest_code_212de4bc9dec43c0bc849eb843f00f99-9"></a><span class="k">VALUES</span><span class="p">(</span><span class="s1">'1000000006'</span><span class="p">,</span>
+<a name="rest_code_212de4bc9dec43c0bc849eb843f00f99-10"></a>       <span class="k">NULL</span><span class="p">,</span>
+<a name="rest_code_212de4bc9dec43c0bc849eb843f00f99-11"></a>       <span class="k">NULL</span><span class="p">,</span>
+<a name="rest_code_212de4bc9dec43c0bc849eb843f00f99-12"></a>       <span class="s1">'Toy Land'</span><span class="p">,</span>
+<a name="rest_code_212de4bc9dec43c0bc849eb843f00f99-13"></a>       <span class="s1">'123 Any Street'</span><span class="p">,</span>
+<a name="rest_code_212de4bc9dec43c0bc849eb843f00f99-14"></a>       <span class="s1">'New York'</span><span class="p">,</span>
+<a name="rest_code_212de4bc9dec43c0bc849eb843f00f99-15"></a>       <span class="s1">'NY'</span><span class="p">,</span>
+<a name="rest_code_212de4bc9dec43c0bc849eb843f00f99-16"></a>       <span class="s1">'11111'</span><span class="p">);</span>
+</pre>
+</div>
+<div class="section" id="inserting-partial-rows">
+<h4><a class="toc-backref" href="#id98">Inserting Partial Rows</a></h4>
+<pre class="code sql"><a name="rest_code_b5718fae3c3a4c42bcea5d4e9e8bfacd-1"></a><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">Customers</span><span class="p">(</span><span class="n">cust_id</span><span class="p">,</span>
+<a name="rest_code_b5718fae3c3a4c42bcea5d4e9e8bfacd-2"></a>                      <span class="n">cust_name</span><span class="p">,</span>
+<a name="rest_code_b5718fae3c3a4c42bcea5d4e9e8bfacd-3"></a>                      <span class="n">cust_address</span><span class="p">,</span>
+<a name="rest_code_b5718fae3c3a4c42bcea5d4e9e8bfacd-4"></a>                      <span class="n">cust_city</span><span class="p">,</span>
+<a name="rest_code_b5718fae3c3a4c42bcea5d4e9e8bfacd-5"></a>                      <span class="n">cust_state</span><span class="p">,</span>
+<a name="rest_code_b5718fae3c3a4c42bcea5d4e9e8bfacd-6"></a>                      <span class="n">cust_zip</span><span class="p">,</span>
+<a name="rest_code_b5718fae3c3a4c42bcea5d4e9e8bfacd-7"></a>                      <span class="n">cust_country</span><span class="p">)</span>
+<a name="rest_code_b5718fae3c3a4c42bcea5d4e9e8bfacd-8"></a><span class="k">VALUES</span><span class="p">(</span><span class="s1">'1000000006'</span><span class="p">,</span>
+<a name="rest_code_b5718fae3c3a4c42bcea5d4e9e8bfacd-9"></a>       <span class="s1">'Toy Land'</span><span class="p">,</span>
+<a name="rest_code_b5718fae3c3a4c42bcea5d4e9e8bfacd-10"></a>       <span class="s1">'123 Any Street'</span><span class="p">,</span>
+<a name="rest_code_b5718fae3c3a4c42bcea5d4e9e8bfacd-11"></a>       <span class="s1">'New York'</span><span class="p">,</span>
+<a name="rest_code_b5718fae3c3a4c42bcea5d4e9e8bfacd-12"></a>       <span class="s1">'NY'</span><span class="p">,</span>
+<a name="rest_code_b5718fae3c3a4c42bcea5d4e9e8bfacd-13"></a>       <span class="s1">'11111'</span><span class="p">,</span>
+<a name="rest_code_b5718fae3c3a4c42bcea5d4e9e8bfacd-14"></a>       <span class="s1">'USA'</span><span class="p">);</span>
+</pre>
+</div>
+<div class="section" id="inserting-retrieved-data">
+<h4><a class="toc-backref" href="#id99">Inserting Retrieved Data</a></h4>
+<pre class="code sql"><a name="rest_code_24f2ebd0b3b442db9fc04e81fa5da976-1"></a><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">Customers</span><span class="p">(</span><span class="n">cust_id</span><span class="p">,</span>
+<a name="rest_code_24f2ebd0b3b442db9fc04e81fa5da976-2"></a>                      <span class="n">cust_contact</span><span class="p">,</span>
+<a name="rest_code_24f2ebd0b3b442db9fc04e81fa5da976-3"></a>                      <span class="n">cust_email</span><span class="p">,</span>
+<a name="rest_code_24f2ebd0b3b442db9fc04e81fa5da976-4"></a>                      <span class="n">cust_name</span><span class="p">,</span>
+<a name="rest_code_24f2ebd0b3b442db9fc04e81fa5da976-5"></a>                      <span class="n">cust_address</span><span class="p">,</span>
+<a name="rest_code_24f2ebd0b3b442db9fc04e81fa5da976-6"></a>                      <span class="n">cust_city</span><span class="p">,</span>
+<a name="rest_code_24f2ebd0b3b442db9fc04e81fa5da976-7"></a>                      <span class="n">cust_state</span><span class="p">,</span>
+<a name="rest_code_24f2ebd0b3b442db9fc04e81fa5da976-8"></a>                      <span class="n">cust_zip</span><span class="p">,</span>
+<a name="rest_code_24f2ebd0b3b442db9fc04e81fa5da976-9"></a>                      <span class="n">cust_country</span><span class="p">)</span>
+<a name="rest_code_24f2ebd0b3b442db9fc04e81fa5da976-10"></a><span class="k">SELECT</span> <span class="n">cust_id</span><span class="p">,</span>
+<a name="rest_code_24f2ebd0b3b442db9fc04e81fa5da976-11"></a>       <span class="n">cust_contact</span><span class="p">,</span>
+<a name="rest_code_24f2ebd0b3b442db9fc04e81fa5da976-12"></a>       <span class="n">cust_email</span><span class="p">,</span>
+<a name="rest_code_24f2ebd0b3b442db9fc04e81fa5da976-13"></a>       <span class="n">cust_name</span><span class="p">,</span>
+<a name="rest_code_24f2ebd0b3b442db9fc04e81fa5da976-14"></a>       <span class="n">cust_address</span><span class="p">,</span>
+<a name="rest_code_24f2ebd0b3b442db9fc04e81fa5da976-15"></a>       <span class="n">cust_city</span><span class="p">,</span>
+<a name="rest_code_24f2ebd0b3b442db9fc04e81fa5da976-16"></a>       <span class="n">cust_state</span><span class="p">,</span>
+<a name="rest_code_24f2ebd0b3b442db9fc04e81fa5da976-17"></a>       <span class="n">cust_zip</span><span class="p">,</span>
+<a name="rest_code_24f2ebd0b3b442db9fc04e81fa5da976-18"></a>       <span class="n">cust_country</span>
+<a name="rest_code_24f2ebd0b3b442db9fc04e81fa5da976-19"></a>       <span class="k">FROM</span> <span class="n">CustNew</span><span class="p">;</span>
+</pre>
+</div>
+</div>
+<div class="section" id="copying-from-one-table-to-another">
+<h3><a class="toc-backref" href="#id100">Copying from One Table to Another</a></h3>
+<pre class="code sql"><a name="rest_code_1a2222492e5442e59c156f60bc57b0da-1"></a><span class="k">SELECT</span> <span class="o">*</span> <span class="k">INTO</span> <span class="n">CustCopy</span> <span class="k">FROM</span> <span class="n">Customers</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_6b6fd15b3a12434285151db5c7acab6c-1"></a><span class="k">create</span> <span class="k">table</span> <span class="n">custcopy</span> <span class="k">as</span>
+<a name="rest_code_6b6fd15b3a12434285151db5c7acab6c-2"></a><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">Customers</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_a39199d1cf994353a9aa0dc3f5c38e67-1"></a><span class="k">select</span> <span class="n">cust_id</span><span class="p">,</span> <span class="n">cust_name</span> <span class="k">from</span> <span class="n">custcopy</span><span class="p">;</span>
+</pre>
+</div>
+</div>
+<div class="section" id="updating-and-deleting-data">
+<h2><a class="toc-backref" href="#id101">16.Updating and Deleting Data</a></h2>
+<p>update table set #multiple 没有comma delete from</p>
+<div class="section" id="updating-data">
+<h3><a class="toc-backref" href="#id102">Updating Data</a></h3>
+<pre class="code sql"><a name="rest_code_203d55db75b94bf790ec1d3f7ecbfb50-1"></a><span class="k">update</span> <span class="n">Customers</span>
+<a name="rest_code_203d55db75b94bf790ec1d3f7ecbfb50-2"></a><span class="k">set</span> <span class="n">cust_email</span> <span class="o">=</span> <span class="ss">"kim@thetoystore.com"</span>
+<a name="rest_code_203d55db75b94bf790ec1d3f7ecbfb50-3"></a><span class="k">where</span> <span class="n">cust_id</span> <span class="o">=</span> <span class="ss">"1000000005"</span><span class="p">;</span>
+</pre>
+<p><code class="docutils literal">SET cust_email = 'kim@thetoystore.com'</code></p>
+<pre class="code sql"><a name="rest_code_7558c01505794a78943ed57f2220bdea-1"></a><span class="k">UPDATE</span> <span class="n">Customers</span>
+<a name="rest_code_7558c01505794a78943ed57f2220bdea-2"></a><span class="k">SET</span> <span class="n">cust_contact</span> <span class="o">=</span> <span class="s1">'Sam Roberts'</span><span class="p">,</span>
+<a name="rest_code_7558c01505794a78943ed57f2220bdea-3"></a><span class="n">cust_email</span> <span class="o">=</span> <span class="s1">'sam@toyland.com'</span>
+<a name="rest_code_7558c01505794a78943ed57f2220bdea-4"></a><span class="k">WHERE</span> <span class="n">cust_id</span> <span class="o">=</span> <span class="s1">'1000000006'</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_6e76849a63374e71beb520091397110c-1"></a><span class="k">UPDATE</span> <span class="n">Customers</span>
+<a name="rest_code_6e76849a63374e71beb520091397110c-2"></a><span class="k">SET</span> <span class="n">cust_email</span> <span class="o">=</span> <span class="k">NULL</span>
+<a name="rest_code_6e76849a63374e71beb520091397110c-3"></a><span class="k">WHERE</span> <span class="n">cust_id</span> <span class="o">=</span> <span class="s1">'1000000005'</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="deleting-data">
+<h3><a class="toc-backref" href="#id103">Deleting Data</a></h3>
+<pre class="code sql"><a name="rest_code_f68e91f40564467cbad2483dee38c623-1"></a><span class="k">DELETE</span>
+<a name="rest_code_f68e91f40564467cbad2483dee38c623-2"></a><span class="k">FROM</span> <span class="n">Customers</span>
+<a name="rest_code_f68e91f40564467cbad2483dee38c623-3"></a><span class="k">WHERE</span> <span class="n">cust_id</span> <span class="o">=</span> <span class="s1">'1000000006'</span><span class="p">;</span>
+</pre>
+</div>
+</div>
+<div class="section" id="creating-and-manipulating-tables">
+<h2><a class="toc-backref" href="#id104">17.Creating and Manipulating Tables</a></h2>
+<p>总结 create table, work with null, default value, alter table drop table</p>
+<div class="section" id="creating-tables">
+<h3><a class="toc-backref" href="#id105">Creating Tables</a></h3>
+<div class="section" id="basic-table-creation">
+<h4><a class="toc-backref" href="#id106">Basic Table Creation</a></h4>
+<pre class="code sql"><a name="rest_code_d0bd81353c0e43a7ac7469845f9fddf8-1"></a><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">Products3</span>
+<a name="rest_code_d0bd81353c0e43a7ac7469845f9fddf8-2"></a><span class="p">(</span>
+<a name="rest_code_d0bd81353c0e43a7ac7469845f9fddf8-3"></a>    <span class="n">prod_id</span> <span class="nb">CHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+<a name="rest_code_d0bd81353c0e43a7ac7469845f9fddf8-4"></a>    <span class="n">vend_id</span> <span class="nb">CHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+<a name="rest_code_d0bd81353c0e43a7ac7469845f9fddf8-5"></a>    <span class="n">prod_name</span> <span class="nb">CHAR</span><span class="p">(</span><span class="mi">254</span><span class="p">)</span>  <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+<a name="rest_code_d0bd81353c0e43a7ac7469845f9fddf8-6"></a>    <span class="n">prod_price</span> <span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+<a name="rest_code_d0bd81353c0e43a7ac7469845f9fddf8-7"></a>    <span class="n">prod_desc</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>  <span class="k">NULL</span>
+<a name="rest_code_d0bd81353c0e43a7ac7469845f9fddf8-8"></a><span class="p">);</span>
+</pre>
+</div>
+<div class="section" id="working-with-null-values">
+<h4><a class="toc-backref" href="#id107">Working With Null Values</a></h4>
+<pre class="code sql"><a name="rest_code_4aa64c58871344d7b9df5b8c45a18a27-1"></a><span class="k">create</span> <span class="k">table</span> <span class="n">Contracts2</span>
+<a name="rest_code_4aa64c58871344d7b9df5b8c45a18a27-2"></a><span class="p">(</span><span class="n">contract_num</span> <span class="nb">integer</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+<a name="rest_code_4aa64c58871344d7b9df5b8c45a18a27-3"></a><span class="n">contract_date</span> <span class="n">datetime</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+<a name="rest_code_4aa64c58871344d7b9df5b8c45a18a27-4"></a><span class="n">contract_id</span> <span class="nb">char</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">);</span>
+</pre>
+<pre class="code sql"><a name="rest_code_ecd7c362dac348db9bcc9b1dd03db10d-1"></a><span class="k">create</span> <span class="k">table</span> <span class="n">Suppliers</span> <span class="p">(</span>
+<a name="rest_code_ecd7c362dac348db9bcc9b1dd03db10d-2"></a><span class="n">supplier_id</span> <span class="nb">char</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+<a name="rest_code_ecd7c362dac348db9bcc9b1dd03db10d-3"></a><span class="n">supplier_name</span> <span class="nb">char</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+<a name="rest_code_ecd7c362dac348db9bcc9b1dd03db10d-4"></a><span class="n">supplier_address</span> <span class="nb">char</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+<a name="rest_code_ecd7c362dac348db9bcc9b1dd03db10d-5"></a><span class="n">supplier_city</span> <span class="nb">char</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+<a name="rest_code_ecd7c362dac348db9bcc9b1dd03db10d-6"></a><span class="n">supplier_state</span> <span class="nb">char</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+<a name="rest_code_ecd7c362dac348db9bcc9b1dd03db10d-7"></a><span class="n">supplier_zip</span> <span class="nb">char</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+<a name="rest_code_ecd7c362dac348db9bcc9b1dd03db10d-8"></a><span class="n">supplier_country</span> <span class="nb">char</span><span class="p">(</span><span class="mi">50</span><span class="p">));</span>
+</pre>
+</div>
+<div class="section" id="specifying-default-values">
+<h4><a class="toc-backref" href="#id108">Specifying Default Values</a></h4>
+<pre class="code sql"><a name="rest_code_d14e04905b5f49098f899bb49b32cbff-1"></a><span class="k">create</span> <span class="k">table</span> <span class="n">ContractItems</span>
+<a name="rest_code_d14e04905b5f49098f899bb49b32cbff-2"></a><span class="p">(</span>
+<a name="rest_code_d14e04905b5f49098f899bb49b32cbff-3"></a><span class="n">contract_num</span> <span class="nb">integer</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+<a name="rest_code_d14e04905b5f49098f899bb49b32cbff-4"></a><span class="n">contract_item</span> <span class="nb">integer</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+<a name="rest_code_d14e04905b5f49098f899bb49b32cbff-5"></a><span class="n">prod_id</span> <span class="nb">char</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+<a name="rest_code_d14e04905b5f49098f899bb49b32cbff-6"></a><span class="n">quantity</span> <span class="nb">integer</span> <span class="k">not</span> <span class="k">null</span> <span class="k">default</span> <span class="mi">1</span><span class="p">,</span>
+<a name="rest_code_d14e04905b5f49098f899bb49b32cbff-7"></a><span class="n">item_price</span> <span class="nb">decimal</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span>
+<a name="rest_code_d14e04905b5f49098f899bb49b32cbff-8"></a><span class="p">);</span>
+</pre>
+<div class="figure">
+<img alt="Screen Shot 2018-08-13 at 11.11.20 AM" src="http://heropublic.oss-cn-beijing.aliyuncs.com/031136.png"><p class="caption">Screen Shot 2018-08-13 at 11.11.20 AM</p>
+</div>
+</div>
+</div>
+<div class="section" id="updating-tables">
+<h3><a class="toc-backref" href="#id109">Updating Tables</a></h3>
+<pre class="code sql"><a name="rest_code_7bc6dd00c87840709b1d8d98e1ee4fef-1"></a><span class="k">alter</span> <span class="k">table</span> <span class="n">Suppliers</span> <span class="k">add</span> <span class="n">supplier_phone</span> <span class="nb">char</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+</pre>
+<pre class="code sql"><a name="rest_code_957b302cf4d345fd88c996a8e2fb56ee-1"></a><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">Suppliers</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_4993decb000f4453acb11c18e460d741-1"></a><span class="k">alter</span> <span class="k">table</span> <span class="n">Suppliers</span>
+<a name="rest_code_4993decb000f4453acb11c18e460d741-2"></a><span class="k">drop</span> <span class="k">column</span> <span class="n">supplier_phone</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="deleting-tables">
+<h3><a class="toc-backref" href="#id110">Deleting Tables</a></h3>
+<pre class="code sql"><a name="rest_code_4c0f9deaf19e4643854f771320ca61b0-1"></a><span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">Suppliers</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="renaming-tables">
+<h3><a class="toc-backref" href="#id111">Renaming Tables</a></h3>
+</div>
+<div class="section" id="summary">
+<h3><a class="toc-backref" href="#id112">Summary</a></h3>
+<p>In this lesson, you learned several new SQL statements. CREATE TABLE is used to create new tables, ALTER TABLE is used to change table columns (or other objects like constraints or indexes), and DROP TABLE is used to completely delete a table. These statements should be used with extreme caution, and only after backups have been made. As the exact syntax of each of these statements varies from one DBMS to another, you should consult your own DBMS documentation for more information.</p>
+<blockquote>
+<p>Foreign-Key首先是数据类型其次才是connecting point</p>
+</blockquote>
+</div>
+</div>
+<div class="section" id="working-with-stored-procedures">
+<h2><a class="toc-backref" href="#id113">19.Working with Stored Procedures</a></h2>
+<div class="section" id="executing-stored-procedures">
+<h3><a class="toc-backref" href="#id114">Executing Stored Procedures</a></h3>
+<pre class="code sql"><a name="rest_code_08bc2de26ea2453ab1930877280fa399-1"></a><span class="k">EXECUTE</span> <span class="n">AddNewProduct</span><span class="p">(</span><span class="s1">'JTS01'</span><span class="p">,</span>
+<a name="rest_code_08bc2de26ea2453ab1930877280fa399-2"></a>                      <span class="s1">'Stuffed Eiffel Tower'</span><span class="p">,</span>
+<a name="rest_code_08bc2de26ea2453ab1930877280fa399-3"></a>                      <span class="mi">6</span><span class="p">.</span><span class="mi">49</span><span class="p">,</span>
+<a name="rest_code_08bc2de26ea2453ab1930877280fa399-4"></a>                      <span class="s1">'Plush stuffed toy with the text La Tour Eiffel in red white and blue'</span><span class="p">);</span>
+</pre>
+</div>
+<div class="section" id="creating-stored-procedures">
+<h3><a class="toc-backref" href="#id115">Creating Stored Procedures</a></h3>
+<pre class="code sql"><a name="rest_code_5fbcccbb6c734713abcef368693f7598-1"></a><span class="k">CREATE</span> <span class="k">PROCEDURE</span> <span class="n">MailingListCount</span> <span class="p">(</span>
+<a name="rest_code_5fbcccbb6c734713abcef368693f7598-2"></a><span class="n">ListCount</span> <span class="k">OUT</span> <span class="nb">INTEGER</span> <span class="p">)</span>
+<a name="rest_code_5fbcccbb6c734713abcef368693f7598-3"></a><span class="k">IS</span>
+<a name="rest_code_5fbcccbb6c734713abcef368693f7598-4"></a><span class="n">v_rows</span> <span class="nb">INTEGER</span><span class="p">;</span>
+<a name="rest_code_5fbcccbb6c734713abcef368693f7598-5"></a><span class="k">BEGIN</span>
+<a name="rest_code_5fbcccbb6c734713abcef368693f7598-6"></a>    <span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">INTO</span> <span class="n">v_rows</span>
+<a name="rest_code_5fbcccbb6c734713abcef368693f7598-7"></a>    <span class="k">FROM</span> <span class="n">Customers</span>
+<a name="rest_code_5fbcccbb6c734713abcef368693f7598-8"></a>    <span class="k">WHERE</span> <span class="k">NOT</span> <span class="n">cust_email</span> <span class="k">IS</span> <span class="k">NULL</span><span class="p">;</span>
+<a name="rest_code_5fbcccbb6c734713abcef368693f7598-9"></a>    <span class="n">ListCount</span> <span class="p">:</span><span class="o">=</span> <span class="n">v_rows</span><span class="p">;</span>
+<a name="rest_code_5fbcccbb6c734713abcef368693f7598-10"></a>    <span class="k">END</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_264aac1e6f51409cbee0b9ed059a2ad1-1"></a><span class="n">var</span> <span class="n">ReturnValue</span> <span class="nb">NUMBER</span>
+<a name="rest_code_264aac1e6f51409cbee0b9ed059a2ad1-2"></a><span class="k">EXEC</span> <span class="n">MailingListCount</span><span class="p">(:</span><span class="n">ReturnValue</span><span class="p">);</span>
+<a name="rest_code_264aac1e6f51409cbee0b9ed059a2ad1-3"></a><span class="k">SELECT</span> <span class="n">ReturnValue</span><span class="p">;</span>
+</pre>
+</div>
+</div>
+<div class="section" id="managing-transaction-processing">
+<h2><a class="toc-backref" href="#id116">20.Managing Transaction Processing</a></h2>
+<div class="section" id="controlling-transactions">
+<h3><a class="toc-backref" href="#id117">Controlling Transactions</a></h3>
+<div class="section" id="using-rollback">
+<h4><a class="toc-backref" href="#id118">Using Rollback</a></h4>
+<pre class="code python"><a name="rest_code_25e65471dc754be695e8ba7fe7fec328-1"></a><span class="n">DELETE</span> <span class="n">FROM</span> <span class="n">Orders</span><span class="p">;</span>
+<a name="rest_code_25e65471dc754be695e8ba7fe7fec328-2"></a><span class="n">ROLLBACK</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="using-commit">
+<h4><a class="toc-backref" href="#id119">Using Commit</a></h4>
+<pre class="code python"><a name="rest_code_e4b928cf43474c01a2e33c855a66b1cb-1"></a><span class="n">BEGIN</span> <span class="n">TRANSACTION</span>
+<a name="rest_code_e4b928cf43474c01a2e33c855a66b1cb-2"></a><span class="n">DELETE</span> <span class="n">OrderItems</span> <span class="n">WHERE</span> <span class="n">order_num</span> <span class="o">=</span> <span class="mi">12345</span>
+<a name="rest_code_e4b928cf43474c01a2e33c855a66b1cb-3"></a><span class="n">DELETE</span> <span class="n">Orders</span> <span class="n">WHERE</span> <span class="n">order_num</span> <span class="o">=</span> <span class="mi">12345</span>
+<a name="rest_code_e4b928cf43474c01a2e33c855a66b1cb-4"></a><span class="n">COMMIT</span> <span class="n">TRANSACTION</span>
+</pre>
+<pre class="code python"><a name="rest_code_7c360f5d23c54eaba3ca15f901d6b30b-1"></a><span class="n">SET</span> <span class="n">TRANSACTION</span>
+<a name="rest_code_7c360f5d23c54eaba3ca15f901d6b30b-2"></a><span class="n">DELETE</span> <span class="n">OrderItems</span> <span class="n">WHERE</span> <span class="n">order_num</span> <span class="o">=</span> <span class="mi">12345</span><span class="p">;</span>
+<a name="rest_code_7c360f5d23c54eaba3ca15f901d6b30b-3"></a><span class="n">DELETE</span> <span class="n">Orders</span> <span class="n">WHERE</span> <span class="n">order_num</span> <span class="o">=</span> <span class="mi">12345</span><span class="p">;</span>
+<a name="rest_code_7c360f5d23c54eaba3ca15f901d6b30b-4"></a><span class="n">COMMIT</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="using-savepoints">
+<h4><a class="toc-backref" href="#id120">Using Savepoints</a></h4>
+<pre class="code python"><a name="rest_code_0d482842b54a4fd6ab451ff8dcffceb5-1"></a><span class="n">BEGIN</span> <span class="n">TRANSACTION</span>
+<a name="rest_code_0d482842b54a4fd6ab451ff8dcffceb5-2"></a><span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">Customers</span><span class="p">(</span><span class="n">cust_id</span><span class="p">,</span> <span class="n">cust_name</span><span class="p">)</span>
+<a name="rest_code_0d482842b54a4fd6ab451ff8dcffceb5-3"></a><span class="n">VALUES</span><span class="p">(</span><span class="s1">'1000000010'</span><span class="p">,</span> <span class="s1">'Toys Emporium'</span><span class="p">);</span>
+<a name="rest_code_0d482842b54a4fd6ab451ff8dcffceb5-4"></a><span class="n">SAVE</span> <span class="n">TRANSACTION</span> <span class="n">StartOrder</span><span class="p">;</span>
+<a name="rest_code_0d482842b54a4fd6ab451ff8dcffceb5-5"></a><span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">Orders</span><span class="p">(</span><span class="n">order_num</span><span class="p">,</span> <span class="n">order_date</span><span class="p">,</span> <span class="n">cust_id</span><span class="p">)</span> <span class="n">VALUES</span><span class="p">(</span><span class="mi">20100</span><span class="p">,</span><span class="s1">'2001/12/1'</span><span class="p">,</span><span class="s1">'1000000010'</span><span class="p">);</span>
+<a name="rest_code_0d482842b54a4fd6ab451ff8dcffceb5-6"></a><span class="n">IF</span> <span class="err">@</span><span class="nd">@ERROR</span> <span class="o">&lt;&gt;</span> <span class="mi">0</span> <span class="n">ROLLBACK</span> <span class="n">TRANSACTION</span> <span class="n">StartOrder</span><span class="p">;</span>
+<a name="rest_code_0d482842b54a4fd6ab451ff8dcffceb5-7"></a><span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">OrderItems</span><span class="p">(</span><span class="n">order_num</span><span class="p">,</span> <span class="n">order_item</span><span class="p">,</span> <span class="n">prod_id</span><span class="p">,</span> <span class="n">quantity</span><span class="p">,</span> <span class="n">item_price</span><span class="p">)</span>
+<a name="rest_code_0d482842b54a4fd6ab451ff8dcffceb5-8"></a><span class="n">VALUES</span><span class="p">(</span><span class="mi">20100</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'BR01'</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mf">5.49</span><span class="p">);</span>
+<a name="rest_code_0d482842b54a4fd6ab451ff8dcffceb5-9"></a><span class="n">IF</span> <span class="err">@</span><span class="nd">@ERROR</span> <span class="o">&lt;&gt;</span> <span class="mi">0</span> <span class="n">ROLLBACK</span> <span class="n">TRANSACTION</span> <span class="n">StartOrder</span><span class="p">;</span>
+<a name="rest_code_0d482842b54a4fd6ab451ff8dcffceb5-10"></a><span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">OrderItems</span><span class="p">(</span><span class="n">order_num</span><span class="p">,</span> <span class="n">order_item</span><span class="p">,</span> <span class="n">prod_id</span><span class="p">,</span> <span class="n">quantity</span><span class="p">,</span> <span class="n">item_price</span><span class="p">)</span> <span class="n">VALUES</span><span class="p">(</span><span class="mi">20100</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'BR03'</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mf">10.99</span><span class="p">);</span>
+<a name="rest_code_0d482842b54a4fd6ab451ff8dcffceb5-11"></a><span class="n">IF</span> <span class="err">@</span><span class="nd">@ERROR</span> <span class="o">&lt;&gt;</span> <span class="mi">0</span> <span class="n">ROLLBACK</span> <span class="n">TRANSACTION</span> <span class="n">StartOrder</span><span class="p">;</span>
+<a name="rest_code_0d482842b54a4fd6ab451ff8dcffceb5-12"></a><span class="n">COMMIT</span> <span class="n">TRANSACTION</span>
+</pre>
+</div>
+</div>
+</div>
+<div class="section" id="using-cursors">
+<h2><a class="toc-backref" href="#id121">21.Using Cursors</a></h2>
+<div class="section" id="working-with-cursors">
+<h3><a class="toc-backref" href="#id122">Working With Cursors</a></h3>
+<div class="section" id="creating-cursors">
+<h4><a class="toc-backref" href="#id123">Creating Cursors</a></h4>
+<pre class="code sql"><a name="rest_code_0cd7634b2ecc4337a141efd7b4c7154e-1"></a><span class="k">DECLARE</span> <span class="n">CustCursor</span> <span class="k">CURSOR</span>
+<a name="rest_code_0cd7634b2ecc4337a141efd7b4c7154e-2"></a><span class="k">FOR</span>
+<a name="rest_code_0cd7634b2ecc4337a141efd7b4c7154e-3"></a><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">Customers</span>
+<a name="rest_code_0cd7634b2ecc4337a141efd7b4c7154e-4"></a><span class="k">WHERE</span> <span class="n">cust_email</span> <span class="k">IS</span> <span class="k">NULL</span>
+</pre>
+<pre class="code sql"><a name="rest_code_e18c75f91ec84bd3857a370c51c8bcbc-1"></a><span class="k">DECLARE</span> <span class="k">CURSOR</span> <span class="n">CustCursor</span>
+<a name="rest_code_e18c75f91ec84bd3857a370c51c8bcbc-2"></a><span class="k">IS</span>
+<a name="rest_code_e18c75f91ec84bd3857a370c51c8bcbc-3"></a><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">Customers</span> <span class="k">WHERE</span> <span class="n">cust_email</span> <span class="k">IS</span> <span class="k">NULL</span>
+</pre>
+</div>
+<div class="section" id="id2">
+<span id="using-cursors-1"></span><h4><a class="toc-backref" href="#id124">Using Cursors</a></h4>
+<pre class="code sql"><a name="rest_code_156aa1beb22d4986b6cc1fa6128faf8a-1"></a><span class="k">DECLARE</span> <span class="k">TYPE</span> <span class="n">CustCursor</span> <span class="k">IS</span> <span class="k">REF</span> <span class="k">CURSOR</span>
+<a name="rest_code_156aa1beb22d4986b6cc1fa6128faf8a-2"></a>    <span class="k">RETURN</span> <span class="n">Customers</span><span class="o">%</span><span class="n">ROWTYPE</span><span class="p">;</span>
+<a name="rest_code_156aa1beb22d4986b6cc1fa6128faf8a-3"></a><span class="k">DECLARE</span> <span class="n">CustRecord</span> <span class="n">Customers</span><span class="o">%</span><span class="n">ROWTYPE</span>
+<a name="rest_code_156aa1beb22d4986b6cc1fa6128faf8a-4"></a><span class="k">BEGIN</span>
+<a name="rest_code_156aa1beb22d4986b6cc1fa6128faf8a-5"></a>    <span class="k">OPEN</span> <span class="n">CustCursor</span><span class="p">;</span>
+<a name="rest_code_156aa1beb22d4986b6cc1fa6128faf8a-6"></a>    <span class="k">FETCH</span> <span class="n">CustCursor</span> <span class="k">INTO</span> <span class="n">CustRecord</span><span class="p">;</span>
+<a name="rest_code_156aa1beb22d4986b6cc1fa6128faf8a-7"></a>    <span class="k">CLOSE</span> <span class="n">CustCursor</span><span class="p">;</span>
+<a name="rest_code_156aa1beb22d4986b6cc1fa6128faf8a-8"></a><span class="k">END</span><span class="p">;</span>
+</pre>
+<pre class="code sql"><a name="rest_code_3a5fdbf62f734969bf1d48d3724d81d6-1"></a>    <span class="k">DECLARE</span> <span class="k">TYPE</span> <span class="n">CustCursor</span> <span class="k">IS</span> <span class="k">REF</span> <span class="k">CURSOR</span>
+<a name="rest_code_3a5fdbf62f734969bf1d48d3724d81d6-2"></a>        <span class="k">RETURN</span> <span class="n">Customers</span><span class="o">%</span><span class="n">ROWTYPE</span><span class="p">;</span>
+<a name="rest_code_3a5fdbf62f734969bf1d48d3724d81d6-3"></a>    <span class="k">DECLARE</span> <span class="n">CustRecord</span> <span class="n">Customers</span><span class="o">%</span><span class="n">ROWTYPE</span>
+<a name="rest_code_3a5fdbf62f734969bf1d48d3724d81d6-4"></a>    <span class="k">BEGIN</span>
+<a name="rest_code_3a5fdbf62f734969bf1d48d3724d81d6-5"></a>        <span class="k">OPEN</span> <span class="n">CustCursor</span><span class="p">;</span>
+<a name="rest_code_3a5fdbf62f734969bf1d48d3724d81d6-6"></a>        <span class="n">LOOP</span>
+<a name="rest_code_3a5fdbf62f734969bf1d48d3724d81d6-7"></a>        <span class="k">FETCH</span> <span class="n">CustCursor</span> <span class="k">INTO</span> <span class="n">CustRecord</span><span class="p">;</span>
+<a name="rest_code_3a5fdbf62f734969bf1d48d3724d81d6-8"></a>        <span class="n">EXIT</span> <span class="k">WHEN</span> <span class="n">CustCursor</span><span class="o">%</span><span class="n">NOTFOUND</span><span class="p">;</span>
+<a name="rest_code_3a5fdbf62f734969bf1d48d3724d81d6-9"></a>        <span class="p">...</span>
+<a name="rest_code_3a5fdbf62f734969bf1d48d3724d81d6-10"></a><span class="p">.</span>        <span class="k">END</span> <span class="n">LOOP</span><span class="p">;</span>
+<a name="rest_code_3a5fdbf62f734969bf1d48d3724d81d6-11"></a>        <span class="k">CLOSE</span> <span class="n">CustCursor</span><span class="p">;</span>
+</pre>
+</div>
+<div class="section" id="closing-cursors">
+<h4><a class="toc-backref" href="#id125">Closing Cursors</a></h4>
+<pre class="code sql"><a name="rest_code_3cf6c7605f8b4b21b58f01b48cb8afbf-1"></a><span class="k">CLOSE</span> <span class="n">CustCursor</span>
+</pre>
+<p>Here's the Microsoft SQL Server version:</p>
+<pre class="code sql"><a name="rest_code_7da5b68799164fa381cf8790bad08b50-1"></a><span class="k">CLOSE</span> <span class="n">CustCursor</span>
+<a name="rest_code_7da5b68799164fa381cf8790bad08b50-2"></a><span class="k">DEALLOCATE</span> <span class="k">CURSOR</span> <span class="n">CustCursor</span>
+</pre>
+<p>The CLOSE statement is used to close cursors; once a cursor is closed, it cannot be reused without being opened again. However, a cursor does not need to be declared again to be used; an OPEN is sufficient.</p>
+</div>
+</div>
+</div>
+<div class="section" id="understanding-advanced-sql-features">
+<h2><a class="toc-backref" href="#id126">22.Understanding Advanced SQL Features</a></h2>
+<div class="section" id="understanding-constraints">
+<h3><a class="toc-backref" href="#id127">Understanding Constraints</a></h3>
+<div class="section" id="id3">
+<span id="primary-keys-1"></span><h4><a class="toc-backref" href="#id128">Primary Keys</a></h4>
+<div class="figure">
+<img alt="Screen Shot 2018-08-13 at 10.28.19 PM" src="http://heropublic.oss-cn-beijing.aliyuncs.com/142840.png"><p class="caption">Screen Shot 2018-08-13 at 10.28.19 PM</p>
+</div>
+<pre class="code python"><a name="rest_code_c444397ee53b48a68bb2b6f94f892324-1"></a><span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">Vendors</span>
+<a name="rest_code_c444397ee53b48a68bb2b6f94f892324-2"></a><span class="n">ADD</span> <span class="n">CONSTRAINT</span> <span class="n">PRIMARY</span> <span class="n">KEY</span> <span class="p">(</span><span class="n">vend_id</span><span class="p">);</span>
+</pre>
+</div>
+<div class="section" id="foreign-keys">
+<h4><a class="toc-backref" href="#id129">Foreign Keys</a></h4>
+<pre class="code python"><a name="rest_code_e08dea59bd6e4a719002816c3416d745-1"></a><span class="n">MySQL</span> <span class="p">[</span><span class="n">distributor</span><span class="p">]</span><span class="o">&gt;</span> <span class="n">create</span> <span class="n">table</span> <span class="n">oorders</span> <span class="p">(</span> <span class="n">order_num</span> <span class="n">integer</span> <span class="ow">not</span> <span class="n">null</span> <span class="n">primary</span> <span class="n">key</span><span class="p">,</span> <span class="n">order_date</span> <span class="n">datetime</span> <span class="ow">not</span> <span class="n">null</span><span class="p">,</span> <span class="n">cust_id</span> <span class="n">char</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="ow">not</span> <span class="n">null</span> <span class="n">references</span> <span class="n">customers</span><span class="p">(</span><span class="n">cust_id</span><span class="p">)</span> <span class="p">);</span>
+<a name="rest_code_e08dea59bd6e4a719002816c3416d745-2"></a><span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">0</span> <span class="n">rows</span> <span class="n">affected</span> <span class="p">(</span><span class="mf">0.157</span> <span class="n">sec</span><span class="p">)</span>
+</pre>
+<pre class="code sql"><a name="rest_code_a6c18d96650b4e0381b5794c331ab55b-1"></a><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">Orders</span>
+<a name="rest_code_a6c18d96650b4e0381b5794c331ab55b-2"></a><span class="k">ADD</span> <span class="k">CONSTRAINT</span>
+<a name="rest_code_a6c18d96650b4e0381b5794c331ab55b-3"></a><span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">cust_id</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="n">Customers</span> <span class="p">(</span><span class="n">cust_id</span><span class="p">)</span>
+</pre>
+<p>#+BEGIN<sub>QUOTE</sub></p>
+</div>
+<div class="section" id="unique-constraints">
+<h4><a class="toc-backref" href="#id130">Unique Constraints</a></h4>
+<pre class="code sql"><a name="rest_code_79eb306a03e547c2bea76e39866611e9-1"></a><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">OrderItems</span>
+<a name="rest_code_79eb306a03e547c2bea76e39866611e9-2"></a><span class="p">(</span>
+<a name="rest_code_79eb306a03e547c2bea76e39866611e9-3"></a>    <span class="n">order_num</span> <span class="nb">INTEGER</span>
+<a name="rest_code_79eb306a03e547c2bea76e39866611e9-4"></a>    <span class="n">order_item</span> <span class="nb">INTEGER</span>
+<a name="rest_code_79eb306a03e547c2bea76e39866611e9-5"></a>    <span class="n">prod_id</span> <span class="nb">CHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="n">quantity</span> <span class="nb">INTEGER</span> <span class="mi">0</span><span class="p">),</span>
+<a name="rest_code_79eb306a03e547c2bea76e39866611e9-6"></a>   <span class="n">item_price</span> <span class="n">MONEY</span> <span class="p">);</span>
+</pre>
+</div>
+</div>
+<div class="section" id="understanding-indexes">
+<h3><a class="toc-backref" href="#id131">Understanding Indexes</a></h3>
+<p>The following statement creates a simple index on the Products table's product name column:</p>
+<pre class="code sql"><a name="rest_code_f6f82bcf2b134092952fc35536cac964-1"></a><span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">prod_name_ind</span>
+<a name="rest_code_f6f82bcf2b134092952fc35536cac964-2"></a><span class="k">ON</span> <span class="n">PRODUCTS</span> <span class="p">(</span><span class="n">prod_name</span><span class="p">);</span>
+</pre>
+<p>Every index must be uniquely named. Here the name prod<sub>nameind</sub> is defined after the keywords CREATE INDEX. ON is used to specify the table being indexed, and the columns to include in the index (just one in this example) are specified in parentheses after the table name.</p>
+<blockquote>
+<p><strong>Tip: Revisiting Indexes</strong></p>
+<p>Index effectiveness changes as table data is added or changed. Many database administrators find that what once was an ideal set of indexes might not be so ideal after several months of data manipulation. It is always a good idea to revisit indexes on a regular basis to fine-tune them as needed.</p>
+</blockquote>
+</div>
+<div class="section" id="understanding-triggers">
+<h3><a class="toc-backref" href="#id132">Understanding Triggers</a></h3>
+<p>Triggers are special stored procedures that are executed automatically when specific database activity occurs. Triggers might be associated with <strong>INSERT, UPDATE, and DELETE operations</strong> (or any combination thereof) on specific tables.</p>
+<p>Unlike stored procedures (which are simply stored SQL statements), triggers are tied to individual tables. A trigger associated with INSERT operations on the Orders table will be executed only when a row is inserted into the Orders table. Similarly, a trigger on INSERT and UPDATE operations on the Customers table will be executed only when those specific operations occur on that table.</p>
+<p>Within triggers, your code has access to the following:</p>
+<ol class="arabic simple">
+<li><p>All new data in INSERT operations</p></li>
+<li><p>All new data and old data in UPDATE operations</p></li>
+<li><p>Deleted data in DELETE operations</p></li>
+</ol>
+<p>Depending on the DBMS being used, triggers can be executed before or after a specified operation is performed.</p>
+<p>The following are some common uses for Triggers:</p>
+<ol class="arabic simple">
+<li><p>Ensuring data consistency—For example, converting all state names to uppercase during an INSERT or UPDATE operation</p></li>
+<li><p>Performing actions on other tables based on changes to a table—For example, writing an audit trail record to a log table each time a row is updated or deleted</p></li>
+<li><p>Performing additional validation and rolling back data if needed—For example, making sure a customer's available credit has not been exceeded and blocking the insertion if it has</p></li>
+<li><p>Calculating computed column values or updating timestamps As you probably expect by now, trigger creation syntax varies dramatically from one DBMS to another. Check your documentation for more details.</p></li>
+</ol>
+<p>As you probably expect by now, trigger creation syntax varies dramatically from one DBMS to another. Check your documentation for more details.</p>
+<p>The following example creates a trigger that converts the cust<sub>state</sub> column in the Customers table to uppercase on all INSERT and UPDATE operations.</p>
+<p>This is the SQL Server version:</p>
+<pre class="code sql"><a name="rest_code_ffa82db72c3147cda829d9ab5c8de079-1"></a><span class="k">CREATE</span> <span class="k">TRIGGER</span> <span class="n">customer_state</span>
+<a name="rest_code_ffa82db72c3147cda829d9ab5c8de079-2"></a><span class="k">ON</span> <span class="n">Customers</span>
+<a name="rest_code_ffa82db72c3147cda829d9ab5c8de079-3"></a><span class="k">FOR</span> <span class="k">INSERT</span><span class="p">,</span> <span class="k">UPDATE</span>
+<a name="rest_code_ffa82db72c3147cda829d9ab5c8de079-4"></a><span class="k">AS</span>
+<a name="rest_code_ffa82db72c3147cda829d9ab5c8de079-5"></a><span class="k">UPDATE</span> <span class="n">Customers</span>
+<a name="rest_code_ffa82db72c3147cda829d9ab5c8de079-6"></a><span class="k">SET</span> <span class="n">cust_state</span> <span class="o">=</span> <span class="k">Upper</span><span class="p">(</span><span class="n">cust_state</span><span class="p">)</span>
+<a name="rest_code_ffa82db72c3147cda829d9ab5c8de079-7"></a><span class="k">WHERE</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span> <span class="o">=</span> <span class="n">inserted</span><span class="p">.</span><span class="n">cust_id</span><span class="p">;</span>
+</pre>
+<p>This is the Oracle and PostgreSQL version:</p>
+<pre class="code sql"><a name="rest_code_3b1fca957b274f92ab6750f0d587060a-1"></a><span class="k">CREATE</span> <span class="k">TRIGGER</span> <span class="n">customer_state</span>
+<a name="rest_code_3b1fca957b274f92ab6750f0d587060a-2"></a><span class="k">AFTER</span> <span class="k">INSERT</span> <span class="k">OR</span> <span class="k">UPDATE</span>
+<a name="rest_code_3b1fca957b274f92ab6750f0d587060a-3"></a><span class="k">FOR</span> <span class="k">EACH</span> <span class="k">ROW</span>
+<a name="rest_code_3b1fca957b274f92ab6750f0d587060a-4"></a><span class="k">BEGIN</span>
+<a name="rest_code_3b1fca957b274f92ab6750f0d587060a-5"></a><span class="k">UPDATE</span> <span class="n">Customers</span>
+<a name="rest_code_3b1fca957b274f92ab6750f0d587060a-6"></a><span class="k">SET</span> <span class="n">cust_state</span> <span class="o">=</span> <span class="k">Upper</span><span class="p">(</span><span class="n">cust_state</span><span class="p">)</span>
+<a name="rest_code_3b1fca957b274f92ab6750f0d587060a-7"></a><span class="k">WHERE</span> <span class="n">Customers</span><span class="p">.</span><span class="n">cust_id</span> <span class="o">=</span> <span class="p">:</span><span class="k">OLD</span><span class="p">.</span><span class="n">cust_id</span>
+<a name="rest_code_3b1fca957b274f92ab6750f0d587060a-8"></a><span class="k">END</span><span class="p">;</span>
+</pre>
+<!--  -->
+<blockquote>
+<p><strong>Tip: Constraints Are Faster Than Triggers</strong></p>
+<p>As a rule, constraints are processed more quickly than triggers, so whenever possible, use constraints instead.</p>
+</blockquote>
+</div>
+<div class="section" id="database-security">
+<h3><a class="toc-backref" href="#id133">Database Security</a></h3>
+<p>There is nothing more valuable to an organization than its data, and data should always be protected from would-be thieves or casual browsers. Of course, at the same time data must be accessible to users who need access to it, and so most DBMSs provide administrators with mechanisms by which to grant or restrict access to data.</p>
+<p>The foundation of any security system is user authorization and authentication. This is the process by which a user is validated to ensure he is who he says he is and that he is allowed to perform the operation he is trying to perform. Some DBMSs integrate with operating system security for this, others maintain their own user and password lists, and still others integrate with external directory services servers.</p>
+<p>Some operations that are often secured</p>
+<ol class="arabic simple">
+<li><p>Access to database administration features (creating tables, altering or dropping existing tables, and so on)</p></li>
+<li><p>Access to specific databases or tables</p></li>
+<li><p>The type of access (read-only, access to specific columns, and so on)</p></li>
+<li><p>Access to tables via views or stored procedures only</p></li>
+<li><p>Creation of multiple levels of security, thus allowing varying degrees of access and control based on login</p></li>
+<li><p>Restricting the ability to manage user accounts</p></li>
+</ol>
+<p>Security is managed via the SQL GRANT and REVOKE statements, although most DBMSs provide interactive administration utilities that use the GRANT and REVOKE statements internally.</p>
+</div>
+<div class="section" id="id4">
+<span id="summary-1"></span><h3><a class="toc-backref" href="#id134">Summary</a></h3>
+<p>In this lesson, you learned how to use some advanced SQL features. Constraints are an important part of enforcing referential integrity; indexes can improve data retrieval performance; triggers can be used to perform pre- or post-execution processing; and security options can be used to manage data access. Your own DBMS probably offers some form of these features. Refer to your DBMS documentation for more details.</p>
+</div>
+</div>
+<div class="section" id="appendix-c-sql-statement-syntax">
+<h2><a class="toc-backref" href="#id135">Appendix C. SQL Statement Syntax</a></h2>
+<p>To help you find the syntax you need when you need it, this appendix lists the syntax for the most frequently used SQL operations. Each statement starts with a brief description and then displays the appropriate syntax. For added convenience, you'll also find cross references to the lessons where specific statements are taught.</p>
+<p>When reading statement syntax, remember the following:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal">|</code> symbol is used to indicate one of several options, so <code class="docutils literal">NULL|NOT NULL</code> means specify either <code class="docutils literal">NULL</code> or <code class="docutils literal">NOT NULL</code>.</p></li>
+<li><p>Keywords or clauses contained within square parentheses <code class="docutils literal">[like this]</code> are optional.</p></li>
+<li><p>The syntax listed below will work with almost all DBMSs. You are advised to consult your own DBMS documentation for details of implementing specific syntactical changes.</p></li>
+</ul>
+<div class="section" id="alter-table">
+<h3><a class="toc-backref" href="#id136">ALTER TABLE</a></h3>
+<p><code class="docutils literal">ALTER TABLE</code> is used to update the schema of an existing table. To create a new table, use <code class="docutils literal">CREATE TABLE</code>. See <a class="reference external" href="part0024.html#ch17">Lesson 17</a>, “<a class="reference external" href="part0024.html#ch17">Creating and Manipulating Tables</a>,” for more information.</p>
+<p>Input</p>
+<hr class="docutils">
+<p>ALTER TABLE tablename (   ADD|DROP  column  datatype  [NULL|NOT NULL]  [CONSTRAINTS],   ADD|DROP  column  datatype  [NULL|NOT NULL]  [CONSTRAINTS],     … );</p>
+</div>
+<hr class="docutils">
+<div class="section" id="commit">
+<h3><a class="toc-backref" href="#id137">COMMIT</a></h3>
+<p><code class="docutils literal">COMMIT</code> is used to write a transaction to the database. See <a class="reference external" href="part0027.html#ch20">Lesson 20</a>, “[[<a class="reference external" href="file:part0027.html#ch20%5D%5BManaging">file:part0027.html#ch20][Managing</a> Transaction Processin],” for more information.</p>
+<p>Input</p>
+<hr class="docutils">
+<p>COMMIT [TRANSACTION];</p>
+</div>
+<hr class="docutils">
+<div class="section" id="create-index">
+<h3><a class="toc-backref" href="#id138">CREATE INDEX</a></h3>
+<p><code class="docutils literal">CREATE INDEX</code> is used to create an index on one or more columns. See <a class="reference external" href="part0029.html#ch22">Lesson 22</a>, “<a class="reference external" href="part0029.html#ch22">Understanding Advanced SQL Features</a>,” for more information.</p>
+<p>Input</p>
+<hr class="docutils">
+<p>CREATE INDEX indexname ON tablename (column, …);</p>
+</div>
+<hr class="docutils">
+<div class="section" id="create-procedure">
+<h3><a class="toc-backref" href="#id139">CREATE PROCEDURE</a></h3>
+<p><code class="docutils literal">CREATE PROCEDURE</code> is used to create a stored procedure. See <a class="reference external" href="part0026.html#ch19">Lesson 19</a>, “<a class="reference external" href="part0026.html#ch19">Working with Stored Procedures</a>,” for more information. Oracle uses a different syntax as described in that lesson.</p>
+<p>Input</p>
+<hr class="docutils">
+<p>[[<a class="reference external" href="file:part0057_split_001.html#p249pro01%5D%5BClick">file:part0057_split_001.html#p249pro01][Click</a> here to view code imag]</p>
+<p>CREATE PROCEDURE procedurename [parameters] [options] AS SQL statement;</p>
+</div>
+<hr class="docutils">
+<div class="section" id="create-table">
+<h3><a class="toc-backref" href="#id140">CREATE TABLE</a></h3>
+<p><code class="docutils literal">CREATE TABLE</code> is used to create new database tables. To update the schema of an existing table, use <code class="docutils literal">ALTER TABLE</code>. See <a class="reference external" href="part0024.html#ch17">Lesson 17</a> for more information.</p>
+<p>Input</p>
+<hr class="docutils">
+<p>CREATE TABLE tablename (     column    datatype    [NULL|NOT NULL]    [CONSTRAINTS],     column    datatype    [NULL|NOT NULL]    [CONSTRAINTS],        … );</p>
+</div>
+<hr class="docutils">
+<div class="section" id="create-view">
+<h3><a class="toc-backref" href="#id141">CREATE VIEW</a></h3>
+<p><code class="docutils literal">CREATE VIEW</code> is used to create a new view of one or more tables. See <a class="reference external" href="part0025.html#ch18">Lesson 18</a>, “<a class="reference external" href="part0025.html#ch18">Using Views</a>,” for more information.</p>
+<p>Input</p>
+<hr class="docutils">
+<p>CREATE VIEW viewname AS SELECT columns, … FROM tables, … [WHERE .. [GROUP BY .. [HAVING ..;</p>
+</div>
+<hr class="docutils">
+<div class="section" id="delete">
+<h3><a class="toc-backref" href="#id142">DELETE</a></h3>
+<p><code class="docutils literal">DELETE</code> deletes one or more rows from a table. See <a class="reference external" href="part0023.html#ch16">Lesson 16</a>,</p>
+<p>Input</p>
+<hr class="docutils">
+<p>DELETE FROM tablename [WHERE ..;</p>
+</div>
+<hr class="docutils">
+<div class="section" id="drop">
+<h3><a class="toc-backref" href="#id143">DROP</a></h3>
+<p><code class="docutils literal">DROP</code> permanently removes database objects (tables, views, indexes, and so forth). See <a class="reference external" href="part0024.html#ch17">Lessons 17</a> and <a class="reference external" href="part0025.html#ch18">18</a> for more information.</p>
+<p>Input</p>
+<hr class="docutils">
+<p>DROP INDEX|PROCEDURE|TABLE|VIEW indexname|procedurename|tablename|viewname;</p>
+</div>
+<hr class="docutils">
+<div class="section" id="insert">
+<h3><a class="toc-backref" href="#id144">INSERT</a></h3>
+<p><code class="docutils literal">INSERT</code> adds a single row to a table. See <a class="reference external" href="part0022.html#ch15">Lesson 15</a>,</p>
+<hr class="docutils">
+<p>INSERT INTO tablename [(columns, …)] VALUES(values, …);</p>
+</div>
+<hr class="docutils">
+<div class="section" id="insert-select">
+<h3><a class="toc-backref" href="#id145">INSERT SELECT</a></h3>
+<p><code class="docutils literal">INSERT SELECT</code> inserts the results of a <code class="docutils literal">SELECT</code> into a table. See <a class="reference external" href="part0022.html#ch15">Lesson 15</a> for more information.</p>
+<hr class="docutils">
+<p>INSERT INTO tablename [(columns, …)] SELECT columns, … FROM tablename, … [WHERE ..;</p>
+</div>
+<hr class="docutils">
+<div class="section" id="rollback">
+<h3><a class="toc-backref" href="#id146">ROLLBACK</a></h3>
+<p><code class="docutils literal">ROLLBACK</code> is used to undo a transaction block. See <a class="reference external" href="part0027.html#ch20">Lesson 20</a> for more information.</p>
+<p>Input</p>
+<hr class="docutils">
+<p>ROLLBACK [ TO savepointnam;</p>
+<hr class="docutils">
+<p>or</p>
+<p>Input</p>
+<hr class="docutils">
+<p>ROLLBACK TRANSACTION;</p>
+</div>
+<hr class="docutils">
+<div class="section" id="select">
+<h3><a class="toc-backref" href="#id147">SELECT</a></h3>
+<p><code class="docutils literal">SELECT</code> is used to retrieve data from one or more tables (or views).</p>
+<hr class="docutils">
+<p>SELECT columnname, … FROM tablename, … [WHERE .. [UNION .. [GROUP BY .. [HAVING .. [ORDER BY ..;</p>
+</div>
+<hr class="docutils">
+<div class="section" id="update">
+<h3><a class="toc-backref" href="#id148">UPDATE</a></h3>
+<p><code class="docutils literal">UPDATE</code> updates one or more rows in a table. See <a class="reference external" href="part0023.html#ch16">Lesson 16</a> for more information.</p>
+<p>Input</p>
+<hr class="docutils">
+<p>UPDATE tablename SET columname = value, … [WHERE ..;</p>
+</div>
+</div>
+<hr class="docutils">
+<div class="section" id="publish">
+<h2><a class="toc-backref" href="#id149">Publish</a></h2>
+</div>
+</div>
+            
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="?",
+            disqus_url="https://alinbxsorcerer.github.io/posts/sql-in-10-minutes/",
+        disqus_title="SQL in 10 Minutes \u603b\u7ed3",
+        disqus_identifier="cache/posts/sql-in-10-minutes.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        
+
+        </div>
+    </div>
+
+    
+    <footer><div class="container">
+            <div class="social">
+
+
+
+                <div class="social-entry">
+                    <a href="../../rss.xml" target="_blank">
+                        <i class="fa fa-rss"></i> 
+                    </a>
+                </div>
+            </div>
+                <div class="copyright">
+                    Contents © 2019         <a href="mailto:davad.fhl.wang@foxmail.com">David</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+                    
+                </div>
+           
+        </div>
+    </footer><script src="../../assets/js/all-nocdn.js" type="text/javascript"></script>
+</body>
+</html>
