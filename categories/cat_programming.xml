@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Magic Land Declared by David (Posts about programming)</title><link>https://alinbxsorcerer.github.io/</link><description></description><atom:link href="https://alinbxsorcerer.github.io/categories/cat_programming.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:davad.fhl.wang@foxmail.com"&gt;David&lt;/a&gt; </copyright><lastBuildDate>Fri, 06 Dec 2019 02:13:08 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>淘宝双十一的销售额造假了吗? 用本福特定律检验</title><link>https://alinbxsorcerer.github.io/posts/taobao-shuangshiyi-zaojiale-ma/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="contents topic" id="contents"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Magic Land Declared by David (Posts about programming)</title><link>https://alinbxsorcerer.github.io/</link><description></description><atom:link href="https://alinbxsorcerer.github.io/categories/cat_programming.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:davad.fhl.wang@foxmail.com"&gt;David&lt;/a&gt; </copyright><lastBuildDate>Fri, 13 Dec 2019 10:51:42 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>淘宝双十一的销售额造假了吗? 用本福特定律检验</title><link>https://alinbxsorcerer.github.io/posts/taobao-shuangshiyi-zaojiale-ma/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="contents topic" id="contents"&gt;
 &lt;p class="topic-title first"&gt;Contents&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/taobao-shuangshiyi-zaojiale-ma/#id1" id="id4"&gt;0.引言&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
@@ -2811,17 +2811,42 @@ find [Option] source pattern&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id2"&gt;
 &lt;h2&gt;＂模＂的概念&lt;/h2&gt;
-&lt;p&gt;正式开讲首先灌输一个新的概念叫，模什么是“模”，想象日常使用的钟表，它可以显示0~12点的时间，假设现在是2点钟，请用手动拨动时针的方式将时间减4小时，你会怎么做？有两种方式：逆时针将时针拨4小时顺时针将时针拨8（12-4）小时这里要讲的是第二种方式，为什么顺时针拨12-4也可以达到和正常思维的第一种方式一样的位置。12就是模。同样的，如果是十进制的两位数，80-10 和 80+90在不考虑百位数的基础上都是70。这里的90就是100-10得来的，这种情况下100就是模模就好比是一个极限，在它的范围内，两个相加等于模的数互为补数，还是举100的例子90和10，55和45，68和32，互为补数在模的范围内做减法，可以将“X-Y”的减法变更为“X+Y的补数“的加法，当然前提是不考虑百位数思考题，上面举的例子是大数减小数，那么如果是小数减大数会怎么样呢？如果是10-80，结果应该是-70，但如果按照10+（100-80），结果是30。而很明显-70和30不是一回事，这里也没有百位数的问题，这种情况应该怎么破？当初的那些先贤们想出来的办法很简单，就是把这两个数直接划上等号，正好顺便解决了负数的表达方式。再来仔细看看这两个数的关系：-70绝对值的补数就正好是30所以在计算机中，负数的表达方式就是它绝对值的补数.&lt;/p&gt;
-&lt;p&gt;但是问题又来了，看起来这个解决方式很完美了，但别忘了，30他已经代表了正数的30了，现在又要用来代表负数的-70，谁知道它出现的时候到底是代表哪个数？为了解决这个问题，需要给这套规则划定一个范围，原来是0~99的正数，现在既然要用部分正数来代替负数了，那就要规定一个范围来使得一个数只代表一个含义，正好一人一半，0～49这个区间就代表正数，50～99的区间就用来代表各自补数的负值.&lt;/p&gt;
+&lt;p&gt;首先引入"模"的概念，
+例如日常使用的钟表，它可以显示0~12点的时间，也就是摸是12. 比如当前时间是上午9点,
+你也可以说是上午差3个小时到12点, 也就是上午-3点.
+同样的，如果是十进制的两位数，80-10和80+90在不考虑百位数的基础上都是70。这里的90就是
+100-10得来的，这种情况下100就是模模就好比是一个极限，在它的范围内，两个相加等于
+模的数互为补数，还是举100的例子90和10，55和45，68和32，互为补数在模的范围内做减
+法，可以将“X-Y”的减法变更为“X+Y的补数“的加法，当然前提是不考虑百位数思考题，上面
+举的例子是大数减小数，那么如果是小数减大数会怎么样呢？如果是10-80，结果应该是-70，
+但如果按照10+（100-80），结果是30。而很明显-70和30不是一回事，这里也没有百位数的
+问题，这种情况应该怎么破？当初的那些先贤们想出来的办法很简单，就是把这两个数直接
+划上等号，正好顺便解决了负数的表达方式。再来仔细看看这两个数的关系：
+-70绝对值的补数就正好是30所以在计算机中，负数的表达方式就是它绝对值的补数.&lt;/p&gt;
+&lt;p&gt;但是问题又来了，看起来这个解决方式很完美了，但别忘了，30他已经代表了正数的30了，
+现在又要用来代表负数的-70，谁知道它出现的时候到底是代表哪个数？为了解决这个问题，
+需要给这套规则划定一个范围，原来是0~99的正数，现在既然要用部分正数来代替负数了，
+那就要规定一个范围来使得一个数只代表一个含义，正好一人一半，0~49这个区间就代表
+正数，50～99的区间就用来代表各自补数的负值.&lt;/p&gt;
+&lt;p&gt;关键点是: 因为mod的关系, 原数与补数是同一个数字.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id3"&gt;
 &lt;h2&gt;二进制数&lt;/h2&gt;
-&lt;p&gt;现在回到二进制的计算机世界8位二进制数一共可以表示2的8次方，256个数，即0～255（别忘了0也要占一位的），他们的极限就是256，即256是8位二进制数的模 ，应该不难理解吧，同上十进制的两位数0～99的模是100。还是用二进制来说明清楚，8位二进制能表示的数的极限是1 1 1 1 1 1 1 1， 就是255，在这基础上加0 0 0 0 0 0 0 1，出现了进一位 即 1 0 0 0 0 0 0 0 0这个1 0 0 0 0 0 0 0 0就是8位二进制数的模，256同样按照第二步讲的逻辑，一半的数0～127，代表其正数本身，另一半的数128～255，代表其补数的负值，即“－1～-128”的区间。 而 “X－Y”的减法 就用 “X＋Y的补数” 的加法来表示，完美！ 唯一需要注意的事情是任何计算的输入值和输出结果值都需要严格遵守-128～127的范围，一旦溢出就会报错.这样一说是不是可以理解-128的补码是怎么来的了吧？ 他就是256-｜-128｜＝128二进制的128是不是就是1 0 0 0 0 0 0 0 ？&lt;/p&gt;
+&lt;p&gt;现在回到二进制的计算机世界8位二进制数一共可以表示2的8次方，256个数，即0~255（别
+忘了0也要占一位的），他们的极限就是256，即256是8位二进制数模. 还是用二进制来说明
+清楚，8位二进制能表示的数的极限是1 1 1 1 1 1 1 1, 就是255，在这基础上加0 0 0 0 0
+0 0 1，出现了进一位 即 1 0 0 0 0 0 0 0 0这个1 0 0 0 0 0 0 0 0 就是8位二进制数的
+模，256同样按照第二步讲的逻辑，一半的数0~127，代表其正数本身，另一半的数128～255，
+代表其补数的负值，即“-1~-128”的区间。 而 “X-Y”的减法 就用 “X+Y的补数” 的加法来表
+示. 唯一需要注意的事情是任何计算的输入值和输出结果值都需要严格遵守-128~127的范围，
+一旦溢出就会报错.这样一说是不是可以理解-128的补码是怎么来的了吧？&lt;/p&gt;
+&lt;p&gt;他就是256-｜-128｜＝128二进制的128是不是就是1 0 0 0 0 0 0 0 ？&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id4"&gt;
 &lt;h2&gt;傻帽的狂欢&lt;/h2&gt;
-&lt;p&gt;空穴来风，未必无因那是因为计算机就是这样求负数的补码的，我们在键盘上敲一个负数的时候，计算机要把它用补码的形式存储下来，还记得上面我们讲的补码是怎么来的吗？模－绝对值，这是不是个减法公式？但计算机没有减法逻辑，我们费了那么大的劲搞了一套补码的规则就是为了用加法来替代减法，但为了实现这么套规则，却跨不过一个坎，就是把负数计算成补码仍然是需要减法逻辑的。怎么办呢，那些伟大的先贤们 （膜拜）就想出了这么个办法：首位不变，其余位取反后，再加一.&lt;/p&gt;
-&lt;p&gt;下面是吐槽不知道是哪个书呆子教书，照搬了机器的逻辑，把取反加一的方法当做补码的计算逻辑就这么教下来了。搞笑的是，还保留了补码这个名字，照理说这种教法应该叫 取反加一码 更合理，你还补什么啊？ 不仅如此，还搞出了个首位符号位的说法，弄出了个正0负0，还用负0来充当-128，真是不把人弄疯不罢休啊！！&lt;/p&gt;
+&lt;p&gt;我们在键盘上敲一个负数的时候，计算机要把它用补码的形式存储下来，还记得上面我们讲的补码是怎么来的吗？模--绝对值，这是不是个减法公式？但计算机没有减法逻辑，我们费了那么大的劲搞了一套补码的规则就是为了用加法来替代减法，但为了实现这么套规则，却跨不过一个坎，就是把负数计算成补码仍然是需要减法逻辑的。怎么办呢，那些伟大的先贤们 （膜拜）就想出了这么个办法：首位不变，其余位取反后，再加一.
+(重要的关系便是, 首位不变, 取反加一)
+下面是吐槽不知道是哪个书呆子教书，照搬了机器的逻辑，把取反加一的方法当做补码的计算逻辑就这么教下来了。搞笑的是，还保留了补码这个名字，照理说这种教法应该叫 取反加一码 更合理，你还补什么啊？ 不仅如此，还搞出了个首位符号位的说法，弄出了个正0负0，还用负0来充当-128，真是不把人弄疯不罢休啊！！&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id5"&gt;
 &lt;h2&gt;参考资料：&lt;/h2&gt;
@@ -2829,7 +2854,7 @@ find [Option] source pattern&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="publish"&gt;
 &lt;h2&gt;Publish&lt;/h2&gt;
-&lt;pre class="code ipython"&gt;&lt;a name="rest_code_0c8ea68481954038b0bf206c4a3e042f-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;!&lt;/span&gt; pandoc --wrap&lt;span class="o"&gt;=&lt;/span&gt;none  补数.org -o  ~/Public/nikola_post/posts/补数.rst
+&lt;pre class="code ipython"&gt;&lt;a name="rest_code_b6e0fdedd2654f0d88f2032ca85f6885-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;!&lt;/span&gt; pandoc --wrap&lt;span class="o"&gt;=&lt;/span&gt;none  补数.org -o  ~/Public/nikola_post/posts/补数.rst
 &lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><category>complement</category><guid>https://alinbxsorcerer.github.io/posts/grokking-complement/</guid><pubDate>Tue, 15 Jan 2019 12:53:29 GMT</pubDate></item><item><title>C Primer Plus</title><link>https://alinbxsorcerer.github.io/posts/c-primer-plus/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="contents topic" id="contents"&gt;
 &lt;p class="topic-title first"&gt;Contents&lt;/p&gt;
 &lt;ul class="simple"&gt;

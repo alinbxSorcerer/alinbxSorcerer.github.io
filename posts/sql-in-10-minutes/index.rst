@@ -1,14 +1,13 @@
-   .. title: SQL in 10 Minutes 总结
+   .. title: 评注:SQL in 10 Minutes 总结
    .. slug: sql-in-10-minutes
    .. date: 2017-11-09 20:53:29 UTC+08:00
-   .. tags: sql,
+   .. tags: sql, 评注笔记
    .. category: programming
    .. link:
    .. description:
    .. type: text
 
 
-.. contents::
 
 Introduction
 ============
