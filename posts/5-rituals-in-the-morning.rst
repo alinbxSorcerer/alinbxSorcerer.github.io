@@ -1,0 +1,126 @@
+   .. title: 晨起5件事
+   .. slug: five-rituals-in-the-moring
+   .. date: 2019-12-16 20:53:29 UTC+08:00
+   .. tags: effective
+   .. category: executive
+   .. link: 
+   .. description:
+   .. type: text
+
+5 Morning Rituals that Help Me Win the Day
+==========================================
+
+   Define: ritual *ˈrɪtʃ.u.əl* a formal ceremony Orgin: from Latin ritualis, from ritus(拉丁语) ‘(religious) usage’. Expand: rite仪式惯例, 助记: 所以这里的ri是(re),
+
+And then . . . you wake up. Now what?
+
+After asking 100+ interviewees about morning routines, I've tested a lot and figured out what works for me.
+
+Here are five things that I attempt to do every morning. Realistically, if I hit three out of five, I consider myself having won the morning. And if you win the morning, you win the day. I'm probably not the first person to say this, but it's how I frame the importance of the first 60 to 90 minutes of the day. They facilitate or ``handicap`` the next 12+ hours. I've deliberately set a low bar for “win.”
+
+These will probably seem like small things, but just remember: The small things are the big things.
+
+1.Make Your Bed (<3 minutes)
+----------------------------
+
+In 2011 in Toronto, I chanced upon a former monk named Dandapani (`Dandapani.org <http://dandapani.org>`__) at an event called Mastermind Talks. I was going through a very scattered period in my life and felt like my energy was traveling a millimeter outward in a million directions. For grounding, he convinced me to start making my bed.
+
+If a monk with three dots on his forehead is too much for you, I would say first: Open your mind, you ``savage``. Second, I would quote legendary Naval Admiral William McRaven, who has commanded at every level within the Special Operations community, including acting as head of Joint Special Operations Command (JSOC) during the Osama bin Laden raid. From his University of Texas at Austin commencement speech:
+
+   Define: savage ˈsæv.ɪdʒ/ wild (野蛮人) Origin: from Old French sauvage ‘wild’, from Latin silvaticus ‘of the woods’, from silva ‘a wood’.
+
+“If you make your bed every morning, you will have accomplished the first task of the day. It will give you a small sense of pride, and it will encourage you to do another task and another and another. By the end of the day, that one task completed will have turned into many tasks completed. Making your bed will also reinforce the fact that little things in life matter.”
+
+What is “making your bed” to me? I use the sweep-it-under-the-rug approach. The goal is visual tidiness, not Four Seasons. I don't tuck in the sheets. I have a large blanket or duvet, and I'll use that to cover the sheets, smoothing it out. Then, I place the pillows symmetrically underneath or on top of the blanket, and I'm done. That's it. It's very simple. If you work from home, this serves double duty, especially if you work in or near your bedroom. If you see an external distraction (speaking personally), you end up creating an internally distracted state. Noah Kagan  and I “make” our beds even when at hotels.
+
+Life is also unpredictable. There are many unexpected problems that will pop up, and I've found that two things help me ``sail choppy`` water during the day. Both are done in the morning: A) read a few pages of stoicism, like Marcus Aurelius's Meditations, and B) control at least a few things you can control. I'll elaborate.
+
+Define: choppy Orgin : chop 刀砍过一样的海浪.
+
+First, for A, here is one Marcus Aurelius quote on my refrigerator that often does the trick (bolding mine):
+
+“When you wake up in the morning, tell yourself: The people I deal with today will be meddling, ungrateful, arrogant, dishonest, jealous, and surly. They are like this because they can't tell good from evil. But I have seen the beauty of good, and the ugliness of evil, and have recognized that the wrongdoer has a nature related to my own—not of the same blood or birth, but the same mind, and possessing a share of the divine. And so none of them can hurt me.” (For more on stoicism, see .)
+
+Now, B) control what you can control. No matter how shitty your day is, no matter how catastrophic it might become, you can make your bed. And that gives you the feeling, at least it gives me the feeling, even in a disastrous day, that I've held on to the cliff ledge by a fingernail and I haven't fallen. There is at least one thing I've controlled, there is something that has maintained one hand on the driver's wheel of life. At the end of the day, the last experience you have is coming back to something that you've accomplished. It's hard for me to overstate how important this ``ritual`` has become, but number one: Make your bed.
+
+2.Meditate (10 to 20 minutes)
+-----------------------------
+
+I cover different options on `page 149 <Ferriss_TOOLS_int_02_part1_2pp.xhtml#_idTextAnchor062>`__. At least 80% of all guests profiled in this book have a daily mindfulness practice of some type. Sometimes I will do “Happy Body” mobility exercises from Jerzy Gregorek (introduced to me by Naval Ravikant, `page 546 <Ferriss_TOOLS_int_04_part3_2pp.xhtml#_idTextAnchor172>`__) in place of meditation.
+
+When I'm done, I walk into the kitchen and flip a switch to near-boil water (about 85% of the full dial) using a cheap Adagio utiliTEA electric kettle. This is for tea (in step 4).
+
+3.Do 5 to 10 Reps of Something (<1 minute)
+------------------------------------------
+
+I started doing this after numerous exchanges with the 4:45 a.m.–rising Jocko Willink (`page 412 <Ferriss_TOOLS_int_04_part3_2pp.xhtml#_idTextAnchor134>`__). He trains before most people wake, and I train when most people are getting ready for bed (like Triple H on `page 128 <Ferriss_TOOLS_int_02_part1_2pp.xhtml#_idTextAnchor055>`__).
+
+The 5 to 10 reps here are not a workout. They are intended to “state prime” and wake. me up. Getting into my body, even for 30 seconds, has a dramatic effect on my mood and quiets mental chatter. My preferred exercise is push-ups with ring turn out (RTO) (see `page 16 <Ferriss_TOOLS_int_02_part1_2pp.xhtml#_idTextAnchor017>`__), as it nicely lights up the nervous system. I'll often take a 30- to 60-second pure cold shower after this, à la Tony Robbins.
+
+4.Prepare “Titanium Tea” (2 to 3 minutes)
+-----------------------------------------
+
+I prepare loose-leaf tea in a Rishi glass teapot but you could use a French press. The below combo is excellent for cognition and fat loss, and I use about 1 flat teaspoon of each:
+
+   Pu-erh aged black tea
+
+   Dragon well green tea (or other green tea)
+
+   Turmeric and ginger shavings (often also Rishi brand)
+
+Add the hot water to your mixture and let it steep for 1 to 2 minutes. Some tea purists will get very upset and say, “Damn it, Ferriss, you should really do your homework, because the steeping temperatures for those teas are all different. And the first steeping should be 15 seconds!” This is all true, and I can do the fancy stuff, but when I'm ``groggy`` in the morning, I don't give a shit and like my uppers simple. Explore the complexities of tea on the weekends. Roughly 185°F is fine.
+
+Separately, add one of the following to your drinking mug: 1 to 2 tablespoons of coconut oil, which is about 60 to 70% MCTs (medium-chain triglycerides) by weight or 1 scoop of Quest MCT Oil Powder, which will give the tea a creamy consistency.
+
+Pour your tea into your ``mug``, stir to mix, and enjoy. In my case, I grab my tea, a glass of cold water, and then take a seat at my comfy acacia wood kitchen table for the next step.
+
+5.Morning Pages or 5-Minute Journal (5 to 10 minutes)
+-----------------------------------------------------
+
+Next up is journaling, which is not a “Dear Diary” situation.
+
+I use two types of journaling and alternate between them: Morning Pages and The 5-Minute Journal (5MJ). The former I use primarily for getting unstuck or problem solving (what should I do?); the latter I use for prioritizing and gratitude (how should I focus and execute?). I cover the Morning Pages extensively on `page 224 <Ferriss_TOOLS_int_03_part2_2pp.xhtml#_idTextAnchor083>`__, so I'll only describe the 5MJ here.
+
+The 5MJ is simplicity itself and hits a lot of birds with one stone: 5 minutes in the morning of answering a few prompts, and then 5 minutes in the evening doing the same. Each prompt has three lines for three answers.
+
+To be answered in the morning:
+
+   I am grateful for . . .
+
+   #. \_______\_ 2. \_______\_ 3. \_______\_
+
+   What would make today great?
+
+   #. \_______\_ 2. \_______\_ 3. \_______\_
+
+   Daily affirmations. I am . . .
+
+   #. \_______\_ 2. \_______\_ 3. \_______\_
+
+To be filled in at night:
+
+   3 amazing things that happened today . . .
+
+   #. \_______\_ 2. \_______\_ 3. _________\_ (This is similar to Peter Diamandis's “three wins” practice; see `page 373 <Ferriss_TOOLS_int_03_part2_2pp.xhtml#_idTextAnchor124>`__.)
+
+   How could I have made today better?
+
+   #. \_______\_ 2. \_______\_ 3. \_______\_
+
+The bolded lines are the most critical for me. I'm already a checklist and execution machine. It's easy to obsess over pushing the ball forward as a type-A personality, which leads to being constantly future-focused. If anxiety is a focus on the future, practicing appreciation, even for 2 to 3 minutes, is counter-balancing medicine. The 5MJ forces me to think about what I have, as opposed to what I'm pursuing.
+
+When you answer “I am grateful for . . . ,” I recommend considering four different categories. Otherwise, you will go on autopilot and repeat the same items day after day (e.g., “my healthy family,” “my loving dog,” etc.). I certainly did this, and it defeats the purpose. What are you grateful for in the below four categories? I ask myself this every morning as I fill out the 5MJ, and I pick my favorite three for that day:
+
+#. An old relationship that really helped you, or that you valued highly.
+#. An opportunity you have today. Perhaps that's just an opportunity to call one of your parents, or an opportunity to go to work. It doesn't have to be something large.
+#. Something great that happened yesterday, whether you experienced or witnessed it.
+#. Something simple near you or within sight. This was a recommendation from Tony Robbins. The gratitude points shouldn't all be “my career” and other abstract items. Temper those with something simple and concrete—a beautiful cloud outside the window, the coffee that you're drinking, the pen that you're using, or whatever it might be.
+
+I use Intelligent Change's bound 5-Minute Journal and suggest it for convenience, but you can practice in your own notebook. It's fun and good ``therapy`` to review your p.m. “amazing things” answers at least once a month.
+
+Got it? My morning routine looks longer on paper than it takes in reality.
+
+Of course, there are days when life intervenes, and you have emergencies to deal with. Do I always hit all five? Absolutely not. That's 30% of the time, at best.
+
+But you can always knock off at least one, and if you tick off three, I find the likelihood of the day being a home run infinitely greater.
+
