@@ -11,19 +11,18 @@
 <meta property="og:site_name" content="A Magic Land Declared by David">
 <meta property="og:title" content="黎曼积分">
 <meta property="og:url" content="https://alinbxsorcerer.github.io/posts/li-man-ji-fen/">
-<meta property="og:description" content='System Message: ERROR/3 (&lt;string&gt;, line 2)
-Unknown directive type "toctree".
-.. toctree::
+<meta property="og:description" content='System Message: ERROR/3 (&lt;string&gt;, line 3)
+Error in "contents" directive:
+unknown option: "numbered".
+.. contents::
    :numbered:
-   :maxdepth: 2
-
 
 
 
 Evolution of sum
 1.求整数和
 def sum_integers(a, b):
-    if a &gt; b: return 0 # ter'>
+    if a &gt; b: retur'>
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2019-12-17T18:53:29+08:00">
 <meta property="article:tag" content="algorithms">
@@ -98,38 +97,37 @@ def sum_integers(a, b):
         <div class="container">
         <div>
 <div class="system-message">
-<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 2)</p>
-<p>Unknown directive type "toctree".</p>
-<pre class="literal-block">.. toctree::
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 3)</p>
+<p>Error in "contents" directive:
+unknown option: "numbered".</p>
+<pre class="literal-block">.. contents::
    :numbered:
-   :maxdepth: 2
-
 </pre>
 </div>
 <div class="section" id="evolution-of-sum">
 <h2>Evolution of sum</h2>
 <p>1.求整数和</p>
-<pre class="code ipython"><a name="rest_code_201c28d058de4273881595b8a8c81dce-1"></a><span class="k">def</span> <span class="nf">sum_integers</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-<a name="rest_code_201c28d058de4273881595b8a8c81dce-2"></a>    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span> <span class="c1"># terminating point</span>
-<a name="rest_code_201c28d058de4273881595b8a8c81dce-3"></a>    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">sum_integers</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<a name="rest_code_201c28d058de4273881595b8a8c81dce-4"></a><span class="k">print</span><span class="p">(</span><span class="n">sum_integers</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<pre class="code ipython"><a name="rest_code_a5540101a9c443349f4448980eb3384a-1"></a><span class="k">def</span> <span class="nf">sum_integers</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<a name="rest_code_a5540101a9c443349f4448980eb3384a-2"></a>    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span> <span class="c1"># terminating point</span>
+<a name="rest_code_a5540101a9c443349f4448980eb3384a-3"></a>    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">sum_integers</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<a name="rest_code_a5540101a9c443349f4448980eb3384a-4"></a><span class="k">print</span><span class="p">(</span><span class="n">sum_integers</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 </pre>
 <p>2.立方求和</p>
-<pre class="code ipython"><a name="rest_code_c11b8c4f9c594fe9810bb3b8856a490e-1"></a><span class="k">def</span> <span class="nf">sum_cube</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-<a name="rest_code_c11b8c4f9c594fe9810bb3b8856a490e-2"></a>    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
-<a name="rest_code_c11b8c4f9c594fe9810bb3b8856a490e-3"></a>    <span class="k">return</span> <span class="n">cube</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">sum_cube</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<a name="rest_code_c11b8c4f9c594fe9810bb3b8856a490e-4"></a>
-<a name="rest_code_c11b8c4f9c594fe9810bb3b8856a490e-5"></a><span class="k">def</span> <span class="nf">cube</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<a name="rest_code_c11b8c4f9c594fe9810bb3b8856a490e-6"></a>    <span class="k">return</span> <span class="nb">pow</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<a name="rest_code_c11b8c4f9c594fe9810bb3b8856a490e-7"></a>
-<a name="rest_code_c11b8c4f9c594fe9810bb3b8856a490e-8"></a><span class="k">print</span><span class="p">(</span><span class="n">sum_cube</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<pre class="code ipython"><a name="rest_code_825c5a8d1f954268882d0dc937938376-1"></a><span class="k">def</span> <span class="nf">sum_cube</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<a name="rest_code_825c5a8d1f954268882d0dc937938376-2"></a>    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+<a name="rest_code_825c5a8d1f954268882d0dc937938376-3"></a>    <span class="k">return</span> <span class="n">cube</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">sum_cube</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<a name="rest_code_825c5a8d1f954268882d0dc937938376-4"></a>
+<a name="rest_code_825c5a8d1f954268882d0dc937938376-5"></a><span class="k">def</span> <span class="nf">cube</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a name="rest_code_825c5a8d1f954268882d0dc937938376-6"></a>    <span class="k">return</span> <span class="nb">pow</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<a name="rest_code_825c5a8d1f954268882d0dc937938376-7"></a>
+<a name="rest_code_825c5a8d1f954268882d0dc937938376-8"></a><span class="k">print</span><span class="p">(</span><span class="n">sum_cube</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 </pre>
 <p>3.莱布尼茨求pi公式</p>
-<pre class="code ipython"><a name="rest_code_f9d6661df4d44a42b874d2d03204d8cb-1"></a><span class="k">def</span> <span class="nf">pi_sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-<a name="rest_code_f9d6661df4d44a42b874d2d03204d8cb-2"></a>    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
-<a name="rest_code_f9d6661df4d44a42b874d2d03204d8cb-3"></a>    <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="n">pi_sum</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="mi">4</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<a name="rest_code_f9d6661df4d44a42b874d2d03204d8cb-4"></a><span class="k">print</span><span class="p">(</span><span class="n">pi_sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span><span class="o">*</span><span class="mi">8</span><span class="p">)</span>
-<a name="rest_code_f9d6661df4d44a42b874d2d03204d8cb-5"></a><span class="c1"># 此处熟悉了if and return的写法, 这是if的最初形式.</span>
+<pre class="code ipython"><a name="rest_code_33fa31d196134564bf4b3a47a3764d37-1"></a><span class="k">def</span> <span class="nf">pi_sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<a name="rest_code_33fa31d196134564bf4b3a47a3764d37-2"></a>    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+<a name="rest_code_33fa31d196134564bf4b3a47a3764d37-3"></a>    <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="n">pi_sum</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="mi">4</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<a name="rest_code_33fa31d196134564bf4b3a47a3764d37-4"></a><span class="k">print</span><span class="p">(</span><span class="n">pi_sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span><span class="o">*</span><span class="mi">8</span><span class="p">)</span>
+<a name="rest_code_33fa31d196134564bf4b3a47a3764d37-5"></a><span class="c1"># 此处熟悉了if and return的写法, 这是if的最初形式.</span>
 </pre>
 </div>
 <div class="section" id="abstractions">
@@ -144,16 +142,16 @@ def sum_integers(a, b):
 <li><p>and the function that provides the next value of a.</p></li>
 </ol>
 <p>We could generate each of the procedures by filling in slots in the same template:</p>
-<pre class="code scheme"><a name="rest_code_bcad3c61c0854c2d86f114e482ddb2eb-1"></a><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">&lt;name&gt;</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
-<a name="rest_code_bcad3c61c0854c2d86f114e482ddb2eb-2"></a>  <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
-<a name="rest_code_bcad3c61c0854c2d86f114e482ddb2eb-3"></a>      <span class="mi">0</span>
-<a name="rest_code_bcad3c61c0854c2d86f114e482ddb2eb-4"></a>      <span class="p">(</span><span class="nb">+ </span><span class="p">(</span><span class="nf">&lt;term&gt;</span> <span class="nv">a</span><span class="p">)</span> <span class="c1">;;使用关键词term</span>
-<a name="rest_code_bcad3c61c0854c2d86f114e482ddb2eb-5"></a>         <span class="p">(</span><span class="nf">&lt;name&gt;</span> <span class="p">(</span><span class="nf">&lt;next&gt;</span> <span class="nv">a</span><span class="p">)</span> <span class="nv">b</span><span class="p">))))</span> <span class="c1">;;next便是推导式样,</span>
-<a name="rest_code_bcad3c61c0854c2d86f114e482ddb2eb-6"></a><span class="c1">;;python的写法会隐藏很多的细节.</span>
+<pre class="code scheme"><a name="rest_code_0c92c0a9b07e43a981d9de164ddc6e1e-1"></a><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">&lt;name&gt;</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
+<a name="rest_code_0c92c0a9b07e43a981d9de164ddc6e1e-2"></a>  <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
+<a name="rest_code_0c92c0a9b07e43a981d9de164ddc6e1e-3"></a>      <span class="mi">0</span>
+<a name="rest_code_0c92c0a9b07e43a981d9de164ddc6e1e-4"></a>      <span class="p">(</span><span class="nb">+ </span><span class="p">(</span><span class="nf">&lt;term&gt;</span> <span class="nv">a</span><span class="p">)</span> <span class="c1">;;使用关键词term</span>
+<a name="rest_code_0c92c0a9b07e43a981d9de164ddc6e1e-5"></a>         <span class="p">(</span><span class="nf">&lt;name&gt;</span> <span class="p">(</span><span class="nf">&lt;next&gt;</span> <span class="nv">a</span><span class="p">)</span> <span class="nv">b</span><span class="p">))))</span> <span class="c1">;;next便是推导式样,</span>
+<a name="rest_code_0c92c0a9b07e43a981d9de164ddc6e1e-6"></a><span class="c1">;;python的写法会隐藏很多的细节.</span>
 </pre>
-<pre class="code ipython"><a name="rest_code_140d73540f2d465aa5c1b98e8472a724-1"></a><span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-<a name="rest_code_140d73540f2d465aa5c1b98e8472a724-2"></a>    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
-<a name="rest_code_140d73540f2d465aa5c1b98e8472a724-3"></a>    <span class="k">return</span> <span class="n">term</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">name</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">b</span><span class="p">)</span>
+<pre class="code ipython"><a name="rest_code_224acd01c3a648159d1077e4c924f21c-1"></a><span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<a name="rest_code_224acd01c3a648159d1077e4c924f21c-2"></a>    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+<a name="rest_code_224acd01c3a648159d1077e4c924f21c-3"></a>    <span class="k">return</span> <span class="n">term</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">name</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">b</span><span class="p">)</span>
 </pre>
 <ul class="simple">
 <li><p>对比数学上的应用</p></li>
@@ -162,7 +160,7 @@ def sum_integers(a, b):
 <p>to express this concept. The power of sigma notation is that it allows mathematicians to deal with the concept of summation itself rather than only with particular sums – for example, to formulate general results about sums that are independent of the particular series being summed.</p>
 <p>Similarly, as program designers, we would like our language to be powerful enough so that we can write a procedure that expresses the concept of summation itself rather than only procedures that compute particular sums. We can do so readily in our procedural language by taking the common template shown above and transforming the <code class="docutils literal">slots</code> into formal parameters:</p>
 <div class="system-message">
-<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 78)</p>
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 77)</p>
 <p>Cannot find pygments lexer for language "commonlisp"</p>
 <pre class="literal-block">.. code:: commonlisp
 
@@ -175,10 +173,10 @@ def sum_integers(a, b):
    ; 這裏比python的sum好用.
 </pre>
 </div>
-<pre class="code ipython"><a name="rest_code_50eed0a2102c4bf7a2806fe5a915fa00-1"></a><span class="k">def</span> <span class="nf">sum_recur</span><span class="p">(</span><span class="n">term</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="nb">next</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-<a name="rest_code_50eed0a2102c4bf7a2806fe5a915fa00-2"></a>    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
-<a name="rest_code_50eed0a2102c4bf7a2806fe5a915fa00-3"></a>    <span class="k">return</span> <span class="n">term</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">sum_recur</span><span class="p">(</span><span class="n">term</span><span class="p">,</span> <span class="nb">next</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">next</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<a name="rest_code_50eed0a2102c4bf7a2806fe5a915fa00-4"></a><span class="c1"># 找到思维上的漏洞．</span>
+<pre class="code ipython"><a name="rest_code_82d5e6e64d7c4241a11ffaad0261c063-1"></a><span class="k">def</span> <span class="nf">sum_recur</span><span class="p">(</span><span class="n">term</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="nb">next</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<a name="rest_code_82d5e6e64d7c4241a11ffaad0261c063-2"></a>    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+<a name="rest_code_82d5e6e64d7c4241a11ffaad0261c063-3"></a>    <span class="k">return</span> <span class="n">term</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">sum_recur</span><span class="p">(</span><span class="n">term</span><span class="p">,</span> <span class="nb">next</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">next</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<a name="rest_code_82d5e6e64d7c4241a11ffaad0261c063-4"></a><span class="c1"># 找到思维上的漏洞．</span>
 </pre>
 </div>
 <div class="section" id="callbacks">
@@ -187,45 +185,45 @@ def sum_integers(a, b):
 <ul class="simple">
 <li><p>sum_integers</p></li>
 </ul>
-<pre class="code ipython"><a name="rest_code_64626425adfa411d8c3f20e3a41b9a98-1"></a><span class="k">def</span> <span class="nf">sum_integers</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-<a name="rest_code_64626425adfa411d8c3f20e3a41b9a98-2"></a>    <span class="k">def</span> <span class="nf">identity</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span>
-<a name="rest_code_64626425adfa411d8c3f20e3a41b9a98-3"></a>    <span class="k">def</span> <span class="nf">inc</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
-<a name="rest_code_64626425adfa411d8c3f20e3a41b9a98-4"></a>    <span class="k">return</span> <span class="n">sum_recur</span><span class="p">(</span><span class="n">identity</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">inc</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<a name="rest_code_64626425adfa411d8c3f20e3a41b9a98-5"></a><span class="k">print</span><span class="p">(</span><span class="n">sum_integers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<pre class="code ipython"><a name="rest_code_14089bc9021a4d6ab72f750d7b722bbf-1"></a><span class="k">def</span> <span class="nf">sum_integers</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<a name="rest_code_14089bc9021a4d6ab72f750d7b722bbf-2"></a>    <span class="k">def</span> <span class="nf">identity</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span>
+<a name="rest_code_14089bc9021a4d6ab72f750d7b722bbf-3"></a>    <span class="k">def</span> <span class="nf">inc</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<a name="rest_code_14089bc9021a4d6ab72f750d7b722bbf-4"></a>    <span class="k">return</span> <span class="n">sum_recur</span><span class="p">(</span><span class="n">identity</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">inc</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<a name="rest_code_14089bc9021a4d6ab72f750d7b722bbf-5"></a><span class="k">print</span><span class="p">(</span><span class="n">sum_integers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 </pre>
-<pre class="code ipython"><a name="rest_code_4c775aca697c48408321aef6b285501f-1"></a><span class="k">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="o">+</span><span class="mi">1</span><span class="p">)))</span> <span class="c1">#identity</span>
+<pre class="code ipython"><a name="rest_code_59a372ee874f41f9839f0ec50957e98a-1"></a><span class="k">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="o">+</span><span class="mi">1</span><span class="p">)))</span> <span class="c1">#identity</span>
 </pre>
 <ul class="simple">
 <li><p>sum_pi</p></li>
 </ul>
-<pre class="code ipython"><a name="rest_code_55e63b728d054a3a90b5b63578f4ea8f-1"></a><span class="k">def</span> <span class="nf">integral</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">dx</span><span class="p">):</span>
-<a name="rest_code_55e63b728d054a3a90b5b63578f4ea8f-2"></a>    <span class="n">add_dx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span>
-<a name="rest_code_55e63b728d054a3a90b5b63578f4ea8f-3"></a>    <span class="k">return</span> <span class="n">sum_recur</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="p">(</span><span class="n">dx</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">add_dx</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span>
-<a name="rest_code_55e63b728d054a3a90b5b63578f4ea8f-4"></a>
-<a name="rest_code_55e63b728d054a3a90b5b63578f4ea8f-5"></a><span class="k">def</span> <span class="nf">cube</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span>
-<a name="rest_code_55e63b728d054a3a90b5b63578f4ea8f-6"></a><span class="k">print</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">))</span>
+<pre class="code ipython"><a name="rest_code_2116e6176d4a4d57a644017489e3daf6-1"></a><span class="k">def</span> <span class="nf">integral</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">dx</span><span class="p">):</span>
+<a name="rest_code_2116e6176d4a4d57a644017489e3daf6-2"></a>    <span class="n">add_dx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span>
+<a name="rest_code_2116e6176d4a4d57a644017489e3daf6-3"></a>    <span class="k">return</span> <span class="n">sum_recur</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="p">(</span><span class="n">dx</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">add_dx</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span>
+<a name="rest_code_2116e6176d4a4d57a644017489e3daf6-4"></a>
+<a name="rest_code_2116e6176d4a4d57a644017489e3daf6-5"></a><span class="k">def</span> <span class="nf">cube</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span>
+<a name="rest_code_2116e6176d4a4d57a644017489e3daf6-6"></a><span class="k">print</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">))</span>
 </pre>
 </div>
 <div class="section" id="riemann-integral">
 <h2>Riemann Integral</h2>
-<pre class="code ipython"><a name="rest_code_01630fc570224633be218ea1d46193f9-1"></a><span class="k">def</span> <span class="nf">integral</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">dx</span><span class="p">):</span>
-<a name="rest_code_01630fc570224633be218ea1d46193f9-2"></a>    <span class="n">add_dx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span>
-<a name="rest_code_01630fc570224633be218ea1d46193f9-3"></a>    <span class="k">return</span> <span class="n">sum_recur</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="p">(</span><span class="n">dx</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">add_dx</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span>
-<a name="rest_code_01630fc570224633be218ea1d46193f9-4"></a>
-<a name="rest_code_01630fc570224633be218ea1d46193f9-5"></a>
-<a name="rest_code_01630fc570224633be218ea1d46193f9-6"></a><span class="k">def</span> <span class="nf">sum_recur</span><span class="p">(</span><span class="n">term</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="nb">next</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-<a name="rest_code_01630fc570224633be218ea1d46193f9-7"></a>    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
-<a name="rest_code_01630fc570224633be218ea1d46193f9-8"></a>    <span class="k">return</span> <span class="n">term</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">sum_recur</span><span class="p">(</span><span class="n">term</span><span class="p">,</span> <span class="nb">next</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">next</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<a name="rest_code_01630fc570224633be218ea1d46193f9-9"></a>
-<a name="rest_code_01630fc570224633be218ea1d46193f9-10"></a><span class="k">def</span> <span class="nf">cube</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span>
-<a name="rest_code_01630fc570224633be218ea1d46193f9-11"></a>
-<a name="rest_code_01630fc570224633be218ea1d46193f9-12"></a><span class="k">print</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">))</span>
+<pre class="code ipython"><a name="rest_code_2fa5929da2af447ea013e7368198b2a5-1"></a><span class="k">def</span> <span class="nf">integral</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">dx</span><span class="p">):</span>
+<a name="rest_code_2fa5929da2af447ea013e7368198b2a5-2"></a>    <span class="n">add_dx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span>
+<a name="rest_code_2fa5929da2af447ea013e7368198b2a5-3"></a>    <span class="k">return</span> <span class="n">sum_recur</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="p">(</span><span class="n">dx</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">add_dx</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span>
+<a name="rest_code_2fa5929da2af447ea013e7368198b2a5-4"></a>
+<a name="rest_code_2fa5929da2af447ea013e7368198b2a5-5"></a>
+<a name="rest_code_2fa5929da2af447ea013e7368198b2a5-6"></a><span class="k">def</span> <span class="nf">sum_recur</span><span class="p">(</span><span class="n">term</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="nb">next</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<a name="rest_code_2fa5929da2af447ea013e7368198b2a5-7"></a>    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+<a name="rest_code_2fa5929da2af447ea013e7368198b2a5-8"></a>    <span class="k">return</span> <span class="n">term</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">sum_recur</span><span class="p">(</span><span class="n">term</span><span class="p">,</span> <span class="nb">next</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">next</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<a name="rest_code_2fa5929da2af447ea013e7368198b2a5-9"></a>
+<a name="rest_code_2fa5929da2af447ea013e7368198b2a5-10"></a><span class="k">def</span> <span class="nf">cube</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span>
+<a name="rest_code_2fa5929da2af447ea013e7368198b2a5-11"></a>
+<a name="rest_code_2fa5929da2af447ea013e7368198b2a5-12"></a><span class="k">print</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">))</span>
 </pre>
 <p>与iteration对比</p>
-<pre class="code ipython"><a name="rest_code_8afcca4ce5d04513a637fbcc79ebab6f-1"></a><span class="k">def</span> <span class="nf">integral</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">dx</span><span class="p">):</span>
-<a name="rest_code_8afcca4ce5d04513a637fbcc79ebab6f-2"></a>    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="p">(</span><span class="n">dx</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">n</span><span class="o">*</span><span class="n">dx</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">((</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="n">dx</span><span class="p">))</span> <span class="p">)</span> <span class="o">*</span> <span class="n">dx</span>
-<a name="rest_code_8afcca4ce5d04513a637fbcc79ebab6f-3"></a>
-<a name="rest_code_8afcca4ce5d04513a637fbcc79ebab6f-4"></a><span class="k">print</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.00000001</span><span class="p">))</span>
+<pre class="code ipython"><a name="rest_code_088ea6864f824465bd1e74246b495345-1"></a><span class="k">def</span> <span class="nf">integral</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">dx</span><span class="p">):</span>
+<a name="rest_code_088ea6864f824465bd1e74246b495345-2"></a>    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="p">(</span><span class="n">dx</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">n</span><span class="o">*</span><span class="n">dx</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">((</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="n">dx</span><span class="p">))</span> <span class="p">)</span> <span class="o">*</span> <span class="n">dx</span>
+<a name="rest_code_088ea6864f824465bd1e74246b495345-3"></a>
+<a name="rest_code_088ea6864f824465bd1e74246b495345-4"></a><span class="k">print</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.00000001</span><span class="p">))</span>
 </pre>
 </div>
 </div>
