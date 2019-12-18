@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/algorithms.xml</loc>
-  <lastmod>2019-12-18T07:20:00Z</lastmod>
+  <lastmod>2019-12-18T15:57:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/bash.xml</loc>
@@ -43,7 +43,7 @@
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/cat_programming.xml</loc>
-  <lastmod>2019-12-18T07:20:00Z</lastmod>
+  <lastmod>2019-12-18T15:57:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/complement.xml</loc>
@@ -67,7 +67,7 @@
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/math.xml</loc>
-  <lastmod>2019-11-18T02:29:00Z</lastmod>
+  <lastmod>2019-12-18T15:57:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/matplotlib.xml</loc>
@@ -82,8 +82,12 @@
   <lastmod>2019-12-13T10:51:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://alinbxsorcerer.github.io/categories/primality.xml</loc>
+  <lastmod>2019-12-18T15:57:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/python.xml</loc>
-  <lastmod>2019-12-03T07:48:00Z</lastmod>
+  <lastmod>2019-12-18T15:57:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/regex.xml</loc>
@@ -95,7 +99,7 @@
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/sicp.xml</loc>
-  <lastmod>2019-12-18T07:20:00Z</lastmod>
+  <lastmod>2019-12-18T15:57:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/sort.xml</loc>
@@ -127,10 +131,10 @@
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/rss.xml</loc>
-  <lastmod>2019-12-18T07:20:00Z</lastmod>
+  <lastmod>2019-12-18T15:57:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/sitemap.xml</loc>
-  <lastmod>2019-12-18T07:20:00Z</lastmod>
+  <lastmod>2019-12-18T15:57:00Z</lastmod>
  </sitemap>
 </sitemapindex>

@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://alinbxsorcerer.github.io/</loc>
-  <lastmod>2019-11-18T03:46:00Z</lastmod>
+  <lastmod>2019-12-18T15:57:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/2016/</loc>
@@ -27,11 +27,11 @@
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/archive.html</loc>
-  <lastmod>2019-12-18T07:20:00Z</lastmod>
+  <lastmod>2019-12-18T15:57:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/categories/</loc>
-  <lastmod>2019-12-18T07:20:00Z</lastmod>
+  <lastmod>2019-12-18T15:57:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/categories/algorithms/</loc>
@@ -110,6 +110,10 @@
   <lastmod>2019-11-12T04:16:00Z</lastmod>
  </url>
  <url>
+  <loc>https://alinbxsorcerer.github.io/categories/primality/</loc>
+  <lastmod>2019-12-18T15:57:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://alinbxsorcerer.github.io/categories/python/</loc>
   <lastmod>2019-11-10T09:22:00Z</lastmod>
  </url>
@@ -155,7 +159,11 @@
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/index-1.html</loc>
-  <lastmod>2019-12-18T07:20:00Z</lastmod>
+  <lastmod>2019-12-18T15:57:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alinbxsorcerer.github.io/index-2.html</loc>
+  <lastmod>2019-12-18T15:57:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/listings/</loc>
@@ -224,6 +232,10 @@
  <url>
   <loc>https://alinbxsorcerer.github.io/pages/theming/</loc>
   <lastmod>2019-11-09T06:16:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alinbxsorcerer.github.io/posts/%20testing_for_primality/</loc>
+  <lastmod>2019-12-18T15:57:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/posts/c-primer-plus/</loc>

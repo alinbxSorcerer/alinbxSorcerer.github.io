@@ -79,7 +79,11 @@ We could generate each of the procedures by filling in slots in the same templat
    
 -  对比数学上的应用
 
-The presence of such a common pattern is ``strong evidence`` that there is a useful abstraction waiting to be brought to the surface. Indeed, mathematicians long ago identified the abstraction of summation of a series and invented ``sigma notation``,' for example: |image0|
+The presence of such a common pattern is ``strong evidence`` that there is a
+useful abstraction waiting to be brought to the surface. Indeed, mathematicians
+long ago identified the abstraction of summation of a series and invented
+``sigma notation``,' for example:
+|image0|
 
 to express this concept. The power of sigma notation is that it allows mathematicians to deal with the concept of summation itself rather than only with particular sums – for example, to formulate general results about sums that are independent of the particular series being summed.
 
@@ -103,7 +107,7 @@ Similarly, as program designers, we would like our language to be powerful enoug
    # 找到思维上的漏洞．
 
 3.Callbacks
----------
+-----------
 
 Notice that sum takes as its arguments the lower and upper bounds a and b together with the procedures term and next. We can use sum just as we would any procedure. For example, we can use it (along with a procedure inc that increments its argument by 1) to define sum-cubes:
 
