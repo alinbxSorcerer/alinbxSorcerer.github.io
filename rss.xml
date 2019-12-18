@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Magic Land Declared by David</title><link>https://alinbxsorcerer.github.io/</link><description>    Conjuring...    </description><atom:link href="https://alinbxsorcerer.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:davad.fhl.wang@foxmail.com"&gt;David&lt;/a&gt; </copyright><lastBuildDate>Mon, 16 Dec 2019 12:53:58 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>晨起5件事</title><link>https://alinbxsorcerer.github.io/posts/five-rituals-in-the-moring/</link><dc:creator>David</dc:creator><description>&lt;div class="section" id="morning-rituals-that-help-me-win-the-day"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Magic Land Declared by David</title><link>https://alinbxsorcerer.github.io/</link><description>    Conjuring...    </description><atom:link href="https://alinbxsorcerer.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:davad.fhl.wang@foxmail.com"&gt;David&lt;/a&gt; </copyright><lastBuildDate>Wed, 18 Dec 2019 07:20:07 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>晨起5件事</title><link>https://alinbxsorcerer.github.io/posts/five-rituals-in-the-moring/</link><dc:creator>David</dc:creator><description>&lt;div class="section" id="morning-rituals-that-help-me-win-the-day"&gt;
 &lt;h2&gt;5 Morning Rituals that Help Me Win the Day&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Define: ritual &lt;em&gt;ˈrɪtʃ.u.əl&lt;/em&gt; a formal ceremony Orgin: from Latin ritualis, from ritus(拉丁语) ‘(religious) usage’. Expand: rite仪式惯例, 助记: 所以这里的ri是(re),&lt;/p&gt;
@@ -89,7 +89,126 @@
 &lt;p&gt;Of course, there are days when life intervenes, and you have emergencies to deal with. Do I always hit all five? Absolutely not. That's 30% of the time, at best.&lt;/p&gt;
 &lt;p&gt;But you can always knock off at least one, and if you tick off three, I find the likelihood of the day being a home run infinitely greater.&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>effective</category><guid>https://alinbxsorcerer.github.io/posts/five-rituals-in-the-moring/</guid><pubDate>Mon, 16 Dec 2019 12:53:29 GMT</pubDate></item><item><title>淘宝双十一的销售额造假了吗? 用本福特定律检验</title><link>https://alinbxsorcerer.github.io/posts/taobao-shuangshiyi-zaojiale-ma/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="contents topic" id="contents"&gt;
+&lt;/div&gt;</description><category>effective</category><guid>https://alinbxsorcerer.github.io/posts/five-rituals-in-the-moring/</guid><pubDate>Mon, 16 Dec 2019 12:53:29 GMT</pubDate></item><item><title>黎曼积分</title><link>https://alinbxsorcerer.github.io/posts/li-man-ji-fen/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="contents topic" id="contents"&gt;
+&lt;p class="topic-title first"&gt;Contents&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/li-man-ji-fen/#evolution-of-sum" id="id1"&gt;Evolution of sum&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/li-man-ji-fen/#abstractions" id="id2"&gt;Abstractions&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/li-man-ji-fen/#callbacks" id="id3"&gt;Callbacks&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/li-man-ji-fen/#riemann-integral" id="id4"&gt;Riemann Integral&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="evolution-of-sum"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/li-man-ji-fen/#id1"&gt;Evolution of sum&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;1.求整数和&lt;/p&gt;
+&lt;pre class="code ipython"&gt;&lt;a name="rest_code_37dd9d12ab524e5880b82e89d00e457f-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;sum_integers&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_37dd9d12ab524e5880b82e89d00e457f-2"&gt;&lt;/a&gt;    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="c1"&gt;# terminating point&lt;/span&gt;
+&lt;a name="rest_code_37dd9d12ab524e5880b82e89d00e457f-3"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;sum_integers&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_37dd9d12ab524e5880b82e89d00e457f-4"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sum_integers&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;2.立方求和&lt;/p&gt;
+&lt;pre class="code ipython"&gt;&lt;a name="rest_code_bc44c84906d341eaaa74daa403c5c425-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;sum_cube&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_bc44c84906d341eaaa74daa403c5c425-2"&gt;&lt;/a&gt;    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;a name="rest_code_bc44c84906d341eaaa74daa403c5c425-3"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;cube&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;sum_cube&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_bc44c84906d341eaaa74daa403c5c425-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_bc44c84906d341eaaa74daa403c5c425-5"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;cube&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_bc44c84906d341eaaa74daa403c5c425-6"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nb"&gt;pow&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_bc44c84906d341eaaa74daa403c5c425-7"&gt;&lt;/a&gt;
+&lt;a name="rest_code_bc44c84906d341eaaa74daa403c5c425-8"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sum_cube&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;3.莱布尼茨求pi公式&lt;/p&gt;
+&lt;pre class="code ipython"&gt;&lt;a name="rest_code_0823873f58dd461aa1bb8e9635b46ce9-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;pi_sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_0823873f58dd461aa1bb8e9635b46ce9-2"&gt;&lt;/a&gt;    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;a name="rest_code_0823873f58dd461aa1bb8e9635b46ce9-3"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;pi_sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_0823873f58dd461aa1bb8e9635b46ce9-4"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pi_sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10000&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_0823873f58dd461aa1bb8e9635b46ce9-5"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# 此处熟悉了if and return的写法, 这是if的最初形式.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="abstractions"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/li-man-ji-fen/#id2"&gt;Abstractions&lt;/a&gt;&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;初步抽象&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These three procedures clearly share a common underlying pattern. They are for the most part identical,&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;differing only in the name of the procedure,&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;the function of a used to compute the term to be added,&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;and the function that provides the next value of a.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;We could generate each of the procedures by filling in slots in the same template:&lt;/p&gt;
+&lt;pre class="code scheme"&gt;&lt;a name="rest_code_41bacdea30ef4f3dbf2efc6044a15fc5-1"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;define &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;&amp;lt;name&amp;gt;&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_41bacdea30ef4f3dbf2efc6044a15fc5-2"&gt;&lt;/a&gt;  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;&amp;gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_41bacdea30ef4f3dbf2efc6044a15fc5-3"&gt;&lt;/a&gt;      &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;a name="rest_code_41bacdea30ef4f3dbf2efc6044a15fc5-4"&gt;&lt;/a&gt;      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+ &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;&amp;lt;term&amp;gt;&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;;;使用关键词term&lt;/span&gt;
+&lt;a name="rest_code_41bacdea30ef4f3dbf2efc6044a15fc5-5"&gt;&lt;/a&gt;         &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;&amp;lt;name&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;&amp;lt;next&amp;gt;&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt; &lt;span class="c1"&gt;;;next便是推导式样,&lt;/span&gt;
+&lt;a name="rest_code_41bacdea30ef4f3dbf2efc6044a15fc5-6"&gt;&lt;/a&gt;&lt;span class="c1"&gt;;;python的写法会隐藏很多的细节.&lt;/span&gt;
+&lt;/pre&gt;&lt;pre class="code ipython"&gt;&lt;a name="rest_code_e1f5c53344194a408b6e1fb951e0a223-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;name&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_e1f5c53344194a408b6e1fb951e0a223-2"&gt;&lt;/a&gt;    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;a name="rest_code_e1f5c53344194a408b6e1fb951e0a223-3"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;term&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;next&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;对比数学上的应用&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The presence of such a common pattern is &lt;code class="docutils literal"&gt;strong evidence&lt;/code&gt; that there is a useful abstraction waiting to be brought to the surface. Indeed, mathematicians long ago identified the abstraction of summation of a series and invented &lt;code class="docutils literal"&gt;sigma notation&lt;/code&gt;,' for example: &lt;img alt="image0" src="https://alinbxsorcerer.github.io/posts/images/algorithms.org_20190717_165507.png"&gt;&lt;/p&gt;
+&lt;p&gt;to express this concept. The power of sigma notation is that it allows mathematicians to deal with the concept of summation itself rather than only with particular sums – for example, to formulate general results about sums that are independent of the particular series being summed.&lt;/p&gt;
+&lt;p&gt;Similarly, as program designers, we would like our language to be powerful enough so that we can write a procedure that expresses the concept of summation itself rather than only procedures that compute particular sums. We can do so readily in our procedural language by taking the common template shown above and transforming the &lt;code class="docutils literal"&gt;slots&lt;/code&gt; into formal parameters:&lt;/p&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 75)&lt;/p&gt;
+&lt;p&gt;Cannot find pygments lexer for language "commonlisp"&lt;/p&gt;
+&lt;pre class="literal-block"&gt;.. code:: commonlisp
+
+   (defun sum(term a next b)
+     (if (&amp;gt; a b)
+         0
+         (+ (term a)
+            (sum term (next a) next b))))
+   ;确实能够窥探其本质.
+   ; 這裏比python的sum好用.
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;pre class="code ipython"&gt;&lt;a name="rest_code_93e956b6cd1244f0b53f47fa6a9e8d91-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;sum_recur&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;term&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;next&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_93e956b6cd1244f0b53f47fa6a9e8d91-2"&gt;&lt;/a&gt;    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;a name="rest_code_93e956b6cd1244f0b53f47fa6a9e8d91-3"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;term&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;sum_recur&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;term&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;next&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="nb"&gt;next&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_93e956b6cd1244f0b53f47fa6a9e8d91-4"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# 找到思维上的漏洞．&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="callbacks"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/li-man-ji-fen/#id3"&gt;Callbacks&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Notice that sum takes as its arguments the lower and upper bounds a and b together with the procedures term and next. We can use sum just as we would any procedure. For example, we can use it (along with a procedure inc that increments its argument by 1) to define sum-cubes:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;sum&lt;sub&gt;integers&lt;/sub&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="code ipython"&gt;&lt;a name="rest_code_4eee64c087694655abeec581b38e7e1d-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;sum_integers&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_4eee64c087694655abeec581b38e7e1d-2"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;identity&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;
+&lt;a name="rest_code_4eee64c087694655abeec581b38e7e1d-3"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;inc&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;a name="rest_code_4eee64c087694655abeec581b38e7e1d-4"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;sum_recur&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;identity&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;inc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_4eee64c087694655abeec581b38e7e1d-5"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sum_integers&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;pre class="code ipython"&gt;&lt;a name="rest_code_6c52a8c0ca2c41dbbe17465567080d1c-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt; &lt;span class="c1"&gt;#identity&lt;/span&gt;
+&lt;/pre&gt;&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;sum&lt;sub&gt;pi&lt;/sub&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="code ipython"&gt;&lt;a name="rest_code_8f6f3c5c95734f98a1c4263464abea90-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;integral&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;dx&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_8f6f3c5c95734f98a1c4263464abea90-2"&gt;&lt;/a&gt;    &lt;span class="n"&gt;add_dx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;dx&lt;/span&gt;
+&lt;a name="rest_code_8f6f3c5c95734f98a1c4263464abea90-3"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;sum_recur&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dx&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;add_dx&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;dx&lt;/span&gt;
+&lt;a name="rest_code_8f6f3c5c95734f98a1c4263464abea90-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_8f6f3c5c95734f98a1c4263464abea90-5"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;cube&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;
+&lt;a name="rest_code_8f6f3c5c95734f98a1c4263464abea90-6"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;integral&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cube&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.01&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="riemann-integral"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/li-man-ji-fen/#id4"&gt;Riemann Integral&lt;/a&gt;&lt;/h2&gt;
+&lt;pre class="code ipython"&gt;&lt;a name="rest_code_617f76dced144307ae2c4daeca7a8fb7-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;integral&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;dx&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_617f76dced144307ae2c4daeca7a8fb7-2"&gt;&lt;/a&gt;    &lt;span class="n"&gt;add_dx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;dx&lt;/span&gt;
+&lt;a name="rest_code_617f76dced144307ae2c4daeca7a8fb7-3"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;sum_recur&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dx&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;add_dx&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;dx&lt;/span&gt;
+&lt;a name="rest_code_617f76dced144307ae2c4daeca7a8fb7-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_617f76dced144307ae2c4daeca7a8fb7-5"&gt;&lt;/a&gt;
+&lt;a name="rest_code_617f76dced144307ae2c4daeca7a8fb7-6"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;sum_recur&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;term&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;next&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_617f76dced144307ae2c4daeca7a8fb7-7"&gt;&lt;/a&gt;    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;a name="rest_code_617f76dced144307ae2c4daeca7a8fb7-8"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;term&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;sum_recur&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;term&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;next&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="nb"&gt;next&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_617f76dced144307ae2c4daeca7a8fb7-9"&gt;&lt;/a&gt;
+&lt;a name="rest_code_617f76dced144307ae2c4daeca7a8fb7-10"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;cube&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;
+&lt;a name="rest_code_617f76dced144307ae2c4daeca7a8fb7-11"&gt;&lt;/a&gt;
+&lt;a name="rest_code_617f76dced144307ae2c4daeca7a8fb7-12"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;integral&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cube&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.01&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;与iteration对比&lt;/p&gt;
+&lt;pre class="code ipython"&gt;&lt;a name="rest_code_66d386c509c4401985fc20bfc7d26435-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;integral&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;dx&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_66d386c509c4401985fc20bfc7d26435-2"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nb"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dx&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;dx&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;dx&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;dx&lt;/span&gt;
+&lt;a name="rest_code_66d386c509c4401985fc20bfc7d26435-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_66d386c509c4401985fc20bfc7d26435-4"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;integral&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cube&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.00000001&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><category>algorithms</category><category>sicp</category><guid>https://alinbxsorcerer.github.io/posts/li-man-ji-fen/</guid><pubDate>Mon, 16 Dec 2019 10:53:29 GMT</pubDate></item><item><title>淘宝双十一的销售额造假了吗? 用本福特定律检验</title><link>https://alinbxsorcerer.github.io/posts/taobao-shuangshiyi-zaojiale-ma/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="contents topic" id="contents"&gt;
 &lt;p class="topic-title first"&gt;Contents&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/taobao-shuangshiyi-zaojiale-ma/#id1" id="id4"&gt;0.引言&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
@@ -3333,54 +3452,4 @@ find [Option] source pattern&lt;/pre&gt;
 &lt;p&gt;Data Stream Processing和File Handling遵循 &lt;code class="docutils literal"&gt;subroutine src dst&lt;/code&gt;
 模式.两个例外的情况是=tar and find=&lt;/p&gt;
 &lt;p&gt;这个问题之所以值得探讨,是因为涉及底层的方法论和工作模式.&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>bash</category><category>python</category><category>regex</category><guid>https://alinbxsorcerer.github.io/posts/resubcan-shu-shun-xu-de-wen-ti/</guid><pubDate>Wed, 08 May 2019 09:17:55 GMT</pubDate></item><item><title>Grokking 补码</title><link>https://alinbxsorcerer.github.io/posts/grokking-complement/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="section" id="id1"&gt;
-&lt;h2&gt;基本概念&lt;/h2&gt;
-&lt;p&gt;反码是个生造出来的概念． 所谓反码，英语里又叫ones' complement（对1求补） 所谓补码，英语里又叫two's complement（对2求补）&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id2"&gt;
-&lt;h2&gt;＂模＂的概念&lt;/h2&gt;
-&lt;p&gt;首先引入"模"的概念，
-例如日常使用的钟表，它可以显示0~12点的时间，也就是摸是12. 比如当前时间是上午9点,
-你也可以说是上午差3个小时到12点, 也就是上午-3点.
-同样的，如果是十进制的两位数，80-10和80+90在不考虑百位数的基础上都是70。这里的90就是
-100-10得来的，这种情况下100就是模模就好比是一个极限，在它的范围内，两个相加等于
-模的数互为补数，还是举100的例子90和10，55和45，68和32，互为补数在模的范围内做减
-法，可以将“X-Y”的减法变更为“X+Y的补数“的加法，当然前提是不考虑百位数思考题，上面
-举的例子是大数减小数，那么如果是小数减大数会怎么样呢？如果是10-80，结果应该是-70，
-但如果按照10+（100-80），结果是30。而很明显-70和30不是一回事，这里也没有百位数的
-问题，这种情况应该怎么破？当初的那些先贤们想出来的办法很简单，就是把这两个数直接
-划上等号，正好顺便解决了负数的表达方式。再来仔细看看这两个数的关系：
--70绝对值的补数就正好是30所以在计算机中，负数的表达方式就是它绝对值的补数.&lt;/p&gt;
-&lt;p&gt;但是问题又来了，看起来这个解决方式很完美了，但别忘了，30他已经代表了正数的30了，
-现在又要用来代表负数的-70，谁知道它出现的时候到底是代表哪个数？为了解决这个问题，
-需要给这套规则划定一个范围，原来是0~99的正数，现在既然要用部分正数来代替负数了，
-那就要规定一个范围来使得一个数只代表一个含义，正好一人一半，0~49这个区间就代表
-正数，50～99的区间就用来代表各自补数的负值.&lt;/p&gt;
-&lt;p&gt;关键点是: 因为mod的关系, 原数与补数是同一个数字.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id3"&gt;
-&lt;h2&gt;二进制数&lt;/h2&gt;
-&lt;p&gt;现在回到二进制的计算机世界8位二进制数一共可以表示2的8次方，256个数，即0~255（别
-忘了0也要占一位的），他们的极限就是256，即256是8位二进制数模. 还是用二进制来说明
-清楚，8位二进制能表示的数的极限是1 1 1 1 1 1 1 1, 就是255，在这基础上加0 0 0 0 0
-0 0 1，出现了进一位 即 1 0 0 0 0 0 0 0 0这个1 0 0 0 0 0 0 0 0 就是8位二进制数的
-模，256同样按照第二步讲的逻辑，一半的数0~127，代表其正数本身，另一半的数128～255，
-代表其补数的负值，即“-1~-128”的区间。 而 “X-Y”的减法 就用 “X+Y的补数” 的加法来表
-示. 唯一需要注意的事情是任何计算的输入值和输出结果值都需要严格遵守-128~127的范围，
-一旦溢出就会报错.这样一说是不是可以理解-128的补码是怎么来的了吧？&lt;/p&gt;
-&lt;p&gt;他就是256-｜-128｜＝128二进制的128是不是就是1 0 0 0 0 0 0 0 ？&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id4"&gt;
-&lt;h2&gt;傻帽的狂欢&lt;/h2&gt;
-&lt;p&gt;我们在键盘上敲一个负数的时候，计算机要把它用补码的形式存储下来，还记得上面我们讲的补码是怎么来的吗？模--绝对值，这是不是个减法公式？但计算机没有减法逻辑，我们费了那么大的劲搞了一套补码的规则就是为了用加法来替代减法，但为了实现这么套规则，却跨不过一个坎，就是把负数计算成补码仍然是需要减法逻辑的。怎么办呢，那些伟大的先贤们 （膜拜）就想出了这么个办法：首位不变，其余位取反后，再加一.
-(重要的关系便是, 首位不变, 取反加一)
-下面是吐槽不知道是哪个书呆子教书，照搬了机器的逻辑，把取反加一的方法当做补码的计算逻辑就这么教下来了。搞笑的是，还保留了补码这个名字，照理说这种教法应该叫 取反加一码 更合理，你还补什么啊？ 不仅如此，还搞出了个首位符号位的说法，弄出了个正0负0，还用负0来充当-128，真是不把人弄疯不罢休啊！！&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id5"&gt;
-&lt;h2&gt;参考资料：&lt;/h2&gt;
-&lt;p&gt;链接：&lt;a class="reference external" href="https://www.zhihu.com/question/20458542/answer/40759880"&gt;https://www.zhihu.com/question/20458542/answer/40759880&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="publish"&gt;
-&lt;h2&gt;Publish&lt;/h2&gt;
-&lt;pre class="code ipython"&gt;&lt;a name="rest_code_b6e0fdedd2654f0d88f2032ca85f6885-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;!&lt;/span&gt; pandoc --wrap&lt;span class="o"&gt;=&lt;/span&gt;none  补数.org -o  ~/Public/nikola_post/posts/补数.rst
-&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description><category>complement</category><guid>https://alinbxsorcerer.github.io/posts/grokking-complement/</guid><pubDate>Tue, 15 Jan 2019 12:53:29 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>bash</category><category>python</category><category>regex</category><guid>https://alinbxsorcerer.github.io/posts/resubcan-shu-shun-xu-de-wen-ti/</guid><pubDate>Wed, 08 May 2019 09:17:55 GMT</pubDate></item></channel></rss>

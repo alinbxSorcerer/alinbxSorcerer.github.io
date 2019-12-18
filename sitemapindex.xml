@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/algorithms.xml</loc>
-  <lastmod>2019-11-30T07:20:00Z</lastmod>
+  <lastmod>2019-12-18T07:20:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/bash.xml</loc>
@@ -43,7 +43,7 @@
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/cat_programming.xml</loc>
-  <lastmod>2019-12-13T10:51:00Z</lastmod>
+  <lastmod>2019-12-18T07:20:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/complement.xml</loc>
@@ -94,6 +94,10 @@
   <lastmod>2019-11-14T05:05:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://alinbxsorcerer.github.io/categories/sicp.xml</loc>
+  <lastmod>2019-12-18T07:20:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/sort.xml</loc>
   <lastmod>2019-11-30T07:20:00Z</lastmod>
  </sitemap>
@@ -115,18 +119,18 @@
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/galleries/demo/rss.xml</loc>
-  <lastmod>2019-11-10T07:15:00Z</lastmod>
+  <lastmod>2019-12-17T13:37:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/galleries/rss.xml</loc>
-  <lastmod>2019-11-10T07:15:00Z</lastmod>
+  <lastmod>2019-12-17T13:37:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/rss.xml</loc>
-  <lastmod>2019-12-16T12:53:00Z</lastmod>
+  <lastmod>2019-12-18T07:20:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/sitemap.xml</loc>
-  <lastmod>2019-12-16T12:53:00Z</lastmod>
+  <lastmod>2019-12-18T07:20:00Z</lastmod>
  </sitemap>
 </sitemapindex>

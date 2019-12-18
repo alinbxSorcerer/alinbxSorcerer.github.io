@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html prefix="" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>黎曼积分 | A Magic Land Declared by David</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://alinbxsorcerer.github.io/posts/li-man-ji-fen/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="David">
+<meta property="og:site_name" content="A Magic Land Declared by David">
+<meta property="og:title" content="黎曼积分">
+<meta property="og:url" content="https://alinbxsorcerer.github.io/posts/li-man-ji-fen/">
+<meta property="og:description" content="Contents
+
+Evolution of sum
+Abstractions
+Callbacks
+Riemann Integral
+
+
+
+Evolution of sum
+1.求整数和
+def sum_integers(a, b):
+    if a &gt; b: return 0 # terminating point
+    return a + sum_integers(a+1, b)
+pri">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2019-12-16T18:53:29+08:00">
+<meta property="article:tag" content="algorithms">
+<meta property="article:tag" content="sicp">
+</head>
+<body>
+    
+
+    <header id="header" class="navbar"><div class="container">
+            
+    <div class="brand">
+
+        <div class="brand-text">
+            <a href="https://alinbxsorcerer.github.io/" title="A Magic Land Declared by David" rel="home">
+                A Magic Land Declared by David
+            </a>
+        </div>
+
+        <a id="btn-toggle-nav" class="navbar-toggle">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+    </div>
+
+            
+    <nav class="navbar-collapse collapse"><ul class="nav">
+<li><a href="../../archive.html">Archive</a></li>
+                <li><a href="../../categories/">Tags</a></li>
+                <li><a href="../../rss.xml">RSS feed</a></li>
+    
+    
+    </ul></nav>
+</div>
+    </header><div class="header-padding"> </div>
+
+    
+    <div class="post-header">
+        <div class="container">
+            <div class="title">
+                黎曼积分
+            </div>
+        </div>
+    </div>
+
+    <div class="post-meta">
+      <div class="container">
+	<div class="meta clearfix">
+	  <div class="authordate">
+	    <time class="timeago" datetime="2019-12-16T18:53:29+08:00">2019/12/16</time>
+	    
+
+	    
+          |  
+        <a href="index.rst" id="sourcelink">Source</a>
+
+	  </div>
+	  <div class="post-tags">
+	    <div class="tag">
+	      <a href="../../categories/algorithms/" rel="tag">algorithms</a>
+	    </div>
+	    <div class="tag">
+	      <a href="../../categories/sicp/" rel="tag">sicp</a>
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </div>
+
+
+    <div id="post-main" class="main">
+        <div class="container">
+        <div>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#evolution-of-sum" id="id1">Evolution of sum</a></p></li>
+<li><p><a class="reference internal" href="#abstractions" id="id2">Abstractions</a></p></li>
+<li><p><a class="reference internal" href="#callbacks" id="id3">Callbacks</a></p></li>
+<li><p><a class="reference internal" href="#riemann-integral" id="id4">Riemann Integral</a></p></li>
+</ul>
+</div>
+<div class="section" id="evolution-of-sum">
+<h2><a class="toc-backref" href="#id1">Evolution of sum</a></h2>
+<p>1.求整数和</p>
+<pre class="code ipython"><a name="rest_code_37dd9d12ab524e5880b82e89d00e457f-1"></a><span class="k">def</span> <span class="nf">sum_integers</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<a name="rest_code_37dd9d12ab524e5880b82e89d00e457f-2"></a>    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span> <span class="c1"># terminating point</span>
+<a name="rest_code_37dd9d12ab524e5880b82e89d00e457f-3"></a>    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">sum_integers</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<a name="rest_code_37dd9d12ab524e5880b82e89d00e457f-4"></a><span class="k">print</span><span class="p">(</span><span class="n">sum_integers</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+</pre>
+<p>2.立方求和</p>
+<pre class="code ipython"><a name="rest_code_bc44c84906d341eaaa74daa403c5c425-1"></a><span class="k">def</span> <span class="nf">sum_cube</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<a name="rest_code_bc44c84906d341eaaa74daa403c5c425-2"></a>    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+<a name="rest_code_bc44c84906d341eaaa74daa403c5c425-3"></a>    <span class="k">return</span> <span class="n">cube</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">sum_cube</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<a name="rest_code_bc44c84906d341eaaa74daa403c5c425-4"></a>
+<a name="rest_code_bc44c84906d341eaaa74daa403c5c425-5"></a><span class="k">def</span> <span class="nf">cube</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a name="rest_code_bc44c84906d341eaaa74daa403c5c425-6"></a>    <span class="k">return</span> <span class="nb">pow</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<a name="rest_code_bc44c84906d341eaaa74daa403c5c425-7"></a>
+<a name="rest_code_bc44c84906d341eaaa74daa403c5c425-8"></a><span class="k">print</span><span class="p">(</span><span class="n">sum_cube</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</pre>
+<p>3.莱布尼茨求pi公式</p>
+<pre class="code ipython"><a name="rest_code_0823873f58dd461aa1bb8e9635b46ce9-1"></a><span class="k">def</span> <span class="nf">pi_sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<a name="rest_code_0823873f58dd461aa1bb8e9635b46ce9-2"></a>    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+<a name="rest_code_0823873f58dd461aa1bb8e9635b46ce9-3"></a>    <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="n">pi_sum</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="mi">4</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<a name="rest_code_0823873f58dd461aa1bb8e9635b46ce9-4"></a><span class="k">print</span><span class="p">(</span><span class="n">pi_sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span><span class="o">*</span><span class="mi">8</span><span class="p">)</span>
+<a name="rest_code_0823873f58dd461aa1bb8e9635b46ce9-5"></a><span class="c1"># 此处熟悉了if and return的写法, 这是if的最初形式.</span>
+</pre>
+</div>
+<div class="section" id="abstractions">
+<h2><a class="toc-backref" href="#id2">Abstractions</a></h2>
+<ul class="simple">
+<li><p>初步抽象</p></li>
+</ul>
+<p>These three procedures clearly share a common underlying pattern. They are for the most part identical,</p>
+<ol class="arabic simple">
+<li><p>differing only in the name of the procedure,</p></li>
+<li><p>the function of a used to compute the term to be added,</p></li>
+<li><p>and the function that provides the next value of a.</p></li>
+</ol>
+<p>We could generate each of the procedures by filling in slots in the same template:</p>
+<pre class="code scheme"><a name="rest_code_41bacdea30ef4f3dbf2efc6044a15fc5-1"></a><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">&lt;name&gt;</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
+<a name="rest_code_41bacdea30ef4f3dbf2efc6044a15fc5-2"></a>  <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
+<a name="rest_code_41bacdea30ef4f3dbf2efc6044a15fc5-3"></a>      <span class="mi">0</span>
+<a name="rest_code_41bacdea30ef4f3dbf2efc6044a15fc5-4"></a>      <span class="p">(</span><span class="nb">+ </span><span class="p">(</span><span class="nf">&lt;term&gt;</span> <span class="nv">a</span><span class="p">)</span> <span class="c1">;;使用关键词term</span>
+<a name="rest_code_41bacdea30ef4f3dbf2efc6044a15fc5-5"></a>         <span class="p">(</span><span class="nf">&lt;name&gt;</span> <span class="p">(</span><span class="nf">&lt;next&gt;</span> <span class="nv">a</span><span class="p">)</span> <span class="nv">b</span><span class="p">))))</span> <span class="c1">;;next便是推导式样,</span>
+<a name="rest_code_41bacdea30ef4f3dbf2efc6044a15fc5-6"></a><span class="c1">;;python的写法会隐藏很多的细节.</span>
+</pre>
+<pre class="code ipython"><a name="rest_code_e1f5c53344194a408b6e1fb951e0a223-1"></a><span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<a name="rest_code_e1f5c53344194a408b6e1fb951e0a223-2"></a>    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+<a name="rest_code_e1f5c53344194a408b6e1fb951e0a223-3"></a>    <span class="k">return</span> <span class="n">term</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">name</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">b</span><span class="p">)</span>
+</pre>
+<ul class="simple">
+<li><p>对比数学上的应用</p></li>
+</ul>
+<p>The presence of such a common pattern is <code class="docutils literal">strong evidence</code> that there is a useful abstraction waiting to be brought to the surface. Indeed, mathematicians long ago identified the abstraction of summation of a series and invented <code class="docutils literal">sigma notation</code>,' for example: <img alt="image0" src="../images/algorithms.org_20190717_165507.png"></p>
+<p>to express this concept. The power of sigma notation is that it allows mathematicians to deal with the concept of summation itself rather than only with particular sums – for example, to formulate general results about sums that are independent of the particular series being summed.</p>
+<p>Similarly, as program designers, we would like our language to be powerful enough so that we can write a procedure that expresses the concept of summation itself rather than only procedures that compute particular sums. We can do so readily in our procedural language by taking the common template shown above and transforming the <code class="docutils literal">slots</code> into formal parameters:</p>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 75)</p>
+<p>Cannot find pygments lexer for language "commonlisp"</p>
+<pre class="literal-block">.. code:: commonlisp
+
+   (defun sum(term a next b)
+     (if (&gt; a b)
+         0
+         (+ (term a)
+            (sum term (next a) next b))))
+   ;确实能够窥探其本质.
+   ; 這裏比python的sum好用.
+</pre>
+</div>
+<pre class="code ipython"><a name="rest_code_93e956b6cd1244f0b53f47fa6a9e8d91-1"></a><span class="k">def</span> <span class="nf">sum_recur</span><span class="p">(</span><span class="n">term</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="nb">next</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<a name="rest_code_93e956b6cd1244f0b53f47fa6a9e8d91-2"></a>    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+<a name="rest_code_93e956b6cd1244f0b53f47fa6a9e8d91-3"></a>    <span class="k">return</span> <span class="n">term</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">sum_recur</span><span class="p">(</span><span class="n">term</span><span class="p">,</span> <span class="nb">next</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">next</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<a name="rest_code_93e956b6cd1244f0b53f47fa6a9e8d91-4"></a><span class="c1"># 找到思维上的漏洞．</span>
+</pre>
+</div>
+<div class="section" id="callbacks">
+<h2><a class="toc-backref" href="#id3">Callbacks</a></h2>
+<p>Notice that sum takes as its arguments the lower and upper bounds a and b together with the procedures term and next. We can use sum just as we would any procedure. For example, we can use it (along with a procedure inc that increments its argument by 1) to define sum-cubes:</p>
+<ul class="simple">
+<li><p>sum<sub>integers</sub></p></li>
+</ul>
+<pre class="code ipython"><a name="rest_code_4eee64c087694655abeec581b38e7e1d-1"></a><span class="k">def</span> <span class="nf">sum_integers</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<a name="rest_code_4eee64c087694655abeec581b38e7e1d-2"></a>    <span class="k">def</span> <span class="nf">identity</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span>
+<a name="rest_code_4eee64c087694655abeec581b38e7e1d-3"></a>    <span class="k">def</span> <span class="nf">inc</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<a name="rest_code_4eee64c087694655abeec581b38e7e1d-4"></a>    <span class="k">return</span> <span class="n">sum_recur</span><span class="p">(</span><span class="n">identity</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">inc</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<a name="rest_code_4eee64c087694655abeec581b38e7e1d-5"></a><span class="k">print</span><span class="p">(</span><span class="n">sum_integers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</pre>
+<pre class="code ipython"><a name="rest_code_6c52a8c0ca2c41dbbe17465567080d1c-1"></a><span class="k">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="o">+</span><span class="mi">1</span><span class="p">)))</span> <span class="c1">#identity</span>
+</pre>
+<ul class="simple">
+<li><p>sum<sub>pi</sub></p></li>
+</ul>
+<pre class="code ipython"><a name="rest_code_8f6f3c5c95734f98a1c4263464abea90-1"></a><span class="k">def</span> <span class="nf">integral</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">dx</span><span class="p">):</span>
+<a name="rest_code_8f6f3c5c95734f98a1c4263464abea90-2"></a>    <span class="n">add_dx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span>
+<a name="rest_code_8f6f3c5c95734f98a1c4263464abea90-3"></a>    <span class="k">return</span> <span class="n">sum_recur</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="p">(</span><span class="n">dx</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">add_dx</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span>
+<a name="rest_code_8f6f3c5c95734f98a1c4263464abea90-4"></a>
+<a name="rest_code_8f6f3c5c95734f98a1c4263464abea90-5"></a><span class="k">def</span> <span class="nf">cube</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span>
+<a name="rest_code_8f6f3c5c95734f98a1c4263464abea90-6"></a><span class="k">print</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">))</span>
+</pre>
+</div>
+<div class="section" id="riemann-integral">
+<h2><a class="toc-backref" href="#id4">Riemann Integral</a></h2>
+<pre class="code ipython"><a name="rest_code_617f76dced144307ae2c4daeca7a8fb7-1"></a><span class="k">def</span> <span class="nf">integral</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">dx</span><span class="p">):</span>
+<a name="rest_code_617f76dced144307ae2c4daeca7a8fb7-2"></a>    <span class="n">add_dx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span>
+<a name="rest_code_617f76dced144307ae2c4daeca7a8fb7-3"></a>    <span class="k">return</span> <span class="n">sum_recur</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="p">(</span><span class="n">dx</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">add_dx</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span>
+<a name="rest_code_617f76dced144307ae2c4daeca7a8fb7-4"></a>
+<a name="rest_code_617f76dced144307ae2c4daeca7a8fb7-5"></a>
+<a name="rest_code_617f76dced144307ae2c4daeca7a8fb7-6"></a><span class="k">def</span> <span class="nf">sum_recur</span><span class="p">(</span><span class="n">term</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="nb">next</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<a name="rest_code_617f76dced144307ae2c4daeca7a8fb7-7"></a>    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+<a name="rest_code_617f76dced144307ae2c4daeca7a8fb7-8"></a>    <span class="k">return</span> <span class="n">term</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">sum_recur</span><span class="p">(</span><span class="n">term</span><span class="p">,</span> <span class="nb">next</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">next</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<a name="rest_code_617f76dced144307ae2c4daeca7a8fb7-9"></a>
+<a name="rest_code_617f76dced144307ae2c4daeca7a8fb7-10"></a><span class="k">def</span> <span class="nf">cube</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span>
+<a name="rest_code_617f76dced144307ae2c4daeca7a8fb7-11"></a>
+<a name="rest_code_617f76dced144307ae2c4daeca7a8fb7-12"></a><span class="k">print</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">))</span>
+</pre>
+<p>与iteration对比</p>
+<pre class="code ipython"><a name="rest_code_66d386c509c4401985fc20bfc7d26435-1"></a><span class="k">def</span> <span class="nf">integral</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">dx</span><span class="p">):</span>
+<a name="rest_code_66d386c509c4401985fc20bfc7d26435-2"></a>    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="p">(</span><span class="n">dx</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">n</span><span class="o">*</span><span class="n">dx</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">((</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="n">dx</span><span class="p">))</span> <span class="p">)</span> <span class="o">*</span> <span class="n">dx</span>
+<a name="rest_code_66d386c509c4401985fc20bfc7d26435-3"></a>
+<a name="rest_code_66d386c509c4401985fc20bfc7d26435-4"></a><span class="k">print</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.00000001</span><span class="p">))</span>
+</pre>
+</div>
+</div>
+            
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="?",
+            disqus_url="https://alinbxsorcerer.github.io/posts/li-man-ji-fen/",
+        disqus_title="\u9ece\u66fc\u79ef\u5206",
+        disqus_identifier="cache/posts/黎曼积分.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        
+
+        </div>
+    </div>
+
+    
+    <footer><div class="container">
+            <div class="social">
+
+
+
+                <div class="social-entry">
+                    <a href="../../rss.xml" target="_blank">
+                        <i class="fa fa-rss"></i> 
+                    </a>
+                </div>
+            </div>
+                <div class="copyright">
+                    Contents © 2019         <a href="mailto:davad.fhl.wang@foxmail.com">David</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+                    
+                </div>
+           
+        </div>
+    </footer><script src="../../assets/js/all-nocdn.js" type="text/javascript"></script>
+</body>
+</html>

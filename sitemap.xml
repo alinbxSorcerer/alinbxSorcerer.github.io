@@ -27,11 +27,11 @@
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/archive.html</loc>
-  <lastmod>2019-12-16T12:53:00Z</lastmod>
+  <lastmod>2019-12-18T07:20:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/categories/</loc>
-  <lastmod>2019-12-16T12:53:00Z</lastmod>
+  <lastmod>2019-12-18T07:20:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/categories/algorithms/</loc>
@@ -122,6 +122,10 @@
   <lastmod>2019-11-10T05:01:00Z</lastmod>
  </url>
  <url>
+  <loc>https://alinbxsorcerer.github.io/categories/sicp/</loc>
+  <lastmod>2019-12-18T07:20:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://alinbxsorcerer.github.io/categories/sort/</loc>
   <lastmod>2019-11-30T07:20:00Z</lastmod>
  </url>
@@ -151,7 +155,7 @@
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/index-1.html</loc>
-  <lastmod>2019-12-16T12:53:00Z</lastmod>
+  <lastmod>2019-12-18T07:20:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/listings/</loc>
@@ -163,7 +167,7 @@
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/listings/hello.py.html</loc>
-  <lastmod>2019-11-10T07:15:00Z</lastmod>
+  <lastmod>2019-12-17T13:37:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/pages/about-nikola/</loc>
@@ -256,6 +260,10 @@
  <url>
   <loc>https://alinbxsorcerer.github.io/posts/ipython-summary/</loc>
   <lastmod>2019-11-18T03:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alinbxsorcerer.github.io/posts/li-man-ji-fen/</loc>
+  <lastmod>2019-12-18T07:20:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/posts/regex-summary/</loc>
