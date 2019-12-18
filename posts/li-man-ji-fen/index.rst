@@ -1,6 +1,6 @@
    .. title: 黎曼积分
    .. slug:
-   .. date: 2019-12-16 18:53:29 UTC+08:00
+   .. date: 2019-12-17 18:53:29 UTC+08:00
    .. tags: algorithms, sicp
    .. category: programming
    .. link:
@@ -8,7 +8,10 @@
    .. type: text
 
 
-.. contents::
+.. toctree::
+   :numbered:
+   :maxdepth: 2
+
 
 Evolution of sum
 ----------------
@@ -103,7 +106,7 @@ Callbacks
 
 Notice that sum takes as its arguments the lower and upper bounds a and b together with the procedures term and next. We can use sum just as we would any procedure. For example, we can use it (along with a procedure inc that increments its argument by 1) to define sum-cubes:
 
--  sum\ :sub:`integers`
+-  sum_integers
 
 .. code:: ipython
 
@@ -118,7 +121,7 @@ Notice that sum takes as its arguments the lower and upper bounds a and b togeth
 
    print(sum(n for n in range(1, 10+1))) #identity
 
--  sum\ :sub:`pi`
+-  sum_pi
 
 .. code:: ipython
 
