@@ -65,7 +65,7 @@
 'render_galleries', (67584, 56)
 'render_taxonomies:output/categories/cat_nikola/index.html', (68096, 1942)
 'copy_files:output/images/nikola.png', (70144, 256)
-'sitemap:output/sitemap.xml', (2867712, 17525)
+'sitemap:output/sitemap.xml', (2867712, 17526)
 'render_sources:output/pages/bootstrap-demo/index.rst', (75776, 256)
 'render_pages:output/pages/about-nikola/index.html', (454656, 3055)
 'render_taxonomies', (79360, 56)

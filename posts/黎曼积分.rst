@@ -8,10 +8,9 @@
    .. type: text
 
 
-.. toctree::
+   
+.. contents::
    :numbered:
-   :maxdepth: 2
-
 
 Evolution of sum
 ----------------
