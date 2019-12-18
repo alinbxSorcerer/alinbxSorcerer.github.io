@@ -9,10 +9,11 @@
 
 
    
-.. contents::
-   :numbered:
+.. contents:: Table of Contents
 
-Evolution of sum
+
+
+1.Evolution of sum
 ----------------
 
 1.求整数和
@@ -47,7 +48,7 @@ Evolution of sum
    print(pi_sum(1, 10000)*8)
    # 此处熟悉了if and return的写法, 这是if的最初形式.
 
-Abstractions
+2.Abstractions
 ------------
 
 -  初步抽象
@@ -75,6 +76,7 @@ We could generate each of the procedures by filling in slots in the same templat
        if a > b: return 0
        return term(a) + name(next(a), b)
 
+   
 -  对比数学上的应用
 
 The presence of such a common pattern is ``strong evidence`` that there is a useful abstraction waiting to be brought to the surface. Indeed, mathematicians long ago identified the abstraction of summation of a series and invented ``sigma notation``,' for example: |image0|
@@ -91,7 +93,7 @@ Similarly, as program designers, we would like our language to be powerful enoug
          (+ (term a)
             (sum term (next a) next b))))
    ;确实能够窥探其本质.
-   ; 這裏比python的sum好用.
+   ;這裏比python的sum好用.
 
 .. code:: ipython
 
@@ -100,7 +102,7 @@ Similarly, as program designers, we would like our language to be powerful enoug
        return term(a) + sum_recur(term, next(a), next, b)
    # 找到思维上的漏洞．
 
-Callbacks
+3.Callbacks
 ---------
 
 Notice that sum takes as its arguments the lower and upper bounds a and b together with the procedures term and next. We can use sum just as we would any procedure. For example, we can use it (along with a procedure inc that increments its argument by 1) to define sum-cubes:
@@ -131,7 +133,7 @@ Notice that sum takes as its arguments the lower and upper bounds a and b togeth
    def cube(x): return x ** 3
    print(integral(cube, 0, 1, 0.01))
 
-Riemann Integral
+4.Riemann Integral
 ----------------
 
 .. code:: ipython
@@ -158,5 +160,4 @@ Riemann Integral
 
    print(integral(cube, 0, 1, 0.00000001))
 
-.. |image0| image:: ../images/algorithms.org_20190717_165507.png
-
+.. |image0| image:: /images/algorithms.org_20190717_165507.png
