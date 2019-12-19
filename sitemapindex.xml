@@ -43,7 +43,7 @@
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/cat_programming.xml</loc>
-  <lastmod>2019-12-19T03:03:00Z</lastmod>
+  <lastmod>2019-12-19T03:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/complement.xml</loc>
@@ -60,6 +60,10 @@
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/ipython.xml</loc>
   <lastmod>2019-11-18T03:46:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://alinbxsorcerer.github.io/categories/lambda.xml</loc>
+  <lastmod>2019-12-19T03:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/linux.xml</loc>
@@ -87,7 +91,7 @@
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/python.xml</loc>
-  <lastmod>2019-12-19T02:59:00Z</lastmod>
+  <lastmod>2019-12-19T03:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/regex.xml</loc>
@@ -99,7 +103,7 @@
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/sicp.xml</loc>
-  <lastmod>2019-12-18T15:57:00Z</lastmod>
+  <lastmod>2019-12-19T03:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/categories/sort.xml</loc>
@@ -131,10 +135,10 @@
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/rss.xml</loc>
-  <lastmod>2019-12-19T03:03:00Z</lastmod>
+  <lastmod>2019-12-19T03:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://alinbxsorcerer.github.io/sitemap.xml</loc>
-  <lastmod>2019-12-19T03:03:00Z</lastmod>
+  <lastmod>2019-12-19T03:11:00Z</lastmod>
  </sitemap>
 </sitemapindex>

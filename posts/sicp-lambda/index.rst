@@ -1,15 +1,15 @@
    .. title: Constructing Procedures Using Lambda
    .. slug:
    .. date: 2019-12-19 10:30:29 UTC+08:00
-   .. tags:
+   .. tags: lambda, python, sicp
    .. category: programming
    .. link:
    .. description:
    .. type: text
 
 
- .. contents:: Table of Contents
-
+.. contents:: Table of Contents
+ 
 In using sum as in section 1.3.1, it seems terribly awkward to have to define ``trivial procedures`` such as pi-term and pi-next just so we can use them as arguments to our higher-order procedure. Rather than define pi-next and pi-term, it would be more convenient to have a way to directly specify \``the procedure that returns its input incremented by 4'' and \``the procedure that returns the reciprocal of its input times its input plus 2.'' We can do this by introducing the special form lambda, which creates procedures. Using lambda we can describe what we want as
 
 ::
@@ -115,9 +115,13 @@ or, more generally, in any context where we would normally use a procedure name.
 Using let to create local variables
 
 
-Another use of lambda is in creating local variables. We often need local variables in our procedures other than those that have been bound as formal parameters. For example, suppose we wish to compute the function |image1|
+Another use of lambda is in creating local variables. We often need local
+variables in our procedures other than those that have been bound as formal
+parameters. For example, suppose we wish to compute the function
+|image1|
 
-which we could also express as |image2|
+which we could also express as
+|image2|
 
 In writing a procedure to compute f, we would like to include as local variables not only x and y but also the names of intermediate quantities like a and b. One way to accomplish this is to use an auxiliary procedure to bind the local variables:
 

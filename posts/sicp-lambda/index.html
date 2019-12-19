@@ -11,15 +11,12 @@
 <meta property="og:site_name" content="A Magic Land Declared by David">
 <meta property="og:title" content="Constructing Procedures Using Lambda">
 <meta property="og:url" content="https://alinbxsorcerer.github.io/posts/sicp-lambda/">
-<meta property="og:description" content='System Message: ERROR/3 (&lt;string&gt;, line 2)
-The "contents" directive may not be used within topics or body elements.
-.. contents:: Table of Contents
-
-
-
-In using sum as in section 1.3.1, it seems terrib'>
+<meta property="og:description" content="In using sum as in section 1.3.1, it seems terribly awkward to have to define trivial procedures such as pi-term and pi-next just so we can use them as arguments to our higher-order procedure. Rather ">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2019-12-19T10:30:29+08:00">
+<meta property="article:tag" content="lambda">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="sicp">
 </head>
 <body>
     
@@ -74,6 +71,15 @@ In using sum as in section 1.3.1, it seems terrib'>
 
 	  </div>
 	  <div class="post-tags">
+	    <div class="tag">
+	      <a href="../../categories/lambda/" rel="tag">lambda</a>
+	    </div>
+	    <div class="tag">
+	      <a href="../../categories/python/" rel="tag">python</a>
+	    </div>
+	    <div class="tag">
+	      <a href="../../categories/sicp/" rel="tag">sicp</a>
+	    </div>
 	  </div>
 	</div>
       </div>
@@ -83,59 +89,51 @@ In using sum as in section 1.3.1, it seems terrib'>
     <div id="post-main" class="main">
         <div class="container">
         <div>
-<blockquote>
-<div class="system-message">
-<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 2)</p>
-<p>The "contents" directive may not be used within topics or body elements.</p>
-<pre class="literal-block">.. contents:: Table of Contents
-</pre>
-</div>
-</blockquote>
 <p>In using sum as in section 1.3.1, it seems terribly awkward to have to define <code class="docutils literal">trivial procedures</code> such as pi-term and pi-next just so we can use them as arguments to our higher-order procedure. Rather than define pi-next and pi-term, it would be more convenient to have a way to directly specify ``the procedure that returns its input incremented by 4'' and ``the procedure that returns the reciprocal of its input times its input plus 2.'' We can do this by introducing the special form lambda, which creates procedures. Using lambda we can describe what we want as</p>
 <pre class="literal-block">(lambda (x) (+ x 4))</pre>
 <p>and</p>
 <pre class="literal-block">(lambda (x) (/ 1.0 (* x (+ x 2))))</pre>
 <p>Then our pi-sum procedure can be expressed without defining any auxiliary procedures as</p>
-<pre class="code scheme"><a name="rest_code_b7e879a2e033437d8d5ba5560a762930-1"></a><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">sum</span> <span class="nv">term</span> <span class="nv">a</span> <span class="nv">next</span> <span class="nv">b</span><span class="p">)</span>
-<a name="rest_code_b7e879a2e033437d8d5ba5560a762930-2"></a>  <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
-<a name="rest_code_b7e879a2e033437d8d5ba5560a762930-3"></a>      <span class="mi">0</span>
-<a name="rest_code_b7e879a2e033437d8d5ba5560a762930-4"></a>      <span class="p">(</span><span class="nb">+ </span><span class="p">(</span><span class="nf">term</span> <span class="nv">a</span><span class="p">)</span>
-<a name="rest_code_b7e879a2e033437d8d5ba5560a762930-5"></a>         <span class="p">(</span><span class="nf">sum</span> <span class="nv">term</span> <span class="p">(</span><span class="nf">next</span> <span class="nv">a</span><span class="p">)</span> <span class="nv">next</span> <span class="nv">b</span><span class="p">))))</span>
-<a name="rest_code_b7e879a2e033437d8d5ba5560a762930-6"></a><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">pi-sum</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
-<a name="rest_code_b7e879a2e033437d8d5ba5560a762930-7"></a>  <span class="p">(</span><span class="nf">sum</span> <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">/ </span><span class="mf">1.0</span> <span class="p">(</span><span class="nb">* </span><span class="nv">x</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="mi">2</span><span class="p">))))</span>
-<a name="rest_code_b7e879a2e033437d8d5ba5560a762930-8"></a>       <span class="nv">a</span> <span class="c1">;;结构很清晰</span>
-<a name="rest_code_b7e879a2e033437d8d5ba5560a762930-9"></a>       <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="mi">4</span><span class="p">))</span>
-<a name="rest_code_b7e879a2e033437d8d5ba5560a762930-10"></a>       <span class="nv">b</span><span class="p">))</span>
-<a name="rest_code_b7e879a2e033437d8d5ba5560a762930-11"></a><span class="p">(</span><span class="nf">pi-sum</span> <span class="mi">1</span> <span class="mi">11</span><span class="p">)</span>
+<pre class="code scheme"><a name="rest_code_e67888d341d44d598125e9b7c26b0eda-1"></a><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">sum</span> <span class="nv">term</span> <span class="nv">a</span> <span class="nv">next</span> <span class="nv">b</span><span class="p">)</span>
+<a name="rest_code_e67888d341d44d598125e9b7c26b0eda-2"></a>  <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
+<a name="rest_code_e67888d341d44d598125e9b7c26b0eda-3"></a>      <span class="mi">0</span>
+<a name="rest_code_e67888d341d44d598125e9b7c26b0eda-4"></a>      <span class="p">(</span><span class="nb">+ </span><span class="p">(</span><span class="nf">term</span> <span class="nv">a</span><span class="p">)</span>
+<a name="rest_code_e67888d341d44d598125e9b7c26b0eda-5"></a>         <span class="p">(</span><span class="nf">sum</span> <span class="nv">term</span> <span class="p">(</span><span class="nf">next</span> <span class="nv">a</span><span class="p">)</span> <span class="nv">next</span> <span class="nv">b</span><span class="p">))))</span>
+<a name="rest_code_e67888d341d44d598125e9b7c26b0eda-6"></a><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">pi-sum</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
+<a name="rest_code_e67888d341d44d598125e9b7c26b0eda-7"></a>  <span class="p">(</span><span class="nf">sum</span> <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">/ </span><span class="mf">1.0</span> <span class="p">(</span><span class="nb">* </span><span class="nv">x</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="mi">2</span><span class="p">))))</span>
+<a name="rest_code_e67888d341d44d598125e9b7c26b0eda-8"></a>       <span class="nv">a</span> <span class="c1">;;结构很清晰</span>
+<a name="rest_code_e67888d341d44d598125e9b7c26b0eda-9"></a>       <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="mi">4</span><span class="p">))</span>
+<a name="rest_code_e67888d341d44d598125e9b7c26b0eda-10"></a>       <span class="nv">b</span><span class="p">))</span>
+<a name="rest_code_e67888d341d44d598125e9b7c26b0eda-11"></a><span class="p">(</span><span class="nf">pi-sum</span> <span class="mi">1</span> <span class="mi">11</span><span class="p">)</span>
 </pre>
 <pre class="literal-block">0.372005772005772</pre>
-<pre class="code scheme"><a name="rest_code_6e130184dcd948109f2722cfa67c8afa-1"></a><span class="p">(</span><span class="nf">defun</span> <span class="nv">sum</span><span class="p">(</span><span class="nf">term</span> <span class="nv">a</span> <span class="nv">next</span> <span class="nv">b</span><span class="p">)</span>
-<a name="rest_code_6e130184dcd948109f2722cfa67c8afa-2"></a>  <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
-<a name="rest_code_6e130184dcd948109f2722cfa67c8afa-3"></a>      <span class="mi">0</span>
-<a name="rest_code_6e130184dcd948109f2722cfa67c8afa-4"></a>      <span class="p">(</span><span class="nb">+ </span><span class="p">(</span><span class="nf">term</span> <span class="nv">a</span><span class="p">)</span>
-<a name="rest_code_6e130184dcd948109f2722cfa67c8afa-5"></a>         <span class="p">(</span><span class="nf">sum</span> <span class="o">#</span><span class="ss">'term</span> <span class="p">(</span><span class="nf">next</span> <span class="nv">a</span><span class="p">)</span> <span class="o">#</span><span class="ss">'next</span> <span class="nv">b</span><span class="p">))))</span>
-<a name="rest_code_6e130184dcd948109f2722cfa67c8afa-6"></a>
-<a name="rest_code_6e130184dcd948109f2722cfa67c8afa-7"></a><span class="p">(</span><span class="nf">defun</span> <span class="nv">pi-sum</span><span class="p">(</span><span class="nf">a</span> <span class="nv">b</span><span class="p">)</span>
-<a name="rest_code_6e130184dcd948109f2722cfa67c8afa-8"></a>  <span class="p">(</span><span class="nf">sum</span> <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">/ </span><span class="mf">1.0</span> <span class="p">(</span><span class="nb">* </span><span class="nv">x</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="mi">2</span><span class="p">))))</span>
-<a name="rest_code_6e130184dcd948109f2722cfa67c8afa-9"></a>       <span class="nv">a</span>
-<a name="rest_code_6e130184dcd948109f2722cfa67c8afa-10"></a>       <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="mi">4</span><span class="p">))</span>
-<a name="rest_code_6e130184dcd948109f2722cfa67c8afa-11"></a>       <span class="nv">b</span><span class="p">))</span>
-<a name="rest_code_6e130184dcd948109f2722cfa67c8afa-12"></a><span class="p">(</span><span class="nf">print</span> <span class="p">(</span><span class="nf">pi-sum</span> <span class="mi">2</span> <span class="mi">11</span><span class="p">))</span>
+<pre class="code scheme"><a name="rest_code_074f4a11d7c64c02926ccd3fff839e54-1"></a><span class="p">(</span><span class="nf">defun</span> <span class="nv">sum</span><span class="p">(</span><span class="nf">term</span> <span class="nv">a</span> <span class="nv">next</span> <span class="nv">b</span><span class="p">)</span>
+<a name="rest_code_074f4a11d7c64c02926ccd3fff839e54-2"></a>  <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
+<a name="rest_code_074f4a11d7c64c02926ccd3fff839e54-3"></a>      <span class="mi">0</span>
+<a name="rest_code_074f4a11d7c64c02926ccd3fff839e54-4"></a>      <span class="p">(</span><span class="nb">+ </span><span class="p">(</span><span class="nf">term</span> <span class="nv">a</span><span class="p">)</span>
+<a name="rest_code_074f4a11d7c64c02926ccd3fff839e54-5"></a>         <span class="p">(</span><span class="nf">sum</span> <span class="o">#</span><span class="ss">'term</span> <span class="p">(</span><span class="nf">next</span> <span class="nv">a</span><span class="p">)</span> <span class="o">#</span><span class="ss">'next</span> <span class="nv">b</span><span class="p">))))</span>
+<a name="rest_code_074f4a11d7c64c02926ccd3fff839e54-6"></a>
+<a name="rest_code_074f4a11d7c64c02926ccd3fff839e54-7"></a><span class="p">(</span><span class="nf">defun</span> <span class="nv">pi-sum</span><span class="p">(</span><span class="nf">a</span> <span class="nv">b</span><span class="p">)</span>
+<a name="rest_code_074f4a11d7c64c02926ccd3fff839e54-8"></a>  <span class="p">(</span><span class="nf">sum</span> <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">/ </span><span class="mf">1.0</span> <span class="p">(</span><span class="nb">* </span><span class="nv">x</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="mi">2</span><span class="p">))))</span>
+<a name="rest_code_074f4a11d7c64c02926ccd3fff839e54-9"></a>       <span class="nv">a</span>
+<a name="rest_code_074f4a11d7c64c02926ccd3fff839e54-10"></a>       <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="mi">4</span><span class="p">))</span>
+<a name="rest_code_074f4a11d7c64c02926ccd3fff839e54-11"></a>       <span class="nv">b</span><span class="p">))</span>
+<a name="rest_code_074f4a11d7c64c02926ccd3fff839e54-12"></a><span class="p">(</span><span class="nf">print</span> <span class="p">(</span><span class="nf">pi-sum</span> <span class="mi">2</span> <span class="mi">11</span><span class="p">))</span>
 </pre>
 <pre class="literal-block">pi-sum</pre>
 <p>Again using lambda, we can write the integral procedure without having to define the auxiliary procedure add-dx:</p>
-<pre class="code scheme"><a name="rest_code_caa9838d15974270ac496973c8acff5a-1"></a><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">integral</span> <span class="nv">f</span> <span class="nv">a</span> <span class="nv">b</span> <span class="nv">dx</span><span class="p">)</span>
-<a name="rest_code_caa9838d15974270ac496973c8acff5a-2"></a>  <span class="p">(</span><span class="nb">* </span><span class="p">(</span><span class="nf">sum</span> <span class="nv">f</span>
-<a name="rest_code_caa9838d15974270ac496973c8acff5a-3"></a>          <span class="p">(</span><span class="nb">+ </span><span class="nv">a</span> <span class="p">(</span><span class="nb">/ </span><span class="nv">dx</span> <span class="mf">2.0</span><span class="p">))</span>
-<a name="rest_code_caa9838d15974270ac496973c8acff5a-4"></a>          <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="nv">dx</span><span class="p">))</span>
-<a name="rest_code_caa9838d15974270ac496973c8acff5a-5"></a>          <span class="nv">b</span><span class="p">)</span>
-<a name="rest_code_caa9838d15974270ac496973c8acff5a-6"></a>     <span class="nv">dx</span><span class="p">))</span>
+<pre class="code scheme"><a name="rest_code_796cb777cabe48be9a9ff38a5cde9ca8-1"></a><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">integral</span> <span class="nv">f</span> <span class="nv">a</span> <span class="nv">b</span> <span class="nv">dx</span><span class="p">)</span>
+<a name="rest_code_796cb777cabe48be9a9ff38a5cde9ca8-2"></a>  <span class="p">(</span><span class="nb">* </span><span class="p">(</span><span class="nf">sum</span> <span class="nv">f</span>
+<a name="rest_code_796cb777cabe48be9a9ff38a5cde9ca8-3"></a>          <span class="p">(</span><span class="nb">+ </span><span class="nv">a</span> <span class="p">(</span><span class="nb">/ </span><span class="nv">dx</span> <span class="mf">2.0</span><span class="p">))</span>
+<a name="rest_code_796cb777cabe48be9a9ff38a5cde9ca8-4"></a>          <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="nv">dx</span><span class="p">))</span>
+<a name="rest_code_796cb777cabe48be9a9ff38a5cde9ca8-5"></a>          <span class="nv">b</span><span class="p">)</span>
+<a name="rest_code_796cb777cabe48be9a9ff38a5cde9ca8-6"></a>     <span class="nv">dx</span><span class="p">))</span>
 </pre>
-<pre class="code ipython"><a name="rest_code_aaa1b7c328ec4db98e58cdcf42503282-1"></a><span class="k">def</span> <span class="nf">integral</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">dx</span><span class="p">):</span>
-<a name="rest_code_aaa1b7c328ec4db98e58cdcf42503282-2"></a>    <span class="k">return</span> <span class="n">sum_recur</span><span class="p">(</span><span class="n">f</span><span class="p">,</span>
-<a name="rest_code_aaa1b7c328ec4db98e58cdcf42503282-3"></a>                     <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">dx</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="c1">#对应着上面字母的位置.</span>
-<a name="rest_code_aaa1b7c328ec4db98e58cdcf42503282-4"></a>                     <span class="k">lambda</span><span class="p">:</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">,</span>
-<a name="rest_code_aaa1b7c328ec4db98e58cdcf42503282-5"></a>                     <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span>
+<pre class="code ipython"><a name="rest_code_83f465e26374491ca5de04fe412a8c7d-1"></a><span class="k">def</span> <span class="nf">integral</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">dx</span><span class="p">):</span>
+<a name="rest_code_83f465e26374491ca5de04fe412a8c7d-2"></a>    <span class="k">return</span> <span class="n">sum_recur</span><span class="p">(</span><span class="n">f</span><span class="p">,</span>
+<a name="rest_code_83f465e26374491ca5de04fe412a8c7d-3"></a>                     <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">dx</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="c1">#对应着上面字母的位置.</span>
+<a name="rest_code_83f465e26374491ca5de04fe412a8c7d-4"></a>                     <span class="k">lambda</span><span class="p">:</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">,</span>
+<a name="rest_code_83f465e26374491ca5de04fe412a8c7d-5"></a>                     <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span>
 </pre>
 <p>In general, lambda is used to create procedures in the same way as define, except that no name is specified for the procedure:</p>
 <pre class="literal-block">(lambda (&lt;formal-parameters&gt;) &lt;body&gt;)</pre>
@@ -150,35 +148,39 @@ In using sum as in section 1.3.1, it seems terrib'>
 <p>12</p>
 <p>or, more generally, in any context where we would normally use a procedure name.</p>
 <p>Using let to create local variables</p>
-<p>Another use of lambda is in creating local variables. We often need local variables in our procedures other than those that have been bound as formal parameters. For example, suppose we wish to compute the function <img alt="image1" src="../../images/Books.SICP.org_20191029_000434.png"></p>
-<p>which we could also express as <img alt="image2" src="../../images/Books.SICP.org_20191029_000441.png"></p>
+<p>Another use of lambda is in creating local variables. We often need local
+variables in our procedures other than those that have been bound as formal
+parameters. For example, suppose we wish to compute the function
+<img alt="image1" src="../../images/Books.SICP.org_20191029_000434.png"></p>
+<p>which we could also express as
+<img alt="image2" src="../../images/Books.SICP.org_20191029_000441.png"></p>
 <p>In writing a procedure to compute f, we would like to include as local variables not only x and y but also the names of intermediate quantities like a and b. One way to accomplish this is to use an auxiliary procedure to bind the local variables:</p>
-<pre class="code scheme"><a name="rest_code_ac0e8953ef1945e599d7febabd7e0cb3-1"></a><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">f</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
-<a name="rest_code_ac0e8953ef1945e599d7febabd7e0cb3-2"></a>  <span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">f-helper</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
-<a name="rest_code_ac0e8953ef1945e599d7febabd7e0cb3-3"></a>    <span class="p">(</span><span class="nb">+ </span><span class="p">(</span><span class="nb">* </span><span class="nv">x</span> <span class="p">(</span><span class="nf">square</span> <span class="nv">a</span><span class="p">))</span>
-<a name="rest_code_ac0e8953ef1945e599d7febabd7e0cb3-4"></a>       <span class="p">(</span><span class="nb">* </span><span class="nv">y</span> <span class="nv">b</span><span class="p">)</span>
-<a name="rest_code_ac0e8953ef1945e599d7febabd7e0cb3-5"></a>       <span class="p">(</span><span class="nb">* </span><span class="nv">a</span> <span class="nv">b</span><span class="p">)))</span>
-<a name="rest_code_ac0e8953ef1945e599d7febabd7e0cb3-6"></a>  <span class="p">(</span><span class="nf">f-helper</span> <span class="p">(</span><span class="nb">+ </span><span class="mi">1</span> <span class="p">(</span><span class="nb">* </span><span class="nv">x</span> <span class="nv">y</span><span class="p">))</span>
-<a name="rest_code_ac0e8953ef1945e599d7febabd7e0cb3-7"></a>            <span class="p">(</span><span class="nb">- </span><span class="mi">1</span> <span class="nv">y</span><span class="p">)))</span>
-<a name="rest_code_ac0e8953ef1945e599d7febabd7e0cb3-8"></a><span class="p">(</span><span class="nf">f</span> <span class="mi">1</span> <span class="mi">2</span><span class="p">)</span>
+<pre class="code scheme"><a name="rest_code_ecfb2d1b330e4ea88c67e2dd438f878f-1"></a><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">f</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
+<a name="rest_code_ecfb2d1b330e4ea88c67e2dd438f878f-2"></a>  <span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">f-helper</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
+<a name="rest_code_ecfb2d1b330e4ea88c67e2dd438f878f-3"></a>    <span class="p">(</span><span class="nb">+ </span><span class="p">(</span><span class="nb">* </span><span class="nv">x</span> <span class="p">(</span><span class="nf">square</span> <span class="nv">a</span><span class="p">))</span>
+<a name="rest_code_ecfb2d1b330e4ea88c67e2dd438f878f-4"></a>       <span class="p">(</span><span class="nb">* </span><span class="nv">y</span> <span class="nv">b</span><span class="p">)</span>
+<a name="rest_code_ecfb2d1b330e4ea88c67e2dd438f878f-5"></a>       <span class="p">(</span><span class="nb">* </span><span class="nv">a</span> <span class="nv">b</span><span class="p">)))</span>
+<a name="rest_code_ecfb2d1b330e4ea88c67e2dd438f878f-6"></a>  <span class="p">(</span><span class="nf">f-helper</span> <span class="p">(</span><span class="nb">+ </span><span class="mi">1</span> <span class="p">(</span><span class="nb">* </span><span class="nv">x</span> <span class="nv">y</span><span class="p">))</span>
+<a name="rest_code_ecfb2d1b330e4ea88c67e2dd438f878f-7"></a>            <span class="p">(</span><span class="nb">- </span><span class="mi">1</span> <span class="nv">y</span><span class="p">)))</span>
+<a name="rest_code_ecfb2d1b330e4ea88c67e2dd438f878f-8"></a><span class="p">(</span><span class="nf">f</span> <span class="mi">1</span> <span class="mi">2</span><span class="p">)</span>
 </pre>
 <p>Of course, we could use a lambda expression to specify an anonymous procedure for binding our local variables. The body of f then becomes a single call to that procedure:</p>
-<pre class="code scheme"><a name="rest_code_c0ec1cf69a944ce5975205f764640ae3-1"></a><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">f</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
-<a name="rest_code_c0ec1cf69a944ce5975205f764640ae3-2"></a>  <span class="p">((</span><span class="k">lambda </span><span class="p">(</span><span class="nf">a</span> <span class="nv">b</span><span class="p">)</span>
-<a name="rest_code_c0ec1cf69a944ce5975205f764640ae3-3"></a>     <span class="p">(</span><span class="nb">+ </span><span class="p">(</span><span class="nb">* </span><span class="nv">x</span> <span class="p">(</span><span class="nf">square</span> <span class="nv">a</span><span class="p">))</span>
-<a name="rest_code_c0ec1cf69a944ce5975205f764640ae3-4"></a>        <span class="p">(</span><span class="nb">* </span><span class="nv">y</span> <span class="nv">b</span><span class="p">)</span>
-<a name="rest_code_c0ec1cf69a944ce5975205f764640ae3-5"></a>        <span class="p">(</span><span class="nb">* </span><span class="nv">a</span> <span class="nv">b</span><span class="p">)))</span>
-<a name="rest_code_c0ec1cf69a944ce5975205f764640ae3-6"></a>   <span class="p">(</span><span class="nb">+ </span><span class="mi">1</span> <span class="p">(</span><span class="nb">* </span><span class="nv">x</span> <span class="nv">y</span><span class="p">))</span>
-<a name="rest_code_c0ec1cf69a944ce5975205f764640ae3-7"></a>   <span class="p">(</span><span class="nb">- </span><span class="mi">1</span> <span class="nv">y</span><span class="p">)))</span>
+<pre class="code scheme"><a name="rest_code_a126eb795cc84707a104f15c21cc7f92-1"></a><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">f</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
+<a name="rest_code_a126eb795cc84707a104f15c21cc7f92-2"></a>  <span class="p">((</span><span class="k">lambda </span><span class="p">(</span><span class="nf">a</span> <span class="nv">b</span><span class="p">)</span>
+<a name="rest_code_a126eb795cc84707a104f15c21cc7f92-3"></a>     <span class="p">(</span><span class="nb">+ </span><span class="p">(</span><span class="nb">* </span><span class="nv">x</span> <span class="p">(</span><span class="nf">square</span> <span class="nv">a</span><span class="p">))</span>
+<a name="rest_code_a126eb795cc84707a104f15c21cc7f92-4"></a>        <span class="p">(</span><span class="nb">* </span><span class="nv">y</span> <span class="nv">b</span><span class="p">)</span>
+<a name="rest_code_a126eb795cc84707a104f15c21cc7f92-5"></a>        <span class="p">(</span><span class="nb">* </span><span class="nv">a</span> <span class="nv">b</span><span class="p">)))</span>
+<a name="rest_code_a126eb795cc84707a104f15c21cc7f92-6"></a>   <span class="p">(</span><span class="nb">+ </span><span class="mi">1</span> <span class="p">(</span><span class="nb">* </span><span class="nv">x</span> <span class="nv">y</span><span class="p">))</span>
+<a name="rest_code_a126eb795cc84707a104f15c21cc7f92-7"></a>   <span class="p">(</span><span class="nb">- </span><span class="mi">1</span> <span class="nv">y</span><span class="p">)))</span>
 </pre>
 <p>This construct is so useful that there is a special form called let to make its use more convenient. Using let, the f procedure could be written as</p>
-<pre class="code elisp"><a name="rest_code_554c505745314808a425dcfbabe8404e-1"></a><span class="p">(</span><span class="nv">define</span> <span class="p">(</span><span class="nv">f</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
-<a name="rest_code_554c505745314808a425dcfbabe8404e-2"></a>  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">a</span> <span class="p">(</span><span class="nf">+</span> <span class="mi">1</span> <span class="p">(</span><span class="nf">*</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)))</span>
-<a name="rest_code_554c505745314808a425dcfbabe8404e-3"></a>        <span class="p">(</span><span class="nv">b</span> <span class="p">(</span><span class="nf">-</span> <span class="mi">1</span> <span class="nv">y</span><span class="p">)))</span>
-<a name="rest_code_554c505745314808a425dcfbabe8404e-4"></a>    <span class="p">(</span><span class="nf">+</span> <span class="p">(</span><span class="nf">*</span> <span class="nv">x</span> <span class="p">(</span><span class="nv">square</span> <span class="nv">a</span><span class="p">))</span>
-<a name="rest_code_554c505745314808a425dcfbabe8404e-5"></a>       <span class="p">(</span><span class="nf">*</span> <span class="nv">y</span> <span class="nv">b</span><span class="p">)</span>
-<a name="rest_code_554c505745314808a425dcfbabe8404e-6"></a>       <span class="p">(</span><span class="nf">*</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">))))</span>
-<a name="rest_code_554c505745314808a425dcfbabe8404e-7"></a><span class="c1">;;所以set或者let取代的是lamba的功能, 下面的body隶属于let</span>
+<pre class="code elisp"><a name="rest_code_89c65fe0575d4c75816144f60189fcfc-1"></a><span class="p">(</span><span class="nv">define</span> <span class="p">(</span><span class="nv">f</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
+<a name="rest_code_89c65fe0575d4c75816144f60189fcfc-2"></a>  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">a</span> <span class="p">(</span><span class="nf">+</span> <span class="mi">1</span> <span class="p">(</span><span class="nf">*</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)))</span>
+<a name="rest_code_89c65fe0575d4c75816144f60189fcfc-3"></a>        <span class="p">(</span><span class="nv">b</span> <span class="p">(</span><span class="nf">-</span> <span class="mi">1</span> <span class="nv">y</span><span class="p">)))</span>
+<a name="rest_code_89c65fe0575d4c75816144f60189fcfc-4"></a>    <span class="p">(</span><span class="nf">+</span> <span class="p">(</span><span class="nf">*</span> <span class="nv">x</span> <span class="p">(</span><span class="nv">square</span> <span class="nv">a</span><span class="p">))</span>
+<a name="rest_code_89c65fe0575d4c75816144f60189fcfc-5"></a>       <span class="p">(</span><span class="nf">*</span> <span class="nv">y</span> <span class="nv">b</span><span class="p">)</span>
+<a name="rest_code_89c65fe0575d4c75816144f60189fcfc-6"></a>       <span class="p">(</span><span class="nf">*</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">))))</span>
+<a name="rest_code_89c65fe0575d4c75816144f60189fcfc-7"></a><span class="c1">;;所以set或者let取代的是lamba的功能, 下面的body隶属于let</span>
 </pre>
 <p>The general form of a let expression is</p>
 <pre class="literal-block">(let ((&lt;var1&gt; &lt;exp1&gt;)
@@ -192,19 +194,19 @@ In using sum as in section 1.3.1, it seems terrib'>
       &lt;varn&gt; have the value &lt;expn&gt;
 in    &lt;body&gt;</pre>
 <p>The first part of the let expression is a list of name-expression pairs. When the let is evaluated, each name is associated with the value of the corresponding expression. The body of the let is evaluated with these names bound as local variables. The way this happens is that the let expression is interpreted as an alternate syntax for</p>
-<pre class="code scheme"><a name="rest_code_2bd9a27199bb450995406e7c91f5c6eb-1"></a><span class="p">((</span><span class="k">lambda </span><span class="p">(</span><span class="nf">&lt;var1&gt;</span> <span class="o">...</span><span class="nv">&lt;varn&gt;</span><span class="p">)</span>
-<a name="rest_code_2bd9a27199bb450995406e7c91f5c6eb-2"></a>    <span class="nv">&lt;body&gt;</span><span class="p">)</span>
-<a name="rest_code_2bd9a27199bb450995406e7c91f5c6eb-3"></a> <span class="nv">&lt;exp1&gt;</span>
-<a name="rest_code_2bd9a27199bb450995406e7c91f5c6eb-4"></a> <span class="nv">&lt;expn&gt;</span><span class="p">)</span>
+<pre class="code scheme"><a name="rest_code_2570815d35d24400a7675d5628d0aee6-1"></a><span class="p">((</span><span class="k">lambda </span><span class="p">(</span><span class="nf">&lt;var1&gt;</span> <span class="o">...</span><span class="nv">&lt;varn&gt;</span><span class="p">)</span>
+<a name="rest_code_2570815d35d24400a7675d5628d0aee6-2"></a>    <span class="nv">&lt;body&gt;</span><span class="p">)</span>
+<a name="rest_code_2570815d35d24400a7675d5628d0aee6-3"></a> <span class="nv">&lt;exp1&gt;</span>
+<a name="rest_code_2570815d35d24400a7675d5628d0aee6-4"></a> <span class="nv">&lt;expn&gt;</span><span class="p">)</span>
 </pre>
 <p>No new mechanism is required in the interpreter in order to provide local variables. A let expression is simply syntactic sugar for the underlying lambda application.</p>
 <p>We can see from this equivalence that the scope of a variable specified by a let expression is the body of the let. This implies that:</p>
 <ul class="simple">
 <li><p>Let allows one to bind variables as locally as possible to where they are to be used. For example, if the value of x is 5, the value of the expression</p></li>
 </ul>
-<pre class="code elisp"><a name="rest_code_288054ff03604260a6871133e6d92c39-1"></a><span class="p">(</span><span class="nf">+</span> <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">x</span> <span class="mi">3</span><span class="p">))</span> <span class="c1">;;就是将let提到前面去.</span>
-<a name="rest_code_288054ff03604260a6871133e6d92c39-2"></a>     <span class="p">(</span><span class="nf">+</span> <span class="nv">x</span> <span class="p">(</span><span class="nf">*</span> <span class="nv">x</span> <span class="mi">10</span><span class="p">)))</span>
-<a name="rest_code_288054ff03604260a6871133e6d92c39-3"></a>   <span class="mi">5</span><span class="p">)</span>
+<pre class="code elisp"><a name="rest_code_331c941d96f74689a0bdccecb72d381e-1"></a><span class="p">(</span><span class="nf">+</span> <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">x</span> <span class="mi">3</span><span class="p">))</span> <span class="c1">;;就是将let提到前面去.</span>
+<a name="rest_code_331c941d96f74689a0bdccecb72d381e-2"></a>     <span class="p">(</span><span class="nf">+</span> <span class="nv">x</span> <span class="p">(</span><span class="nf">*</span> <span class="nv">x</span> <span class="mi">10</span><span class="p">)))</span>
+<a name="rest_code_331c941d96f74689a0bdccecb72d381e-3"></a>   <span class="mi">5</span><span class="p">)</span>
 </pre>
 <pre class="literal-block">38</pre>
 <p>is 38. Here, the x in the body of the let is 3, so the value of the let expression is 33. On the other hand, the x that is the second argument to the outermost + is still 5.</p>
@@ -215,18 +217,18 @@ in    &lt;body&gt;</pre>
       (* x y))</pre>
 <p>will have the value 12 because, inside the body of the let, x will be 3 and y will be 4 (which is the outer x plus 2).</p>
 <p>Sometimes we can use internal definitions to get the same effect as with let. For example, we could have defined the procedure f above as</p>
-<pre class="code scheme"><a name="rest_code_0856d29d615e4f8f837af677322a72aa-1"></a><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">f</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
-<a name="rest_code_0856d29d615e4f8f837af677322a72aa-2"></a>  <span class="p">(</span><span class="k">define </span><span class="nv">a</span> <span class="p">(</span><span class="nb">+ </span><span class="mi">1</span> <span class="p">(</span><span class="nb">* </span><span class="nv">x</span> <span class="nv">y</span><span class="p">)))</span>
-<a name="rest_code_0856d29d615e4f8f837af677322a72aa-3"></a>  <span class="p">(</span><span class="k">define </span><span class="nv">b</span> <span class="p">(</span><span class="nb">- </span><span class="mi">1</span> <span class="nv">y</span><span class="p">))</span>
-<a name="rest_code_0856d29d615e4f8f837af677322a72aa-4"></a>  <span class="p">(</span><span class="nb">+ </span><span class="p">(</span><span class="nb">* </span><span class="nv">x</span> <span class="p">(</span><span class="nf">square</span> <span class="nv">a</span><span class="p">))</span>
-<a name="rest_code_0856d29d615e4f8f837af677322a72aa-5"></a>     <span class="p">(</span><span class="nb">* </span><span class="nv">y</span> <span class="nv">b</span><span class="p">)</span>
-<a name="rest_code_0856d29d615e4f8f837af677322a72aa-6"></a>     <span class="p">(</span><span class="nb">* </span><span class="nv">a</span> <span class="nv">b</span><span class="p">)))</span>
+<pre class="code scheme"><a name="rest_code_b37a1def73d54baf90da43bfc0900f30-1"></a><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">f</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
+<a name="rest_code_b37a1def73d54baf90da43bfc0900f30-2"></a>  <span class="p">(</span><span class="k">define </span><span class="nv">a</span> <span class="p">(</span><span class="nb">+ </span><span class="mi">1</span> <span class="p">(</span><span class="nb">* </span><span class="nv">x</span> <span class="nv">y</span><span class="p">)))</span>
+<a name="rest_code_b37a1def73d54baf90da43bfc0900f30-3"></a>  <span class="p">(</span><span class="k">define </span><span class="nv">b</span> <span class="p">(</span><span class="nb">- </span><span class="mi">1</span> <span class="nv">y</span><span class="p">))</span>
+<a name="rest_code_b37a1def73d54baf90da43bfc0900f30-4"></a>  <span class="p">(</span><span class="nb">+ </span><span class="p">(</span><span class="nb">* </span><span class="nv">x</span> <span class="p">(</span><span class="nf">square</span> <span class="nv">a</span><span class="p">))</span>
+<a name="rest_code_b37a1def73d54baf90da43bfc0900f30-5"></a>     <span class="p">(</span><span class="nb">* </span><span class="nv">y</span> <span class="nv">b</span><span class="p">)</span>
+<a name="rest_code_b37a1def73d54baf90da43bfc0900f30-6"></a>     <span class="p">(</span><span class="nb">* </span><span class="nv">a</span> <span class="nv">b</span><span class="p">)))</span>
 </pre>
 <p>We prefer, however, to use let in situations like this and to use internal define only for internal procedures. <a class="footnote-reference brackets" href="#id2" id="id1">1</a></p>
 <p>Exercise 1.34[x] Suppose we define the procedure．</p>
-<pre class="code scheme"><a name="rest_code_ab13d3b2f27a4805a39019008eb025f6-1"></a><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">f</span> <span class="nv">g</span><span class="p">)</span>
-<a name="rest_code_ab13d3b2f27a4805a39019008eb025f6-2"></a>  <span class="p">(</span><span class="nf">g</span> <span class="mi">2</span><span class="p">))</span>
-<a name="rest_code_ab13d3b2f27a4805a39019008eb025f6-3"></a><span class="p">(</span><span class="nf">f</span> <span class="nv">square</span><span class="p">)</span>
+<pre class="code scheme"><a name="rest_code_97da48d9f2ad4a95bc215c1fc769ebe2-1"></a><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">f</span> <span class="nv">g</span><span class="p">)</span>
+<a name="rest_code_97da48d9f2ad4a95bc215c1fc769ebe2-2"></a>  <span class="p">(</span><span class="nf">g</span> <span class="mi">2</span><span class="p">))</span>
+<a name="rest_code_97da48d9f2ad4a95bc215c1fc769ebe2-3"></a><span class="p">(</span><span class="nf">f</span> <span class="nv">square</span><span class="p">)</span>
 </pre>
 <pre class="literal-block">(f (lambda (z) (* z (+ z 1))))</pre>
 <p>6</p>
@@ -234,32 +236,32 @@ in    &lt;body&gt;</pre>
 <p>Define: perversely, perverse [pərˈvɜːrs] 一意孤行 Origin: per(forward,to,away), verse(turn), to turn, turn away, 转过脸去, 油盐不进.</p>
 <p>Solution:</p>
 <p>First invocation of f will attempt to apply its argument (which is f) to 2. This second invocation will attempt to apply its argument (which is 2) to 2, resulting in error.</p>
-<pre class="code scheme"><a name="rest_code_8b837ec81d02495fabe16d6b8c35d73d-1"></a><span class="p">(</span><span class="nf">f</span> <span class="nv">f</span><span class="p">)</span>
-<a name="rest_code_8b837ec81d02495fabe16d6b8c35d73d-2"></a><span class="p">(</span><span class="nf">f</span> <span class="mi">2</span><span class="p">)</span>
-<a name="rest_code_8b837ec81d02495fabe16d6b8c35d73d-3"></a><span class="p">(</span><span class="mi">2</span> <span class="mi">2</span><span class="p">)</span>
-<a name="rest_code_8b837ec81d02495fabe16d6b8c35d73d-4"></a><span class="c1">; Error</span>
-<a name="rest_code_8b837ec81d02495fabe16d6b8c35d73d-5"></a><span class="c1">; MIT Scheme reports: The object 2 is not applicable.</span>
+<pre class="code scheme"><a name="rest_code_8178eb6d22e44e688122065f0face703-1"></a><span class="p">(</span><span class="nf">f</span> <span class="nv">f</span><span class="p">)</span>
+<a name="rest_code_8178eb6d22e44e688122065f0face703-2"></a><span class="p">(</span><span class="nf">f</span> <span class="mi">2</span><span class="p">)</span>
+<a name="rest_code_8178eb6d22e44e688122065f0face703-3"></a><span class="p">(</span><span class="mi">2</span> <span class="mi">2</span><span class="p">)</span>
+<a name="rest_code_8178eb6d22e44e688122065f0face703-4"></a><span class="c1">; Error</span>
+<a name="rest_code_8178eb6d22e44e688122065f0face703-5"></a><span class="c1">; MIT Scheme reports: The object 2 is not applicable.</span>
 </pre>
-<pre class="code scheme"><a name="rest_code_29402bce591340fe9875419c93cef1ed-1"></a><span class="p">(</span><span class="nf">f</span> <span class="nv">f</span><span class="p">)</span>
-<a name="rest_code_29402bce591340fe9875419c93cef1ed-2"></a>
-<a name="rest_code_29402bce591340fe9875419c93cef1ed-3"></a><span class="p">(</span><span class="nf">f</span> <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">g</span><span class="p">)</span>
-<a name="rest_code_29402bce591340fe9875419c93cef1ed-4"></a>       <span class="p">(</span><span class="nf">g</span> <span class="mi">2</span><span class="p">)))</span>
-<a name="rest_code_29402bce591340fe9875419c93cef1ed-5"></a>
-<a name="rest_code_29402bce591340fe9875419c93cef1ed-6"></a><span class="p">((</span><span class="k">lambda </span><span class="p">(</span><span class="nf">g</span><span class="p">)</span>
-<a name="rest_code_29402bce591340fe9875419c93cef1ed-7"></a>     <span class="p">(</span><span class="nf">g</span> <span class="mi">2</span><span class="p">))</span>
-<a name="rest_code_29402bce591340fe9875419c93cef1ed-8"></a> <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">g</span><span class="p">)</span>
-<a name="rest_code_29402bce591340fe9875419c93cef1ed-9"></a>     <span class="p">(</span><span class="nf">g</span> <span class="mi">2</span><span class="p">)))</span>
-<a name="rest_code_29402bce591340fe9875419c93cef1ed-10"></a>
-<a name="rest_code_29402bce591340fe9875419c93cef1ed-11"></a><span class="p">((</span><span class="k">lambda </span><span class="p">(</span><span class="nf">g</span><span class="p">)</span>
-<a name="rest_code_29402bce591340fe9875419c93cef1ed-12"></a>    <span class="p">(</span><span class="nf">g</span> <span class="mi">2</span><span class="p">))</span> <span class="c1">;substitution</span>
-<a name="rest_code_29402bce591340fe9875419c93cef1ed-13"></a> <span class="mi">2</span><span class="p">)</span>
-<a name="rest_code_29402bce591340fe9875419c93cef1ed-14"></a>
-<a name="rest_code_29402bce591340fe9875419c93cef1ed-15"></a><span class="p">(</span><span class="mi">2</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">;;最后返回的结果如此</span>
+<pre class="code scheme"><a name="rest_code_79a85a4deb0746dd9631973b9ca36d81-1"></a><span class="p">(</span><span class="nf">f</span> <span class="nv">f</span><span class="p">)</span>
+<a name="rest_code_79a85a4deb0746dd9631973b9ca36d81-2"></a>
+<a name="rest_code_79a85a4deb0746dd9631973b9ca36d81-3"></a><span class="p">(</span><span class="nf">f</span> <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">g</span><span class="p">)</span>
+<a name="rest_code_79a85a4deb0746dd9631973b9ca36d81-4"></a>       <span class="p">(</span><span class="nf">g</span> <span class="mi">2</span><span class="p">)))</span>
+<a name="rest_code_79a85a4deb0746dd9631973b9ca36d81-5"></a>
+<a name="rest_code_79a85a4deb0746dd9631973b9ca36d81-6"></a><span class="p">((</span><span class="k">lambda </span><span class="p">(</span><span class="nf">g</span><span class="p">)</span>
+<a name="rest_code_79a85a4deb0746dd9631973b9ca36d81-7"></a>     <span class="p">(</span><span class="nf">g</span> <span class="mi">2</span><span class="p">))</span>
+<a name="rest_code_79a85a4deb0746dd9631973b9ca36d81-8"></a> <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">g</span><span class="p">)</span>
+<a name="rest_code_79a85a4deb0746dd9631973b9ca36d81-9"></a>     <span class="p">(</span><span class="nf">g</span> <span class="mi">2</span><span class="p">)))</span>
+<a name="rest_code_79a85a4deb0746dd9631973b9ca36d81-10"></a>
+<a name="rest_code_79a85a4deb0746dd9631973b9ca36d81-11"></a><span class="p">((</span><span class="k">lambda </span><span class="p">(</span><span class="nf">g</span><span class="p">)</span>
+<a name="rest_code_79a85a4deb0746dd9631973b9ca36d81-12"></a>    <span class="p">(</span><span class="nf">g</span> <span class="mi">2</span><span class="p">))</span> <span class="c1">;substitution</span>
+<a name="rest_code_79a85a4deb0746dd9631973b9ca36d81-13"></a> <span class="mi">2</span><span class="p">)</span>
+<a name="rest_code_79a85a4deb0746dd9631973b9ca36d81-14"></a>
+<a name="rest_code_79a85a4deb0746dd9631973b9ca36d81-15"></a><span class="p">(</span><span class="mi">2</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">;;最后返回的结果如此</span>
 </pre>
 <p>and</p>
 <p>The result is an error: using the substitution rule in (f f) g = f : (g 2) -&gt; (f 2) Again using the substitution rule in (f 2) g = 2 : (f 2)-&gt; (2 2) -&gt; error. The actual error from DrRacket is:</p>
-<pre class="code ipython"><a name="rest_code_318c7ea001584e9a92e80b014f890d25-1"></a><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">g</span><span class="p">):</span> <span class="k">return</span> <span class="n">g</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<a name="rest_code_318c7ea001584e9a92e80b014f890d25-2"></a><span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
+<pre class="code ipython"><a name="rest_code_d6f20ad1b5184a1e9133509ad4fd123b-1"></a><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">g</span><span class="p">):</span> <span class="k">return</span> <span class="n">g</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<a name="rest_code_d6f20ad1b5184a1e9133509ad4fd123b-2"></a><span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
 </pre>
 <dl class="footnote brackets">
 <dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
