@@ -1,6 +1,6 @@
    .. title: Constructing Procedures Using Lambda
    .. slug:
-   .. date: 2019-05-15 20:53:29 UTC+08:00
+   .. date: 2019-12-19 10:30:29 UTC+08:00
    .. tags:
    .. category: programming
    .. link:
@@ -42,7 +42,7 @@ Then our pi-sum procedure can be expressed without defining any auxiliary proced
 
    0.372005772005772
 
-.. code:: commonlisp
+.. code:: scheme
 
    (defun sum(term a next b)
      (if (> a b)
@@ -63,7 +63,7 @@ Then our pi-sum procedure can be expressed without defining any auxiliary proced
 
 Again using lambda, we can write the integral procedure without having to define the auxiliary procedure add-dx:
 
-.. code:: commonlisp
+.. code:: scheme
 
    (define (integral f a b dx)
      (* (sum f
@@ -137,7 +137,7 @@ In writing a procedure to compute f, we would like to include as local variables
 
 Of course, we could use a lambda expression to specify an anonymous procedure for binding our local variables. The body of f then becomes a single call to that procedure:
 
-.. code:: commonlisp
+.. code:: scheme
 
    (define (f x y)
      ((lambda (a b)
