@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Testing for Primality | A Magic Land Declared by David</title>
+<title>费马小定理 | A Magic Land Declared by David</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://alinbxsorcerer.github.io/posts/%20testing_for_primality/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="David">
 <meta property="og:site_name" content="A Magic Land Declared by David">
-<meta property="og:title" content="Testing for Primality">
+<meta property="og:title" content="费马小定理">
 <meta property="og:url" content="https://alinbxsorcerer.github.io/posts/%20testing_for_primality/">
 <meta property="og:description" content="Table of Contents
 
@@ -62,7 +62,7 @@ This section describes two methods for checking the primality of an integer n , 
     <div class="post-header">
         <div class="container">
             <div class="title">
-                Testing for Primality
+                费马小定理
             </div>
         </div>
     </div>
@@ -120,22 +120,22 @@ This section describes two methods for checking the primality of an integer n , 
 ----------------------</pre>
 </div>
 <p>Since ancient times, mathematicians have been fascinated by problems concerning prime numbers, and many people have worked on the problem of determining ways to test if numbers are prime. One way to test if a number is prime is to find the number’s divisors. The following program finds the smallest integral divisor (greater than 1) of a given number n . It does this in a straightforward way, by testing n for divisibility by successive integers starting with 2.</p>
-<pre class="code ipython"><a name="rest_code_06da750177784499bf921d3da3a96a7b-1"></a><span class="k">def</span> <span class="nf">smallest_divisor</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<a name="rest_code_06da750177784499bf921d3da3a96a7b-2"></a>    <span class="k">return</span> <span class="n">find_divisor</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="c1"># 从2开始.</span>
-<a name="rest_code_06da750177784499bf921d3da3a96a7b-3"></a>
-<a name="rest_code_06da750177784499bf921d3da3a96a7b-4"></a><span class="k">def</span> <span class="nf">find_divisor</span><span class="p">(</span><span class="n">test_divisor</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-<a name="rest_code_06da750177784499bf921d3da3a96a7b-5"></a>    <span class="k">if</span> <span class="n">test_divisor</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="n">n</span><span class="p">:</span> <span class="k">return</span> <span class="n">n</span>  <span class="c1"># terminating point</span>
-<a name="rest_code_06da750177784499bf921d3da3a96a7b-6"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">test_divisor</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="n">test_divisor</span>
-<a name="rest_code_06da750177784499bf921d3da3a96a7b-7"></a>    <span class="k">else</span><span class="p">:</span> <span class="k">return</span> <span class="n">find_divisor</span><span class="p">(</span><span class="n">test_divisor</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="c1"># 这是iteration</span>
-<a name="rest_code_06da750177784499bf921d3da3a96a7b-8"></a><span class="c1"># 需要用tail recursion的时候. 就是iteration.</span>
-<a name="rest_code_06da750177784499bf921d3da3a96a7b-9"></a><span class="k">print</span><span class="p">(</span><span class="n">smallest_divisor</span><span class="p">(</span><span class="mi">30</span><span class="p">))</span>
+<pre class="code ipython"><a name="rest_code_c0e6f798574249ad9668fb202faad5b3-1"></a><span class="k">def</span> <span class="nf">smallest_divisor</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a name="rest_code_c0e6f798574249ad9668fb202faad5b3-2"></a>    <span class="k">return</span> <span class="n">find_divisor</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="c1"># 从2开始.</span>
+<a name="rest_code_c0e6f798574249ad9668fb202faad5b3-3"></a>
+<a name="rest_code_c0e6f798574249ad9668fb202faad5b3-4"></a><span class="k">def</span> <span class="nf">find_divisor</span><span class="p">(</span><span class="n">test_divisor</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<a name="rest_code_c0e6f798574249ad9668fb202faad5b3-5"></a>    <span class="k">if</span> <span class="n">test_divisor</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="n">n</span><span class="p">:</span> <span class="k">return</span> <span class="n">n</span>  <span class="c1"># terminating point</span>
+<a name="rest_code_c0e6f798574249ad9668fb202faad5b3-6"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">test_divisor</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="n">test_divisor</span>
+<a name="rest_code_c0e6f798574249ad9668fb202faad5b3-7"></a>    <span class="k">else</span><span class="p">:</span> <span class="k">return</span> <span class="n">find_divisor</span><span class="p">(</span><span class="n">test_divisor</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="c1"># 这是iteration</span>
+<a name="rest_code_c0e6f798574249ad9668fb202faad5b3-8"></a><span class="c1"># 需要用tail recursion的时候. 就是iteration.</span>
+<a name="rest_code_c0e6f798574249ad9668fb202faad5b3-9"></a><span class="k">print</span><span class="p">(</span><span class="n">smallest_divisor</span><span class="p">(</span><span class="mi">30</span><span class="p">))</span>
 </pre>
-<pre class="code ipython"><a name="rest_code_d61c3f3d20424dbfa595de4b693d2180-1"></a><span class="k">def</span> <span class="nf">smallest_divisor</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<a name="rest_code_d61c3f3d20424dbfa595de4b693d2180-2"></a>    <span class="k">for</span> <span class="n">divisor</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span> <span class="c1">#incremant</span>
-<a name="rest_code_d61c3f3d20424dbfa595de4b693d2180-3"></a>        <span class="k">if</span> <span class="n">divisor</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="n">n</span><span class="p">:</span> <span class="k">return</span> <span class="n">n</span>
-<a name="rest_code_d61c3f3d20424dbfa595de4b693d2180-4"></a>        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">divisor</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="n">divisor</span> <span class="c1"># 就只有这两种情况</span>
-<a name="rest_code_d61c3f3d20424dbfa595de4b693d2180-5"></a>
-<a name="rest_code_d61c3f3d20424dbfa595de4b693d2180-6"></a><span class="k">print</span><span class="p">(</span><span class="n">smallest_divisor</span><span class="p">(</span><span class="mi">76</span><span class="p">))</span>
+<pre class="code ipython"><a name="rest_code_571d0e45f9c74a6b911f1a7af3770dac-1"></a><span class="k">def</span> <span class="nf">smallest_divisor</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a name="rest_code_571d0e45f9c74a6b911f1a7af3770dac-2"></a>    <span class="k">for</span> <span class="n">divisor</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span> <span class="c1">#incremant</span>
+<a name="rest_code_571d0e45f9c74a6b911f1a7af3770dac-3"></a>        <span class="k">if</span> <span class="n">divisor</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="n">n</span><span class="p">:</span> <span class="k">return</span> <span class="n">n</span>
+<a name="rest_code_571d0e45f9c74a6b911f1a7af3770dac-4"></a>        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">divisor</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="n">divisor</span> <span class="c1"># 就只有这两种情况</span>
+<a name="rest_code_571d0e45f9c74a6b911f1a7af3770dac-5"></a>
+<a name="rest_code_571d0e45f9c74a6b911f1a7af3770dac-6"></a><span class="k">print</span><span class="p">(</span><span class="n">smallest_divisor</span><span class="p">(</span><span class="mi">76</span><span class="p">))</span>
 </pre>
 <p>因为如果不是质数一定可以分解为两个数字factor.</p>
 <p>We can test whether a number is prime as follows: n is prime if and only if n is its own smallest divisor.</p>
@@ -154,50 +154,50 @@ This section describes two methods for checking the primality of an integer n , 
 <p>(Two numbers are said to be <code class="docutils literal">congruent</code> modulo n if they both have the same remainder when divided by n. The remainder of a number a when divided by n is also referred to as the remainder of a modulo n, or simply as a modulo n.)</p>
 <p>If n is not prime, then, in general, most of the numbers a&lt; n will not satisfy the above relation. This leads to the following algorithm for testing primality: Given a number n, pick a random number a &lt; n and compute the remainder of an modulo n. If the result is not equal to a, then n is certainly not prime. If it is a, then chances are good that n is prime. Now pick another random number a and test it with the same method. If it also satisfies the equation, then we can be even more confident that n is prime. By trying more and more values of a, we can increase our confidence in the result. This algorithm is known as the Fermat test.</p>
 <p>To implement the Fermat test, we need a procedure that computes the exponential of a number modulo another number:</p>
-<pre class="code ipython"><a name="rest_code_814deccdfa5e43b8ba92b4ba3b62279c-1"></a><span class="k">def</span> <span class="nf">expmod</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
-<a name="rest_code_814deccdfa5e43b8ba92b4ba3b62279c-2"></a>    <span class="c1"># base case</span>
-<a name="rest_code_814deccdfa5e43b8ba92b4ba3b62279c-3"></a>    <span class="k">if</span> <span class="n">exp</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="mi">1</span>
-<a name="rest_code_814deccdfa5e43b8ba92b4ba3b62279c-4"></a>    <span class="k">if</span> <span class="n">evenp</span><span class="p">(</span><span class="n">exp</span><span class="p">):</span>
-<a name="rest_code_814deccdfa5e43b8ba92b4ba3b62279c-5"></a>        <span class="k">return</span> <span class="n">expmod</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">exp</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">%</span> <span class="n">m</span>
-<a name="rest_code_814deccdfa5e43b8ba92b4ba3b62279c-6"></a>    <span class="k">else</span><span class="p">:</span>
-<a name="rest_code_814deccdfa5e43b8ba92b4ba3b62279c-7"></a>        <span class="k">return</span> <span class="n">base</span> <span class="o">*</span> <span class="n">expmod</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">exp</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span> <span class="o">%</span> <span class="n">m</span>
-<a name="rest_code_814deccdfa5e43b8ba92b4ba3b62279c-8"></a>
-<a name="rest_code_814deccdfa5e43b8ba92b4ba3b62279c-9"></a><span class="k">def</span> <span class="nf">evenp</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<a name="rest_code_814deccdfa5e43b8ba92b4ba3b62279c-10"></a>    <span class="k">return</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
-<a name="rest_code_814deccdfa5e43b8ba92b4ba3b62279c-11"></a>
-<a name="rest_code_814deccdfa5e43b8ba92b4ba3b62279c-12"></a><span class="k">print</span><span class="p">(</span><span class="n">expmod</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<pre class="code ipython"><a name="rest_code_ab102f4a6ec9472888d89831c4281230-1"></a><span class="k">def</span> <span class="nf">expmod</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+<a name="rest_code_ab102f4a6ec9472888d89831c4281230-2"></a>    <span class="c1"># base case</span>
+<a name="rest_code_ab102f4a6ec9472888d89831c4281230-3"></a>    <span class="k">if</span> <span class="n">exp</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="mi">1</span>
+<a name="rest_code_ab102f4a6ec9472888d89831c4281230-4"></a>    <span class="k">if</span> <span class="n">evenp</span><span class="p">(</span><span class="n">exp</span><span class="p">):</span>
+<a name="rest_code_ab102f4a6ec9472888d89831c4281230-5"></a>        <span class="k">return</span> <span class="n">expmod</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">exp</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">%</span> <span class="n">m</span>
+<a name="rest_code_ab102f4a6ec9472888d89831c4281230-6"></a>    <span class="k">else</span><span class="p">:</span>
+<a name="rest_code_ab102f4a6ec9472888d89831c4281230-7"></a>        <span class="k">return</span> <span class="n">base</span> <span class="o">*</span> <span class="n">expmod</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">exp</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span> <span class="o">%</span> <span class="n">m</span>
+<a name="rest_code_ab102f4a6ec9472888d89831c4281230-8"></a>
+<a name="rest_code_ab102f4a6ec9472888d89831c4281230-9"></a><span class="k">def</span> <span class="nf">evenp</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a name="rest_code_ab102f4a6ec9472888d89831c4281230-10"></a>    <span class="k">return</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
+<a name="rest_code_ab102f4a6ec9472888d89831c4281230-11"></a>
+<a name="rest_code_ab102f4a6ec9472888d89831c4281230-12"></a><span class="k">print</span><span class="p">(</span><span class="n">expmod</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
 </pre>
 <pre class="literal-block">4</pre>
 <p>This is very similar to the fast-expt procedure of section 1.2.4. It uses successive squaring, so that the number of steps grows logarithmically with the exponent.[fn:1-2-46]</p>
 <p>The Fermat test is performed by choosing at random a number a between 1 and n - 1 inclusive and checking whether the remainder modulo n of the nth power of a is equal to a. The random number a is chosen using the procedure random, which we assume is included as a primitive in Scheme. Random returns a nonnegative integer less than its integer input. Hence, to obtain a random number between 1 and n - 1, we call random with an input of n - 1 and add 1 to the result:</p>
-<pre class="code ipython"><a name="rest_code_2c0919d28e3945ae9cc5185d9820b6ff-1"></a><span class="k">def</span> <span class="nf">fermat_test</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<a name="rest_code_2c0919d28e3945ae9cc5185d9820b6ff-2"></a>    <span class="k">def</span> <span class="nf">try_it</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-<a name="rest_code_2c0919d28e3945ae9cc5185d9820b6ff-3"></a>        <span class="k">return</span> <span class="n">expmod</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="o">==</span> <span class="n">a</span>
-<a name="rest_code_2c0919d28e3945ae9cc5185d9820b6ff-4"></a>    <span class="n">try_it</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># 这里的处理很妙</span>
+<pre class="code ipython"><a name="rest_code_77e99b2dd827433381330181f8bedd32-1"></a><span class="k">def</span> <span class="nf">fermat_test</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a name="rest_code_77e99b2dd827433381330181f8bedd32-2"></a>    <span class="k">def</span> <span class="nf">try_it</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+<a name="rest_code_77e99b2dd827433381330181f8bedd32-3"></a>        <span class="k">return</span> <span class="n">expmod</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="o">==</span> <span class="n">a</span>
+<a name="rest_code_77e99b2dd827433381330181f8bedd32-4"></a>    <span class="n">try_it</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># 这里的处理很妙</span>
 </pre>
 <p>The following procedure runs the test a given number of times, as specified by a parameter. Its value is true if the test succeeds every time, and false otherwise.</p>
-<pre class="code ipython"><a name="rest_code_631ca2cf42644b368308fba0d3320c44-1"></a><span class="k">def</span> <span class="nf">fast_prime</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">times</span><span class="p">):</span> <span class="c1">#recursive的方法可以协助思考, 思考起点和终点.</span>
-<a name="rest_code_631ca2cf42644b368308fba0d3320c44-2"></a>    <span class="k">if</span> <span class="n">times</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="bp">True</span>
-<a name="rest_code_631ca2cf42644b368308fba0d3320c44-3"></a>    <span class="k">if</span> <span class="n">fermat_test</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> <span class="k">return</span> <span class="n">fast_prime</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">times</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<a name="rest_code_631ca2cf42644b368308fba0d3320c44-4"></a>    <span class="k">else</span><span class="p">:</span> <span class="bp">False</span>
+<pre class="code ipython"><a name="rest_code_64b765c17d49471198da307d87239d52-1"></a><span class="k">def</span> <span class="nf">fast_prime</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">times</span><span class="p">):</span> <span class="c1">#recursive的方法可以协助思考, 思考起点和终点.</span>
+<a name="rest_code_64b765c17d49471198da307d87239d52-2"></a>    <span class="k">if</span> <span class="n">times</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="bp">True</span>
+<a name="rest_code_64b765c17d49471198da307d87239d52-3"></a>    <span class="k">if</span> <span class="n">fermat_test</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> <span class="k">return</span> <span class="n">fast_prime</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">times</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<a name="rest_code_64b765c17d49471198da307d87239d52-4"></a>    <span class="k">else</span><span class="p">:</span> <span class="bp">False</span>
 </pre>
-<pre class="code ipython"><a name="rest_code_debfe6f5a8854684a3407f85df5265a8-1"></a><span class="kn">import</span> <span class="nn">random</span>
-<a name="rest_code_debfe6f5a8854684a3407f85df5265a8-2"></a>
-<a name="rest_code_debfe6f5a8854684a3407f85df5265a8-3"></a><span class="k">def</span> <span class="nf">fermat_test</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">times</span><span class="p">):</span> <span class="c1">#expmod米模运算</span>
-<a name="rest_code_debfe6f5a8854684a3407f85df5265a8-4"></a>
-<a name="rest_code_debfe6f5a8854684a3407f85df5265a8-5"></a>    <span class="c1"># Implementation uses the Fermat Primality Test</span>
-<a name="rest_code_debfe6f5a8854684a3407f85df5265a8-6"></a>    <span class="c1"># If number is even, it's a composite number, prime number and composite number.</span>
-<a name="rest_code_debfe6f5a8854684a3407f85df5265a8-7"></a>    <span class="c1"># quick return</span>
-<a name="rest_code_debfe6f5a8854684a3407f85df5265a8-8"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span> <span class="k">return</span> <span class="bp">False</span>
-<a name="rest_code_debfe6f5a8854684a3407f85df5265a8-9"></a>
-<a name="rest_code_debfe6f5a8854684a3407f85df5265a8-10"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">times</span><span class="p">):</span>
-<a name="rest_code_debfe6f5a8854684a3407f85df5265a8-11"></a>        <span class="n">a</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<a name="rest_code_debfe6f5a8854684a3407f85df5265a8-12"></a>
-<a name="rest_code_debfe6f5a8854684a3407f85df5265a8-13"></a>        <span class="k">if</span> <span class="nb">pow</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="o">!=</span> <span class="n">a</span><span class="p">:</span> <span class="c1"># test</span>
-<a name="rest_code_debfe6f5a8854684a3407f85df5265a8-14"></a>            <span class="k">return</span> <span class="bp">False</span>
-<a name="rest_code_debfe6f5a8854684a3407f85df5265a8-15"></a>    <span class="k">return</span> <span class="bp">True</span>
-<a name="rest_code_debfe6f5a8854684a3407f85df5265a8-16"></a>
-<a name="rest_code_debfe6f5a8854684a3407f85df5265a8-17"></a><span class="k">print</span><span class="p">(</span><span class="n">fermat_test</span><span class="p">(</span><span class="mi">112</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<pre class="code ipython"><a name="rest_code_7b327b23809a4ffaa178e151c2b80f5a-1"></a><span class="kn">import</span> <span class="nn">random</span>
+<a name="rest_code_7b327b23809a4ffaa178e151c2b80f5a-2"></a>
+<a name="rest_code_7b327b23809a4ffaa178e151c2b80f5a-3"></a><span class="k">def</span> <span class="nf">fermat_test</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">times</span><span class="p">):</span> <span class="c1">#expmod, 幂模运算.</span>
+<a name="rest_code_7b327b23809a4ffaa178e151c2b80f5a-4"></a>
+<a name="rest_code_7b327b23809a4ffaa178e151c2b80f5a-5"></a>    <span class="c1"># Implementation uses the Fermat Primality Test</span>
+<a name="rest_code_7b327b23809a4ffaa178e151c2b80f5a-6"></a>    <span class="c1"># If number is even, it's a composite number, prime number and composite number.</span>
+<a name="rest_code_7b327b23809a4ffaa178e151c2b80f5a-7"></a>    <span class="c1"># quick return</span>
+<a name="rest_code_7b327b23809a4ffaa178e151c2b80f5a-8"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span> <span class="k">return</span> <span class="bp">False</span>
+<a name="rest_code_7b327b23809a4ffaa178e151c2b80f5a-9"></a>
+<a name="rest_code_7b327b23809a4ffaa178e151c2b80f5a-10"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">times</span><span class="p">):</span>
+<a name="rest_code_7b327b23809a4ffaa178e151c2b80f5a-11"></a>        <span class="n">a</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<a name="rest_code_7b327b23809a4ffaa178e151c2b80f5a-12"></a>
+<a name="rest_code_7b327b23809a4ffaa178e151c2b80f5a-13"></a>        <span class="k">if</span> <span class="nb">pow</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="o">!=</span> <span class="n">a</span><span class="p">:</span> <span class="c1"># test</span>
+<a name="rest_code_7b327b23809a4ffaa178e151c2b80f5a-14"></a>            <span class="k">return</span> <span class="bp">False</span>
+<a name="rest_code_7b327b23809a4ffaa178e151c2b80f5a-15"></a>    <span class="k">return</span> <span class="bp">True</span>
+<a name="rest_code_7b327b23809a4ffaa178e151c2b80f5a-16"></a>
+<a name="rest_code_7b327b23809a4ffaa178e151c2b80f5a-17"></a><span class="k">print</span><span class="p">(</span><span class="n">fermat_test</span><span class="p">(</span><span class="mi">112</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 </pre>
 </div>
 <div class="section" id="primes-sieve">
@@ -208,35 +208,35 @@ This section describes two methods for checking the primality of an integer n , 
 <pre class="literal-block">3.Primes Sieve
 ------------</pre>
 </div>
-<pre class="code ipython"><a name="rest_code_dd583d7d0c044ec999fa7d638d50327c-1"></a><span class="k">def</span> <span class="nf">primes</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<a name="rest_code_dd583d7d0c044ec999fa7d638d50327c-2"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
-<a name="rest_code_dd583d7d0c044ec999fa7d638d50327c-3"></a>        <span class="k">return</span> <span class="bp">None</span>
-<a name="rest_code_dd583d7d0c044ec999fa7d638d50327c-4"></a>    <span class="n">primes_sieve</span> <span class="o">=</span> <span class="p">[</span><span class="bp">True</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-<a name="rest_code_dd583d7d0c044ec999fa7d638d50327c-5"></a>    <span class="n">primes_sieve</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
-<a name="rest_code_dd583d7d0c044ec999fa7d638d50327c-6"></a>    <span class="n">primes_sieve</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
-<a name="rest_code_dd583d7d0c044ec999fa7d638d50327c-7"></a>
-<a name="rest_code_dd583d7d0c044ec999fa7d638d50327c-8"></a>    <span class="c1"># sieve</span>
-<a name="rest_code_dd583d7d0c044ec999fa7d638d50327c-9"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>  <span class="c1"># 要包含n這個數字.</span>
-<a name="rest_code_dd583d7d0c044ec999fa7d638d50327c-10"></a>        <span class="k">if</span> <span class="n">primes_sieve</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
-<a name="rest_code_dd583d7d0c044ec999fa7d638d50327c-11"></a>            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>  <span class="c1"># mark the multiplies, 本數不能劃掉.</span>
-<a name="rest_code_dd583d7d0c044ec999fa7d638d50327c-12"></a>                <span class="n">primes_sieve</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
-<a name="rest_code_dd583d7d0c044ec999fa7d638d50327c-13"></a>
-<a name="rest_code_dd583d7d0c044ec999fa7d638d50327c-14"></a>    <span class="k">return</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">primes_sieve</span><span class="p">)</span> <span class="k">if</span> <span class="n">p</span><span class="p">]</span>
-<a name="rest_code_dd583d7d0c044ec999fa7d638d50327c-15"></a>
-<a name="rest_code_dd583d7d0c044ec999fa7d638d50327c-16"></a><span class="k">def</span> <span class="nf">count_primes</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<a name="rest_code_dd583d7d0c044ec999fa7d638d50327c-17"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
-<a name="rest_code_dd583d7d0c044ec999fa7d638d50327c-18"></a>        <span class="k">return</span> <span class="bp">None</span>
-<a name="rest_code_dd583d7d0c044ec999fa7d638d50327c-19"></a>    <span class="n">primes_sieve</span> <span class="o">=</span> <span class="p">[</span><span class="bp">True</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-<a name="rest_code_dd583d7d0c044ec999fa7d638d50327c-20"></a>    <span class="n">primes_sieve</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
-<a name="rest_code_dd583d7d0c044ec999fa7d638d50327c-21"></a>    <span class="n">primes_sieve</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
-<a name="rest_code_dd583d7d0c044ec999fa7d638d50327c-22"></a>
-<a name="rest_code_dd583d7d0c044ec999fa7d638d50327c-23"></a>    <span class="c1"># sieve</span>
-<a name="rest_code_dd583d7d0c044ec999fa7d638d50327c-24"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>  <span class="c1"># 要包含n這個數字.</span>
-<a name="rest_code_dd583d7d0c044ec999fa7d638d50327c-25"></a>        <span class="k">if</span> <span class="n">primes_sieve</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
-<a name="rest_code_dd583d7d0c044ec999fa7d638d50327c-26"></a>            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>  <span class="c1"># mark the multiplies, 本數不能劃掉.</span>
-<a name="rest_code_dd583d7d0c044ec999fa7d638d50327c-27"></a>                <span class="n">primes_sieve</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
-<a name="rest_code_dd583d7d0c044ec999fa7d638d50327c-28"></a>
-<a name="rest_code_dd583d7d0c044ec999fa7d638d50327c-29"></a>    <span class="k">return</span> <span class="n">primes_sieve</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<pre class="code ipython"><a name="rest_code_d59a613cf32848df953cf9edc9634ce8-1"></a><span class="k">def</span> <span class="nf">primes</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a name="rest_code_d59a613cf32848df953cf9edc9634ce8-2"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+<a name="rest_code_d59a613cf32848df953cf9edc9634ce8-3"></a>        <span class="k">return</span> <span class="bp">None</span>
+<a name="rest_code_d59a613cf32848df953cf9edc9634ce8-4"></a>    <span class="n">primes_sieve</span> <span class="o">=</span> <span class="p">[</span><span class="bp">True</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<a name="rest_code_d59a613cf32848df953cf9edc9634ce8-5"></a>    <span class="n">primes_sieve</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
+<a name="rest_code_d59a613cf32848df953cf9edc9634ce8-6"></a>    <span class="n">primes_sieve</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
+<a name="rest_code_d59a613cf32848df953cf9edc9634ce8-7"></a>
+<a name="rest_code_d59a613cf32848df953cf9edc9634ce8-8"></a>    <span class="c1"># sieve</span>
+<a name="rest_code_d59a613cf32848df953cf9edc9634ce8-9"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>  <span class="c1"># 要包含n這個數字.</span>
+<a name="rest_code_d59a613cf32848df953cf9edc9634ce8-10"></a>        <span class="k">if</span> <span class="n">primes_sieve</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+<a name="rest_code_d59a613cf32848df953cf9edc9634ce8-11"></a>            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>  <span class="c1"># mark the multiplies, 本數不能劃掉.</span>
+<a name="rest_code_d59a613cf32848df953cf9edc9634ce8-12"></a>                <span class="n">primes_sieve</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
+<a name="rest_code_d59a613cf32848df953cf9edc9634ce8-13"></a>
+<a name="rest_code_d59a613cf32848df953cf9edc9634ce8-14"></a>    <span class="k">return</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">primes_sieve</span><span class="p">)</span> <span class="k">if</span> <span class="n">p</span><span class="p">]</span>
+<a name="rest_code_d59a613cf32848df953cf9edc9634ce8-15"></a>
+<a name="rest_code_d59a613cf32848df953cf9edc9634ce8-16"></a><span class="k">def</span> <span class="nf">count_primes</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a name="rest_code_d59a613cf32848df953cf9edc9634ce8-17"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+<a name="rest_code_d59a613cf32848df953cf9edc9634ce8-18"></a>        <span class="k">return</span> <span class="bp">None</span>
+<a name="rest_code_d59a613cf32848df953cf9edc9634ce8-19"></a>    <span class="n">primes_sieve</span> <span class="o">=</span> <span class="p">[</span><span class="bp">True</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<a name="rest_code_d59a613cf32848df953cf9edc9634ce8-20"></a>    <span class="n">primes_sieve</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
+<a name="rest_code_d59a613cf32848df953cf9edc9634ce8-21"></a>    <span class="n">primes_sieve</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
+<a name="rest_code_d59a613cf32848df953cf9edc9634ce8-22"></a>
+<a name="rest_code_d59a613cf32848df953cf9edc9634ce8-23"></a>    <span class="c1"># sieve</span>
+<a name="rest_code_d59a613cf32848df953cf9edc9634ce8-24"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>  <span class="c1"># 要包含n這個數字.</span>
+<a name="rest_code_d59a613cf32848df953cf9edc9634ce8-25"></a>        <span class="k">if</span> <span class="n">primes_sieve</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+<a name="rest_code_d59a613cf32848df953cf9edc9634ce8-26"></a>            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>  <span class="c1"># mark the multiplies, 本數不能劃掉.</span>
+<a name="rest_code_d59a613cf32848df953cf9edc9634ce8-27"></a>                <span class="n">primes_sieve</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
+<a name="rest_code_d59a613cf32848df953cf9edc9634ce8-28"></a>
+<a name="rest_code_d59a613cf32848df953cf9edc9634ce8-29"></a>    <span class="k">return</span> <span class="n">primes_sieve</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
 </pre>
 </div>
 </div>
@@ -246,7 +246,7 @@ This section describes two methods for checking the primality of an integer n , 
         <script>
         var disqus_shortname ="?",
             disqus_url="https://alinbxsorcerer.github.io/posts/%20testing_for_primality/",
-        disqus_title="Testing for Primality",
+        disqus_title="\u8d39\u9a6c\u5c0f\u5b9a\u7406",
         disqus_identifier="cache/posts/sicp-primality.html",
         disqus_config = function () {
             this.language = "en";

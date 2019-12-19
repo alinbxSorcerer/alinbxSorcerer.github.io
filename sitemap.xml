@@ -27,7 +27,7 @@
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/archive.html</loc>
-  <lastmod>2019-12-18T15:57:00Z</lastmod>
+  <lastmod>2019-12-19T02:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/categories/</loc>
@@ -163,7 +163,7 @@
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/index-2.html</loc>
-  <lastmod>2019-12-18T15:57:00Z</lastmod>
+  <lastmod>2019-12-19T02:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/listings/</loc>
@@ -300,6 +300,10 @@
  <url>
   <loc>https://alinbxsorcerer.github.io/posts/shijian-zhuanti-xiaojie/</loc>
   <lastmod>2019-11-11T06:51:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alinbxsorcerer.github.io/posts/sicp-lambda/</loc>
+  <lastmod>2019-12-19T02:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/posts/sort-algorithms/</loc>
