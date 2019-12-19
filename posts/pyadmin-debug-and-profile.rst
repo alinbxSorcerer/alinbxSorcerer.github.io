@@ -1,6 +1,6 @@
    .. title: Debugging and Profiling Python Scripts
    .. slug:
-   .. date: 2019-05-15 20:53:29 UTC+08:00
+   .. date: 2019-12-18 18:15:29 UTC+08:00
    .. tags: python, debug, profile,
    .. category: programming
    .. link:
