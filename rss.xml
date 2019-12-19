@@ -1,5 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Magic Land Declared by David</title><link>https://alinbxsorcerer.github.io/</link><description>    Conjuring...    </description><atom:link href="https://alinbxsorcerer.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:davad.fhl.wang@foxmail.com"&gt;David&lt;/a&gt; </copyright><lastBuildDate>Thu, 19 Dec 2019 02:59:51 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>费马小定理</title><link>https://alinbxsorcerer.github.io/posts/%20testing_for_primality/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="contents topic" id="table-of-contents"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Magic Land Declared by David</title><link>https://alinbxsorcerer.github.io/</link><description>    Conjuring...    </description><atom:link href="https://alinbxsorcerer.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:davad.fhl.wang@foxmail.com"&gt;David&lt;/a&gt; </copyright><lastBuildDate>Thu, 19 Dec 2019 03:03:07 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Constructing Procedures Using Lambda</title><link>https://alinbxsorcerer.github.io/posts/sicp-lambda/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;blockquote&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 2)&lt;/p&gt;
+&lt;p&gt;The "contents" directive may not be used within topics or body elements.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;.. contents:: Table of Contents
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In using sum as in section 1.3.1, it seems terribly awkward to have to define &lt;code class="docutils literal"&gt;trivial procedures&lt;/code&gt; such as pi-term and pi-next just so we can use them as arguments to our higher-order procedure. Rather than define pi-next and pi-term, it would be more convenient to have a way to directly specify ``the procedure that returns its input incremented by 4'' and ``the procedure that returns the reciprocal of its input times its input plus 2.'' We can do this by introducing the special form lambda, which creates procedures. Using lambda we can describe what we want as&lt;/p&gt;
+&lt;pre class="literal-block"&gt;(lambda (x) (+ x 4))&lt;/pre&gt;
+&lt;p&gt;and&lt;/p&gt;
+&lt;pre class="literal-block"&gt;(lambda (x) (/ 1.0 (* x (+ x 2))))&lt;/pre&gt;
+&lt;p&gt;Then our pi-sum procedure can be expressed without defining any auxiliary procedures as&lt;/p&gt;
+&lt;pre class="code scheme"&gt;&lt;a name="rest_code_b7e879a2e033437d8d5ba5560a762930-1"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;define &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;sum&lt;/span&gt; &lt;span class="nv"&gt;term&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;next&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_b7e879a2e033437d8d5ba5560a762930-2"&gt;&lt;/a&gt;  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;&amp;gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_b7e879a2e033437d8d5ba5560a762930-3"&gt;&lt;/a&gt;      &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;a name="rest_code_b7e879a2e033437d8d5ba5560a762930-4"&gt;&lt;/a&gt;      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+ &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;term&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_b7e879a2e033437d8d5ba5560a762930-5"&gt;&lt;/a&gt;         &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;sum&lt;/span&gt; &lt;span class="nv"&gt;term&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;next&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;next&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+&lt;a name="rest_code_b7e879a2e033437d8d5ba5560a762930-6"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;define &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;pi-sum&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_b7e879a2e033437d8d5ba5560a762930-7"&gt;&lt;/a&gt;  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;sum&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;/ &lt;/span&gt;&lt;span class="mf"&gt;1.0&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;* &lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+ &lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+&lt;a name="rest_code_b7e879a2e033437d8d5ba5560a762930-8"&gt;&lt;/a&gt;       &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="c1"&gt;;;结构很清晰&lt;/span&gt;
+&lt;a name="rest_code_b7e879a2e033437d8d5ba5560a762930-9"&gt;&lt;/a&gt;       &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+ &lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_b7e879a2e033437d8d5ba5560a762930-10"&gt;&lt;/a&gt;       &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_b7e879a2e033437d8d5ba5560a762930-11"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;pi-sum&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;pre class="literal-block"&gt;0.372005772005772&lt;/pre&gt;
+&lt;pre class="code scheme"&gt;&lt;a name="rest_code_6e130184dcd948109f2722cfa67c8afa-1"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;term&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;next&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_6e130184dcd948109f2722cfa67c8afa-2"&gt;&lt;/a&gt;  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;&amp;gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_6e130184dcd948109f2722cfa67c8afa-3"&gt;&lt;/a&gt;      &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;a name="rest_code_6e130184dcd948109f2722cfa67c8afa-4"&gt;&lt;/a&gt;      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+ &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;term&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_6e130184dcd948109f2722cfa67c8afa-5"&gt;&lt;/a&gt;         &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;sum&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="ss"&gt;'term&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;next&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="ss"&gt;'next&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+&lt;a name="rest_code_6e130184dcd948109f2722cfa67c8afa-6"&gt;&lt;/a&gt;
+&lt;a name="rest_code_6e130184dcd948109f2722cfa67c8afa-7"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;pi-sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_6e130184dcd948109f2722cfa67c8afa-8"&gt;&lt;/a&gt;  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;sum&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;/ &lt;/span&gt;&lt;span class="mf"&gt;1.0&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;* &lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+ &lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+&lt;a name="rest_code_6e130184dcd948109f2722cfa67c8afa-9"&gt;&lt;/a&gt;       &lt;span class="nv"&gt;a&lt;/span&gt;
+&lt;a name="rest_code_6e130184dcd948109f2722cfa67c8afa-10"&gt;&lt;/a&gt;       &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+ &lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_6e130184dcd948109f2722cfa67c8afa-11"&gt;&lt;/a&gt;       &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_6e130184dcd948109f2722cfa67c8afa-12"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;print&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;pi-sum&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;pre class="literal-block"&gt;pi-sum&lt;/pre&gt;
+&lt;p&gt;Again using lambda, we can write the integral procedure without having to define the auxiliary procedure add-dx:&lt;/p&gt;
+&lt;pre class="code scheme"&gt;&lt;a name="rest_code_caa9838d15974270ac496973c8acff5a-1"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;define &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;integral&lt;/span&gt; &lt;span class="nv"&gt;f&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt; &lt;span class="nv"&gt;dx&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_caa9838d15974270ac496973c8acff5a-2"&gt;&lt;/a&gt;  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;* &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;sum&lt;/span&gt; &lt;span class="nv"&gt;f&lt;/span&gt;
+&lt;a name="rest_code_caa9838d15974270ac496973c8acff5a-3"&gt;&lt;/a&gt;          &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+ &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;/ &lt;/span&gt;&lt;span class="nv"&gt;dx&lt;/span&gt; &lt;span class="mf"&gt;2.0&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_caa9838d15974270ac496973c8acff5a-4"&gt;&lt;/a&gt;          &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+ &lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="nv"&gt;dx&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_caa9838d15974270ac496973c8acff5a-5"&gt;&lt;/a&gt;          &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_caa9838d15974270ac496973c8acff5a-6"&gt;&lt;/a&gt;     &lt;span class="nv"&gt;dx&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;pre class="code ipython"&gt;&lt;a name="rest_code_aaa1b7c328ec4db98e58cdcf42503282-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;integral&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;dx&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_aaa1b7c328ec4db98e58cdcf42503282-2"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;sum_recur&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_aaa1b7c328ec4db98e58cdcf42503282-3"&gt;&lt;/a&gt;                     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;dx&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="c1"&gt;#对应着上面字母的位置.&lt;/span&gt;
+&lt;a name="rest_code_aaa1b7c328ec4db98e58cdcf42503282-4"&gt;&lt;/a&gt;                     &lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;dx&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_aaa1b7c328ec4db98e58cdcf42503282-5"&gt;&lt;/a&gt;                     &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;dx&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;In general, lambda is used to create procedures in the same way as define, except that no name is specified for the procedure:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;(lambda (&amp;lt;formal-parameters&amp;gt;) &amp;lt;body&amp;gt;)&lt;/pre&gt;
+&lt;p&gt;The resulting procedure is just as much a procedure as one that is created using define. The only difference is that it has not been associated with any name in the environment. In fact,&lt;/p&gt;
+&lt;pre class="literal-block"&gt;(define (plus4 x) (+ x 4))&lt;/pre&gt;
+&lt;p&gt;is equivalent to&lt;/p&gt;
+&lt;pre class="literal-block"&gt;(define plus4 (lambda (x) (+ x 4)))&lt;/pre&gt;
+&lt;p&gt;We can read a lambda expression as follows:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image0" src="https://alinbxsorcerer.github.io/images/Books.SICP.org_20191029_000007.png"&gt;&lt;/p&gt;
+&lt;p&gt;Like any expression that has a procedure as its value, a lambda expression can be used as the operator in a combination such as&lt;/p&gt;
+&lt;pre class="literal-block"&gt;((lambda (x y z) (+ x y (square z))) 1 2 3)&lt;/pre&gt;
+&lt;p&gt;12&lt;/p&gt;
+&lt;p&gt;or, more generally, in any context where we would normally use a procedure name.&lt;/p&gt;
+&lt;p&gt;Using let to create local variables&lt;/p&gt;
+&lt;p&gt;Another use of lambda is in creating local variables. We often need local variables in our procedures other than those that have been bound as formal parameters. For example, suppose we wish to compute the function &lt;img alt="image1" src="https://alinbxsorcerer.github.io/images/Books.SICP.org_20191029_000434.png"&gt;&lt;/p&gt;
+&lt;p&gt;which we could also express as &lt;img alt="image2" src="https://alinbxsorcerer.github.io/images/Books.SICP.org_20191029_000441.png"&gt;&lt;/p&gt;
+&lt;p&gt;In writing a procedure to compute f, we would like to include as local variables not only x and y but also the names of intermediate quantities like a and b. One way to accomplish this is to use an auxiliary procedure to bind the local variables:&lt;/p&gt;
+&lt;pre class="code scheme"&gt;&lt;a name="rest_code_ac0e8953ef1945e599d7febabd7e0cb3-1"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;define &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;f&lt;/span&gt; &lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="nv"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_ac0e8953ef1945e599d7febabd7e0cb3-2"&gt;&lt;/a&gt;  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;define &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;f-helper&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_ac0e8953ef1945e599d7febabd7e0cb3-3"&gt;&lt;/a&gt;    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+ &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;* &lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;square&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_ac0e8953ef1945e599d7febabd7e0cb3-4"&gt;&lt;/a&gt;       &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;* &lt;/span&gt;&lt;span class="nv"&gt;y&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_ac0e8953ef1945e599d7febabd7e0cb3-5"&gt;&lt;/a&gt;       &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;* &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;a name="rest_code_ac0e8953ef1945e599d7febabd7e0cb3-6"&gt;&lt;/a&gt;  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;f-helper&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+ &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;* &lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="nv"&gt;y&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_ac0e8953ef1945e599d7febabd7e0cb3-7"&gt;&lt;/a&gt;            &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;- &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;a name="rest_code_ac0e8953ef1945e599d7febabd7e0cb3-8"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;f&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;Of course, we could use a lambda expression to specify an anonymous procedure for binding our local variables. The body of f then becomes a single call to that procedure:&lt;/p&gt;
+&lt;pre class="code scheme"&gt;&lt;a name="rest_code_c0ec1cf69a944ce5975205f764640ae3-1"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;define &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;f&lt;/span&gt; &lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="nv"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_c0ec1cf69a944ce5975205f764640ae3-2"&gt;&lt;/a&gt;  &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="k"&gt;lambda &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_c0ec1cf69a944ce5975205f764640ae3-3"&gt;&lt;/a&gt;     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+ &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;* &lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;square&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_c0ec1cf69a944ce5975205f764640ae3-4"&gt;&lt;/a&gt;        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;* &lt;/span&gt;&lt;span class="nv"&gt;y&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_c0ec1cf69a944ce5975205f764640ae3-5"&gt;&lt;/a&gt;        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;* &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;a name="rest_code_c0ec1cf69a944ce5975205f764640ae3-6"&gt;&lt;/a&gt;   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+ &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;* &lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="nv"&gt;y&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_c0ec1cf69a944ce5975205f764640ae3-7"&gt;&lt;/a&gt;   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;- &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;This construct is so useful that there is a special form called let to make its use more convenient. Using let, the f procedure could be written as&lt;/p&gt;
+&lt;pre class="code elisp"&gt;&lt;a name="rest_code_554c505745314808a425dcfbabe8404e-1"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;define&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;f&lt;/span&gt; &lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="nv"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_554c505745314808a425dcfbabe8404e-2"&gt;&lt;/a&gt;  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;*&lt;/span&gt; &lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="nv"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;a name="rest_code_554c505745314808a425dcfbabe8404e-3"&gt;&lt;/a&gt;        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;a name="rest_code_554c505745314808a425dcfbabe8404e-4"&gt;&lt;/a&gt;    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;+&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;*&lt;/span&gt; &lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;square&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_554c505745314808a425dcfbabe8404e-5"&gt;&lt;/a&gt;       &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;*&lt;/span&gt; &lt;span class="nv"&gt;y&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_554c505745314808a425dcfbabe8404e-6"&gt;&lt;/a&gt;       &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;*&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+&lt;a name="rest_code_554c505745314808a425dcfbabe8404e-7"&gt;&lt;/a&gt;&lt;span class="c1"&gt;;;所以set或者let取代的是lamba的功能, 下面的body隶属于let&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;The general form of a let expression is&lt;/p&gt;
+&lt;pre class="literal-block"&gt;(let ((&amp;lt;var1&amp;gt; &amp;lt;exp1&amp;gt;)
+      (&amp;lt;var2&amp;gt; &amp;lt;exp2&amp;gt;)&lt;/pre&gt;
+&lt;p&gt;:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;   (&amp;lt;varn&amp;gt; &amp;lt;expn&amp;gt;))
+&amp;lt;body&amp;gt;)&lt;/pre&gt;
+&lt;p&gt;which can be thought of as saying&lt;/p&gt;
+&lt;pre class="literal-block"&gt;let   &amp;lt;var1&amp;gt; have the value &amp;lt;exp1&amp;gt; and
+      &amp;lt;var2&amp;gt; have the value &amp;lt;exp2&amp;gt; and
+      &amp;lt;varn&amp;gt; have the value &amp;lt;expn&amp;gt;
+in    &amp;lt;body&amp;gt;&lt;/pre&gt;
+&lt;p&gt;The first part of the let expression is a list of name-expression pairs. When the let is evaluated, each name is associated with the value of the corresponding expression. The body of the let is evaluated with these names bound as local variables. The way this happens is that the let expression is interpreted as an alternate syntax for&lt;/p&gt;
+&lt;pre class="code scheme"&gt;&lt;a name="rest_code_2bd9a27199bb450995406e7c91f5c6eb-1"&gt;&lt;/a&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="k"&gt;lambda &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;&amp;lt;var1&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="nv"&gt;&amp;lt;varn&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_2bd9a27199bb450995406e7c91f5c6eb-2"&gt;&lt;/a&gt;    &lt;span class="nv"&gt;&amp;lt;body&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_2bd9a27199bb450995406e7c91f5c6eb-3"&gt;&lt;/a&gt; &lt;span class="nv"&gt;&amp;lt;exp1&amp;gt;&lt;/span&gt;
+&lt;a name="rest_code_2bd9a27199bb450995406e7c91f5c6eb-4"&gt;&lt;/a&gt; &lt;span class="nv"&gt;&amp;lt;expn&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;No new mechanism is required in the interpreter in order to provide local variables. A let expression is simply syntactic sugar for the underlying lambda application.&lt;/p&gt;
+&lt;p&gt;We can see from this equivalence that the scope of a variable specified by a let expression is the body of the let. This implies that:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;Let allows one to bind variables as locally as possible to where they are to be used. For example, if the value of x is 5, the value of the expression&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="code elisp"&gt;&lt;a name="rest_code_288054ff03604260a6871133e6d92c39-1"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;+&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="c1"&gt;;;就是将let提到前面去.&lt;/span&gt;
+&lt;a name="rest_code_288054ff03604260a6871133e6d92c39-2"&gt;&lt;/a&gt;     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;+&lt;/span&gt; &lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;*&lt;/span&gt; &lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;a name="rest_code_288054ff03604260a6871133e6d92c39-3"&gt;&lt;/a&gt;   &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;pre class="literal-block"&gt;38&lt;/pre&gt;
+&lt;p&gt;is 38. Here, the x in the body of the let is 3, so the value of the let expression is 33. On the other hand, the x that is the second argument to the outermost + is still 5.&lt;/p&gt;
+&lt;p&gt;The variables' values are computed outside the let. This matters when the expressions that provide the values for the local variables depend upon variables having the same names as the local variables themselves. For example, if the value of x is 2, the expression&lt;/p&gt;
+&lt;pre class="literal-block"&gt;(define x 2)
+    (let ((x 3) ;;不存在shadow的问题.
+          (y (+ x 2)))
+      (* x y))&lt;/pre&gt;
+&lt;p&gt;will have the value 12 because, inside the body of the let, x will be 3 and y will be 4 (which is the outer x plus 2).&lt;/p&gt;
+&lt;p&gt;Sometimes we can use internal definitions to get the same effect as with let. For example, we could have defined the procedure f above as&lt;/p&gt;
+&lt;pre class="code scheme"&gt;&lt;a name="rest_code_0856d29d615e4f8f837af677322a72aa-1"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;define &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;f&lt;/span&gt; &lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="nv"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_0856d29d615e4f8f837af677322a72aa-2"&gt;&lt;/a&gt;  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;define &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+ &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;* &lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="nv"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;a name="rest_code_0856d29d615e4f8f837af677322a72aa-3"&gt;&lt;/a&gt;  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;define &lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;- &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;y&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_0856d29d615e4f8f837af677322a72aa-4"&gt;&lt;/a&gt;  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+ &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;* &lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;square&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_0856d29d615e4f8f837af677322a72aa-5"&gt;&lt;/a&gt;     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;* &lt;/span&gt;&lt;span class="nv"&gt;y&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_0856d29d615e4f8f837af677322a72aa-6"&gt;&lt;/a&gt;     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;* &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;We prefer, however, to use let in situations like this and to use internal define only for internal procedures. &lt;a class="footnote-reference brackets" href="https://alinbxsorcerer.github.io/posts/sicp-lambda/#id2" id="id1"&gt;1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Exercise 1.34[x] Suppose we define the procedure．&lt;/p&gt;
+&lt;pre class="code scheme"&gt;&lt;a name="rest_code_ab13d3b2f27a4805a39019008eb025f6-1"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;define &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;f&lt;/span&gt; &lt;span class="nv"&gt;g&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_ab13d3b2f27a4805a39019008eb025f6-2"&gt;&lt;/a&gt;  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;g&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_ab13d3b2f27a4805a39019008eb025f6-3"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;f&lt;/span&gt; &lt;span class="nv"&gt;square&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;pre class="literal-block"&gt;(f (lambda (z) (* z (+ z 1))))&lt;/pre&gt;
+&lt;p&gt;6&lt;/p&gt;
+&lt;p&gt;What happens if we (&lt;code class="docutils literal"&gt;perversely&lt;/code&gt;) ask the interpreter to evaluate the combination (f f)? Explain.&lt;/p&gt;
+&lt;p&gt;Define: perversely, perverse [pərˈvɜːrs] 一意孤行 Origin: per(forward,to,away), verse(turn), to turn, turn away, 转过脸去, 油盐不进.&lt;/p&gt;
+&lt;p&gt;Solution:&lt;/p&gt;
+&lt;p&gt;First invocation of f will attempt to apply its argument (which is f) to 2. This second invocation will attempt to apply its argument (which is 2) to 2, resulting in error.&lt;/p&gt;
+&lt;pre class="code scheme"&gt;&lt;a name="rest_code_8b837ec81d02495fabe16d6b8c35d73d-1"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;f&lt;/span&gt; &lt;span class="nv"&gt;f&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_8b837ec81d02495fabe16d6b8c35d73d-2"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;f&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_8b837ec81d02495fabe16d6b8c35d73d-3"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_8b837ec81d02495fabe16d6b8c35d73d-4"&gt;&lt;/a&gt;&lt;span class="c1"&gt;; Error&lt;/span&gt;
+&lt;a name="rest_code_8b837ec81d02495fabe16d6b8c35d73d-5"&gt;&lt;/a&gt;&lt;span class="c1"&gt;; MIT Scheme reports: The object 2 is not applicable.&lt;/span&gt;
+&lt;/pre&gt;&lt;pre class="code scheme"&gt;&lt;a name="rest_code_29402bce591340fe9875419c93cef1ed-1"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;f&lt;/span&gt; &lt;span class="nv"&gt;f&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_29402bce591340fe9875419c93cef1ed-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_29402bce591340fe9875419c93cef1ed-3"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;f&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;g&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_29402bce591340fe9875419c93cef1ed-4"&gt;&lt;/a&gt;       &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;g&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;a name="rest_code_29402bce591340fe9875419c93cef1ed-5"&gt;&lt;/a&gt;
+&lt;a name="rest_code_29402bce591340fe9875419c93cef1ed-6"&gt;&lt;/a&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="k"&gt;lambda &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;g&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_29402bce591340fe9875419c93cef1ed-7"&gt;&lt;/a&gt;     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;g&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_29402bce591340fe9875419c93cef1ed-8"&gt;&lt;/a&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;g&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_29402bce591340fe9875419c93cef1ed-9"&gt;&lt;/a&gt;     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;g&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;a name="rest_code_29402bce591340fe9875419c93cef1ed-10"&gt;&lt;/a&gt;
+&lt;a name="rest_code_29402bce591340fe9875419c93cef1ed-11"&gt;&lt;/a&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="k"&gt;lambda &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;g&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_29402bce591340fe9875419c93cef1ed-12"&gt;&lt;/a&gt;    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;g&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="c1"&gt;;substitution&lt;/span&gt;
+&lt;a name="rest_code_29402bce591340fe9875419c93cef1ed-13"&gt;&lt;/a&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_29402bce591340fe9875419c93cef1ed-14"&gt;&lt;/a&gt;
+&lt;a name="rest_code_29402bce591340fe9875419c93cef1ed-15"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;;;最后返回的结果如此&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;and&lt;/p&gt;
+&lt;p&gt;The result is an error: using the substitution rule in (f f) g = f : (g 2) -&amp;gt; (f 2) Again using the substitution rule in (f 2) g = 2 : (f 2)-&amp;gt; (2 2) -&amp;gt; error. The actual error from DrRacket is:&lt;/p&gt;
+&lt;pre class="code ipython"&gt;&lt;a name="rest_code_318c7ea001584e9a92e80b014f890d25-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_318c7ea001584e9a92e80b014f890d25-2"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;dl class="footnote brackets"&gt;
+&lt;dt class="label" id="id2"&gt;&lt;span class="brackets"&gt;&lt;a class="fn-backref" href="https://alinbxsorcerer.github.io/posts/sicp-lambda/#id1"&gt;1&lt;/a&gt;&lt;/span&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;Understanding internal definitions well enough to be sure a program means what we intend it to mean requires a more elaborate model of the evaluation process than we have presented in this chapter. The subtleties do not arise with internal definitions of procedures, however. We will return to this issue in section 4.1.6, after we learn more about evaluation.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;&lt;/div&gt;</description><guid>https://alinbxsorcerer.github.io/posts/sicp-lambda/</guid><pubDate>Thu, 19 Dec 2019 02:30:29 GMT</pubDate></item><item><title>费马小定理</title><link>https://alinbxsorcerer.github.io/posts/%20testing_for_primality/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="contents topic" id="table-of-contents"&gt;
 &lt;p class="topic-title first"&gt;Table of Contents&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/%20testing_for_primality/#searching-for-divisors" id="id1"&gt;1.Searching for divisors&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
@@ -2655,196 +2823,7 @@ year.)&lt;/p&gt;
 specifies how to mark the date in the calendar display. If one of these
 functions decides that it applies to a certain date, it returns a value
 that contains mark, as described above.&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>emacs</category><category>time</category><category>评注笔记</category><guid>https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/</guid><pubDate>Thu, 16 May 2019 01:53:29 GMT</pubDate></item><item><title>Constructing Procedures Using Lambda</title><link>https://alinbxsorcerer.github.io/posts/sicp-lambda/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;blockquote&gt;
-&lt;div class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 2)&lt;/p&gt;
-&lt;p&gt;The "contents" directive may not be used within topics or body elements.&lt;/p&gt;
-&lt;pre class="literal-block"&gt;.. contents:: Table of Contents
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;In using sum as in section 1.3.1, it seems terribly awkward to have to define &lt;code class="docutils literal"&gt;trivial procedures&lt;/code&gt; such as pi-term and pi-next just so we can use them as arguments to our higher-order procedure. Rather than define pi-next and pi-term, it would be more convenient to have a way to directly specify ``the procedure that returns its input incremented by 4'' and ``the procedure that returns the reciprocal of its input times its input plus 2.'' We can do this by introducing the special form lambda, which creates procedures. Using lambda we can describe what we want as&lt;/p&gt;
-&lt;pre class="literal-block"&gt;(lambda (x) (+ x 4))&lt;/pre&gt;
-&lt;p&gt;and&lt;/p&gt;
-&lt;pre class="literal-block"&gt;(lambda (x) (/ 1.0 (* x (+ x 2))))&lt;/pre&gt;
-&lt;p&gt;Then our pi-sum procedure can be expressed without defining any auxiliary procedures as&lt;/p&gt;
-&lt;pre class="code scheme"&gt;&lt;a name="rest_code_d95bb084c72342adb00148acd78363f7-1"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;define &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;sum&lt;/span&gt; &lt;span class="nv"&gt;term&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;next&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_d95bb084c72342adb00148acd78363f7-2"&gt;&lt;/a&gt;  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;&amp;gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_d95bb084c72342adb00148acd78363f7-3"&gt;&lt;/a&gt;      &lt;span class="mi"&gt;0&lt;/span&gt;
-&lt;a name="rest_code_d95bb084c72342adb00148acd78363f7-4"&gt;&lt;/a&gt;      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+ &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;term&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_d95bb084c72342adb00148acd78363f7-5"&gt;&lt;/a&gt;         &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;sum&lt;/span&gt; &lt;span class="nv"&gt;term&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;next&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;next&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
-&lt;a name="rest_code_d95bb084c72342adb00148acd78363f7-6"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;define &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;pi-sum&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_d95bb084c72342adb00148acd78363f7-7"&gt;&lt;/a&gt;  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;sum&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;/ &lt;/span&gt;&lt;span class="mf"&gt;1.0&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;* &lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+ &lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
-&lt;a name="rest_code_d95bb084c72342adb00148acd78363f7-8"&gt;&lt;/a&gt;       &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="c1"&gt;;;结构很清晰&lt;/span&gt;
-&lt;a name="rest_code_d95bb084c72342adb00148acd78363f7-9"&gt;&lt;/a&gt;       &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+ &lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;a name="rest_code_d95bb084c72342adb00148acd78363f7-10"&gt;&lt;/a&gt;       &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;a name="rest_code_d95bb084c72342adb00148acd78363f7-11"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;pi-sum&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;pre class="literal-block"&gt;0.372005772005772&lt;/pre&gt;
-&lt;div class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 36)&lt;/p&gt;
-&lt;p&gt;Cannot find pygments lexer for language "commonlisp"&lt;/p&gt;
-&lt;pre class="literal-block"&gt;.. code:: commonlisp
-
-   (defun sum(term a next b)
-     (if (&amp;gt; a b)
-         0
-         (+ (term a)
-            (sum #'term (next a) #'next b))))
-
-   (defun pi-sum(a b)
-     (sum (lambda (x) (/ 1.0 (* x (+ x 2))))
-          a
-          (lambda (x) (+ x 4))
-          b))
-   (print (pi-sum 2 11))
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;pre class="literal-block"&gt;pi-sum&lt;/pre&gt;
-&lt;p&gt;Again using lambda, we can write the integral procedure without having to define the auxiliary procedure add-dx:&lt;/p&gt;
-&lt;div class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 57)&lt;/p&gt;
-&lt;p&gt;Cannot find pygments lexer for language "commonlisp"&lt;/p&gt;
-&lt;pre class="literal-block"&gt;.. code:: commonlisp
-
-   (define (integral f a b dx)
-     (* (sum f
-             (+ a (/ dx 2.0))
-             (lambda (x) (+ x dx))
-             b)
-        dx))
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;pre class="code ipython"&gt;&lt;a name="rest_code_ccf645b11b83430ca940dc02879faeb1-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;integral&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;dx&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_ccf645b11b83430ca940dc02879faeb1-2"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;sum_recur&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;a name="rest_code_ccf645b11b83430ca940dc02879faeb1-3"&gt;&lt;/a&gt;                     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;dx&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="c1"&gt;#对应着上面字母的位置.&lt;/span&gt;
-&lt;a name="rest_code_ccf645b11b83430ca940dc02879faeb1-4"&gt;&lt;/a&gt;                     &lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;dx&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;a name="rest_code_ccf645b11b83430ca940dc02879faeb1-5"&gt;&lt;/a&gt;                     &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;dx&lt;/span&gt;
-&lt;/pre&gt;&lt;p&gt;In general, lambda is used to create procedures in the same way as define, except that no name is specified for the procedure:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;(lambda (&amp;lt;formal-parameters&amp;gt;) &amp;lt;body&amp;gt;)&lt;/pre&gt;
-&lt;p&gt;The resulting procedure is just as much a procedure as one that is created using define. The only difference is that it has not been associated with any name in the environment. In fact,&lt;/p&gt;
-&lt;pre class="literal-block"&gt;(define (plus4 x) (+ x 4))&lt;/pre&gt;
-&lt;p&gt;is equivalent to&lt;/p&gt;
-&lt;pre class="literal-block"&gt;(define plus4 (lambda (x) (+ x 4)))&lt;/pre&gt;
-&lt;p&gt;We can read a lambda expression as follows:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image0" src="https://alinbxsorcerer.github.io/images/Books.SICP.org_20191029_000007.png"&gt;&lt;/p&gt;
-&lt;p&gt;Like any expression that has a procedure as its value, a lambda expression can be used as the operator in a combination such as&lt;/p&gt;
-&lt;pre class="literal-block"&gt;((lambda (x y z) (+ x y (square z))) 1 2 3)&lt;/pre&gt;
-&lt;p&gt;12&lt;/p&gt;
-&lt;p&gt;or, more generally, in any context where we would normally use a procedure name.&lt;/p&gt;
-&lt;p&gt;Using let to create local variables&lt;/p&gt;
-&lt;p&gt;Another use of lambda is in creating local variables. We often need local variables in our procedures other than those that have been bound as formal parameters. For example, suppose we wish to compute the function &lt;img alt="image1" src="https://alinbxsorcerer.github.io/images/Books.SICP.org_20191029_000434.png"&gt;&lt;/p&gt;
-&lt;p&gt;which we could also express as &lt;img alt="image2" src="https://alinbxsorcerer.github.io/images/Books.SICP.org_20191029_000441.png"&gt;&lt;/p&gt;
-&lt;p&gt;In writing a procedure to compute f, we would like to include as local variables not only x and y but also the names of intermediate quantities like a and b. One way to accomplish this is to use an auxiliary procedure to bind the local variables:&lt;/p&gt;
-&lt;pre class="code scheme"&gt;&lt;a name="rest_code_d34f10b485e24b9ba89fe08f7fb1a954-1"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;define &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;f&lt;/span&gt; &lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="nv"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_d34f10b485e24b9ba89fe08f7fb1a954-2"&gt;&lt;/a&gt;  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;define &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;f-helper&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_d34f10b485e24b9ba89fe08f7fb1a954-3"&gt;&lt;/a&gt;    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+ &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;* &lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;square&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;a name="rest_code_d34f10b485e24b9ba89fe08f7fb1a954-4"&gt;&lt;/a&gt;       &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;* &lt;/span&gt;&lt;span class="nv"&gt;y&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_d34f10b485e24b9ba89fe08f7fb1a954-5"&gt;&lt;/a&gt;       &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;* &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;a name="rest_code_d34f10b485e24b9ba89fe08f7fb1a954-6"&gt;&lt;/a&gt;  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;f-helper&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+ &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;* &lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="nv"&gt;y&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;a name="rest_code_d34f10b485e24b9ba89fe08f7fb1a954-7"&gt;&lt;/a&gt;            &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;- &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;a name="rest_code_d34f10b485e24b9ba89fe08f7fb1a954-8"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;f&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;p&gt;Of course, we could use a lambda expression to specify an anonymous procedure for binding our local variables. The body of f then becomes a single call to that procedure:&lt;/p&gt;
-&lt;div class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 131)&lt;/p&gt;
-&lt;p&gt;Cannot find pygments lexer for language "commonlisp"&lt;/p&gt;
-&lt;pre class="literal-block"&gt;.. code:: commonlisp
-
-   (define (f x y)
-     ((lambda (a b)
-        (+ (* x (square a))
-           (* y b)
-           (* a b)))
-      (+ 1 (* x y))
-      (- 1 y)))
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;This construct is so useful that there is a special form called let to make its use more convenient. Using let, the f procedure could be written as&lt;/p&gt;
-&lt;pre class="code elisp"&gt;&lt;a name="rest_code_aab8aa226c494419a8f399e2cf657d1f-1"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;define&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;f&lt;/span&gt; &lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="nv"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_aab8aa226c494419a8f399e2cf657d1f-2"&gt;&lt;/a&gt;  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;*&lt;/span&gt; &lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="nv"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;a name="rest_code_aab8aa226c494419a8f399e2cf657d1f-3"&gt;&lt;/a&gt;        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;a name="rest_code_aab8aa226c494419a8f399e2cf657d1f-4"&gt;&lt;/a&gt;    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;+&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;*&lt;/span&gt; &lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;square&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;a name="rest_code_aab8aa226c494419a8f399e2cf657d1f-5"&gt;&lt;/a&gt;       &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;*&lt;/span&gt; &lt;span class="nv"&gt;y&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_aab8aa226c494419a8f399e2cf657d1f-6"&gt;&lt;/a&gt;       &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;*&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
-&lt;a name="rest_code_aab8aa226c494419a8f399e2cf657d1f-7"&gt;&lt;/a&gt;&lt;span class="c1"&gt;;;所以set或者let取代的是lamba的功能, 下面的body隶属于let&lt;/span&gt;
-&lt;/pre&gt;&lt;p&gt;The general form of a let expression is&lt;/p&gt;
-&lt;pre class="literal-block"&gt;(let ((&amp;lt;var1&amp;gt; &amp;lt;exp1&amp;gt;)
-      (&amp;lt;var2&amp;gt; &amp;lt;exp2&amp;gt;)&lt;/pre&gt;
-&lt;p&gt;:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;   (&amp;lt;varn&amp;gt; &amp;lt;expn&amp;gt;))
-&amp;lt;body&amp;gt;)&lt;/pre&gt;
-&lt;p&gt;which can be thought of as saying&lt;/p&gt;
-&lt;pre class="literal-block"&gt;let   &amp;lt;var1&amp;gt; have the value &amp;lt;exp1&amp;gt; and
-      &amp;lt;var2&amp;gt; have the value &amp;lt;exp2&amp;gt; and
-      &amp;lt;varn&amp;gt; have the value &amp;lt;expn&amp;gt;
-in    &amp;lt;body&amp;gt;&lt;/pre&gt;
-&lt;p&gt;The first part of the let expression is a list of name-expression pairs. When the let is evaluated, each name is associated with the value of the corresponding expression. The body of the let is evaluated with these names bound as local variables. The way this happens is that the let expression is interpreted as an alternate syntax for&lt;/p&gt;
-&lt;pre class="code scheme"&gt;&lt;a name="rest_code_a1e8739ada8344cf98656def833bdda4-1"&gt;&lt;/a&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="k"&gt;lambda &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;&amp;lt;var1&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="nv"&gt;&amp;lt;varn&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_a1e8739ada8344cf98656def833bdda4-2"&gt;&lt;/a&gt;    &lt;span class="nv"&gt;&amp;lt;body&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_a1e8739ada8344cf98656def833bdda4-3"&gt;&lt;/a&gt; &lt;span class="nv"&gt;&amp;lt;exp1&amp;gt;&lt;/span&gt;
-&lt;a name="rest_code_a1e8739ada8344cf98656def833bdda4-4"&gt;&lt;/a&gt; &lt;span class="nv"&gt;&amp;lt;expn&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;p&gt;No new mechanism is required in the interpreter in order to provide local variables. A let expression is simply syntactic sugar for the underlying lambda application.&lt;/p&gt;
-&lt;p&gt;We can see from this equivalence that the scope of a variable specified by a let expression is the body of the let. This implies that:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;Let allows one to bind variables as locally as possible to where they are to be used. For example, if the value of x is 5, the value of the expression&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre class="code elisp"&gt;&lt;a name="rest_code_745f1314468d47a69c7a7315e759ce07-1"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;+&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="c1"&gt;;;就是将let提到前面去.&lt;/span&gt;
-&lt;a name="rest_code_745f1314468d47a69c7a7315e759ce07-2"&gt;&lt;/a&gt;     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;+&lt;/span&gt; &lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;*&lt;/span&gt; &lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;a name="rest_code_745f1314468d47a69c7a7315e759ce07-3"&gt;&lt;/a&gt;   &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;pre class="literal-block"&gt;38&lt;/pre&gt;
-&lt;p&gt;is 38. Here, the x in the body of the let is 3, so the value of the let expression is 33. On the other hand, the x that is the second argument to the outermost + is still 5.&lt;/p&gt;
-&lt;p&gt;The variables' values are computed outside the let. This matters when the expressions that provide the values for the local variables depend upon variables having the same names as the local variables themselves. For example, if the value of x is 2, the expression&lt;/p&gt;
-&lt;pre class="literal-block"&gt;(define x 2)
-    (let ((x 3) ;;不存在shadow的问题.
-          (y (+ x 2)))
-      (* x y))&lt;/pre&gt;
-&lt;p&gt;will have the value 12 because, inside the body of the let, x will be 3 and y will be 4 (which is the outer x plus 2).&lt;/p&gt;
-&lt;p&gt;Sometimes we can use internal definitions to get the same effect as with let. For example, we could have defined the procedure f above as&lt;/p&gt;
-&lt;pre class="code scheme"&gt;&lt;a name="rest_code_4bc30b8808964ba58dedbd809433a15b-1"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;define &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;f&lt;/span&gt; &lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="nv"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_4bc30b8808964ba58dedbd809433a15b-2"&gt;&lt;/a&gt;  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;define &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+ &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;* &lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="nv"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;a name="rest_code_4bc30b8808964ba58dedbd809433a15b-3"&gt;&lt;/a&gt;  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;define &lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;- &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;y&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;a name="rest_code_4bc30b8808964ba58dedbd809433a15b-4"&gt;&lt;/a&gt;  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+ &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;* &lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;square&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;a name="rest_code_4bc30b8808964ba58dedbd809433a15b-5"&gt;&lt;/a&gt;     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;* &lt;/span&gt;&lt;span class="nv"&gt;y&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_4bc30b8808964ba58dedbd809433a15b-6"&gt;&lt;/a&gt;     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;* &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;/pre&gt;&lt;p&gt;We prefer, however, to use let in situations like this and to use internal define only for internal procedures. &lt;a class="footnote-reference brackets" href="https://alinbxsorcerer.github.io/posts/sicp-lambda/#id2" id="id1"&gt;1&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Exercise 1.34[x] Suppose we define the procedure．&lt;/p&gt;
-&lt;pre class="code scheme"&gt;&lt;a name="rest_code_0833e4ce32d44255a8b6cef82ed1e3e7-1"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;define &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;f&lt;/span&gt; &lt;span class="nv"&gt;g&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_0833e4ce32d44255a8b6cef82ed1e3e7-2"&gt;&lt;/a&gt;  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;g&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;a name="rest_code_0833e4ce32d44255a8b6cef82ed1e3e7-3"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;f&lt;/span&gt; &lt;span class="nv"&gt;square&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;pre class="literal-block"&gt;(f (lambda (z) (* z (+ z 1))))&lt;/pre&gt;
-&lt;p&gt;6&lt;/p&gt;
-&lt;p&gt;What happens if we (&lt;code class="docutils literal"&gt;perversely&lt;/code&gt;) ask the interpreter to evaluate the combination (f f)? Explain.&lt;/p&gt;
-&lt;p&gt;Define: perversely, perverse [pərˈvɜːrs] 一意孤行 Origin: per(forward,to,away), verse(turn), to turn, turn away, 转过脸去, 油盐不进.&lt;/p&gt;
-&lt;p&gt;Solution:&lt;/p&gt;
-&lt;p&gt;First invocation of f will attempt to apply its argument (which is f) to 2. This second invocation will attempt to apply its argument (which is 2) to 2, resulting in error.&lt;/p&gt;
-&lt;pre class="code scheme"&gt;&lt;a name="rest_code_94d4c2f74eb64694b0001f9dafe3f5ea-1"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;f&lt;/span&gt; &lt;span class="nv"&gt;f&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_94d4c2f74eb64694b0001f9dafe3f5ea-2"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;f&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_94d4c2f74eb64694b0001f9dafe3f5ea-3"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_94d4c2f74eb64694b0001f9dafe3f5ea-4"&gt;&lt;/a&gt;&lt;span class="c1"&gt;; Error&lt;/span&gt;
-&lt;a name="rest_code_94d4c2f74eb64694b0001f9dafe3f5ea-5"&gt;&lt;/a&gt;&lt;span class="c1"&gt;; MIT Scheme reports: The object 2 is not applicable.&lt;/span&gt;
-&lt;/pre&gt;&lt;pre class="code scheme"&gt;&lt;a name="rest_code_473355fc028e42feba11061dfe3c6d70-1"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;f&lt;/span&gt; &lt;span class="nv"&gt;f&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_473355fc028e42feba11061dfe3c6d70-2"&gt;&lt;/a&gt;
-&lt;a name="rest_code_473355fc028e42feba11061dfe3c6d70-3"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;f&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;g&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_473355fc028e42feba11061dfe3c6d70-4"&gt;&lt;/a&gt;       &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;g&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;a name="rest_code_473355fc028e42feba11061dfe3c6d70-5"&gt;&lt;/a&gt;
-&lt;a name="rest_code_473355fc028e42feba11061dfe3c6d70-6"&gt;&lt;/a&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="k"&gt;lambda &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;g&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_473355fc028e42feba11061dfe3c6d70-7"&gt;&lt;/a&gt;     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;g&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;a name="rest_code_473355fc028e42feba11061dfe3c6d70-8"&gt;&lt;/a&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;g&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_473355fc028e42feba11061dfe3c6d70-9"&gt;&lt;/a&gt;     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;g&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;a name="rest_code_473355fc028e42feba11061dfe3c6d70-10"&gt;&lt;/a&gt;
-&lt;a name="rest_code_473355fc028e42feba11061dfe3c6d70-11"&gt;&lt;/a&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="k"&gt;lambda &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;g&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_473355fc028e42feba11061dfe3c6d70-12"&gt;&lt;/a&gt;    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;g&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="c1"&gt;;substitution&lt;/span&gt;
-&lt;a name="rest_code_473355fc028e42feba11061dfe3c6d70-13"&gt;&lt;/a&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_473355fc028e42feba11061dfe3c6d70-14"&gt;&lt;/a&gt;
-&lt;a name="rest_code_473355fc028e42feba11061dfe3c6d70-15"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;;;最后返回的结果如此&lt;/span&gt;
-&lt;/pre&gt;&lt;p&gt;and&lt;/p&gt;
-&lt;p&gt;The result is an error: using the substitution rule in (f f) g = f : (g 2) -&amp;gt; (f 2) Again using the substitution rule in (f 2) g = 2 : (f 2)-&amp;gt; (2 2) -&amp;gt; error. The actual error from DrRacket is:&lt;/p&gt;
-&lt;pre class="code ipython"&gt;&lt;a name="rest_code_743da7acce154bd39fbf1a27c1d99317-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_743da7acce154bd39fbf1a27c1d99317-2"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;dl class="footnote brackets"&gt;
-&lt;dt class="label" id="id2"&gt;&lt;span class="brackets"&gt;&lt;a class="fn-backref" href="https://alinbxsorcerer.github.io/posts/sicp-lambda/#id1"&gt;1&lt;/a&gt;&lt;/span&gt;&lt;/dt&gt;
-&lt;dd&gt;&lt;p&gt;Understanding internal definitions well enough to be sure a program means what we intend it to mean requires a more elaborate model of the evaluation process than we have presented in this chapter. The subtleties do not arise with internal definitions of procedures, however. We will return to this issue in section 4.1.6, after we learn more about evaluation.&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;&lt;/div&gt;</description><guid>https://alinbxsorcerer.github.io/posts/sicp-lambda/</guid><pubDate>Wed, 15 May 2019 12:53:29 GMT</pubDate></item><item><title>时间管理的三件武器</title><link>https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="contents topic" id="contents"&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>emacs</category><category>time</category><category>评注笔记</category><guid>https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/</guid><pubDate>Thu, 16 May 2019 01:53:29 GMT</pubDate></item><item><title>时间管理的三件武器</title><link>https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="contents topic" id="contents"&gt;
 &lt;p class="topic-title first"&gt;Contents&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#id1" id="id8"&gt;前情概要&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
