@@ -1,4 +1,4 @@
-   .. title: Testing for Primality
+   .. title: 费马小定理
    .. slug:  testing_for_primality
    .. date: 2019-12-18 11:53:29 UTC+08:00
    .. tags: python, math, algorithms, primality
@@ -102,7 +102,7 @@ The following procedure runs the test a given number of times, as specified by a
 
    import random
 
-   def fermat_test(n, times): #expmod米模运算
+   def fermat_test(n, times): #expmod, 幂模运算.
 
        # Implementation uses the Fermat Primality Test
        # If number is even, it's a composite number, prime number and composite number.
