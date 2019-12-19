@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html prefix="" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Debugging and Profiling Python Scripts | A Magic Land Declared by David</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="David">
+<meta property="og:site_name" content="A Magic Land Declared by David">
+<meta property="og:title" content="Debugging and Profiling Python Scripts">
+<meta property="og:url" content="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/">
+<meta property="og:description" content="Table of Contents
+
+0) Foreword
+1) What is debugging?
+
+Python debugging techniques
+
+
+2) Error handling (exception handling)
+3) Debuggers tools
+
+The pdb debugger
+Within an interpreter
+From a command lin">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2019-05-15T20:53:29+08:00">
+<meta property="article:tag" content="debug">
+<meta property="article:tag" content="profile">
+<meta property="article:tag" content="python">
+</head>
+<body>
+    
+
+    <header id="header" class="navbar"><div class="container">
+            
+    <div class="brand">
+
+        <div class="brand-text">
+            <a href="https://alinbxsorcerer.github.io/" title="A Magic Land Declared by David" rel="home">
+                A Magic Land Declared by David
+            </a>
+        </div>
+
+        <a id="btn-toggle-nav" class="navbar-toggle">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+    </div>
+
+            
+    <nav class="navbar-collapse collapse"><ul class="nav">
+<li><a href="../../archive.html">Archive</a></li>
+                <li><a href="../../categories/">Tags</a></li>
+                <li><a href="../../rss.xml">RSS feed</a></li>
+    
+    
+    </ul></nav>
+</div>
+    </header><div class="header-padding"> </div>
+
+    
+    <div class="post-header">
+        <div class="container">
+            <div class="title">
+                Debugging and Profiling Python Scripts
+            </div>
+        </div>
+    </div>
+
+    <div class="post-meta">
+      <div class="container">
+	<div class="meta clearfix">
+	  <div class="authordate">
+	    <time class="timeago" datetime="2019-05-15T20:53:29+08:00">2019/05/15</time>
+	    
+
+	    
+          |  
+        <a href="index.rst" id="sourcelink">Source</a>
+
+	  </div>
+	  <div class="post-tags">
+	    <div class="tag">
+	      <a href="../../categories/debug/" rel="tag">debug</a>
+	    </div>
+	    <div class="tag">
+	      <a href="../../categories/profile/" rel="tag">profile</a>
+	    </div>
+	    <div class="tag">
+	      <a href="../../categories/python/" rel="tag">python</a>
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </div>
+
+
+    <div id="post-main" class="main">
+        <div class="container">
+        <div>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#foreword" id="id5">0) Foreword</a></p></li>
+<li>
+<p><a class="reference internal" href="#what-is-debugging" id="id6">1) What is debugging?</a></p>
+<ul>
+<li><p><a class="reference internal" href="#python-debugging-techniques" id="id7">Python debugging techniques</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#error-handling-exception-handling" id="id8">2) Error handling (exception handling)</a></p></li>
+<li>
+<p><a class="reference internal" href="#debuggers-tools" id="id9">3) Debuggers tools</a></p>
+<ul>
+<li><p><a class="reference internal" href="#the-pdb-debugger" id="id10">The pdb debugger</a></p></li>
+<li><p><a class="reference internal" href="#within-an-interpreter" id="id11">Within an interpreter</a></p></li>
+<li><p><a class="reference internal" href="#from-a-command-line" id="id12">From a command line</a></p></li>
+<li><p><a class="reference internal" href="#within-a-python-script" id="id13">Within a Python script</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#debugging-basic-program-crashes" id="id14">4) Debugging basic program crashes</a></p></li>
+<li>
+<p><a class="reference internal" href="#profiling-and-timing-programs" id="id15">5) Profiling and timing programs</a></p>
+<ul>
+<li><p><a class="reference internal" href="#the-cprofile-module" id="id16">The cProfile module</a></p></li>
+<li><p><a class="reference internal" href="#timeit" id="id17">timeit</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#making-programs-run-faster" id="id18">6) Making programs run faster</a></p></li>
+<li>
+<p><a class="reference internal" href="#summary" id="id19">Summary</a></p>
+<ul>
+<li><p><a class="reference internal" href="#questions" id="id20">Questions</a></p></li>
+<li><p><a class="reference internal" href="#answer" id="id21">Answer:</a></p></li>
+<li><p><a class="reference internal" href="#further-reading" id="id22">Further reading</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="foreword">
+<h2><a class="toc-backref" href="#id5">0) Foreword</a></h2>
+<p>Debugging and profiling play an important role in Python development. The debugger helps programmers to analyze the complete code. The debugger sets the breakpoints whereas the profilers run our code and give us the details of the execution time. The profilers will identify the bottlenecks in your programs. In this chapter, we'll learn about the pdb Python debugger, cProfile module, and timeit module to time the execution of Python code.</p>
+<p>In this chapter, you'll learn about the following:</p>
+<ol class="arabic simple">
+<li><p>Python debugging techniques</p></li>
+<li><p>Error handling (exception handling)</p></li>
+<li><p>Debugger tools</p></li>
+<li><p>Debugging basic program crashes</p></li>
+<li><p>Profiling and timing programs</p></li>
+<li><p>Making programs run faster</p></li>
+</ol>
+</div>
+<div class="section" id="what-is-debugging">
+<h2><a class="toc-backref" href="#id6">1) What is debugging?</a></h2>
+<p>Debugging is a process that resolves the issues that occur in your code and prevent your software from running properly. In Python, debugging is very easy. The Python debugger sets conditional breakpoints and debugs the source code one line at a time. We'll debug our Python scripts using a pdb module that's present in the Python standard library.</p>
+<div class="section" id="python-debugging-techniques">
+<h3><a class="toc-backref" href="#id7">Python debugging techniques</a></h3>
+<p>To better debug a Python program, various techniques are available. We're going to look at four techniques for Python debugging:</p>
+<ol class="arabic simple">
+<li><p>print() statement: This is the simplest way of knowing what's exactly happening so you can check what has been executed.</p></li>
+<li><p><strong>logging</strong>: This is like a print statement but with more contextual information so you can understand it fully.</p></li>
+<li><p>*pdb* debugger: This is a commonly used debugging technique. The advantage of using pdb is that you can use pdb from the command line, within an interpreter, and within a program.</p></li>
+<li><p>IDE debugger: IDE has an integrated debugger. It allows developers to execute their code and then the developer can inspect while the program executes.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="error-handling-exception-handling">
+<h2><a class="toc-backref" href="#id8">2) Error handling (exception handling)</a></h2>
+<p>In this section, we're going to learn how Python handles exceptions. But first, what is an exception? An exception is an error that occurs during program execution. Whenever any error occurs, Python generates an exception that will be handled using a try…except block. Some exceptions can't be handled by programs so they result in error messages. Now, we are going to see some exception examples.</p>
+<p>In your Terminal, start the python3 interactive console and we will see some exception examples:</p>
+<pre class="code ipython"><a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-1"></a><span class="n">Type</span> <span class="s2">"help"</span><span class="p">,</span> <span class="s2">"copyright"</span><span class="p">,</span> <span class="s2">"credits"</span> <span class="ow">or</span> <span class="s2">"license"</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
+<a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-2"></a> <span class="o">&gt;&gt;&gt;</span>
+<a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-3"></a> <span class="o">&gt;&gt;&gt;</span> <span class="mi">50</span> <span class="o">/</span> <span class="mi">0</span>
+<a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-4"></a> <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+<a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-5"></a>  <span class="n">File</span> <span class="s2">"&lt;stdin&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-6"></a> <span class="ne">ZeroDivisionError</span><span class="p">:</span> <span class="n">division</span> <span class="n">by</span> <span class="n">zero</span>
+<a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-7"></a>
+<a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-8"></a> <span class="o">&gt;&gt;&gt;</span>
+<a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-9"></a> <span class="o">&gt;&gt;&gt;</span> <span class="mi">6</span> <span class="o">+</span> <span class="n">abc</span><span class="o">*</span><span class="mi">5</span>
+<a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-10"></a> <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+<a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-11"></a>   <span class="n">File</span> <span class="s2">"&lt;stdin&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-12"></a> <span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">'abc'</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
+<a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-13"></a> <span class="o">&gt;&gt;&gt;</span>
+<a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-14"></a> <span class="o">&gt;&gt;&gt;</span> <span class="s1">'abc'</span> <span class="o">+</span> <span class="mi">2</span>
+<a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-15"></a> <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+<a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-16"></a>   <span class="n">File</span> <span class="s2">"&lt;stdin&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-17"></a> <span class="ne">TypeError</span><span class="p">:</span> <span class="n">Can</span><span class="s1">'t convert '</span><span class="nb">int</span><span class="s1">' object to str implicitly</span>
+<a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-18"></a> <span class="o">&gt;&gt;&gt;</span>
+<a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-19"></a> <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">abcd</span>
+<a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-20"></a> <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+<a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-21"></a>   <span class="n">File</span> <span class="s2">"&lt;stdin&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-22"></a> <span class="ne">ImportError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="s1">'abcd'</span>
+<a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-23"></a> <span class="o">&gt;&gt;&gt;</span>
+</pre>
+<p>These are some examples of exceptions. Now, we will see how we can handle the exceptions.</p>
+<p>Whenever errors occur in your Python program, exceptions are raised. We can also forcefully raise an exception using raise keyword.</p>
+<p>Now we are going to see a try…except block that handles an exception. In the try block, we will write a code that may generate an exception. In the except block, we will write a solution for that exception.</p>
+<p>The syntax for try…except is as follows:</p>
+<pre class="code ipython"><a name="rest_code_159ca52eb14f4f9fba37348874a78347-1"></a><span class="k">try</span><span class="p">:</span>
+<a name="rest_code_159ca52eb14f4f9fba37348874a78347-2"></a>            <span class="n">statement</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<a name="rest_code_159ca52eb14f4f9fba37348874a78347-3"></a><span class="k">except</span><span class="p">:</span>
+<a name="rest_code_159ca52eb14f4f9fba37348874a78347-4"></a>            <span class="n">statement</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre>
+<p>A try block can have multiple except statements. We can handle specific exceptions also by entering the exception name after the except keyword. The syntax for handling a specific exception is as follows:</p>
+<pre class="code ipython"><a name="rest_code_8eb3dcc4d2dc4e48b8b014b055f38eb0-1"></a><span class="k">try</span><span class="p">:</span>
+<a name="rest_code_8eb3dcc4d2dc4e48b8b014b055f38eb0-2"></a>            <span class="n">statement</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<a name="rest_code_8eb3dcc4d2dc4e48b8b014b055f38eb0-3"></a><span class="k">except</span> <span class="n">exception_name</span><span class="p">:</span>
+<a name="rest_code_8eb3dcc4d2dc4e48b8b014b055f38eb0-4"></a>            <span class="n">statement</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre>
+<p>We are going to create an exception<sub>example</sub>.py script to catch ZeroDivisionError*.* Write the following code in your script:</p>
+<pre class="code ipython"><a name="rest_code_4086309ae2cc4fffb0868eb887403377-1"></a><span class="n">a</span> <span class="o">=</span> <span class="mi">35</span>
+<a name="rest_code_4086309ae2cc4fffb0868eb887403377-2"></a><span class="n">b</span> <span class="o">=</span> <span class="mi">57</span>
+<a name="rest_code_4086309ae2cc4fffb0868eb887403377-3"></a><span class="k">try</span><span class="p">:</span>
+<a name="rest_code_4086309ae2cc4fffb0868eb887403377-4"></a>    <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<a name="rest_code_4086309ae2cc4fffb0868eb887403377-5"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"The value of c is: "</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<a name="rest_code_4086309ae2cc4fffb0868eb887403377-6"></a>    <span class="n">d</span> <span class="o">=</span> <span class="n">b</span> <span class="o">/</span> <span class="mi">0</span>
+<a name="rest_code_4086309ae2cc4fffb0868eb887403377-7"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"The value of d is: "</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+<a name="rest_code_4086309ae2cc4fffb0868eb887403377-8"></a>
+<a name="rest_code_4086309ae2cc4fffb0868eb887403377-9"></a><span class="k">except</span><span class="p">:</span>
+<a name="rest_code_4086309ae2cc4fffb0868eb887403377-10"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"Division by zero is not possible"</span><span class="p">)</span>
+<a name="rest_code_4086309ae2cc4fffb0868eb887403377-11"></a>
+<a name="rest_code_4086309ae2cc4fffb0868eb887403377-12"></a><span class="k">print</span><span class="p">(</span><span class="s2">"Out of try...except block"</span><span class="p">)</span>
+</pre>
+<p>Run the script as follows and you will get the following output:</p>
+</div>
+<div class="section" id="debuggers-tools">
+<h2><a class="toc-backref" href="#id9">3) Debuggers tools</a></h2>
+<p>There are many debugging tools supported in Python:</p>
+<ol class="arabic simple">
+<li><p>winpdb</p></li>
+<li><p>pydev</p></li>
+<li><p>pydb</p></li>
+<li><p>pdb</p></li>
+<li><p>gdb</p></li>
+<li><p>pyDebug</p></li>
+</ol>
+<p>In this section, we are going to learn about pdb Python debugger. pdb module is a part of Python's standard library and is always available to use.</p>
+<div class="section" id="the-pdb-debugger">
+<h3><a class="toc-backref" href="#id10">The pdb debugger</a></h3>
+<p>The pdb module is used to debug Python programs. Python programs use pdb interactive source code debugger to debug the programs. pdb sets <code class="docutils literal">breakpoints</code> and inspects the stack frames, and lists the source code.</p>
+<p>Now we will learn about how we can use the pdb debugger. There are three ways to use this debugger:</p>
+<ol class="arabic simple">
+<li><p>Within an interpreter</p></li>
+<li><p>From a command line</p></li>
+<li><p>Within a Python script</p></li>
+</ol>
+<p>We are going to create a pdb<sub>example</sub>.py script and add the following content in that script:</p>
+<pre class="code ipython"><a name="rest_code_0a4d660b7a5a4ae2beb6910f7361cb65-1"></a><span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+<a name="rest_code_0a4d660b7a5a4ae2beb6910f7361cb65-2"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">std</span><span class="p">):</span>
+<a name="rest_code_0a4d660b7a5a4ae2beb6910f7361cb65-3"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="n">std</span>
+<a name="rest_code_0a4d660b7a5a4ae2beb6910f7361cb65-4"></a>
+<a name="rest_code_0a4d660b7a5a4ae2beb6910f7361cb65-5"></a>    <span class="k">def</span> <span class="nf">print_std</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_0a4d660b7a5a4ae2beb6910f7361cb65-6"></a>                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">):</span>
+<a name="rest_code_0a4d660b7a5a4ae2beb6910f7361cb65-7"></a>                            <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a name="rest_code_0a4d660b7a5a4ae2beb6910f7361cb65-8"></a>                <span class="k">return</span>
+<a name="rest_code_0a4d660b7a5a4ae2beb6910f7361cb65-9"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<a name="rest_code_0a4d660b7a5a4ae2beb6910f7361cb65-10"></a>    <span class="n">Student</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">print_std</span><span class="p">()</span>
+</pre>
+<p>Using this script as an example to learn Python debugging, we will see how we can start the debugger in detail.</p>
+</div>
+<div class="section" id="within-an-interpreter">
+<h3><a class="toc-backref" href="#id11">Within an interpreter</a></h3>
+<p> To start the debugger from the Python interactive console, we are using run() or runeval().</p>
+<p>Start your python3 interactive console. Run the following command to start the console:</p>
+<p>Import our pdb<sub>example</sub> script name and the pdb module. Now, we are going to use run() and we are passing a string expression as an argument to run() that will be evaluated by the Python interpreter itself:</p>
+<pre class="code ipython"><a name="rest_code_be4031fd5c414773adc57183827fa6cb-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">pdb_example</span>
+<a name="rest_code_be4031fd5c414773adc57183827fa6cb-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">pdb</span>
+<a name="rest_code_be4031fd5c414773adc57183827fa6cb-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">pdb</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">'pdb_example.Student(5).print_std()'</span><span class="p">)</span>
+<a name="rest_code_be4031fd5c414773adc57183827fa6cb-4"></a><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">()</span>
+<a name="rest_code_be4031fd5c414773adc57183827fa6cb-5"></a><span class="p">(</span><span class="n">Pdb</span><span class="p">)</span>
+</pre>
+<p>To continue debugging, enter continue after the (Pdb) prompt and press <em>Enter</em>. If you want to know the options we can use in this, then after the (Pdb) prompt press the /Tab /key twice.</p>
+<p>Now, after entering continue, we will get the output as follows:</p>
+<pre class="code ipython"><a name="rest_code_cf85087b43a5477bae7df6c4eb21070a-1"></a>    <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">pdb_example</span>
+<a name="rest_code_cf85087b43a5477bae7df6c4eb21070a-2"></a>    <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">pdb</span>
+<a name="rest_code_cf85087b43a5477bae7df6c4eb21070a-3"></a><span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="n">pdb</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">"pdb_example.Student(5).print_std()"</span>
+<a name="rest_code_cf85087b43a5477bae7df6c4eb21070a-4"></a>    <span class="o">...</span><span class="p">:</span> <span class="p">)</span>
+<a name="rest_code_cf85087b43a5477bae7df6c4eb21070a-5"></a><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">()</span>
+<a name="rest_code_cf85087b43a5477bae7df6c4eb21070a-6"></a><span class="p">(</span><span class="n">Pdb</span><span class="p">)</span> <span class="k">continue</span>
+<a name="rest_code_cf85087b43a5477bae7df6c4eb21070a-7"></a><span class="mi">0</span>
+<a name="rest_code_cf85087b43a5477bae7df6c4eb21070a-8"></a><span class="mi">1</span>
+<a name="rest_code_cf85087b43a5477bae7df6c4eb21070a-9"></a><span class="mi">2</span>
+<a name="rest_code_cf85087b43a5477bae7df6c4eb21070a-10"></a><span class="mi">3</span>
+<a name="rest_code_cf85087b43a5477bae7df6c4eb21070a-11"></a><span class="mi">4</span>
+</pre>
+<pre class="code ipython"><a name="rest_code_7bdcaec9374d48fc9440e51d61b72bdc-1"></a><span class="kn">from</span> <span class="nn">src</span> <span class="kn">import</span> <span class="n">pdb_example</span>
+<a name="rest_code_7bdcaec9374d48fc9440e51d61b72bdc-2"></a><span class="kn">import</span> <span class="nn">pdb</span>
+<a name="rest_code_7bdcaec9374d48fc9440e51d61b72bdc-3"></a><span class="n">pdb</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">'pdb_example.Student(5).print_std()'</span><span class="p">)</span>
+</pre>
+</div>
+<div class="section" id="from-a-command-line">
+<h3><a class="toc-backref" href="#id12">From a command line</a></h3>
+<p>The simplest and most straightforward way to run a debugger is from a command line. Our program will act as input to the debugger. You can use the debugger from command line as follows:</p>
+<pre class="code ipython"><a name="rest_code_1d1da0dcd5ef4db5b1cb90c024ad1a00-1"></a><span class="err">$</span> <span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pdb</span> <span class="n">pdb_example</span><span class="o">.</span><span class="n">py</span>
+</pre>
+<p>When you run the debugger from the command line, source code will be loaded and it will stop the execution on the first line it finds. Enter continue to continue the debugging. Here's the output:</p>
+<pre class="code ipython"><a name="rest_code_147da5162b4046e4bcd92ccfe726069b-1"></a><span class="n">student</span><span class="nd">@ubuntu</span><span class="p">:</span><span class="o">~</span><span class="err">$</span> <span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pdb</span> <span class="n">pdb_example</span><span class="o">.</span><span class="n">py</span>
+<a name="rest_code_147da5162b4046e4bcd92ccfe726069b-2"></a><span class="o">&gt;</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">student</span><span class="o">/</span><span class="n">pdb_example</span><span class="o">.</span><span class="n">py</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">()</span>
+<a name="rest_code_147da5162b4046e4bcd92ccfe726069b-3"></a><span class="o">-&gt;</span> <span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+<a name="rest_code_147da5162b4046e4bcd92ccfe726069b-4"></a><span class="p">(</span><span class="n">Pdb</span><span class="p">)</span> <span class="k">continue</span>
+<a name="rest_code_147da5162b4046e4bcd92ccfe726069b-5"></a><span class="mi">0</span>
+<a name="rest_code_147da5162b4046e4bcd92ccfe726069b-6"></a><span class="mi">1</span>
+<a name="rest_code_147da5162b4046e4bcd92ccfe726069b-7"></a><span class="mi">2</span>
+<a name="rest_code_147da5162b4046e4bcd92ccfe726069b-8"></a><span class="mi">3</span>
+<a name="rest_code_147da5162b4046e4bcd92ccfe726069b-9"></a><span class="mi">4</span>
+<a name="rest_code_147da5162b4046e4bcd92ccfe726069b-10"></a><span class="n">The</span> <span class="n">program</span> <span class="n">finished</span> <span class="ow">and</span> <span class="n">will</span> <span class="n">be</span> <span class="n">restarted</span>
+<a name="rest_code_147da5162b4046e4bcd92ccfe726069b-11"></a><span class="o">&gt;</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">student</span><span class="o">/</span><span class="n">pdb_example</span><span class="o">.</span><span class="n">py</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">()</span>
+<a name="rest_code_147da5162b4046e4bcd92ccfe726069b-12"></a><span class="o">-&gt;</span> <span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+<a name="rest_code_147da5162b4046e4bcd92ccfe726069b-13"></a><span class="p">(</span><span class="n">Pdb</span><span class="p">)</span>
+</pre>
+</div>
+<div class="section" id="within-a-python-script">
+<h3><a class="toc-backref" href="#id13">Within a Python script</a></h3>
+<p>The previous two techniques will start the debugger at the beginning of a Python program. But this third technique is best for long-running processes. To start the debugger within a script, use <code class="docutils literal">set_trace()</code>.</p>
+<p>Now, modify your pdb<sub>example</sub>.py file as follows:</p>
+<pre class="code ipython"><a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-1"></a><span class="kn">import</span> <span class="nn">pdb</span>
+<a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-2"></a>
+<a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-3"></a><span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+<a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-4"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">std</span><span class="p">):</span>
+<a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="n">std</span>
+<a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-6"></a>
+<a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-7"></a>    <span class="k">def</span> <span class="nf">print_std</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-8"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">):</span>
+<a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-9"></a>            <span class="n">pdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>
+<a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-10"></a>            <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-11"></a>        <span class="k">return</span>
+<a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-12"></a>
+<a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-13"></a>
+<a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-14"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+<a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-15"></a>    <span class="n">Student</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">print_std</span><span class="p">()</span>
+</pre>
+<p>Now, run the program as follows:</p>
+<pre class="code ipython"><a name="rest_code_b281d3254c8b4724af1c23b25b06f8a7-1"></a><span class="n">student</span><span class="nd">@ubuntu</span><span class="p">:</span><span class="o">~</span><span class="err">$</span> <span class="n">python3</span> <span class="n">pdb_example</span><span class="o">.</span><span class="n">py</span>
+<a name="rest_code_b281d3254c8b4724af1c23b25b06f8a7-2"></a><span class="o">&gt;</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">student</span><span class="o">/</span><span class="n">pdb_example</span><span class="o">.</span><span class="n">py</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="n">print_std</span><span class="p">()</span>
+<a name="rest_code_b281d3254c8b4724af1c23b25b06f8a7-3"></a><span class="o">-&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a name="rest_code_b281d3254c8b4724af1c23b25b06f8a7-4"></a><span class="p">(</span><span class="n">Pdb</span><span class="p">)</span> <span class="k">continue</span>
+<a name="rest_code_b281d3254c8b4724af1c23b25b06f8a7-5"></a><span class="mi">0</span>
+<a name="rest_code_b281d3254c8b4724af1c23b25b06f8a7-6"></a><span class="o">&gt;</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">student</span><span class="o">/</span><span class="n">pdb_example</span><span class="o">.</span><span class="n">py</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="n">print_std</span><span class="p">()</span>
+<a name="rest_code_b281d3254c8b4724af1c23b25b06f8a7-7"></a><span class="o">-&gt;</span> <span class="n">pdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>
+<a name="rest_code_b281d3254c8b4724af1c23b25b06f8a7-8"></a><span class="p">(</span><span class="n">Pdb</span><span class="p">)</span>
+</pre>
+<p><code class="docutils literal">set_trace()</code> is a Python function, therefore you can call it at any point in your program.</p>
+<p>So, these are the three ways by which you can start a debugger.</p>
+</div>
+</div>
+<div class="section" id="debugging-basic-program-crashes">
+<h2><a class="toc-backref" href="#id14">4) Debugging basic program crashes</a></h2>
+<p>In this section, we are going to see the trace module. The trace module helps in tracing the program execution. So, whenever your Python program crashes, we can understand where it crashes. We can use trace module by importing it into your script as well as from the command line.</p>
+<p>Now, we will create a script named trace<sub>example</sub>.py and write the following content in the script:</p>
+<pre class="code ipython"><a name="rest_code_156c3336eb974cf6a885d2782980f7ed-1"></a><span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+<a name="rest_code_156c3336eb974cf6a885d2782980f7ed-2"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">std</span><span class="p">):</span>
+<a name="rest_code_156c3336eb974cf6a885d2782980f7ed-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="n">std</span>
+<a name="rest_code_156c3336eb974cf6a885d2782980f7ed-4"></a>
+<a name="rest_code_156c3336eb974cf6a885d2782980f7ed-5"></a>    <span class="k">def</span> <span class="nf">print_std</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_156c3336eb974cf6a885d2782980f7ed-6"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">):</span>
+<a name="rest_code_156c3336eb974cf6a885d2782980f7ed-7"></a>            <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a name="rest_code_156c3336eb974cf6a885d2782980f7ed-8"></a>        <span class="k">return</span>
+<a name="rest_code_156c3336eb974cf6a885d2782980f7ed-9"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<a name="rest_code_156c3336eb974cf6a885d2782980f7ed-10"></a>    <span class="n">Student</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">print_std</span><span class="p">()</span>
+</pre>
+<p>The output will be as follows:</p>
+<pre class="code shell"><a name="rest_code_de7dbb7399e348a4a89b93ae85c49139-1"></a>python -m trace --trace src/trace_example.py
+</pre>
+<p>So, by using trace –trace at the command line, the developer can trace the program line-by-line. So, whenever the  program crashes, the developer will know the instance where it crashes.</p>
+</div>
+<div class="section" id="profiling-and-timing-programs">
+<h2><a class="toc-backref" href="#id15">5) Profiling and timing programs</a></h2>
+<p>Profiling a Python program means measuring an execution time of a program. It measures the time spent in each function. Python's cProfile module is used for profiling a Python program.</p>
+<div class="section" id="the-cprofile-module">
+<h3><a class="toc-backref" href="#id16">The cProfile module</a></h3>
+<p>As discussed previously, profiling means measuring the execution time of a program. We are going to use the cProfile Python module for profiling a program.</p>
+<p>Now, we will write a cprof<sub>example</sub>.py script and write the following code in it:</p>
+<pre class="code ipython"><a name="rest_code_b9fa7fa2fafb492ca4cbba9f6e260269-1"></a><span class="n">mul_value</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="rest_code_b9fa7fa2fafb492ca4cbba9f6e260269-2"></a>
+<a name="rest_code_b9fa7fa2fafb492ca4cbba9f6e260269-3"></a>
+<a name="rest_code_b9fa7fa2fafb492ca4cbba9f6e260269-4"></a><span class="k">def</span> <span class="nf">mul_numbers</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
+<a name="rest_code_b9fa7fa2fafb492ca4cbba9f6e260269-5"></a>    <span class="n">mul_value</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">*</span> <span class="n">num2</span>
+<a name="rest_code_b9fa7fa2fafb492ca4cbba9f6e260269-6"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"Local Value: "</span><span class="p">,</span> <span class="n">mul_value</span><span class="p">)</span>
+<a name="rest_code_b9fa7fa2fafb492ca4cbba9f6e260269-7"></a>    <span class="k">return</span> <span class="n">mul_value</span>
+<a name="rest_code_b9fa7fa2fafb492ca4cbba9f6e260269-8"></a>
+<a name="rest_code_b9fa7fa2fafb492ca4cbba9f6e260269-9"></a>
+<a name="rest_code_b9fa7fa2fafb492ca4cbba9f6e260269-10"></a><span class="n">mul_numbers</span><span class="p">(</span><span class="mi">58</span><span class="p">,</span> <span class="mi">77</span><span class="p">)</span>
+<a name="rest_code_b9fa7fa2fafb492ca4cbba9f6e260269-11"></a><span class="k">print</span><span class="p">(</span><span class="s2">"Global Value: "</span><span class="p">,</span> <span class="n">mul_value</span><span class="p">)</span>
+</pre>
+<p>Run the program and you will see the output as follows:</p>
+<pre class="code shell"><a name="rest_code_d8864174c453417f940831aa7d5e39c8-1"></a>python -m cProfile src/cprof_example.py
+</pre>
+<pre class="code python"><a name="rest_code_757d0200d28d473c9467f45d135bd0cf-1"></a><span class="n">Local</span> <span class="n">Value</span><span class="p">:</span>  <span class="mi">4466</span>
+<a name="rest_code_757d0200d28d473c9467f45d135bd0cf-2"></a><span class="n">Global</span> <span class="n">Value</span><span class="p">:</span>  <span class="mi">0</span>
+<a name="rest_code_757d0200d28d473c9467f45d135bd0cf-3"></a>         <span class="mi">6</span> <span class="n">function</span> <span class="n">calls</span> <span class="ow">in</span> <span class="mf">0.000</span> <span class="n">seconds</span>
+<a name="rest_code_757d0200d28d473c9467f45d135bd0cf-4"></a>
+<a name="rest_code_757d0200d28d473c9467f45d135bd0cf-5"></a>   <span class="n">Ordered</span> <span class="n">by</span><span class="p">:</span> <span class="n">standard</span> <span class="n">name</span>
+<a name="rest_code_757d0200d28d473c9467f45d135bd0cf-6"></a>
+<a name="rest_code_757d0200d28d473c9467f45d135bd0cf-7"></a>   <span class="n">ncalls</span>  <span class="n">tottime</span>  <span class="n">percall</span>  <span class="n">cumtime</span>  <span class="n">percall</span> <span class="n">filename</span><span class="p">:</span><span class="n">lineno</span><span class="p">(</span><span class="n">function</span><span class="p">)</span>
+<a name="rest_code_757d0200d28d473c9467f45d135bd0cf-8"></a>        <span class="mi">1</span>    <span class="mf">0.000</span>    <span class="mf">0.000</span>    <span class="mf">0.000</span>    <span class="mf">0.000</span> <span class="n">cprof_example</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">1</span><span class="p">(</span><span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">)</span>
+<a name="rest_code_757d0200d28d473c9467f45d135bd0cf-9"></a>        <span class="mi">1</span>    <span class="mf">0.000</span>    <span class="mf">0.000</span>    <span class="mf">0.000</span>    <span class="mf">0.000</span> <span class="n">cprof_example</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">4</span><span class="p">(</span><span class="n">mul_numbers</span><span class="p">)</span>
+<a name="rest_code_757d0200d28d473c9467f45d135bd0cf-10"></a>        <span class="mi">1</span>    <span class="mf">0.000</span>    <span class="mf">0.000</span>    <span class="mf">0.000</span>    <span class="mf">0.000</span> <span class="p">{</span><span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">method</span> <span class="n">builtins</span><span class="o">.</span><span class="k">exec</span><span class="p">}</span>
+<a name="rest_code_757d0200d28d473c9467f45d135bd0cf-11"></a>        <span class="mi">2</span>    <span class="mf">0.000</span>    <span class="mf">0.000</span>    <span class="mf">0.000</span>    <span class="mf">0.000</span> <span class="p">{</span><span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">method</span> <span class="n">builtins</span><span class="o">.</span><span class="k">print</span><span class="p">}</span>
+<a name="rest_code_757d0200d28d473c9467f45d135bd0cf-12"></a>        <span class="mi">1</span>    <span class="mf">0.000</span>    <span class="mf">0.000</span>    <span class="mf">0.000</span>    <span class="mf">0.000</span> <span class="p">{</span><span class="n">method</span> <span class="s1">'disable'</span> <span class="n">of</span> <span class="s1">'_lsprof.Profiler'</span> <span class="n">objects</span><span class="p">}</span>
+</pre>
+<p>So, using cProfile, all functions that are called will get printed with the time spent on each function. Now, we will see what these column headings mean:</p>
+<ol class="arabic">
+<li>
+<p>ncalls:* <a href="#id1"><span class="problematic" id="id2">*</span></a>Number of calls</p>
+<div class="system-message" id="id1">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 337); <em><a href="#id2">backlink</a></em></p>
+<p>Inline emphasis start-string without end-string.</p>
+</div>
+</li>
+<li>
+<p><strong>tottime</strong>:* <a href="#id3"><span class="problematic" id="id4">*</span></a>Total time spent in the given function</p>
+<div class="system-message" id="id3">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 338); <em><a href="#id4">backlink</a></em></p>
+<p>Inline emphasis start-string without end-string.</p>
+</div>
+</li>
+<li><p>percall: Quotient of tottime divided by ncalls</p></li>
+<li><p>cumtime: Cumulative time spent in this and all subfunctions</p></li>
+<li><p>percall: Quotient of cumtime divided by primitive calls</p></li>
+<li><p>filename:lineno(function): Provides the respective data of each function</p></li>
+</ol>
+</div>
+<div class="section" id="timeit">
+<h3><a class="toc-backref" href="#id17">timeit</a></h3>
+<p>timeit is a Python module used to time small parts of your Python script. You can call timeit from the command line as well as import the timeit module into your script. We are going to write a script to time a piece of code. Create a timeit<sub>example</sub>.py script and write the following content into it:</p>
+<pre class="code ipython"><a name="rest_code_ef063484cd02442c8fd2a0582d95b87e-1"></a><span class="kn">import</span> <span class="nn">timeit</span>
+<a name="rest_code_ef063484cd02442c8fd2a0582d95b87e-2"></a>
+<a name="rest_code_ef063484cd02442c8fd2a0582d95b87e-3"></a><span class="n">prg_setup</span> <span class="o">=</span> <span class="s2">"from math import sqrt"</span>
+<a name="rest_code_ef063484cd02442c8fd2a0582d95b87e-4"></a><span class="n">prg_code</span> <span class="o">=</span> <span class="s2">"""</span>
+<a name="rest_code_ef063484cd02442c8fd2a0582d95b87e-5"></a><span class="s2">def timeit_example():</span>
+<a name="rest_code_ef063484cd02442c8fd2a0582d95b87e-6"></a><span class="s2">            list1 = []</span>
+<a name="rest_code_ef063484cd02442c8fd2a0582d95b87e-7"></a><span class="s2">            for x in range(50):</span>
+<a name="rest_code_ef063484cd02442c8fd2a0582d95b87e-8"></a><span class="s2">                        list1.append(sqrt(x))</span>
+<a name="rest_code_ef063484cd02442c8fd2a0582d95b87e-9"></a><span class="s2">"""</span>
+<a name="rest_code_ef063484cd02442c8fd2a0582d95b87e-10"></a><span class="c1"># timeit statement</span>
+<a name="rest_code_ef063484cd02442c8fd2a0582d95b87e-11"></a><span class="k">print</span><span class="p">(</span><span class="n">timeit</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="n">setup</span><span class="o">=</span><span class="n">prg_setup</span><span class="p">,</span> <span class="n">stmt</span><span class="o">=</span><span class="n">prg_code</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="mi">10000</span><span class="p">))</span>
+</pre>
+<p>Using timeit, we can decide what piece of code we want to measure the performance of. So, we can easily define the setup code as well as the code snippet on which we want to perform the test separately. The main code runs 1 million times, which is the default time, whereas the setup code runs only once.</p>
+</div>
+</div>
+<div class="section" id="making-programs-run-faster">
+<h2><a class="toc-backref" href="#id18">6) Making programs run faster</a></h2>
+<p>There are various ways to make your Python programs run faster, such as the following:</p>
+<ol class="arabic simple">
+<li><p>Profile your code so you can identify the bottlenecks</p></li>
+<li><p>Use built-in functions and libraries so the interpreter doesn't need to execute loops</p></li>
+<li><p>Avoid using globals as Python is very slow in accessing global variables</p></li>
+<li><p>Use existing packages</p></li>
+</ol>
+</div>
+<div class="section" id="summary">
+<h2><a class="toc-backref" href="#id19">Summary</a></h2>
+<p>In this chapter, we learned about the importance of debugging and profiling programs. We learned what the different techniques available for debugging are. We learned about the pdb Python debugger and how to handle exceptions. We learned about how to use the cProfile and timeit modules of Python while profiling and timing our scripts. We also learned how to make your scripts run faster.</p>
+<p>In the next chapter, we are going to learn about unit testing in Python. We are going to learn about creating and using unit tests.</p>
+<div class="section" id="questions">
+<h3><a class="toc-backref" href="#id20">Questions</a></h3>
+<ol class="arabic simple">
+<li><p>To debug a program, which module is used?</p></li>
+<li><p>Check how to use ipython along with all aliases and magic functions.</p></li>
+<li><p>What is *Global interpreted lock* (<strong>GIL</strong>)?</p></li>
+<li><p>What is the purpose of the PYTHONSTARTUP, PYTHONCASEOK, PYTHONHOME, and PYTHONSTARTUP environment variables?</p></li>
+<li><p>What is the output of the following code? a) [0], b) [1], c) [1, 0], d) [0, 1].</p></li>
+</ol>
+<pre class="code ipython"><a name="rest_code_3a3d917320294df18b76d7303b3aef19-1"></a><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+<a name="rest_code_3a3d917320294df18b76d7303b3aef19-2"></a>    <span class="n">k</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<a name="rest_code_3a3d917320294df18b76d7303b3aef19-3"></a><span class="n">q</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<a name="rest_code_3a3d917320294df18b76d7303b3aef19-4"></a><span class="n">foo</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+<a name="rest_code_3a3d917320294df18b76d7303b3aef19-5"></a><span class="k">print</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+</pre>
+<ol class="arabic simple">
+<li><p>Which of the following is an invalid variable? a) my<sub>string1</sub> b) 1st<sub>string</sub> c) foo d) _</p></li>
+</ol>
+</div>
+<div class="section" id="answer">
+<h3><a class="toc-backref" href="#id21">Answer:</a></h3>
+<ol class="arabic simple">
+<li><p>To debug the program, the pdb module is used.</p></li>
+<li><ol class="loweralpha simple">
+<li><p>Before running ipython3, install using sudo apt-get install ipython3. b) %lsmagic.</p></li>
+</ol></li>
+<li><p>A global interpreter lock is a mechanism used in computer language interpreters to synchronize the execution of threads so that only one native thread can execute at a time</p></li>
+<li><p>Following are the answers:</p></li>
+</ol>
+<ol class="loweralpha simple">
+<li><p>PYTHONPATH: It has a role similar to PATH. This variable tells the Python interpreter where to locate the module files imported into a program. It should include the Python source library directory and the directories containing Python source code. PYTHONPATH is sometimes preset by the Python installer.</p></li>
+<li><p>PYTHONSTARTUP: It contains the path of an initialization file containing Python source code. It is executed every time you start the interpreter. It is named as .pythonrc.py in Unix and it contains commands that load utilities or modify PYTHONPATH. c) PYTHONCASEOK: It is used in Windows to instruct Python to find the first case-insensitive match in an import statement. Set this variable to any value to activate it. d) PYTHONHOME: It is an alternative module search path. It is usually embedded in the PYTHONSTARTUP or PYTHONPATH directories to make switching module libraries easy.</p></li>
+</ol>
+<ol class="arabic simple">
+<li><p>Answer: [0]. A new list object is created in the function and the reference is lost. This can be checked by comparing the ID of k before and after k = [1].</p></li>
+<li><p>Answer: b. Variable names should not start with a number.</p></li>
+</ol>
+</div>
+<div class="section" id="further-reading">
+<h3><a class="toc-backref" href="#id22">Further reading</a></h3>
+<ul class="simple">
+<li><p>How to handle GIL problems in python: <a class="reference external" href="https://realpython.com/python-gil/">https://realpython.com/python-gil/</a></p></li>
+<li><p>Check how to use pdb module in command line: <a class="reference external" href="https://fedoramagazine.org/getting-started-python-debugger/">https://fedoramagazine.org/getting-started-python-debugger/</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+            
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="?",
+            disqus_url="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/",
+        disqus_title="Debugging and Profiling Python Scripts",
+        disqus_identifier="cache/posts/pyadmin-debug-and-profile.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        
+
+        </div>
+    </div>
+
+    
+    <footer><div class="container">
+            <div class="social">
+
+
+
+                <div class="social-entry">
+                    <a href="../../rss.xml" target="_blank">
+                        <i class="fa fa-rss"></i> 
+                    </a>
+                </div>
+            </div>
+                <div class="copyright">
+                    Contents © 2019         <a href="mailto:davad.fhl.wang@foxmail.com">David</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+                    
+                </div>
+           
+        </div>
+    </footer><script src="../../assets/js/all-nocdn.js" type="text/javascript"></script>
+</body>
+</html>

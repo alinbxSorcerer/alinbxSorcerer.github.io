@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Magic Land Declared by David</title><link>https://alinbxsorcerer.github.io/</link><description>    Conjuring...    </description><atom:link href="https://alinbxsorcerer.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:davad.fhl.wang@foxmail.com"&gt;David&lt;/a&gt; </copyright><lastBuildDate>Thu, 19 Dec 2019 03:11:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Constructing Procedures Using Lambda</title><link>https://alinbxsorcerer.github.io/posts/sicp-lambda/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;p&gt;In using sum as in section 1.3.1, it seems terribly awkward to have to define &lt;code class="docutils literal"&gt;trivial procedures&lt;/code&gt; such as pi-term and pi-next just so we can use them as arguments to our higher-order procedure. Rather than define pi-next and pi-term, it would be more convenient to have a way to directly specify ``the procedure that returns its input incremented by 4'' and ``the procedure that returns the reciprocal of its input times its input plus 2.'' We can do this by introducing the special form lambda, which creates procedures. Using lambda we can describe what we want as&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>A Magic Land Declared by David</title><link>https://alinbxsorcerer.github.io/</link><description>    Conjuring...    </description><atom:link href="https://alinbxsorcerer.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:davad.fhl.wang@foxmail.com"&gt;David&lt;/a&gt; </copyright><lastBuildDate>Thu, 19 Dec 2019 10:09:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Constructing Procedures Using Lambda</title><link>https://alinbxsorcerer.github.io/posts/sicp-lambda/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;p&gt;In using sum as in section 1.3.1, it seems terribly awkward to have to define &lt;code class="docutils literal"&gt;trivial procedures&lt;/code&gt; such as pi-term and pi-next just so we can use them as arguments to our higher-order procedure. Rather than define pi-next and pi-term, it would be more convenient to have a way to directly specify ``the procedure that returns its input incremented by 4'' and ``the procedure that returns the reciprocal of its input times its input plus 2.'' We can do this by introducing the special form lambda, which creates procedures. Using lambda we can describe what we want as&lt;/p&gt;
 &lt;pre class="literal-block"&gt;(lambda (x) (+ x 4))&lt;/pre&gt;
 &lt;p&gt;and&lt;/p&gt;
 &lt;pre class="literal-block"&gt;(lambda (x) (/ 1.0 (* x (+ x 2))))&lt;/pre&gt;
@@ -2819,7 +2819,382 @@ year.)&lt;/p&gt;
 specifies how to mark the date in the calendar display. If one of these
 functions decides that it applies to a certain date, it returns a value
 that contains mark, as described above.&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>emacs</category><category>time</category><category>评注笔记</category><guid>https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/</guid><pubDate>Thu, 16 May 2019 01:53:29 GMT</pubDate></item><item><title>时间管理的三件武器</title><link>https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="contents topic" id="contents"&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>emacs</category><category>time</category><category>评注笔记</category><guid>https://alinbxsorcerer.github.io/posts/emacs-manual-calendar-and-the-diary/</guid><pubDate>Thu, 16 May 2019 01:53:29 GMT</pubDate></item><item><title>Debugging and Profiling Python Scripts</title><link>https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="contents topic" id="table-of-contents"&gt;
+&lt;p class="topic-title first"&gt;Table of Contents&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#foreword" id="id5"&gt;0) Foreword&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#what-is-debugging" id="id6"&gt;1) What is debugging?&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#python-debugging-techniques" id="id7"&gt;Python debugging techniques&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#error-handling-exception-handling" id="id8"&gt;2) Error handling (exception handling)&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#debuggers-tools" id="id9"&gt;3) Debuggers tools&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#the-pdb-debugger" id="id10"&gt;The pdb debugger&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#within-an-interpreter" id="id11"&gt;Within an interpreter&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#from-a-command-line" id="id12"&gt;From a command line&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#within-a-python-script" id="id13"&gt;Within a Python script&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#debugging-basic-program-crashes" id="id14"&gt;4) Debugging basic program crashes&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#profiling-and-timing-programs" id="id15"&gt;5) Profiling and timing programs&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#the-cprofile-module" id="id16"&gt;The cProfile module&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#timeit" id="id17"&gt;timeit&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#making-programs-run-faster" id="id18"&gt;6) Making programs run faster&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#summary" id="id19"&gt;Summary&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#questions" id="id20"&gt;Questions&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#answer" id="id21"&gt;Answer:&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#further-reading" id="id22"&gt;Further reading&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="foreword"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#id5"&gt;0) Foreword&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Debugging and profiling play an important role in Python development. The debugger helps programmers to analyze the complete code. The debugger sets the breakpoints whereas the profilers run our code and give us the details of the execution time. The profilers will identify the bottlenecks in your programs. In this chapter, we'll learn about the pdb Python debugger, cProfile module, and timeit module to time the execution of Python code.&lt;/p&gt;
+&lt;p&gt;In this chapter, you'll learn about the following:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;Python debugging techniques&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Error handling (exception handling)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Debugger tools&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Debugging basic program crashes&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Profiling and timing programs&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Making programs run faster&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="what-is-debugging"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#id6"&gt;1) What is debugging?&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Debugging is a process that resolves the issues that occur in your code and prevent your software from running properly. In Python, debugging is very easy. The Python debugger sets conditional breakpoints and debugs the source code one line at a time. We'll debug our Python scripts using a pdb module that's present in the Python standard library.&lt;/p&gt;
+&lt;div class="section" id="python-debugging-techniques"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#id7"&gt;Python debugging techniques&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;To better debug a Python program, various techniques are available. We're going to look at four techniques for Python debugging:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;print() statement: This is the simplest way of knowing what's exactly happening so you can check what has been executed.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;logging&lt;/strong&gt;: This is like a print statement but with more contextual information so you can understand it fully.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;*pdb* debugger: This is a commonly used debugging technique. The advantage of using pdb is that you can use pdb from the command line, within an interpreter, and within a program.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;IDE debugger: IDE has an integrated debugger. It allows developers to execute their code and then the developer can inspect while the program executes.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="error-handling-exception-handling"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#id8"&gt;2) Error handling (exception handling)&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;In this section, we're going to learn how Python handles exceptions. But first, what is an exception? An exception is an error that occurs during program execution. Whenever any error occurs, Python generates an exception that will be handled using a try…except block. Some exceptions can't be handled by programs so they result in error messages. Now, we are going to see some exception examples.&lt;/p&gt;
+&lt;p&gt;In your Terminal, start the python3 interactive console and we will see some exception examples:&lt;/p&gt;
+&lt;pre class="code ipython"&gt;&lt;a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-1"&gt;&lt;/a&gt;&lt;span class="n"&gt;Type&lt;/span&gt; &lt;span class="s2"&gt;"help"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"copyright"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"credits"&lt;/span&gt; &lt;span class="ow"&gt;or&lt;/span&gt; &lt;span class="s2"&gt;"license"&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;more&lt;/span&gt; &lt;span class="n"&gt;information&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+&lt;a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-2"&gt;&lt;/a&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
+&lt;a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-3"&gt;&lt;/a&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;50&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-4"&gt;&lt;/a&gt; &lt;span class="n"&gt;Traceback&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;most&lt;/span&gt; &lt;span class="n"&gt;recent&lt;/span&gt; &lt;span class="n"&gt;call&lt;/span&gt; &lt;span class="n"&gt;last&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-5"&gt;&lt;/a&gt;  &lt;span class="n"&gt;File&lt;/span&gt; &lt;span class="s2"&gt;"&amp;lt;stdin&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-6"&gt;&lt;/a&gt; &lt;span class="ne"&gt;ZeroDivisionError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;division&lt;/span&gt; &lt;span class="n"&gt;by&lt;/span&gt; &lt;span class="n"&gt;zero&lt;/span&gt;
+&lt;a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-7"&gt;&lt;/a&gt;
+&lt;a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-8"&gt;&lt;/a&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
+&lt;a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-9"&gt;&lt;/a&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;abc&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;
+&lt;a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-10"&gt;&lt;/a&gt; &lt;span class="n"&gt;Traceback&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;most&lt;/span&gt; &lt;span class="n"&gt;recent&lt;/span&gt; &lt;span class="n"&gt;call&lt;/span&gt; &lt;span class="n"&gt;last&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-11"&gt;&lt;/a&gt;   &lt;span class="n"&gt;File&lt;/span&gt; &lt;span class="s2"&gt;"&amp;lt;stdin&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-12"&gt;&lt;/a&gt; &lt;span class="ne"&gt;NameError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="s1"&gt;'abc'&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;defined&lt;/span&gt;
+&lt;a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-13"&gt;&lt;/a&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
+&lt;a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-14"&gt;&lt;/a&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="s1"&gt;'abc'&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-15"&gt;&lt;/a&gt; &lt;span class="n"&gt;Traceback&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;most&lt;/span&gt; &lt;span class="n"&gt;recent&lt;/span&gt; &lt;span class="n"&gt;call&lt;/span&gt; &lt;span class="n"&gt;last&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-16"&gt;&lt;/a&gt;   &lt;span class="n"&gt;File&lt;/span&gt; &lt;span class="s2"&gt;"&amp;lt;stdin&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-17"&gt;&lt;/a&gt; &lt;span class="ne"&gt;TypeError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Can&lt;/span&gt;&lt;span class="s1"&gt;'t convert '&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="s1"&gt;' object to str implicitly&lt;/span&gt;
+&lt;a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-18"&gt;&lt;/a&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
+&lt;a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-19"&gt;&lt;/a&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;abcd&lt;/span&gt;
+&lt;a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-20"&gt;&lt;/a&gt; &lt;span class="n"&gt;Traceback&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;most&lt;/span&gt; &lt;span class="n"&gt;recent&lt;/span&gt; &lt;span class="n"&gt;call&lt;/span&gt; &lt;span class="n"&gt;last&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-21"&gt;&lt;/a&gt;   &lt;span class="n"&gt;File&lt;/span&gt; &lt;span class="s2"&gt;"&amp;lt;stdin&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-22"&gt;&lt;/a&gt; &lt;span class="ne"&gt;ImportError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;No&lt;/span&gt; &lt;span class="n"&gt;module&lt;/span&gt; &lt;span class="n"&gt;named&lt;/span&gt; &lt;span class="s1"&gt;'abcd'&lt;/span&gt;
+&lt;a name="rest_code_a23e0199bc584b57a90a2313bb3e8446-23"&gt;&lt;/a&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;These are some examples of exceptions. Now, we will see how we can handle the exceptions.&lt;/p&gt;
+&lt;p&gt;Whenever errors occur in your Python program, exceptions are raised. We can also forcefully raise an exception using raise keyword.&lt;/p&gt;
+&lt;p&gt;Now we are going to see a try…except block that handles an exception. In the try block, we will write a code that may generate an exception. In the except block, we will write a solution for that exception.&lt;/p&gt;
+&lt;p&gt;The syntax for try…except is as follows:&lt;/p&gt;
+&lt;pre class="code ipython"&gt;&lt;a name="rest_code_159ca52eb14f4f9fba37348874a78347-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_159ca52eb14f4f9fba37348874a78347-2"&gt;&lt;/a&gt;            &lt;span class="n"&gt;statement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_159ca52eb14f4f9fba37348874a78347-3"&gt;&lt;/a&gt;&lt;span class="k"&gt;except&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_159ca52eb14f4f9fba37348874a78347-4"&gt;&lt;/a&gt;            &lt;span class="n"&gt;statement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;A try block can have multiple except statements. We can handle specific exceptions also by entering the exception name after the except keyword. The syntax for handling a specific exception is as follows:&lt;/p&gt;
+&lt;pre class="code ipython"&gt;&lt;a name="rest_code_8eb3dcc4d2dc4e48b8b014b055f38eb0-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_8eb3dcc4d2dc4e48b8b014b055f38eb0-2"&gt;&lt;/a&gt;            &lt;span class="n"&gt;statement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_8eb3dcc4d2dc4e48b8b014b055f38eb0-3"&gt;&lt;/a&gt;&lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="n"&gt;exception_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_8eb3dcc4d2dc4e48b8b014b055f38eb0-4"&gt;&lt;/a&gt;            &lt;span class="n"&gt;statement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;We are going to create an exception&lt;sub&gt;example&lt;/sub&gt;.py script to catch ZeroDivisionError*.* Write the following code in your script:&lt;/p&gt;
+&lt;pre class="code ipython"&gt;&lt;a name="rest_code_4086309ae2cc4fffb0868eb887403377-1"&gt;&lt;/a&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;35&lt;/span&gt;
+&lt;a name="rest_code_4086309ae2cc4fffb0868eb887403377-2"&gt;&lt;/a&gt;&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;57&lt;/span&gt;
+&lt;a name="rest_code_4086309ae2cc4fffb0868eb887403377-3"&gt;&lt;/a&gt;&lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_4086309ae2cc4fffb0868eb887403377-4"&gt;&lt;/a&gt;    &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;
+&lt;a name="rest_code_4086309ae2cc4fffb0868eb887403377-5"&gt;&lt;/a&gt;    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"The value of c is: "&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_4086309ae2cc4fffb0868eb887403377-6"&gt;&lt;/a&gt;    &lt;span class="n"&gt;d&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;a name="rest_code_4086309ae2cc4fffb0868eb887403377-7"&gt;&lt;/a&gt;    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"The value of d is: "&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_4086309ae2cc4fffb0868eb887403377-8"&gt;&lt;/a&gt;
+&lt;a name="rest_code_4086309ae2cc4fffb0868eb887403377-9"&gt;&lt;/a&gt;&lt;span class="k"&gt;except&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_4086309ae2cc4fffb0868eb887403377-10"&gt;&lt;/a&gt;    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Division by zero is not possible"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_4086309ae2cc4fffb0868eb887403377-11"&gt;&lt;/a&gt;
+&lt;a name="rest_code_4086309ae2cc4fffb0868eb887403377-12"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Out of try...except block"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;Run the script as follows and you will get the following output:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="debuggers-tools"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#id9"&gt;3) Debuggers tools&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;There are many debugging tools supported in Python:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;winpdb&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;pydev&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;pydb&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;pdb&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;gdb&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;pyDebug&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In this section, we are going to learn about pdb Python debugger. pdb module is a part of Python's standard library and is always available to use.&lt;/p&gt;
+&lt;div class="section" id="the-pdb-debugger"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#id10"&gt;The pdb debugger&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The pdb module is used to debug Python programs. Python programs use pdb interactive source code debugger to debug the programs. pdb sets &lt;code class="docutils literal"&gt;breakpoints&lt;/code&gt; and inspects the stack frames, and lists the source code.&lt;/p&gt;
+&lt;p&gt;Now we will learn about how we can use the pdb debugger. There are three ways to use this debugger:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;Within an interpreter&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;From a command line&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Within a Python script&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;We are going to create a pdb&lt;sub&gt;example&lt;/sub&gt;.py script and add the following content in that script:&lt;/p&gt;
+&lt;pre class="code ipython"&gt;&lt;a name="rest_code_0a4d660b7a5a4ae2beb6910f7361cb65-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Student&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_0a4d660b7a5a4ae2beb6910f7361cb65-2"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_0a4d660b7a5a4ae2beb6910f7361cb65-3"&gt;&lt;/a&gt;                &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;count&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;
+&lt;a name="rest_code_0a4d660b7a5a4ae2beb6910f7361cb65-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_0a4d660b7a5a4ae2beb6910f7361cb65-5"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;print_std&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_0a4d660b7a5a4ae2beb6910f7361cb65-6"&gt;&lt;/a&gt;                &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_0a4d660b7a5a4ae2beb6910f7361cb65-7"&gt;&lt;/a&gt;                            &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_0a4d660b7a5a4ae2beb6910f7361cb65-8"&gt;&lt;/a&gt;                &lt;span class="k"&gt;return&lt;/span&gt;
+&lt;a name="rest_code_0a4d660b7a5a4ae2beb6910f7361cb65-9"&gt;&lt;/a&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;'__main__'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_0a4d660b7a5a4ae2beb6910f7361cb65-10"&gt;&lt;/a&gt;    &lt;span class="n"&gt;Student&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;print_std&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;Using this script as an example to learn Python debugging, we will see how we can start the debugger in detail.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="within-an-interpreter"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#id11"&gt;Within an interpreter&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt; To start the debugger from the Python interactive console, we are using run() or runeval().&lt;/p&gt;
+&lt;p&gt;Start your python3 interactive console. Run the following command to start the console:&lt;/p&gt;
+&lt;p&gt;Import our pdb&lt;sub&gt;example&lt;/sub&gt; script name and the pdb module. Now, we are going to use run() and we are passing a string expression as an argument to run() that will be evaluated by the Python interpreter itself:&lt;/p&gt;
+&lt;pre class="code ipython"&gt;&lt;a name="rest_code_be4031fd5c414773adc57183827fa6cb-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pdb_example&lt;/span&gt;
+&lt;a name="rest_code_be4031fd5c414773adc57183827fa6cb-2"&gt;&lt;/a&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pdb&lt;/span&gt;
+&lt;a name="rest_code_be4031fd5c414773adc57183827fa6cb-3"&gt;&lt;/a&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;pdb&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'pdb_example.Student(5).print_std()'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_be4031fd5c414773adc57183827fa6cb-4"&gt;&lt;/a&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;string&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_be4031fd5c414773adc57183827fa6cb-5"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Pdb&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;To continue debugging, enter continue after the (Pdb) prompt and press &lt;em&gt;Enter&lt;/em&gt;. If you want to know the options we can use in this, then after the (Pdb) prompt press the /Tab /key twice.&lt;/p&gt;
+&lt;p&gt;Now, after entering continue, we will get the output as follows:&lt;/p&gt;
+&lt;pre class="code ipython"&gt;&lt;a name="rest_code_cf85087b43a5477bae7df6c4eb21070a-1"&gt;&lt;/a&gt;    &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pdb_example&lt;/span&gt;
+&lt;a name="rest_code_cf85087b43a5477bae7df6c4eb21070a-2"&gt;&lt;/a&gt;    &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pdb&lt;/span&gt;
+&lt;a name="rest_code_cf85087b43a5477bae7df6c4eb21070a-3"&gt;&lt;/a&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;pdb&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"pdb_example.Student(5).print_std()"&lt;/span&gt;
+&lt;a name="rest_code_cf85087b43a5477bae7df6c4eb21070a-4"&gt;&lt;/a&gt;    &lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_cf85087b43a5477bae7df6c4eb21070a-5"&gt;&lt;/a&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;string&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_cf85087b43a5477bae7df6c4eb21070a-6"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Pdb&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;continue&lt;/span&gt;
+&lt;a name="rest_code_cf85087b43a5477bae7df6c4eb21070a-7"&gt;&lt;/a&gt;&lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;a name="rest_code_cf85087b43a5477bae7df6c4eb21070a-8"&gt;&lt;/a&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;a name="rest_code_cf85087b43a5477bae7df6c4eb21070a-9"&gt;&lt;/a&gt;&lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;a name="rest_code_cf85087b43a5477bae7df6c4eb21070a-10"&gt;&lt;/a&gt;&lt;span class="mi"&gt;3&lt;/span&gt;
+&lt;a name="rest_code_cf85087b43a5477bae7df6c4eb21070a-11"&gt;&lt;/a&gt;&lt;span class="mi"&gt;4&lt;/span&gt;
+&lt;/pre&gt;&lt;pre class="code ipython"&gt;&lt;a name="rest_code_7bdcaec9374d48fc9440e51d61b72bdc-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;src&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;pdb_example&lt;/span&gt;
+&lt;a name="rest_code_7bdcaec9374d48fc9440e51d61b72bdc-2"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pdb&lt;/span&gt;
+&lt;a name="rest_code_7bdcaec9374d48fc9440e51d61b72bdc-3"&gt;&lt;/a&gt;&lt;span class="n"&gt;pdb&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'pdb_example.Student(5).print_std()'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="from-a-command-line"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#id12"&gt;From a command line&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The simplest and most straightforward way to run a debugger is from a command line. Our program will act as input to the debugger. You can use the debugger from command line as follows:&lt;/p&gt;
+&lt;pre class="code ipython"&gt;&lt;a name="rest_code_1d1da0dcd5ef4db5b1cb90c024ad1a00-1"&gt;&lt;/a&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;python3&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="n"&gt;pdb&lt;/span&gt; &lt;span class="n"&gt;pdb_example&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;When you run the debugger from the command line, source code will be loaded and it will stop the execution on the first line it finds. Enter continue to continue the debugging. Here's the output:&lt;/p&gt;
+&lt;pre class="code ipython"&gt;&lt;a name="rest_code_147da5162b4046e4bcd92ccfe726069b-1"&gt;&lt;/a&gt;&lt;span class="n"&gt;student&lt;/span&gt;&lt;span class="nd"&gt;@ubuntu&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;python3&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="n"&gt;pdb&lt;/span&gt; &lt;span class="n"&gt;pdb_example&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+&lt;a name="rest_code_147da5162b4046e4bcd92ccfe726069b-2"&gt;&lt;/a&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;student&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;pdb_example&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_147da5162b4046e4bcd92ccfe726069b-3"&gt;&lt;/a&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Student&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_147da5162b4046e4bcd92ccfe726069b-4"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Pdb&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;continue&lt;/span&gt;
+&lt;a name="rest_code_147da5162b4046e4bcd92ccfe726069b-5"&gt;&lt;/a&gt;&lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;a name="rest_code_147da5162b4046e4bcd92ccfe726069b-6"&gt;&lt;/a&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;a name="rest_code_147da5162b4046e4bcd92ccfe726069b-7"&gt;&lt;/a&gt;&lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;a name="rest_code_147da5162b4046e4bcd92ccfe726069b-8"&gt;&lt;/a&gt;&lt;span class="mi"&gt;3&lt;/span&gt;
+&lt;a name="rest_code_147da5162b4046e4bcd92ccfe726069b-9"&gt;&lt;/a&gt;&lt;span class="mi"&gt;4&lt;/span&gt;
+&lt;a name="rest_code_147da5162b4046e4bcd92ccfe726069b-10"&gt;&lt;/a&gt;&lt;span class="n"&gt;The&lt;/span&gt; &lt;span class="n"&gt;program&lt;/span&gt; &lt;span class="n"&gt;finished&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="n"&gt;will&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt; &lt;span class="n"&gt;restarted&lt;/span&gt;
+&lt;a name="rest_code_147da5162b4046e4bcd92ccfe726069b-11"&gt;&lt;/a&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;student&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;pdb_example&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_147da5162b4046e4bcd92ccfe726069b-12"&gt;&lt;/a&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Student&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_147da5162b4046e4bcd92ccfe726069b-13"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Pdb&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="within-a-python-script"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#id13"&gt;Within a Python script&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The previous two techniques will start the debugger at the beginning of a Python program. But this third technique is best for long-running processes. To start the debugger within a script, use &lt;code class="docutils literal"&gt;set_trace()&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Now, modify your pdb&lt;sub&gt;example&lt;/sub&gt;.py file as follows:&lt;/p&gt;
+&lt;pre class="code ipython"&gt;&lt;a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pdb&lt;/span&gt;
+&lt;a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-3"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Student&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-4"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-5"&gt;&lt;/a&gt;        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;count&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;
+&lt;a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-6"&gt;&lt;/a&gt;
+&lt;a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-7"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;print_std&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-8"&gt;&lt;/a&gt;        &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-9"&gt;&lt;/a&gt;            &lt;span class="n"&gt;pdb&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_trace&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-10"&gt;&lt;/a&gt;            &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-11"&gt;&lt;/a&gt;        &lt;span class="k"&gt;return&lt;/span&gt;
+&lt;a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-12"&gt;&lt;/a&gt;
+&lt;a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-13"&gt;&lt;/a&gt;
+&lt;a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-14"&gt;&lt;/a&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;"__main__"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_1491d0fc99b04e0ab89ed233a736e6c5-15"&gt;&lt;/a&gt;    &lt;span class="n"&gt;Student&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;print_std&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;Now, run the program as follows:&lt;/p&gt;
+&lt;pre class="code ipython"&gt;&lt;a name="rest_code_b281d3254c8b4724af1c23b25b06f8a7-1"&gt;&lt;/a&gt;&lt;span class="n"&gt;student&lt;/span&gt;&lt;span class="nd"&gt;@ubuntu&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;python3&lt;/span&gt; &lt;span class="n"&gt;pdb_example&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+&lt;a name="rest_code_b281d3254c8b4724af1c23b25b06f8a7-2"&gt;&lt;/a&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;student&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;pdb_example&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="n"&gt;print_std&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_b281d3254c8b4724af1c23b25b06f8a7-3"&gt;&lt;/a&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_b281d3254c8b4724af1c23b25b06f8a7-4"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Pdb&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;continue&lt;/span&gt;
+&lt;a name="rest_code_b281d3254c8b4724af1c23b25b06f8a7-5"&gt;&lt;/a&gt;&lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;a name="rest_code_b281d3254c8b4724af1c23b25b06f8a7-6"&gt;&lt;/a&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;student&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;pdb_example&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="n"&gt;print_std&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_b281d3254c8b4724af1c23b25b06f8a7-7"&gt;&lt;/a&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;pdb&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_trace&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_b281d3254c8b4724af1c23b25b06f8a7-8"&gt;&lt;/a&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Pdb&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;&lt;code class="docutils literal"&gt;set_trace()&lt;/code&gt; is a Python function, therefore you can call it at any point in your program.&lt;/p&gt;
+&lt;p&gt;So, these are the three ways by which you can start a debugger.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="debugging-basic-program-crashes"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#id14"&gt;4) Debugging basic program crashes&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;In this section, we are going to see the trace module. The trace module helps in tracing the program execution. So, whenever your Python program crashes, we can understand where it crashes. We can use trace module by importing it into your script as well as from the command line.&lt;/p&gt;
+&lt;p&gt;Now, we will create a script named trace&lt;sub&gt;example&lt;/sub&gt;.py and write the following content in the script:&lt;/p&gt;
+&lt;pre class="code ipython"&gt;&lt;a name="rest_code_156c3336eb974cf6a885d2782980f7ed-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Student&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_156c3336eb974cf6a885d2782980f7ed-2"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_156c3336eb974cf6a885d2782980f7ed-3"&gt;&lt;/a&gt;        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;count&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;
+&lt;a name="rest_code_156c3336eb974cf6a885d2782980f7ed-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_156c3336eb974cf6a885d2782980f7ed-5"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;print_std&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_156c3336eb974cf6a885d2782980f7ed-6"&gt;&lt;/a&gt;        &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_156c3336eb974cf6a885d2782980f7ed-7"&gt;&lt;/a&gt;            &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_156c3336eb974cf6a885d2782980f7ed-8"&gt;&lt;/a&gt;        &lt;span class="k"&gt;return&lt;/span&gt;
+&lt;a name="rest_code_156c3336eb974cf6a885d2782980f7ed-9"&gt;&lt;/a&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;'__main__'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_156c3336eb974cf6a885d2782980f7ed-10"&gt;&lt;/a&gt;    &lt;span class="n"&gt;Student&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;print_std&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;The output will be as follows:&lt;/p&gt;
+&lt;pre class="code shell"&gt;&lt;a name="rest_code_de7dbb7399e348a4a89b93ae85c49139-1"&gt;&lt;/a&gt;python -m trace --trace src/trace_example.py
+&lt;/pre&gt;&lt;p&gt;So, by using trace –trace at the command line, the developer can trace the program line-by-line. So, whenever the  program crashes, the developer will know the instance where it crashes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="profiling-and-timing-programs"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#id15"&gt;5) Profiling and timing programs&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Profiling a Python program means measuring an execution time of a program. It measures the time spent in each function. Python's cProfile module is used for profiling a Python program.&lt;/p&gt;
+&lt;div class="section" id="the-cprofile-module"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#id16"&gt;The cProfile module&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;As discussed previously, profiling means measuring the execution time of a program. We are going to use the cProfile Python module for profiling a program.&lt;/p&gt;
+&lt;p&gt;Now, we will write a cprof&lt;sub&gt;example&lt;/sub&gt;.py script and write the following code in it:&lt;/p&gt;
+&lt;pre class="code ipython"&gt;&lt;a name="rest_code_b9fa7fa2fafb492ca4cbba9f6e260269-1"&gt;&lt;/a&gt;&lt;span class="n"&gt;mul_value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;a name="rest_code_b9fa7fa2fafb492ca4cbba9f6e260269-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_b9fa7fa2fafb492ca4cbba9f6e260269-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_b9fa7fa2fafb492ca4cbba9f6e260269-4"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;mul_numbers&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;num1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;num2&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_b9fa7fa2fafb492ca4cbba9f6e260269-5"&gt;&lt;/a&gt;    &lt;span class="n"&gt;mul_value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;num1&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;num2&lt;/span&gt;
+&lt;a name="rest_code_b9fa7fa2fafb492ca4cbba9f6e260269-6"&gt;&lt;/a&gt;    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Local Value: "&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mul_value&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_b9fa7fa2fafb492ca4cbba9f6e260269-7"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;mul_value&lt;/span&gt;
+&lt;a name="rest_code_b9fa7fa2fafb492ca4cbba9f6e260269-8"&gt;&lt;/a&gt;
+&lt;a name="rest_code_b9fa7fa2fafb492ca4cbba9f6e260269-9"&gt;&lt;/a&gt;
+&lt;a name="rest_code_b9fa7fa2fafb492ca4cbba9f6e260269-10"&gt;&lt;/a&gt;&lt;span class="n"&gt;mul_numbers&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;58&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;77&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_b9fa7fa2fafb492ca4cbba9f6e260269-11"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Global Value: "&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mul_value&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;Run the program and you will see the output as follows:&lt;/p&gt;
+&lt;pre class="code shell"&gt;&lt;a name="rest_code_d8864174c453417f940831aa7d5e39c8-1"&gt;&lt;/a&gt;python -m cProfile src/cprof_example.py
+&lt;/pre&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_757d0200d28d473c9467f45d135bd0cf-1"&gt;&lt;/a&gt;&lt;span class="n"&gt;Local&lt;/span&gt; &lt;span class="n"&gt;Value&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;  &lt;span class="mi"&gt;4466&lt;/span&gt;
+&lt;a name="rest_code_757d0200d28d473c9467f45d135bd0cf-2"&gt;&lt;/a&gt;&lt;span class="n"&gt;Global&lt;/span&gt; &lt;span class="n"&gt;Value&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;  &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;a name="rest_code_757d0200d28d473c9467f45d135bd0cf-3"&gt;&lt;/a&gt;         &lt;span class="mi"&gt;6&lt;/span&gt; &lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;calls&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="mf"&gt;0.000&lt;/span&gt; &lt;span class="n"&gt;seconds&lt;/span&gt;
+&lt;a name="rest_code_757d0200d28d473c9467f45d135bd0cf-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_757d0200d28d473c9467f45d135bd0cf-5"&gt;&lt;/a&gt;   &lt;span class="n"&gt;Ordered&lt;/span&gt; &lt;span class="n"&gt;by&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;standard&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;
+&lt;a name="rest_code_757d0200d28d473c9467f45d135bd0cf-6"&gt;&lt;/a&gt;
+&lt;a name="rest_code_757d0200d28d473c9467f45d135bd0cf-7"&gt;&lt;/a&gt;   &lt;span class="n"&gt;ncalls&lt;/span&gt;  &lt;span class="n"&gt;tottime&lt;/span&gt;  &lt;span class="n"&gt;percall&lt;/span&gt;  &lt;span class="n"&gt;cumtime&lt;/span&gt;  &lt;span class="n"&gt;percall&lt;/span&gt; &lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;lineno&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_757d0200d28d473c9467f45d135bd0cf-8"&gt;&lt;/a&gt;        &lt;span class="mi"&gt;1&lt;/span&gt;    &lt;span class="mf"&gt;0.000&lt;/span&gt;    &lt;span class="mf"&gt;0.000&lt;/span&gt;    &lt;span class="mf"&gt;0.000&lt;/span&gt;    &lt;span class="mf"&gt;0.000&lt;/span&gt; &lt;span class="n"&gt;cprof_example&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_757d0200d28d473c9467f45d135bd0cf-9"&gt;&lt;/a&gt;        &lt;span class="mi"&gt;1&lt;/span&gt;    &lt;span class="mf"&gt;0.000&lt;/span&gt;    &lt;span class="mf"&gt;0.000&lt;/span&gt;    &lt;span class="mf"&gt;0.000&lt;/span&gt;    &lt;span class="mf"&gt;0.000&lt;/span&gt; &lt;span class="n"&gt;cprof_example&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mul_numbers&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_757d0200d28d473c9467f45d135bd0cf-10"&gt;&lt;/a&gt;        &lt;span class="mi"&gt;1&lt;/span&gt;    &lt;span class="mf"&gt;0.000&lt;/span&gt;    &lt;span class="mf"&gt;0.000&lt;/span&gt;    &lt;span class="mf"&gt;0.000&lt;/span&gt;    &lt;span class="mf"&gt;0.000&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;built&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;method&lt;/span&gt; &lt;span class="n"&gt;builtins&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="k"&gt;exec&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;a name="rest_code_757d0200d28d473c9467f45d135bd0cf-11"&gt;&lt;/a&gt;        &lt;span class="mi"&gt;2&lt;/span&gt;    &lt;span class="mf"&gt;0.000&lt;/span&gt;    &lt;span class="mf"&gt;0.000&lt;/span&gt;    &lt;span class="mf"&gt;0.000&lt;/span&gt;    &lt;span class="mf"&gt;0.000&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;built&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;method&lt;/span&gt; &lt;span class="n"&gt;builtins&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;a name="rest_code_757d0200d28d473c9467f45d135bd0cf-12"&gt;&lt;/a&gt;        &lt;span class="mi"&gt;1&lt;/span&gt;    &lt;span class="mf"&gt;0.000&lt;/span&gt;    &lt;span class="mf"&gt;0.000&lt;/span&gt;    &lt;span class="mf"&gt;0.000&lt;/span&gt;    &lt;span class="mf"&gt;0.000&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;method&lt;/span&gt; &lt;span class="s1"&gt;'disable'&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="s1"&gt;'_lsprof.Profiler'&lt;/span&gt; &lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;So, using cProfile, all functions that are called will get printed with the time spent on each function. Now, we will see what these column headings mean:&lt;/p&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p&gt;ncalls:* &lt;a href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#id1"&gt;&lt;span class="problematic" id="id2"&gt;*&lt;/span&gt;&lt;/a&gt;Number of calls&lt;/p&gt;
+&lt;div class="system-message" id="id1"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 337); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Inline emphasis start-string without end-string.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;tottime&lt;/strong&gt;:* &lt;a href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#id3"&gt;&lt;span class="problematic" id="id4"&gt;*&lt;/span&gt;&lt;/a&gt;Total time spent in the given function&lt;/p&gt;
+&lt;div class="system-message" id="id3"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;span class="docutils literal"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;, line 338); &lt;em&gt;&lt;a href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#id4"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Inline emphasis start-string without end-string.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;percall: Quotient of tottime divided by ncalls&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;cumtime: Cumulative time spent in this and all subfunctions&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;percall: Quotient of cumtime divided by primitive calls&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;filename:lineno(function): Provides the respective data of each function&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="timeit"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#id17"&gt;timeit&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;timeit is a Python module used to time small parts of your Python script. You can call timeit from the command line as well as import the timeit module into your script. We are going to write a script to time a piece of code. Create a timeit&lt;sub&gt;example&lt;/sub&gt;.py script and write the following content into it:&lt;/p&gt;
+&lt;pre class="code ipython"&gt;&lt;a name="rest_code_ef063484cd02442c8fd2a0582d95b87e-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;timeit&lt;/span&gt;
+&lt;a name="rest_code_ef063484cd02442c8fd2a0582d95b87e-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ef063484cd02442c8fd2a0582d95b87e-3"&gt;&lt;/a&gt;&lt;span class="n"&gt;prg_setup&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"from math import sqrt"&lt;/span&gt;
+&lt;a name="rest_code_ef063484cd02442c8fd2a0582d95b87e-4"&gt;&lt;/a&gt;&lt;span class="n"&gt;prg_code&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"""&lt;/span&gt;
+&lt;a name="rest_code_ef063484cd02442c8fd2a0582d95b87e-5"&gt;&lt;/a&gt;&lt;span class="s2"&gt;def timeit_example():&lt;/span&gt;
+&lt;a name="rest_code_ef063484cd02442c8fd2a0582d95b87e-6"&gt;&lt;/a&gt;&lt;span class="s2"&gt;            list1 = []&lt;/span&gt;
+&lt;a name="rest_code_ef063484cd02442c8fd2a0582d95b87e-7"&gt;&lt;/a&gt;&lt;span class="s2"&gt;            for x in range(50):&lt;/span&gt;
+&lt;a name="rest_code_ef063484cd02442c8fd2a0582d95b87e-8"&gt;&lt;/a&gt;&lt;span class="s2"&gt;                        list1.append(sqrt(x))&lt;/span&gt;
+&lt;a name="rest_code_ef063484cd02442c8fd2a0582d95b87e-9"&gt;&lt;/a&gt;&lt;span class="s2"&gt;"""&lt;/span&gt;
+&lt;a name="rest_code_ef063484cd02442c8fd2a0582d95b87e-10"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# timeit statement&lt;/span&gt;
+&lt;a name="rest_code_ef063484cd02442c8fd2a0582d95b87e-11"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;timeit&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;timeit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;setup&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;prg_setup&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;stmt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;prg_code&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;number&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;10000&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;Using timeit, we can decide what piece of code we want to measure the performance of. So, we can easily define the setup code as well as the code snippet on which we want to perform the test separately. The main code runs 1 million times, which is the default time, whereas the setup code runs only once.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="making-programs-run-faster"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#id18"&gt;6) Making programs run faster&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;There are various ways to make your Python programs run faster, such as the following:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;Profile your code so you can identify the bottlenecks&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Use built-in functions and libraries so the interpreter doesn't need to execute loops&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Avoid using globals as Python is very slow in accessing global variables&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Use existing packages&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="summary"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#id19"&gt;Summary&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;In this chapter, we learned about the importance of debugging and profiling programs. We learned what the different techniques available for debugging are. We learned about the pdb Python debugger and how to handle exceptions. We learned about how to use the cProfile and timeit modules of Python while profiling and timing our scripts. We also learned how to make your scripts run faster.&lt;/p&gt;
+&lt;p&gt;In the next chapter, we are going to learn about unit testing in Python. We are going to learn about creating and using unit tests.&lt;/p&gt;
+&lt;div class="section" id="questions"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#id20"&gt;Questions&lt;/a&gt;&lt;/h3&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;To debug a program, which module is used?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Check how to use ipython along with all aliases and magic functions.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;What is *Global interpreted lock* (&lt;strong&gt;GIL&lt;/strong&gt;)?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;What is the purpose of the PYTHONSTARTUP, PYTHONCASEOK, PYTHONHOME, and PYTHONSTARTUP environment variables?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;What is the output of the following code? a) [0], b) [1], c) [1, 0], d) [0, 1].&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class="code ipython"&gt;&lt;a name="rest_code_3a3d917320294df18b76d7303b3aef19-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_3a3d917320294df18b76d7303b3aef19-2"&gt;&lt;/a&gt;    &lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;a name="rest_code_3a3d917320294df18b76d7303b3aef19-3"&gt;&lt;/a&gt;&lt;span class="n"&gt;q&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;a name="rest_code_3a3d917320294df18b76d7303b3aef19-4"&gt;&lt;/a&gt;&lt;span class="n"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;q&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_3a3d917320294df18b76d7303b3aef19-5"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;q&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;Which of the following is an invalid variable? a) my&lt;sub&gt;string1&lt;/sub&gt; b) 1st&lt;sub&gt;string&lt;/sub&gt; c) foo d) _&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="answer"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#id21"&gt;Answer:&lt;/a&gt;&lt;/h3&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;To debug the program, the pdb module is used.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;ol class="loweralpha simple"&gt;
+&lt;li&gt;&lt;p&gt;Before running ipython3, install using sudo apt-get install ipython3. b) %lsmagic.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;A global interpreter lock is a mechanism used in computer language interpreters to synchronize the execution of threads so that only one native thread can execute at a time&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Following are the answers:&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ol class="loweralpha simple"&gt;
+&lt;li&gt;&lt;p&gt;PYTHONPATH: It has a role similar to PATH. This variable tells the Python interpreter where to locate the module files imported into a program. It should include the Python source library directory and the directories containing Python source code. PYTHONPATH is sometimes preset by the Python installer.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;PYTHONSTARTUP: It contains the path of an initialization file containing Python source code. It is executed every time you start the interpreter. It is named as .pythonrc.py in Unix and it contains commands that load utilities or modify PYTHONPATH. c) PYTHONCASEOK: It is used in Windows to instruct Python to find the first case-insensitive match in an import statement. Set this variable to any value to activate it. d) PYTHONHOME: It is an alternative module search path. It is usually embedded in the PYTHONSTARTUP or PYTHONPATH directories to make switching module libraries easy.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;Answer: [0]. A new list object is created in the function and the reference is lost. This can be checked by comparing the ID of k before and after k = [1].&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Answer: b. Variable names should not start with a number.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="further-reading"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/#id22"&gt;Further reading&lt;/a&gt;&lt;/h3&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;How to handle GIL problems in python: &lt;a class="reference external" href="https://realpython.com/python-gil/"&gt;https://realpython.com/python-gil/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Check how to use pdb module in command line: &lt;a class="reference external" href="https://fedoramagazine.org/getting-started-python-debugger/"&gt;https://fedoramagazine.org/getting-started-python-debugger/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>debug</category><category>profile</category><category>python</category><guid>https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/</guid><pubDate>Wed, 15 May 2019 12:53:29 GMT</pubDate></item><item><title>时间管理的三件武器</title><link>https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="contents topic" id="contents"&gt;
 &lt;p class="topic-title first"&gt;Contents&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#id1" id="id8"&gt;前情概要&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
@@ -3270,298 +3645,4 @@ Tuesday or a week from Sunday, with feelings of helpless confusion. …&lt;/p&gt
 &lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/#id20"&gt;参考资料&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;cite&gt;GNU Coreutils: Date input
 formats &amp;lt;https://www.gnu.org/software/coreutils/manual/html_node/Date-input-formats.html#Date-input-formats&amp;gt;&lt;/cite&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>bash</category><category>emacs</category><category>python</category><category>time</category><category>时间管理</category><guid>https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/</guid><pubDate>Wed, 15 May 2019 12:53:29 GMT</pubDate></item><item><title>时间的感知与分析</title><link>https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/</link><dc:creator>David</dc:creator><description>&lt;div&gt;&lt;div class="contents topic" id="contents"&gt;
-&lt;p class="topic-title first"&gt;Contents&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id1" id="id10"&gt;宏观层面粗颗粒度的时间感知&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id2" id="id11"&gt;微观层面细颗粒度的时间感知&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id3" id="id12"&gt;选择起始时刻&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id4" id="id13"&gt;两个重要时间节点&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id5" id="id14"&gt;12小时制还是24小时制&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id6" id="id15"&gt;认识具体时间的算法&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id7" id="id16"&gt;估算时间段&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id8" id="id17"&gt;总结&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id9" id="id18"&gt;参考资料&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;p&gt;在前文"时间变量的顺序与格式"中分析得到感知时间的5个基本变量及其顺序.
-&lt;code class="docutils literal"&gt;Weekday  Hour:Minute &lt;span class="pre"&gt;Month-Day&lt;/span&gt;&lt;/code&gt; 记作 &lt;code class="docutils literal"&gt;%w &lt;span class="pre"&gt;%H:%M&lt;/span&gt; &lt;span class="pre"&gt;%d-%m&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;对时间流逝的测量分为两个维度:
-一是仪器在微观层面上的的准确测量,比如钟表或者计算机
-二是直觉在宏观层面上的粗略感知.&lt;/p&gt;
-&lt;p&gt;接下来的问题,如何有效的把握住一天的时间,如何对一天24小时有良好的感知.&lt;/p&gt;
-&lt;div class="section" id="id1"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id10"&gt;宏观层面粗颗粒度的时间感知&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;一天有24小时，大脑的直觉系统（系统一）不能直接处理24这个复杂的数字，需要调动"系统二"理性的助攻．
-"系统一"能处理3以内的数字,10以内的数字,比如列清单最好3项,最多七项,更多则聊胜于无.&lt;/p&gt;
-&lt;p&gt;因此应该分割24小时成10内的模块.&lt;/p&gt;
-&lt;p&gt;选项一: 二分,白天和黑夜 选项二: 四分, 象限图 (比如AM, PM, 黑夜, 凌晨)
-选项三: 八分&lt;/p&gt;
-&lt;p&gt;二分与四分的颗粒度过大,八分是不错的选项,
-以3个小时为一个模块,称为Phrase阶段.&lt;/p&gt;
-&lt;p&gt;参考维基百科的划分&lt;a class="reference external" href="https://zh.wikipedia.org/wiki/%E8%96%84%E6%9A%AE"&gt;一日之时细分&lt;/a&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;colgroup&gt;
-&lt;col style="width: 5%"&gt;
-&lt;col style="width: 14%"&gt;
-&lt;col style="width: 13%"&gt;
-&lt;col style="width: 41%"&gt;
-&lt;col style="width: 28%"&gt;
-&lt;/colgroup&gt;
-&lt;thead&gt;
-&lt;tr&gt;&lt;th class="head"&gt;&lt;p&gt;No&lt;/p&gt;&lt;/th&gt;
-&lt;th class="head"&gt;&lt;p&gt;时间段&lt;/p&gt;&lt;/th&gt;
-&lt;th class="head"&gt;&lt;p&gt;维基命名&lt;/p&gt;&lt;/th&gt;
-&lt;th class="head"&gt;&lt;p&gt;修正命名&lt;/p&gt;&lt;/th&gt;
-&lt;th class="head"&gt;&lt;p&gt;理由&lt;/p&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;&lt;td&gt;&lt;p&gt;１&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;0时~3时&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;凌晨&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;深夜(deep night or good night)&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;后面详叙&lt;/p&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;p&gt;２&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;3时~6时&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;拂晓&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;拂晓(或者破晓, dawn)&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;p&gt;３&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;6时~9时&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;早晨&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;晨曦(or 晨曦,清晨 Morning)&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;将晨字放到前面&lt;/p&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;p&gt;４&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;9时~12时&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;午前&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;午前(forenoon)&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;p&gt;５&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;12时~15时&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;午后&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;午后(afternoon postnoon)&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;没有更好的英语词汇&lt;/p&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;p&gt;６&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;15时~18时&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;傍晚&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;傍晚(evening, approach)&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;也没有更好的英语词汇&lt;/p&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;p&gt;７&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;18时~21时&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;薄暮&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;薄暮(Dusk)&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;p&gt;８&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;21时~24时&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;深夜&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;夜晚(Night)&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;$&lt;/p&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;将”凌晨”修改为”深夜”的理由是,
-看到”晨”这个字眼,将联想到'一天之计在于晨',潜意识自动被调动起来,不利于晚间的休息和养成良好的作息习惯，取名深夜或者晚安.
-时间段的命名,中文的表述更为精确,因此后续采用中文命名.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id2"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id11"&gt;微观层面细颗粒度的时间感知&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;对时间的精确测量很简单，低头看一眼手表便可．难点在于如何引导直觉或者大脑的"系统一"感知到精确的时间．&lt;/p&gt;
-&lt;p&gt;具体的例子，如何认识"早上 6:30"这个时刻．&lt;/p&gt;
-&lt;p&gt;首先看Hour(6点),
-盯着看半天,学着格物致知,并不能读到什么信息能在宏观层面上上辅助直觉的理解.
-用点数学，可以借助＇分数＇辅助直觉．将6点读成=6/24=,
-含义是一天的24小时中的6个小时已经流逝而去；
-如此便将微观的时刻与宏观的一天,以进度条的方式关联起来.对大脑提供的直接信息是,
-从一天这个整体概念中感知具体的时刻.&lt;/p&gt;
-&lt;p&gt;再看Minute(30分), 同理可以读成=30/60=, 将minute与hour关联起来.
-以60分钟为底数,可以理解为时间感知的最小单位是10分钟,而选择60又比选择6好一点儿.&lt;/p&gt;
-&lt;p&gt;整体来看=06:30=这个时刻 &lt;code class="docutils literal"&gt;06/24: 30/60&lt;/code&gt;&lt;/p&gt;
-&lt;div class="section" id="id3"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id12"&gt;选择起始时刻&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;如上所述,早上6点,可以表示为6/24,单靠直觉便能感知到具体的时刻在一整天这个进度中的位置。&lt;/p&gt;
-&lt;p&gt;观察6/24,会发现一个问题,如果早晨6点起床,
-那么在睁开眼醒来的一瞬间,这一天的24小中的6个小时就没了，
-一天的的1/4就没了。这太让人沮丧, 真没有心情做事.
-如果醒来却拥有完整无缺的24小时该有多么美妙,
-那样会更加积极地投入到一天之中.&lt;/p&gt;
-&lt;p&gt;解决方案是选择早上6:00作为一天起始点.
-该方案的优点，除了可以完整的获得24小时之外,还能奖励早起和辅助养成良好的作息习惯.&lt;/p&gt;
-&lt;p&gt;比如5点起床,意味着这一天多出了一个小时,仿佛是从时间之神Chrones手中偷得了一个小时，赢在起跑线上，
-构筑起来很强的心理优势.&lt;/p&gt;
-&lt;p&gt;另外一个意外之喜则是可以鼓励早睡.&lt;/p&gt;
-&lt;p&gt;选择新的起始时刻后,重新审视一天的八分图.&lt;/p&gt;
-&lt;table&gt;
-&lt;colgroup&gt;
-&lt;col style="width: 5%"&gt;
-&lt;col style="width: 14%"&gt;
-&lt;col style="width: 13%"&gt;
-&lt;col style="width: 41%"&gt;
-&lt;col style="width: 28%"&gt;
-&lt;/colgroup&gt;
-&lt;thead&gt;
-&lt;tr&gt;&lt;th class="head"&gt;&lt;p&gt;No&lt;/p&gt;&lt;/th&gt;
-&lt;th class="head"&gt;&lt;p&gt;时间段&lt;/p&gt;&lt;/th&gt;
-&lt;th class="head"&gt;&lt;p&gt;维基命名&lt;/p&gt;&lt;/th&gt;
-&lt;th class="head"&gt;&lt;p&gt;修正命名&lt;/p&gt;&lt;/th&gt;
-&lt;th class="head"&gt;&lt;p&gt;理由&lt;/p&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;&lt;td&gt;&lt;p&gt;7&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;0时~3时&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;凌晨&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;深夜(deep night or good night)&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;后面详叙&lt;/p&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;p&gt;8&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;3时~6时&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;拂晓&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;拂晓(或者破晓, dawn)&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;p&gt;1&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;6时~9时&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;早晨&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;晨曦(or 晨曦,清晨 Morning)&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;将晨字放到前面&lt;/p&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;p&gt;2&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;9时~12时&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;午前&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;午前(forenoon)&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;p&gt;3&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;12时~15时&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;午后&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;午后(afternoon postnoon)&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;没有更好的英语词汇&lt;/p&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;p&gt;4&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;15时~18时&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;傍晚&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;傍晚(evening, approach)&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;也没有更好的英语词汇&lt;/p&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;p&gt;5&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;18时~21时&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;薄暮&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;薄暮(Dusk)&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;p&gt;6&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;21时~24时&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;深夜&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;夜晚(Night)&lt;/p&gt;&lt;/td&gt;
-&lt;td&gt;&lt;p&gt;$&lt;/p&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;如上图,晚上12点并非一天的结束,
-因此熬夜偷不到任何时间,也不会获得比别人多出来更多的时间的虚假心理满足感.相反,熬夜是障碍,导致不能早起,导致不能从chrones手中偷得额外时间.&lt;/p&gt;
-&lt;p&gt;小结：选择6点作为起始时刻&lt;/p&gt;
-&lt;p&gt;1)建立心理优势账户 2)从理性和感性两个方面否定熬夜 3)养成早起的好习惯。&lt;/p&gt;
-&lt;p&gt;将6:00理解成 00:00.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id4"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id13"&gt;两个重要时间节点&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;以早晨６点作为时间感知的０点，有两个重要的时间节点里程碑：
-一是中午12点，这是AM与 PM的划分点，是白昼的一半
-二是下午６点，这是一整天的一半．&lt;/p&gt;
-&lt;p&gt;可以通过这两个时间节点下的进度和已完工作，粗略估算和预测．而且很重要的一点，假如在下午６点预估到不能按期完成任务，可以选择的方案是早起赶工而非熬夜赶工．(晚上12点非一天的结束，拂晓6点才是昨日之终和今日之始)&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id5"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id14"&gt;12小时制还是24小时制&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;首先来看12小时制，将一天分为白昼和黑夜两个部分，这一点很棒负，符合人的自然直觉。接下来分别针对白昼和黑夜进行计时。
-白昼是从早上６点到晚上６点，黑夜是从晚上６点到早上６点。早上６点可以表示为　(6-6)/12,
-白天的0/12.
-这样划分的结果是以地平线作为昼夜分割线，与AM,PM将中午12点作为一天的分割线的标准相冲突。不仅需要做6-6的转换，还需要做AM,
-PM转换。&lt;/p&gt;
-&lt;p&gt;其次24小时制,
-24小时保证了一天的连贯性，不论是5/24还是15/24，都在同一个尺度下比较。&lt;/p&gt;
-&lt;p&gt;综上，暂时选择24小时制。&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id6"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id15"&gt;认识具体时间的算法&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;在宏观层面的八分图与微观层面的分数表示的基础上，如何解析一个具体的时间呢？
-比如一个比较古怪的14:39这个时间如何理解？&lt;/p&gt;
-&lt;p&gt;第一步， 先看Hour(14), 从粗略上感知，
-14点是午后，这是从电脑或者手表等仪器上的数字读取的。
-但是，午后这个时间概念，不需要借助仪器，可以从身体的疲惫状态，从窗外光线的强度，甚至从个人的生物钟便可以感知到（大体会有感觉一天过去了多久）。单单依靠感觉或许不能准确估量到小时这个单位，但是估摸到是午后，傍晚，夕阳西下还是旭日东升？
-是黎明还是黄昏？
-在3个小时的误差允许的范围内，应该是没有问题的。或许，长时间的训练还能提高个体的感受力，做仪器和工具的主人而非奴隶；&lt;/p&gt;
-&lt;p&gt;第二步，
-所以第一步工作并非读14这个数字，而是调用直觉，调用人的动物本能去感受一下当前的时间，大概估算出是八分图的哪一个阶段。比如吃完午饭似乎有一段时间了，但是工作起来没精神，大概这个就是午后综合征。拿到"午后"这个概念之后，继续分析"午后"是什么意思？潜意识里如何理解"午后"呢。午后是白昼的一半时间已经过去了，现在处在白昼3/4的位置上，用八分图表示则是3/8的位置。模糊概念上"午后"等于准确测量的"3/8"。但是只需要停留在"午后"这个概念即可，不必显性的将3/8读出来，那是潜意识的工作&lt;/p&gt;
-&lt;p&gt;第三步，通过前两部得到"午后"这个时间段，并且通过调用感受力去判断出这个时间段的过程，潜意识里或许有了如3/8这样的数字。午后就是3/8，但午后这个文字描述更加亲切，不需要消耗脑力。
-现在开始看表，一看是14:39，
-14这个数字很亲切，因为与直觉感受到"午后"是相一致的。调用大脑的系统二读14点这个数字是=14/24=，
-这个进度挺可怕，刚吃完午饭，一天的24小时里的14个小时已经没了，
-着实使人沮丧。好消息是要从14里减去6， &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;（14-6）/&lt;/span&gt; 24 = 8/24&lt;/code&gt;,
-减法算的太开心了。如此与模糊概念上的"午后"便对应起来。
-在粗颗粒度下，当前处在大约一天中3/8的位置，而理性的细颗粒度下则是在=8/24=这个准确的位置上(一天还只过去了三分之一，还拥有三分之二的时间筹码在手上）e。&lt;/p&gt;
-&lt;p&gt;第四步， 读minutes， 39表示为39/60,
-一个小时是最宝贵的资源，所有的工作都在一个一个的一个小时内展开。定性分析一个小时，可以将钟表盘想象成一个没有数字刻度的饼图，
-粗略估算下饼图的切口在哪里，
-39/60就是一半多一点点。定量分析则以10分钟为一个单位，
-将饼图分为六个部分。&lt;/p&gt;
-&lt;p&gt;第五步， 实际的工作是在一个小时的范围内，读到39/60,
-定性分析下，原计划一个小时内完成的工作能否如期交付，
-定量分析下按照当前的进度大概需要几个小时？&lt;/p&gt;
-&lt;p&gt;总结， 前两部（2/5）从感觉上定性分析当前所处的时间段，
-第三步和第四步调用理性定量读取时间，
-第五步，有效利用最有价值的资源每一个一个小时。&lt;/p&gt;
-&lt;div class="section" id="id7"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id16"&gt;估算时间段&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;分数有定性和定量， 串通理性与感性，宏观与微观的神奇作用。
-具体的例子，比如有好看的综艺节目大概一个小时，用分数定性看一眼=1/24=，一天的二十四之一；
-刷个手机半个小时
-30/60，一个小时的一半没了，而一个小时是一天的二十四分之一。&lt;/p&gt;
-&lt;p&gt;分数的方法可以帮助explicitly珍惜时间。&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id8"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id17"&gt;总结&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;粗颗粒度下应用八分图辅助直觉粗略的感知一天内的时间，应用饼图粗略感知一个小时内的时间；
-细颗粒度下应用分数15/24, 41/60,定性与定量相结合分析。
-挥霍时间前，先用24这个数字定性审视感受一下。&lt;/p&gt;
-&lt;p&gt;17:31这个时间， 1) 傍晚，傍晚这个词太好了，傍-&amp;gt;依傍，approach, 向晚。 2)
-粗略感受下在八分图中的位置,
-17点是个特殊的数字，距离之前定义的两个重要的时间节点中的18:00很近。 3)
-(17-6)/24 = 11/24, 马上就12/24,一天的一半即将结束。 4) 31/60
-同时也从饼图上感受下这一个小时的流逝 5)
-根据31/60定性和定量分析当前的工作。&lt;/p&gt;
-&lt;p&gt;综上，再来看具体的一天, 三个变量最重要，&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;&lt;p&gt;周几, 周三(3/7 )&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;小时 (小时是一天的进度条) 3)分钟 (分钟是小时的进度条)&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id9"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/#id18"&gt;参考资料&lt;/a&gt;&lt;/h2&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://zh.wikipedia.org/wiki/%E6%8B%82%E6%99%93"&gt;拂晓-
-维基百科，自由的百科全书&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://en.wikipedia.org/wiki/Day"&gt;Day - Wikipedia&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://en.wikipedia.org/wiki/Sunrise"&gt;Sunrise - Wikipedia&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://www.douban.com/note/474987993/"&gt;Chronodex：时间饼的用法、研习、使用心得及灵感收集&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://www.playpcesor.com/2018/05/chronodex.html"&gt;Chronodex
-一張圓錶圖完滿每一天，視覺系手帳行事曆上手教學&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;《思考，快与慢》&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;《金字塔原理》&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>time</category><guid>https://alinbxsorcerer.github.io/posts/shi-jian-de-gan-zhi-yu-fen-xi/</guid><pubDate>Wed, 15 May 2019 10:54:19 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>bash</category><category>emacs</category><category>python</category><category>time</category><category>时间管理</category><guid>https://alinbxsorcerer.github.io/posts/shi-jian-guan-li-de-san-jian-wu-qi/</guid><pubDate>Wed, 15 May 2019 12:53:29 GMT</pubDate></item></channel></rss>

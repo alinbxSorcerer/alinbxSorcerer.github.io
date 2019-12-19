@@ -27,11 +27,11 @@
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/archive.html</loc>
-  <lastmod>2019-12-19T03:03:00Z</lastmod>
+  <lastmod>2019-12-19T10:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/categories/</loc>
-  <lastmod>2019-12-19T03:11:00Z</lastmod>
+  <lastmod>2019-12-19T10:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/categories/algorithms/</loc>
@@ -78,6 +78,10 @@
   <lastmod>2019-11-18T06:03:00Z</lastmod>
  </url>
  <url>
+  <loc>https://alinbxsorcerer.github.io/categories/debug/</loc>
+  <lastmod>2019-12-19T10:09:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://alinbxsorcerer.github.io/categories/effective/</loc>
   <lastmod>2019-12-16T12:53:00Z</lastmod>
  </url>
@@ -116,6 +120,10 @@
  <url>
   <loc>https://alinbxsorcerer.github.io/categories/primality/</loc>
   <lastmod>2019-12-18T15:57:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alinbxsorcerer.github.io/categories/profile/</loc>
+  <lastmod>2019-12-19T10:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/categories/python/</loc>
@@ -167,7 +175,7 @@
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/index-2.html</loc>
-  <lastmod>2019-12-19T03:03:00Z</lastmod>
+  <lastmod>2019-12-19T10:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/listings/</loc>
@@ -280,6 +288,10 @@
  <url>
   <loc>https://alinbxsorcerer.github.io/posts/li-man-ji-fen/</loc>
   <lastmod>2019-12-18T07:20:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://alinbxsorcerer.github.io/posts/pyadmin-debug-and-profile/</loc>
+  <lastmod>2019-12-19T10:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://alinbxsorcerer.github.io/posts/regex-summary/</loc>
